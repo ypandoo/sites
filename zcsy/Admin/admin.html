@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"  class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="file_upload.js"></script>
+  <script src="admin.js"></script>
+
+</head>
+<body ng-app="myAppAdmin" >
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+<!-- FORM --> 
+<form ng-submit="processForm()" ng-controller="formController"> 
+  <!-- NAME --> 
+  <div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }"> 
+    <label>名称</label> 
+    <input type="text" name="name" class="form-control" placeholder="" ng-model="formData.name"> 
+    <span class="help-block" ng-show="errorName">{{ errorName }}</span> 
+  </div>
+
+  <!-- DISCRIPTION -->
+  <div id="description-group" class="form-group" ng-class="{ 'has-error' : errorDiscription }"> 
+      <label>描述</label> 
+      <input type="text" name="description" class="form-control" placeholder="" ng-model="formData.description"> 
+      <span class="help-block" ng-show="errorDescription">{{ errorDescription }}</span> 
+  </div>
+
+  <!-- Link -->
+  <div id="link-group" class="form-group" ng-class="{ 'has-error' : errorLink }"> 
+      <label>链接</label> 
+      <input type="text" name="link" class="form-control" placeholder="" ng-model="formData.link"> 
+      <span class="help-block" ng-show="errorLink">{{ errorLink }}</span> 
+  </div>
+
+  <!-- Attoch to -->
+  <div id="attachto-group" class="form-group" ng-class="{ 'has-error' : errorAttachto }"> 
+      <label>所属公司</label> 
+      <input type="text" name="attachto" class="form-control" placeholder="" ng-model="formData.attachto"> 
+      <span class="help-block" ng-show="errorAttachto">{{ errorAttachto }}</span> 
+  </div>
+
+    <!-- Link -->
+  <div id="type-group" class="form-group"> 
+      <label name="type" >类型</label>
+        
+      <select ng-model="formData.type">
+        <option value="h5game">H5游戏 </option>
+        <option value="h5site">H5页面 </option>
+        <option value="app">APP</option>
+        <option value="pcsite">PC网站</option>
+        <option value="mall">商城 </option>
+        <option value="vplatform">微信公众平台</option>
+        <option value="design">创意设计</option>
+      </select> 
+  </div>
+
+    <div id="priority-group" class="form-group"> 
+      <label name="priority" >显示优先级</label>
+        
+      <select ng-model="formData.priority">
+        <option value="0">最低优先级</option> 
+        <option value="1">优先级1</option> 
+        <option value="2">优先级2</option> 
+        <option value="3">最高优先级</option> 
+      </select> 
+  </div>
+
+  <i ng-show="errorFile || message">{{errorFile + message}}</i><br>
+  <div id="phote-group">
+      <label >上传封面</label>
+      <input type="file" name="file" ng-model="file"   
+             accept="image/*" ngf-max-size="2MB" required ngf-select="uploadPic(file)">
+
+      <img ngf-thumbnail="file || '/thumb.jpg'" width="100px">
+  </div>
+
+  <div id="phote-group1">
+      <label >上传图片1</label>
+      <input type="file" name="file1" ng-model="file1"   
+             accept="image/*" ngf-max-size="2MB" required ngf-select="uploadPic1( file1)">
+
+      <img ngf-thumbnail="file1 || '/thumb.jpg'" width="100px">
+  </div>
+
+  <div id="phote-group2">
+      <label >上传图片2</label>
+      <input type="file" name="file2" ng-model="file2"   
+             accept="image/*" ngf-max-size="2MB" required ngf-select="uploadPic2( file2)">
+
+      <img ngf-thumbnail="file2 || '/thumb.jpg'" width="100px">
+  </div>
+
+  <div id="phote-group3">
+      <label >上传图片3</label>
+      <input type="file" name="file3" ng-model="file3"   
+             accept="image/*" ngf-max-size="2MB" required ngf-select="uploadPic3( file3)">
+
+      <img ngf-thumbnail="file3 || '/thumb.jpg'" width="100px">
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <button type="submit" class="btn btn-success btn-lg btn-block">
+      <span class="glyphicon glyphicon-flash"></span> 提交
+  </button>
+</form>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>合火人</title>
+    <meta name="keywords" content="合火人"/>
+    <meta name="description" content="合火人"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="合火人"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link href="css/base.css" rel="stylesheet"/>
+<link href="css/regist.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="bk"></div>
+<div id="details" class="details">
+    <div class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
+    <div id="head-container" class="head-container">
+        <div id="header" class="newhead">
+            <div class="logo touch-href" data-href="/"></div>
+        </div>
+    </div>
+    <div class="tab"><a id="login-link" class="left">登录</a><a class="right active">注册</a></div>
+    <div class="registration modules">
+
+        <label>
+            <span>手机号码</span>
+            <i>
+                <input id="phone" type="tel" name="phone" value="" maxlength="11" placeholder="将作为登录账号" />
+                <button id="verify-btn" class="verify-btn btn disable">验证</button>
+            </i>
+        </label>
+
+        <label>
+            <span>验证码</span>
+            <i><input id="verify-code" type="tel" name="code" value="" maxlength="6"  placeholder="请输入短信验证码" /></i>
+        </label>
+
+        <label>
+            <span>密码</span>
+            <i><input id="pwd" type="password" name="password" value="" maxlength="16" /><em class="vector-icons eye"></em></i>
+        </label>
+
+        <label>
+            <span>重复密码</span>
+            <i><input id="pwdrepeat" type="password" name="password" value="" maxlength="16" /><em class="vector-icons eye"></em></i>
+        </label>
+
+        <label>
+            <span>推荐人</span>
+            <i><input id="" type="text" name="" value="" maxlength="10"  placeholder="输入推荐人(选填)"/></i>
+        </label>
+
+        <div class="addition-agreement">
+            <p>我已知晓 <a href="/agreement/service">《合火人用户服务协议》</a> 及其附件 <a class="ci-link" href="/agreement/risk">《风险揭示书》</a> 中的所有内容 ，并愿意自己承担投资带来的风险。</p>
+            <div id="agreement-checkbox" class="modules">
+                <div class="mentos-container">
+                    <label class="label">
+                        <em class="tracks">
+                            <em class="slider-button">
+                                <i>×</i>
+                                <i></i>
+                            </em>
+                        </em>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button id="submit-btn" class="btn submit-btn ci-link"></button>
+    </div>
+
+    <!--注册成功-->
+    <div id="regist-success" class="new-page-result regist-success">
+        <div class="close">×</div>
+        <div class="mg"></div>
+        <div class="img"><img src="img/icon_done_1.png"></div>
+        <h3>成功注册并登录</h3>
+        <div class="content">
+            <h6>接下来，您可以：</h6>
+            <div class="arrow-group">
+                <a id="go-back" class="back hidden">返回注册前页面</a>
+                <a href="">我是投资人，立即申请认证</a>
+                <a href="">我是创业者，立即创建项目</a>
+                <a href="">查看创业项目</a>
+                <a href="">创业培训</a>
+                <a href="">浏览闪投精选</a>
+                <a href="">查看投资人</a>
+                <a class="back" href="">首页</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-cookie.js"></script>
+<script src="js/base.js"></script>
+<script src="js/regist.js"></script>
+
+<script>
+
+</script>
+</html>

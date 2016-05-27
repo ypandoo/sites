@@ -1,0 +1,537 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+
+.hidden {
+  display:none;
+}
+
+.slogan {
+  text-align:center;
+  padding:32px 2% 34px 2%;
+  background:#F5F5F5;
+}
+
+.avatar-area h1,
+.stars section h1,
+.slogan h1 {
+  font-size:20px;
+  line-height:46px;
+}
+
+@media only screen and (max-width: 345px) {
+  .avatar-area h1,
+  .stars section h1,
+  .slogan h1 {
+    font-size:20px;
+    line-height:42px;
+  }
+}
+
+.slogan h1 {
+  line-height:34px;
+  margin-bottom:5px;
+}
+
+.slogan p {
+  line-height:18px;
+  margin:0 5%;
+}
+@media only screen and (max-width: 345px) {
+  .slogan p {
+    margin:0 2%;
+  }
+}
+
+
+/*******************
+        Stars
+ ********************/
+
+.stars section {
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  padding:12px 0 15px;
+}
+
+.stars section:nth-child(2n) {
+  background:#F5F5F5;
+}
+
+.stars section h1 {
+  margin-bottom:6px;
+}
+
+.stars section ul {
+  display:inline-block;
+  width:100%;
+  padding-left:1%;
+}
+
+.stars section li {
+  width:32.7%;
+}
+
+.stars section li .pic {
+  margin:0 11.9%;
+}
+
+.stars section li .pic img {
+  width:100%;
+  max-width:125px;
+}
+
+.stars section li p {
+  font-size:22px;
+  margin-top:2px;
+}
+
+
+/************************
+       Registration
+ ************************/
+
+.avatar-area {
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  padding-bottom:16px;
+  border-top: 1px solid #BCBCBC;
+}
+
+.avatar-area h1 {
+  line-height:30px;
+  margin:32px 0 6px;
+}
+
+.avatar-area p {
+  padding:0 8%;
+  line-height:18px;
+}
+
+.avatar-area .avatar {
+  width:90px;
+  height:90px;
+  margin:22px auto 6px;
+  background:url(../img/default_user_avatar.png) no-repeat;
+  background-size:90px;
+}
+
+.upload-playground .image-container.loading,
+.avatar-area .avatar.loading {
+  background-image: url(http://dn-acac.qbox.me/mobile/public/preloader.gif);
+}
+
+.avatar-area .avatar img {
+  width:90px;
+}
+
+.registration label .btn {
+  width:76px;
+  height:26px;
+  float:right;
+  font-size:14px;
+  padding:1px 10px 0;
+  margin-top:12px;
+  margin-right:16px;
+  border-color:#A9A9A9;
+}
+
+.registration label .btn:hover {
+  background:none;
+}
+
+.details {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.registration label i em {
+  display:inline-block;
+  float:right;
+  font-size:20px;
+  line-height:48px;
+  margin-right:16px;
+  padding:0 8px;
+}
+
+
+#phone {
+  width:50%;
+  max-width:180px;
+}
+@media only screen and (max-width: 359px) {
+  #phone {
+    width: 38%;
+    max-width: 180px;
+  }
+}
+
+#pwd {
+  width:50%;
+}
+
+#verify-code {
+  width:50%;
+  margin-left:112px;
+}
+
+
+/*************************
+     Upload Playground
+ **************************/
+
+.upload-playground {
+  display:none;
+}
+
+.upload-playground {
+  width:100%;
+  margin-bottom:10px;
+}
+
+.upload-playground p {
+  display:inline-block;
+  line-height:44px;
+  margin-left:3.4%;
+}
+
+.upload-playground .image-container {
+  max-width:90%;
+  height:108px;
+  margin-left:3.4%;
+  background:no-repeat -11px top scroll;
+  background-size:80px;
+}
+
+@media only screen and (min-width: 748px) {
+  .upload-playground .image-container,
+  .upload-playground p {
+    margin-left:2.2%;
+  }
+}
+
+@media only screen and (min-width: 998px){
+  .upload-playground .image-container,
+  .upload-playground p {
+    margin-left:3.3%;
+  }
+}
+
+.upload-playground .image-container img {
+  max-width:100%;
+  height:100%;
+}
+
+.page-name{
+    width: 100%;
+    height: 50px;
+    background: #f5f5f5;
+   /* padding:0 5%;*/
+    position: relative;
+}
+.page-name span{
+    width: 23%;
+}
+.page-name input{
+    display: inline-block;
+    width: 77%;
+    float: right;
+    height: 100%;
+    background: #f5f5f5;
+}
+.page-name button{
+    display: inline-block;
+    width: 70px;
+    background: #f5f5f5;
+    border: 1px solid #666;
+    border-radius: 3px;
+    float: right;
+    margin: 12px;
+    height: 26px;
+    outline: none;
+}
+.page-name button:active{
+    background: #333;
+    outline: none;
+    color: #fff;
+}
+.page-name p{
+    line-height: 54px;
+    float: right;
+    font-size: 14px;
+    color: #666;
+    display: inline-block;
+}
+.page-name em{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 10px;
+    background: url("../img/arrow_down.png") no-repeat 50% 50%;
+    background-size: 30px 30px;
+}
+.page-name em:active{
+    background: url("../img/arrow_down_a.png") no-repeat 50% 50%;
+    background-size: 30px 30px;
+}
+.page-name select{
+    position: absolute;
+    display: block;
+    width: 30%;
+    right: 0;
+    opacity: 0.001;
+    margin-top: 15px;
+}
+
+/*已选行业*/
+.industry .industry-container{
+    display: inline-block;
+    padding-top: 5px;
+    width: 100%;
+}
+.industry .industry-container span{
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 4px 3px 3px 10px;
+    background-color: #a0a0a0;
+    color: #fff;
+    position: relative;
+}
+.industry .industry-container span:active em{
+    color: #000;
+}
+.industry .industry-container em{
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff;
+    padding:0 2px 0 3px;
+}
+/*选择行业*/
+.industry-choose{
+    position: fixed;
+    height: 100%;
+    min-height: 320px;
+    width: 100%;
+    min-width: 320px;
+    border: 1px solid #eee;
+    top:100%;
+    left: 0;
+    right: 0;
+    margin: 46px auto auto;
+    z-index: 10;
+    background: #f5f5f5;
+}
+.industry-choose .element-container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.industry-choose .title{
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    line-height: 34px;
+    padding: 5px 5%;
+}
+.industry-choose .select{
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.industry-choose .input{
+    width: 100%;
+    height: 50px;
+    background-color: #f5f5f5;
+    position: absolute;
+    padding: 0 5%;
+    bottom: 166px;
+}
+.industry-choose .input span{
+    display: inline-block;
+    float: left;
+    height: 100%;
+    line-height: 50px;
+    width: 100px;
+    font-size: 15px;
+    font-weight: 900;
+}
+.industry-choose .input input{
+    display: inline-block;
+    border: none;
+    font-size: 16px;
+    height: 48px;
+    width: 45%;
+    background-color: #f5f5f5;
+}
+.industry-choose .input input:focus{
+    outline: none;
+}
+.industry-choose .input a{
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    line-height: 30px;
+    margin-top: 9px;
+    text-align: center;
+    float: right;
+}
+.industry-choose .input a:active{
+    background: #999;
+    color: #fff;
+}
+.industry-choose .selected{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 96px;
+    padding: 0 5%;
+}
+.industry-choose .select ul{
+    display: block;
+    padding: 0 5%;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.industry-choose .select ul:after{
+    content: '';
+    display: inline-block;
+    height: 200px;
+    width: 100%;
+}
+.industry-choose .select ul li{
+    height: 50px;
+    width: 100%;
+    line-height: 53px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+.industry-choose .select .left{
+    float: left;
+}
+.industry-choose .select .left li.active{
+    font-size: 15px;
+    font-weight: 700;
+}
+.industry-choose .select .left li.active:after{
+    content: '';
+    height: 50px;
+    width: 50px;
+    margin-right:-10px;
+    display: inline-block;
+    float: right;
+    background: url("http://dn-acac.qbox.me/arrow_right.png") no-repeat 50% 50%;
+    background-size: 30px 30px;
+}
+.industry-choose .select .right{
+    float: right;
+}
+.industry-choose .select .right li.active{
+    font-size: 17px;
+    font-weight: 700;
+}
+.industry-choose .select .right li.active:after{
+    content: '';
+    height: 50px;
+    width: 50px;
+    margin-right:-10px;
+    display: inline-block;
+    float: right;
+    background: url("http://dn-acac.qbox.me/icon_selection.png") no-repeat 50% 50%;
+    background-size: 15px 15px;
+}
+.industry-choose .btn-group{
+    width: 100%;
+    height: 50px;
+    bottom: 46px;
+    position: absolute;
+    text-align: center;
+    background: #f5f5f5;
+}
+.industry-choose .btn-group a{
+    display: inline-block;
+    width: 40%;
+    height: 30px;
+    margin-top: 9px;
+    line-height: 30px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.industry-choose .btn-group .cancle{
+    margin-right: 2%;
+    border: 1px solid #999;
+    color: #666;
+}
+.industry-choose .btn-group .confirm{
+    margin-left: 2%;
+    color: #999;
+    border: 1px solid #999;
+}
+.industry-choose .btn-group .confirm.active{
+    border: none;
+    background: #e65100;
+    color: #fff;
+}
+/*创建项目结果*/
+.new-page-result .title{
+    margin-top: 35%;
+    width: 100%;
+}
+.new-page-result .title h3{
+    font-size: 32px;
+    color: #333;
+}
+.new-page-result .content{
+    margin-top: 5%;
+    width: 100%;
+}
+.new-page-result .content p,.new-page-result .content strong{
+    text-align: left;
+    font-size: 18px;
+    line-height: 28px;
+
+}
+.new-page-result .content p{
+    color: #666;
+}
+.new-page-result .content strong{
+    color: #333;
+    font-weight: bold;
+}
+.new-page-result .btn-group{
+    height: 30px;
+    width: 100%;
+    margin-top: 20%;
+    display: inline-block;
+    text-align: center;
+}
+.new-page-result .btn-group a{
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    border: 1px solid #666;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 3px;
+}

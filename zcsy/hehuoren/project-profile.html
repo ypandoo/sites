@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="合火人" />
+    <meta name="keywords" content="合火人" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>合火人</title>
+
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/project_regist.css" rel="stylesheet"/>
+    <link href="css/project_active.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+   <script src="js/angelcrunch.jq.c.js"></script>
+   <script src="js/image_upload.min.js"></script>
+
+    <script type="text/javascript" id="page-interactive-init">
+        var page = window.page || {};
+        page.MethodObj = function () { };
+        page.MethodObj.prototype = (function () {
+            var settings = page.settings;
+
+            var waste_41023823 = function () {
+                var className = {
+                    main_page: ".details",
+                    new_page: ".new-page",
+                    hidden_layer: ".layer-class",
+                    special_layer: ".special-layer"
+                };
+                var $ele = {
+                    main_page: $(className.main_page),
+                    hidden_layer: $(className.hidden_layer),
+                    special_layer: $(className.special_layer)
+                };
+
+                var state = {
+                    page_show: "center"
+                };
+                var attr = {
+                    page_trigger: "data-page-trigger",
+                    page_trigger_result:"data-selector-result",
+                    route_path: "data-route-path",
+                    route_main_page: "data-route-path='?pageselect=mainpage'",
+                    main_page_scroll_top: "data-page-scroll",
+                    to_ele_position: "data-go-to-top",
+                    triggered_layer: "data-triggered-layer"
+                };
+
+                (function () {                          // The Logic Of Page Display
+                    var $page = $(attr.page_trigger.attrRetrievalMode());
+                    $page.each(function () {
+                        var $this = $(this),
+                                $trigger = $($(this).attr(attr.page_trigger));
+
+                        $trigger.click(function () {
+                            $(window).attr(attr.main_page_scroll_top, $(window).scrollTop());
+                            $ele.main_page.delay(300).fadeOut(200);
+                            $this.addClass(state.page_show);
+                        });
+
+                        $this.find(attr.route_main_page.attrRetrievalMode())
+                                .click(function () {
+                                    $ele.main_page.stop(true).fadeIn(1);
+                                    $this.removeClass(state.page_show);
+                                    $(window).scrollTop($(window).attr(attr.main_page_scroll_top));
+                                });
+                    });
+                }).call(this);                          // The Logic Of Page Display Ended
+
+                (function () {                          // The Logic Of Selection Display
+                    $(attr.triggered_layer.attrRetrievalMode()).each(function () {
+                        var $item = $(this);
+                        var $current_page = $(this).closest(className.new_page);
+                        var $layer = $($(this).attr(attr.triggered_layer));
+                        var $layer_children = $layer.children(className.special_layer),
+                                $layer_parent = $layer.parents(className.special_layer);
+
+                        $(this).click(function () {
+                            var offset_top, currentTop, time_handle, factor = 6;
+                            var $btn = $($current_page.attr(attr.page_trigger));
+                            $current_page.find(attr.route_main_page.attrRetrievalMode()).click();
+                            $ele.hidden_layer.show();
+
+                            if ($layer_parent.length)
+                                $layer.siblings(className.special_layer).hide();
+                            else
+                                $ele.special_layer.not($layer).hide();
+
+                            if ($layer_children.length)
+                                $layer_children.hide();
+
+                            $btn.attr(attr.page_trigger_result, $item.attr(attr.triggered_layer));
+                            $btn.find("p").html($item.find("h3").html());
+                            $layer.show();
+
+                            // Scroll Event
+                            if ($btn.attr(attr.to_ele_position)) {
+                                offset_top = $btn.offset().top;
+                                currentTop = $(window).scrollTop();
+                                time_handle = setInterval(function () {
+                                    currentTop = currentTop + factor;
+                                    var top = currentTop > offset_top
+                                            ? offset_top : currentTop + factor;
+                                    if (top >= offset_top) clearInterval(time_handle);
+                                    $(window).scrollTop(top);
+                                }, factor);
+                            }
+                        });
+                    });
+                }).call(this);                          // The Logic Of Selection Display Ended
+
+                // Initialization
+            };
+
+            return {
+                attackEvent: function () {
+                    waste_41023823();
+                },
+
+                pageLoad_Init: function () {
+                },
+
+                initial: function () {
+                    this.pageLoad_Init();
+                    this.attackEvent();
+                }
+            };
+        })();
+
+        page.initialBridge = function () {
+            var o = new page.MethodObj();
+            o.initial();
+        }
+
+        $(function () {
+            page.initialBridge();
+        })
+
+    </script>
+</head>
+<body>
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="head-container" class="head-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="registration modules">
+        <!-- Back-up form -->
+        <div class="avatar-area">
+            <h1>完善您的项目资料</h1>
+            <p>创建您的个人项目，达成投资意向</p>
+        </div>
+
+
+        <div id="investortype" class="investor-type layer-btn" data-route-path="?pageselect=investortype" data-selector-result="" data-go-to-top="true">
+            <p>展示项目</p>
+            <i class="vector-icons arrow-left"></i>
+        </div>
+
+         <div id="prepareproject" class="investor-type layer-btn" data-route-path="?pageselect=prepareproject" data-selector-result="" data-go-to-top="true">
+            <p>预热项目</p>
+            <i class="vector-icons arrow-left"></i>
+        </div>
+
+        <div id="hotproject" class="investor-type layer-btn" data-route-path="?pageselect=hotproject" data-selector-result="" data-go-to-top="true">
+            <p>热门项目</p>
+            <i class="vector-icons arrow-left"></i>
+        </div>
+
+        <div id="roadmap" class="investor-type layer-btn" data-route-path="?pageselect=roadmap" data-selector-result="" data-go-to-top="true">
+            <p>准路演项目</p>
+            <i class="vector-icons arrow-left"></i>
+        </div>
+
+    </div>
+
+    <div class="addition-agreement">
+        <p>您需了解 <a href="/agreement/service">《合火人用户服务协议》</a> 及其附件 <a class="ci-link" href="/agreement/risk">《风险揭示书》</a> 中的所有内容 ，并愿意承担投资带来的风险才能继续。</p>
+        <div class="modules">
+            <div class="mentos-container">
+                <label class="label">
+                    <input id="legal-terms" class="mentos" type="checkbox" name="additionalAgreement" value="1" data-warning-text="需要同意天使汇用户协议" />
+                    <em class="tracks">
+                        <em class="slider-button">
+                            <i>×</i>
+                            <i></i>
+                        </em>
+                    </em>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="banner-footer">
+        <p>BaiBaiChou.com</p>
+        <p>合火人 - 让靠谱的项目找到靠谱的钱</p>
+    </div>
+
+</div>
+
+
+<!-- 展示项目 -->
+<div class="new-page" data-page-trigger="#investortype"  style="background:white">
+    <div class="title-container">
+
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">展示项目</p>
+    </div>
+
+    <div id="item-container" class="item-container">
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('basic_desc')">
+            <h1>基本描述</h1>
+            <em id="em_basic_desc"></em>
+        </div>
+
+        <div id="basic_desc">
+            <div class="page-logo">
+                <label id="upload-trigger" class="container">
+                    <div id="upload-progress" class="progress transition"></div>
+                    <img>
+                    <input id="upload-input" class="default-hidden" type="file">
+                </label>
+                <div class="text">
+                    <h3>上传logo</h3>
+                    <p>产品logo而非公司logo。宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                </div>
+            </div>
+
+            <label class="page-name">
+                <span>项目名称</span><input id="form-name" maxlength="20">
+            </label>
+            <label class="page-desc">
+                <p>名称需简洁清晰，传递印象明确</p>
+            </label>
+
+            <label class="page-name">
+                <span>一句话介绍</span><input id="form-one" maxlength="25">
+            </label>
+            <label class="page-desc">
+                <p>用最精炼的一句话来概括你的产品(25字以内)</p>
+            </label>
+
+            <label class="page-description">
+                <span>产品介绍</span>
+                <textarea id="form-desc"></textarea>
+            </label>
+
+            <label class="page-name industry" ms-controller="industry-select">
+                <span>所属行业</span><em ms-on-tap="box_show()"></em>
+            </label>
+            <label class="page-desc industry">
+                <p style="margin-left: 3.4%">所属行业最多选择5个 已选择</p>
+                <div class="industry-container" ms-controller="industry-select">
+                    <span ms-repeat="input_selected" ms-on-tap="cancle_input_industry($index)"><i ms-text="el"></i><em>×</em></span>
+                </div>
+            </label>
+
+            <label id="select1" class="page-name">
+                <span>所属阶段</span><em></em><p></p>
+                <select name="stage" class="stage">
+                    <option value="请选择所属阶段" selected="">请选择所属阶段</option>
+                    <option value="概念阶段：项目只有一个想法或原型">概念阶段：项目只有一个想法或原型</option>
+                    <option value="研发阶段：已组建团队，项目开发中">研发阶段：已组建团队，项目开发中</option>
+                </select>
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn text_btn active">保存基本信息</a>
+        </div>
+    </div>
+
+
+    <div id="item-container" class="item-container">
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('open_plan')" style="margin-top:10px">
+            <h1>开店计划</h1>
+            <em id="em_open_plan"></em>
+        </div>
+
+        <div id="open_plan">
+            <label class="page-name flex-height">
+                <span style="width:100%"><b>已有项目地址</b></span>
+                <span style="width:100%">
+                    <span style="width:90%">武侯区-火车南站街道-和平小区</span>
+                    <span style="width:10%;">X</span>
+                </span>
+
+                <span style="width:100%">
+                    <span style="width:90%">武侯区-倪家桥街道-领事馆片区</span>
+                    <span style="width:10%;">X</span>
+                </span>
+
+            </label>
+
+            <label id="select2" class="page-name">
+                <span style="width:30%">预期开店地址</span><em></em><p></p>
+                <select name="stage" class="stage">
+                    <option value="请选择区域" selected="">请选择区域</option>
+                    <option value="成都">成都</option>
+                </select>
+            </label>
+            <label id="select3" class="page-name" style="margin-top:-8px">
+                <span style="width:30%"></span><em></em><p></p>
+                <select name="stage" class="stage">
+                    <option value="请选择街道" selected="">请选择街道</option>
+                    <option value="大使馆路">大使馆路</option>
+                </select>
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn text_btn">保存开店信息</a>            
+        </div>
+
+    </div>
+</div>
+
+<!-- 预热项目 -->
+<div class="new-page" data-page-trigger="#prepareproject"  style="background:white">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">预热项目</p>
+    </div>
+
+    <div id="item-container" class="item-container">
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('info_founder')" style="margin-top:0px">
+            <h1>创始人信息</h1>
+            <em id="em_info_founder"></em>
+        </div>
+
+        <div id='info_founder'>
+            <div class="page-logo">
+                <label id="upload-trigger" class="container">
+                    <div id="upload-progress" class="progress transition"></div>
+                    <img>
+                    <input id="upload-input" class="default-hidden" type="file">
+                </label>
+                <div class="text">
+                    <h3>上传头像</h3>
+                    <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                </div>
+            </div>
+
+            <label class="page-name">
+                <span>姓名</span><input id="form-name" maxlength="20">
+            </label>
+
+            <label class="page-name">
+                <span>邮箱</span><input id="form-one" maxlength="25">
+            </label>
+
+            <label id="select_position1" class="page-name select-position-group">
+                <span>项目中职位</span><em></em><p></p>
+                <select name="position">
+                    <option value="请选择您的职位" selected="">请选择您的职位</option>
+                    <option value="市场负责人">市场负责人</option>
+                    <option value="技术负责人">技术负责人</option>
+                    <option value="运营负责人">运营负责人</option>
+                    <option value="创始人">创始人</option>
+                    <option value="产品负责人">产品负责人</option>
+                </select>
+            </label>
+
+            <label class="page-description">
+                <span>个人描述</span>
+                <textarea id="form-desc"></textarea>
+            </label>
+
+
+            <a id="subbmit-btn" class="submit-new-btn text_btn active">保存创始人信息</a>
+          
+        </div>
+ 
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('info_team')" style="margin-top:10px">
+            <h1>团队信息</h1>
+            <em id="em_info_team"></em>
+        </div>
+
+        <div id="info_team">
+            <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>上传头像</h3>
+                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+            </div>
+
+                    <label class="page-name">
+                        <span>姓名</span><input maxlength="20" value="">
+                    </label>
+
+                    <label class="page-name">
+                        <span>邮箱</span><input maxlength="25" value="">
+                    </label>
+
+                    <label id="select_position2" class="page-name select-position-group">
+                        <span>项目中职位</span><em></em><p></p>
+                        <select name="position">
+                            <option value="0" selected="">请选择您的职位</option>
+                            <option value="市场负责人">市场负责人</option>
+                            <option value="技术负责人">技术负责人</option>
+                            <option value="运营负责人">运营负责人</option>
+                            <option value="创始人">创始人</option>
+                            <option value="产品负责人">产品负责人</option>
+                        </select>
+                    </label>
+
+                    <label class="page-description">
+                        <span>个人描述</span>
+                        <textarea id="form-desc"></textarea>
+                    </label>
+
+                    <a id="subbmit-btn" class="submit-new-btn text_btn">保存团队成员信息</a>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>上传头像</h3>
+                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+                    </div>
+
+                    <label class="page-name">
+                        <span>姓名</span><input id="form-name" maxlength="20" value="YangLei">
+                    </label>
+
+                    <label class="page-name">
+                        <span>邮箱</span><input id="form-one" maxlength="25" value="YangLei@126.com">
+                    </label>
+
+                    <label id="select_position3" class="page-name">
+                        <span>项目中职位</span><em></em><p></p>
+                        <select name="position">
+                            <option value="0" selected="">请选择您的职位</option>
+                            <option value="市场负责人">市场负责人</option>
+                            <option value="技术负责人">技术负责人</option>
+                            <option value="运营负责人">运营负责人</option>
+                            <option value="创始人">创始人</option>
+                            <option value="产品负责人">产品负责人</option>
+                        </select>
+                    </label>
+
+                    <label class="page-description">
+                        <span>个人描述</span>
+                        <textarea id="form-desc"></textarea>
+                    </label>
+
+                    <a id="subbmit-btn" class="submit-new-btn text_btn">保存团队成员信息</a>  
+                    <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加新成员</a>          
+        </div>
+
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('info_mentor')" style="margin-top:10px">
+            <h1>顾问导师(选填)</h1>
+            <em id="em_info_mentor"></em>
+        </div>
+
+        <div id="info_mentor">
+            <div class="page-logo">
+                <label id="upload-trigger" class="container">
+                    <div id="upload-progress" class="progress transition"></div>
+                    <img>
+                    <input id="upload-input" class="default-hidden" type="file">
+                </label>
+                <div class="text">
+                    <h3>上传头像</h3>
+                    <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                </div>
+            </div>
+
+            <label class="page-name">
+                <span>姓名</span><input  maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>邮箱</span><input  maxlength="25" value="">
+            </label>
+
+            <label class="page-description">
+                <span>个人描述</span>
+                <textarea id="form-desc"></textarea>
+            </label>
+        </div>
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('info_news')" style="margin-top:10px">
+            <h1>新闻报道(选填)</h1>
+            <em id="em_info_news"></em>
+        </div>
+
+        <div id="info_news">
+            <label class="page-desc">
+                <p>建议只填写主流媒体及科技媒体对您项目的报道，这些报道比较有参考价值</p>
+            </label>
+
+            <label class="page-desc">
+                <p><b>已有链接</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>新闻标题</span><input maxlength="20" value="关于对我们公司的报道">
+            </label>
+
+            <label class="page-name">
+                <span>新闻链接</span><input maxlength="50" value="http://www.weibo.com">
+            </label>
+            <a id="subbmit-btn" class="submit-new-btn text_btn">保存修改</a>  
+
+            <label class="page-desc">
+                <p><b>新的链接</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>新闻标题</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>新闻链接</span><input maxlength="50" value="">
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn text_btn">保存新闻</a>  
+            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加新闻</a>        
+
+        </div>
+
+    </div>
+</div>
+
+<!-- 热门项目 -->
+<div class="new-page" data-page-trigger="#hotproject"  style="background:white">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">热门项目
+        </p>
+    </div>
+
+    <div id="item-container" class="item-container">
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('detail_desc')" style="margin-top:0px">
+            <h1>详细描述</h1>
+            <em id="em_detail_desc"></em>
+        </div>
+
+        <div id='detail_desc'>
+
+            <label class="page-desc" style="margin-top:5px">
+                <p>根据产品瞄准的需求或有此需求的用户量</p>
+            </label>
+            <label class="page-description">
+                <span>市场调研</span>
+                <textarea id=""></textarea>
+            </label>
+
+            <label class="page-desc">
+                <p>描述诸如独特技术，团队实力，优势资源等核心竞争力</p>
+            </label>
+            <label class="page-description">
+                <span>竞争优势</span>
+                <textarea id=""></textarea>
+            </label>
+
+            <label class="page-desc">
+                <p>如何获取用户，如何盈利</p>
+            </label>
+            <label class="page-description">
+                <span>商业模式</span>
+                <textarea id=""></textarea>
+            </label>
+
+
+            <a id="subbmit-btn" class="submit-new-btn text_btn active">保存信息</a>
+          
+        </div>
+ 
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('project_pic')" style="margin-top:10px">
+            <h1>项目图片</h1>
+            <em id="em_project_pic"></em>
+        </div>
+
+        <div id="project_pic">
+            <label class="page-desc" style="padding-top:15px">
+                <p><b>已有图片</b></p>
+            </label>
+
+            <div class="pic_layer">
+                <div class="divide33">
+                    <div class="close"></div>
+                    <img src="img/project1.png" width="100%" height="100%">
+                </div>
+
+                <div class="divide33">
+                    <div class="close"></div>
+                    <img src="img/project2.png" width="100%" height="100%">
+                </div>
+            </div>
+
+            <label class="page-desc" style="padding-top:15px">
+                <p><b>上传新图片</b></p>
+            </label>            
+            <div class="page-logo clearfix">
+                <label id="upload-trigger" class="container">
+                    <div id="upload-progress" class="progress transition"></div>
+                    <img>
+                    <input id="upload-input" class="default-hidden" type="file">
+                </label>
+                <div class="text">
+                    <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('project_video')" style="margin-top:10px">
+            <h1>项目视频</h1>
+            <em id="em_project_video"></em>
+        </div>
+
+        <div id="project_video">
+             <label class="page-desc">
+                <p>建议只填写主流媒体及科技媒体对您项目的报道，这些报道比较有参考价值</p>
+            </label>
+
+            <label class="page-desc">
+                <p><b>已有视频</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>视频标题</span><input maxlength="20" value="关于对我们公司的报道">
+            </label>
+
+            <label class="page-name">
+                <span>视频链接</span><input maxlength="50" value="http://www.weibo.com">
+            </label>
+            
+            <div class="two-buttons">
+                <div class="left">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">删除</a>
+                </div>
+                <div class="right">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">修改</a>
+                 </div> 
+            </div>
+
+            <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>新的视频</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>视频标题</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>视频链接</span><input maxlength="50" value="">
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加视频</a>  
+        </div>
+
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('shop_brief')" style="margin-top:10px">
+            <h1>现有店铺概况</h1>
+            <em id="em_shop_brief"></em>
+        </div>
+
+        <div id="shop_brief">
+            <label class="page-desc" style="margin-top:5px">
+                <p><b>已有店铺信息</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>店铺名称</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>店铺地址</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>店铺筹备总资产</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>从筹备到运营周期</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span> 盈利可分红时间</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>人均消费</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上年度营业收入</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上年度净利润</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上季度营业收入</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上季度净利润</span><input maxlength="20" value="">
+            </label>
+
+            <div class="two-buttons">
+                <div class="left">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">删除</a>
+                </div>
+                <div class="right">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">修改</a>
+                 </div> 
+            </div>
+
+            <label class="page-desc" style="margin-top:5px">
+                <p><b>新店铺信息</b></p>
+            </label>
+            <label class="page-name">
+                <span>店铺名称</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>店铺地址</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>店铺筹备总资产</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>从筹备到运营周期</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span> 盈利可分红时间</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>人均消费</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上年度营业收入</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上年度净利润</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上季度营业收入</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>上季度净利润</span><input maxlength="20" value="">
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加店铺</a>  
+        </div>
+
+        <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('shop_review')" style="margin-top:10px">
+            <h1>项目品鉴</h1>
+            <em id="em_shop_review"></em>
+        </div>
+
+        <div id="shop_review">
+            <label class="page-name">
+                <span>店铺位置</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>订座电话</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>联系人</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-desc" style="margin-top:5px">
+                <p>折扣信息仅限本平台会员使用</p>
+            </label>
+            <label class="page-name">
+                <span>折扣优惠</span><input maxlength="20" value="">
+            </label>
+        </div>
+ 
+         <div class=" title-control page-title " ms-controller="title-controller" 
+             ms-on-tap="toggle_content('project_history')" style="margin-top:10px">
+            <h1>项目大事记</h1>
+            <em id="em_project_history"></em>
+        </div>   
+
+        <div id="project_history">
+            <label class="page-desc" style="margin-top:5px">
+                <p>项目成立，用户调研结果，版本上线，重大合作，数据里程碑，重要成员加入</p>
+            </label>
+            <label class="page-desc">
+                <p><b>已有大事</b></p>
+            </label>
+            <label class="page-name">
+                <span>大事记标题</span><input maxlength="20" value="关于对我们公司的报道">
+            </label>
+
+            <label class="page-name">
+                <span>链接地址</span><input maxlength="50" value="http://www.weibo.com">
+            </label>
+            
+            <div class="two-buttons">
+                <div class="left">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">删除</a>
+                </div>
+                <div class="right">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">修改</a>
+                 </div> 
+            </div>
+
+            <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>新的大事记</b></p>
+            </label>
+
+            <label class="page-name">
+                <span>大事记标题</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>链接地址</span><input maxlength="50" value="">
+            </label>
+
+            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加大事记</a>              
+        </div>
+    </div>
+</div>
+
+<!-- 路演项目 -->
+<div class="new-page" data-page-trigger="#roadmap"  style="background:white">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">准路演项目</p>
+    </div>
+
+    <div id="item-container" class="item-container">
+
+        <label id="shop_type" class="page-name select-position-group">
+            <span>店铺类型</span><em></em><p></p>
+            <select name="position">
+                <option value="新店开设" selected="true">新店开设</option>
+                <option value="老店重组">老店重组</option>
+            </select>
+        </label>
+
+        <div id="new_shop">
+             <label class="page-name">
+                <span>营业面积</span><input maxlength="20" value="">
+            </label>               
+        </div>
+
+        <div id="old_shop" style="display:none">
+            <label class="page-name">
+                <span>地址</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>营业面积</span><input maxlength="20" value="">
+            </label>    
+            <label class="page-name">
+                <span>实际投入</span><input maxlength="20" value="">
+            </label>    
+            <label class="page-name">
+                <span>现估值</span><input maxlength="20" value="">
+            </label>    
+            <label class="page-name">
+                <span>估值依据</span><input maxlength="20" value="">
+            </label>    
+            
+            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">增加估值依据</a> 
+        </div>
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>股权设置</b></p>
+        </label>
+
+        <label class="page-name">
+            <span style="width:40%">消费合伙单笔额度(万元)</span>
+            <input maxlength="20" value="" style="width:60%">
+        </label>
+
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:60%">股份占比(%) </span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>    
+            <label class="page-name right">
+                <span style="width:60%">共计(份)</span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>              
+        </div>
+ 
+        <label class="page-name clearfix">
+            <span style="width:40%">股本合伙单笔额度(万元)</span>
+            <input maxlength="20" value="" style="width:60%">
+        </label>         
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:60%">股份占比(%) </span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>    
+            <label class="page-name right">
+                <span style="width:60%">共计(份)</span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>              
+        </div>
+
+        <label class="page-name clearfix">
+            <span style="width:40%">领头合伙单笔额度(万元)</span>
+            <input maxlength="20" value="" style="width:60%">
+        </label>
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:60%">股份占比(%) </span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>    
+            <label class="page-name right">
+                <span style="width:60%">共计(份)</span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>              
+        </div>
+
+        <label class="page-name">
+            <span>项目总额(万元)</span><input maxlength="20" value="">
+        </label>
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>项目方出资(万元)：出资金额应不低于项目总额的30%。</b></p>
+        </label>
+
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:60%">项目方出资:</span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>     
+            <label class="page-name right">
+                <span style="width:60%">股份占比(%) </span>
+                <input maxlength="20" value="" style="width:40%">
+            </label>    
+        </div>
+        
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>合伙方出资(万元)</b></p>
+        </label>
+
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:70%">合伙方出资:</span>
+                <input maxlength="20" value="" style="width:30%">
+            </label>     
+            <label class="page-name right">
+                <span style="width:70%">股份占比(%) </span>
+                <input maxlength="20" value="" style="width:30%">
+            </label>    
+        </div>
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 收益比例(%)</b></p>
+        </label>
+
+        <div class="two-buttons">
+            <label class="page-name left">
+                <span style="width:70%">项目方收益比例:</span>
+                <input maxlength="20" value="" style="width:30%">
+            </label>    
+            <label class="page-name right">
+                <span style="width:70%">合伙方收益比例 </span>
+                <input maxlength="20" value="" style="width:30%">
+            </label>    
+        </div>
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 资金用途</b></p>
+        </label>
+        <label class="page-name">
+            <span>预付租金费用</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>管理/技术人员储备开支</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>开业前的员工储备培训开支</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>开业后的员工开支</span><input maxlength="20" value="">
+        </label>  
+        <label class="page-name">
+            <span>装修预付款</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>装修工程款</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>装修饰品物料款</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>生产/经商设备</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>场地设备/器材</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>物料采购</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>融资费用</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>企业成立开办费用</span><input maxlength="20" value="">
+        </label>  
+
+        <label class="page-name">
+            <span>流动资金</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>企业储备金</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>财务监管系统</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name">
+            <span>广告宣传</span><input maxlength="20" value="">
+        </label>    
+        <label class="page-name" style="background:#C1C1C1">
+            <span style="background:#C1C1C1">合计</span>
+            <input style="background:#C1C1C1"maxlength="20" value="0" disabled="disabled">
+        </label>    
+
+        <label class="page-description">
+            <span>备注</span>
+            <textarea id=""></textarea>
+        </label>
+
+        <label class="page-description">
+            <span>资金外核心需求</span>
+            <textarea id=""></textarea>
+        </label>
+
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 退出机制一：份额股转让解决方案</b></p>
+        </label>
+        <label class="page-description">
+            <span style="width:30%">退出机制一</span>
+            <textarea  style="width:70%" id=""></textarea>
+        </label>
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 退出机制二：份额股回购解决方案</b></p>
+        </label>
+        <label class="page-description">
+            <span style="width:30%">退出机制二</span>
+            <textarea style="width:70%" id=""></textarea>
+        </label>
+
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 证件提交</b></p>
+        </label>
+
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>法人代表</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>法定代表个人信用报告</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>营业执照</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>        
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>税务登记证</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>税务登记证副本</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>组织机构代码证</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>组织机构代码证副本</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>公司照片</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>场地租凭合同</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div> 
+         <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>财务报表</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>卫生许可证</h3>
+                <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>            
+
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 项目方硬性承诺，如合伙运营（项目资金到位）后，项目方未完成以上承诺，由此造成的损失，由项目方承担。</b></p>
+        </label>
+        <div class="two-buttons">
+                <div class="left">
+                <a id="subbmit-btn" class="submit-new-btn text_btn">不同意</a>
+                </div>
+                <div class="right">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active_orange">同意</a>
+                 </div> 
+        </div> 
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b>经营指标</b></p>
+        </label>
+
+        <label class="page-name clearfix">
+            <span style="width:60%">合伙成功后开店时间不可超过(天)</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <label class="page-name clearfix">
+            <span style="width:60%">毛利率不得低于(%)</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <label class="page-name clearfix">
+            <span style="width:60%">股东管理办法及要求</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">添加股东管理办法及要求</a> 
+
+        <label class="page-name clearfix">
+            <span style="width:60%">资金监管</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">添加资金监管</a> 
+
+        <label class="page-name clearfix">
+            <span style="width:60%">分红周期(天 / 次)</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <label class="page-name clearfix">
+            <span style="width:60%">第一年预计盈利</span>
+            <input maxlength="20" value="" style="width:40%">
+        </label>
+        <div class="two-buttons">
+                <div class="left">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active_orange">上传合作协议</a>
+                </div>
+                <div class="right">
+                <a id="subbmit-btn" class="submit-new-btn text_btn active_orange">下载合作协议模版</a>
+                 </div> 
+        </div> 
+
+    </div>
+</div>
+
+<!-- 行业选择 -->
+<div id="industry-choose" class="industry-choose" style="z-index: 999">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>已选取的行业</span>
+            <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a-->
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+</div>
+
+    <script src="js/avalon.mobile.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/project-profile.js"></script>
+</body>
+</html>

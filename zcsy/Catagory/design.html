@@ -1,0 +1,35 @@
+<!--div class="title">案例</div-->
+
+
+<ul style="margin-top:60px; width:100%">
+	
+	<li ng-repeat="case in cases" class="box">
+		<a href="#/case/{{case.id}}"><img ng-src="{{'upload/img/'+case.imageUrl}}" width="100%" style="vertical-align:top"></a>
+	</li>
+</ul>
+
+<div style="     position: absolute;
+    top: 17px;
+    right: 10px;
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgba(249, 0, 36, 0.48);
+    background-size: 100% 100%;
+    z-index: 999;
+    background-color: rgba(255, 0, 0, 0.21);" >
+
+     <div style="position:relative">
+                <select ng-model="caseCatagory" ng-change="changeCatagory()" style="-webkit-appearance: none; background-color: transparent;border:none; padding-left:5px; font-size:12px;line-height:25px">
+                  <option value="all">分类查看案例</option>
+                  <option value="h5game">H5游戏 </option>
+                  <option value="h5site">H5页面 </option>
+                  <option value="app">APP</option>
+                  <option value="pcsite">PC网站</option>
+                  <option value="mall">商城 </option>
+                  <option value="vplatform">微信公众平台</option>
+                </select>
+
+                <div style="position:absolute; right:5px; top:5px; font-size:12px">></div>
+    </div>
+  	
+</div>

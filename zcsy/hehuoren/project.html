@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>合火人</title>
+    <meta name="keywords" content="合火人"/>
+    <meta name="description" content="合火人"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="合火人"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/list_style.css" rel="stylesheet"/>
+    <link href="css/project.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="bk_new bk"></div>
+
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+
+        <div class="search"  ms-controller="search" ms-on-tap="controll_search.start_search()">
+            <i></i>
+        </div>
+
+        <div class="search-list"  ms-controller="search">
+            <div class="top">
+                <div class="border">
+                    <i ms-on-tap="controll_search.stop_search(1)"></i>
+                    <input type="search" autocorrect="off" ms-on-keypress="controll_search.input_search()">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--div class="search-result"  ms-controller="search" ms-if="result_name != ''">
+        <p>共找到“<span ms-text="result_name"></span>”相关项目<span ms-text="result_num"></span>个</p><a class="cancel-search" ms-on-tap="controll_search.cancel_search()">取消</a>
+    </div-->
+
+    <div class="filter-occupy">
+        <div id="list-filter" class="filter" ms-controller="list-filter">
+            <div>
+                <a ms-on-tap="list_page()">
+                    <span ms-text="page_name"></span>
+                </a>
+                <a ms-on-tap="list_industry()">
+                    <span ms-text="industry_name"></span>
+                </a>
+                <a ms-on-tap="list_district()">
+                    <span ms-text="district_name"></span>
+                </a>
+                <a ms-on-tap="order()">
+                    <span ms-text="order_name"></span>
+                </a>
+            </div>
+            <ul>
+                <li ms-repeat="list_content" ms-attr-class="$index == window.view_filter.active_offset?'active':''">
+                <span ms-text="el" ms-on-tap="select_this()"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <div class="loading-container">
+            <div class="loading"></div>
+        </div>
+
+        <div class="not-found">
+            <div>
+                <img src="http://dn-acac.qbox.me/404_atm.png">
+                <h3>呀~没找到</h3>
+                <p>很抱歉，未找到与该筛选条件相匹配的结果</p>
+            </div>
+        </div>
+
+        <div class="new-section-list project-list" >
+            <a href="">
+                <section>
+                    <div class="follow"><em class="follow_star" ></em></div>
+                    <div class="summary">
+                        <div class="logo"><img src="img/project.jpg"></div>
+                        <div class="info">
+                            <p class="name">卷皮</p>
+                            <p class="concept">国内最大的互联网工作平台</p>
+
+                            <div>
+                                <p class="need"> 健康管理 · 女性健康 · 女性经济 · 医疗健康</p>
+                                <p class="location"> 北京</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-progress-container">
+                            <div class="new-progress-group">
+                                <div class="new-progress">
+                                    <div class="new-progress-bar" style="width: 50%;"></div>
+                                </div>
+                                <div class="new-progress-sta"><p>50 %</p></div>
+                            </div>
+                            <p><em>项目预期地址：四川成都高新区天仁路</em></p>
+                    </div>
+
+                    <div class="action">
+                        <p class="together"> <span>已完成融资</span> </p>
+                        <p class="submit"> <span>V2级项目</span> </p>
+                        <p class="invest"> <span>互联网</span> </p>
+                    </div>
+                </section>
+            </a>
+
+            <a href="">
+                <section>
+                    <div class="follow"><em class="follow_star"></em></div>
+
+                    <div class="summary">
+                        <div class="logo"><img src="img/project1.jpg"></div>
+                        <div class="info">
+                            <p class="name">下厨房</p>
+                            <p class="concept">中国最具成长性的美食类社区</p>
+
+                            <div>
+                                <p class="need">美食餐饮 · 本地生活 · 电子商务 · 垂直类搜索</p>
+                                <p class="location"> 中国</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-progress-container">
+                            <div class="new-progress-group">
+                                <div class="new-progress">
+                                    <div class="new-progress-bar" style="width: 100%;"></div>
+                                </div>
+                                <div class="new-progress-sta"><p>100 %</p></div>
+                            </div>
+                            <p><em>项目预期地址：四川成都高新区天仁路</em></p>
+                    </div>
+
+                    <div class="action">
+                        <p class="together"> <span>已完成融资</span> </p>
+                        <p class="submit"> <span>V2级项目</span> </p>
+                        <p class="invest"> <span>互联网</span> </p>
+                    </div>
+
+                </section>
+            </a>
+
+            <a href="">
+                <section>
+                    <div class="follow"><em class="follow_star" data-id="10902383"></em></div>
+                    <div class="summary">
+                        <div class="logo"><img src="img/project2.jpg"></div>
+                        <div class="info">
+                            <p class="name">今目标</p>
+
+                            <p class="concept">国内最大的互联网工作平台</p>
+
+                            <div><p class="need"> 移动办公 · 企业工具 · 团队工具</p>
+
+                                <p class="location"> 北京</p></div>
+                        </div>
+                    </div>
+                    <div class="new-progress-container">
+                            <div class="new-progress-group">
+                                <div class="new-progress">
+                                    <div class="new-progress-bar" style="width: 50%;"></div>
+                                </div>
+                                <div class="new-progress-sta"><p>50 %</p></div>
+                            </div>
+                            <p><em>项目预期地址：四川成都高新区天仁路</em></p>
+                    </div>
+
+                    <div class="action">
+                        <p class="together"> <span>已完成融资</span> </p>
+                        <p class="submit"> <span>V2级项目</span> </p>
+                        <p class="invest"> <span>互联网</span> </p>
+                    </div>
+                </section>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div class="position-occupy"></div>
+<div class="page-turn-occupy"></div>
+    <div class="page-turn">
+        <div class="page-turn2">
+        <a class="btn prev-page">上一页</a>
+        <p><i class="current-page">0</i>/<i class="total-page">0</i></p>
+        <a class="btn next-page">下一页</a>
+        </div>
+
+        <!--navigator-->
+        <div class="address-navigator">
+                    <a class="home"><span><b>当前位置：</b></span></a>
+                    <a class="first"><span>合火人风采</span></a>
+                    <a class="second"><span></span></a>
+                    <a class="third"><span></span></a>
+        </div>
+    </div>
+
+</body>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-cookie.js"></script>
+<script src="js/avalon.mobile.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/onepage.js"></script>
+<script src="js/startup_list.js"></script>
+
+</html>

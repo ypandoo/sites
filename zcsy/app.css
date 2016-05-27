@@ -1,0 +1,136 @@
+/* app css stylesheet */
+.shadow {
+  -moz-box-shadow:    0px 3px 5px 6px rgba(123, 121, 121, 0.58);
+  -webkit-box-shadow: 0px 3px 5px 6px rgba(123, 121, 121, 0.58);
+  box-shadow:         0px 3px 5px 6px rgba(123, 121, 121, 0.58);
+}
+
+a
+{
+  text-decoration: none;
+}
+
+ul
+{
+  overflow: hidden;
+  padding: 0;
+
+}
+
+li
+{
+  list-style-type: none;
+}
+
+input select
+{
+  -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+}
+
+textarea, input { outline: none; }
+
+h1,h2, h3, h4, h5, p, a, html, body, input, select
+{
+  font-family: 'Microsoft YaHei';
+  color: #2e2e2e;
+  font-weight: 500;
+}
+
+.title
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 100%;
+    color: #2e2e2e;
+}
+
+
+body, html{
+  margin: 0;
+  padding: 0;
+
+}
+
+img
+{
+  vertical-align: top;
+}
+
+input[type="button"] {
+    width: 80px;
+    height: 25px;
+    border: 1px solid rgba(230, 52, 59, 0.5);
+    background-color: rgba(230, 52, 59, 0.13);
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.try
+{
+      width: 80px;
+    height: 25px;
+    border: 1px solid rgb(230, 52, 59);
+    background-color: rgba(38, 38, 38, 0.73);
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px#000000;
+}
+
+@media only screen and (max-width: 768px) {
+
+  h1
+  {
+    font-size: 2em;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  }
+
+  h3
+  {
+    font-size: 1em;
+  }
+
+  .box
+  {
+    width: 49.99%;
+      height: auto;
+      float: left;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 2000px) {
+
+  h1
+  {
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  }
+
+  h3
+  {
+    font-size: 1.5em;
+  }
+
+  .box
+  {
+    width: 20%;
+      height: auto;
+      float: left;
+  }
+
+  .case_box
+  {
+      width: 33.3333%;
+      height: auto;
+      float: left;
+  }
+}
+

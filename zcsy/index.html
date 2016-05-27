@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>众创思益</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="styles/animate.css">
+  <link rel="stylesheet"  type="text/css" href="styles/public.css" />
+  <link rel="stylesheet"  type="text/css" href="styles/font-dincond.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+ 
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+    <!----header ---------------------->
+    <div id="header">
+        <div class="g-wrap">
+            <a id="logo" href=""></a>
+            <ul id="nav">
+                <li class="n1"><a href="#/catagory" id="index1"><span>首页</span><span class="bkg"></span></a></li>
+                <li class="n2"><a href="#/intro"><span>公司介绍</span><span class="bkg"></span></a></li>
+                <li class="n3"><a href="#/case"><span>业务涵盖</span></span><span class="bkg"></span></a></li>
+                <li class="n4 "><a href="#/culture"><span>企业文化</span><span class="bkg"></span></a></li>
+                <li class="n5 "><a href="#/contact"><span>联系我们</span><span class="bkg"></span></a></li>
+            </ul>
+        </div>
+    </div>
+
+  <div ng-view></div>
+
+  <div style="position:relative; bottom:0; left:0; color:white; line-height:20px;clearfix:both; overflow:hidden; height:20px; width:100%; background-color:#335277; text-align:center">
+    备案号：蜀ICP备16005603号-1 网页供应商：<a href="http://www.vnewcd.com">微新互动</a>
+  </div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+
+  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="public.js"></script>
+  <script src="case/case.js"></script>
+  <script src="culture/culture.js"></script>
+  <script src="intro/intro.js"></script>
+  <script src="Catagory/catagory.js"></script>
+  <script src="contact/contact.js"></script>
+</body>
+</html>
