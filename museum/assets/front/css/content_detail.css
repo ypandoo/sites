@@ -1,0 +1,1231 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url(http://dn-acac.qbox.me/mobile/homepage/OpenSans-ExtraBold.woff) format('woff');
+}
+
+/*注册投资人*/
+.section-container .regist{
+    padding: 30px 0 20px;
+}
+.section-container .regist h4{
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    white-space:nowrap;
+}
+.section-container .regist div{
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    text-align: center;
+}
+.section-container .regist div a{
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 12px 15px 10px;
+    font-weight: 900;
+    margin: 10px 1px 0;
+}
+.section-container .regist div a:active{
+    background: #000;
+    color: #fff;
+}
+/*提供资源*/
+.section-container .resource{
+    background: #F5F5F5;
+    height: 490px;
+    position: relative;
+}
+.icon-msg{
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    width: 25%;
+    max-width: 125px;
+    height: auto;
+    margin-top: -30px;
+}
+.icon-msg-people{
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    width: 20%;
+    max-width: 125px;
+    height: auto;
+    margin-top: -30px;
+}
+.section-container .resource .avatar{
+    position: absolute;
+    z-index: 0;
+    width: 75%;
+    max-width: 320px;
+    height: auto;
+    left: 0;
+    bottom: 0;
+}
+.section-container .resource .founder{
+    position: absolute;
+    bottom: 1%;
+    left: 6%;
+    display: inline-block;
+    height: 21px;
+    padding: 3px 12px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+    background: #ff3d00;
+    overflow: visible;
+}
+.section-container .resource .founder:before{
+    content: '';
+    background: #ff3d00;
+    border-radius: 50% 50%;
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    left: -8px;
+    top: 0;
+}
+.section-container .resource .founder:after{
+    content: '';
+    background: #ff3d00;
+    border-radius: 50% 50%;
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    right: -8px;
+    top: 0;
+}
+.section-container .resource .brief{
+    width: 100%;
+    height: 195px;
+}
+.section-container .resource .brief .logo{
+    width: 100%;
+    padding: 20px 0 10px;
+    text-align: center;
+}
+.section-container .resource .brief .logo img{
+    display: inline-block;
+    width: 105px;
+    margin-top: 25px;
+    height: 39px;
+}
+.section-container .resource .brief p{
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 900;
+    padding: 0 5%;
+    text-align: center;
+}
+.section-container .resource .board-group{
+    position: relative;
+    width: 55%;
+    float: right;
+    text-align: center;
+    min-width: 200px;
+    padding-right: 1%;
+}
+.section-container .resource .board-group a{
+    display: inline-block;
+    border: 1px solid #bdbdbd;
+    padding: 10px 5px;
+    height: 60px;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    max-width: 240px;
+}
+.section-container .resource .board-group a img{
+    display: inline-block;
+    float: left;
+    width: 40px;
+    padding: 4px;
+}
+.section-container .resource .board-group a div{
+    display: inline-block;
+    float: left;
+    width: 140px;
+    padding: 3px 0 3px 5px;
+}
+.section-container .resource .board-group a h6{
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    color: #dd2c00;
+}
+.section-container .resource .board-group a p{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 900;
+    white-space:nowrap;
+}
+/*闪投列表*/
+.section-container .sd-list{
+    /*padding: 30px 0 0;*/
+}
+.section-container .sd-list .description{
+    width: 100%;
+    padding: 7px 3% 0;
+}
+.section-container .sd-list .description p{
+    text-align: justify;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0 3%;
+}
+.section-container .sd-list .pro-info{
+    position: relative;
+    z-index: 0;
+    /*margin-top: 30px;*/
+    /*height: 265px;*/
+    background: #f5f5f5;
+    background-position: center;
+    overflow: hidden;
+}
+.section-container .sd-list .pro-info .layout{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top:-2px;
+    height: 100%;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+.section-container .sd-list .pro-info .info-container{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    /*background: rgba(255,255,255,0.8);*/
+}
+.section-container .sd-list .pro-info .corner{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    color: #fff ;
+    right: -27px;
+    top: 10px;
+    background:#ff3d00;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    text-align: center;
+    line-height: 31px;
+    font-size: 16px;
+}
+.section-container .sd-list .pro-info .arrow{
+    height: 100%;
+    width: 15%;
+    text-align: center;
+}
+.section-container .sd-list .pro-info .left{
+    float: left;
+}
+.section-container .sd-list .pro-info .right{
+    float: right;
+}
+.section-container .sd-list .pro-info .arrow em{
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    margin-top: 95px;
+}
+.section-container .sd-list .pro-info .left em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/arrow_left_grey.png") no-repeat center;
+    background-size: 70px 70px;
+}
+.section-container .sd-list .pro-info .left:active em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/arrow_left_black.png") no-repeat center;
+    background-size: 70px 70px;
+}
+.section-container .sd-list .pro-info .right em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/arrow_right_grey.png") no-repeat center;
+    background-size: 70px 70px;
+}
+.section-container .sd-list .pro-info .right:active em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/arrow_right_black.png") no-repeat center;
+    background-size: 70px 70px;
+}
+.section-container .sd-list .pro-info-unit{
+}
+.section-container .sd-list .pro-info .content{
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+.section-container .sd-list .pro-info .content .circle{
+    margin-top: 30px;
+    width: 100%;
+    height: 110px;
+    text-align: center;
+}
+.section-container .sd-list .pro-info .content .circle .circles-text{
+    color: #ff3d00 ;
+    font-size: 30px !important;
+    font-weight: 900;
+}
+.section-container .sd-list .pro-info .content .name{
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+}
+.section-container .sd-list .pro-info .content .name h4{
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 900;
+}
+.section-container .sd-list .pro-info .concept{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+.section-container .sd-list .pro-info .concept p{
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+.section-container .sd-list .pro-info .info{
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+.section-container .sd-list .pro-info .info p{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    padding-left: 26px;
+    white-space: nowrap;
+}
+.section-container .sd-list .pro-info .info p span{
+    color: #ff3d00;
+    font-weight: 900;
+    font-size: 16px;
+}
+.section-container .sd-list .pro-info .info p:before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top:5px;
+    left: 8px;
+    width: 14px;
+    height: 14px;
+}
+.section-container .sd-list .pro-info .info .location{
+    float: left;
+    text-align: left;
+}
+.section-container .sd-list .pro-info .info .location:before{
+    background: url("https://dn-acac.qbox.me/mobile/homepage/location.png") no-repeat;
+    background-size: 14px 14px;
+}
+.section-container .sd-list .pro-info .info .day{
+    float: right;
+    text-align: right;
+}
+.section-container .sd-list .pro-info .info .day:before{
+    background: url("https://dn-acac.qbox.me/mobile/homepage/calendar.png") no-repeat;
+    background-size: 13px 14px;
+}
+.section-container .sd-list .fin-info{
+    height: 50px;
+    width: 100%;
+    background: #eee;
+    padding: 0 2%;
+}
+.section-container .sd-list .fin-info p{
+    display: inline-block;
+    height: 100%;
+    width: 33%;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 50px;
+    white-space: nowrap;
+}
+.section-container .sd-list .fin-info p.left{
+    float: left;
+    text-align: left;
+}
+.section-container .sd-list .fin-info p.right{
+    float: right;
+    text-align: right;
+}
+.section-container .sd-list .fin-info p span{
+  font-size: 14px;
+      font-weight: 500;
+      color: #ff3d00;
+}
+.section-container .sd-list .list-container{
+    width: 100%;
+    height: 80px;
+    margin-top:0;
+    overflow: visible;
+    /*background: #f5f5f5;*/
+    position: relative;
+}
+.section-container .sd-list .list-container ul{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+}
+.section-container .sd-list .list-container ul li{
+    display: inline-block;
+    white-space: normal;
+    text-align: center;
+    float: none;
+}
+.section-container .sd-list .list-container ul li div{
+    height: 80px;
+    width: 60px;
+    padding: 15px 5px;
+}
+.section-container .sd-list .list-container ul li div img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 3px;
+}
+.section-container .sd-list .list-container ul .more div{
+    position: relative;
+}
+.section-container .sd-list .list-container ul .more div img{
+    background: none;
+    border: none;
+}
+.section-container .sd-list .list-container ul .more p{
+    position: absolute;
+    display: inline-block;
+    font-size: 13px;
+    width: 60px;
+    height: 30px;
+    top: 40px;
+    left: 0;
+}
+.section-container .sd-list .list-container .selector{
+    position: absolute;
+    height: 80px;
+    width: 60px;
+    left: 0;
+    top: 0;
+    -webkit-transition:left .3s ease;
+    transition:left .3s ease
+}
+.section-container .sd-list .list-container .selector div{
+    margin-top: 13px;
+    margin-left: 3px;
+    height: 54px;
+    width: 54px;
+    border: 2px solid #000;
+}
+.section-container .sd-list .list-container .selector div:before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+    top: 8px;
+    left: 25px;
+}
+/*潜力新星*/
+.section-container .stars{
+    position: relative;
+    padding: 30px 0 0;
+}
+.section-container .stars .description{
+    width: 100%;
+    padding: 7px 3% 0;
+}
+.section-container .stars .description p{
+    text-align: justify;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0 3%;
+}
+.section-container .stars .list-container{
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.section-container .stars .list-container .corner{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    color: #fff ;
+    right: -27px;
+    top: 10px;
+    background:#ff3d00;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    text-align: center;
+    line-height: 31px;
+    font-size: 16px;
+    z-index: 5;
+}
+.section-container .stars .list-container .list{
+    display: inline-block;
+    width: 100%;
+    height: 362px;
+    padding: 20px 5%;
+    background: #F5F5F5;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.section-container .stars .list-container .list li{
+    display: inline-block;
+    width: 150px;
+    height: 322px;
+    margin-right: 5%;
+    background: #fff;
+    vertical-align:bottom;
+    white-space: normal;
+    float: none;
+}
+.section-container .stars .list-container .list li .logo{
+    width: 150px;
+    height: 100px;
+    padding: 25px 20px;
+    text-align: center;
+}
+.section-container .stars .list-container .list li .logo img{
+    width: 50px;
+    height: 50px;
+}
+.section-container .stars .list-container .list li h6{
+    display: inline-block;
+    height: 32px;
+    width: 100%;
+    font-size: 20px;
+    padding: 2px 0;
+    text-align: center;
+    font-weight: 900;
+}
+.section-container .stars .list-container .list li .brief{
+    display: inline-block;
+    width: 100%;
+    padding: 5px 14px;
+    font-size: 13px;
+    line-height: 20px;
+    height: 90px;
+    text-align: center;
+}
+.section-container .stars .list-container .list li .tag{
+    width: 100%;
+    padding: 10px 10px;
+    background: #eee;
+}
+.section-container .stars .list-container .list li .tag p{
+    position: relative;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+}
+.section-container .stars .list-container .list li .tag p span{
+    color: #666;
+    font-size: 12px;
+    line-height: 18px;
+}
+.section-container .stars .list-container .list li .tag p em{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+.section-container .stars .list-container .list li .tag .location{
+    height: 20px;
+}
+.section-container .stars .list-container .list li .tag .industry{
+    height: 40px;
+}
+.section-container .stars .list-container .list li .tag .location em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/location.png") no-repeat;
+    background-size: 12px 12px;
+}
+.section-container .stars .list-container .list li .tag .industry em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/tag.png") no-repeat;
+    background-size: 11px 11px;
+}
+.section-container .stars .list-container .list li .tag .group{
+    width: 100%;
+    height: 20px;
+}
+.section-container .stars .list-container .list li .tag .group .follow{
+    float: left;
+}
+.section-container .stars .list-container .list li .tag .group .invite{
+    float: right;
+}
+    /*完成融资*/
+.section-container .after{
+    height: 500px;
+    position: relative;
+    padding: 30px 0 0;
+}
+.section-container .after .description{
+    width: 100%;
+    padding: 7px 3% 0;
+}
+.section-container .after .description p{
+    text-align: justify;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0 3%;
+}
+.section-container .after .avatar{
+    position: absolute;
+    z-index: 0;
+    width: 65%;
+    max-width: 290px;
+    height: auto;
+    right: 0;
+    bottom: 0;
+}
+.section-container .after .founder{
+    position: absolute;
+    bottom: 1%;
+    right: 6%;
+    display: inline-block;
+    height: 21px;
+    padding: 3px 12px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+    background: #ff3d00;
+    overflow: visible;
+}
+.section-container .after .founder:before{
+    content: '';
+    background: #ff3d00;
+    border-radius: 50% 50%;
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    left: -8px;
+    top: 0;
+}
+.section-container .after .founder:after{
+    content: '';
+    background: #ff3d00;
+    border-radius: 50% 50%;
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    right: -8px;
+    top: 0;
+}
+.section-container .after .case{
+    position: relative;
+    width: 68%;
+    height: 310px;
+    padding: 20px 6% 0;
+}
+.section-container .after .case img{
+    display: inline-block;
+    width: 100px;
+    height: auto;
+}
+.section-container .after .case p{
+    display: inline-block;
+    position: relative;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 0;
+}
+.section-container .after .detail{
+    display: inline-block;
+    position: absolute;
+    left: 6%;
+    bottom: 7%;
+    padding: 6px 7px 3px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+    color: #ff3d00;
+    border: 1px solid #ff3d00;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+.section-container .after .detail:active{
+    background:#ff3d00 ;
+    color: #fff;
+}
+.section-container .after .more{
+    display: inline-block;
+    height: 20px;
+}
+.section-container .after .more a{
+    position: absolute;
+    display: inline-block;
+    left: 6%;
+    bottom: 1%;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 20px;
+    overflow: visible;
+}
+.section-container .after .case .more a:after{
+    content: '';
+    position: absolute;
+    background: url("http://dn-acac.qbox.me/mobile/homepage/arrow_b.png") no-repeat;
+    background-size: 14px 10px;
+    width: 20px;
+    height: 15px;
+    right: -25px;
+    top: 2px;
+}
+/*手机端*/
+.section-container .mobile{
+    position: relative;
+    padding: 30px 0 0;
+    background: #ff3d00;
+}
+.section-container .mobile h3{
+    color: #fff;
+}
+.section-container .mobile .content{
+    width: 100%;
+}
+.section-container .mobile .content .screenshot{
+    width: 50%;
+    height: auto;
+    margin: 35px 0 -4px 5%;
+}
+.section-container .mobile .content .app-download{
+    width: 44%;
+    float: right;
+}
+.section-container .mobile .content .app-download a{
+    position: relative;
+    overflow: visible;
+    display: inline-block;
+    width: 100%;
+    margin-top: 10%;
+    padding: 20% 25% 3%;
+    text-align: center;
+}
+.section-container .mobile .content .app-download a .app{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    border-radius: 20%;
+}
+.section-container .mobile .content .app-download .finger{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-left: 35%;
+}
+.section-container .mobile .content .app-download a .finger img{
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+}
+.section-container .mobile .content .app-download p {
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 900;
+    line-height: 20px;
+    white-space: nowrap;
+}
+/*课程*/
+.section-container .classes{
+    padding: 30px 0 20px;
+}
+.section-container .classes h4{
+display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.section-container .classes .btn-group{
+    width: 100%;
+    padding: 15px 0;
+    overflow: hidden;
+}
+.section-container .classes .btn-group a{
+    display: inline-block;
+    float: left;
+    height: 70px;
+    width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+}
+.section-container .classes .btn-group a p{
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    line-height: 20px;
+    width: 130px;
+    background: #F5F5F5;
+    padding: 15px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.section-container .classes .btn-group a p:active{
+    background: #666;
+    color: #fff;
+}
+.section-container .classes .btn-group a.new p:after{
+    content: 'New';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    color: #fff;
+    right: -18px;
+    top:5px;
+    text-align: center;
+    background: #74C374;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.section-container .classes .btn-group a.hot p:after{
+    content: 'Hot';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #fff;
+    right: -18px;
+    top:5px;
+    text-align: center;
+    background: #ff3d00;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+/*快速入口*/
+.section-container .quick{
+    overflow: hidden;
+}
+.section-container .quick a{
+    display: inline-block;
+    height: 120px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    background: #F5F5F5;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 30px 0;
+}
+.section-container .quick a img{
+    display: inline-block;
+    width: 25px;
+    height: auto;
+}
+.section-container .quick a h4{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+.section-container .quick a p{
+    font-size: 12px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+.section-container .empty{
+    height: 50px;
+}
+/*Footer*/
+.section-container .footer{
+    background: #424242;
+    text-align: center;
+    overflow: hidden;
+}
+.section-container .footer a{
+    display: inline-block;
+    padding: 8px 0 8px;
+    width: 100%;
+    text-align: center;
+}
+.section-container .footer a img{
+    height: 30px;
+    width: 30px;
+}
+.section-container .footer a h4{
+    font-size: 22px;
+    color: #fff;
+    line-height: 27px;
+    letter-spacing: 2px;
+}
+.section-container .footer a p{
+    font-size: 12px;
+    color: #fff;
+}
+/*分享到微信 二维码*/
+.share-qacode {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    text-align:center;
+    top:0;
+    left:0;
+    background:rgba(255, 255, 255, 0.92);
+    z-index:99;
+}
+
+.share-qacode .summary {
+    position:absolute;
+    display:inline-block;
+    width:306px;
+    top:46%;
+    left:50%;
+    margin-left:-154px;
+    margin-top:-160px;
+}
+
+.share-qacode h2 {
+    font-size:30px;
+}
+
+.share-qacode h5 {
+    font-size:20px;
+    color:#FC5830;
+    line-height:32px;
+    margin-top:8px;
+}
+
+.share-qacode p {
+    font-size:14px;
+}
+
+.share-qacode .image-container {
+    margin-top:12px;
+}
+
+.share-qacode .image-container img {
+    width:218px;
+}
+
+.share-qacode .close {
+    position:absolute;
+    font-size:36px;
+    float:right;
+    top:0;
+    right:0;
+    padding: 10px 20px;
+    cursor:pointer;
+}
+/*公共动画*/
+.pub-fadein{
+    -webkit-animation:pubfadein 0.3s linear 0s normal forwards;
+    animation:pubfadein 0.3s linear 0s normal forwards;
+}
+.pub-fadeout{
+    -webkit-animation:pubfadeout 0.3s linear 0s normal forwards;
+    animation:pubfadeout 0.3s linear 0s normal forwards;
+}
+/*投资指数基金*/
+.jijin{
+    background: rgba(0, 0, 0, 0.52);
+}
+.jijin .mg{
+    width: 100%;
+    height: 15%;
+}
+.jijin .con{
+    position: relative;
+    width: 90%;
+    display: inline-block;
+    overflow: visible;
+}
+.jijin .con img{
+    width: 100%;
+    height: 100%;
+}
+.jijin .con .hide{
+    display: inline-block;
+    position: absolute;
+    right: -12px;
+    top:-12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:#dc2b01;
+    color: #fff;
+    font-size: 26px;
+}
+.jijin .btn-group{
+    width: 90%;
+}
+/*关键帧*/
+@-webkit-keyframes fadeout{
+    0% {
+        top: 0;
+        opacity: 0.4;
+    }
+
+    100% {
+        top: -15%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout{
+    0% {
+        top: 0;
+        opacity: 0.4;
+    }
+
+    100% {
+        top: -15%;
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadein{
+    0% {
+        top: -15%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 0.4;
+    }
+}
+
+@keyframes fadein{
+    0% {
+        top: -15%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 0.4;
+    }
+}
+@-webkit-keyframes fadeleft{
+    0% {
+        right: 13%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 5%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeleft{
+    0% {
+        right: 13%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 5%;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes pubfadein{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pubfadein{
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes pubfadeout{
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pubfadeout{
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+/*小屏样式*/
+@media screen and (max-width: 360px) {
+    .pub-title h3,
+    .section-container .data a h3,
+    .section-container .data a h4{
+        font-size: 24px;
+    }
+    .section-container .after .detail{
+        font-size: 14px;
+    }
+    .section-container .classes h4{
+        font-size: 20px;
+    }
+    .section-container .data a h5{
+        font-size: 20px;
+    }
+    .section-container .regist h4{
+        font-size: 13px;
+    }
+    .section-container .mobile .content .app-download p{
+        font-size: 13px;
+        line-height: 13px;
+    }
+    .section-container .regist div a{
+        font-size: 18px;
+    }
+    .section-container .sd-list .pro-info .corner,
+    .section-container .stars .list-container .corner{
+        font-size: 14px;
+    }
+    .section-container .resource .brief p{
+        font-size: 13px;
+    }
+    .first-screen.angelred .text-div div a{
+        font-size: 16px;
+    }
+    .first-screen.angelred .text-div p{
+        font-size: 21px;
+    }
+    .section-container .after .case p{
+        line-height: 16px;
+    }
+}
+
+.project-icon
+{
+        width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.details .personal-summary {
+    display: inline-block;
+    width: 100%;
+    padding: 25px 5.2%;
+    background: white;
+}
+
+.details .personal-summary .item {
+    margin-top: 15px;
+}
+
+.details .personal-summary h1 {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.details .personal-summary h3 {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    color: #aaa;
+}
+
+.item_name_bg{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 6;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)),color-stop(0.4, rgba(0,0,0,.4)), to(rgba(0,0,0,.8)));
+  -webkit-background-origin: padding;
+  -webkit-background-clip: content;
+}
+
+.item_name_bg p{
+  line-height: 50px;
+    color: white;
+    margin-left: 2%;
+    font-size: 16px;
+}
+
+.content_detail{
+  padding:20px;
+}
+
+.content_detail .content_title{
+  text-align: center;
+    font-size: 20px;
+    padding: 20px 0 10px 0;
+    font-weight: 600;
+}
+
+.content_detail .content_time{
+  text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.content_detail .content_html p img{
+  width: 100%;
+}
+
+.content_detail .content_html p span{
+  font-family: 微软雅黑, "Microsoft YaHei";
+  line-height: 25px;
+}

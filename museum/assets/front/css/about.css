@@ -1,0 +1,603 @@
+/*页面容器*/
+.details {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: -3px;
+}
+
+.slide-page {
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  background-color: #FFF;
+  margin-bottom: 50px;
+}
+
+.content .title {
+    height: 40px;
+    width: 100%;
+    border-top: 2px solid #f5f5f5;
+    background: #FFFFFF;
+}
+
+.content .title h1 {
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.content .news_img
+{
+  padding: 10px;
+height: 80px;
+float: left;
+}
+/*简介*/
+.content .summary {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 15px 5%;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.content .summary .avatar {
+    position: relative;
+    float: left;
+    height: 70px;
+    width: 70px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+
+.content .summary .avatar input {
+    display: inline-block;
+    width: 0;
+    height: 0;
+}
+
+.content .summary .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.content .summary .avatar .process {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    z-index: 4;
+    width: 70px;
+    height: 70px;
+    background: url("http://dn-acac.qbox.me/mobile/public/preloader.gif") no-repeat center;
+    background-size: 70px;
+}
+
+.content .summary .avatar .process.active {
+    display: inline-block;
+}
+.content .summary .avatar p {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    padding: 4px 0 3px;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.content .summary .profile {
+    display: inline-block;
+    float: left;
+    padding: 5px 0 0 6%;
+    height: 70px;
+    width: 75%;
+}
+
+.content .summary .profile h3 {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.content .summary .profile h5,
+.content .summary .profile h5 span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #666;
+}
+
+.content .summary .arrow {
+    display: inline-block;
+    position: absolute;
+    background: url("http://dn-acac.qbox.me/arrow_right.png") no-repeat center;
+    background-size: 35px;
+    width: 35px;
+    height: 35px;
+    right: 5%;
+    top: 35px;
+}
+
+/*条目*/
+.content .item {
+  position: relative;
+  width: 70%;
+  height: 80px;
+  background: #f5f5f5;
+  /* margin-top: 4px; */
+  padding: 5px;
+  float: left;
+}
+
+.content .item h2{
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 600;
+}
+
+.content .item h3{
+    font-size: 12px;
+    color: #696969;
+}
+
+.content .item small{
+    font-size: 50%;
+}
+
+.content .item .item-name {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 26px;
+}
+
+.content .item input {
+    display: inline-block;
+    width: 60%;
+    font-family: "PingHei", "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", "Verdana", "sans-serif";
+    height: 32px;
+    font-size: 14px;
+    line-height: 32px;
+    margin-left: 10px;
+    margin-top: 9px;
+    border: none;
+    background-color: transparent;
+}
+
+.content .item input:focus {
+    outline: none;
+}
+
+.content .item .handle {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    height: 50px;
+}
+
+.content .item .handle span {
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+}
+
+.content .item .handle span.att-edit,
+.content .item .handle span.edit {
+    background: url("http://dn-acac.qbox.me/mobile/public/paper.png") no-repeat center;
+    background-size: 18px;
+}
+
+.content .item .handle span.att-save,
+.content .item .handle span.save {
+    display: none;
+    padding: 14px 0 6px;
+    width: 45px;
+}
+
+.content .item .handle span.att-cancel,
+.content .item .handle span.cancel {
+    display: none;
+    width: 45px;
+    padding: 14px 0 6px;
+}
+
+.content .item .handle.active span.att-edit,
+.content .item .handle.active span.edit {
+    display: none;
+}
+
+.content .item .handle.active span.att-save,
+.content .item .handle.active span.save {
+    display: inline-block;
+}
+
+.content .item .handle.active span.att-cancel,
+.content .item .handle.active span.cancel {
+    display: inline-block;
+}
+
+.content .item .handle span a {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 3px 3px 2px;
+    vertical-align: 12px;
+}
+
+.content .item .handle span a:active {
+    background: #000;
+    color: #fff;
+}
+
+.content .item .arrow {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+}
+
+.content .item .time{
+        position: absolute;
+    top: 8px;
+    right: 10px;
+}
+
+.content .item .arrow em {
+    display: inline-block;
+    position: absolute;
+    background: url("http://dn-acac.qbox.me/arrow_right.png") no-repeat center;
+    background-size: 35px;
+    width: 35px;
+    height: 35px;
+    right: 5%;
+    top: 8px;
+}
+
+.content .desc {
+    width: 100%;
+    height: 100px;
+    background: #f5f5f5;
+    padding: 0 5% 15px;
+}
+
+.content .desc textarea {
+    background: #f5f5f5;
+    color: #666;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+}
+
+.content .desc textarea.active {
+    background: #fff;
+}
+
+.content .desc textarea:focus {
+    outline: none;
+    font-size: 14px;
+    font-family: "PingHei", "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", "Verdana", "sans-serif";
+}
+
+/*修改密码*/
+.change-pwd {
+    display: none;
+}
+
+.change-pwd.active {
+    display: inline-block;
+}
+
+.change-pwd .header {
+    position: relative;
+    height: 46px;
+    width: 100%;
+    background: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.change-pwd .header a {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    z-index: 1;
+    background: url("http://dn-acac.qbox.me/mobile/public/back-arrow.png") no-repeat center;
+    background-size: 25px;
+}
+
+.change-pwd .header h3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}
+/*选择区域*/
+.region {
+    display: none;
+}
+
+.region.active {
+    display: inline-block;
+}
+
+.region .header {
+    position: relative;
+    height: 46px;
+    width: 100%;
+    background: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.region .header a {
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    z-index: 1;
+    background: url("http://dn-acac.qbox.me/mobile/public/back-arrow.png") no-repeat center;
+    background-size: 25px;
+}
+
+.region .header h3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.region .content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.region .content ul {
+    display: block;
+    padding: 0 5%;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.region .content ul::-webkit-scrollbar {
+
+}
+
+.region .content ul li {
+    display: block;
+    height: 50px;
+    width: 100%;
+    line-height: 53px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.region .content ul.left li.active:after {
+    content: '';
+    height: 50px;
+    width: 50px;
+    margin-right: -10px;
+    display: inline-block;
+    float: right;
+    background: url("http://dn-acac.qbox.me/arrow_right.png") no-repeat 50% 50%;
+    background-size: 30px 30px;
+}
+
+.region .content ul.right li.active:after {
+    content: '';
+    height: 50px;
+    width: 50px;
+    margin-right: -10px;
+    display: inline-block;
+    float: right;
+    background: url("http://dn-acac.qbox.me/icon_selection.png") no-repeat 50% 50%;
+    background-size: 15px 15px;
+}
+
+.region .content ul.left {
+    left: 0;
+}
+
+.region .content ul.right {
+    right: 0;
+}
+
+.region .confirm {
+    width: 100%;
+    height: 50px;
+    padding: 11px 0;
+    border-top: 1px solid #f5f5f5;
+    text-align: center;
+}
+
+.region .confirm a {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 3px 30% 2px;
+}
+
+.region .confirm a:active {
+    background: #000;
+    color: #fff;
+}
+/*表单部分 RESET 验证按钮*/
+.verify-btn{
+    width: auto;
+    height: 26px;
+    float: right;
+    font-size: 14px;
+    padding: 1px 10px 0;
+    margin-top: 12px;
+    margin-right: 16px;
+    border-color: #A9A9A9;
+}
+.verify-btn.disable{
+    color: #AAA;
+    border-color: #CCB !important;
+    background: none;
+    box-shadow: none;
+}
+.eye {
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    line-height: 48px;
+    margin-right: 16px;
+    padding: 0 8px;
+}
+
+label > i input {
+    font-size: 14px;
+    margin-top: 10px;
+    width: 55%;
+}
+
+label > i input:focus {
+    outline: none;
+}
+
+input[type="text"][disabled] {
+    color: #000;
+}
+
+.tab{
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 8px;
+    border-top: 1px solid #f5f5f5;
+}
+.tab a{
+    display: inline-block;
+    font-size: 16px;
+    padding: 3px 0;
+    font-weight: 500;
+}
+.tab a.left{
+    padding-left: 2px;
+    margin-right: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.left.active{
+    padding-left: 2px;
+    border-bottom: 2px solid #000;
+}
+.tab a.right{
+    padding-left: 1px;
+    margin-left: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.right.active{
+    padding-left: 1px;
+    border-bottom: 2px solid #000;
+}
+
+/*头部reset*/
+.newhead{
+    position: absolute;
+    top: 0;
+    background: rgba(255,255,255,.01);
+}
+.newhead .logo {
+    background:url(../img/logo_white.png) no-repeat left center;
+    background-size:auto 25px;
+}
+
+.newhead .options span {
+    background:url(../img/logo_white.png) no-repeat right center;
+    background-size:auto 30px;
+}
+.newhead .account span{
+    background:url(../img/wap_user_h.svg) no-repeat 50% 80%;
+    background-size:auto 18px;
+}
+.newhead .account.active span{
+    width: 24px;
+    height: 24px;
+    background-size:auto 24px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50% 50%;
+}
+.newhead .hidden-menu li {
+    color:#FC5830;
+}
+
+.newhead-container
+{
+    position: relative;
+    background: #ec422b;
+    height: 180px;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.newhead-container .title
+{
+    line-height: 30px;
+    text-align: center
+}
+
+.newhead-container .title h1
+{
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.newhead-container .title h1 small
+{
+    font-size: 50%;
+}
+.content .html p{
+   padding: 0px 25px 0 25px;
+}
+
+.content .html p span{
+      font-family: 微软雅黑, "Microsoft YaHei";
+      font-size: 12px;
+      line-height: 25px;
+}
+
+.content .html p img{
+  width: 100%;
+  margin: 20px 0 20px 0;
+}

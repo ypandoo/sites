@@ -1,0 +1,273 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+
+/*******************
+    branding head
+  *******************/
+
+.section-list section {
+  float:left;
+  min-height:114px;
+  padding-top:16px;
+}
+
+.section-list .summary h3 {
+  font-size:25px;
+  margin-bottom:2px;
+}
+
+.section-list .logo {
+  width:70px;
+  height:70px;
+}
+
+.section-list .logo img {
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  margin-top: 10px;
+}
+
+.section-list .summary p {
+  color:#666;
+  line-height:18px;
+}
+
+.section-list .summary p:empty {
+  display:inline-block;
+}
+
+.section-list .summary p.sliver {
+  color:#888;
+  font-weight:100;
+}
+
+.section-list .summary .item-state {
+  margin-top:6px;
+}
+/*列表筛选样式自定义*/
+.filter div a{
+    width: 45%;
+}
+.filter div a span{
+    min-width: 120px;
+}
+.filter div a span:after{
+    width: 45px;
+}
+/*新版投资人列表*/
+.details{
+    background: #eee;
+}
+.investor-list{
+  width: 100%;
+  position: relative;
+}
+.investor-list section{
+  position: relative;
+  width: 100%;
+  padding: 22px 0 0;
+  margin-bottom: 6px;
+  background: #FFF;
+  overflow: hidden;
+  -webkit-animation: fadeIn 0.7s linear 0s normal forwards;
+  animation: fadeIn 0.7s linear 0s normal forwards;
+}
+.investor-list section .left{
+    float: left;
+}
+.investor-list section .right{
+    float: right;
+}
+
+.investor-list section .summary{
+    width: 100%;
+    overflow: hidden;
+    min-height: 100px;
+    padding: 0 3%;
+}
+.investor-list section .summary .avatar{
+    width: 30%;
+    text-align: center;
+}
+.investor-list section .summary .avatar p{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+}
+.investor-list section .summary .avatar p span{
+    font-size: 12px;
+}
+.investor-list section .summary .avatar img{
+    width: 100%;
+    height: auto;
+    min-width: 60px;
+    max-width: 100px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.investor-list section .summary .text{
+    width: 70%;
+    min-width: 80px;
+    min-height: 80px;
+    text-align: center;
+    padding: 0 2% 0 3%;
+}
+.investor-list section .summary .text p{
+    display: inline-block;
+    line-height: 32px;
+    width: 100%;
+    text-align: left;
+}
+.investor-list section .summary .text .basic{
+}
+.investor-list section .summary .text .basic .name{
+    font-size: 25px;
+    white-space: nowrap;
+}
+.investor-list section .summary .text .basic .title{
+    font-size: 16px;
+    color: #757575;
+    margin-left: 1em;
+}
+
+.investor-list section .summary .text .desc{
+    font-size: 14px;
+    line-height: 22px;
+    min-height: 70px;
+    color: #333;
+    border-bottom: 1px dashed #ddd;
+}
+.investor-list section .summary .text p em{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/homepage/location.png") no-repeat;
+    background-size: 12px 12px;
+}
+.investor-list section .summary .text .figure{
+    white-space: nowrap;
+    font-size: 12px;
+}
+.investor-list section .summary .text .figure span{
+    font-size: 12px;
+}
+.investor-list section .summary .text .after{
+    /*margin-left: 1em;*/
+}
+.investor-list section .action{
+    width: 100%;
+    height: 39px;
+    border-top: 1px #f5f5f5 solid;
+    border-bottom: 1px #e0e0e0 solid;
+    overflow: hidden;
+}
+.investor-list section .action a{
+    position: relative;
+    display: inline-block;
+    width: 33%;
+    height: 39px;
+    padding: 8px 0;
+    float: left;
+    text-align: center;
+    border-radius: 3px;
+}
+.investor-list section .action.double a{
+    width: 50%;
+}
+.investor-list section .action a:active{
+    border: 1px solid #f5f5f5;
+}
+.investor-list section .action a span{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    width: 100%;
+}
+.investor-list section .action a.follow em{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 2px;
+    background-size: 10px 20px;
+}
+.investor-list section .action a.follow.active em{
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 -10px;
+    background-size: 10px 20px;
+    margin-bottom: -2px;
+}
+.investor-list section .action a.invest em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcredit-card.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+.investor-list section .action a.invest span{
+    border-left: 1px solid #f5f5f5;
+}
+.investor-list section .action a.invest.active{
+    border: 1px solid #f5f5f5;
+}
+.investor-list section .action a.invest.active:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #e0e0e0;
+    top: 32px;
+    left: 50%;
+}
+.investor-list section .action a.submit span{
+    border-left: 1px solid #f5f5f5;
+}
+.investor-list section .action a.submit em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcopy.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+.investor-list section .history{
+    display: none;
+    width: 100%;
+    height: 0;
+    background: #f0f0f0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.investor-list section .history .list-container::-webkit-scrollbar{
+    display: none;
+}
+.investor-list section .history .list-container{
+    width: 100%;
+    height: 60px;
+    padding: 8px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    letter-spacing: 0;
+}
+.investor-list section .history .list-container a{
+    display: inline;
+}
+.investor-list section .history .list-container a img{
+    height: 44px;
+    width: 44px;
+    border-radius: 3px;
+    margin: 0 4px;
+    background: url("http://dn-acac.qbox.me/mobile/listloading.gif") no-repeat center;
+    background-size: 100px 100px;
+}
