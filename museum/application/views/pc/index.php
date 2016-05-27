@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>奥泰医疗系统有限责任公司</title>
+<title>Tibet Museum</title>
 
 <link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
 

@@ -4,8 +4,8 @@
         return (typeof  s != 'undefined' && typeof  this[s] == 'undefined') ? this[s] = {} : (this[s] || {});
     };
 
-		this.base_url = 'http://localhost/museum/';
-    this.upload_img = 'http://localhost/museum/uploads/img/';
+		this.base_url = 'http://www.vnewcd.com/';
+    this.upload_img = 'http://www.vnewcd.com/museum/uploads/img/';
 
     //跨域获取数据方法
     this.base_remote_data={
