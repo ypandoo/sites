@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>广乐食品</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jPages.css">
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jPages.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1><a href="index.html"><img src="img/logo.png" width="100" height="80" alt="广乐食品"></a></h1>
+			<div class="nav">
+			<ul>
+	    	<li>
+	        	<a href="index.html" class="animate">首页</a>
+	      </li>
+	        <li>
+	        	<a  href="about.html" class="animate">公司简介 </a>
+	        </li>
+	        <li>
+	        	<a href="product.html" class="animate">产品系列</a>
+	        </li>
+	        <li>
+	        	<a href="research.html" class="animate">销售网络</a>
+	        </li>
+	        <li>
+	        	<a href="contact.html" class="animate">联系我们</a>
+	        </li>
+	    </ul>
+	</div>
+</div>
+
+
+
+    <div id="subBanner" style="background-image:url(img/subBanner2.jpg);">
+
+    </div>
+
+		<div id="wj_subnav">
+        <div class="wj_subtopbg">
+            <div class="wjsn_top">
+                <div class="wjsnto_left"><a href="javascript:;" class="menuCur">销售网络</a></div>
+            </div>
+        </div>
+    </div>
+
+		<div class="lr_about_Des">
+            	<div class="Idv1">
+                	<strong>四川广乐食品有限公司</strong>
+				电话：028-84853288<br>
+				地址：成都经济技术开发区雅士路118号<br>
+                </div>
+                <div class="Idv2">
+                	<strong>昆山耀扬商贸有限公司</strong>
+电话：0512-50118472<br>
+地址：江苏省昆山市陆家镇星圃路58号-3
+                </div>
+
+                <div class="Idv2" style="float:left; width:600px; padding-bottom:50px;">
+                	<br><strong>北京广乐聚源贸易有限公司</strong>
+
+									电话：020-84335739
+									地址：北京市顺义区李桥镇王家场林河工业区
+                </div>
+  	</div>
+
+		<div id="wjp_gaisu">
+				<div id="wjpbig_img">
+					<img src="img/sales.jpg" alt="" />
+				</div>
+		</div>
+
+    </div>
+
+
+	<div id="homeFooter">
+		<div class="homeFooter">
+						<div class="homeFooterBottom">Copyright(C)2009-2014广乐食品&nbsp;&nbsp;&nbsp;&nbsp;
+							蜀ICP备11020230号&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="http://www.vnewcd.com" target="_blank">网站建设</a>：
+							<a href="http://www.vnewcd.com" target="_blank">微新互动</a>
+						</div>
+			</div>
+	</div>
+
+	</div>
+</body>
+<script>
+	$(".nav li").hover(function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideDown();
+	},function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
+	})
+	$(".proMenu").click(function(){
+		$("#wra_opacity").fadeIn();
+		$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_left").hover(function(){
+			$(".wj_xuanleft",this).stop().animate({right:-50},600)
+		},function(){
+			$(".wj_xuanleft",this).stop().animate({right:0},600)
+		})
+		$(".xuan_right").hover(function(){
+			$(".wj_xuanright",this).stop().animate({left:-50},600)
+		},function(){
+			$(".wj_xuanright",this).stop().animate({left:0},600)
+		})
+	})
+	$(".wra_opacity").click(function(){
+		$("#wra_opacity").fadeOut();
+	})
+	var navH = $("#header").offset().top;
+	$(window).scroll(function(){
+			var scroH = $(this).scrollTop();
+			if(scroH>=navH){
+				$("#header").css({"top":0});
+			}else if(scroH<navH){
+				$("#header").css({"top":25});
+			}
+		})
+</script></html>

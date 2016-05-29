@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>广乐食品</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery.easing.js"></script>
+<style>html,body{background:#fff;}</style>
+</head>
+<body>
+<div id="container">
+
+    <div id="header">
+  			<h1><a href="index.html"><img src="img/logo.png" width="100" height="80" alt="广乐食品"></a></h1>
+  			<div class="nav">
+  			<ul>
+  	    	<li>
+  	        	<a href="index.html" class="animate">首页</a>
+  	      </li>
+  	        <li>
+  	        	<a href="about.html"  class="animate">公司简介 </a>
+  	        </li>
+  	        <li>
+  	        	<a href="product.html" class="animate">产品系列</a>
+  	        </li>
+  	        <li>
+  	        	<a href="research.html" class="animate">销售网络</a>
+  	        </li>
+  	        <li>
+  	        	<a href="contact.html" class="animate">联系我们</a>
+  	        </li>
+  	    </ul>
+  	   </div>
+  </div>
+    <div id="subBanner" style="background-image:url(img/subBanner2.jpg);"></div>
+
+    <div id="wj_subnav">
+        <div class="wj_subtopbg">
+            <div class="wjsn_top">
+                <div class="wjsnto_left"><a href="javascript:;" class="menuCur">产品系列</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wjp_gaisu">
+        <div id="wjpbig_img">
+          <img src="img/1.jpg" alt="" />
+          <img src="img/2.jpg" alt="" />
+          <img src="img/3.jpg" alt="" />
+          <img src="img/4.jpg" alt="" />
+          <img src="img/5.jpg" alt="" />
+          <img src="img/6.jpg" alt="" />
+        </div>
+    </div>
+
+    <div id="homeFooter">
+    <div class="homeFooter">
+            <div class="homeFooterBottom">Copyright(C)2009-2014广乐食品&nbsp;&nbsp;&nbsp;&nbsp;蜀ICP备11020230号&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.vnewcd.com" target="_blank">网站建设</a>：<a href="http://www.vnewcd.com" target="_blank">微新互动</a></div>
+        </div>
+  </div>
+
+</body>
+</html>
+<script>
+	$(".nav li").hover(function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideDown();
+	},function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
+	})
+	$(".proMenu").click(function(){
+		$("#wra_opacity").fadeIn();
+		$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_left").hover(function(){
+			$(".wj_xuanleft",this).stop().animate({right:-50},600)
+		},function(){
+			$(".wj_xuanleft",this).stop().animate({right:0},600)
+		})
+		$(".xuan_right").hover(function(){
+			$(".wj_xuanright",this).stop().animate({left:-50},600)
+		},function(){
+			$(".wj_xuanright",this).stop().animate({left:0},600)
+		})
+	})
+	$(".wra_opacity").click(function(){
+		$("#wra_opacity").fadeOut();
+	})
+	var navH = $("#header").offset().top;
+	$(window).scroll(function(){
+			var scroH = $(this).scrollTop();
+			if(scroH>=navH){
+				$("#header").css({"top":0});
+			}else if(scroH<navH){
+				$("#header").css({"top":25});
+			}
+		})
+</script><script>
+    var navNum = 0;
+    $(".proMenu").click(function(){
+    	$("#wra_opacity").fadeIn();
+    	$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
+    	$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
+    	$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
+    	$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
+    	$(".xuan_left").hover(function(){
+    		$(".wj_xuanleft",this).stop().animate({right:-50},600)
+    	},function(){
+    		$(".wj_xuanleft",this).stop().animate({right:0},600)
+    	})
+    	$(".xuan_right").hover(function(){
+    		$(".wj_xuanright",this).stop().animate({left:-50},600)
+    	},function(){
+    		$(".wj_xuanright",this).stop().animate({left:0},600)
+    	})
+    })
+    $(".wra_opacity").click(function(){
+    	$("#wra_opacity").fadeOut();
+    })
+    $("#subHeader").hover(function(){
+    	$(".xinIcon,.xinI").stop().animate({opacity:0.2},600)
+    },function(){
+    	$(".xinIcon,.xinI").stop().animate({opacity:0},600)
+    })
+    var xNum = 0;
+    $(".xinIcon").click(function(){
+    	xNum--;
+    	xinMove();
+    })
+    $(".xinI").click(function(){
+    	xNum++;
+    	xinMove();
+    })
+    function xinMove(){
+    	if(xNum<0){xNum = 3}
+    	if(xNum>3){xNum = 0}
+    	$(".wjp_Txt li").eq(xNum).fadeIn().siblings().fadeOut();
+    	$(".wjp_head ul").eq(xNum).fadeIn().siblings().fadeOut();
+    }
+	var t =setInterval(timer,5000);
+	function timer(){
+		xNum++;
+		xinMove();
+	}
+	$(".wjp_head").hover(function(){
+		clearInterval(t);
+	},function(){
+		t =setInterval(timer,5000);
+	})
+    </script>

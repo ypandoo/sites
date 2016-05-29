@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>广乐食品</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/jPages.css">
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jPages.js"></script>
+<script src="http://api.map.baidu.com/api?v=1.5&ak=F9d1b714a51e78a8093e19464bc15959"></script>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<h1><a href="index.html"><img src="img/logo.png" width="100" height="80" alt="广乐食品"></a></h1>
+		<div class="nav">
+		<ul>
+			<li>
+					<a href="index.html" class="animate">首页</a>
+			</li>
+				<li>
+					<a  href="about.html" class="animate">公司简介 </a>
+				</li>
+				<li>
+					<a href="product.html" class="animate">产品系列</a>
+				</li>
+				<li>
+					<a href="research.html" class="animate">销售网络</a>
+				</li>
+				<li>
+					<a href="contact.html" class="animate">联系我们</a>
+				</li>
+		</ul>
+</div>
+</div>
+
+    <div id="subBanner" style="background-image:url(img/subBanner2.jpg);"></div>
+		<div id="wj_subnav">
+        <div class="wj_subtopbg">
+            <div class="wjsn_top">
+                <div class="wjsnto_left"><a href="javascript:;" class="menuCur">联系我们</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lr_content">
+
+        <div class="lr_table">
+					<div class="lr_left">
+					            	<div class="lr_contactTit">四川广乐食品有限公司</div>
+					                <div class="lr_contactMenu">
+					                    <ul>
+					                        <li class="mapCur"><div class="tip"></div><div class="tip1" style="display:block;"></div>成都经济技术开发区雅士路118号</li>
+					                        <li>微信公众平台&nbsp;&nbsp;:&nbsp;&nbsp;广乐食品</li>
+					                        <li  style="height:80px"><img src="img/qr.jpg" width="80px" height="80px"></img></li>
+					                    </ul>
+					                </div>
+					                <div class="ph" style=""><span>028-84853288</span></div>
+					  </div>
+
+            <div class="lr_contact_right">
+            	<div class="lr_map">
+                	<div id="map"></div>
+                    <div id="googleMap"></div>
+                    <div id="googleMap1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+		<div id="homeFooter">
+	 		<div class="homeFooter">
+	 						<div class="homeFooterBottom">Copyright(C)2009-2014广乐食品&nbsp;&nbsp;&nbsp;&nbsp;
+	 							蜀ICP备11020230号&nbsp;&nbsp;&nbsp;&nbsp;
+	 							<a href="http://www.vnewcd.com" target="_blank">网站建设</a>：
+	 							<a href="http://www.vnewcd.com" target="_blank">微新互动</a>
+	 						</div>
+	 			</div>
+	 	</div>
+
+
+</div>
+</body>
+<script>
+	$(".nav li").hover(function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideDown();
+	},function(){
+		$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
+	})
+	$(".proMenu").click(function(){
+		$("#wra_opacity").fadeIn();
+		$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
+		$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
+		$(".xuan_left").hover(function(){
+			$(".wj_xuanleft",this).stop().animate({right:-50},600)
+		},function(){
+			$(".wj_xuanleft",this).stop().animate({right:0},600)
+		})
+		$(".xuan_right").hover(function(){
+			$(".wj_xuanright",this).stop().animate({left:-50},600)
+		},function(){
+			$(".wj_xuanright",this).stop().animate({left:0},600)
+		})
+	})
+	$(".wra_opacity").click(function(){
+		$("#wra_opacity").fadeOut();
+	})
+	var navH = $("#header").offset().top;
+	$(window).scroll(function(){
+			var scroH = $(this).scrollTop();
+			if(scroH>=navH){
+				$("#header").css({"top":0});
+			}else if(scroH<navH){
+				$("#header").css({"top":25});
+			}
+		})
+</script></html>
+<script>
+var map = new BMap.Map("map");
+var myIcon = new BMap.Icon("img/logo2.png", new BMap.Size(50,48));
+map.centerAndZoom(new BMap.Point(104.259396,30.555845), 14);
+var marker1 = new BMap.Marker(new BMap.Point(104.259396,30.555845),{icon:myIcon});
+map.addOverlay(marker1);
+var infoWindow1 = new BMap.InfoWindow("<b style='width:240px; height:30px; padding-top:10px; line-height:20px;display:block; color:#297d64;'>成都经济技术开发区雅士路118号</b><p style='color:#666;'>邮编：610000</p><p style='color:#666;'>电话：+86 28 84853288</p>");
+
+$(".lr_contactMenu li").click(function(){
+	$("#googleMap").hide();
+	$("#googleMap1").hide();
+	$("#map").show();
+	var mapNum = 0;
+	if(mapNum==0){map.centerAndZoom(new BMap.Point(103.912704,30.802603), 14);}
+
+})
+</script>
