@@ -83,31 +83,6 @@
 </div>
 </body>
 <script>
-	$(".nav li").hover(function(){
-		$(".subNav,.subMenu",this).stop(false,true).slideDown();
-	},function(){
-		$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-	})
-	$(".proMenu").click(function(){
-		$("#wra_opacity").fadeIn();
-		$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
-		$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
-		$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
-		$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
-		$(".xuan_left").hover(function(){
-			$(".wj_xuanleft",this).stop().animate({right:-50},600)
-		},function(){
-			$(".wj_xuanleft",this).stop().animate({right:0},600)
-		})
-		$(".xuan_right").hover(function(){
-			$(".wj_xuanright",this).stop().animate({left:-50},600)
-		},function(){
-			$(".wj_xuanright",this).stop().animate({left:0},600)
-		})
-	})
-	$(".wra_opacity").click(function(){
-		$("#wra_opacity").fadeOut();
-	})
 	var navH = $("#header").offset().top;
 	$(window).scroll(function(){
 			var scroH = $(this).scrollTop();
@@ -125,13 +100,4 @@ map.centerAndZoom(new BMap.Point(104.259396,30.555845), 14);
 var marker1 = new BMap.Marker(new BMap.Point(104.259396,30.555845),{icon:myIcon});
 map.addOverlay(marker1);
 var infoWindow1 = new BMap.InfoWindow("<b style='width:240px; height:30px; padding-top:10px; line-height:20px;display:block; color:#297d64;'>成都经济技术开发区雅士路118号</b><p style='color:#666;'>邮编：610000</p><p style='color:#666;'>电话：+86 28 84853288</p>");
-
-$(".lr_contactMenu li").click(function(){
-	$("#googleMap").hide();
-	$("#googleMap1").hide();
-	$("#map").show();
-	var mapNum = 0;
-	if(mapNum==0){map.centerAndZoom(new BMap.Point(103.912704,30.802603), 14);}
-
-})
 </script>
