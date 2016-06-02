@@ -120,11 +120,10 @@
               <div class="row" style="padding-left:20px">
                 <button  type="button" class="btn btn-primary col-md-1 " style="margin-right:20px"ms-click="@prev()" ms-attr="{disabled:!@page_start}">上一页</button>
                 <button  type="button" class="btn btn-primary col-md-1 " ms-click="@next()"  ms-attr="{disabled:@page_end}">下一页</button>
-              <div class="row">
-                
             </div>
           </div>
         </div>
+      </div>
 
         <div id="page_item_detail"  ms-visible="@show['content_detail']">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
