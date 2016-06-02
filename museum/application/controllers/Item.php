@@ -32,7 +32,7 @@ class Item extends CI_Controller {
         $file_id = md5(uniqid(rand()));
         $namewithoutpath = $file_id.'.'.$fileParts['extension'];
         if ($namewithoutpath) {
-             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/museum/uploads/img/".$namewithoutpath);
+             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/img/".$namewithoutpath);
         }
         else {
             $data_result["success"] = 0;
@@ -82,7 +82,7 @@ class Item extends CI_Controller {
 
         $original_name = iconv('UTF-8', 'GBK', $_FILES['file']['name']);
         if ($original_name) {
-             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/museum/uploads/video/".$original_name);
+             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/video/".$original_name);
         }
         else {
             $data_result["success"] = 0;
