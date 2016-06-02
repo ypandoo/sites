@@ -62,9 +62,11 @@ class Item_model extends CI_Model
         return  $data;
     }
 
-    public function getItems()
+    public function getItems($start)
     {
-        $query = $this->db->get('T_ITEM');
+
+        $interval = $this->config->item('page_interval');
+        $query = $this->db->get('T_ITEM', $interval, $start);
         $data["success"] = true;
         $data["errorCode"] = 0;
         $data["error"] = 0;

@@ -11,6 +11,24 @@
                    item_html: '',
                    item_title:'',
                    isNewItem: true,
+                   page_start: 0,
+                   page_end:false,
+                   prev: function(){
+                     if (items_ctrl.page_start - page_interval <= 0) {
+                       items_ctrl.page_start = 0;
+                     }
+                     else {
+                       items_ctrl.page_start -= page_interval;
+                     }
+
+                     items_ctrl.page_end = false;
+
+                     items_ctrl.get_items();
+                   },
+                   next: function(){
+                      items_ctrl.page_start += page_interval;
+                      items_ctrl.get_items();
+                   },
 
                    validate: {
                      onValidateAll: function (reasons) {
@@ -149,22 +167,24 @@
 
                    get_items:function(){
                      var url = base_url+'Navi/get_items';
+                     var submit_data = {'page_start': items_ctrl.page_start};
                      base_remote_data.ajaxjson(
                                        url, //url
                                        function(data){
                                          if(data.hasOwnProperty('success')){
-                                               if(data.success == 1){
-                                                   items_ctrl.data = data.data;
-                                               }
-                                               else{
-                                                   alert(data.message);
-                                               }
+                                             if(data.success == 1 && data.data.length == page_interval){
+                                                 items_ctrl.data = data.data;
+                                             }
+                                             else{
+                                                items_ctrl.data = data.data;
+                                                items_ctrl.page_end = true;
+                                             }
                                            }
                                          else {
                                            alert('返回值错误!');
                                          }
                                      },
-                                     '',
+                                     submit_data,
                                      function()
                                      {
                                        alert('网络错误!');

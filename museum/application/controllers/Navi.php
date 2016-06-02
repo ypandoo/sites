@@ -72,7 +72,8 @@ class Navi extends CI_Controller {
     {
       $tableName = 'T_NAVI';
       $this->load->model('Navi_model');
-      $result = $this->Navi_model->getItems();
+      $page_start = $this->input->post('page_start');
+      $result = $this->Navi_model->getItems($page_start);
 
       if ($result['success'] == 1) {
         echo json_encode($result);

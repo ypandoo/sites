@@ -14,7 +14,7 @@ class Navi_model extends CI_Model
 
     public function  addItem($dataArry){
 
-        $query = $this->db->get_where('T_NAVI', array('NAVI_CODE' => $dataArry['NAVI_CODE']));
+        $query = $this->db->get_where('T_NAVI', array('NAVI_CODE' => $dataArry['NAVI_CODE']) );
         $row = $query->row();
         if (isset($row) && $row)
         {
@@ -45,9 +45,10 @@ class Navi_model extends CI_Model
         return  $data;
     }
 
-    public function getItems()
+    public function getItems($page_start)
     {
-        $query = $this->db->get('T_NAVI');
+        $interval = $this->config->item('page_interval');
+        $query = $this->db->get('T_NAVI', $interval, $page_start);
         $data["success"] = true;
         $data["errorCode"] = 0;
         $data["error"] = 0;

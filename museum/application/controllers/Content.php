@@ -125,7 +125,8 @@ class Content extends CI_Controller {
       $tableName = 'T_CONTENT';
       $this->load->model('Content_model');
       $list_type = $this->input->post('list_type');
-      $result = $this->Content_model->getList($list_type);
+      $page_start = $this->input->post('page_start');
+      $result = $this->Content_model->getList($list_type, $page_start);
 
       if ($result['success'] == 1) {
         echo json_encode($result);

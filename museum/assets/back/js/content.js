@@ -16,6 +16,25 @@
                    content_html:'',
                    content_type:'',
 
+                   page_start: 0,
+                   page_end: false,
+                   prev: function(){
+                     if (content_ctrl.page_start - page_interval <= 0) {
+                       content_ctrl.page_start = 0;
+                     }
+                     else {
+                       content_ctrl.page_start -= page_interval;
+                     }
+
+                     content_ctrl.page_end = false;
+
+                     content_ctrl.get_list();
+                   },
+                   next: function(){
+                      content_ctrl.page_start += page_interval;
+                      content_ctrl.get_list();
+                   },
+
                    isNew: true,
 
                    validate: {
@@ -167,7 +186,7 @@
 
                    get_list:function(e){
                      var url = base_url+'Content/get_list';
-                     var submit_data ={list_type:content_ctrl.list_type};
+                     var submit_data ={list_type:content_ctrl.list_type, page_start:content_ctrl.page_start};
 
                      if (typeof content_ctrl.list_type == 'undefined' || !content_ctrl.list_type) {
                        return;
@@ -177,14 +196,13 @@
                                        url, //url
                                        function(data){
                                          if(data.hasOwnProperty('success')){
-                                               if(data.success == 1){
-                                                   //console.log(data);
-                                                   //console.log('获取列表成功！');
+                                               if(data.success == 1 && data.data.length == page_interval){
                                                    content_ctrl.list = [];
                                                    content_ctrl.list = data.data;
                                                }
                                                else{
-                                                   alert(data.message);
+                                                  content_ctrl.list = data.data;
+                                                  content_ctrl.page_end = true;
                                                }
                                            }
                                          else {
@@ -200,6 +218,8 @@
 
           list_type_change: function(e)
           {
+            content_ctrl.page_start = 0;
+            content_ctrl.page_end = false;
             content_ctrl.get_list(e);
           }
   });

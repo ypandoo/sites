@@ -50,9 +50,10 @@ class Content_model extends CI_Model
         return  $data;
     }
 
-    public function getList($list_type)
+    public function getList($list_type, $page_start)
     {
-        $query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type));
+        $interval = $this->config->item('page_interval');
+        $query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
         $data["success"] = true;
         $data["errorCode"] = 0;
         $data["error"] = 0;

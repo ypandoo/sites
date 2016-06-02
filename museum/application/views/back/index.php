@@ -98,6 +98,11 @@
                 </tbody>
               </table>
             </div>
+
+            <div class="row" style="padding-left:20px">
+              <button  type="button" class="btn btn-primary col-md-1 " style="margin-right:20px"ms-click="@prev()" ms-attr="{disabled:!@page_start}">上一页</button>
+              <button  type="button" class="btn btn-primary col-md-1 " ms-click="@next()"  ms-attr="{disabled:@page_end}">下一页</button>
+            <div class="row">
           </div>
         </div>
 
