@@ -174,6 +174,7 @@
                                          if(data.hasOwnProperty('success')){
                                              if(data.success == 1 && data.data.length == page_interval){
                                                  items_ctrl.data = data.data;
+                                                 content_ctrl.page_end = false;
                                              }
                                              else{
                                                 items_ctrl.data = data.data;

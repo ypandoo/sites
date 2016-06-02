@@ -17,7 +17,7 @@
                    content_type:'',
 
                    page_start: 0,
-                   page_end: false,
+                   page_end: true,
                    prev: function(){
                      if (content_ctrl.page_start - page_interval <= 0) {
                        content_ctrl.page_start = 0;
@@ -199,6 +199,7 @@
                                                if(data.success == 1 && data.data.length == page_interval){
                                                    content_ctrl.list = [];
                                                    content_ctrl.list = data.data;
+                                                   content_ctrl.page_end = false;
                                                }
                                                else{
                                                   content_ctrl.list = data.data;

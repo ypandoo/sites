@@ -243,9 +243,8 @@
                                        function(data){
                                          if(data.hasOwnProperty('success')){
                                                if(data.success == 1 && data.data.length == page_interval){
-                                                   console.log(data);
-                                                   console.log('获取列表成功！');
                                                    items_ctrl.data = data.data;
+                                                   items_ctrl.page_end = false;
                                                }
                                                else{
                                                   items_ctrl.data = data.data;
