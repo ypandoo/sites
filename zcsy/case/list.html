@@ -1,0 +1,34 @@
+<img src="img/intro_main.png" width="100%" style=""/>
+
+<div class="nav">
+            <div class="g-wrap">
+                <div class="crumbs">
+                    <a href="#/">主页</a>
+                    <a class="on">业务涵盖</a>
+                </div>
+            </div>
+        </div>
+
+
+<div style="text-align:center; width:100%">
+  <div class="case_block">
+      <div class="case" ng-repeat="case in cases" style="width:400px; height:120px">
+          <div class="case_img">
+            <a href="#/detail/{{case.CONTENT_ID}}"><img ng-src="{{'back/uploads/content_pic/'+case.CONTENT_PIC}}" width="100%" height="100%"></a>
+            <div class="summary" style="">
+              <a href="#/detail/{{case.CONTENT_ID}}" class="case_link">查看详情</a>
+            </div>
+          </div>
+          <div style="float:left">
+            <div class="case_title">
+            {{case.CONTENT_TITLE}}
+            </div>
+            <div class="case_detail">
+            </div>
+          </div>
+      </div>
+
+  </div><!--end case_block-->
+
+  <div style="margin-bottom:50px"></div>
+</div>

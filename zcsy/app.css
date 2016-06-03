@@ -134,3 +134,12 @@ input[type="button"] {
   }
 }
 
+.content_detail img{
+  width: 80%;
+  text-align: center;
+  margin: 10px;
+}
+
+.content_detail p{
+  text-align: center;
+}

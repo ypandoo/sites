@@ -4,12 +4,13 @@
 angular.module('myApp', [
   'ngRoute',
   'catagory',
+  'case_list',
   'intro',
   'case',
   'culture',
-  'contact'
+  'contact',
+  'detail'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/catagory'});
 }]);
-
