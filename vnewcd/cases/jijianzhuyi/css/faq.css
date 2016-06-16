@@ -1,0 +1,103 @@
+.rectangle-content
+{
+  width: 90%;
+   margin-left: 5%;
+   margin-top: 50px;
+}
+
+.map li
+{
+  margin-top: 1em;
+}
+
+.map .region
+{
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.map .toleft
+{
+  font-size: 16px;
+}
+
+
+.site
+{
+  border-bottom: 1px solid #d2d3d3;
+  padding-bottom: 20px;
+}
+
+.time
+{
+  margin-top: 20px;
+  border-bottom: 1px solid #d2d3d3;
+  padding-bottom: 20px;
+}
+
+.issue
+{
+    margin-top: 20px;
+  border-bottom: 1px solid #d2d3d3;
+  padding-bottom: 20px;
+}
+
+.faq_gap
+{
+  margin-top: 20px;
+}
+
+.contact_us
+{
+  padding:20px 0px 20px 0px;
+}
+
+.map-box {
+  padding: 0 15px 15px 15px;
+  border: 2px solid #7ed51a;
+  background-color: #fff;
+  width: 300px;
+  z-index: 999;
+  text-align: left;
+  margin: 0px 0 0 -147.5px;
+
+  position: absolute;
+    top: 60%;
+    left: 50%;
+    margin: 0;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+}
+
+.map-box h2{
+  line-height: 2.5em;
+  font-size: 1.4em;
+}
+
+.map-box h4{
+  line-height: 1.4rem;
+  font-size: 0.8rem;
+}
+
+.map-box .end-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/end-x.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.map-box .copy {
+  border-top: 1px solid #d2d3d3;
+  padding-top: 14px;
+}
+
+.image_layer
+{
+  padding-top: 10px;
+}

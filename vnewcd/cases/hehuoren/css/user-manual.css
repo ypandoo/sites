@@ -1,0 +1,135 @@
+.nav_occupy {
+    margin: 0 auto;
+    height: 60px;
+}
+
+.nav {
+    position: absolute;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    width: 100%;
+    text-align: center;
+}
+
+.nav .tab {
+    margin: 0 auto;
+    min-width: 300px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.nav .tab .active {
+    border-bottom: 1px solid #ff5722;
+}
+.nav .tab .item {
+    display: inline-block;
+    margin: 0 1% -4px;
+    font-size: 12px;
+    line-height: 60px;
+    float: none;
+}
+li {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+.nav .tab .active a {
+    color: #ff5722;
+}
+a:active, a:hover, a:link, a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+    cursor: pointer;
+    color: #01a;
+}
+
+.nav-sub .left {
+    border-radius: 5px 0 0 5px;
+}
+
+.nav-sub .right {
+    border-radius: 0 5px 5px 0;
+}
+
+
+.nav-sub .item {
+    display: inline-block;
+    margin-right: -3px;
+    width: 100px;
+    background-color: #f5f5f5;
+    line-height: 30px;
+}
+
+.nav-sub {
+    margin: 25px 0 0;
+    font-size: 16px;
+}
+
+.nav-sub .active {
+    color: #fff;
+    background-color: #212121;
+}
+
+.btn-group, .nav-sub, .nav-sub .item {
+    text-align: center;
+}
+
+.info {
+    margin: 6% 0 2%;
+}
+.padding_small {
+    padding: 5% 3% 0;
+    width: 93%;
+}
+
+.padding_small::after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+@media screen and (max-width: 600px)
+.info_half_text, .info_text {
+    width: 97%;
+}
+.float_left {
+    float: left;
+}
+.info_text {
+
+}
+.info .h-outter, .info_half_text, .info_text, .info_video {
+    padding: 0 10px;
+}
+
+.info h2 {
+    font-size: 2.2em;
+    line-height: 1em;
+}
+.info h2, .left {
+    text-align: left;
+}
+body, dd, dl, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, textarea, ul {
+    margin: 0;
+}
+b, em, h1, h2, h3, h4, h5, h6, i {
+    font-weight: 400;
+}
+
+.info .left .p2 {
+    line-height: 25px;
+    margin: 25px 0;
+}
+.info .p2 {
+    font-size: 12px;
+    line-height: 1.4em;
+    color: #444;
+}

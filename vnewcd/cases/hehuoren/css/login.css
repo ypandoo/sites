@@ -1,0 +1,267 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+/*新版*/
+label > i input{
+    width: 70%;
+    padding-left: 10px;
+}
+.tab{
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 8px;
+    border-top: 1px solid #f5f5f5;
+}
+.tab a{
+    display: inline-block;
+    font-size: 16px;
+    padding: 3px 0;
+    font-weight: 900;
+}
+.tab a.left{
+    padding-left: 2px;
+    margin-right: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.left.active{
+    padding-left: 2px;
+    border-bottom: 2px solid #000;
+}
+.tab a.right{
+    padding-left: 1px;
+    margin-left: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.right.active{
+    padding-left: 1px;
+    border-bottom: 2px solid #000;
+}
+.login-container{
+    margin-top: 0;
+}
+.submit-new-btn{
+    margin-top: 20px;
+}
+/*忘记密码*/
+.forget{
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    overflow: hidden;
+}
+.forget a{
+    display: inline-block;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 30px;
+    padding-right: 3%;
+}
+.forget a:active{
+    color: #000;
+}
+/*页面容器*/
+.details{
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: -3px;
+}
+.slide-page{
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+}
+.forget-page{
+    height: 100%;
+}
+.forget-page.grey{
+    background: #f5f5f5;
+}
+.forget-page .header{
+    position: relative;
+    height: 46px;
+    width: 100%;
+    background: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid #f5f5f5;
+}
+.forget-page .header a{
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    z-index: 1;
+    background: url("http://dn-acac.qbox.me/mobile/public/back-arrow.png") no-repeat center;
+    background-size: 25px;
+}
+.forget-page .header h3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}
+.forget-page .child-container{
+    display: none;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: -3px;
+}
+.forget-page .child-container .child-page{
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+}
+.forget-page .child-container .child-page.hidden{
+    display: none;
+}
+.forget-page .child-container .choose,
+.forget-page .child-container .choose ul,
+.forget-page .child-container .choose ul li{
+    display: inline-block;
+    width: 100%;
+}
+.forget-page .child-container .choose{
+
+}
+.forget-page .child-container .choose ul li{
+    height: 50px;
+    background: #fff;
+    padding: 16px 15%;
+    margin-bottom: 1px;
+    margin-top: 1px;
+ }
+.forget-page .child-container .choose ul li p{
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    height: 25px;
+    width: 100%;
+    overflow: visible;
+}
+.forget-page .child-container .choose ul li.phone p:before{
+    position: absolute;
+    top:2px;
+    left: -20px;
+    content: '';
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: url("http://dn-acac.qbox.me/mobile/public/cellphone64x.png") no-repeat center;
+    background-size: 18px;
+}
+.forget-page .child-container .choose ul li.mail p:before{
+    position: absolute;
+    content: '';
+    top:1px;
+    left: -20px;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: url("http://dn-acac.qbox.me/mobile/public/mail64x.png") no-repeat center;
+    background-size: 18px;
+}
+.forget-page .child-container .choose ul li p:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 3px;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: url("http://dn-acac.qbox.me/arrow_right.png") no-repeat center;
+    background-size: 25px;
+}
+/*表单部分 RESET 验证按钮*/
+.verify-btn{
+    width: 76px;
+    height: 26px;
+    float: right;
+    font-size: 14px;
+    padding: 1px 10px 0;
+    margin-top: 12px;
+    margin-right: 16px;
+    border-color: #A9A9A9;
+}
+.verify-btn.disable{
+    color: #AAA;
+    border-color: #CCB !important;
+    background: none;
+    box-shadow: none;
+}
+/*表单部分 RESET 密码可见*/
+.eye{
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    line-height: 48px;
+    margin-right: 16px;
+    padding: 0 8px;
+}
+label > i input{
+    font-size: 14px;
+    margin-top: 10px;
+}
+label > i input:focus{
+    outline: none;
+}
+.phone-form input{
+    width: 40%;
+}
+
+/*找回密码操作成功*/
+.get-pwd-success .mg{
+    width: 100%;
+    height: 20%;
+}
+.get-pwd-success .img{
+    width: 100%;
+    text-align: center;
+}
+.get-pwd-success .img img{
+    width: 46px;
+    height: auto;
+}
+.get-pwd-success h3{
+    font-size: 26px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+.get-pwd-success h6{
+    display: none;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.get-pwd-success .btn-group{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin-top: 70px;
+}
+.get-pwd-success .btn-group a{
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: 5px 20px 3px;
+    line-height: 20px;
+}
+.get-pwd-success .btn-group a:active{
+    background: #000;
+    color: #fff;
+}

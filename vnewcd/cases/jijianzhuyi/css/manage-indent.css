@@ -1,0 +1,168 @@
+.address
+{
+  padding-top: 5px;
+}
+
+.address_book
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:left;
+  line-height: 3.5em;
+}
+
+.address_book h2
+{
+  font-size: 1.4em;
+}
+
+.myaccount
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:right;
+  line-height: 3.5em;
+  color: grey;
+  text-decoration: underline;
+  padding-top: 5px;
+}
+
+.list_left
+{
+  display:inline-block;
+  float:left;
+  width:74.999%;
+  text-align:left;
+  padding: 15px 0px 15px 15px;
+}
+
+.list_right
+{
+  display:inline-block;
+  float:left;
+  width:24.999%;
+  text-align:center;
+  border-left: 1px solid #d2d3d3;
+  line-height: 5.5em;
+  height: 5.5em;
+}
+
+.address_list .list_right h4
+{
+  line-height: 5.5rem;
+}
+
+.pay
+{
+  background-color: #ff5000;
+  color: white;
+}
+
+.address_list
+{
+  border-top: 1px solid #d2d3d3;
+}
+
+
+.address_list h4
+{
+  line-height: 1.5em;
+}
+
+.address_list_item
+{
+  height: 5.5em;
+   border-bottom: 1px solid #d2d3d3;
+}
+
+.list_right_up
+{
+  height: 4.5em;
+  line-height: 4.5em;
+   border-bottom: 1px solid #d2d3d3;
+   background-color: #F8F8F8;
+}
+
+.list_right_up h4
+{
+  line-height: 4.5rem;
+  color: grey;
+}
+
+.list_right_bottom h4
+{
+  line-height: 2.5rem;
+  color:grey;
+}
+
+.list_right_bottom
+{
+  height: 2.5em;
+  line-height: 2.5em;
+  background-color: #D9F4BB;
+}
+
+.default_address
+{
+  background-color: #83DD1A;
+}
+
+
+.nav_left
+{
+  display:inline-block;
+  float:left;
+  width:39.999%;
+  text-align:left;
+  padding: 15px 0px 15px 15px;
+    line-height: 2em;
+}
+
+.nav_right
+{
+  display:inline-block;
+  float:left;
+  width:59.999%;
+  text-align:center;
+  padding: 15px 0px 15px 15px;
+    line-height: 2em;
+}
+
+.prev_page
+{
+    display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:center;
+}
+
+.next_page
+{
+    display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:center;
+}
+
+.prev_page_button
+{
+  border: 1px solid rgb(210, 211, 211);
+  width: 90%;
+  height: 2em;
+  line-height: 2em;
+  /* font-size: 0.8em; */
+  text-align: left;
+  padding-left: 5px;
+}
+
+.next_page_button
+{
+    width: 90%;
+  height: 2em;
+  line-height: 2em;
+  text-align: right;
+  padding-right: 5px;
+  border: 1px solid rgb(210, 211, 211);
+}
