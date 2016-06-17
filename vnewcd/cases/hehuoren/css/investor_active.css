@@ -1,0 +1,73 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+
+.special-layer,
+.layer-class {
+  display:none;
+}
+
+.investor-type {
+  position:relative;
+  width:100%;
+  height:70px;
+  margin-top:48px;
+  margin-bottom:46px;
+  background:#e55534;
+}
+
+.investor-type p {
+  color:#FFF;
+  font-size:20px;
+  line-height:70px;
+}
+
+.investor-type i.vector-icons {
+  position:absolute;
+  color:#FFF;
+  line-height:78px;
+  font-size:28px;
+  margin-right:14px;
+  right:0;
+}
+
+.layer-btn.common {
+  width:100%;
+  height:50px;
+  margin-bottom:4px;
+  background:#F5F5F5;
+}
+
+.layer-btn.common p {
+  position:absolute;
+  line-height:52px;
+  margin-left:3.4%;
+}
+
+@media only screen and (min-width: 748px) {
+  .layer-btn.common p {
+    margin-left:2.2%;
+  }
+}
+
+@media only screen and (min-width: 998px){
+  .layer-btn.common p {
+    margin-left:1.1%;
+  }
+}
+
+.layer-btn.common i.vector-icons {
+  position:static;
+  float:right;
+  font-size:22px;
+  line-height:50px;
+  margin-right:22px;
+}
+
+
+.layer-btn {
+  cursor:pointer;
+}

@@ -1,0 +1,130 @@
+<html class=" js no-touch backgroundsize cssanimations csstransforms svg inlinesvg">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=EDGE">
+	<meta content="width=device-width,initial-scale=1, user-scalable=no" name="viewport">
+	  
+	<title>极简煮义 </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+
+	<link media="all" type="text/css" rel="stylesheet" href="css/styles.css">
+	<link media="all" type="text/css" rel="stylesheet" href="css/base.css">
+	<link media="all" type="text/css" rel="stylesheet" href="css/add_address.css">
+
+</head>     
+
+<body>
+<!----header ---------------------->
+<header class="main-header absolute">
+	<div class="bottom-area" style="height:50px">
+		<div class="wrapper">
+			<div class="logo"><a href=""><img alt="" src="img/logo.png"></a></div>
+	</div>
+</header>
+
+<div  class="off_menu title">
+	<h2>送货地址&nbsp;<small>标有"*"部分是必填项</small></h2>
+</div>
+
+<div class="container clearfix ">
+	<div class="reg_row" style="margin-top:20px">
+		<span class="row_half_left">名称&nbsp;*</span>
+		<span class="row_half_right">
+			<input placeholder="请输入手机号"></input>
+		</span>
+		<!--span class="error_tip clearfix"><h4>帐号已存在</h4></span-->
+	</div>
+
+	<div class="reg_row" style="">
+		<span class="row_third_left">市区&nbsp;*</span>
+		<span class="row_third_middle arrow_left">
+			<select>
+				<option value="0">上海</option>
+				<option value="1">北京</option>
+				<option value="2">深圳</option>
+				<option value="3">广州</option>
+			</select>
+		</span>
+		<span class="row_third_right arrow_right">
+			<select>
+				<option value="0">黄埔</option>
+				<option value="1">静安</option>
+				<option value="2">徐汇</option>
+				<option value="3">闸北</option>
+			</select>
+		</span>
+		<!--span class="error_tip clearfix"><h4>帐号已存在</h4></span-->
+	</div>
+
+	<div class="reg_row_big" style="">
+		<span class="row_third_left">商圈&nbsp;*</span>
+		<span class="row_third_middle arrow_left">
+			<select>
+				<option value="0">人民广场</option>
+				<option value="1">中山广场</option>
+				<option value="2">徐家汇</option>
+				<option value="3">五角场</option>
+			</select>
+		</span>
+		<span class="row_third_right">
+			<input type="button" value="查看地图"></input>
+		</span>
+		<span class="clearfix region_describe"><h4>以人民广场为核心，东起河南南路（或西藏南路），西至成都北路，北起南京东路，南至延安东路。</h4></span>
+	</div>
+
+	<div class="reg_row warn">
+		<span class="row_half_left">地址&nbsp;*</span>
+		<span class="row_half_right">
+			<input placeholder="请输入街、弄、号"></input>
+		</span>
+		<span class="error_tip"><h4>抱歉，您不在此配送区</h4></span>
+	</div>
+
+	<div class="reg_row warn">
+		<span class="row_half_left">电话</span>
+		<span class="row_half_right">
+			<input placeholder=""></input>
+		</span>
+		<span class="error_tip"><h4>电话格式不正确</h4></span>
+	</div>
+
+	<div class="reg_row warn">
+		<span class="row_half_left">手机&nbsp;*</span>
+		<span class="row_half_right">
+			<input placeholder=""></input>
+		</span>
+		<span class="error_tip"><h4>手机格式不正确</h4></span>
+	</div>
+	
+</div>
+
+<div class="register_button clearfix" style="margin-top:10px">
+	<h3>保存地址</h3>
+</div>
+
+<div class="map-box modal-dialog">
+    <i class="end-btn"></i>
+    <h2>人民广场</h2>
+
+    <div class="copy">
+        <p><h4>以人民广场为核心，东起河南南路（或西藏南路），西至成都北路，北起南京东路，南至延安东路。
+        </h4></p>
+
+        <div class="image_layer"><img src="img/_thumbnail/2015071201.jpg" alt="1" width="100%"></div>
+    </div>
+</div>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+<script type="text/javascript">
+var $mapbox  = $('.map-box ');
+ $mapbox.on('click', '.end-btn', function () {
+        $mapbox.hide();
+    });
+</script>
+
+
+
+</body>
+</html>

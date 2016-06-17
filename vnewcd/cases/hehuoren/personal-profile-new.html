@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="合火人" />
+    <meta name="keywords" content="合火人" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>合火人</title>
+
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/personal-profile-new.css" rel="stylesheet"/>
+    <link href="css/personal-profile-new-active.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/angelcrunch.jq.c.js"></script>
+    <script src="js/image_upload.min.js"></script>
+    <script src="js/angelcrunch.image_tools.jq.c.js"></script>
+
+</head>
+<body>
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="head-container" class="head-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="registration modules">
+        <!-- Back-up form -->
+        <div class="avatar-area" ms-controller="title-controller">
+            <h1>{{_head_text_h2_}}</h1>
+            <p>{{_head_text_h4_}}</p>
+        </div>
+
+
+        <!-- <div id="investortype" class="investor-type layer-btn title-control" ms-controller="title-controller"  ms-on-tap="toggle_content('basic_invistor')">
+            <p>一般合伙人资料</p>
+            <em id="em_basic_invistor"></em>
+        </div> -->
+
+        <!-- 一般合伙人资料 -->
+        <div style="background:white;" id="invistor0">
+            <div id="item-container" class="item-container">
+                <div id="basic_desc">
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>本人头像</h3>
+                            <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+                    </div>
+
+                    <label class="page-name">
+                        <span>真实姓名</span><input id="form-name" maxlength="20">
+                    </label>
+
+
+                    <label id="select2" class="page-name">
+                        <span style="width:30%">选择工作圈</span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择区域" selected="">请选择区域</option>
+                            <option value="成都">成都</option>
+                        </select>
+                    </label>
+                    <label id="select3" class="page-name" style="margin-top:-8px">
+                        <span style="width:30%"></span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择街道" selected="">请选择街道</option>
+                            <option value="大使馆路">大使馆路</option>
+                        </select>
+                    </label>
+                    <label id="select2" class="page-name">
+                        <span style="width:30%">选择生活圈</span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择区域" selected="">请选择区域</option>
+                            <option value="成都">成都</option>
+                        </select>
+                    </label>
+                    <label id="select3" class="page-name" style="margin-top:-8px">
+                        <span style="width:30%"></span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择街道" selected="">请选择街道</option>
+                            <option value="大使馆路">大使馆路</option>
+                        </select>
+                    </label>
+                    <label class="page-name">
+                        <span>文化程度</span><input id="form-name" maxlength="20">
+                    </label>
+                     <label class="page-name">
+                        <span>公司职位</span><input id="form-name" maxlength="20">
+                    </label>
+
+                    <div class="addition-agreement">
+                        <p>您需了解 <a href="/agreement/service">《合火人用户服务协议》</a> 及其附件 <a class="ci-link" href="/agreement/risk">《风险揭示书》</a> 中的所有内容 ，并愿意承担投资带来的风险才能继续。</p>
+                        <div class="modules">
+                            <div class="mentos-container">
+                                <label class="label">
+                                    <input id="legal-terms" class="mentos" type="checkbox" name="additionalAgreement" value="1" data-warning-text="需要同意合火人用户协议" />
+                                    <em class="tracks">
+                                        <em class="slider-button">
+                                            <i>×</i>
+                                            <i></i>
+                                        </em>
+                                    </em>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a id="subbmit-btn" class="submit-new-btn text_btn active">保存并申请成为一般合火人</a>
+
+                    <a class="submit-new-btn text_btn active_orange" id="btn_invistor0" ms-on-tap="toggle_content(0)"  ms-controller="title-controller">+ 保存当前信息，进一步完善资料提升等级</a>
+                </div>
+            </div>
+
+        </div>
+
+         <!-- <div id="prepareproject" class="investor-type layer-btn title-control"  ms-controller="title-controller"  ms-on-tap="toggle_content('cert_invistor')">
+            <p>认证合伙人资料</p>
+            <em id="em_cert_invistor"></em>
+        </div> -->
+
+        <!-- 认证合伙人资料 -->
+        <div style="background:white; display:none" id="invistor1">
+
+            <div id="item-container" class="item-container">
+                <div id='info_founder'>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>*身份证扫描件或拍照</h3>
+                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+                    </div>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>*本人头像(需核实一致)</h3>
+                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+                    </div>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>名片扫描件或拍照</h3>
+                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                        </div>
+                    </div>
+
+
+                    <label class="page-description">
+                        <span>合伙理念</span>
+                        <textarea id="form-desc"></textarea>
+                    </label>
+
+                    <label class="page-description">
+                        <span>个人简介</span>
+                        <textarea id="form-desc"></textarea>
+                    </label>
+                    <label class="page-description">
+                        <span>可提供附加值</span>
+                        <textarea id="form-desc"></textarea>
+                    </label>
+
+                    <a id="subbmit-btn" class="submit-new-btn text_btn active">保存并申请成为认证合火人</a>
+
+                    <a class="submit-new-btn text_btn active_orange" id="btn_invistor1" ms-on-tap="toggle_content(1)"  ms-controller="title-controller">+ 保存当前信息，进一步完善资料提升等级</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div id="hotproject" class="investor-type layer-btn title-control"  ms-controller="title-controller"  ms-on-tap="toggle_content('exp_invistor')">
+            <p>经验合伙人</p>
+            <em id="em_exp_invistor"></em>
+        </div> -->
+        <!-- 经验合伙人 -->
+        <div style="background:white ; display:none" id="invistor2">
+            <div id="item-container" class="item-container">
+
+                <div id='detail_desc'>
+                    <label class="page-desc clearfix" style="margin-top:5px">
+                        <p><b>上传任意一种证明（三选一）即可成为经验合伙人</b></p>
+                    </label>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>固定资产证明(可领头)</h3>
+                            <p>个人名下固定资产市值30万元人民币以上的相关证明。</p>
+                        </div>
+                    </div>
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>收入证明</h3>
+                            <p>最近三年个人年均收入不低于8万元人民币</p>
+                        </div>
+                    </div>
+
+                    <div class="page-logo">
+                        <label id="upload-trigger" class="container">
+                            <div id="upload-progress" class="progress transition"></div>
+                            <img>
+                            <input id="upload-input" class="default-hidden" type="file">
+                        </label>
+                        <div class="text">
+                            <h3>金融资产证明</h3>
+                            <p>个人名下货币资产或证券类资产市值不低于5万元人民币</p>
+                        </div>
+                    </div>
+
+                    <a id="subbmit-btn" class="submit-new-btn text_btn active">保存并申请成为经验合火人</a>
+                    <a class="submit-new-btn text_btn active_orange" id="btn_invistor2" ms-on-tap="toggle_content(2)"  ms-controller="title-controller">+ 保存当前信息，进一步完善资料提升等级</a>
+                </div>
+              </div>
+        </div>
+
+
+        <!-- <div id="roadmap" class="investor-type layer-btn title-control"  ms-controller="title-controller"  ms-on-tap="toggle_content('agent_invistor')">
+            <p>机构合伙人</p>
+            <em id="em_agent_invistor"></em>
+         </div> -->
+
+        <div id="invistor3"  style="background:white; display:none">
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>实缴注册资本</h3>
+                        <p>实缴注册资本在100万元人民币以上</p>
+                    </div>
+                </div>
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>机构资产证明</h3>
+                        <p>总资产或管理资产不低于200万元人民币</p>
+                    </div>
+                </div>
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存并申请成为机构合火人</a>
+        </div>
+
+        <!-- <div id="item-container" class="item-container">
+        <div class="regist pub-title" style="display:block">
+            <div>
+                <a href="project-profile.html">创建项目</a>
+                <a href="investor.html">查看投资人</a>
+                <a href="personal-center.html">查看个人中心</a>
+                <a href="user-manual.html">查看用户手册</a>
+            </div>
+        </div>
+      </div> -->
+
+
+    <div class="banner-footer">
+        <p>BaiBaiChou.com</p>
+        <p>合火人 - 让靠谱的项目找到靠谱的钱</p>
+    </div>
+
+</div>
+
+
+<!-- 行业选择 -->
+<div id="industry-choose" class="industry-choose">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>已选取的行业</span>
+            <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a-->
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+</div>
+
+    <script src="js/avalon.mobile.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/personal-profile-new.js"></script>
+</body>
+</html>

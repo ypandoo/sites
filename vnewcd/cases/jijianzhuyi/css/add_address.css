@@ -1,0 +1,268 @@
+.standard_content
+{
+  width: 90%;
+  margin-left: 5%;
+}
+
+/*buttons*/
+.register_button
+{
+  height: 40px;
+  line-height: 40px;
+  width: 90%;
+  margin-left: 5%;
+  font-size: 18px;
+  background-color: #83DD1A;
+  text-align:center;
+  margin-bottom: 30px;
+}
+
+.login_button
+{
+  height: 40px;
+  line-height: 40px;
+  width: 90%;
+  margin-left: 5%;
+  font-size: 18px;
+  background-color: #83DD1A;
+  text-align:center;
+  margin-top:60px;
+  margin-bottom: 30px;
+}
+
+
+ input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d2d3d3;
+  line-height: 40px;
+  padding-left: 15px;
+}
+
+.error_tip
+{
+  display:inline-block;
+  float:left;
+  width:70%;
+  text-align:left;
+  line-height: 1.5em;
+  color: red;
+  padding-left: 15.99%;
+}
+
+.region_describe
+{
+display: inline-block;
+  float: left;
+  width: 100%;
+  text-align: left;
+  /* line-height: 2em; */
+  padding-top: 8px;
+  padding-left: 15.99%;
+}
+
+.region_describe h4
+{
+  font-size: 0.6rem;
+}
+
+.reg_row
+{
+  height: 4.5em;
+  clear:both;
+}
+
+.reg_row_big
+{
+  height: 5.6em;
+  clear:both;
+}
+
+.warn input {
+  background-color: #ffe5e5;
+  border: 1px solid #ff8080;
+}
+
+.row_half_left {
+  display: inline-block;
+  float: left;
+  width: 14.99%;
+  text-align: left;
+  line-height: 2.5em;
+  margin-right: 1%;
+}
+
+.row_half_right {
+  display: inline-block;
+  float: left;
+  width: 83.99%;
+  text-align: center;
+  /* margin-right: 15px; */
+}
+
+.row_third_left {
+  display: inline-block;
+  float: left;
+  width: 14.99%;
+  text-align: left;
+  line-height: 38px;
+    height: 40px;
+  margin-right: 1%;
+}
+
+.row_third_middle {
+  display: inline-block;
+  float: left;
+  width: 42%;
+  text-align: left;
+  /* margin-right: 15px; */
+  line-height: 38px;
+    height: 40px;
+}
+
+.row_third_right {
+  display: inline-block;
+  float: left;
+  width: 42%;
+  text-align: right;
+  line-height: 38px;
+    height: 40px;
+}
+
+.row_third_middle select{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 38px;
+    height: 40px;
+  width: 96%;
+  /* margin-right: 10px; */
+  border: 1px solid #d2d3d3;
+  padding-left: 15px;
+  overflow: hidden; 
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.row_third_right select{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 38px;
+    height: 40px;
+  width: 96%;
+  /* margin-right: 10px; */
+  border: 1px solid #d2d3d3;
+  padding-left: 15px;
+  overflow: hidden; 
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.row_third_right input{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 38px;
+    height: 40px;
+  width: 96%;
+  /* margin-right: 10px; */
+   border: 1px solid #d2d3d3;
+     padding-left: 15px;
+     overflow: hidden; 
+  background-color: grey;
+  color: white;
+}
+
+.row_third_right input[type="button"]{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 38px;
+    height: 40px;
+  width: 96%;
+  /* margin-right: 10px; */
+   border: 1px solid #d2d3d3;
+     padding-left: 0px;
+     overflow: hidden; 
+  background-color: grey;
+  color: white;
+}
+
+.arrow_left:after {
+    content: '>';
+    display: inline-block;
+    background-size: 26px 26px;
+    position: absolute;
+    right: 20px;;
+    top: 0;
+    pointer-events: none;
+}
+
+.arrow_left
+{
+  position: relative;
+  overflow: hidden;
+}
+
+.arrow_right:after {
+    content: '>';
+    display: inline-block;
+    background-size: 26px 26px;
+    position: absolute;
+    right: 0.4rem;
+    top: 0;
+    pointer-events: none;
+}
+
+.arrow_right
+{
+  position: relative;
+  overflow: hidden;
+}
+
+.map-box {
+  padding: 0 15px 15px 15px;
+  border: 2px solid #7ed51a;
+  background-color: #fff;
+  width: 300px;
+  z-index: 999;
+  text-align: left;
+  margin: 0px 0 0 -147.5px;
+
+  position: absolute;
+    top: 60%;
+    left: 50%;
+    margin: 0;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+}
+
+.map-box h2{
+  line-height: 2.5em;
+  font-size: 1.4em;
+}
+
+.map-box h4{
+  line-height: 1.4rem;
+  font-size: 0.8rem;
+}
+
+.map-box .end-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/end-x.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.map-box .copy {
+  border-top: 1px solid #d2d3d3;
+  padding-top: 14px;
+}
+
+.image_layer
+{
+  padding-top: 10px;
+}

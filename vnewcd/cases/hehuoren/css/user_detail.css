@@ -1,0 +1,1139 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+/*******************
+    Personal Info.
+  *******************/
+.personal-info{
+    width: 100%;
+}
+.personal-info img{
+    display: inline-block;
+}
+.personal-brief{
+    width: 100%;
+    min-height: 60px;
+    padding: 12px 5%;
+}
+.personal-brief h3{
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+    text-align: center;
+}
+.personal-brief h3 span{
+    font-size: 15px;
+}
+.personal-brief h4{
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+    text-align: center;
+}
+.personal-brief h4 span{
+    font-size: 13px;
+    color: #999;
+}
+/*********************
+     Slider Module
+  *********************/
+
+.participation {
+  padding-bottom:20px;
+}
+
+.participation .slider-container {
+  padding: 6px 0;
+}
+
+.pesonal-info h1,
+.participation h1 {
+  font-size:18px;
+  color:#999;
+  line-height:36px;
+  margin-top:26px;
+  padding:0 5.2%;
+}
+
+.slider-container {
+  height: 160px;
+}
+.slider-container li div{
+  display: inline-block;
+  width: 102px;
+}
+.slider-container li div img {
+  width:102px;
+  height: 102px;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container li div h3 {
+  line-height:22px;
+}
+
+.slider-container li div p {
+  color:#999;
+  line-height:14px;
+  margin-top:-2px;
+}
+/*********************
+    History
+ *********************/
+.history{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.history div.title{
+    width: 100%;
+    padding: 26px 5.2% 0;
+    background: #fff;
+}
+.history div.title h1{
+    display: inline-block;
+    font-size: 18px;
+    line-height: 40px;
+    color: #999;
+}
+.history div.title i{
+    display: inline-block;
+    min-width: 15px;
+    color: #333;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 2px 5px 1px;
+    text-align: center;
+    border-radius: 3px;
+    vertical-align: top;
+    margin-top: 10px;
+    background: #EEE;
+}
+.history ul{
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.history ul::-webkit-scrollbar{
+    display: none;
+}
+.history li{
+    display: inline;
+    white-space: nowrap;
+    float: none;
+}
+.history li a{
+    display: inline-block;
+    height: 150px;
+    width: 120px;
+    text-align: center;
+    border-right: 2px solid #fff;
+    vertical-align: top;
+}
+.history li img{
+    width: 70px;
+    height: 70px;
+    border-radius: 3px;
+    margin-top: 15px;
+    vertical-align: bottom;
+}
+.history li h5{
+    margin-top: 10px;
+    font-size: 16px;
+    white-space: normal;
+}
+.history li p{
+    font-size: 14px;
+    color: #aaa;
+    white-space: normal;
+    line-height: 18px;
+    margin-top: 5px;
+}
+.history li p.name{
+    margin-top: 5px;
+}
+/*********************
+    Pesonal Summary
+ *********************/
+.personal-summary{
+    display:inline-block;
+    width:100%;
+    padding:25px 5.2%;
+    background:#F5F5F5;
+}
+.personal-summary h1{
+    font-size: 18px;
+    line-height: 30px;
+}
+.personal-summary h3{
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    color: #aaa;
+}
+.personal-summary h3 p{
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+}
+.personal-summary .item{
+    margin-top: 15px;
+}
+.personal-summary ul{
+    display: inline-block;
+    width: 100%;
+}
+.personal-summary ul li{
+    display: inline-block;
+    line-height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+.personal-summary ul li .title{
+    display: inline-block;
+    font-size: 14px;
+    float: left;
+}
+.personal-summary ul li .date{
+    display: inline-block;
+    font-size: 18px;
+    color: #aaa;
+    float: right;
+}
+/*********************
+    Pesonal Info
+ *********************/
+
+.pesonal-info {
+  display:inline-block;
+  width:100%;
+  padding:0 5.2% 36px;
+  background:#F5F5F5;
+}
+
+.pesonal-info h1 {
+  padding:0;
+}
+
+.pesonal-info p {
+  line-height:16px;
+  margin-top:8px;
+}
+
+.pesonal-info h3 {
+  color:#bbb;
+  line-height:22px;
+  margin-top:20px;
+}
+
+.pesonal-info .mark-list {
+  display:inline-block;
+  width:100%;
+}
+
+.pesonal-info .mark-list li {
+  min-width:30px;
+  font-size:12px;
+  color:#666;
+  padding:4px 6px 3px;
+  margin-right:3px;
+  margin-bottom:4px;
+  border-radius:2px;
+  border:1px solid #CCC;
+  background:#E9E9E9;
+}
+
+.fund-paln {
+  margin-top:1px;
+  padding:32px 8.4% 30px 9.2%;
+  background:#EEE;
+}
+
+@media only screen and (max-width: 360px) {
+  .fund-paln {
+    padding-left:5.4%;
+    padding-right:5.4%;
+  }
+}
+
+.fund-paln .plan {
+  display:inline-block;
+  width:100%;
+}
+
+.fund-paln .plan li {
+  width:46%;
+  height:54px;
+}
+
+.fund-paln .plan li:last-child {
+  width:54%;
+  border-left:1px solid #F3F3F3;
+}
+
+.fund-paln .plan li i {
+  display:inline-block;
+  width:27.2%;
+  max-width:46px;
+  height:100%;
+  vertical-align:top;
+  background:url(http://dn-acac.qbox.me/mobile/public/tree_cac.png) no-repeat left center scroll;
+  background-size:74px;
+}
+
+.fund-paln .plan li:last-child i {
+  width:26.8%;
+  margin-left:10px;
+  background-position:-38px center;
+}
+
+@media only screen and (max-width: 326px) {
+  .fund-paln .plan li:last-child i {
+    width:26%;
+    min-width:40px;
+    margin-left:4px;
+  }
+}
+
+.fund-paln .plan li .desc {
+  display:inline-block;
+  width:58%;
+  text-align:center;
+  margin-top:8px;
+}
+
+.fund-paln .plan li:last-child .desc {
+  width:64%;
+}
+
+@media only screen and (max-width: 302px) {
+  .fund-paln .plan li:last-child .desc {
+    width:58%;
+    margin-left:4px;
+  }
+}
+
+.fund-paln .plan li .desc em {
+  font-size:12px;
+  color:#666;
+}
+
+.fund-paln .desc p {
+  color:#666;
+  height:22px;
+  font-size:22px;
+}
+
+.fund-paln .plan li .desc.small-font p {
+  font-size:18px;
+  line-height:24px;
+}
+
+.fund-paln .desc span {
+  color:#666;
+  font-size:12px;
+}
+
+.fund-paln > p {
+  color:#666;
+  font-size:12px;
+  line-height:16px;
+  margin-top:18px;
+}
+
+.fund-paln > p em {
+  color:#333;
+  font-size:12px;
+  font-weight:700;
+  margin:0 2px;
+}
+
+.fund-paln > p b {
+  margin:0 1px;
+}
+/*******************
+      Follow
+  ********************/
+.follow{
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+.follow a{
+    display: inline-block;
+    font-size: 14px;
+    width: 50%;
+    float: left;
+}
+.follow a.following{
+    border-right: 1px solid #ddd;
+    text-align: right;
+    padding-right: 3.5em;
+}
+.follow a.follower{
+    text-align: left;
+    padding-left: 3.5em;
+}
+.follow a span{
+    font-size: 18px;
+}
+.page-container{
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    overflow-x: hidden;
+    letter-spacing: -3px;
+}
+.details{
+    white-space: normal;
+    display: inline-block;
+    letter-spacing: normal;
+    -webkit-transition:margin-left 0.4s ease;
+}
+.details.slide-left{
+    overflow: hidden;
+}
+.slide-page{
+    white-space: normal;
+    display: inline-block;
+    letter-spacing: normal;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.slide-page .header{
+    position: relative;
+    height: 46px;
+    width: 100%;
+    background: #fff;
+    white-space: nowrap;
+    border-bottom: 1px solid #f5f5f5;
+}
+.slide-page .header a{
+    position: relative;
+    display: inline-block;
+    height: 46px;
+    width: 46px;
+    z-index: 1;
+    background: url("http://dn-acac.qbox.me/mobile/public/back-arrow.png") no-repeat center;
+    background-size: 25px;
+}
+.slide-page .header h3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+}
+.slide-page .follow-list{
+    display: none;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #f5f5f5;
+}
+.slide-page .follow-list a{
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+    background: #fff;
+    overflow: hidden;
+}
+.slide-page .follow-list a .avatar{
+    width: 33%;
+    min-width: 100px;
+    padding: 15px 0;
+    text-align: center;
+    float: left;
+}
+.slide-page .follow-list a .avatar img{
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.slide-page .follow-list a .summary{
+    width: 66%;
+    min-width: 210px;
+    padding: 20px 15px 15px 0;
+    height: 100px;
+    float: left;
+
+}
+.slide-page .follow-list a .summary h4{
+    line-height: 18px;
+}
+.slide-page .follow-list a .summary h4 .name{
+    font-size: 18px;
+}
+.slide-page .follow-list a .summary h4 .title{
+    font-size: 14px;
+    color: #aaa;
+}
+.slide-page .follow-list a .summary .desc{
+    margin-top: 5px;
+    font-size: 14px;
+    white-space: normal;
+}
+.slide-page .loading{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+}
+.slide-page .loading em{
+    display: inline-block;
+    background: url("http://dn-acac.qbox.me/mobile/listloading.gif") no-repeat center;
+    background-size: 150px;
+    height: 50px;
+    width: 50px;
+}
+/******************
+     new page
+ ******************/
+
+.new-page .selection .section-list {
+  display:inline-block;
+  width:100%;
+  padding-left:0;
+  border:none;
+}
+
+.new-page .selection section {
+  position:static;
+  display:inline-block;
+  width:100%;
+  float:left;
+  margin-bottom:3px;
+  padding:38px 7.2% 35px 5.3%;
+  border-top:1px solid #F3F3F3;
+  border-bottom:1px solid #F3F3F3 !important;
+  background-image:none;
+}
+
+.new-page .selection section.active {
+  border-color:rgba(33, 112, 205, 0.04);
+  background:rgba(33, 112, 205, 0.08);
+}
+
+.new-page section .logo {
+  height:56px;
+  float:left;
+}
+
+.new-page .selection section img {
+  width:56px;
+}
+
+.new-page .selection section .summary {
+  float:left;
+  margin-left:10px;
+}
+
+.new-page section .summary p {
+  color:#999;
+}
+
+.new-page .selection section h3 {
+  color:#666;
+  font-size:28px;
+  line-height:36px;
+}
+
+.new-page .selection section h3.small-font {
+  font-size:22px;
+  line-height:32px;
+  margin-bottom:2px;
+}
+
+
+.new-page .selection section h3.minimum-font {
+  font-size:20px;
+  line-height:30px;
+  margin-bottom:4px;
+}
+
+.new-page section .item-state {
+  float:right;
+  margin-top:10px;
+}
+
+.new-page section .tag,
+.new-page section.already-submit .vector-icons {
+  display:none;
+}
+
+.new-page section .vector-icons ,
+.new-page section.already-submit .tag {
+  display:block;
+}
+
+.new-page .selection section .tag {
+  font-size:12px;
+  line-height:36px;
+}
+
+.new-page .selection section .tag:empty {
+  display:none;
+}
+/*******************
+     Entrepreneurs
+  ********************/
+
+.entrepreneurs .entre-info {
+  display:block;
+  min-height:370px;
+  padding:0;
+}
+
+.entrepreneurs .entre-info section {
+  display:inline-block;
+  width:100%;
+  padding: 0px 5.2% 30px;
+}
+
+.entrepreneurs .entre-info section p {
+  line-height:18px;
+}
+
+.entrepreneurs .entre-info section:nth-child(2n+1) {
+  background:#FFF;
+}
+/*******************
+      Notice
+  ********************/
+.new-page-result{
+  background: #fff;
+}
+.new-page-result .content{
+    margin-top: 0;
+}
+.new-page-result .margin-top{
+  width: 100%;
+  height: 15%;
+}
+.new-page-result .content h1{
+  color: #333;
+  line-height: 50px;
+}
+.new-page-result .content p,.new-page-result .content p span{
+  font-size: 17px;
+  line-height: 2em;
+  font-weight: bold;
+  word-break: break-all;
+}
+.new-page-result .content div{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 5% 0 0;
+}
+.new-page-result .content div img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.new-page-result .content div p{
+    font-size: 14px;
+}
+.new-page-result .content .btn-group{
+    width: 100%;
+    margin-top: 5%;
+    display: inline-block;
+    text-align: center;
+}
+.new-page-result .content .btn-group a{
+    display: inline-block;
+    width: 70%;
+    border: 1px solid #666;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 3px;
+}
+/*******************
+      Submit-com-list
+  ********************/
+.submit-com-list{
+  position: fixed;
+  height: 95%;
+  min-height: 320px;
+  width: 100%;
+  min-width: 320px;
+  border: 1px solid #eee;
+  top:100%;
+  left: 0;
+  right: 0;
+  margin: 46px auto auto;
+  z-index: 10;
+  background: #f5f5f5;
+  -webkit-transition:top .4s ease;
+  transition:top .4s ease
+}
+.submit-com-list .title{
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  color: #333;
+  line-height: 34px;
+  padding: 5px 5%;
+}
+.submit-com-list .list-container{
+  height: 80%;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  display: inline-block;
+}
+.submit-com-list .list-container ul{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  overflow-x: auto;
+}
+.submit-com-list .list-container li{
+  display: inline-block;
+  width: 100%;
+  height: 85px;
+  background: #fff;
+  margin-bottom: 5px;
+  padding: 17px 10px;
+}
+.submit-com-list .list-container li img{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+}
+.submit-com-list .list-container li div{
+  display: inline-block;
+  height: 50px;
+  float: left;
+  margin-left: 3%;
+}
+.submit-com-list .list-container li div h4{
+  font-size: 23px;
+  line-height: 30px;
+}
+.submit-com-list .list-container li div p{
+  font-size: 16px;
+  line-height: 25px;
+  color: #bdbdbd;
+}
+.submit-com-list .list-container em{
+  display: inline-block;
+  float: right;
+  height: 30px;
+  width: 30px;
+  margin: 10px 10px 0 0;
+  background: url("http://dn-acac.qbox.me/sd-unselect.svg") no-repeat;
+}
+.submit-com-list .list-container em.active{
+  background: url("http://dn-acac.qbox.me/sd-select.svg") no-repeat ;
+}
+.submit-com-list .btn-group{
+  text-align: center;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 33px;
+  background:#f5f5f5 ;
+}
+.submit-com-list .btn-group a{
+  display: inline-block;
+  height: 30px;
+  width: 45%;
+  border-radius:3px;
+  font-size: 18px;
+  line-height: 32px;
+}
+.submit-com-list .btn-group a.cancle{
+  border: 1px #666 solid;
+  color: #666;
+  margin-right: 2%;
+}
+.submit-com-list .btn-group a.confirm{
+  margin-left: 2%;
+  border:1px solid #999;
+  color:#999
+}
+.submit-com-list .btn-group a.active{
+  background: #E65100;
+  color: #fff;
+  border: none;
+}
+/*******************
+    Share personal card
+  ********************/
+.wechat-PA {
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  text-align:center;
+  top:0;
+  left:0;
+  background:rgba(255, 255, 255, 0.92);
+  z-index:99;
+}
+
+.wechat-PA .summary {
+  position:absolute;
+  display:inline-block;
+  width:306px;
+  top:46%;
+  left:50%;
+  margin-left:-154px;
+  margin-top:-160px;
+}
+
+.wechat-PA h2 {
+  font-size:30px;
+}
+
+.wechat-PA h5 {
+  font-size:20px;
+  color:#FC5830;
+  line-height:32px;
+  margin-top:8px;
+}
+
+.wechat-PA p {
+  font-size:14px;
+}
+.wechat-PA p input{
+  width: 100%;
+  border:none;
+  font-size:14px;
+  text-align: center;
+}
+.wechat-PA p input:focus{
+  outline: none;
+}
+.wechat-PA .image-container {
+  margin-top:12px;
+}
+
+.wechat-PA .image-container img {
+  width:218px;
+}
+.wechat-PA .close {
+  position:absolute;
+  font-size:36px;
+  float:right;
+  top:0;
+  right:0;
+  padding: 10px 20px;
+  cursor:pointer;
+}
+/*发送 分享 提交项目*/
+.fixed-page-action-occupy {
+    width: 100%;
+    height: 50px;
+}
+
+.fixed-page-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(64, 64, 64, .8);
+}
+
+.fixed-page-action .submit-project{
+    display: inline-block;
+    float: right;
+    width: 33%;
+    height: 100%;
+    background: #ff3d00;
+    text-align: center;
+}
+
+.fixed-page-action .submit-project span {
+    font-size: 16px;
+    color: #fff;
+    line-height: 45px;
+}
+
+.fixed-page-action .do-follow {
+    display: inline-block;
+    height: 40px;
+    padding: 12px 12px;
+    float: left;
+}
+
+.fixed-page-action .do-follow em{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(http://dn-acac.qbox.me/mobile/public/star_double_white%20.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 0;
+}
+
+.fixed-page-action .do-follow.active em {
+    background: url(http://dn-acac.qbox.me/mobile/public/star_double_white%20.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 100%;
+}
+
+.fixed-page-action .do-follow span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 16px;
+    vertical-align: 0;
+}
+
+.fixed-page-action .share {
+    display: inline-block;
+    height: 40px;
+    padding: 12px 12px;
+    float: left;
+}
+
+.fixed-page-action .share em {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(http://dn-acac.qbox.me/mobile/public/share_empty.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 0;
+}
+
+.fixed-page-action .share span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 16px;
+    vertical-align: 0;
+}
+.fixed-page-action i{
+    display: inline-block;
+    float: left;
+    width: 0;
+    height: 100%;
+    padding: 10px 0 4px;
+}
+.fixed-page-action i b{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    border-top: 2px solid rgba(0,0,0,0);
+    border-bottom: 2px solid rgba(0,0,0,0);
+    border-right: 1px solid rgba(0, 0, 0, .3);
+}
+/*微信内嵌页提示分享*/
+.wechat-in{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.95);
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.wechat-in img{
+    width: 95%;
+}
+
+
+ .action{
+    width: 100%;
+    height: 100px;
+    border-top: 1px #f5f5f5 solid;
+/*    border-bottom: 1px #e0e0e0 solid;*/
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+ .action a{
+    position: relative;
+    display: inline-block;
+    width: 24.9%;
+    height: 39px;
+    padding: 8px 0;
+    float: left;
+    text-align: center;
+        background-color: #D6D6D6;
+    border: 1px solid white;
+}
+ .action.double a{
+    width: 50%;
+}
+ .action a:active{
+    border: 1px solid #f5f5f5;
+}
+ .action a span{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    width: 100%;
+}
+ .action a.follow em{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 2px;
+    background-size: 10px 20px;
+}
+ .action a.follow.active em{
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 -10px;
+    background-size: 10px 20px;
+    margin-bottom: -2px;
+}
+ .action a.invest em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcredit-card.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+ .action a.invest span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .action a.invest.active{
+    border: 1px solid #f5f5f5;
+}
+ .action a.invest.active:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #e0e0e0;
+    top: 32px;
+    left: 50%;
+}
+ .action a.submit span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .action a.submit em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcopy.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+
+/**/
+.get-more{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    height: 40px;
+    border-top:1px solid #FFF;
+}
+ .get-more a{
+    position: relative;
+    display: inline-block;
+    width: 24.9%;
+    height: 39px;
+    padding: 8px 0;
+    float: left;
+    text-align: center;
+    background-color: #E0E0E0;
+}
+ .get-more.double a{
+    width: 50%;
+}
+ .get-more a:active{
+    border: 1px solid #f5f5f5;
+}
+ .get-more a span{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    width: 100%;
+    border-right: 1px solid #FFF;
+}
+ .get-more a.follow em{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 2px;
+    background-size: 10px 20px;
+}
+ .get-more a.follow.active em{
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 -10px;
+    background-size: 10px 20px;
+    margin-bottom: -2px;
+}
+ .get-more a.invest em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcredit-card.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+ .get-more a.invest span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .get-more a.invest.active{
+    border: 1px solid #f5f5f5;
+}
+ .get-more a.invest.active:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #e0e0e0;
+    top: 32px;
+    left: 50%;
+}
+ .get-more a.submit span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .get-more a.submit em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcopy.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+
+ .get-more .third
+{
+    border:none;
+}
+a.fixed
+{
+    background-color:rgb(255, 61, 0);
+    
+}
+
+a.fixed span.fixed
+{
+    color:white;
+}
+
