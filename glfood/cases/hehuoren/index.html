@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>合火人</title>
+    <meta name="keywords" content="合火人"/>
+    <meta name="description" content="合火人"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="合火人"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/homepage.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="bk"></div>
+    <div class="details">
+        <div id="header" class="newhead">
+            <div class="logo touch-href" data-href=""></div>
+            <div class="options">
+                <span></span>
+                <ul class="hidden-menu">
+                    <li class="touch-href" data-href="">首页</li>
+                    <li class="touch-href" data-href="">创建项目</li>
+                    <li class="touch-href" data-href="startup.html">项目集锦</li>
+                    <li class="touch-href" data-href="">合火人风采</li>
+                    <li class="touch-href" data-href="">条款规定</li>
+                    <li class="line"></li>
+                    <li class="touch-href" data-href="">登录</li>
+                    <li class="touch-href" data-href="">退出</li>
+                </ul>
+            </div>
+
+            <!-- Not login status   changelog:3
+             <div class="account">
+                <span></span>
+                <ul class="hidden-menu"></ul>
+            </div> --> 
+
+            <!-- Login status -->
+            <div class="account active">
+                <span  style="background:url(img/project1.png)"></span>
+                <ul class="hidden-menu"></ul>
+            </div>
+        </div>
+        <div class="section-container">
+            <section class="reward">
+                <div class="title pub-title">
+                    <h3><small style="font-size:80%; font-weight:500; color:white">告别平凡做身边实体项目的</small></h3>
+                    <h3>#合火人#</h3>
+                </div>
+                <div class="tag-group">
+                    <div class="selector"></div>
+                    <div class="btn-group">
+                        <a class="one active" href="startup.html">
+                            <p>项目集锦</p>
+                            <h4><span>诚</span>实可信，靠谱接地气</h4>
+                        </a>
+                        <a class="two"  href="">
+                            <p>合伙人风采</p>
+                            <h4><span>独</span>立决策，帮忙不添乱</h4>
+                        </a>
+                        <a class="three"  href="">
+                            <p>个人主页</p>
+                            <h4><span>平</span>台使用的贴心管家</h4>
+                        </a>
+                        <a class="four"  href="">
+                            <p>报名路演</p>
+                            <h4><span>优</span>秀线下项目</h4>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bk-num">
+                    <div class="num-container">
+                        <p>20</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="regist pub-title" style="background-color: #F5F5F5;">
+                <h3>#在合火人#</h3>
+                <h4>靠谱项目与靠谱投资人相遇的地方</h4>
+                <div>
+                    <a href="">注册成为投资人，不再错过好项目</a>
+                    <a href="">马上创建新项目，寻找我的合伙人</a>
+                </div>
+            </section>
+
+
+            <section class="classes pub-title">
+                <img class="icon-msg" src="img/plane.png">
+                <h3>#在合火人#</h3>
+                <h4>啥都不懂没关系,从零开始</h4>
+                <div class="btn-group">
+                    <a class="new" href=""><p>用户协议</p></a>
+                    <a class="new" href=""><p>风险通知书</p></a>
+                </div>
+                <h4><b>学习我们精心为您准备的创业课程</b></h4>
+            </section>
+
+            <section class="quick">
+                <a href="">
+                    <img src="img/rule.png">
+                    <h4>规则条款</h4>
+                    <p>投资人和创业项目批量对接</p>
+                </a>
+                <a href="">
+                    <img src="img/content.png">
+                    <h4>服务内容</h4>
+                    <p>投资人和创业项目批量对接</p>
+                </a>
+                <a href="">
+                    <img src="img/question.png">
+                    <h4>常见问题</h4>
+                    <p>投资人和创业项目批量对接</p>
+                </a>
+                <a href="">
+                    <img src="img/fee.png">
+                    <h4>收费模式</h4>
+                    <p>投资人和创业项目批量对接</p>
+                </a>
+            </section>
+
+            <!--You need to fill project list in homepage.js, maybe ajax data formatted as json
+            //sample data
+            self.list = self.framework.list = [{logo:'img/project.png',name:'测试项目1',img:'img/index_projectbg.jpg',
+            description:'项目信息完善指导',complete:50, link:'your_map_location', level:1, step:2, area:'房地产'},
+            {logo:'img/project1.png',name:'测试项目1',img:'img/index_projectbg.jpg',
+            description:'项目信息完善指导',complete:20, link:'your_map_location', level:1, step:2, area:'房地产'}];
+             -->
+
+            <section class="sd-list pub-title" ms-controller="sd-list">
+                <h3>#在合火人#</h3>
+                <div class="description">
+                    <p>通过闪投帮助创业者找到基石投资人，并在线上找到更多跟投人，不收取任何费用。</p>
+                </div>
+
+                <div id="touch-zone" class="pro-info">
+                    <div class="layout" ms-css-background="url({{data.image}})"></div>
+                    <div class="info-container">
+                        <a class="corner" href="">报名闪投</a>
+                        <div class="arrow left" ms-on-tap="prev()"><em></em></div>
+
+                        <div class="content pro-info-unit">
+                            <a ms-href="data.link">
+                                <div class="project-icon">
+                                    <img ms-src="data.logo" style="width:70px; height:auto">
+                                </div>
+
+                                <div class="name"><h4  ms-text="data.name"></h4></div>
+                                <div class="description">
+                                    <p ms-text="data.description"></p>
+                                </div>
+
+                                <div class="new-progress-container">
+                                        <div class="new-progress-group">
+                                            <div class="new-progress" style="width:75%">
+                                                <div class="new-progress-bar" style="width: 50%;"></div>
+                                            </div>
+                                            <div class="new-progress-sta"><p  ms-text="data.complete"></p></div>
+                                        </div>
+                                        <p><em><a ms-href="data.link">项目预期地址(点击查看地图)</a></em></p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="arrow right" ms-on-tap="next()"><em></em></div>
+                    </div>
+                </div>
+                <div class="fin-info">
+                    <p class="left pro-info-unit">项目阶段：<span ms-text="data.step"></span></p>
+                    <p class="left pro-info-unit">项目等级：<span ms-text="data.level"></span></p>
+                    <p class="right pro-info-unit">所属行业：<span ms-text="data.area"></span></p>
+                </div>
+                <div class="list-container">
+                    <ul id="list-container">
+                        <li id="sd-selector" class="selector"><div></div></li>
+                        <li ms-repeat="list" ms-data-id="$index">
+                            <div><img ms-src="el.logo||''"></div>
+                        </li>
+                        <li class="more">
+                            <a href="">
+                                <div>
+                                    <img src="img/occupy.png">
+                                    <p>更多&gt;&gt;</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <!--Fill this part by your way  -->
+            <section class="stars pub-title">
+                <h3>#在合火人#</h3>
+                <div class="description">
+                    <p>彻底解决创业者融资过程，乃至后续发展过程中的核心痛点：快速提高融资能力；彻底改变融资姿态</p>
+                </div>
+
+                <div class="list-container">
+                    <a class="corner">潜力新星</a>
+                    <ul class="list" avalonctrl="stars-list">
+                        <li>
+                            <a href="/startup/13343928">
+                                <div class="logo">
+                                    <img src="http://dn-xswe.qbox.me/13343926?imageMogr2/thumbnail/240x">
+                                </div>
+                                <h6>脉心云</h6>
+                                <p class="brief">中国首款非侵入式个体心衰院外监护系统</p>
+                                <div class="tag">
+                                    <p class="location"><em></em>&nbsp;<span>山西 · 太原</span></p>
+                                    <p class="industry"><span>医疗健康 · 新兴技术 · 信息技术</span></p>
+                                    <div class="group">
+                                        <p>获得投资意向:<span>1</span>份</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/startup/13344219">
+                                <div class="logo">
+                                    <img src="http://dn-xswe.qbox.me/13344212?imageMogr2/thumbnail/240x">
+                                </div>
+                                <h6>陶瓷粉末涂料</h6>
+                                <p class="brief">一种高硬度易清洁粉末涂料</p>
+                                <div class="tag">
+                                    <p class="location"><em></em>&nbsp;<span>广东 · 深圳</span></p>
+                                    <p class="industry"><span>新能源/材料</span></p>
+                                    <div class="group">
+                                        <p>获得投资意向:<span>0</span>份</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li><li>
+                            <a href="/startup/13342724">
+                                <div class="logo">
+                                    <img src="http://dn-xswe.qbox.me/13342717?imageMogr2/thumbnail/240x">
+                                </div>
+                                <h6>老外快线</h6>
+                                <p class="brief">外籍人才悬赏直聘平台</p>
+                                <div class="tag">
+                                    <p class="location"><em></em>&nbsp;<span>江苏 · 南京</span></p>
+                                    <p class="industry"><span>移动互联网</span></p>
+                                    <div class="group">
+                                        <p>获得投资意向:<span>0</span>份</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="empty" style="height:auto">
+                <img src="img/slogan.png" width="100%">
+            </section>
+            <section class="footer">
+                <a href="tel:400">
+                    <h4>400-000-000</h4>
+                    <p>工作日9:30~18:30</p>
+                </a>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/avalon.mobile.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/homepage.js"></script>
+
+<script>
+</script>
+</html>

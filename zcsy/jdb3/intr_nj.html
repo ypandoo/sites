@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)http://www.xinweicook.com/mobile/product/5507e23c31608d125dcc6b08 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1, maximum-scale=1,user-scalable=no">
+<title>纳金路北社区</title>
+<link type="text/css" href="css/mobile.css" rel="stylesheet">
+<link type="text/css" href="css/flexslider.css" rel="stylesheet">
+<style>
+body html{font-family:'Microsoft YaHei'}
+p{font-family:'Microsoft YaHei'}
+</style>
+</head>
+<body>
+<div class="header" style="text-align:center">
+	<p style="text-align:center; font-size: 18px; font-weight:bold; line-height:50px;color:#C54945">社区体系介绍</p>
+</div>
+<div class="main product">
+  <div class="dyn">
+    <div class="detail">
+      <div class="picture"><img src="images/njb_door.jpg"></div>
+      <div class="describe" style="margin-top:10%">
+        <h3>纳金路北社区简介</h3>
+        <h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纳金路北社区成立于1999年9月份，位于拉萨市城关区纳金路北面，辖区占地总面积为0、96平方公里。目前辖区内住有事业单位9家、企业11家、安居小区3个、退休基地3家、2所幼儿园、部队1家。</p>
+		<p  style="margin-top:5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前社区共有工作人员29名、其中12名社区成员、3名社区工作者、2名协管员，12名治保人员。 </p>
+		</h4>
+
+		<h3 style="margin-top:10%">联系方式</h3>
+        <h4>
+		地址：城关区纳金路地面卫星站47号<br>总值班电话：0891-6340386
+		</h4>
+      </div>
+      <h3 style="margin-top:10%">位置与导航</h3>
+	  <br>
+      <div id="content" style="height:480px;"></div>
+
+      <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+      <script type="text/javascript">
+		
+		var lng = 91.156118;
+		var lat = 29.657249;
+		var zoom = localStorage.getItem('zoom');
+		
+		// 百度地图API功能
+		var map = new BMap.Map("content");            // 创建Map实例
+		var point = new BMap.Point(lng, lat);    // 创建点坐标
+		var marker = new BMap.Marker(point);
+		map.addOverlay(marker);
+		map.centerAndZoom(point,15);                     // 初始化地图,设置中心点坐标和地图级别。
+		map.enableScrollWheelZoom();                            //启用滚轮放大缩小
+		
+		</script>
+    </div>
+  </div>
+</div>
+<a href="#" class="nimicopy">嘎玛贡桑街道便民服务</a>
+</body>
+</html>

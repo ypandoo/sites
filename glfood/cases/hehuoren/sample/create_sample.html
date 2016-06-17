@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>天使汇 | 创建项目 | 让靠谱的项目找到靠谱的钱</title>
+    <meta name="keywords" content="天使汇,天使汇官网,天使合投平台,天使投资,创业VC投资"/>
+    <meta name="description" content="【1亿元跟投指数基金跟投你的创业项目正在进行时】中关村创业大街管理委员会明星企业。3400位优质天使投资人17万名激情创业者都在天使汇聚集。"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="天使汇"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="http://m.angelcrunch.com" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+    <link rel="Bookmark" href="/favicon.ico" />
+    <link href="css/base.css" rel="stylesheet"/>
+<link href="css/create.css" rel="stylesheet" />
+</head>
+<body>
+<div class="bk"></div>
+<div id="details" class="details">
+    <div class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
+    <div id="head-container" class="head-container">
+        <div id="header" class="newhead">
+            <div class="logo touch-href" data-href="/"></div>
+            <div class="options">
+                <span></span>
+                <ul class="hidden-menu">
+                    <li class="touch-href" data-href="/startup">闪投项目</li>
+                    <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                    <li class="touch-href border" data-href="/investor">投资人</li>
+                    <li class="line"></li>
+                </ul>
+            </div>
+            <div class="account">
+                <span></span>
+                <ul class="hidden-menu"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="item-container" class="item-container">
+        <label class="page-title">
+            <h1>创建项目</h1>
+        </label>
+
+        <div class="page-logo">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <h3>上传logo</h3>
+                <p>产品logo而非公司logo。比如手机App的图标。像素在512x512px以上的正方形标志。支持JPG、GIF、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+
+        <label class="page-name">
+            <span>项目名称</span><input id="form-name" maxlength="20">
+        </label>
+        <label class="page-desc">
+            <p>名称需简洁清晰，传递印象明确</p>
+        </label>
+
+        <label class="page-name">
+            <span>一句话介绍</span><input id="form-one" maxlength="25">
+        </label>
+        <label class="page-desc">
+            <p>用最精炼的一句话来概括你的产品(25字以内)</p>
+        </label>
+
+        <label class="page-description">
+            <span>产品介绍</span>
+            <textarea id="form-desc"></textarea>
+        </label>
+
+        <label class="page-name industry" ms-controller="industry-select">
+            <span>所属行业</span><em ms-on-tap="box_show()"></em>
+        </label>
+        <label class="page-desc industry">
+            <p>所属行业最多选择5个 已选择</p>
+            <div class="industry-container" ms-controller="industry-select">
+                <span ms-repeat="input_selected" ms-on-tap="cancle_input_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </label>
+
+        <label id="select-stage" class="page-name">
+            <span>所属阶段</span><em></em><p></p>
+            <select name="stage" class="stage">
+                <option value="0" selected>请选择所属阶段</option>
+                <option value="1">概念阶段：项目只有一个想法或原型</option>
+                <option value="2">研发阶段：已组建团队，项目开发中</option>
+                <option value="3">正式发布：项目已上线并开始运营</option>
+                <option value="5">已有用户：已有原始用户积累</option>
+                <option value="4">已有收入：项目已经有实际收入</option>
+            </select>
+        </label>
+
+        <label id="select-position" class="page-name">
+            <span>项目中职位</span><em></em><p></p>
+            <select name="position">
+                <option value="0" selected>请选择您的职位</option>
+                <option value="市场负责人">市场负责人</option>
+                <option value="技术负责人">技术负责人</option>
+                <option value="运营负责人">运营负责人</option>
+                <option value="创始人">创始人</option>
+                <option value="产品负责人">产品负责人</option>
+            </select>
+        </label>
+
+        <div class="addition-agreement">
+            <p>我承诺以上登记的所有信息绝对真实，
+                并对因信息虚假产生的一切后果负全责。<br>
+                我已了解和同意<a href="/agreement/service">《天使汇用户服务协议》</a>。<br><br>
+                如果您的项目符合以下条件, <br>
+                天使汇跟投指数基金将自动为该项目注入不超过本轮融资额30%的资金：<br>
+                1.本轮估值不超过3000万人民币。<br>
+                2.本轮融资有其他投资人注入超过50%的资金。</p>
+            <div id="agreement-checkbox" class="modules">
+                <div class="mentos-container">
+                    <label class="label">
+                        <input id="legal-terms" class="mentos" type="checkbox" name="additionalAgreement" value="1"/>
+                        <em class="tracks">
+                            <em class="slider-button">
+                                <i>×</i>
+                                <i></i>
+                            </em>
+                        </em>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <a id="subbmit-btn" class="submit-new-btn"><img src="http://dn-acac.qbox.me/mobile/homepage/btn-arrow-left.png"></a>
+        <div class="banner-footer">
+            <p>AngelCrunch.com</p>
+            <p>天使汇 - 让靠谱的项目找到靠谱的钱</p>
+        </div>
+    </div>
+</div>
+
+<div id="industry-choose" class="industry-choose">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>输入新的行业</span>
+            <input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a>
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+<div id="create-result" class="new-page-result">
+    <div class="close yesiknow">×</div>
+    <div class="title"><h3>创建项目成功</h3></div>
+    <div class="content"><p><strong>初步创建项目提交后，审核会在3个工作日内完成。</strong><br>我们建议您通过电脑访问www.angelcrunch.com，完善更多项目信息，项目信息的完整度将极大的提高项目的审核速度与通过率。</p></div>
+    <div class="btn-group"><a class="yesiknow">我知道了</a></div>
+</div>
+
+</body>
+<script src="http://dn-acac.qbox.me/jquery-2.1.4.min.js"></script>
+<script src="http://dn-acac.qbox.me/mobile/public/jquery-cookie.js"></script>
+<script src="http://dn-acac.qbox.me/avalon.mobile.min.js"></script>
+<script src="js/base.js"></script>
+<script src="http://dn-acac.qbox.me/mobile/public/image_upload.min.js"></script>
+<script src="js/create.js"></script>
+
+<script>
+</script>
+</html>

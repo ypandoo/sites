@@ -1,0 +1,119 @@
+.indent_head
+{
+  padding: 15px 15px 0 15px;
+}
+
+.indent_head h2
+{
+  font-size: 1.4em;
+}
+
+.indent_head .detail
+{
+  color:grey;
+}
+
+.indent_head .detail h4
+{
+  line-height: 1.2rem;
+}
+
+.indent_head .left
+{
+  display:inline-block;
+  float:left;
+  width:79.999%;
+  text-align:left;
+  line-height: 2em;
+}
+
+.indent_head .right
+{
+  display:inline-block;
+  float:left;
+  width:19.999%;
+  text-align:right;
+  line-height: 2em;
+  color: grey;
+  text-decoration: underline;
+}
+
+.standard_section
+{
+  padding: 15px;
+  border-top: 1px solid #d2d3d3;
+}
+
+.standard_section h4
+{
+  line-height: 1.2rem;
+}
+
+.indent_detail h2
+{
+    padding: 15px 0 15px 15px;
+}
+
+.indent_detail h2
+{
+  font-size: 1.4em;
+}
+
+tbody td .dishes .dishes-content {
+  color: #202223;
+  display: inline-block;
+  margin-left: 14px;
+}
+
+.row
+{
+  height: 5em;
+  border-bottom: 1px solid #d2d3d2;
+  border-top: 1px solid #d2d3d2;
+}
+
+.row .head
+{
+  padding-left: 15px;
+}
+
+.content
+{
+  padding: 10px
+}
+
+.content h5
+{
+  color: grey;
+}
+
+.total
+{
+      line-height: 2em;
+    height: 2em;
+    margin-top: 20px;
+}
+
+.total .left
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:left;
+  padding-left: 15px;
+}
+
+.total .right
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:right;
+  padding-right: 15px;
+}
+
+.tail
+{
+  text-align: right;
+  padding-right: 15px;
+}

@@ -1,0 +1,105 @@
+.switch_text
+{
+	line-height: 52px;
+	width: 90%;
+	margin-left: 5%;
+	height: 50px;
+	margin-top: 4px;
+}
+
+.switch_left
+{
+	margin-top: 4px;
+	border-right: 1px solid #cccccc; 
+}
+
+.switch_right
+{
+	margin-top: 4px;
+}
+
+.switch_selected
+{
+	border-bottom: 3px solid rgb(131, 223, 27);
+	color:#52af00;
+}
+
+.notice
+{
+	text-align:center;
+	height: 60px;
+	clear: both;
+}
+
+.notice_title
+{
+	line-height:60px;
+}
+
+.notice_text
+{
+	line-height:60px;
+}
+
+.product
+{
+	  width: 49.99%;
+  padding: 1px;
+  display: inline-block;
+  float: left;
+}
+
+
+.food_des_index
+{
+	height:70px;
+	background-color: rgb(247, 247, 247);
+	letter-spacing: 0px;
+}
+
+.food_des_index_title
+{
+	text-align:left;
+	margin-right: 5px;
+	letter-spacing: 0px;
+}
+
+.food_des_index_price
+{
+	font-weight: bold;
+}
+
+.food_des_index_price_dash
+{
+	text-decoration: line-through;
+	color:grey;
+	font-weight: normal;
+}
+
+.recommend
+{
+	text-align:center; 
+	line-height:30px; 
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+
+.food_des_index .food_des_index_title h3 h2 h1 h4 
+{
+	letter-spacing: 0px;
+}
+
+.divide21 h2
+{
+	letter-spacing: 0px;
+}
+
+.food_des_index_title h3
+{
+	letter-spacing: 0px;
+}
+
+.food_des_index small
+{
+	color: grey;
+}
