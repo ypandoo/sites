@@ -1,0 +1,1684 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+/*******************
+    branding head
+  *******************/
+
+.branding-head {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background: #F5F5F5;
+    border-bottom: 5px solid #fff;
+}
+.branding-head .state{
+    position: absolute;
+    left: 5%;
+    top: 20px;
+    height: 20px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+    background: rgba(200,200,200,.8);
+}
+.branding-head .icon {
+    display: inline-block;
+    width: 100%;
+    min-height:93px;
+    margin-top: 14px;
+}
+
+.branding-head .icon img {
+    width: 25%;
+    max-width:125px;
+    border-radius:8px;
+}
+
+.branding-head .brand-info {
+    min-height:94px;
+    margin-top: 4px;
+    padding-bottom: 16px;
+}
+
+.branding-head .brand-info h1 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.branding-head .brand-info p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.branding-head .brand-info p.extra {
+    font-size: 12px;
+    color: #C9C9C9;
+    margin-top: 8px;
+}
+
+.branding-head .new-progress-container {
+    width: 100%;
+    padding: 20px 22px 14px 20px;
+    background: #EEE;
+    height: auto;
+}
+.branding-head .new-progress-container .new-progress-group .new-progress-sta p{
+    font-size: 14px;
+}
+.branding-head .new-progress-container > p {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+    margin-left: -2px;
+}
+
+.branding-head .new-progress-container > p em {
+    font-size: 14px;
+}
+
+.branding-head p em.right {
+    float: right;
+    margin-right: -2px;
+}
+
+/**********************
+   Article Basic Style
+  **********************/
+
+.article-list article {
+    padding: 10px 6.6% 24px 5.5%;
+    background: #F5F5F5;
+}
+
+.article-list article:nth-child(2n) {
+    background: #FFF;
+}
+
+.article-list article .item {
+    margin-top: 10px;
+}
+.invest-info article .silver,
+.article-list article .silver {
+    color: #AAA;
+}
+
+.invest-info article .gray,
+.article-list article .gray {
+    color: #757575;
+}
+
+.invest-info article h1,
+.article-list article h1 {
+    font-size: 22px;
+    line-height: 44px;
+}
+.article-list article h2 {
+    font-size: 18px;
+    line-height: 44px;
+}
+.article-list article h3 {
+    font-size: 16px;
+    line-height:18px;
+}
+
+.invest-info article p,
+.article-list article p {
+    font-size: 12px;
+    line-height: 22px;
+    text-align: left;
+}
+
+.article-list article p.date {
+    height: 30px;
+    text-align: right;
+}
+
+.article-list p.date i {
+    display: inline-block;
+    max-width:58px;
+    color: #BCBCBC;
+    font-size: 22px;
+    line-height: 16px;
+}
+
+.article-list p.date em {
+    position: absolute;
+    color: #CCC;
+    font-size: 12px;
+    line-height: 10px;
+    bottom: -2px;
+    right: 0px;
+}
+
+.article-list p.avatar {
+    float: right;
+    margin-top: -20px;
+}
+
+.article-list p.avatar:empty {
+    display: none;
+}
+
+.article-list p.avatar img {
+    width: 40px;
+    height:40px;
+}
+
+/**********************
+       Typesetting
+  **********************/
+
+.article-list article.growing-up .item,
+.article-list article.milestone .item {
+    min-height: 34px;
+}
+
+.article-list .team .item {
+    margin-bottom: 28px;
+}
+
+.article-list .team .item:last-child {
+    margin-bottom: 0;
+}
+
+.article-list .team p.gray {
+    width: 85%;
+    margin-top: 6px;
+    text-align:justify;
+}
+
+.article-list .team p.gray.full-width {
+    width: 100%;
+}
+
+.article-list .growing-up p,
+.article-list .milestone p {
+    width: 69%;
+    text-align:justify;
+}
+
+.article-list .growing-up p.date,
+.article-list .milestone p.date {
+    position: relative;
+    display: block;
+    width: 52px;
+    top: 3px;
+    float: right;
+}
+
+.article-list .news {
+    padding-bottom: 20px;
+}
+
+.article-list .news h1 {
+    margin-top: 4px;
+}
+
+.article-list .news .item {
+    margin-top: -2px;
+}
+
+.article-list .news .item p {
+    margin-bottom: 4px;
+}
+
+.article-list .news .item p.gray {
+    line-height: 18px;
+    margin-bottom: 0;
+}
+
+.article-list .news p.date {
+    position: static;
+    text-align: left;
+    margin-top: 8px;
+}
+
+.article-list .news p.date em {
+    position: relative;
+    top: 0;
+    margin-left: 4px;
+}
+
+/**********************
+    Part of Invest-info
+  **********************/
+
+.invest-info {
+    width:100%;
+    border-top: 2px solid #FFF;
+}
+
+.invest-info .needs {
+    padding: 18px 10% 28px 10%;
+    background: #EEE;
+}
+
+.invest-info .needs .info-table {
+    display: inline-block;
+    width: 278px;
+    position: relative;
+    left: 50%;
+    background: url(http://dn-acac.qbox.me/mobile/public/graph_icon.png) no-repeat scroll left center;
+    background-size: 278px;
+    -o-transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+
+/* less than 330px */
+@media only screen and (max-width:330px ) {
+    .invest-info .needs .info-table {
+        width:270px;
+        background-position:left;
+    }
+}
+
+/* less than 320px */
+@media only screen and (max-width:319px ) {
+    .invest-info .needs .info-table {
+        width: 240px;
+        background-size: 248px;
+        background-position:left 24px;
+    }
+}
+
+.invest-info .needs li {
+    float: left;
+    width: 49%;
+    height: 82px;
+    overflow:hidden;
+}
+
+
+/* less than 320px */
+@media only screen and (max-width:319px ) {
+    .invest-info .needs li {
+        float: left;
+        width: 49%;
+        height: 74px;
+        margin-top:8px;
+        overflow:hidden;
+    }
+}
+
+/* less than 300px */
+@media only screen and (max-width:319px ) {
+    .invest-info .needs li {
+        float: left;
+        width: 49%;
+        height: 64px;
+        overflow:hidden;
+    }
+}
+
+.invest-info .needs li aside {
+    box-sizing: content-box;
+    position: absolute;
+    display: inline-block;
+    width: 114px;
+    height: 54px;
+    margin-top: 16px;
+    padding-left: 18px;
+    text-align: center;
+}
+
+.invest-info .needs li:last-child aside {
+    width:80px;
+    padding-left:58px;
+}
+
+.invest-info .needs li i {
+    display: inline-block;
+    font-size: 22px;
+    margin-top: 4px;
+}
+
+.invest-info .needs li em {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 22px;
+}
+
+.invest-info .needs p {
+    width: 100%;
+    margin-top: 4px;
+    line-height: 16px;
+}
+
+.invest-info .needs p i {
+    color: #757575;
+}
+
+.invest-info .needs p em {
+    font-size: 14px;
+    color: #757575;
+    font-weight: 700;
+}
+
+.invest-info .invester .slider-container {
+    height: 170px;
+    padding: 0;
+    background: #F5F5F5;
+}
+
+.invest-info .slider-container ul {
+    height: 100%;
+}
+
+.invest-info .slider-container li {
+    position: relative;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    border-right: 1px solid #FFF;
+    background: #F5F5F5;
+}
+
+.invest-info .slider-container li:last-child {
+    border-right: 0;
+}
+
+.invest-info .invester p.avatar {
+    display: inline-block;
+    margin-top: 14px;
+}
+
+.invest-info .invester p.avatar img {
+    width:50px;
+    height: 50px;
+}
+
+.invest-info .invester p {
+    text-align: center;
+}
+
+.invest-info li p i {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 14px;
+    margin-top: 6px;
+}
+
+.invest-info li p em {
+    display: block;
+    width: 100%;
+    color: #999;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: "PingHei","Lucida Grande","sans-serif";
+    margin-top: 4px;
+}
+
+.invest-info .invester h1,
+.invest-info .extra-files h1 {
+    padding-top: 12px;
+    width: 100%;
+    height: 56px;
+    padding-left: 4.6%;
+}
+
+.invest-info .invester h1 > i {
+    position:absolute;
+    display:inline-block;
+    min-width:15px;
+    height:15px;
+    color:#666;
+    font-size:12px;
+    line-height:16px;
+    text-align:center;
+    margin-top:14px;
+    margin-left:2px;
+    padding:0 3px 0 2px;
+    border-radius:3px;
+    background:#EEE;
+}
+
+.invest-info .funds,
+.invest-info .questions-answers {
+    padding: 15px 4.6% 20px;
+}
+
+.invest-info .funds p {
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+
+.invest-info .questions-answers h1 {
+    line-height:24px;
+    margin-top:9px;
+    font-family: "PingHei","Lucida Grande","sans-serif";
+}
+
+.invest-info .funds p:last-child {
+    margin-bottom: 2px;
+}
+
+.invest-info .questions-answers {
+    background: #F5F5F5;
+}
+
+.invest-info .questions-answers .group {
+    margin-top:16px;
+}
+
+.invest-info .questions-answers .item {
+    margin-top:6px;
+}
+
+.invest-info .questions-answers p.title-container {
+    height:22px;
+    line-height:18px;
+    padding-top:2px;
+}
+
+.invest-info .questions-answers p i {
+    position:absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size:12px;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #FFF;
+    text-align: center;
+    font-family: "PingHei","Lucida Grande","sans-serif";
+    border-radius: 2px;
+    margin-right: 2px;
+    background: #D3D3D3;
+}
+
+.invest-info .questions-answers p em {
+    position:absolute;
+    display: inline-block;
+    height:16px;
+    font-size:14px;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #FFF;
+    font-family: "PingHei","Lucida Grande","sans-serif";
+    padding:0 6px;
+    margin-left:18px;
+    border-radius: 2px;
+    background: #D3D3D3;
+}
+.invest-info .product-trial{
+    padding: 15px 4.6% 20px;
+}
+.invest-info .product-trial .product-box{
+    width: 100%;
+    padding: 5px 0;
+    overflow: hidden;
+}
+.invest-info .product-trial .product-box a{
+    display: inline-block;
+    height: 30px;
+    float: left;
+    background: #eee;
+    margin: 0 10px 10px 0;
+    white-space: nowrap;
+    border-radius: 3px;
+    padding-right: 7px;
+}
+.invest-info .product-trial .product-box a span{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    font-size: 14px;
+    line-height: 31px;
+}
+.invest-info .product-trial .product-box a em{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+.invest-info .product-trial .product-box a.ie em{
+    background: url("http://dn-acac.qbox.me/mobile/public/ie_logo.png") no-repeat center;
+    background-size: 17px;
+}
+.invest-info .product-trial .product-box a.apple em{
+    background: url("http://dn-acac.qbox.me/mobile/public/apple_logo.png") no-repeat center;
+    background-size: 17px;
+}
+.invest-info .product-trial .product-box a.android em{
+    background: url("http://dn-acac.qbox.me/mobile/public/android_logo.png") no-repeat center;
+    background-size: 17px;
+}
+
+.extra-files {
+    padding-bottom:5px;
+}
+
+.extra-files .file {
+    height:50px;
+    line-height:52px;
+    background:#eee url(http://dn-acac.qbox.me/detail_icon_03.png) no-repeat 16px center;
+    background-size:32px;
+}
+
+.extra-files .file a {
+    display:inline-block;
+    width:100%;
+    height:96%;
+    padding-left:54px;
+}
+
+.extra-files .file a:active {
+    background:rgba(82, 82, 82, 0.27);
+}
+
+.extra-files .map {
+     height: 50px;
+    line-height: 52px;
+    background: #eee url(../img/map.png) no-repeat 18px center;
+    background-size: 32px;
+    padding-left: 10px;
+}
+
+.extra-files .map a {
+    display:inline-block;
+    width:100%;
+    height:96%;
+    padding-left:54px;
+}
+
+.extra-files .map a:active {
+    background:rgba(82, 82, 82, 0.27);
+}
+
+.extra-files .video {
+     height: 50px;
+    line-height: 52px;
+    background: #eee url(../img/video.png) no-repeat 18px center;
+    background-size: 32px;
+    padding-left: 10px;
+}
+
+.extra-files .video a {
+    display:inline-block;
+    width:100%;
+    height:96%;
+    padding-left:54px;
+}
+
+.extra-files .video a:active {
+    background:rgba(82, 82, 82, 0.27);
+}
+
+/******************
+    Not Logged In
+  ******************/
+
+.login-options {
+    width:100%;
+}
+
+.login-options p.declare {
+    text-align:center;
+    line-height:24px;
+    padding:20px 0;
+    padding-right:6px;
+}
+
+.login-options p.declare i {
+    font-weight:700;
+}
+
+.login-options .control-module {
+    height:50px;
+    padding:0 5.5% 0 6.1%;
+    background:#F5F5F5;
+}
+
+.login-options .control-module:last-child {
+    margin-top:4px;
+}
+
+.login-options .control-module em {
+    line-height:52px;
+    padding-left:8px;
+}
+
+.login-options .control-module em i {
+    position:absolute;
+    display:inline-block;
+    width: 0;
+    height: 0;
+    margin-top:21px;
+    margin-left:-6px;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #333;
+    border-bottom: 4px solid transparent;
+}
+
+.login-options .control-module .btn {
+    width:78px;
+    margin-top:11px;
+    border-color:#666;
+    float:right;
+}
+/******************
+    Share follow
+  ******************/
+
+.btn-group-social{
+    width: 48.5%;
+    border-radius: 3px;
+    height: 28px;
+    display: inline-block;
+    background: #fff;
+    text-align: center;
+
+}
+.btn-group-social a{
+    display: inline-block;
+    height: 100%;
+    font-size: 14px;
+}
+.btn-group-social .follow-btn{
+    width: 48%;
+    line-height: 30px;
+    border-right: 1px solid #eee;
+}
+.btn-group-social .follow-btn span{
+    padding-left: 8%;
+}
+.btn-group-social .follow-btn i{
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    margin-bottom:-3px;
+    background-size: auto 16px;
+    background-repeat: no-repeat;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAMAAABxVtfCAAABI1BMVEUAAAAAAAAAAAAAAACzs7MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAAAAAAAAEBASKioq3t7dMTEwAAAAAAAABAQESEhIAAAA3NzcAAAAMDAxAQEAAAAAAAABsbGw/Pz82NjZLS0sAAACrq6tAQEBISEjCwsLExMQAAAAAAAD///8AAAAFBQUtLS0cHBwNDQ35+fnt7e3l5eU9PT0iIiISEhLd3d3V1dXQ0NDExMSzs7OcnJyWlpaLi4tjY2NgYGBVVVVAQEApKSn+/v7Y2NjJycm/v7+6urq4uLijo6ORkZGFhYWDg4N5eXlwcHBXV1dQUFBHR0c0NDQkJCQVFRWs3izSAAAANnRSTlMA+/ItBfXu1baMgnlYVEEUBePZw7yvmpBoXVEnEhENCfbdzsuvoIyGf3ZfX01JR0E5NzIiHBJkKVYcAAABE0lEQVQoz6XR146CUBAGYIGlyNLsuuvq9t7LGYoI2Pv2Xt//KVYCQUBJTPyvJvkyOTNnYnNHLEdbloukY4wWI2iNUbXlCMvD2xAnZtJqQr1ry5lZtJST2wh9rnNTT11d5jFDR6ipJQXiuuw1nB2ymSQGoyYa50UDcmvngCMcY0EzBh+de2Sn0ur2vhSZPHUb47JRR748mzhvg4PwXZ3Qo4mv+GaJw9DDJ9UhLzls4FLtl+JDW6Qs3bEWTP3bplVx7AH2Q1RK/Iznb9RuUV3Ohuyc6qFGX1Ve9aqSvgnaEdl9/wOGBqXTp4mg7cEINnhJZEnLxIWgbQO1W7QLgsGgELR06sKtpAIVXKJ4UvIdWZBii+QfQIkuyYlEJ98AAAAASUVORK5CYII=');
+
+}
+.btn-group-social .follow-btn.active i{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAMAAABxVtfCAAAAhFBMVEUAAADwYx7wZSLwZSLwZCHwZSLwZSLwZSLwZSLwYh3wYh7wZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLwYRzwZSLwZSLwZSLwZSLwZSLwZSLwXhjwZSLwZSLwYx/wZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLwZSLvVw7wZSKYp9RyAAAAK3RSTlMAEvXyBfrueF5BCNW2r5yOhFhUUC8qDuPZw7yMgEgjGQIB3c7Lk2lnOTcnVedscAAAALhJREFUKM+l0OcKwyAUhmFj9t57Nd3td//31wwa0SRQ6PtDkIdzEMnPSdaxeeEhxardH210AH3YtzsAOd2lLseYu0fKDVNUfM4p65KHirnCTHtrHTCNwC3AoldPD5NlqME22i6Dlr8hOVq31iLFZG3wt8TyVUZaRPhKZjoRujBrBMpyZp5gT41ZJfFmUIw59nTaKW8BgHOkSAEFZJM3F1o9r0ocFQZvVfn6fpKh6RxJbcYub9Mi//QB+9oh2PPF5LEAAAAASUVORK5CYII=');
+}
+.btn-group-social .share-wechat{
+    width: 48%;
+    line-height: 30px;
+}
+.btn-group-social .share-wechat span{
+    padding-left: 8%;
+}
+.btn-group-social .share-wechat i{
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin-bottom: -6px;
+    background-size: auto 17px;
+    background-repeat: no-repeat;
+    background-image: url('data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAACUAAAAgCAMAAACijUGCAAACLlBMVEUAAAA0NDS2tra/v7/b29szMzM3NzfKysonJycjIyMzMzMzMzMzMzMyMjIuLi7CwsKPj48rKysyMjIyMjIzMzMiIiIhISEaGhoqKiovLy8zMzMxMTFGRkYzMzMPDw8zMzMRERGCgoI4ODg+Pj5dXV1CQkLOzs6pqalaWlqPj49EREQzMzMjIyMwMDAiIiIyMjIyMjIkJCQzMzMkJCQjIyMyMjIzMzMcHBwzMzNubm4gICAhISEzMzMzMzMyMjIyMjIzMzMlJSVtbW0+Pj4wMDBAQEAkJCQwMDBUVFQkJCQzMzOlpaV9fX2NjY3Ly8vT09OlpaXNzc2BgYE1NTVgYGC/v793d3czMzN8fHzMzMwuLi4rKys0NDQzMzMiIiIzMzMUFBQpKSkpKSktLS0jIyMtLS0gICA7OzsuLi4wMDAWFhY4ODgkJCQ2NjZMTEw4ODgzMzMXFxdEREQVFRUzMzM/Pz8TExMsLCwiIiIUFBQ2NjZLS0sUFBRWVlZubm4xMTEvLy8MDAwGBgYkJCQ9PT1TU1MnJycgICAbGxtubm4eHh5cXFyAgIA7OzsrKyt9fX0AAAAnJydbW1tRUVF0dHRCQkKWlpaAgIBycnJRUVEAAABjY2MQEBAyMjJ8fHwzMzMeHh49PT14eHiEhISfn5+8vLzU1NRaWlp0dHSwsLDZ2dmfn5+dnZ3Q0NCmpqYzMzPm5uY1NTUzMzMvLy8mJiYxMTEpKSktLS0nJycTExOtDzzSAAAAsXRSTlMA/gQSEAYEAvz0yi0pJBQLCP7o4dza1dPDmZOOZGFeW1tIQjMwJBwWFBENCP777+7r39XOx8XAu7i0p6CdmpaBfHxycnJoaFZUUUxGQTEwLSgjISAfGxoXFQ78+vj39/bz8e3r6eXg3trY19XVz87IwsK7u7q3tbKurqypqKSjoqGgn5iXlpGQj46GhIF+eHV1c3FrXV1ZWFdXVlVVVFBNSzs5NzYrJiYlIx0dHBgPBwYNvAiyAAAB+UlEQVQ4y2IgFaznVZKXlffi1sKjhm++jTDjZp2NmwwsZLlxKVIp37jDpEtmmpxjRdxWEVns5nnobbRawgJm8i9z1t9UwoNNEYeBJxI3uGozFy+GouVJyT4oAvySW6VZ0VVVc8gAyRBPNbALF0QyMKgXMiqjuzyFC0QVM9YDySDxTe5AaqagDZphThyuIKo3ywVIRjSKLwRS7BLxtvIoXqjbAnYq00omEMUcyjavx3lOs5jOJhEXPoQqyy0syJp87RSU/QPXqvn1pTJaBCOp0kBSNN1RdQOUGWq9uSAcJt65RQmhSHEissFt221hnpjN2QIXVp+wlIEh0g+oksl/FTDgzHRhkbouO1EVpmrGVCChsLOfgUE1oQjInMIpBZMCTIajlB/KnOUNJBY3+QBNbQeFj5aoEUwVk8S2BmYwi1khAC3I86LYYMxA022SEFVy6KpyddngbHfGDgYBZQ12JjlvVEVhhlxwNrt97Fwlox2b0/OF3NBib5s9guMWIyKoVyuRYyhoshpZ0QqxTUgJLcRcvHURO4OAZvd2awGEcIQ5owMbgguUh9CalRutfGGCzGUbpbWx5gCNms1p0oph7ExBimvUxIR5cOQmlskZWzlFjY1FOTMnSepz486aXlJcQkKmUsLRjGbheLIwG6u2NisDn4MdD8OgBgBhmmXuFI1yOAAAAABJRU5ErkJggg==');
+}
+
+/*********************
+   Album  Slider Module
+  *********************/
+
+.slider-container {
+   /* height: 116px;*/
+}
+
+.slider-container li img {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}
+/**********************
+    Investor Slider Module
+  **********************/
+
+.investor-slider-container{
+    position: relative;
+    height: 190px;
+    background: #F5F5F5;
+}
+.investor-slider-container ul{
+    display:inline-block;
+    height:100%;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+.investor-slider-container>ul>li{
+    display: inline;
+    width: 32%;
+    white-space: nowrap;
+    float: none;
+    text-align: center;
+}
+.investor-slider-container>ul>li>div{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    width: 32%;
+}
+.investor-slider-container ul li img{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.investor-slider-container ul li em{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 52px;
+    color: #fff;
+    border-radius: 50%;
+    margin-top: 0;
+}
+.investor-slider-container ul li p{
+    width: 100%;
+    white-space: normal;
+    position: absolute;
+}
+.investor-slider-container ul li p.portrait{
+    padding-top: 14px;
+}
+.investor-slider-container ul li p.name{
+    font-size: 16px;
+    top:70px
+}
+.investor-slider-container ul li p.company{
+    font-size: 14px;
+    padding: 0 3px;
+    top:91px;
+    line-height: 17px;
+    color: #999;
+    height: 34px;
+}
+.investor-slider-container ul li p.title{
+    font-size: 14px;
+    padding: 0 3px;
+    top:130px;
+    line-height: 17px;
+    color: #999;
+}
+
+.investor-slider-container>ul>li>div>div{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: 150px;
+    line-height: 40px;
+    font-size: 24px;
+    background: #EEE;
+}
+
+.wechat-PA {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    text-align:center;
+    top:0;
+    left:0;
+    background:rgba(255, 255, 255, 0.92);
+    z-index:99;
+}
+
+.wechat-PA .summary {
+    position:absolute;
+    display:inline-block;
+    width:306px;
+    top:46%;
+    left:50%;
+    margin-left:-154px;
+    margin-top:-160px;
+}
+
+.wechat-PA h2 {
+    font-size:30px;
+}
+
+.wechat-PA h5 {
+    font-size:20px;
+    color:#FC5830;
+    line-height:32px;
+    margin-top:8px;
+}
+
+.wechat-PA p {
+    font-size:14px;
+}
+.wechat-PA p input{
+    width: 100%;
+    border:none;
+    font-size:14px;
+    text-align: center;
+}
+.wechat-PA p input:focus{
+    outline: none;
+}
+.wechat-PA .image-container {
+    margin-top:12px;
+}
+
+.wechat-PA .image-container img {
+    width:218px;
+}
+
+.wechat-PA .close {
+    position:absolute;
+    font-size:36px;
+    float:right;
+    top:0;
+    right:0;
+    padding: 10px 20px;
+    cursor:pointer;
+}
+@media only screen and (min-width:500px ){
+    .wechat-PA .image-container img {
+        width:188px;
+    }
+
+    .wechat-PA .summary {
+        margin-top:-130px;
+    }
+
+    .wechat-PA .close {
+        margin-top:21px;
+        margin-right:30px;
+    }
+}
+
+.self_notice{
+    display: none;
+    background: rgba(255,255,255,.95);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.self_notice .close{
+    position: absolute;
+    font-size: 36px;
+    float: right;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.self_notice .mg{
+    width: 100%;
+    height: 20%;
+}
+.self_notice .image{
+    width: 100%;
+    text-align: center;
+}
+.self_notice .image img{
+    width: 23%;
+    min-width: 80px;
+    max-width: 150px;
+    border-radius: 10%;
+}
+.self_notice .text{
+    width: 100%;
+    margin-top: 25px;
+    padding: 0 5% ;
+    text-align: justify;
+}
+.self_notice .text p{
+    font-size: 16px;
+    line-height: 22px;
+}
+.self_notice .text  a{
+    font-size: 16px;
+    line-height: 20px;
+    color: #ff3d00;
+}
+.self_notice .btn-group{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+.self_notice .btn-group a{
+    display: inline-block;
+    padding:6px 30% 3px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 20px;
+
+}
+.self_notice .btn-group a:active{
+    background: #000;
+    color: #fff;
+}
+.new-self-notice{
+    display: none;
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.new-self-notice .close{
+    position: absolute;
+    font-size: 36px;
+    float: right;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.new-self-notice .mg-20{
+    width: 100%;
+    height: 20%;
+}
+.new-self-notice .mg-10{
+    width: 100%;
+    height: 10%;
+}
+.new-self-notice .title-container{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    white-space: nowrap;
+}
+.new-self-notice .title-container .image{
+    display: inline-block;
+    width: 64px;
+    height: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+.new-self-notice .title-container .image em{
+    display: inline-block;
+    background: url("http://dn-acac.qbox.me/mobile/public/investor.png") no-repeat;
+    background-size: 64px;
+    width: 64px;
+    height: 64px;
+}
+.new-self-notice .title-container .text{
+    display: inline-block;
+    width: 260px;
+    height: 100%;
+    padding: 15px 10px 15px 5px;
+}
+.new-self-notice .title-container .text h3{
+    font-size: 22px;
+    line-height: 30px;
+}
+.new-self-notice .btn-container{
+    width: 100%;
+}
+.new-self-notice .btn-container p{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+    padding: 5px 0 25px;
+}
+.new-self-notice .btn-container a{
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 54px;
+    background: #666;
+    color: #fff;
+}
+/*微信内嵌页提示分享*/
+.wechat-in{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.95);
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.wechat-in img{
+    width: 95%;
+}
+/*相册*/
+.album{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1;
+}
+.album .mg{
+    width: 100%;
+    height: 50%;
+}
+.album .mg .bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 15;
+}
+.album .mg .bar p{
+    display: inline-block;
+    height: 50px;
+    color: #fff;
+}
+.album .mg .bar p.num{
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.album .mg .bar p.num span{
+    color: #fff;
+}
+.album .mg .bar p.close{
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    font-size: 22px;
+}
+.album .container{
+    width: 100%;
+    height: 1px;
+    overflow: visible;
+    white-space: nowrap;
+}
+.album .container .item-container{
+    transform: translate3d(0px, -50%, 0px);
+    -webkit-transform: translate3d(0px, -50%, 0px);
+}
+.album .container .item{
+    display: inline;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+}
+.album .container .item img{
+    width: 100%;
+    vertical-align: middle;
+    -webkit-transform:scale(1,1);
+    -webkit-transition: -webkit-transform 0.3s linear;
+}
+.album .container .item .video-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.album .container .item .video-container img{
+    position: relative;
+    visibility: hidden;
+    z-index: 0;
+}
+.album .container .item .video-container .video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+.img-scale{
+    -webkit-transform:scale(0.95,0.95) !important;
+}
+/*发送 分享 发送意向*/
+.fixed-page-action-occupy {
+    width: 100%;
+    height: 50px;
+}
+
+.fixed-page-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(64, 64, 64, .8);
+}
+
+.fixed-page-action .send-intention {
+    display: inline-block;
+    float: right;
+    width: 33%;
+    height: 100%;
+    background: #ff3d00;
+    text-align: center;
+}
+
+.fixed-page-action .send-intention span {
+    font-size: 14px;
+    color: #fff;
+    line-height: 45px;
+}
+
+.fixed-page-action .send-intention.done {
+    background: #eee;
+}
+
+.fixed-page-action .send-intention.done span {
+    color: #aaa;
+}
+
+.fixed-page-action .follow {
+    display: inline-block;
+    height: 40px;
+    padding: 12px 12px;
+    float: left;
+}
+
+.fixed-page-action .follow em {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(http://dn-acac.qbox.me/mobile/public/star_double_white%20.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 0;
+}
+
+.fixed-page-action .follow.active em {
+    background: url(http://dn-acac.qbox.me/mobile/public/star_double_white%20.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 100%;
+}
+
+.fixed-page-action .follow span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 14px;
+    vertical-align: 0;
+}
+
+.fixed-page-action .share {
+    display: inline-block;
+    height: 40px;
+    padding: 12px 12px;
+    float: left;
+}
+
+.fixed-page-action .share em {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(http://dn-acac.qbox.me/mobile/public/share_empty.png) no-repeat;
+    background-size: 16px;
+    background-position: 0 0;
+}
+
+.fixed-page-action .share span {
+    display: inline-block;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 14px;
+    vertical-align: 0;
+}
+.fixed-page-action i{
+    display: inline-block;
+    float: left;
+    width: 0;
+    height: 100%;
+    padding: 10px 0 4px;
+}
+.fixed-page-action i b{
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    border-top: 2px solid rgba(0,0,0,0);
+    border-bottom: 2px solid rgba(0,0,0,0);
+    border-right: 1px solid rgba(0, 0, 0, .3);
+}
+
+/*new reset*/
+h2
+{
+    font-size: 18px;
+}
+
+.project-brief{
+    clear:both;
+    text-align: left;
+    /*border-bottom: 5px solid #fff;*/
+}
+
+.project-brief h1 {
+    font-size: 22px;
+    line-height: 44px;
+}
+
+.project-brief p {
+    font-size: 12px;
+    line-height: 22px;
+    text-align: left;
+}
+
+.project-brief .item {
+    margin-bottom: 28px;
+}
+.project-brief article .item {
+    margin-top: 10px;
+}
+
+.content-container {
+    padding: 10px 6.6% 5px 5.5%;
+    background: #F5F5F5;
+}
+
+/*TITLE CONTROL*/
+.title-control
+{
+    position: relative;
+    height: 60px;
+}
+
+.title-control h1
+{
+    font-size: 22px;
+    line-height: 44px;
+}
+
+.title-control em {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("../img/arrow_down.png") no-repeat 50% 50%;
+    background-size: 30px 30px;
+    position: absolute;
+    top:15px;
+    right: 20px;
+}
+
+/*快速入口*/
+ .quick{
+    overflow: hidden;
+}
+ .quick a{
+    display: inline-block;
+    height: 90px;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    background: #EEEEEE;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 10px 0;
+}
+ .quick a img{
+    display: inline-block;
+    width: auto;
+    height: 40px;
+}
+ .quick a h4{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+ .quick a p{
+    font-size: 12px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+ .empty{
+    height: 50px;
+}
+
+.quick a.mymessage:after
+{
+    content: 'New';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    color: #fff;
+    right: -50px;
+    top: -90px;
+    /* top: 0px; */
+    text-align: center;
+    background: #FF3D00;
+    -webkit-transform: rotate(45deg);
+    /* transform: rotate(45deg); */
+    position: Relative;
+}
+
+ .require-block{
+    overflow: hidden;
+}
+ .require-block a{
+    display: inline-block;
+    height: 90px;
+    width: 50%;
+    float: left;
+    text-align: center;
+    background: #EEEEEE;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    padding: 10px 0;
+}
+ .require-block a img{
+    display: inline-block;
+    width: auto;
+    height: 40px;
+}
+ .require-block a h4{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+ .require-block a p{
+    font-size: 12px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+
+.require-block a.mymessage:after
+{
+    content: 'New';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 900;
+    color: #fff;
+    right: -50px;
+    top: -90px;
+    /* top: 0px; */
+    text-align: center;
+    background: #FF3D00;
+    -webkit-transform: rotate(45deg);
+    /* transform: rotate(45deg); */
+    position: Relative;
+}
+/**/
+
+.shop
+{
+        overflow: hidden;
+}
+
+.shop span
+{
+    float: left;
+    width: 50%;
+    display: inline-block;
+    height: 25px;
+}
+
+.shop span h2
+{
+    line-height: 60px;
+}
+
+.shop h4
+{
+    line-height: 30px;
+}
+
+.review h4
+{
+    line-height: 30px;
+}
+
+.story h4
+{
+    line-height: 20px;
+}
+
+/*潜力新星*/
+  .stars{
+    position: relative;
+    padding: 0;
+}
+  .stars .description{
+    width: 100%;
+    padding: 7px 3% 0;
+}
+  .stars .description p{
+    text-align: justify;
+    font-weight: 900;
+    font-size: 14px;
+    padding: 0 3%;
+}
+  .stars .list-container{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+  .stars .list-container .corner{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    color: #fff ;
+    right: -27px;
+    top: 10px;
+    background:#ff3d00;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    text-align: center;
+    line-height: 31px;
+    font-size: 16px;
+    z-index: 5;
+}
+  .stars .list-container .list{
+    display: inline-block;
+    width: 100%;
+    height: 362px;
+    padding: 20px 5%;
+    background: #F5F5F5;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+  .stars .list-container .list li{
+    display: inline-block;
+    width: 150px;
+    height: 322px;
+    margin-right: 5%;
+    background: #fff;
+    vertical-align:bottom;
+    white-space: normal;
+    float: none;
+}
+  .stars .list-container .list li .logo{
+    width: 150px;
+    height: 100px;
+    padding: 25px 20px;
+    text-align: center;
+}
+  .stars .list-container .list li .logo img{
+    width: 50px;
+    height: 50px;
+}
+  .stars .list-container .list li h6{
+    display: inline-block;
+    height: 32px;
+    width: 100%;
+    font-size: 20px;
+    padding: 2px 0;
+    text-align: center;
+    font-weight: 900;
+}
+  .stars .list-container .list li .brief{
+    display: inline-block;
+    width: 100%;
+    padding: 5px 14px;
+    font-size: 13px;
+    line-height: 20px;
+    height: 90px;
+    text-align: center;
+}
+  .stars .list-container .list li .tag{
+    width: 100%;
+    padding: 10px 10px;
+    background: #eee;
+}
+  .stars .list-container .list li .tag p{
+    position: relative;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+}
+  .stars .list-container .list li .tag p span{
+    color: #666;
+    font-size: 12px;
+    line-height: 18px;
+}
+  .stars .list-container .list li .tag p em{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+}
+  .stars .list-container .list li .tag .location{
+    height: 20px;
+}
+  .stars .list-container .list li .tag .industry{
+    height: 40px;
+}
+  .stars .list-container .list li .tag .location em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/location.png") no-repeat;
+    background-size: 12px 12px;
+}
+  .stars .list-container .list li .tag .industry em{
+    background: url("http://dn-acac.qbox.me/mobile/homepage/tag.png") no-repeat;
+    background-size: 11px 11px;
+}
+  .stars .list-container .list li .tag .group{
+    width: 100%;
+    height: 20px;
+}
+  .stars .list-container .list li .tag .group .follow{
+    float: left;
+}
+  .stars .list-container .list li .tag .group .invite{
+    float: right;
+}
+
+/**/
+.get-more{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    height: 40px;
+    border-top:1px solid #FFF;
+}
+ .get-more a{
+    position: relative;
+    display: inline-block;
+    width: 24.9%;
+    height: 39px;
+    padding: 8px 0;
+    float: left;
+    text-align: center;
+    background-color: #E0E0E0;
+}
+ .get-more.double a{
+    width: 50%;
+}
+ .get-more a:active{
+    border: 1px solid #f5f5f5;
+}
+ .get-more a span{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 25px;
+    width: 100%;
+    border-right: 1px solid #FFF;
+}
+ .get-more a.follow em{
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 2px;
+    background-size: 10px 20px;
+}
+ .get-more a.follow.active em{
+    background: url("http://dn-acac.qbox.me/mobile/listfavourite_.png") no-repeat;
+    background-position: 0 -10px;
+    background-size: 10px 20px;
+    margin-bottom: -2px;
+}
+ .get-more a.invest em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcredit-card.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+ .get-more a.invest span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .get-more a.invest.active{
+    border: 1px solid #f5f5f5;
+}
+ .get-more a.invest.active:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #e0e0e0;
+    top: 32px;
+    left: 50%;
+}
+ .get-more a.submit span{
+    /*border-left: 1px solid #f5f5f5;*/
+}
+ .get-more a.submit em{
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    background: url("http://dn-acac.qbox.me/mobile/listcopy.png") no-repeat;
+    background-size: 11px 11px;
+    margin-bottom: -2px;
+}
+
+ .get-more .third
+{
+    border:none;
+}
+a.fixed
+{
+    background-color:rgb(255, 61, 0);
+    
+}
+
+a.fixed span.fixed
+{
+    color:white;
+}

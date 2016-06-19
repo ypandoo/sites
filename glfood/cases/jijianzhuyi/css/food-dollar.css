@@ -1,0 +1,201 @@
+.title
+{
+  padding-top: 5px;
+}
+
+.myinvitation
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:left;
+  line-height: 3.5em;
+}
+
+.myinvitation h2
+{
+  font-size: 1.4em;
+}
+
+.myaccount
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:right;
+  line-height: 3.5em;
+  color: grey;
+  text-decoration: underline;
+  padding-top: 5px;
+}
+
+.invite
+{
+    padding: 15px;
+}
+
+.invite h4
+{
+  line-height: 1.8em;
+}
+
+.input_msg {
+  display: inline-block;
+  float: left;
+  width: 49.999%;
+  text-align: left;
+  line-height: 2em;
+    color: rgb(131, 221, 26);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.send_msg {
+  display: inline-block;
+  float: left;
+  width: 49.999%;
+  text-align: center;
+  line-height: 2em;
+  background-color: #83DD1A;
+}
+
+.invite_input .send_msg  input{
+    background-color: #83DD1A;
+}
+
+
+.invite_input
+{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d2d3d3;
+  line-height: 40px;
+  padding-left: 15px;
+}
+
+.list_title
+{
+  padding: 30px 15px 15px 15px;
+}
+
+.list_title h2
+{
+  font-size: 1.4em;
+}
+
+
+
+.list_left
+{
+  display:inline-block;
+  float:left;
+  width:74.999%;
+  text-align:left;
+  padding: 15px 0px 15px 15px;
+      height: 7.5rem;
+    border-bottom: 1px solid #d2d3d2;
+}
+
+.list_right
+{
+  display:block;
+  float:left;
+  width:24.999%;
+  text-align:center;
+  border-left: 1px solid #d2d3d3;
+  border-bottom: 1px solid #d2d3d2;
+  line-height: 7.5rem;
+  height: 7.5rem;
+}
+
+.content {
+  height: 7.5rem;
+  width: inherit;
+  display: table-cell;
+  vertical-align: middle; 
+}
+
+.content h4
+{
+  color: grey;
+} 
+
+.grey_bg
+{
+  background-color: #EAEAEA;
+}
+
+.list
+{
+  border-top: 1px solid #d2d3d3;
+}
+
+
+.list h4
+{
+  line-height: 1.4rem;
+}
+
+.list_item
+{
+  height: 7.5rem;
+   border-bottom: 1px solid #d2d3d3;
+}
+
+.default_address
+{
+  background-color: #83DD1A;
+}
+
+.box 
+{
+  position: fixed;
+  padding: 0 15px 15px 15px;
+  border: 2px solid #7ed51a;
+  background-color: #fff;
+  width: 300px;
+  /* height: 460px; */
+  z-index: 15;
+  top: 16%;
+  left: 50%;
+  text-align: left;
+  margin: 0px 0 0 -147.5px;
+}
+
+.box h2{
+  line-height: 1.8em;
+  font-size: 1.4em;
+}
+
+.box h4{
+  line-height: 1.4rem;
+  font-size: 0.8rem;
+}
+
+.box .end-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/end-x.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.box .copy {
+  /*border-top: 1px solid #d2d3d3;*/
+  padding-top: 0.5em;
+}
+
+.box-title
+{
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}

@@ -1,0 +1,107 @@
+/*index page*/
+.notice_title
+{
+	font-size: 18px;
+}
+
+.notice_text
+{
+	color: rgb(135, 211, 54);
+	font-size: 14px;
+}
+
+
+.notice
+{
+text-align: center;
+  /* height: 80px; */
+  /* width: 100%; */
+  /* text-align: center; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.slogan_text
+{
+	height: 35px;
+}
+
+.dish_name
+{
+  padding: 15px;
+  text-align: left;
+}
+
+.price
+{
+	text-align: right;
+	padding: 15px 15px 15px 15px;
+}
+
+.food_des_index
+{
+	height:70px;
+}
+
+.food_des_index_title
+{
+	text-align:left;
+}
+
+.food_des_index_content
+{
+	text-align:left;
+}
+
+.food_des_index_price
+{
+	text-align:right;
+	font-weight: bold;
+}
+
+.food_des_index_price_dash
+{
+	text-align:right;
+	text-decoration: line-through;
+	color: grey;
+}
+
+ .partner {
+	width : 100%;
+	height : 90px;
+	background-color :  #7ed51a;
+}
+ .partner h3 {
+	font-size : 1em;
+	color :  #fff;
+	text-align : center;
+	line-height : 45px;
+	font-weight: normal;
+}
+ .partner h3.icon-bridge {
+	margin : 0 10px;
+	width : 91px;
+	height : 1px;
+	background : url("../src/img/icon-11.png")no-repeat
+}
+ .partner p {
+	text-align : center
+}
+ .partner p img {
+	margin : 0 2px
+}
+.comment_container
+{
+	background-image: url('../img/comment.jpg');
+	background-size: 100% 100%;
+}
+
+.comment{ text-align:center; height: 200px; padding: 20px}
+
+.comment_title{ line-height:30px; margin-bottom:20px;}
+
+.comment_conent{ margin-bottom:30px}
+
+.comment_source{font-weight:bold; line-height:20px}
+
+

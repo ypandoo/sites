@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)http://www.xinweicook.com/mobile/product/5507e23c31608d125dcc6b08 -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1, maximum-scale=1,user-scalable=no">
+<title>统建社区</title>
+<link type="text/css" href="css/mobile.css" rel="stylesheet">
+<link type="text/css" href="css/flexslider.css" rel="stylesheet">
+<style>
+body html{font-family:'Microsoft YaHei'}
+p{font-family:'Microsoft YaHei'}
+</style>
+</head>
+<body>
+<div class="header" style="text-align:center">
+	<p style="text-align:center; font-size: 18px; font-weight:bold; line-height:50px;color:#C54945">社区体系介绍</p>
+</div>
+<div class="main product">
+  <div class="dyn">
+    <div class="detail">
+      <div class="picture"><img src="images/tj_door.jpg"></div>
+      <div class="describe" style="margin-top:10%">
+        <h3>统建社区简介</h3>
+        <h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;嘎玛贡桑办事处统建社区居委会位于城关区东部，辖区东邻藏热路，西接江苏东路，南邻江苏路，北邻嘎玛贡桑路。辖区内主要居住的是原失地农民和自治区退休工作人员，由于辖区建筑年度久远，在城关区政府支持下辖区正在进行全面的基层设施改造。统建社区居委会始建于1994年，辖区面积0.56平方公里，驻地部队一个(高炮二连)，幼儿园1所，加油站1个，自治区退休基地3个。 </p>
+		</h4>
+
+		<h3 style="margin-top:10%">联系方式</h3>
+        <h4>
+		地址：城关区嘎玛贡桑石板路统建社区4组<br>总值班电话：0891-6351884
+		</h4>
+      </div>
+      <h3 style="margin-top:10%">位置与导航</h3>
+	  <br>
+      <div id="content" style="height:480px;"></div>
+
+      <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+      <script type="text/javascript">
+		
+		var lng = 91.156118;
+		var lat = 29.657249;
+		var zoom = localStorage.getItem('zoom');
+		
+		// 百度地图API功能
+		var map = new BMap.Map("content");            // 创建Map实例
+		var point = new BMap.Point(lng, lat);    // 创建点坐标
+		var marker = new BMap.Marker(point);
+		map.addOverlay(marker);
+		map.centerAndZoom(point,15);                     // 初始化地图,设置中心点坐标和地图级别。
+		map.enableScrollWheelZoom();                            //启用滚轮放大缩小
+		
+		</script>
+    </div>
+  </div>
+</div>
+<a href="#" class="nimicopy">嘎玛贡桑街道便民服务</a>
+</body>
+</html>

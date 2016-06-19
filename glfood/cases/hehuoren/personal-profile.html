@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="合火人" />
+    <meta name="keywords" content="合火人" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="Copyright &copy;http://angelcrunch.com 版权所有" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>合火人</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
+    <link rel="Bookmark" href="/favicon.ico" />
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/investor_regist.css" rel="stylesheet"/>
+    <link href="css/investor_active.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/angelcrunch.jq.c.js"></script>
+    <script src="js/image_upload.min.js"></script>
+    <script src="js/angelcrunch.image_tools.jq.c.js"></script>
+    <script src="js/angelcrunch.sendsms_verify.jq.c.js"></script>
+
+    <script src="js/avalon.mobile.min.js"></script>
+    <script src="js/personal-profile.js"></script>
+
+    <script type="text/javascript" id="page-interactive-init">
+        var page = window.page || {};
+        page.MethodObj = function () { };
+        page.MethodObj.prototype = (function () {
+            var settings = page.settings;
+            var I = {
+                Ajax_SMS: {                     // Short message service
+                    url: "http://" + settings.AjaxDomain + "/v2/home/m_verify_code",
+                    basic_data: {
+                    }
+                },
+                Ajax_verify_code: {             // Checked verify code
+                    url: "http://" + settings.AjaxDomain + "/v2/home/m_verify_phone_code",
+                    basic_data: {
+                    }
+                },
+                Ajax_form_submit: {             // Form submit
+                    url: "http://" + settings.AjaxDomain + "/v2/user/v2/m_angel_apply",
+                    basic_data: {
+                    }
+                },
+                current_mobile: ""
+            };
+
+            var waste_9839213 = function () {
+                var className = {
+                            input: {
+                                user_name: "#user-name",
+                                phone: "#phone",
+                                verify_code: "#verify-code",
+                                pwd: "#pwd"
+                            },
+                            file: {
+                                avatar: "#avatar-file",
+                                palyground_files: ":file.hidden",
+                            },
+                            btn: {
+                                file_uploader: ".image-uploader",
+                                SMS: "#verify-btn",
+                                submit: "#subbmit-btn"
+                            },
+                            avatar: "#user-avatar",
+                            palyground_image: ".image-container",
+                            avatar_state: "#avatar-upload-state",
+                            notification: ".notification"
+                        },
+                        state = {
+                            loading: "loading",
+                            disable: "disable",
+                            checking: "checking",
+                            again:"again-js",
+                            active: "active"
+                        },
+                        attr = {
+                            txt: "data-warning-text",
+                            image_id: "data-image-id",
+                            prev_file: "data-prev-file",
+                            crop_data: "data-crop",
+                            palyground_id: "data-playground-bind",
+                            selector_result: "data-selector-result",
+                            selector_value: "data-select-value",
+                            triggered_layer: "data-triggered-layer",
+                            disabled: "disabled"
+                        };
+
+                var $input = {
+                    user_name: $(className.input.user_name),
+                    phone: $(className.input.phone),
+                    verify_code: $(className.input.verify_code),
+                    pwd: $(className.input.pwd)
+                }, $btn = {
+                    file_uploader: $(className.btn.file_uploader),
+                    SMS: $(className.btn.SMS),
+                    submit: $(className.btn.submit)
+                };
+
+                var $avatar, $notification;
+                $avatar = $(className.avatar),
+                        $notification = $(className.notification);
+
+                // Check the button can be Active
+/*                var checkActive = (function () {
+                    var formChecked = function (showNotification) {
+                        var canSubmit = true;
+                        $(attr.txt.attrRetrievalMode()+":visible").each(function () {
+                            var txt, image_id, selector_result;
+                            txt = $(this).attr(attr.txt),
+                                    image_id = $(this).attr(attr.image_id),
+                                    selector_result = $(this).attr(attr.selector_result);
+
+                            if ((image_id == "")
+                                    || (selector_result=="")
+                                    || ($(this).is(":checkbox")
+                                    && !$(this).is(":checked"))
+                                    || ($(this).is("input")
+                                    && !$(this).val())) {
+                                if (showNotification)
+                                    $notification.notificationToggle(txt);
+                                return (canSubmit = false);
+                            }
+                        });
+                        if (!canSubmit) return canSubmit;
+
+                        if ($input.pwd.val().length < 6) {
+                            if (showNotification)
+                                $notification.notificationToggle($input.pwd.attr(attr.txt));
+                            canSubmit = false;
+                        }
+                        if (!($input.phone.val()
+                                && $btn.SMS.hasClass(state.disable)
+                                && $input.verify_code.val()
+                                && $input.verify_code.attr(attr.disabled))) {
+                            if (showNotification)
+                                $notification.notificationToggle($input.verify_code.attr(attr.txt));
+                            canSubmit = false;
+                        }
+                        return canSubmit;
+                    };
+
+                    return function (showNotification) {
+                        if (formChecked(showNotification)) $btn.submit.addClass(state.active);
+                        else $btn.submit.removeClass(state.active);
+                    };
+                }).call(this); */                       // Check the button can be Active Ended
+
+                // SMS initi
+/*                (function () {
+                    var conf = $.Angelcrunch.SMS_Verify.settings;
+                    conf.$btn = $btn;
+                    conf.$input = $input;
+                    conf.$notification = $notification;
+                    conf.Ajax.Ajax_SMS = I.Ajax_SMS;
+                    conf.Ajax.Ajax_verify_code = I.Ajax_verify_code;
+
+                    $.Angelcrunch.SMS_Verify.init(checkActive);
+                }).call(this);*/
+
+                // Submit button
+/*                $btn.submit.click(function () {
+                    checkActive(true);
+                    if ($(this).hasClass(state.active)) {
+                        var url = I.Ajax_form_submit.url,
+                                basic_data = I.Ajax_form_submit.basic_data,
+                                type = "jsonp";
+                        var _data = $.extend(true, {}, basic_data);
+
+                        _data["type_"] = $((attr.triggered_layer + '="' + $("#investortype").attr(attr.selector_result) + '"').attrRetrievalMode()).attr(attr.selector_value);
+                        $(".registration input:visible").each(function () {
+                            _data[$(this).attr("name")] = $(this).val();
+                        });
+
+                        _data["crop"] = $avatar.attr(attr.crop_data);
+                        $(attr.image_id.attrRetrievalMode() + ":visible").each(function () {
+                            _data[$(this).attr("name")] = $(this).attr(attr.image_id);
+                        });
+
+                        $.post(url, _data, function (data) {
+                            if (data.success) {
+                                location.href = $btn.submit.attr("data-redirect");
+                            } else
+                                $notification.notificationToggle(data.message);
+                        }, type);
+                    };
+                    return false;
+                });*/
+
+               /* (function () {                      // About Password Operation
+                    var $eye = $input.pwd.closest("label").find(".eye");
+                    // Mobile
+                    $eye[0].addEventListener('touchstart', function () {
+                        $input.pwd.attr("type", "text");
+                    }, false);
+                    $eye[0].addEventListener('touchend', function (e) {
+                        e.preventDetault();
+                        $input.pwd.attr("type", "password");
+                    }, false);
+                    // PC
+                    $eye.mousedown(function () {
+                        $input.pwd.attr("type", "text");
+                    }).mouseup(function () {
+                        $input.pwd.attr("type", "password");
+                    }).mousemove(function () {
+                        $input.pwd.attr("type", "password");
+                    });
+
+                    $input.pwd.focus(function () {
+                        $(this).attr("type", "password");
+                    });
+                }).call(this);*/
+
+
+
+                /*$(".registration input").not("#verify-code,.hidden").keyup(function () {
+                    checkActive();
+                });
+
+                $("#legal-terms").change(function () {
+                    checkActive();
+                });
+
+                $.Angelcrunch.ImageUploadInit(checkActive);
+
+                // Page load ready checked
+                checkActive();*/
+            }
+
+            var waste_41023823 = function () {
+                var className = {
+                    main_page: ".details",
+                    new_page: ".new-page",
+                    hidden_layer: ".layer-class",
+                    special_layer: ".special-layer"
+                };
+                var $ele = {
+                    main_page: $(className.main_page),
+                    hidden_layer: $(className.hidden_layer),
+                    special_layer: $(className.special_layer)
+                };
+
+                var state = {
+                    page_show: "center"
+                };
+                var attr = {
+                    page_trigger: "data-page-trigger",
+                    page_trigger_result:"data-selector-result",
+                    route_path: "data-route-path",
+                    route_main_page: "data-route-path='?pageselect=mainpage'",
+                    main_page_scroll_top: "data-page-scroll",
+                    to_ele_position: "data-go-to-top",
+                    triggered_layer: "data-triggered-layer"
+                };
+
+                (function () {                          // The Logic Of Page Display
+                    var $page = $(attr.page_trigger.attrRetrievalMode());
+                    $page.each(function () {
+                        var $this = $(this),
+                                $trigger = $($(this).attr(attr.page_trigger));
+
+                        $trigger.click(function () {
+                            $(window).attr(attr.main_page_scroll_top, $(window).scrollTop());
+                            $ele.main_page.delay(300).fadeOut(200);
+                            $this.addClass(state.page_show);
+                        });
+
+                        $this.find(attr.route_main_page.attrRetrievalMode())
+                                .click(function () {
+                                    $ele.main_page.stop(true).fadeIn(1);
+                                    $this.removeClass(state.page_show);
+                                    $(window).scrollTop($(window).attr(attr.main_page_scroll_top));
+                                });
+                    });
+                }).call(this);                          // The Logic Of Page Display Ended
+
+                (function () {                          // The Logic Of Selection Display
+                    $(attr.triggered_layer.attrRetrievalMode()).each(function () {
+                        var $item = $(this);
+                        var $current_page = $(this).closest(className.new_page);
+                        var $layer = $($(this).attr(attr.triggered_layer));
+                        var $layer_children = $layer.children(className.special_layer),
+                                $layer_parent = $layer.parents(className.special_layer);
+
+                        $(this).click(function () {
+                            var offset_top, currentTop, time_handle, factor = 6;
+                            var $btn = $($current_page.attr(attr.page_trigger));
+                            $current_page.find(attr.route_main_page.attrRetrievalMode()).click();
+                            $ele.hidden_layer.show();
+
+                            if ($layer_parent.length)
+                                $layer.siblings(className.special_layer).hide();
+                            else
+                                $ele.special_layer.not($layer).hide();
+
+                            if ($layer_children.length)
+                                $layer_children.hide();
+
+                            $btn.attr(attr.page_trigger_result, $item.attr(attr.triggered_layer));
+                            $btn.find("p").html($item.find("h3").html());
+                            $layer.show();
+
+                            // Scroll Event
+                            if ($btn.attr(attr.to_ele_position)) {
+                                offset_top = $btn.offset().top;
+                                currentTop = $(window).scrollTop();
+                                time_handle = setInterval(function () {
+                                    currentTop = currentTop + factor;
+                                    var top = currentTop > offset_top
+                                            ? offset_top : currentTop + factor;
+                                    if (top >= offset_top) clearInterval(time_handle);
+                                    $(window).scrollTop(top);
+                                }, factor);
+                            }
+                        });
+                    });
+                }).call(this);                          // The Logic Of Selection Display Ended
+
+                // Initialization
+            };
+
+            return {
+                attackEvent: function () {
+                    waste_41023823();
+                    waste_9839213();
+                },
+
+                pageLoad_Init: function () {
+                },
+
+                initial: function () {
+                    this.pageLoad_Init();
+                    this.attackEvent();
+                }
+            };
+        })();
+
+        page.initialBridge = function () {
+            var o = new page.MethodObj();
+            o.initial();
+        }
+
+        $(function () {
+            page.initialBridge();
+        })
+    </script>
+</head>
+<body>
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="head-container" class="head-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="registration modules">
+        <!-- Back-up form -->
+        <div class="avatar-area">
+            <h1>完善您的合伙人资料</h1>
+            <p>您的等级是根据您的个人资料完善度区分的</p>
+            <div id="investortype" class="investor-type layer-btn" data-route-path="?pageselect=investortype" data-selector-result="" data-go-to-top="true">
+                <p>选择投资人类型</p>
+                <i class="vector-icons arrow-left"></i>
+            </div>
+            <div class="layer-class">
+                <div id="user-avatar" class="avatar" data-warning-text="需要上传头像" name="logo" data-image-id="">
+                </div>
+                <p id="avatar-upload-state">上传头像:宽高512px，JPG/PNG格式，大小不超过2M</p>
+                <input accept="image/*" id="avatar-file" class="hidden" type="file" name="" value="" />
+            </div>
+        </div>
+
+        <div class="layer-class">
+            <label>
+                <span>真实姓名</span>
+                <i><input  id="user-name" type="text" name="name" value="" data-warning-text="需要填写姓名" /></i>
+            </label>
+
+            <label style="height:100px">
+                <span>生活圈</span>
+                <i><input type="text" name="title" value="" data-warning-text="需要填写担任职位" /></i>
+                <i><input type="text" name="title" value="" data-warning-text="需要填写担任职位" /></i>
+            </label>
+
+            <label style="height:100px">
+                <span>工作圈</span>
+                <i><input type="text" name="title" value="" data-warning-text="需要填写担任职位" /></i>
+                <i><input type="text" name="title" value="" data-warning-text="需要填写担任职位" /></i>
+            </label>
+
+            <label>
+                <span>文化程度</span>
+                <i><input type="text" name="company" value="" data-warning-text="需要填写所在公司" /></i>
+            </label>
+
+
+
+            <label>
+                <span>公司职位</span>
+                <i><input id="wechat" type="text" name="wechat" value="" data-warning-text="需要填写本人的微信账号" /></i>
+            </label>
+
+        <label class="page-name industry" ms-controller="industry-select">
+            <span>所属行业</span><em ms-on-tap="box_show()"></em>
+        </label>
+        <label class="page-desc industry">
+            <p style="margin-left: 3.4%">所属行业最多选择5个 已选择</p>
+            <div class="industry-container" ms-controller="industry-select">
+                <span ms-repeat="input_selected" ms-on-tap="cancle_input_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </label>
+
+
+            <!--label>
+                <span>上传身份证照片</span>
+                <i><button id="id_card" class="btn image-uploader" data-playground-bind="#id-card-files" data-warning-text="需要上传身份证照片" name="id_card" data-image-id="">开始上传</button></i>
+            </label>
+            <div id="id-card-files" class="upload-playground">
+                <input accept="image/*" class="hidden" type="file" name="cards" value="" />
+                <p>身份证预览</p>
+                <div class="image-container loading">
+                </div>
+            </div>
+
+            <div class="special-layer d2398712 e1238233">
+                <label>
+                    <span>上传个人名片</span>
+                    <i><button id="name_card" class="btn image-uploader" data-playground-bind="#cards-files2" data-warning-text="需要上传名片" name="name_card" data-image-id="">开始上传</button></i>
+                </label>
+                <div id="cards-files2" class="upload-playground">
+                    <input accept="image/*" class="hidden" type="file" name="" value="" />
+                    <p>名片预览</p>
+                    <div class="image-container loading">
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-layer d2398712">
+                <div id="kn2828293" class="common layer-btn" data-route-path="?pageselect=license" data-selector-result="" data-warning-text="需要上传工商备案">
+                    <p>选择上传工商备案的类型</p>
+                    <i class="vector-icons arrow-left"></i>
+                </div>
+                <div class="special-layer a123987123">
+                    <label>
+                        <span>上传营业执照</span>
+                        <i><button id="license" class="btn image-uploader" data-playground-bind="#rf12832983" data-warning-text="需要上传营业执照" name="license" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="rf12832983" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>营业执照预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+                <div class="special-layer b123986198">
+                    <label>
+                        <span>上传工商网站截图</span>
+                        <i><button id="screenshot" class="btn image-uploader" data-playground-bind="#rf43781233" data-warning-text="需要上传工商网站截图" name="screenshot" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="rf43781233" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>工商网站截图预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-layer e1238233">
+                <label>
+                    <span>上传私募股权基金证</span>
+                    <i><button id="fund_cert" class="btn image-uploader" data-playground-bind="#rf123786123" data-warning-text="需要上传私募股权基金证" name="fund_cert" data-image-id="">开始上传</button></i>
+                </label>
+                <div id="rf123786123" class="upload-playground">
+                    <input accept="image/*" class="hidden" type="file" value="" />
+                    <p>私募股权基金证预览</p>
+                    <div class="image-container loading">
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-layer a238293">
+                <div id="kn28397132" class="common layer-btn" data-route-path="?pageselect=incometype" data-selector-result="" data-warning-text="需要上传个人资产证明">
+                    <p>选择上传个人资产证明的类型</p>
+                    <i class="vector-icons arrow-left"></i>
+                </div>
+                <div class="special-layer a73198273">
+                    <label>
+                        <span>上传收入证明照片</span>
+                        <i><button id="income_cert" class="btn image-uploader" data-playground-bind="#cu12397123" data-warning-text="需要上传收入证明" name="income_cert" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="cu12397123" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>收入证明预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+                <div class="special-layer b92131982">
+                    <label>
+                        <span>上传金融资产证明照片</span>
+                        <i><button id="financial_assets" class="btn image-uploader" data-playground-bind="#cu2386123" data-warning-text="需要上传金融资产证明" name="financial_assets" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="cu2386123" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>金融资产证明预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+                <div class="special-layer c53212362">
+                    <label>
+                        <span>上传固定资产证明照片</span>
+                        <i><button id="financial_assets" class="btn image-uploader" data-playground-bind="#cu518397123" data-warning-text="需要上传固定资产证明" name="financial_assets" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="cu518397123" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>固定资产证明预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="special-layer b389123">
+                <label>
+                    <span>上传投资协议证明</span>
+                    <i><button id="vc_agreement" class="btn image-uploader" data-playground-bind="#rf123u812379" data-warning-text="需要上传投资协议证明" name="vc_agreement" data-image-id="">开始上传</button></i>
+                </label>
+                <div id="rf123u812379" class="upload-playground">
+                    <input accept="image/*" class="hidden" type="file" value="" />
+                    <p>投资协议证明预览</p>
+                    <div class="image-container loading">
+                    </div>
+                </div>
+            </div>
+            <div class="special-layer d2398712">
+                <div id="ej12387232" class="common layer-btn" data-route-path="?pageselect=investortype" data-selector-result="" data-warning-text="需要上传企业投资资质证明">
+                    <p>选择上传企业投资资质证明的类型</p>
+                    <i class="vector-icons arrow-left"></i>
+                </div>
+                <div class="special-layer a27371823">
+                    <label>
+                        <span>上传企业资产证明照片</span>
+                        <i><button id="com_asset" class="btn image-uploader" data-playground-bind="#yf42o387123" data-warning-text="需要上传企业资产证明" name="com_asset" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="yf42o387123" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>收入证明预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+                <div class="special-layer b47182377">
+                    <label>
+                        <span>上传企业投资案例证明照片</span>
+                        <i><button id="vc_case" class="btn image-uploader" data-playground-bind="#yf123917236" data-warning-text="需要上传企业投资案例证明" name="vc_case" data-image-id="">开始上传</button></i>
+                    </label>
+                    <div id="yf123917236" class="upload-playground">
+                        <input accept="image/*" class="hidden" type="file" value="" />
+                        <p>金融资产证明预览</p>
+                        <div class="image-container loading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <label>
+                <span>手机号码</span>
+                <i>
+                    <input id="phone" type="tel" name="phone" value="" data-warning-text="需要填写11位的大陆手机号码" maxlength="11" placeholder="将作为登录账号" />
+                    <button id="verify-btn" class="btn">验证</button>
+                </i>
+            </label>
+
+            <label>
+                <span>输入短信验证码</span>
+                <i><input id="verify-code" type="tel" name="code" value="" maxlength="6" data-warning-text="手机号码需要通过验证" placeholder="发送验证后填写6位验证码" /></i>
+            </label>
+
+            <label>
+                <span>密码</span>
+                <i><input id="pwd" type="password" name="password" value="" data-warning-text="需要填写一个6位以上的密码" maxlength="16" /><em class="vector-icons eye"></em></i>
+            </label>
+
+            <div class="special-layer a238293 b389123 c1238723">
+                <label>
+                    <span>上传个人名片（非必选）</span>
+                    <i><button class="btn image-uploader" data-playground-bind="#cards-files" name="name_card" data-image-id="">开始上传</button></i>
+                </label>
+                <div id="cards-files" class="upload-playground">
+                    <input accept="image/*" class="hidden" type="file" name="" value="" />
+                    <p>名片预览</p>
+                    <div class="image-container loading">
+                    </div>
+                </div>
+            </div-->
+
+            <div class="addition-agreement">
+                <p>我已知晓 <a href="/agreement/service">《合火人用户服务协议》</a> 及其附件 <a class="ci-link" href="/agreement/risk">《风险揭示书》</a> 中的所有内容 ，并愿意自己承担投资带来的风险。</p>
+                <div class="modules">
+                    <div class="mentos-container">
+                        <label class="label">
+                            <input id="legal-terms" class="mentos" type="checkbox" name="additionalAgreement" value="1" data-warning-text="需要同意天使汇用户协议" />
+                            <em class="tracks">
+                                <em class="slider-button">
+                                    <i>×</i>
+                                    <i></i>
+                                </em>
+                            </em>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <button id="subbmit-btn" class="btn submit-btn ci-link" data-redirect="/angel_vip_success"></button>
+
+            <div style="height:40px; width:100%"></div>
+        </div>
+    </div>
+    <!--div class="banner-footer">
+        <p>AngelCrunch.com</p>
+        <p>天使汇 - 让靠谱的项目找到靠谱的钱</p>
+    </div-->
+</div>
+
+<div class="new-page" data-page-trigger="#investortype">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+    </div>
+    <div class="selection">
+        <div class="e-block">
+            <div style="text-align:center"><h1  style="font-size:16px;" >选择投资人类型</h1></div>
+            <!-- The data-triggered-layer attr must be a unique value -->
+            <div class="section-list">
+                <section data-select-value="10" data-triggered-layer=".a238293">
+                    <h3>一般合伙人</h3>
+                    <p>没有天使投资经验，初涉TMT领域，或投资过项目但未超过<i>10万</i>（需要上传资产证明）。</p>
+                </section>
+                <section data-select-value="20" data-triggered-layer=".b389123">
+                    <h3>认证合伙人</h3>
+                    <p>有天使投资经验，或投资过项目但未超过<i>100万</i>（需要上传资产证明）。</p>
+                </section>
+                <section data-select-value="30" data-triggered-layer=".c1238723">
+                    <h3>经验合伙人</h3>
+                    <p>有天使投资经验，初涉TMT领域，或投资过项目但未超过<i>1000万</i>（需要上传资产证明）。</p>
+                </section>
+                <section data-select-value="40" data-triggered-layer=".c1238723">
+                    <h3>机构合伙人</h3>
+                    <p>有天使投资经验，或投资过项目超过<i>1000万</i>（需要上传资产证明）。</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-page" data-page-trigger="#kn2828293">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">工商备案类型</p>
+    </div>
+    <div class="selection">
+        <div class="e-block">
+            <h1>工商备案类型</h1>
+            <div class="section-list">
+                <section data-triggered-layer=".a123987123">
+                    <h3>营业执照</h3>
+                    <p>上传您的公司营业执照。</p>
+                </section>
+                <section data-triggered-layer=".b123986198">
+                    <h3>工商网站截图</h3>
+                    <p>您可以进入工商网站：<i>http://gsxt.saic.gov.cn</i>，选择您公司的地区，搜索您的企业名称或注册号，将贵公司工商网站页面截图或照片上传即可。</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-page" data-page-trigger="#kn28397132">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">个人资产证明类型</p>
+    </div>
+    <div class="selection">
+        <div class="e-block">
+            <h1>个人资产证明类型</h1>
+            <div class="section-list">
+                <section data-triggered-layer=".a73198273">
+                    <h3>收入证明</h3>
+                    <p>需要公司开具的加盖公章的工资证明。对资产的限制为：三年个人年均收入不低于<i>30万</i>人民币或家庭（个人及其配偶）年均收入不低于<i>60万</i>人民币。</p>
+                </section>
+                <section data-triggered-layer=".b92131982">
+                    <h3>金融资产证明</h3>
+                    <p>证明要求为：1.银行存款需要开具<i>6个月</i>的流水; 2.其他金融资产提供前一交易日账户额度证明。对资产的限制为：个人名下货币及其前一交易日日终证券类资产市值不低于<i>100万</i>人民币。</p>
+                </section>
+                <section data-triggered-layer=".c53212362">
+                    <h3>固定资产证明</h3>
+                    <p>需要个人名下固定资产（除主要居所）市值<i>500万</i>人民币以上的证明照片，如房产证（但需排除主要居所）。</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="new-page" data-page-trigger="#ej12387232">
+    <div class="title-container">
+        <p class="float-left prev-page" data-route-path="?pageselect=mainpage"><i class="vector-icons arrow-up-bold"></i>返回</p>
+        <p class="title">企业投资资质证明类型</p>
+    </div>
+    <div class="selection">
+        <div class="e-block">
+            <h1>企业投资资质证明类型</h1>
+            <div class="section-list">
+                <section data-triggered-layer=".a27371823">
+                    <h3>企业资产证明</h3>
+                    <p>选择三种公司资产证明的其中一项：1、公司注册资本、净资产均不低于<i>1000万</i>人民币。2、公司总资产或管理资产不低于<i>3000万</i>人民币。3、最近三年每年净利润不低于<i>500万</i>人民币。</p>
+                </section>
+                <section data-triggered-layer=".b47182377">
+                    <h3>企业投资案例证明</h3>
+                    <p>以个人身份进行TMT天使投资案例（<i>30万起</i>）的自然人证明。需要上传<i>加盖公司公章及骑缝章的投资协议</i>或<i>公司章程</i>。</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="industry-choose" class="industry-choose">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>已选取的行业</span>
+            <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a-->
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

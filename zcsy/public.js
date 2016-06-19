@@ -109,8 +109,8 @@ $(function () {
         return (typeof  s != 'undefined' && typeof  this[s] == 'undefined') ? this[s] = {} : (this[s] || {});
     };
 
-		this.base_url = 'http://localhost/back/';
-    this.upload_img = 'http://localhost/back/uploads/content_pic/';
+		this.base_url = 'http://www.zhongchuangsiyi.com/back/';
+    this.upload_img = 'http://www.zhongchuangsiyi.com/back/uploads/content_pic/';
     this.page_interval = 10;
 
     //跨域获取数据方法

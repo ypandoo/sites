@@ -1,0 +1,170 @@
+/*/
+/*
+/* Rank: 3
+/* Standard：Google
+/*
+/*/
+/*新版*/
+label > i input{
+    width: 40%;
+    padding-left: 10px;
+}
+/*导航*/
+.tab{
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 8px;
+    border-top: 1px solid #f5f5f5;
+}
+.tab a{
+    display: inline-block;
+    font-size: 18px;
+    padding: 3px 0;
+    font-weight: 900;
+}
+.tab a.left{
+    padding-left: 2px;
+    margin-right: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.left.active{
+    padding-left: 2px;
+    border-bottom: 2px solid #000;
+}
+.tab a.right{
+    padding-left: 1px;
+    margin-left: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.right.active{
+    padding-left: 1px;
+    border-bottom: 2px solid #000;
+}
+/*弹出消息*/
+.new-page-result{
+  background-color: #fff;
+}
+.new-page-result .portrait{
+  height: 75px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 35%;
+}
+.new-page-result .portrait img{
+  height: 75px;
+  width: 75px;
+  display: inline-block;
+  border-radius: 50% 50%;
+}
+
+.new-page-result .content{
+  margin-top: 15%;
+}
+.new-page-result .content h3{
+  color: #333;
+  font-size: 22px;
+  line-height: 1.3em;
+  text-align: center;
+  word-break: break-all;
+}
+.new-page-result .content h4{
+  color: #333;
+   font-size: 22px;
+   line-height: 1.3em;
+   text-align: center;
+   word-break: break-all;
+ }
+.new-page-result .btn-group{
+  height: 30px;
+  width: 100%;
+  margin-top: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.new-page-result .btn-group a{
+  display: inline-block;
+  height: 100%;
+  width: 70%;
+  border: 1px solid #666;
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 3px;
+}
+/*验证按钮*/
+.verify-btn{
+    width: 76px;
+    height: 26px;
+    float: right;
+    font-size: 14px;
+    padding: 1px 10px 0;
+    margin-top: 12px;
+    margin-right: 16px;
+    border-color: #A9A9A9;
+}
+.verify-btn.disable{
+    color: #AAA;
+    border-color: #CCB !important;
+    background: none;
+    box-shadow: none;
+}
+/*密码可见*/
+.eye{
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    line-height: 48px;
+    margin-right: 16px;
+    padding: 0 8px;
+}
+label > i input{
+    font-size: 14px;
+    margin-top: 10px;
+}
+label > i input:focus{
+    outline: none;
+}
+/*注册成功*/
+.regist-success .mg{
+    width: 100%;
+    height: 20%;
+}
+.regist-success .img{
+    width: 100%;
+    text-align: center;
+}
+.regist-success .img img{
+    width: 46px;
+    height: auto;
+}
+.regist-success h3{
+    font-size: 26px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+.regist-success .content h6{
+    font-size: 16px;
+}
+.regist-success .content .arrow-group{
+    margin-top: 20px;
+}
+.regist-success .content .arrow-group a{
+    display: inline-block;
+    padding: 8px 10px 6px;
+    font-size: 16px;
+    background-color: #ccc;
+    color: #fff;
+}
+.regist-success .content .arrow-group a.back{
+    background: #666;
+}
+.regist-success .content .arrow-group a.hidden{
+    display: none;
+}
+@media only screen and (max-width:370px ) {
+    .regist-success .content .arrow-group a{
+        font-size: 14px;
+    }
+}

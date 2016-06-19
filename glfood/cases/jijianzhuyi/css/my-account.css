@@ -1,0 +1,24 @@
+.list_item
+{
+	padding-left: 15px;
+	height: 50px;
+	background-color: #EAEAEA;
+	border-top: 1px solid grey;
+	line-height: 50px;
+}
+
+.arrow_right:after {
+    content: '>';
+    display: inline-block;
+    background-size: 26px 26px;
+    position: absolute;
+    right: 20px;;
+    top: 0;
+    pointer-events: none;
+}
+
+.arrow_right
+{
+  position: relative;
+  overflow: hidden;
+}

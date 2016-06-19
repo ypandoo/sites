@@ -1,0 +1,143 @@
+.deliver
+{
+	font-size: 10px;
+}
+
+
+.food_des_detail_price_dash
+{
+	text-decoration: line-through;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.see_offer
+{
+    /* width: 90%; */
+    /* height: 40px; */
+    line-height: 40px;
+    /* margin-left: 5%; */
+    font-size: 18px;
+    background-color: #83DD1A;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.material {
+  border-bottom: 1px solid #d2d3d3;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+}
+
+.prepare {
+  border-bottom: 1px solid #d2d3d3;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+}
+
+.prepare .tips {
+  float: right;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.prepare .item {
+  margin-left: 10px;
+}
+
+.content
+{
+	padding:10px 0px 10px 0px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+.text{
+  line-height: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+  
+.notice
+{
+	text-align:center;
+	height: 60px;
+}
+
+.notice_title
+{
+	font-size: 20px;
+	line-height:60px;
+}
+
+.notice_text
+{
+	font-size: 16px;
+	color: rgb(135, 211, 54);
+	line-height:60px;
+}
+
+.step
+{
+	width: 49.9%;
+  padding: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.con
+{
+	background-color: rgb(247, 247, 247);
+	font-size: 12px;
+	padding: 5px;
+}
+
+.recipe
+{
+	overflow: hidden;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.words
+{
+  height: 180px;
+  text-align: right;
+  padding: 20px;
+	background-size: 100% 100%;
+	background-image: url('../img/detail_slogan_bg.jpg');
+  line-height: 1.5em;
+}
+
+.more
+{
+	margin-top:20px;
+	text-decoration:underline;
+}
+
+.switch_text
+{
+    line-height: 46px;
+  height: 46px;
+    margin-top: 4px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.switch_left
+{
+    border-right: 1px solid #cccccc;
+}
+
+.switch_selected
+{
+  border-bottom: 3px solid rgb(131, 223, 27);
+  color:#52af00;
+}

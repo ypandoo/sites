@@ -1,0 +1,364 @@
+.title
+{
+  margin-top: 50px;
+  padding: 15px ;
+}
+
+.title h2,
+.coupon h2,
+.invoice h2,
+.pay_bill_title h2
+{
+  font-size: 1.4rem;
+}
+
+.title,
+.coupon,
+.invoice,
+.pay_bill_title
+{
+  padding: 15px;
+}
+
+.subline
+{
+  font-size: 0.7rem;
+  color:rgb(82, 175, 0);
+}
+
+.add2cart
+{
+  /* width: 90%; */
+  height: 40px;
+  line-height: 40px;
+  /* margin-left: 5%; */
+  font-size: 18px;
+  background-color: #ff5000;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  margin: 0px 15px 20px 15px;
+}
+
+.existing_addr{overflow: hidden;}
+.existing_addr li
+{
+  /* height: 80px; */
+  /* line-height: 20px; */
+  padding: 0.7rem 15px 0.7rem 15px;
+  border-bottom: 1px solid #d2d3d2;
+  /*border-top: 1px solid #d2d3d2;*/
+  text-align: left;
+  vertical-align: middle;
+  height: 5rem;
+  line-height: 1.2rem;
+} 
+
+.existing_addr .selected
+{
+  border-bottom: 1px solid #52af00;
+  border-top: 1px solid #52af00;
+  background-color: rgba(82, 175, 0, 0.2);
+} 
+
+.deliver_date h2
+{
+  font-size: 1.4em;
+}
+
+.deliver_date 
+{
+  padding: 15px;
+}
+
+.dates{overflow: hidden;}
+.dates .selected
+{
+  border: 1px solid #52af00;
+  background-color: rgba(82, 175, 0, 0.2);
+} 
+
+.dates li
+{
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  border: 1px solid #d2d3d2;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+
+}
+
+.pay_method
+{
+    margin-top: 10px;
+  border-top: 1px solid #d2d3d2;
+  padding: 15px;
+}
+
+.pay_method h2
+{
+  font-size: 1.4em;
+}
+
+.pay_method_select{overflow: hidden;padding-bottom: 15px;}
+.pay_method_select .selected
+{
+  border: 1px solid #52af00;
+  background-color: rgba(82, 175, 0, 0.2);
+} 
+
+.pay_method_select li
+{
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+    padding: 10px 0 10 0;
+  text-align: center;
+  border: 1px solid #d2d3d2;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+
+}
+
+.reg_row
+{
+  height: 50px;
+  clear:both;
+}
+
+.row_left {
+  display: inline-block;
+  float: left;
+  width: 26.99%;
+  text-align: left;
+  line-height: 40px;
+  height: 40px;
+}
+
+.row_right {
+  display: inline-block;
+  float: left;
+  width: 42.49%;
+  text-align: left;
+  /* margin-right: 15px; */
+  line-height: 40px;
+  height: 40px;
+}
+
+.row_right_extend
+{
+  width: 72.99%;
+}
+
+.row_right select{
+  font-family: inherit;
+  font-size: 100%;
+line-height: 36px;
+    height: 40px;
+  width: 96%;
+  /* margin-right: 10px; */
+    border: 1px solid #d2d3d3;
+      padding-left: 15px;
+      overflow: hidden; 
+      -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;   
+   -webkit-border-radius: 0;  /* Safari 3-4, iOS 1-3.2, Android 1.6- */    
+   -moz-border-radius: 0;  /* Firefox 1-3.6 */     
+   border-radius: 0; 
+}
+
+.row_right input{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 40px;
+  height: 40px;
+  width: 100%;
+  /* margin-right: 10px; */
+  border: 1px solid #d2d3d3;
+  padding-left: 15px;
+  overflow: hidden;
+}
+
+.disable
+{
+  background-color: rgba(210, 211, 210, 0.3);
+}
+
+.row_right input[type="button"]{
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 2.5em;
+  height: 2.5em;
+  width: 96%;
+  /* margin-right: 10px; */
+   border: 1px solid #d2d3d3;
+     padding-left: 0px;
+     overflow: hidden; 
+  background-color: grey;
+  color: white;
+}
+
+.receipt_arrow_left:after {
+    content: '>';
+    display: inline-block;
+    background-size: 26px 26px;
+    position: absolute;
+    right: 0.8rem;
+    top: 0;
+    pointer-events: none;
+}
+
+.receipt_arrow_left
+{
+  position: relative;
+  overflow: hidden;
+}
+
+.receipt_arrow_right:after {
+    content: '>';
+    display: inline-block;
+    background-size: 26px 26px;
+    position: absolute;
+    right: 0.4rem;
+    top: 0;
+    pointer-events: none;
+}
+
+.receipt_arrow_right
+{
+  position: relative;
+  overflow: hidden;
+}
+
+.coupon,
+.invoice
+{
+  border-top: 1px solid #d2d3d2;
+}
+
+.pay_bill .row
+{
+  height: 5em;
+  border-bottom: 1px solid #d2d3d2;
+  border-top: 1px solid #d2d3d2;
+}
+
+.pay_bill .row .head
+{
+  padding-left: 15px;
+}
+
+.pay_bill .content
+{
+  padding: 10px
+}
+
+.pay_bill .content h5
+{
+  color: grey;
+}
+
+.total
+{
+  line-height: 4em;
+  height: 4em;
+}
+
+.total .left
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:left;
+  padding-left: 15px;
+}
+
+.total .right
+{
+  display:inline-block;
+  float:left;
+  width:49.999%;
+  text-align:right;
+  padding-right: 15px;
+}
+
+.tail
+{
+  text-align: right;
+  padding-right: 15px;
+}
+
+.coupon_settle
+{
+  height: 2.5em;
+  margin-bottom: 20px;
+}
+
+.coupon_settle .left
+{
+    font-size: 1.25em;
+  /* margin-bottom: 10px; */
+  text-align: center;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-left: 15px;
+  margin-right: 7.5px;
+}
+
+.coupon_settle .right
+{
+    font-size: 1.25em;
+  background-color: rgb(162, 162, 162);
+  /* margin-bottom: 10px; */
+  text-align: center;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.coupon_settle input
+{
+  border: 1px solid #cccccc;
+  width: 100%;
+  padding-left: 15px;
+  outline: none;
+  height: 2.5rem;
+  font-size: 18px;
+  line-height: 2.5rem;
+}
+
+.manage_addr 
+{
+  border-bottom: 1px solid #d2d3d2;
+    padding: 20px 15px 20px 15px;
+    overflow: hidden;
+}
+
+.manage_addr .left
+{
+  text-align: left;
+}
+
+.manage_addr .right
+{
+  text-align: right;
+}
+
+
+.manage_addr .left input, .manage_addr .right input
+{
+  width: 95%;
+}
+
+.manage_addr .right input
+{
+  background-color: #83DD1A;
+  color: black;
+}
