@@ -317,9 +317,15 @@ input::-webkit-input-placeholder {
     color: #393939;
 }
 .submit-new-btn.active_start{
-  background: #ff2d2d;
-      color: #ffffff;
-      font-size: 16px;
+  background: #ffffff;
+  color: #2a2a2a;
+  font-size: 16px;
+  border: 1px solid #323333;
+  border-radius: 5px;
+  line-height: 40px;
+  height: 40px;
+  width: 80%;
+  margin-left: 10%;
 }
 
 
