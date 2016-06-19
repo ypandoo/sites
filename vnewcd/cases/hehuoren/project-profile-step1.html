@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="合火人" />
+    <meta name="keywords" content="合火人" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>合火人</title>
+
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/project_regist.css" rel="stylesheet"/>
+    <link href="css/project_active.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/angelcrunch.jq.c.js"></script>
+    <script src="js/image_upload.min.js"></script>
+    <script src="js/angelcrunch.image_tools.jq.c.js"></script>
+
+</head>
+<body>
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="head-container" class="head-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="registration modules">
+        <!-- Back-up form -->
+        <div class="avatar-area">
+            <h1>完善您的项目基本信息</h1>
+            <p>创建您的个人项目，达成投资意向</p>
+        </div>
+
+    </div>
+
+    <!-- 展示项目 -->
+    <div class=""  style="background:white">
+        <div id="item-container" class="item-container">
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('basic_desc')">
+                <h1>基本描述</h1>
+                <em id="em_basic_desc"></em>
+            </div>
+
+            <div id="basic_desc">
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>上传logo</h3>
+                        <p>产品logo而非公司logo。宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                    </div>
+                </div>
+
+                <label class="page-name">
+                    <span>项目名称</span><input id="form-name" maxlength="20">
+                </label>
+                <label class="page-desc">
+                    <p>名称需简洁清晰，传递印象明确</p>
+                </label>
+
+                <label class="page-name">
+                    <span>一句话介绍</span><input id="form-one" maxlength="25">
+                </label>
+                <label class="page-desc">
+                    <p>用最精炼的一句话来概括你的产品(25字以内)</p>
+                </label>
+
+                <label class="page-description">
+                    <span>产品介绍</span>
+                    <textarea id="form-desc"></textarea>
+                </label>
+
+                <label class="page-name industry" ms-controller="industry-select">
+                    <span>所属行业</span><em ms-on-tap="box_show()"></em>
+                </label>
+                <label class="page-desc industry">
+                    <p style="margin-left: 3.4%">所属行业最多选择5个 已选择</p>
+                    <div class="industry-container" ms-controller="industry-select">
+                        <span ms-repeat="input_selected" ms-on-tap="cancle_input_industry($index)"><i ms-text="el"></i><em>×</em></span>
+                    </div>
+                </label>
+
+                <label id="select1" class="page-name">
+                    <span>所属阶段</span><em></em><p></p>
+                    <select name="stage" class="stage">
+                        <option value="请选择所属阶段" selected="">请选择所属阶段</option>
+                        <option value="概念阶段：项目只有一个想法或原型">概念阶段：项目只有一个想法或原型</option>
+                        <option value="研发阶段：已组建团队，项目开发中">研发阶段：已组建团队，项目开发中</option>
+                    </select>
+                </label>
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存基本信息</a>
+            </div>
+        </div>
+
+
+        <div id="item-container" class="item-container">
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('open_plan')" style="margin-top:10px">
+                <h1>开店计划</h1>
+                <em id="em_open_plan"></em>
+            </div>
+
+            <div id="open_plan">
+                <label class="page-name flex-height">
+                    <span style="width:100%"><b>已有项目地址</b></span>
+                    <span style="width:100%">
+                        <span style="width:90%">武侯区-火车南站街道-和平小区</span>
+                        <span style="width:10%;">X</span>
+                    </span>
+
+                    <span style="width:100%">
+                        <span style="width:90%">武侯区-倪家桥街道-领事馆片区</span>
+                        <span style="width:10%;">X</span>
+                    </span>
+
+                </label>
+
+                <label id="select2" class="page-name">
+                    <span style="width:30%">预期开店地址</span><em></em><p></p>
+                    <select name="stage" class="stage">
+                        <option value="请选择区域" selected="">请选择区域</option>
+                        <option value="成都">成都</option>
+                    </select>
+                </label>
+                <label id="select3" class="page-name" style="margin-top:-8px">
+                    <span style="width:30%"></span><em></em><p></p>
+                    <select name="stage" class="stage">
+                        <option value="请选择街道" selected="">请选择街道</option>
+                        <option value="大使馆路">大使馆路</option>
+                    </select>
+                </label>
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存开店信息</a>
+            </div>
+        </div>
+
+       <div style="margin-top:30px">
+       <a class="submit-new-btn text_btn active_orange">
+                      + 保存当前信息，进一步完善资料提升等级</a>
+       <!-- <a class="submit-new-btn text_btn active_grey_nobg" >
+                                     -返回</a> -->
+       </div>
+</div>
+
+
+<!-- 行业选择 -->
+<div id="industry-choose" class="industry-choose">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>已选取的行业</span>
+            <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a-->
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+    <script src="js/avalon.mobile.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/project-profile.js"></script>
+</body>
+</html>

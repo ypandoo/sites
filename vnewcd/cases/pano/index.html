@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		
+
+		<style type="text/css" title="Default">
+		
+			/* fix for scroll bars on webkit & Mac OS X Lion */ 
+			::-webkit-scrollbar {
+				background-color: rgba(0,0,0,0.5);
+				width: 0.75em;
+			}
+			::-webkit-scrollbar-thumb {
+    			background-color:  rgba(255,255,255,0.5);
+			}
+		</style>	
+	</head>
+	<body>
+
+
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<h1>demo1:室外全景图</h1>
+		<div id="container" style="width:320px;height:180px;">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+		<h1>demo2:室内全景图</h1>
+    <div id="container2" style="width:320px;height:180px;">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+		<script type="text/javascript">	
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			pano.readConfigUrl("thumb_out.xml");			
+			
+			// create the panorama player with the container
+			pano2=new pano2vrPlayer("container2");
+			pano2.readConfigUrl("thumb_out2.xml");
+
+		</script>
+
+		
+		<p>
+		demo by <a href="http://www.jslover.com">@jslover.com</a>
+		</p>
+		<p>
+		create by pano2vr
+		</p>
+	</body>
+</html>

@@ -1,6 +1,6 @@
 /*/
 /*
-/* Rank: 1 
+/* Rank: 1
 /* Standard：Google
 /*
 /*/
@@ -308,6 +308,13 @@ input::-webkit-input-placeholder {
 }
 .submit-new-btn.active_orange{
   background: #FF6464;
+}
+.submit-new-btn.active_grey{
+  background: #b5b5b5;
+}
+.submit-new-btn.active_grey_nobg {
+    background: #ffffff;
+    color: #393939;
 }
 
 .btn.black {
@@ -1160,6 +1167,16 @@ body.footer-close-bottom .banner-footer {
   content: "";
 }
 
+.vector-icons.modify::before {
+  content: url('../img/paper_small.png');
+  font-size:40px;
+}
+
+.vector-icons.upgrade::before {
+  content: url('../img/upgrade.png');
+  font-size:40px;
+}
+
 /******************
        New Head
  ******************/
@@ -1526,4 +1543,9 @@ body.footer-close-bottom .banner-footer {
 .separator
 {
   border-top:1px solid #FFC9C9;
+}
+
+.orange
+{
+  color:#ff2d2d
 }

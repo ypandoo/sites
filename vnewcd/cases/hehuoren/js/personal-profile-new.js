@@ -185,12 +185,13 @@
          vm._head_text_h2_ = head_text_h2[0];
          vm._head_text_h4_ = head_text_h4[0];
          vm.toggle_content=function(id){
-                $('#btn_invistor'+id).fadeOut();
-                $('#invistor'+(parseInt(id))).fadeOut();
-                $('#invistor'+(parseInt(id)+1)).fadeIn();
+                $('#btn_invistor'+id).hide();
+                $('#invistor'+(parseInt(id))).hide();
                 window.scrollTo(0,0);
                 vm._head_text_h2_ = head_text_h2[parseInt(id)+1];
                 vm._head_text_h4_ = head_text_h4[parseInt(id)+1];
+                $('#invistor'+(parseInt(id)+1)).fadeIn();
+
         };
     });
 }).call(define('title-space'));

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="合火人" />
+    <meta name="keywords" content="合火人" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="copyright" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <title>合火人</title>
+
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/project_regist.css" rel="stylesheet"/>
+    <link href="css/project_active.css" rel="stylesheet"/>
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/angelcrunch.jq.c.js"></script>
+    <script src="js/image_upload.min.js"></script>
+    <script src="js/angelcrunch.image_tools.jq.c.js"></script>
+</head>
+<body>
+<div class="details">
+    <div class="notification red"><i class="txt"></i><i class="close">×</i></div>
+
+    <div id="head-container" class="head-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" data-href="/"></div>
+        <div class="options">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" data-href="/startup">闪投项目</li>
+                <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
+                <li class="touch-href border" data-href="/investor">投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="registration modules">
+        <!-- Back-up form -->
+        <div class="avatar-area">
+            <h1>完善您的预热项目信息</h1>
+            <p>创建您的个人项目，达成投资意向</p>
+        </div>
+
+    </div>
+
+
+    <!-- 预热项目 -->
+    <div style="background:white">
+
+        <div id="item-container" class="item-container">
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_founder')" style="margin-top:0px">
+                <h1>创始人信息</h1>
+                <em id="em_info_founder"></em>
+            </div>
+
+            <div id='info_founder'>
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>上传头像</h3>
+                        <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                    </div>
+                </div>
+
+                <label class="page-name">
+                    <span>姓名</span><input id="form-name" maxlength="20">
+                </label>
+
+                <label class="page-name">
+                    <span>邮箱</span><input id="form-one" maxlength="25">
+                </label>
+
+                <label id="select_position1" class="page-name select-position-group">
+                    <span>项目中职位</span><em></em><p></p>
+                    <select name="position">
+                        <option value="请选择您的职位" selected="">请选择您的职位</option>
+                        <option value="市场负责人">市场负责人</option>
+                        <option value="技术负责人">技术负责人</option>
+                        <option value="运营负责人">运营负责人</option>
+                        <option value="创始人">创始人</option>
+                        <option value="产品负责人">产品负责人</option>
+                    </select>
+                </label>
+
+                <label class="page-description">
+                    <span>个人描述</span>
+                    <textarea id="form-desc"></textarea>
+                </label>
+
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存创始人信息</a>
+
+            </div>
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_team')" style="margin-top:10px">
+                <h1>团队信息</h1>
+                <em id="em_info_team"></em>
+            </div>
+
+            <div id="info_team">
+                <div class="page-logo">
+                            <label id="upload-trigger" class="container">
+                                <div id="upload-progress" class="progress transition"></div>
+                                <img>
+                                <input id="upload-input" class="default-hidden" type="file">
+                            </label>
+                            <div class="text">
+                                <h3>上传头像</h3>
+                                <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                            </div>
+                </div>
+
+                        <label class="page-name">
+                            <span>姓名</span><input maxlength="20" value="">
+                        </label>
+
+                        <label class="page-name">
+                            <span>邮箱</span><input maxlength="25" value="">
+                        </label>
+
+                        <label id="select_position2" class="page-name select-position-group">
+                            <span>项目中职位</span><em></em><p></p>
+                            <select name="position">
+                                <option value="0" selected="">请选择您的职位</option>
+                                <option value="市场负责人">市场负责人</option>
+                                <option value="技术负责人">技术负责人</option>
+                                <option value="运营负责人">运营负责人</option>
+                                <option value="创始人">创始人</option>
+                                <option value="产品负责人">产品负责人</option>
+                            </select>
+                        </label>
+
+                        <label class="page-description">
+                            <span>个人描述</span>
+                            <textarea id="form-desc"></textarea>
+                        </label>
+
+                        <a id="subbmit-btn" class="submit-new-btn text_btn active">保存团队成员信息</a>
+                        <div class="page-logo">
+                            <label id="upload-trigger" class="container">
+                                <div id="upload-progress" class="progress transition"></div>
+                                <img>
+                                <input id="upload-input" class="default-hidden" type="file">
+                            </label>
+                            <div class="text">
+                                <h3>上传头像</h3>
+                                <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                            </div>
+                        </div>
+
+                        <label class="page-name">
+                            <span>姓名</span><input id="form-name" maxlength="20" value="YangLei">
+                        </label>
+
+                        <label class="page-name">
+                            <span>邮箱</span><input id="form-one" maxlength="25" value="YangLei@126.com">
+                        </label>
+
+                        <label id="select_position3" class="page-name">
+                            <span>项目中职位</span><em></em><p></p>
+                            <select name="position">
+                                <option value="0" selected="">请选择您的职位</option>
+                                <option value="市场负责人">市场负责人</option>
+                                <option value="技术负责人">技术负责人</option>
+                                <option value="运营负责人">运营负责人</option>
+                                <option value="创始人">创始人</option>
+                                <option value="产品负责人">产品负责人</option>
+                            </select>
+                        </label>
+
+                        <label class="page-description">
+                            <span>个人描述</span>
+                            <textarea id="form-desc"></textarea>
+                        </label>
+
+                        <a id="subbmit-btn" class="submit-new-btn text_btn active">保存团队成员信息</a>
+                        <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+增加新成员</a>
+            </div>
+
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_mentor')" style="margin-top:10px">
+                <h1>顾问导师(选填)</h1>
+                <em id="em_info_mentor"></em>
+            </div>
+
+            <div id="info_mentor">
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>上传头像</h3>
+                        <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                    </div>
+                </div>
+
+                <label class="page-name">
+                    <span>姓名</span><input  maxlength="20" value="">
+                </label>
+
+                <label class="page-name">
+                    <span>邮箱</span><input  maxlength="25" value="">
+                </label>
+
+                <label class="page-description">
+                    <span>个人描述</span>
+                    <textarea id="form-desc"></textarea>
+                </label>
+            </div>
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_news')" style="margin-top:10px">
+                <h1>新闻报道(选填)</h1>
+                <em id="em_info_news"></em>
+            </div>
+
+            <div id="info_news">
+                <label class="page-desc">
+                    <p>建议只填写主流媒体及科技媒体对您项目的报道，这些报道比较有参考价值</p>
+                </label>
+
+                <label class="page-desc">
+                    <p><b>已有链接</b></p>
+                </label>
+
+                <label class="page-name">
+                    <span>新闻标题</span><input maxlength="20" value="关于对我们公司的报道">
+                </label>
+
+                <label class="page-name">
+                    <span>新闻链接</span><input maxlength="50" value="http://www.weibo.com">
+                </label>
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存修改</a>
+
+                <label class="page-desc">
+                    <p><b>新的链接</b></p>
+                </label>
+
+                <label class="page-name">
+                    <span>新闻标题</span><input maxlength="20" value="">
+                </label>
+
+                <label class="page-name">
+                    <span>新闻链接</span><input maxlength="50" value="">
+                </label>
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存新闻</a>
+                <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+增加新闻</a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- 行业选择 -->
+<div id="industry-choose" class="industry-choose">
+    <div class="element-container"  ms-controller="industry-select">
+        <h4 class="title">选择项目所在行业，最多可选择5个</h4>
+        <div class="select">
+            <ul id="first-level" class="left">
+                <li ms-repeat="list" ms-attr-class="window.space_framework.first_active==$index?'active':''"  ms-on-tap="first_active($index)" ms-text="el.name"></li>
+            </ul>
+            <ul class="right">
+                <li ms-repeat="second_level" ms-attr-class="el.active == true ?'active':''" ms-text="el.name"  ms-on-tap="second_active(el.name)"></li>
+            </ul>
+        </div>
+        <div class="input">
+            <span>已选取的行业</span>
+            <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
+            <a ms-on-tap="write_new()">添加</a-->
+        </div>
+        <div class="selected industry">
+            <div class="industry-container">
+                <span ms-repeat="selected" ms-on-tap="cancle_industry($index)"><i ms-text="el"></i><em>×</em></span>
+            </div>
+        </div>
+        <div class="btn-group">
+            <a ms-on-tap="cancle_choose()" class="cancle">取消</a>
+            <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div style="margin-top:30px">
+<a class="submit-new-btn text_btn active_orange"  >
+               + 保存当前信息，进一步完善资料提升等级</a>
+<!-- <a class="submit-new-btn text_btn active_grey_nobg" >
+                                             -返回</a> -->
+</div>
+
+
+</div>
+
+    <script src="js/avalon.mobile.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/project-profile.js"></script>
+</body>
+</html>

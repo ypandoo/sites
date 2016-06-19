@@ -163,16 +163,16 @@
 }).call(space_framework);
 
 
-//获取行业列表
-(function(){
-    this.list=[];
-
-    data_list=[{child:["移动电商","测试"],name:"移动互联网"},{child:["火锅","连锁经营"],name:"餐饮娱乐"}];
-
-    space_framework.industry.list = space_industry.list = data_list;
-    space_framework.industry.second_level=space_framework.second_level();
-
-}).call(space_industry);
+// //获取行业列表
+// (function(){
+//     this.list=[];
+//
+//     data_list=[{child:["移动电商","测试"],name:"移动互联网"},{child:["火锅","连锁经营"],name:"餐饮娱乐"}];
+//
+//     space_framework.industry.list = space_industry.list = data_list;
+//     space_framework.industry.second_level=space_framework.second_level();
+//
+// }).call(space_industry);
 
 
 /*标题控制*/

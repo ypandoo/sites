@@ -13,8 +13,8 @@
 .investor-type {
 position: relative;
     width: 100%;
-    height: 70px;
-    padding-left: 5%;
+    height: 80px;
+    padding-left: 10%;
     border-bottom: 1px solid #EAEAEA;
 }
 
@@ -22,6 +22,25 @@ position: relative;
 /*  color:#FFF;*/
   font-size:16px;
   line-height:70px;
+}
+
+.investor-type h2 {
+  font-size: 16px;
+  line-height: 30px;
+  padding-top: 15px;
+}
+
+.investor-type h2 span{
+  font-size: 16px;
+  line-height: 30px;
+  padding-top: 15px;
+}
+
+
+
+.investor-type h4 {
+color: rgba(98, 98, 98, 0.82);
+font-size: 12px;
 }
 
 .investor-type i.vector-icons {
