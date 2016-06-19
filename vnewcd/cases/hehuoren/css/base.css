@@ -316,6 +316,12 @@ input::-webkit-input-placeholder {
     background: #ffffff;
     color: #393939;
 }
+.submit-new-btn.active_start{
+  background: #ff2d2d;
+      color: #ffffff;
+      font-size: 16px;
+}
+
 
 .btn.black {
   display:inline-block;
@@ -1175,6 +1181,26 @@ body.footer-close-bottom .banner-footer {
 .vector-icons.upgrade::before {
   content: url('../img/upgrade.png');
   font-size:40px;
+}
+
+.vector-icons.step1::before {
+  content: '1';
+  font-size:20px;
+}
+
+.vector-icons.step2::before {
+  content: '2';
+  font-size:20px;
+}
+
+.vector-icons.step3::before {
+  content: '3';
+  font-size:20px;
+}
+
+.vector-icons.step4::before {
+  content: '4';
+  font-size:20px;
 }
 
 /******************
