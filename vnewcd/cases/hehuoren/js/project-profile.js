@@ -169,7 +169,7 @@
 
     data_list=[{child:["移动电商","测试"],name:"移动互联网"},{child:["火锅","连锁经营"],name:"餐饮娱乐"}];
 
-    space_framework.industry.list = space_industry.list = data_list;  
+    space_framework.industry.list = space_industry.list = data_list;
     space_framework.industry.second_level=space_framework.second_level();
 /*    page_remote_data_syn(api.industry_list,function(data){
         if(data.hasOwnProperty('list')){
@@ -281,14 +281,14 @@
     var self = this;
     this.avalon_title_control = avalon.define("title-controller", function (vm) {
          vm.toggle_content=function(id){
-            if ($('#'+id).is(':visible')) 
+            if ($('#'+id).is(':visible'))
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_up_white.png)");  
+                $('#em_'+id).css("background-image", "url(img/arrow_up_white.png)");
                 $('#'+id).fadeOut();
             }
             else
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_down_white.png)");  
+                $('#em_'+id).css("background-image", "url(img/arrow_down_white.png)");
                 $('#'+id).fadeIn();
             }
         };
@@ -308,6 +308,7 @@
         $select_position3 = $('#select_position3'),
 
         $shop_type = $('#shop_type');
+        $brand = $('#brand');
 
 
     $select1.children('select').change(function(){
@@ -350,6 +351,15 @@
 
     $shop_type.children('select').prev().html('新店开设');
     $shop_type.children('select').change(function(){
+        var t = $(this), v= t.val();
+        $('#new_shop').toggle();
+        $('#old_shop').toggle();
+
+        t.prev().html(v);
+    });
+
+    $brand.children('select').prev().html('自创品牌');
+    $brand.children('select').change(function(){
         var t = $(this), v= t.val();
         $('#new_shop').toggle();
         $('#old_shop').toggle();
