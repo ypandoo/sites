@@ -171,110 +171,9 @@
 
     space_framework.industry.list = space_industry.list = data_list;
     space_framework.industry.second_level=space_framework.second_level();
-/*    page_remote_data_syn(api.industry_list,function(data){
-        if(data.hasOwnProperty('list')){
-            space_framework.industry.list = space_industry.list = data.list;
-            space_framework.industry.second_level=space_framework.second_level();
-        }
-    })*/
 }).call(space_industry);
 
-/*//创建项目
-(function(){
 
-    var $name        = $('#form-name'),
-        $one         = $('#form-one'),
-        $desc        = $('#form-desc'),
-        $stage       = $('#select-stage').children('select'),
-        $position    = $('#select-position').children('select'),
-        $agree       = $('.mentos-container'),
-        $submit      = $('#subbmit-btn');
-
-    this.form_content=function() {
-        return {
-            ico: space_uploader.upload_img_id,
-            com_name: $name.val(),
-            stage: $stage.val(),
-            tag_list: space_framework.input_selected.join(','),
-            description: $desc.val(),
-            description_short: $one.val(),
-            my_title: $position.val()
-        };
-    };
-    this.form_check=function(){
-
-        var content=space_create.form_content();
-
-        if(!!content.com_name && !!content.ico && !!content.tag_list && !!content.description && !!content.description_short &&  !!content.my_title && content.stage!=0 && $agree.hasClass('checked')){
-            $submit.addClass('active');
-            return true;
-        }
-        else{
-            $submit.removeClass('active');
-            return false;
-        }
-
-    };
-    this.submit=function(){
-        page_remote_data_syn(page_config.api_create,function(data){
-            if(data.hasOwnProperty('success')){
-                if(data.success){
-                    if($_GET.hasOwnProperty('source')){
-                        location.href=decodeURIComponent($_GET.source).split('?')[0]+base_create_param({com_id:data.com_id,time:$.now(),com_name:space_create.form_content().com_name});
-                    }
-                    else{
-                        space_create.view_result.show();
-                    }
-                }
-                else{
-                    view_notification.show(data.message);
-                }
-            }
-        },space_create.form_content());
-    };
-    $submit.touchtap(function(){
-        if(space_create.form_check()){
-            space_create.submit();
-        }
-    });
-    setInterval(space_create.form_check,300);
-}).call(space_create);
-
-//创建完成
-(function(){
-    var $close      = $('.yesiknow'),
-        $layout     = $('#create-result');
-    this.view_result={
-        show:function(){
-            $layout.fadeIn(100);
-        },
-        hide:function(){
-            $layout.hide();
-            location.reload();
-        }
-    };
-    $close.touchtap(function(){space_create.view_result.hide();});
-}).call(space_create);
-
-//过渡 协议同意
-(function () {
-    var self = this,
-        $btn = $('#agreement-checkbox'),
-        $class = $btn.children('.mentos-container');
-
-    this.checked = false;
-    this.active = function(){
-        $class.addClass('checked');
-        self.checked = true;
-    };
-    this.unactive = function(){
-        $class.removeClass('checked');
-        self.checked = false;
-    };
-    $btn.touchtap(function(){
-        self.checked?self.unactive():self.active();
-    });
-}).call({});*/
 
 /*标题控制*/
 (function(){
@@ -283,18 +182,148 @@
          vm.toggle_content=function(id){
             if ($('#'+id).is(':visible'))
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_up_white.png)");
+                $('#em_'+id).css("background-image", "url(img/plus.png)");
                 $('#'+id).fadeOut();
             }
             else
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_down_white.png)");
+                $('#em_'+id).css("background-image", "url(img/substract.png)");
                 $('#'+id).fadeIn();
             }
         };
     });
 }).call(define('title-space'));
 
+
+/*开店计划*/
+(function(){
+    var self = this;
+    this.avalon_shop_open_control = avalon.define("shop-open-controller", function (vm) {
+        vm.list = [{'area':'', 'street':''}];
+        vm.add_shop = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个地址！');
+            return;
+          }
+          vm.list.push({'area':'', 'street':''});
+        };
+    });
+}).call(define('shop-open-space'));
+
+/*团队成员*/
+(function(){
+    var self = this;
+    this.avalon_team_control = avalon.define("team-controller", function (vm) {
+        vm.list = [{'name':'', 'email':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'name':'', 'email':''});
+        };
+    });
+}).call(define('team-space'));
+
+
+/*导师*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("mentor-controller", function (vm) {
+        vm.list = [{'name':'', 'email':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'name':'', 'email':''});
+        };
+    });
+}).call(define('mentor-space'));
+
+
+/*新闻*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("news-controller", function (vm) {
+        vm.list = [{'title':'', 'link':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'title':'', 'link':''});
+        };
+    });
+}).call(define('news-space'));
+
+/*视频*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("vedio-controller", function (vm) {
+        vm.list = [{'title':'', 'link':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'title':'', 'link':''});
+        };
+    });
+}).call(define('vedio-space'));
+
+
+/*大事记*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("history-controller", function (vm) {
+        vm.list = [{'date':'', 'content':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'date':'', 'content':''});
+        };
+    });
+}).call(define('history-space'));
+
+/*店铺*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("shop-controller", function (vm) {
+        vm.list = [{'name':'', 'location':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'name':'', 'location':''});
+        };
+    });
+}).call(define('shop-space'));
+
+/*店铺*/
+(function(){
+    var self = this;
+    this.avalon_mentor_control = avalon.define("eval-controller", function (vm) {
+        vm.list = [{'name':'', 'location':''}];
+        //定义数据：you should define the data structure for filling the team section
+        vm.add = function(){
+          if (vm.list.size() >= 4) {
+            alert('您最多只能添加4个！');
+            return;
+          }
+          vm.list.push({'name':'', 'location':''});
+        };
+    });
+}).call(define('eval-space'));
 
 //选择阶段 职位
 (function(){
@@ -309,6 +338,7 @@
 
         $shop_type = $('#shop_type');
         $brand = $('#brand');
+        $chain_type = $('#chain_type');
 
 
     $select1.children('select').change(function(){
@@ -363,6 +393,14 @@
         var t = $(this), v= t.val();
         $('#new_shop').toggle();
         $('#old_shop').toggle();
+
+        t.prev().html(v);
+    });
+
+    $chain_type.children('select').prev().html('否');
+    $chain_type.children('select').change(function(){
+        var t = $(this), v= t.val();
+        $('#chain').toggle();
 
         t.prev().html(v);
     });

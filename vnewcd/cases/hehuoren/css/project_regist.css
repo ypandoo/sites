@@ -102,19 +102,19 @@
   padding-bottom: 30px;
   border-top: 1px solid #EAEAEA;
   border-bottom: 1px solid #EAEAEA;
-  /* background: #ff2d2d; */
+  background: #ff2d2d;
 }
 
 .avatar-area h1 {
   line-height:30px;
   margin:32px 0 6px;
-  color:#444;
+  color:#FFF;
 }
 
 .avatar-area p {
   padding:0 8%;
   line-height:18px;
-  color:#444;
+  color:#FFF;
 }
 
 .avatar-area .avatar {
@@ -567,7 +567,7 @@ input:focus{
 
 .page-desc{
     width: 100%;
-    padding: 2px 5% 8px;
+    padding: 8px 5% 8px;
 }
 .page-desc p{
     font-size: 12px;
@@ -576,13 +576,15 @@ input:focus{
 .page-title{
     height: 60px;
     width: 100%;
-    background: #535353;
+    background: #FFF;
+    border-bottom: 1px solid #eeeeee;
+    /*border-top: 1px solid #eeeeee;*/
 }
 .page-title h1{
     font-size: 16px;
     text-align: center;
     line-height: 65px;
-    color: white;
+    color: #313131;
 }
 .page-logo{
     width: 100%;
@@ -980,8 +982,8 @@ input:focus{
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url("../img/arrow_down_white.png") no-repeat 50% 50%;
-    background-size: 30px 30px;
+    background: url("../img/plus.png") no-repeat 50% 50%;
+    background-size: 20px 20px;
     position: absolute;
     top:15px;
     right: 20px;
@@ -1043,17 +1045,18 @@ a.active
 }
 
 .submit-new-btn.active {
-  background: #e0e0e0;
-      /* border-bottom: 1px solid #ffc0c0; */
-      /* border-top: 1px solid #ffbdbd; */
-      color: #545454;
-      /* height: 50px; */
-      /* line-height: 40px; */
-      /* border: 1px solid #595959; */
-      /* width: 80%; */
-      /* margin-left: 10%; */
-      /* border-radius: 5px; */
-      margin-top: 5px;
+  background: #fff7f7;
+  /* border-bottom: 1px solid #ffc0c0; */
+  /* border-top: 1px solid #ffbdbd; */
+  color: #ff4659;
+  /* height: 50px; */
+  /* line-height: 40px; */
+  /* border: 1px solid #595959; */
+  /* width: 80%; */
+  /* margin-left: 10%; */
+  /* border-radius: 5px; */
+  /* margin-top: 5px; */
+  border-bottom: 1px solid #a9a9a9;
 }
 
 .submit-new-btn.active_orange_outline {

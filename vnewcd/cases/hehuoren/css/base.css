@@ -67,7 +67,15 @@ p:empty {
 {
   clear: both;
 }
+ .border_grey
+ {
+   border-bottom: 1px solid #a9a9a9;
+ }
 
+ .selected
+ {
+   border-bottom: 2px solid #ff6464;
+ }
 /**************************
   Common State of Elements
   **************************/
@@ -309,6 +317,14 @@ input::-webkit-input-placeholder {
 .submit-new-btn.active_orange{
   background: #FF6464;
 }
+.submit-new-btn.active_white{
+  background: #FFF;
+}
+
+.submit-new-btn.active_dark{
+  background: #6b6b6b;
+}
+
 .submit-new-btn.active_grey{
   background: #b5b5b5;
 }

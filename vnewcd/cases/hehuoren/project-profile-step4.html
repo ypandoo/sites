@@ -60,6 +60,13 @@
     <div style="background:white">
         <div id="item-container" class="item-container">
 
+          <div class=" title-control page-title " ms-controller="title-controller"
+               ms-on-tap="toggle_content('invest')" >
+              <h1>投</h1>
+              <em id="em_invest"></em>
+          </div>
+
+          <div id='invest' style="display:none">
             <label id="shop_type" class="page-name select-position-group">
                 <span>店铺类型</span><em></em><p></p>
                 <select name="position">
@@ -70,7 +77,7 @@
 
             <div id="new_shop">
                  <label class="page-name">
-                    <span>营业面积</span><input maxlength="20" value="">
+                    <span>营业面积（预估）</span><input maxlength="20" value="">
                 </label>
             </div>
 
@@ -87,11 +94,46 @@
                 <label class="page-name">
                     <span>现估值</span><input maxlength="20" value="">
                 </label>
+
+                <div  ms-controller="eval-controller" ms-repeat-el='list'>
                 <label class="page-name">
                     <span>估值依据</span><input maxlength="20" value="">
                 </label>
+                </div>
 
-                <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+增加估值依据</a>
+                <a class="submit-new-btn add_new_member_btn"
+                ms-on-tap="add()" ms-controller="eval-controller">+增加估值依据</a>
+
+                <label class="page-desc" style="padding-top:15px">
+                    <p><b>已有估值依据图片</b></p>
+                </label>
+
+                <div class="pic_layer">
+                    <div class="divide33">
+                        <div class="close"></div>
+                        <img src="img/project1.png" width="100%" height="100%">
+                    </div>
+
+                    <div class="divide33">
+                        <div class="close"></div>
+                        <img src="img/project2.png" width="100%" height="100%">
+                    </div>
+                </div>
+
+                <label class="page-desc" style="padding-top:15px">
+                    <p><b>上传估值依据照片</b></p>
+                </label>
+                <div class="page-logo clearfix">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <p>支持JPG、PNG格式，文件不大于2MB </p>
+                    </div>
+                </div>
+
             </div>
 
             <label class="page-desc clearfix" style="margin-top:5px">
@@ -192,90 +234,6 @@
                     <input maxlength="20" value="" style="width:30%">
                 </label>
             </div>
-
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b> 资金用途</b></p>
-            </label>
-            <label class="page-name">
-                <span>预付租金费用</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>管理/技术人员储备开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>开业前的员工储备培训开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>开业后的员工开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修预付款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修工程款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修饰品物料款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>生产/经商设备</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>场地设备/器材</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>物料采购</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>融资费用</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>企业成立开办费用</span><input maxlength="20" value="">
-            </label>
-
-            <label class="page-name">
-                <span>流动资金</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>企业储备金</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>财务监管系统</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>广告宣传</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name" style="background:#C1C1C1">
-                <span style="background:#C1C1C1">合计</span>
-                <input style="background:#C1C1C1"maxlength="20" value="0" disabled="disabled">
-            </label>
-
-            <label class="page-description">
-                <span>备注</span>
-                <textarea id=""></textarea>
-            </label>
-
-            <label class="page-description">
-                <span>资金外核心需求</span>
-                <textarea id=""></textarea>
-            </label>
-
-
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b> 退出机制一：份额股转让解决方案</b></p>
-            </label>
-            <label class="page-description">
-                <span style="width:30%">退出机制一</span>
-                <textarea  style="width:70%" id=""></textarea>
-            </label>
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b> 退出机制二：份额股回购解决方案</b></p>
-            </label>
-            <label class="page-description">
-                <span style="width:30%">退出机制二</span>
-                <textarea style="width:70%" id=""></textarea>
-            </label>
-
 
             <label class="page-desc clearfix" style="margin-top:5px">
                     <p><b> 证件提交</b></p>
@@ -408,12 +366,116 @@
             </label>
             <div class="two-buttons">
                     <div class="left">
-                    <a id="subbmit-btn" class="submit-new-btn text_btn">不同意</a>
+                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey">不同意</a>
                     </div>
                     <div class="right">
                     <a id="subbmit-btn" class="submit-new-btn text_btn active_orange">同意</a>
                      </div>
             </div>
+
+          </div><!--end of tou -->
+
+
+          <div class=" title-control page-title " ms-controller="title-controller"
+               ms-on-tap="toggle_content('raise')" >
+              <h1>融</h1>
+              <em id="em_raise"></em>
+          </div>
+
+          <div id='raise' style="display:none">
+            <label class="page-desc clearfix" style="margin-top:5px">
+                    <p><b> 资金用途</b></p>
+            </label>
+
+            <label id="chain_type" class="page-name select-position-group">
+                <span>是否加盟</span><em></em><p></p>
+                <select name="position">
+                    <option value="是" >是</option>
+                    <option value="否" selected="true">否</option>
+                </select>
+            </label>
+
+            <div id="chain" style="display:none">
+              <label class="page-name">
+                  <span>加盟费用</span><input maxlength="20" value="">
+              </label>
+            </div>
+
+
+            <label class="page-name">
+                <span>预付租金费用</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>管理/技术人员储备开支</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>开业前的员工储备培训开支</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>开业后的员工开支</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>装修预付款</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>装修工程款</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>装修饰品物料款</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>生产/经商设备</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>场地设备/器材</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>物料采购</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>融资费用</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>企业成立开办费用</span><input maxlength="20" value="">
+            </label>
+
+            <label class="page-name">
+                <span>流动资金</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>企业储备金</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>财务监管系统</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name">
+                <span>广告宣传</span><input maxlength="20" value="">
+            </label>
+            <label class="page-name" style="background:#C1C1C1">
+                <span style="background:#C1C1C1">合计</span>
+                <input style="background:#C1C1C1"maxlength="20" value="0" disabled="disabled">
+            </label>
+
+            <label class="page-description">
+                <span>备注</span>
+                <textarea id=""></textarea>
+            </label>
+
+            <label class="page-description">
+                <span>资金外核心需求</span>
+                <textarea id=""></textarea>
+            </label>
+
+          </div><!--- end of rong-->
+
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('manage')" >
+                <h1>管</h1>
+                <em id="em_manage"></em>
+            </div>
+
+            <div id='manage' style="display:none">
             <label class="page-desc clearfix" style="margin-top:5px">
                     <p><b>经营指标</b></p>
             </label>
@@ -446,16 +508,68 @@
                 <span style="width:60%">第一年预计盈利</span>
                 <input maxlength="20" value="" style="width:40%">
             </label>
-            <div class="two-buttons">
-                    <div class="left">
-                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey">上传合作协议</a>
-                    </div>
-                    <div class="right">
-                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey">下载合作协议模版</a>
-                     </div>
+
+            <label class="page-desc" style="padding-top:15px">
+                <p><b>已有协议图片</b></p>
+            </label>
+
+            <div class="pic_layer">
+                <div class="divide33">
+                    <div class="close"></div>
+                    <img src="img/project1.png" width="100%" height="100%">
+                </div>
+
+                <div class="divide33">
+                    <div class="close"></div>
+                    <img src="img/project2.png" width="100%" height="100%">
+                </div>
+            </div>
+            <label class="page-desc" style="padding-top:15px">
+                <p><b>上传合作协议图片</b></p>
+            </label>
+            <div class="page-logo clearfix">
+                <label id="upload-trigger" class="container">
+                    <div id="upload-progress" class="progress transition"></div>
+                    <img>
+                    <input id="upload-input" class="default-hidden" type="file">
+                </label>
+                <div class="text">
+                    <p>支持JPG、PNG格式，文件不大于2MB </p>
+                </div>
             </div>
 
+            <a id="subbmit-btn" class="submit-new-btn text_btn active_dark">下载合作协议模版</a>
+            </div>
+          </div>
         </div>
+
+
+
+      <div class=" title-control page-title " ms-controller="title-controller"
+           ms-on-tap="toggle_content('quit')" >
+          <h1>退</h1>
+          <em id="em_quit"></em>
+      </div>
+
+      <div id='quit' style="display:none">
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 退出机制一：份额股转让解决方案</b></p>
+        </label>
+        <label class="page-description">
+            <span style="width:30%">退出机制一</span>
+            <textarea  style="width:70%" id=""></textarea>
+        </label>
+        <label class="page-desc clearfix" style="margin-top:5px">
+                <p><b> 退出机制二：份额股回购解决方案</b></p>
+        </label>
+        <label class="page-description">
+            <span style="width:30%">退出机制二</span>
+            <textarea style="width:70%" id=""></textarea>
+        </label>
+    </div><!-- end of quit-->
+
+
+
     </div>
 
 </div>

@@ -67,7 +67,7 @@
                 <em id="em_basic_desc"></em>
             </div>
 
-            <div id="basic_desc">
+            <div id="basic_desc" style="display:none">
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
                         <div id="upload-progress" class="progress transition"></div>
@@ -126,54 +126,51 @@
                     </select>
                 </label>
 
-                <a id="subbmit-btn" class="submit-new-btn text_btn active_grey">+保存基本信息</a>
+                <div  ms-controller="shop-open-controller">
+
+
+                  <div id="open_plan" ms-repeat-el ='list'>
+                      <label  class="page-name">
+                          <span style="width:30%">预期开店地址</span><em></em><p></p>
+                          <select name="stage" class="stage">
+                              <option value="请选择区域" selected="">请选择区域</option>
+                              <option value="成都">成都</option>
+                          </select>
+                      </label>
+                      <label class="page-name" style="margin-top:-8px">
+                          <span style="width:30%"></span><em></em><p></p>
+                          <select name="stage" class="stage">
+                              <option value="请选择街道" selected="">请选择街道</option>
+                              <option value="大使馆路">大使馆路</option>
+                          </select>
+                      </label>
+                </div>
+
+                <a id="subbmit-btn" class="submit-new-btn text_btn add_new_member_btn" ms-on-tap='add_shop()'>+增加开店地址</a>
+
+                <!-- <div id="open_plan">
+                    <label id="select2" class="page-name">
+                        <span style="width:30%">预期开店地址</span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择区域" selected="">请选择区域</option>
+                            <option value="成都">成都</option>
+                        </select>
+                    </label>
+                    <label id="select3" class="page-name" style="margin-top:-8px">
+                        <span style="width:30%"></span><em></em><p></p>
+                        <select name="stage" class="stage">
+                            <option value="请选择街道" selected="">请选择街道</option>
+                            <option value="大使馆路">大使馆路</option>
+                        </select>
+                    </label>
+              </div> -->
+            </div>
+
+
             </div>
         </div>
 
-
-        <div id="item-container" class="item-container">
-            <div class=" title-control page-title " ms-controller="title-controller"
-                 ms-on-tap="toggle_content('open_plan')" style="margin-top:10px">
-                <h1>开店计划</h1>
-                <em id="em_open_plan"></em>
-            </div>
-
-            <div id="open_plan">
-                <label class="page-name flex-height">
-                    <span style="width:100%"><b>已有项目地址</b></span>
-                    <span style="width:100%">
-                        <span style="width:90%">武侯区-火车南站街道-和平小区</span>
-                        <span style="width:10%;">X</span>
-                    </span>
-
-                    <span style="width:100%">
-                        <span style="width:90%">武侯区-倪家桥街道-领事馆片区</span>
-                        <span style="width:10%;">X</span>
-                    </span>
-
-                </label>
-
-                <label id="select2" class="page-name">
-                    <span style="width:30%">预期开店地址</span><em></em><p></p>
-                    <select name="stage" class="stage">
-                        <option value="请选择区域" selected="">请选择区域</option>
-                        <option value="成都">成都</option>
-                    </select>
-                </label>
-                <label id="select3" class="page-name" style="margin-top:-8px">
-                    <span style="width:30%"></span><em></em><p></p>
-                    <select name="stage" class="stage">
-                        <option value="请选择街道" selected="">请选择街道</option>
-                        <option value="大使馆路">大使馆路</option>
-                    </select>
-                </label>
-
-
-                <a id="subbmit-btn" class="submit-new-btn text_btn active_grey">+保存开店信息</a>
-            </div>
-        </div>
-
-       <div style="margin-top:30px">
+     <div style="margin-top:30px">
 
      <label class="page-desc clearfix" style="margin-top:5px">
          <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
@@ -183,8 +180,6 @@
                         完成填写等待审核</a>
        <a class="submit-new-btn text_btn active_orange_outline_slim">
                       + 进一步完善资料提升等级</a>
-       <!-- <a class="submit-new-btn text_btn active_grey_nobg" >
-                                     -返回</a> -->
        </div>
 </div>
 
