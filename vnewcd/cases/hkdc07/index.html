@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>决战七月-英雄帖</title>
+    <meta name="keywords" content="决战七月-英雄帖"/>
+    <meta name="description" content="决战七月-英雄帖"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="决战七月-英雄帖"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link href="css/base.css" rel="stylesheet"/>
+
+    <style>
+    #bg {
+      background: url(img/bg.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .start{
+      position: absolute;
+      bottom: 10%;
+      width: 200px;
+      height: 75px;
+      left: 50%;
+      margin-left: -100px;
+      background: url(img/start.png) no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: 100% 100%;
+    }
+
+    .question{
+      margin-left: 3%;
+      margin-top: 10%;
+      width: 86%;
+    }
+
+    .answer{
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 5%;
+    }
+
+    .item2{
+      width: 80%;
+      margin-left: 20%;
+      margin-top: 7%;
+    }
+
+    .item{
+      float: left;
+      width: 33.3%;
+      padding: 10px;
+    }
+
+    .item3{
+      width: 70%;
+      margin-left: 15%;
+      margin-top: 4%;
+    }
+
+    .date{
+      position: absolute;
+      bottom: 20px;
+      width: 290px;
+      height: 23px;
+      left: 50%;
+      margin-left: -145px;
+      background: url(img/date.png) no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: 100% 100%;
+    }
+
+    .rtext{
+      margin-top: 10%;
+      width: 60%;
+      margin-left: 20%;
+    }
+
+    .rbutton{
+      margin-top: 5%;
+      width: 30%;
+      margin-left: 35%;
+    }
+
+    .rbutton_layer{
+      margin-top: 5%;
+      width: 80%;
+      margin-left: 10%;
+    }
+
+    .rbutton_share{
+      float: left;
+      width: 49.99%;
+      padding: 10px;
+    }
+
+    .rbutton_again{
+      float: left;
+      width: 49.99%;
+      padding: 10px;
+    }
+
+    .ptext{
+      margin-top: 10%;
+      width: 60%;
+      margin-left: 20%;
+    }
+    </style>
+</head>
+
+<body id="bg" ms-controller='game_controller'>
+
+  <!-- Start Page -->
+  <div id='index'>
+    <div class='start' ms-on-click='start()'></div>
+    <div class='date'></div>
+  </div>
+
+  <!-- Question Page -->
+  <div id="q1" style="display:none">
+    <div class="question"><img src="img/q1.png" width="100%"/></div>
+    <div class="answer">
+      <div class="item" ms-on-click='result(1)'><img src="img/card1_1.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card1_2.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card1_3.jpg" width="100%"/></div>
+    </div>
+  </div>
+
+  <div id="q2" style="display:none">
+    <div class="question"><img src="img/q2.png" width="100%"/></div>
+    <div class="answer" >
+      <div class="item" ms-on-click='result(1)'><img src="img/card2_1.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card2_2.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card2_3.jpg" width="100%"/></div>
+    </div>
+  </div>
+
+  <div id="q3" style="display:none">
+    <div class="question"><img src="img/q3.png" width="100%"/></div>
+    <div class="answer" >
+      <div class="item" ms-on-click='result(1)'><img src="img/card3_1.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card3_2.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card3_3.jpg" width="100%"/></div>
+    </div>
+  </div>
+
+
+  <div id="q4" style="display:none">
+    <div class="question"><img src="img/q4.png" width="100%"/></div>
+    <div class="answer">
+      <div class="item2" ms-on-click='result(1)'><img src="img/card4_1.png" height="28px"/></div>
+      <div class="item2" ms-on-click='result(0)'><img src="img/card4_2.png" height="28px"/></div>
+      <div class="item2" ms-on-click='result(0)'><img src="img/card4_3.png" height="28px"/></div>
+    </div>
+  </div>
+
+
+  <div id="q5" style="display:none">
+    <div class="question"><img src="img/q5.png" width="100%"/></div>
+    <div class="answer">
+      <div class="item3" ms-on-click='result(1)'><img src="img/card5_1.png" width="100%"/></div>
+      <div class="item3" ms-on-click='result(0)'><img src="img/card5_2.png" width="100%"/></div>
+      <div class="item3" ms-on-click='result(0)'><img src="img/card5_3.png" width="100%"/></div>
+    </div>
+  </div>
+
+  <!--- result page -->
+  <div id="r1" style="display:none">
+    <div class="rtext"><img src="img/rtext1.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='prize(1)'><img src="img/rbutton.png" width="100%"/></div>
+  </div>
+
+  <div id="r2" style="display:none">
+    <div class="rtext"><img src="img/rtext2.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='prize(2)'><img src="img/rbutton.png" width="100%"/></div>
+  </div>
+
+  <div id="r3" style="display:none">
+    <div class="rtext"><img src="img/rtext3.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='prize(3)'><img src="img/rbutton.png" width="100%"/></div>
+  </div>
+
+  <div id="r4" style="display:none">
+    <div class="rtext"><img src="img/rtext4.png" width="100%"/></div>
+
+    <div class="rbutton_layer">
+    <div class="rbutton_share" ms-on-click='share()'><img src="img/rbutton_share.png" width="100%"/></div>
+    <div class="rbutton_again" ms-on-click='again()'><img src="img/rbutton_again.png" width="100%"/></div>
+    </div>
+  </div>
+
+  <!-- prize page-->
+  <div id="p1" style="display:none">
+    <div class="ptext"><img src="img/ptext1.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='contact(1)'><img src="img/prize.png" width="100%"/></div>
+  </div>
+
+  <div id="p2" style="display:none">
+    <div class="ptext"><img src="img/ptext2.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='contact(2)'><img src="img/prize.png" width="100%"/></div>
+  </div>
+
+  <div id="p3" style="display:none">
+    <div class="ptext"><img src="img/ptext3.png" width="100%"/></div>
+    <div class="rbutton" ms-on-click='contact(3)'><img src="img/prize.png" width="100%"/></div>
+  </div>
+
+  <!-- contact page -->
+
+
+
+  <!-- share page -->
+
+
+
+
+
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/avalon.mobile.min.js"></script>
+<script src="js/base.js"></script>
+
+<script>
+
+(function(){
+    var self = this;
+
+    this.avalon_control = avalon.define("game_controller", function (vm) {
+        vm.score = 0;
+        vm.current = 1;
+        vm.start = function(){
+          //score = 0;
+          $('#bg').css("background-image", "url(img/bg2.jpg)");
+          $('#index').fadeOut();
+          $('#q1').fadeIn();
+        };
+
+        vm.result = function(e){
+          if (parseInt(e) ==  1) {
+            vm.score++;
+          }
+
+          if (vm.current == 5) {
+              $('#q5').hide();
+              if (vm.score==5) {
+                $('#r1').fadeIn();
+              }
+              else if(vm.score == 4)
+              {
+                $('#r2').fadeIn();
+              }
+              else if(vm.score == 3)
+              {
+                $('#r3').fadeIn();
+              }
+              else {
+                $('#r4').fadeIn();
+              }
+          }
+          else
+          {
+            $('#q'+vm.current).hide();
+            vm.current++;
+            $('#q'+vm.current).fadeIn();
+          }
+        }
+
+        vm.prize = function(e){
+          $('#r1').hide();
+          $('#r2').hide();
+          $('#r3').hide();
+          if (parseInt(e) == 1) {
+             var level = space_random.int(1, 3);
+             $('#p'+level).fadeIn();
+          }
+          else if(parseInt(e) == 2){
+            var level = space_random.int(2, 3);
+            $('#p'+level).fadeIn();
+          }
+          else{
+            $('#p3').fadeIn();
+          }
+
+        }
+
+        vm.again = function(){
+          window.location.href = 'index.html';
+          return;
+        }
+
+        vm.share = function() {
+
+        }
+
+        vm.contact = function(e) {
+          
+        }
+
+
+
+    });
+}).call(define('game_space'));
+
+
+</script>
+</body>
+</html>
