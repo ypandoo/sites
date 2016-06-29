@@ -17,8 +17,9 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
     <link href="css/base.css" rel="stylesheet"/>
-
+    <link href="css/animate.css" rel="stylesheet"/>
     <style>
+
     #bg {
       background: url(img/bg.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -51,6 +52,23 @@
       width: 90%;
       margin-left: 5%;
       margin-top: 5%;
+      /* height: 80px; */
+      overflow: hidden;
+      background-image: url(img/bgtext.png);
+      background-size: contain;
+      /* background-image: url('bgimage.gif'); */
+      background-repeat: no-repeat;
+      /* background-attachment: fixed; */
+      background-position: bottom center;
+      padding-bottom: 30px;
+    }
+
+    .answer2{
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 5%;
+      /* height: 80px; */
+      overflow: hidden;
     }
 
     .item2{
@@ -120,14 +138,158 @@
       width: 60%;
       margin-left: 20%;
     }
-    </style>
+
+    .info{
+      width: 80%;
+          margin-left: 10%;
+          overflow: hidden;
+          background-image: url(img/bgtext.png);
+          background-size: 100%;
+          /* background-image: url('bgimage.gif'); */
+          background-repeat: no-repeat;
+          /* background-attachment: fixed; */
+          /* background-position: bottom center; */
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 50px;
+    }
+
+    .info input{
+      border: none;
+      outline: none;
+      color:white;
+      font-size: 18px;
+      float: left;
+      width: 65%;
+      background-color: transparent;
+    }
+
+    .info label{
+      color:white;
+      font-size: 18px;
+      font-weight: bold;
+      float: left;
+      width: 35%;
+    }
+
+    .finish{
+    margin-top: 10%;
+    width: 100%;
+    /* left: 50%; */
+    text-align: center;
+    clear: both;
+    }
+
+    .friend{
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #pageShare {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    left: 50%;
+    top: 0;
+    width: 100rem;
+    margin-left: -50rem;
+    z-index: 10001;
+  }
+  .modal .transparent {
+      background: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal.active {
+      transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
+  }
+
+  .modal.transparent {
+      background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal.active {
+      height: 100%;
+      opacity: 1;
+      transition: -webkit-transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+  }
+
+  .modal {
+      transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
+  }
+
+  .modal {
+      position: fixed;
+      top: 0;
+      z-index: 11;
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      background-color: #fff;
+      opacity: 0;
+      transition: opacity 1ms .3s, -webkit-transform .3s;
+      transition: transform .3s, opacity 1ms .3s;
+      transition: transform .3s, opacity 1ms .3s, -webkit-transform .3s;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+  }
+
+    .loading {
+        background: url(img/bg4.jpg) 50% 50% no-repeat;
+        background-size: cover;
+        z-index: 10;
+    }
+
+    .page, .float {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .loading .container {
+      width: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+    }
+
+    .loading .bian {
+      position: absolute;
+      width: 10.4%;
+      left: 60%;
+      top: -40%;
+      display: none;
+  }
+
+  .loading .per {
+      font-size: 20px;
+      text-align: center;
+      color:white;
+  }
+
+  </style>
 </head>
 
 <body id="bg" ms-controller='game_controller'>
 
+    <div class="page loading">
+  		<div class="container">
+        <p style="font-size:28px; text-align:center; color:white">大侠请稍候... </p>
+        <br>
+  			<p class="per">00%</p>
+  		</div>
+  	</div>
+
+
   <!-- Start Page -->
-  <div id='index'>
-    <div class='start' ms-on-click='start()'></div>
+  <div id='index' style="display:">
+    <div class='start animated infinite pulse' ms-on-click='start()'></div>
     <div class='date'></div>
   </div>
 
@@ -162,7 +324,7 @@
 
   <div id="q4" style="display:none">
     <div class="question"><img src="img/q4.png" width="100%"/></div>
-    <div class="answer">
+    <div class="answer2" >
       <div class="item2" ms-on-click='result(1)'><img src="img/card4_1.png" height="28px"/></div>
       <div class="item2" ms-on-click='result(0)'><img src="img/card4_2.png" height="28px"/></div>
       <div class="item2" ms-on-click='result(0)'><img src="img/card4_3.png" height="28px"/></div>
@@ -172,7 +334,7 @@
 
   <div id="q5" style="display:none">
     <div class="question"><img src="img/q5.png" width="100%"/></div>
-    <div class="answer">
+    <div class="answer2">
       <div class="item3" ms-on-click='result(1)'><img src="img/card5_1.png" width="100%"/></div>
       <div class="item3" ms-on-click='result(0)'><img src="img/card5_2.png" width="100%"/></div>
       <div class="item3" ms-on-click='result(0)'><img src="img/card5_3.png" width="100%"/></div>
@@ -199,7 +361,7 @@
     <div class="rtext"><img src="img/rtext4.png" width="100%"/></div>
 
     <div class="rbutton_layer">
-    <div class="rbutton_share" ms-on-click='share()'><img src="img/rbutton_share.png" width="100%"/></div>
+    <div class="rbutton_share" ms-on-click='friend()'><img src="img/rbutton_share.png" width="100%"/></div>
     <div class="rbutton_again" ms-on-click='again()'><img src="img/rbutton_again.png" width="100%"/></div>
     </div>
   </div>
@@ -221,12 +383,39 @@
   </div>
 
   <!-- contact page -->
+  <div id="contact" style="display:none">
+    <div class="info" style="margin-top:100px">
+      <label for="name">姓名：</label>
+      <input type="text" name="name" id="name" />
+    </div>
+
+    <div class="info" style="margin-top:25px">
+      <label for="name">微信号:</label>
+      <input type="text" name="name" id="name" />
+    </div>
+
+    <div class="info" style="margin-top:25px">
+      <label for="name">性别：</label>
+      <input type="text" name="name" id="name" />
+    </div>
+
+    <div class="info" style="margin-top:25px">
+      <label for="name">电话：</label>
+      <input type="text" name="name" id="name" />
+    </div>
+    <div class="finish" ms-on-click='finish()'><img src="img/submit.png" width="80px"/></div>
+  </div>
 
 
 
   <!-- share page -->
+  <div id="friend" style="display:none">
+    <div class="friend" ms-on-click='friend()'><img src="img/friend.png" width="100px"/></div>
+  </div>
 
-
+  <!-- hidden layer -->
+  <div id="pageShare" class="modal transparent active"  ms-on-click='closeShare()' style="display:none">
+  </div>
 
 
 
@@ -234,6 +423,8 @@
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/avalon.mobile.min.js"></script>
 <script src="js/base.js"></script>
+<script src="js/preloadjs-0.4.1.min.js"></script>
+<script src="js/loading.js"></script>
 
 <script>
 
@@ -308,7 +499,24 @@
         }
 
         vm.contact = function(e) {
-          
+          $('#p1').hide();
+          $('#p2').hide();
+          $('#p3').hide();
+          $('#contact').fadeIn();
+        }
+
+        vm.finish = function(){
+          $('#contact').hide();
+          $('#friend').fadeIn();
+          $('#bg').css("background-image", "url(img/bg4.jpg)");
+        }
+
+        vm.friend = function(){
+          $('#pageShare').fadeIn();
+        }
+
+        vm.closeShare = function(){
+          $('#pageShare').fadeOut();
         }
 
 
