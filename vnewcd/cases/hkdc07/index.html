@@ -5,6 +5,7 @@
     <title>七月将有大事发生,武林豪杰皆前去揭榜！我正火速赶往中...</title>
     <meta name="keywords" content="决战七月-英雄帖"/>
     <meta name="description" content="决战七月-英雄帖"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">  
     <meta name="robots" content="all"/>
     <meta name="copyright" content="决战七月-英雄帖"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,7 +21,7 @@
     <link href="css/animate.css" rel="stylesheet"/>
 
     <div style="display:none">
-      <img src='bg.jpg'/>
+      <img src='img/logo.jpg'/>
     </div>
 
     <style>
@@ -195,11 +196,12 @@
     clear: both;
     }
 
-    .friend{
-      position: absolute;
-      bottom: 50px;
-      width: 100%;
-      text-align: center;
+    .friend {
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        /* width: 100%; */
+        /* text-align: center; */
     }
 
     #pageShare {
@@ -254,9 +256,9 @@
   }
 
     .loading {
-        background: url(img/bg4.jpg) 50% 50% no-repeat;
+        background: rgba(0,0,0,0.9);
         background-size: cover;
-        z-index: 10;
+        z-index: 1000;
     }
 
     .page, .float {
@@ -288,6 +290,17 @@
       color:white;
   }
 
+  .animated2 {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated2.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
   </style>
 
   <script>
@@ -370,24 +383,24 @@
   <!--- result page -->
   <div id="r1" style="display:none">
     <div class="rtext"><img src="img/rtext1.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='prize(1)'><img src="img/rbutton.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='prize(1)'><img src="img/rbutton.png" width="100%"/></div>
   </div>
 
   <div id="r2" style="display:none">
     <div class="rtext"><img src="img/rtext2.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='prize(2)'><img src="img/rbutton.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='prize(2)'><img src="img/rbutton.png" width="100%"/></div>
   </div>
 
   <div id="r3" style="display:none">
     <div class="rtext"><img src="img/rtext3.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='prize(3)'><img src="img/rbutton.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='prize(3)'><img src="img/rbutton.png" width="100%"/></div>
   </div>
 
   <div id="r4" style="display:none">
     <div class="rtext"><img src="img/rtext4.png" width="100%"/></div>
 
     <div class="rbutton_layer">
-    <div class="rbutton_share" ms-on-click='friend()'><img src="img/rbutton_share.png" width="100%"/></div>
+    <div class="rbutton_share" ms-on-click='share()'><img src="img/rbutton_share.png" width="100%"/></div>
     <div class="rbutton_again" ms-on-click='again()'><img src="img/rbutton_again.png" width="100%"/></div>
     </div>
   </div>
@@ -395,17 +408,17 @@
   <!-- prize page-->
   <div id="p1" style="display:none">
     <div class="ptext"><img src="img/ptext1.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='contact(1)'><img src="img/prize.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='contact(1)'><img src="img/prize.png" width="100%"/></div>
   </div>
 
   <div id="p2" style="display:none">
     <div class="ptext"><img src="img/ptext2.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='contact(2)'><img src="img/prize.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='contact(2)'><img src="img/prize.png" width="100%"/></div>
   </div>
 
   <div id="p3" style="display:none">
     <div class="ptext"><img src="img/ptext3.png" width="100%"/></div>
-    <div class="rbutton" ms-on-click='contact(3)'><img src="img/prize.png" width="100%"/></div>
+    <div class="rbutton  animated infinite pulse" ms-on-click='contact(3)'><img src="img/prize.png" width="100%"/></div>
   </div>
 
   <!-- contact page -->
@@ -413,6 +426,12 @@
     <div class="info" style="margin-top:100px">
       <label for="name" >姓名：</label>
       <input type="text" name="name" id="name" ms-duplex="name"></input>
+    </div>
+
+
+    <div class="info" style="margin-top:25px">
+      <label for="tel">电话：</label>
+      <input type="text" name="tel" id="tel" ms-duplex="tel"></input>
     </div>
 
     <div class="info" style="margin-top:25px">
@@ -428,10 +447,6 @@
       </select>
     </div>
 
-    <div class="info" style="margin-top:25px">
-      <label for="tel">电话：</label>
-      <input type="text" name="tel" id="tel" ms-duplex="tel"></input>
-    </div>
     <div class="finish" ms-on-click='finish()'><img src="img/submit.png" width="80px"/></div>
   </div>
 
@@ -439,7 +454,7 @@
 
   <!-- share page -->
   <div id="friend" style="display:none">
-    <div class="friend" ms-on-click='friend()'><img src="img/friend.png" width="100px"/></div>
+    <div class="friend animated2 infinite tada" ms-on-click='friend()'><img src="img/friend.png" width="250px"/></div>
   </div>
 
   <!-- hidden layer -->
@@ -529,13 +544,17 @@
         }
 
         vm.share = function() {
-
+          $('#r4').hide();
+          $('#friend').fadeIn();
+          $('#bg').css("background-image", "url(img/bg4.jpg)");
+          return;
         }
 
         vm.contact = function(e) {
           $('#p1').hide();
           $('#p2').hide();
           $('#p3').hide();
+          $('#bg').css("background-image", "url(img/bg3.jpg)");
           $('#contact').fadeIn();
         }
 
@@ -547,7 +566,7 @@
             return;
           }
 
-          var url = 'add_prize.php?r='+space_random.int(1,1000000);
+          var url = 'add_prize.php?timestamp=' + (new Date().getTime());
           var sex = 1;
           if (vm.sex == '女') {
             sex = 0;

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>七月将有大事发生,武林豪杰皆前去揭榜！我正火速赶往中...</title>
+    <meta name="keywords" content="决战七月-英雄帖"/>
+    <meta name="description" content="决战七月-英雄帖"/>
+    <meta name="robots" content="all"/>
+    <meta name="copyright" content="决战七月-英雄帖"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="" />
+    <meta name="revisit-after"  content="1 days" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+
+    <div style="display:none">
+      <img src='img/logo.jpg'/>
+    </div>
+<style>
+th, td{
+  width: 150px;
+  font-size: 18px;
+  border: 1px solid #000;
+}
+</style>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?f73807280d5b7bc172efcc6e68e5ef8e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+
+</head>
+
+<body id="bg" ms-controller='controller'>
+
+  <table border="1">
+    <tr>
+      <th>姓名</th>
+      <th>电话</th>
+      <th>微信号</th>
+      <th>性别</th>
+      <th>奖品</th>
+    </tr>
+    <tr ms-repeat="list">
+        <td>{{el.NAME}}</td>
+        <td>{{el.TEL}}</td>
+        <td>{{el.WECHAT}}</td>
+        <td>{{el.SEX == 1 ? '男' : '女'}}</td>
+        <td>{{el.LEVEL == 1 ? '书迷证' : (el.LEVEL == 2 ? 'VIP贵宾进场票': '书展门票')}}</td>
+    </tr>
+  </table>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/avalon.mobile.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/preloadjs-0.4.1.min.js"></script>
+<script src="js/loading.js"></script>
+
+<script>
+
+(function(){
+    var self = this;
+
+    this.avalon_control = avalon.define("controller", function (vm) {
+        vm.list = [];
+
+        vm.finish = function(){
+          var submit_data = {};
+          var url = 'prize.php';
+          base_remote_data.ajaxjson(
+             url, //url
+             function(data){
+               if(data.hasOwnProperty('success')){
+                     if(data.success == 1){
+                          //put some code here
+                          vm.list = data.data;
+                     }
+                     else{
+                         alert(data.message);
+                     }
+                 }
+               else {
+                 alert('返回值错误!');
+               }
+           },
+           submit_data,
+           function()
+           {
+             alert('网络错误!');
+           });
+
+        }
+    });
+
+  this.avalon_control.finish();
+}).call(define('space'));
+
+
+</script>
+</body>
+</html>

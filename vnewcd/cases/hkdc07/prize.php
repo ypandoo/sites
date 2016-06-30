@@ -1,57 +1,32 @@
 <?php
-
 	/**********************************************************************
 	*  ezSQL initialisation for mySQL
 	*/
-  header('Content-Type: text/html; charset=utf-8');
+
 	// Include ezSQL core
 	include_once "ez_sql_core.php";
 
 	// Include ezSQL database specific component
 	include_once "ez_sql_mysql.php";
 
-	$tel =  $_POST['tel'];
-  $name =iconv("UTF-8","GB2312",$_POST['name']);
-	// $name = $_POST['name'];
-	$sex =  $_POST['sex'];
-	$level = $_POST['level'];
-	$wechat =  $_POST['wechat'];
-
-	if ($tel == '' || $name == '' || $sex == '' || $level == '' || $wechat == '' ) {
-		$data_result["success"] = 0;
-		$data_result["errorCode"] = 1;
-		$data_result['message'] = "数据错误";
-		$data_result['data'] = 0;
-		echo json_encode($data_result);
-		exit;
-	}
 	// Initialise database object and establish a connection
 	// at the same time - db_user / db_password / db_name / db_host
 	// 'hostname' => 'qdm121114323.my3w.com:3306',
   // 'username' => 'qdm121114323',
   // 'password' => 'lei000lei',
   // 'database' => 'qdm121114323_db',
-	$db = new ezSQL_mysql('qdm121114323', 'lei000lei','qdm121114323_db','qdm121114323.my3w.com:3306');
+	$db = new ezSQL_mysql('qdm121114323', 'lei000lei','qdm121114323_db','qdm121114323.my3w.com:3306','utf-8');
 
-	$count = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `TEL` = '$tel'");
-
-	if ($count >= 1) {
-		$data_result["success"] = 0;
-		$data_result["errorCode"] = 2;
-		$data_result['message'] = "您已经领过奖品啦！把机会让给其他小伙伴吧！".$tel.$count;
-		$data_result['data'] = 0;
-		echo json_encode($data_result);
-		exit;
-	}
-
-	$db->query("INSERT INTO `T_MSL_HKDC`(`TEL`, `NAME`, `WECHAT`, `SEX`, `LEVEL`) VALUES ('$tel', '$name','$wechat', '$sex', '$level')");
+ 	$results = $db->get_results("SELECT * FROM `T_MSL_HKDC` ORDER BY LEVEL ASC");
 
 	$data_result["success"] = 1;
 	$data_result["errorCode"] = 0;
-	$data_result['message'] = "您已成功领取奖品!";
-	$data_result['data'] = 0;
+	$data_result['message'] = "成功获取列表!";
+	$data_result['data'] = $results;
 
-	echo json_encode($data_result);
+  echo json_encode($data_result);
+
+	//echo json_encode($data_result);
 	exit;
 
 	/**********************************************************************
@@ -81,5 +56,4 @@
 	// 	// Print out last query and results..
 	// 	$db->debug();
 	// }
-
 ?>

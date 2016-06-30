@@ -12,6 +12,7 @@
         "img/bg2.jpg",
         "img/bg3.jpg",
         "img/bg4.jpg",
+        "img/bgtext.png",
 
         "img/card1_1.jpg",
         "img/card1_2.jpg",
@@ -29,6 +30,11 @@
         "img/card5_2.png",
         "img/card5_3.png",
 
+        "img/date.png",
+        "img/friend.png",
+        "img/prize.png",
+        "img/logo.jpg",
+
         "img/q1.png",
         "img/q2.png",
         "img/q3.png",
@@ -43,6 +49,12 @@
         "img/rtext2.png",
         "img/rtext3.png",
         "img/rtext4.png",
+
+        "img/rbutton.png",
+        "img/rbutton_again.png",
+        "img/rbutton_share.png",
+        "img/start.png",
+        "img/submit.png",
 
         // "img/dash_top.png",
         // "img/logo_buick.png",

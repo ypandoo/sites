@@ -47,6 +47,7 @@
               url:url,
               type:'post',
               cache:false,
+              contentType: "application/x-www-form-urlencoded;charset=utf-8",
               data:data,
               dataType:'json',
               success:function(ret) {
