@@ -5,7 +5,7 @@
     <title>七月将有大事发生,武林豪杰皆前去揭榜！我正火速赶往中...</title>
     <meta name="keywords" content="决战七月-英雄帖"/>
     <meta name="description" content="决战七月-英雄帖"/>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">  
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="robots" content="all"/>
     <meta name="copyright" content="决战七月-英雄帖"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -155,8 +155,8 @@
           background-repeat: no-repeat;
           /* background-attachment: fixed; */
           /* background-position: bottom center; */
-          padding-top: 10px;
-          padding-bottom: 10px;
+          padding-top: 15px;
+          padding-bottom: 20px;
           padding-left: 50px;
     }
 
@@ -178,6 +178,7 @@
       float: left;
       width: 65%;
       background-color: transparent;
+      -webkit-appearance: none;
     }
 
     .info label{
@@ -345,8 +346,8 @@
   <div id="q2" style="display:none">
     <div class="question"><img src="img/q2.png" width="100%"/></div>
     <div class="answer" >
-      <div class="item" ms-on-click='result(1)'><img src="img/card2_1.jpg" width="100%"/></div>
-      <div class="item" ms-on-click='result(0)'><img src="img/card2_2.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card2_1.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(1)'><img src="img/card2_2.jpg" width="100%"/></div>
       <div class="item" ms-on-click='result(0)'><img src="img/card2_3.jpg" width="100%"/></div>
     </div>
   </div>
@@ -354,9 +355,9 @@
   <div id="q3" style="display:none">
     <div class="question"><img src="img/q3.png" width="100%"/></div>
     <div class="answer" >
-      <div class="item" ms-on-click='result(1)'><img src="img/card3_1.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(0)'><img src="img/card3_1.jpg" width="100%"/></div>
       <div class="item" ms-on-click='result(0)'><img src="img/card3_2.jpg" width="100%"/></div>
-      <div class="item" ms-on-click='result(0)'><img src="img/card3_3.jpg" width="100%"/></div>
+      <div class="item" ms-on-click='result(1)'><img src="img/card3_3.jpg" width="100%"/></div>
     </div>
   </div>
 
@@ -364,8 +365,8 @@
   <div id="q4" style="display:none">
     <div class="question"><img src="img/q4.png" width="100%"/></div>
     <div class="answer2" >
-      <div class="item2" ms-on-click='result(1)'><img src="img/card4_1.png" height="28px"/></div>
-      <div class="item2" ms-on-click='result(0)'><img src="img/card4_2.png" height="28px"/></div>
+      <div class="item2" ms-on-click='result(0)'><img src="img/card4_1.png" height="28px"/></div>
+      <div class="item2" ms-on-click='result(1)'><img src="img/card4_2.png" height="28px"/></div>
       <div class="item2" ms-on-click='result(0)'><img src="img/card4_3.png" height="28px"/></div>
     </div>
   </div>
@@ -374,9 +375,9 @@
   <div id="q5" style="display:none">
     <div class="question"><img src="img/q5.png" width="100%"/></div>
     <div class="answer2">
-      <div class="item3" ms-on-click='result(1)'><img src="img/card5_1.png" width="100%"/></div>
+      <div class="item3" ms-on-click='result(0)'><img src="img/card5_1.png" width="100%"/></div>
       <div class="item3" ms-on-click='result(0)'><img src="img/card5_2.png" width="100%"/></div>
-      <div class="item3" ms-on-click='result(0)'><img src="img/card5_3.png" width="100%"/></div>
+      <div class="item3" ms-on-click='result(1)'><img src="img/card5_3.png" width="100%"/></div>
     </div>
   </div>
 
@@ -429,17 +430,17 @@
     </div>
 
 
-    <div class="info" style="margin-top:25px">
+    <div class="info" style="margin-top:15px">
       <label for="tel">电话：</label>
       <input type="text" name="tel" id="tel" ms-duplex="tel"></input>
     </div>
 
-    <div class="info" style="margin-top:25px">
+    <div class="info" style="margin-top:15px">
       <label for="wechat">微信号:</label>
       <input type="text" name="wechat" id="wechat"  ms-duplex="wechat"></input>
     </div>
 
-    <div class="info" style="margin-top:25px">
+    <div class="info" style="margin-top:15px">
       <label for="sex">性别：</label>
       <select name="sex" id="sex" ms-duplex="sex" data-duplex-changed="selectchange">
           <option value="男" selected="true">男</option>
@@ -533,6 +534,7 @@
             $('#p'+vm.level).fadeIn();
           }
           else{
+            vm.level = 3;
             $('#p3').fadeIn();
           }
 

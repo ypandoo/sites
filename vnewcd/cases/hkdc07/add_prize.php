@@ -38,11 +38,43 @@
 	if ($count >= 1) {
 		$data_result["success"] = 0;
 		$data_result["errorCode"] = 2;
-		$data_result['message'] = "您已经领过奖品啦！把机会让给其他小伙伴吧！".$tel.$count;
+		$data_result['message'] = "该手机号已经领过奖品啦！把机会让给其他小伙伴吧！".$tel.$count;
 		$data_result['data'] = 0;
 		echo json_encode($data_result);
 		exit;
 	}
+
+	$count_level1 = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `LEVEL` = '1'");
+	$count_level2 = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `LEVEL` = '2'");
+	$count_level3 = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `LEVEL` = '3'");
+
+	if ($level == 1 && $count_level1 >= 1) {
+		$data_result["success"] = 0;
+		$data_result["errorCode"] = 2;
+		$data_result['message'] = "书迷证已经抢光啦！再玩一次说不定会抢到其他礼品哦！";
+		$data_result['data'] = 0;
+		echo json_encode($data_result);
+		exit;
+	}
+
+	if ($level == 2 && $count_level2 >= 6) {
+		$data_result["success"] = 0;
+		$data_result["errorCode"] = 2;
+		$data_result['message'] = "书展VIP门票已经抢光啦！再玩一次说不定会抢到其他礼品哦！";
+		$data_result['data'] = 0;
+		echo json_encode($data_result);
+		exit;
+	}
+
+	if ($level == 3 && $count_level3 >= 10) {
+		$data_result["success"] = 0;
+		$data_result["errorCode"] = 2;
+		$data_result['message'] = "书展门票已经抢光啦！再玩一次说不定会抢到其他礼品哦！";
+		$data_result['data'] = 0;
+		echo json_encode($data_result);
+		exit;
+	}
+
 
 	$db->query("INSERT INTO `T_MSL_HKDC`(`TEL`, `NAME`, `WECHAT`, `SEX`, `LEVEL`) VALUES ('$tel', '$name','$wechat', '$sex', '$level')");
 
