@@ -425,23 +425,23 @@
   <!-- contact page -->
   <div id="contact" style="display:none">
     <div class="info" style="margin-top:100px">
-      <label for="name" >姓名：</label>
+      <label for="name" style="font-size:18px">姓名：</label>
       <input type="text" name="name" id="name" ms-duplex="name"></input>
     </div>
 
 
     <div class="info" style="margin-top:15px">
-      <label for="tel">电话：</label>
+      <label for="tel" style="font-size:18px">电话：</label>
       <input type="text" name="tel" id="tel" ms-duplex="tel"></input>
     </div>
 
     <div class="info" style="margin-top:15px">
-      <label for="wechat">微信号:</label>
+      <label for="wechat" style="font-size:18px">微信号:</label>
       <input type="text" name="wechat" id="wechat"  ms-duplex="wechat"></input>
     </div>
 
     <div class="info" style="margin-top:15px">
-      <label for="sex">性别：</label>
+      <label for="sex" style="font-size:18px">性别：</label>
       <select name="sex" id="sex" ms-duplex="sex" data-duplex-changed="selectchange">
           <option value="男" selected="true">男</option>
           <option value="女">女</option>
@@ -585,6 +585,9 @@
                      }
                      else{
                          alert(data.message);
+                         if (data.errorCode == 3) {
+                           window.location.href = 'index.html';
+                         }
                      }
                  }
                else {
