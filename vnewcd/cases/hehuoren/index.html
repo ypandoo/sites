@@ -18,6 +18,50 @@
     <meta name="format-detection" content="telephone=yes" />
     <link href="css/base.css" rel="stylesheet"/>
     <link href="css/homepage.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+    .border {
+      position: relative;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .border-l-r {
+    font-size: 18px;
+    color: #ff3d00;
+    position: absolute;
+    }
+
+    .border-l-r::before {
+    background-color: #e6e6e6;
+    content: "";
+    height: 2px;
+    right: 50px;
+    position: absolute;
+    text-align: center;
+    top: 3px;
+    width: 40px;
+    }
+
+    .border-l-r .lnr, .border-l-r .fa {
+    position: relative;
+    top: -8px;
+    left: -10px;
+}
+
+.border-l-r::after {
+    background-color: #e6e6e6;
+    content: "";
+    height: 2px;
+    left: 30px;
+    position: absolute;
+    text-align: center;
+    top: 3px;
+    width: 40px;
+}
+
+    </style>
 </head>
 
 <body>
@@ -87,8 +131,9 @@
 
             </section>
 
-            <section class="regist pub-title" style="background-color: #F5F5F5;">
+            <section class="regist pub-title" style="background-color: #F5F5F5; background-image:url(img/bg-icon.png)">
                 <h3>#在合火人#</h3>
+                <div class="border"><span class="border-l-r"><i class="fa fa-quote-right"></i></span></div>
                 <p class="home_des">我们始终与创业者站在同一战壕.持续不断地提供终身服务.让靠谱的项目找到最适合的合伙人.相互持续,获取,交换,配置各种资源,
                   让项目调研更简单,选址更准确,大幅降低后期营销运营成本,有效提升项目存活率.</p>
                 <div>
