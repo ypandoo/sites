@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans" id="bg">
+<html lang="zh-cmn-Hans">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>七月将有大事发生,武林豪杰皆前去揭榜！我正火速赶往中...</title>
@@ -35,11 +35,12 @@
     }*/
 
     #bg {
-      background: url(img/bg.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
+      background: url(img/bg.jpg) no-repeat  fixed;
+      -webkit-background-size:  cover;
+      -moz-background-size:  cover;
+      -o-background-size:  cover;
       background-size: cover;
+      overflow: hidden;
     }
 
     .start{
@@ -332,7 +333,7 @@
 
 </head>
 
-<body  ms-controller='game_controller'>
+<body  id="bg" ms-controller='game_controller'>
 
     <div class="page loading">
   		<div class="container">
@@ -471,7 +472,7 @@
 
   <!-- share page -->
   <div id="friend" style="display:none">
-    <div class="friend animated2 infinite pulse" ms-on-click='friend()'><img src="img/friend.png" width="200px"/></div>
+    <div class="friend animated2 infinite pulse"><img src="img/friend.png" width="200px"/></div>
     <div style="position:absolute; top:10px; right:10px"><img src="img/friend2.png" width="100px"/></div>
   </div>
 
