@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>广乐食品</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+
+		<style>
+			.sharemcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.7);
+				display: none;
+				z-index: 20000;
+				}
+
+				#audio_btn {
+				  position: absolute;
+				  right: 10px;
+				  top: 10px;
+				  z-index: 200;
+				  display: none;
+				  width: 50px;
+				  height: 50px;
+				  background-repeat: no-repeat;
+				}
+				.off {
+				  background-image: url(img/off.png);
+				  background-size: 30px 30px;
+				  background-repeat: no-repeat;
+				  background-position: center center;
+				}
+
+				.on {
+				  background-image: url(img/on.png);
+				  background-size: 30px 30px;
+				  background-repeat: no-repeat;
+				  background-position: center center;
+				}
+
+
+		</style>
+
+		<div id='wx_pic' style='margin:0 auto;display:none;'>
+			<img src='logo.jpg' />
+		</div>
+	</head>
+	<body>
+		<div id="sharemcover0" class="sharemcover" style=" display:none;">
+			<img src="img/share.png" style="width:100%;">
+		</div>
+
+		<!--div id="audio_btn" class="video_exist on" style="display: block;" onclick="playAudio()">
+            <div id="yinfu"></div>
+            <audio loop="" src="song.mp3" id="media" autoplay="" preload=""></audio>
+        </div>
+
+		<div-->
+
+			<div class="page page-1-1 page-current" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 pt-page-moveFromTop" src="img/logo.png" />
+					<img class="img_2 pt-page-moveFromLeft" src="img/main-pic.png">
+					<img class="img_3 pt-page-moveIconUp" src="img/icon_up.png" />
+					<div class="img_4 pt-page-moveFromTop">
+						<p><h2 style="text-align:center">广乐企业简介</h2>
+						<h4 style="text-align:center">GuangLe Enterprise Introduction</h4></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="page page-2-1 hide"  style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/main-pic.png" />
+					<img class="img_2 hide pt-page-moveCircle" src="img/logo.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+
+					<div style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+						<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">[ 公司简介 ]</span>
+					</div>
+
+					<div style="color: #FFF; font-size: 12px; width:90%; margin-left:5%; position:absolute;top:22%;text-align:left;">　
+						<p style="color: rgb(255, 255, 255); font-size: 12px; line-height:18px">
+							四川广乐食品有限公司是四川省农业产业化经营重点龙头企业，历经多年的不断积累与创新，
+							现已发展成为一个集川味食品开发、研制、生产、销售为一体的大型现代化集团公司。</p>
+						<p style="color: rgb(255, 255, 255); font-size: 12px;">　
+							<br>广乐人胸怀远大，志存高远。为扩大生产规模，满足不断增长的市场需求，公司投入巨资修建
+							了园林式的国际标准化生产厂房，通过自行设计制作，建成了国内同行业领先的产品自动化生产线
+							，年生产能力达到5万吨。据调查，目前我公司是全国同行业中规模最大的企业，产品已畅销海内外
+							，且市场占有率逐年递增，先后在北京、上海、新疆、广州、佛山、深圳、中山、成都设立了销售公司.
+						</p>
+						<p style="color: rgb(255, 255, 255); font-size: 12px;">　
+							　<br>公司秉承“不断创新、超常发展”的经营思路，向国际化、多元化进军。
+							展望未来，广乐以产业革命、科技创新为契机，推动经济的快速发展，
+							以一流的管理、一流的产品和一流的服务，积极参与国际竞争，
+							高举中国民族企业的大旗屹立于世界企业之林。</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="page page-3-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/logo.png" />
+					<div class="pt-page-moveFromBottom"
+					     style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+						<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+							[ 企业资质 ]</span>
+					</div>
+
+
+					<div style="color: #FFF; font-size: 12px; width:90%; margin-left:5%; position:absolute;top:25%;text-align:left;">　
+						<P style="color: rgb(255, 255, 255); font-size: 12px; line-height:18px">
+							公司先后被授予“四川农业产业化经营重点龙头企业”、“四川名牌产品”、“信用等级AAA企业”、
+							“中国畅销品牌”、“四川名牌农产品”等殊荣。公司于2001年活得“ISO9001认证”
+							和“自营进出口经营许可权”；2003年被评为“无公害农产品”并通过“HACCP”认证和
+							国家认证监督管理委员会授予的“出口卫生注册证”；2005年首家通过酱腌菜行业
+							“全国工业产品生产许可证(即‘QS’认证)”和“四川省质量荣誉‘AA’级企业”，
+							随后获得“全国农产品加工业示范企业”称号，2007年广乐产品活得中国绿色食品认证，
+							随后于2008年被评为“四川品牌农产品”称号。</P>
+				 </div>
+
+					<img class="img_4 hide pt-page-scaleUp" src="img/zizhi.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+		</div>
+
+			<div class="page page-4-1 hide"  style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/logo.png" />
+					<div class="pt-page-moveFromBottom"
+					     style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+						<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+							[ 企业荣誉 ]</span>
+					</div>
+					<img class="img_4 hide pt-page-scaleUp" src="img/rongyu.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+			</div>
+
+			<!--div class="page page-4-2 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-flipInLeft" src="img/intro3.png" />
+					<a href="http://wxapi.weicehua.net/index.php?g=Wap&m=Selfform&a=index&token=wchkj&wecha_id=odDTxtxtqnrL-g3ezhh0jAdcd6JY&id=30"><img class="img_2 hide pt-page-flipInLeft" src="img/btn_production.png" /></a>
+					<img class="img_3 hide pt-page-flipInLeft" src="img/dot2.png" />
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+			</div-->
+
+			<div class="page page-5-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromLeft" src="img/logo.png" />
+					<div class="pt-page-moveFromBottom"
+							 style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+						<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+							[ 原料基地 ]</span>
+					</div>
+
+					<div style="color: #FFF; font-size: 12px; width:45%; margin-left:5%; position:absolute;top:25%;text-align:left;">
+					<P style=" font-size: 12px; line-height:25px">
+						生态极佳的川西平原是四川重要的蔬菜种植基地。其境内气候温和、潮湿，是典型的温润气候。
+						非常适合各种蔬菜的栽培和种植，产量高，质量好。广乐人用优良的品质和上乘的产品奉献给消费者</P>
+				 </div>
+
+					<img class="img_4 hide pt-page-moveCircle" src="img/zhongzhi1.png" />
+					<img class="img_5 hide pt-page-moveCircle" src="img/zhongzhi2.jpg" />
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+			</div>
+
+			<div class="page page-6-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-flipInLeft" src="img/yanfa2.png" />
+
+					<div class="pt-page-moveFromBottom"
+							 style="position: relative;
+    left: 5%;
+    width: 90%;
+    text-align: left;
+    font-size: 24px;
+    margin-top: 30px;">
+						<div style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+							[ 原料基地 ]</div>
+
+						<P style="font-size: 12px;
+    line-height: 30px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;">
+								广乐有着专业的研发团队，本着“专业”，“科学”，“严谨”的精神，
+								经过了二十余年的积累，打造专业的特色食品研发中心，形成了完善的技术、研发体系。</P>
+					</div>
+					<img class="img_2 hide pt-page-moveFromBottom" src="img/yanfa1.png" />
+
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+
+
+
+				</div>
+			</div>
+
+			<div class="page page-7-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/logo.png" />
+					<div class="pt-page-moveFromBottom"
+							 style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+						<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+							[ 关注我们 ]</span>
+					</div>
+
+					<img class="img_2 hide pt-page-moveCircle" src="img/qr.jpg" width="100px"/>
+					<div style="color: #FFF; font-size: 14px; width:100%; position:absolute;top:60%;text-align:center;">
+					<P style=" font-size: 12px; line-height:25px">
+						微信公众平台：广乐食品
+						<br>地址：成都市经济技术开发区航天南路
+<br>电话：028-84846981
+<br>传真：028-84860666
+<br>邮编：610100</P>
+				 </div>
+
+				</div>
+			</div>
+
+			<!--div class="page page-9-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/wording_9.png" />
+					<img class="img_2 pt-page-moveFromLeft hide" src="img/con1.png" />
+					<img class="img_3 pt-page-moveFromRight hide" src="img/con2.png" />
+
+
+					<img class="img_6 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+			</div>
+
+			<div class="page page-10-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-rotateCubeBottomIn" src="img/pic_back.png" />
+					<a href="http://wxapi.weicehua.net/index.php?g=Wap&m=Selfform&a=index&token=wchkj&wecha_id=odDTxtxtqnrL-g3ezhh0jAdcd6JY&id=30"><img class="img_2 hide pt-page-rotateCubeTopIn" src="img/btn_join.png" /></a>
+				</div>
+			</div-->
+		</div>
+		<script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/index1.js"></script>
+		<script>
+		function playAudio()
+		{
+			var b, c = $("#media"), d = $("#audio_btn"), e = $("#yinfu");
+			if($("#audio_btn").hasClass("off"))
+			{
+				c.get(0).play();
+				$("#audio_btn").removeClass("off");
+				$("#audio_btn").addClass("on");
+			}
+			else
+			{
+				c.get(0).pause();
+				$("#audio_btn").removeClass("on");
+				$("#audio_btn").addClass("off");
+			}
+		}
+
+
+
+		$("#sharemcover0").click(function () {
+			$("#sharemcover0").hide();
+		});
+
+		function shareFirends()
+		{
+			$("#sharemcover0").show();
+		}
+	</script>
+	</body>
+
+</html>

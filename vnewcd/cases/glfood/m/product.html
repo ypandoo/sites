@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>广乐食品</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/index2.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+
+		<style>
+			.sharemcover {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.7);
+				display: none;
+				z-index: 20000;
+				}
+
+				#audio_btn {
+				  position: absolute;
+				  right: 10px;
+				  top: 10px;
+				  z-index: 200;
+				  display: none;
+				  width: 50px;
+				  height: 50px;
+				  background-repeat: no-repeat;
+				}
+				.off {
+				  background-image: url(img/off.png);
+				  background-size: 30px 30px;
+				  background-repeat: no-repeat;
+				  background-position: center center;
+				}
+
+				.on {
+				  background-image: url(img/on.png);
+				  background-size: 30px 30px;
+				  background-repeat: no-repeat;
+				  background-position: center center;
+				}
+
+
+		</style>
+
+		<div id='wx_pic' style='margin:0 auto;display:none;'>
+			<img src='logo.jpg' />
+		</div>
+	</head>
+	<body>
+		<div id="sharemcover0" class="sharemcover" style=" display:none;">
+			<img src="img/share.png" style="width:100%;">
+		</div>
+
+		<!--div id="audio_btn" class="video_exist on" style="display: block;" onclick="playAudio()">
+            <div id="yinfu"></div>
+            <audio loop="" src="song.mp3" id="media" autoplay="" preload=""></audio>
+        </div>
+
+		<div-->
+
+		<div class="page page-1-1 page-current" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+			<div class="wrap">
+				<img class="img_1 pt-page-moveFromTop" src="img/logo.png" />
+				<img class="img_2 pt-page-moveFromLeft" src="img/main-pic.png">
+				<img class="img_3 pt-page-moveIconUp" src="img/icon_up.png" />
+				<div class="img_4 pt-page-moveFromTop">
+					<h2 style="text-align:center">广乐产品简介</h2>
+					<h4 style="text-align:center">GuangLe Series</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="page page-2-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+			<div class="wrap">
+				<!--img class="img_1 pt-page-moveFromTop" src="img/word1.png" /-->
+				<div  class="img_1 pt-page-moveFromTop">
+					<h2><i>80</i> 克</h2>
+					<h2>精品休闲小菜系列</h2>
+					<div style="margin-top:15px"></div>
+					<h4>广乐食品 /</h4>
+					<h4>80g sidedish pickles in bag</h4>
+				</div>
+				<img class="img_2 pt-page-moveFromLeft" src="img/product1.png">
+				<img class="img_3 pt-page-moveIconUp" src="img/icon_up.png" />
+			</div>
+		</div>
+
+			<div class="page page-3-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromBottom" src="img/product2.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>50</i> 克</h2>
+						<h2>精品休闲小菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>50g sidedish pickles in bag</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+			</div>
+			</div>
+
+			<div class="page page-4-1 hide"  style="background-image:url(''); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="img/bg1.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>160</i> 克</h2>
+						<h2>精品袋装什锦泡菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>160g sidedish pickles in bag</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/160-1.png" />
+			</div>
+		</div>
+
+
+
+			<div class="page page-5-1 hide" style="background-image:url(''); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="img/bg1.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>227</i> 克</h2>
+						<h2>精品袋装什锦泡菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>227g sidedish pickles in bag</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/227.png" />
+				</div>
+			</div>
+
+			<div class="page page-6-1 hide" style="background-image:url(''); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="img/bg2.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>177</i> 克</h2>
+						<h2>精品瓶装什锦泡菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>177g bottled mixed pickles</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/177.png" />
+				</div>
+			</div>
+
+			<div class="page page-7-1 hide" style="background-image:url(''); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="img/bg3.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>47</i> 克</h2>
+						<h2>精品袋装小菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>47g sidedish pickles in bag</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/47.png" />
+				</div>
+			</div>
+
+			<div class="page page-8-1 hide" style="background-image:url(''); background-size:100% 100%;">
+				<div class="wrap">
+					<!-- <img class="img_1 hide pt-page-moveCircle" src="img/bg3.png" /> -->
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>420</i> 克</h2>
+						<h2>精品瓶装系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>420g bottled mixed pickles</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/420.png" />
+
+					<div  class="img_5 pt-page-moveFromTop">
+						<h2><i>200</i> 克</h2>
+						<h2>精品瓶装系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>200g bottled mixed pickles</h4>
+					</div>
+				</div>
+			</div>
+
+			<div class="page page-9-1 hide"  style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveCircle" src="img/bg3.png" />
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2><i>200</i> 克</h2>
+						<h2>精品袋装下饭菜系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>广乐食品 /</h4>
+						<h4>200g bottled mixed pickles</h4>
+					</div>
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/200.png" />
+				</div>
+			</div>
+
+			<div class="page page-10-1 hide"  style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+				<div class="wrap">
+					<div  class="img_2 pt-page-moveFromTop">
+						<h2>精品袋装酸菜鱼系列</h2>
+						<div style="margin-top:15px"></div>
+						<h4>Pickles fish condiment series in bag</h4>
+					</div>
+
+					<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+					<img class="img_4 hide pt-page-moveFromTop" src="img/suan.png" />
+				</div>
+		</div>
+
+		<div class="page page-11-1 hide" >
+			<div class="wrap">
+				<div  class="img_2 pt-page-moveFromTop">
+					<h2 style="color:black">精品袋装调料系列</h2>
+					<div style="margin-top:15px"></div>
+					<h4 style="color:black">Bagged comdiment series</h4>
+				</div>
+				<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+				<img class="img_4 hide pt-page-moveFromTop" src="img/huo.png" />
+			</div>
+	</div>
+
+	<div class="page page-12-1 hide" >
+		<div class="wrap">
+			<div  class="img_2 pt-page-moveFromTop">
+				<h2 style="color:black">精品瓶装豆豉系列</h2>
+				<div style="margin-top:15px"></div>
+				<h4 style="color:black">Bottled salt black been series</h4>
+			</div>
+			<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+			<img class="img_4 hide pt-page-moveFromTop" src="img/dou.png" />
+		</div>
+</div>
+
+<div class="page page-13-1 hide" >
+	<div class="wrap">
+		<div  class="img_2 pt-page-moveFromTop">
+			<h2 style="color:black">甜酒酿醪糟系列</h2>
+			<div style="margin-top:15px"></div>
+			<h4 style="color:black">Femented glutinous rice in sweet wine</h4>
+		</div>
+		<img class="img_3 hide pt-page-moveIconUp" src="img/icon_up.png" />
+		<img class="img_4 hide pt-page-moveFromTop" src="img/lao.png" />
+	</div>
+</div>
+
+<div class="page page-14-1 hide" style="background-image:url('img/bg.jpg'); background-size:100% 100%;">
+	<div class="wrap">
+		<img class="img_1 hide pt-page-moveFromBottom" src="img/logo.png" />
+		<div class="pt-page-moveFromBottom"
+				 style=" position:absolute;top:0%; left:40%; width:60%; height:20%; text-align:center;">
+			<span style="font-size: 24px; font-weight: bold; font-family: HT;color:white">
+				[ 关注我们 ]</span>
+		</div>
+
+		<img class="img_2 hide pt-page-moveCircle" src="img/qr.jpg" width="100px"/>
+		<div style="color: #FFF; font-size: 14px; width:100%; position:absolute;top:60%;text-align:center;">
+		<P style=" font-size: 12px; line-height:25px">
+			微信公众平台：广乐食品
+			<br>地址：成都经济技术开发区雅士路118号
+<br>电话：028-84853288
+<br>传真：028-84860666
+<br>邮编：610100</P>
+	 </div>
+
+	</div>
+</div>
+
+		<script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/index.js"></script>
+		<script>
+		function playAudio()
+		{
+			var b, c = $("#media"), d = $("#audio_btn"), e = $("#yinfu");
+			if($("#audio_btn").hasClass("off"))
+			{
+				c.get(0).play();
+				$("#audio_btn").removeClass("off");
+				$("#audio_btn").addClass("on");
+			}
+			else
+			{
+				c.get(0).pause();
+				$("#audio_btn").removeClass("on");
+				$("#audio_btn").addClass("off");
+			}
+		}
+
+
+
+		$("#sharemcover0").click(function () {
+			$("#sharemcover0").hide();
+		});
+
+		function shareFirends()
+		{
+			$("#sharemcover0").show();
+		}
+	</script>
+	</body>
+
+</html>
