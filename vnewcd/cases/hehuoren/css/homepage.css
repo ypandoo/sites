@@ -307,14 +307,15 @@
     text-align: center;
 }
 .section-container .regist div a{
-    display: inline-block;
-    font-size: 16px;
-    line-height: 20px;
-    border: 1px solid #000;
-    border-radius: 3px;
-    padding: 12px 15px 10px;
-    font-weight: 900;
-    margin: 10px 1px 0;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 18px;
+  border: 1px solid #7d7d7d;
+  border-radius: 3px;
+  padding: 12px 15px 10px;
+  font-weight: 900;
+  margin: 10px 1px 0;
+  color: #FF3D00;
 }
 .section-container .regist div a:active{
     background: #000;
@@ -1126,6 +1127,41 @@ display: inline-block;
     -webkit-transform:rotate(45deg);
     transform:rotate(45deg);
 }
+
+.section-container .classes .btn-group a.important p:after{
+  content: '重要';
+  display: inline-block;
+  position: absolute;
+  width: 60px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #fff;
+  right: -18px;
+  top: 5px;
+  text-align: center;
+  background: #74C374;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.section-container .classes .btn-group a.mustread p:after{
+    content: '必读';
+    display: inline-block;
+    position: absolute;
+    width: 60px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 500;
+    color: #fff;
+    right: -18px;
+    top:5px;
+    text-align: center;
+    background: #ff3d00;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
 /*快速入口*/
 .section-container .quick{
     overflow: hidden;
@@ -1440,4 +1476,14 @@ display: inline-block;
         width: 100%;
     text-align: center;
     margin-top: 30px;
+}
+
+.home_des{
+  width: 90%;
+    margin-left: 5%;
+    font-size: 12px;
+    line-height: 18px;
+    color: #737373;
+    text-align: center;
+    letter-spacing: 1px;
 }

@@ -100,7 +100,7 @@
 /*   this.data_call = function(data){
         if(data.list){
                 //Sample data fill
-            
+
         }
     };*/
 
@@ -269,5 +269,3 @@
     );
 
 }).call(define('view_sd'));
-
-
