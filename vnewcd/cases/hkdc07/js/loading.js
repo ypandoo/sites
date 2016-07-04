@@ -41,14 +41,14 @@
         "img/q4.png",
         "img/q5.png",
 
-        "img/ptext1.png",
-        "img/ptext2.png",
-        "img/ptext3.png",
-
-        "img/rtext1.png",
-        "img/rtext2.png",
-        "img/rtext3.png",
-        "img/rtext4.png",
+        // "img/ptext1.png",
+        // "img/ptext2.png",
+        // "img/ptext3.png",
+        //
+        // "img/rtext1.png",
+        // "img/rtext2.png",
+        // "img/rtext3.png",
+        // "img/rtext4.png",
 
         "img/rbutton.png",
         "img/rbutton_again.png",
