@@ -36,7 +36,7 @@
 
     .start{
       position: absolute;
-      bottom: 10%;
+      bottom: 15%;
       width: 200px;
       height: 75px;
       left: 50%;
@@ -49,9 +49,9 @@
     }
 
     .question{
-      margin-left: 3%;
-      margin-top: 10%;
-      width: 86%;
+      margin-left: 7%;
+      margin-top: 5%;
+      width: 80%;
     }
 
     .answer{
@@ -72,7 +72,7 @@
     .answer2{
       width: 90%;
       margin-left: 5%;
-      margin-top: 5%;
+      margin-top: 1%;
       /* height: 80px; */
       overflow: hidden;
     }
@@ -90,9 +90,9 @@
     }
 
     .item3{
-      width: 70%;
-      margin-left: 15%;
-      margin-top: 4%;
+      width: 80%;
+          margin-left: 10%;
+          margin-top: 4%;
     }
 
     .date{
@@ -111,14 +111,14 @@
 
     .rtext{
       margin-top: 10%;
-      width: 60%;
-      margin-left: 20%;
+      width: 70%;
+      margin-left: 15%;
     }
 
     .rbutton{
       margin-top: 5%;
-      width: 30%;
-      margin-left: 35%;
+      width: 35%;
+      margin-left: 32.5%;
     }
 
     .rbutton_layer{
@@ -163,11 +163,14 @@
     .info input{
       border: none;
       outline: none;
-      color:white;
+      color: white;
       font-size: 18px;
       float: left;
       width: 65%;
       background-color: transparent;
+      margin-bottom: 4px;
+      line-height: 24px;
+      padding: 0;
     }
 
     .info select{
@@ -179,14 +182,18 @@
       width: 65%;
       background-color: transparent;
       -webkit-appearance: none;
+      margin-bottom: 4px;
+      line-height: 24px;
+      padding: 0;
     }
 
     .info label{
-      color:white;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       float: left;
-      width: 35%;
+      width: 30%;
+      line-height: 24px;
     }
 
     .finish{
@@ -198,11 +205,12 @@
     }
 
     .friend {
-        position: absolute;
-        right: 25px;
-        top: 20px;
-        /* width: 100%; */
-        /* text-align: center; */
+      position: absolute;
+      left: 35px;
+      top: 30px;
+      /* width: 100%; */
+      /* text-align: center; */
+      z-index: 1;
     }
 
     #pageShare {
@@ -330,7 +338,7 @@
   <!-- Start Page -->
   <div id='index' style="display:">
     <div class='start animated infinite pulse' ms-on-click='start()'></div>
-    <div class='date'></div>
+    <!-- <div class='date'></div> -->
   </div>
 
   <!-- Question Page -->
@@ -455,7 +463,8 @@
 
   <!-- share page -->
   <div id="friend" style="display:none">
-    <div class="friend animated2 infinite tada" ms-on-click='friend()'><img src="img/friend.png" width="250px"/></div>
+    <div class="friend animated2 infinite pulse" ms-on-click='friend()'><img src="img/friend.png" width="200px"/></div>
+    <div style="position:absolute; top:10px; right:10px"><img src="img/friend2.png" width="100px"/></div>
   </div>
 
   <!-- hidden layer -->
