@@ -308,14 +308,14 @@
 }
 .section-container .regist div a{
   display: inline-block;
-  font-size: 16px;
-  line-height: 18px;
-  border: 1px solid #7d7d7d;
-  border-radius: 3px;
-  padding: 12px 15px 10px;
-  font-weight: 900;
-  margin: 10px 1px 0;
-  color: #FF3D00;
+      font-size: 14px;
+      line-height: 18px;
+      border: 1px solid #7d7d7d;
+      border-radius: 3px;
+      padding: 12px 15px 10px;
+      font-weight: 500;
+      margin: 10px 1px 0;
+      color: #FF3D00;
 }
 .section-container .regist div a:active{
     background: #000;

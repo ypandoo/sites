@@ -11,8 +11,8 @@
 	include_once "ez_sql_mysql.php";
 
 	$tel =  $_POST['tel'];
-  $name =iconv("UTF-8","GB2312",$_POST['name']);
-	// $name = $_POST['name'];
+  // $name =iconv("UTF-8","GB2312",$_POST['name']);
+	$name = $_POST['name'];
 	$sex =  $_POST['sex'];
 	$level = $_POST['level'];
 	$wechat =  $_POST['wechat'];
@@ -31,7 +31,7 @@
   // 'username' => 'qdm121114323',
   // 'password' => 'lei000lei',
   // 'database' => 'qdm121114323_db',
-	$db = new ezSQL_mysql('qdm121114323', 'lei000lei','qdm121114323_db','qdm121114323.my3w.com:3306');
+	$db = new ezSQL_mysql('qdm121114323', 'lei000lei','qdm121114323_db','qdm121114323.my3w.com:3306', 'utf-8');
 
 	$count = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `TEL` = '$tel'");
 
