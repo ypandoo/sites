@@ -18,6 +18,17 @@
     <meta name="format-detection" content="telephone=yes" />
     <link href="css/base.css" rel="stylesheet"/>
     <link href="css/detail.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+    .focus_left {
+float: left;
+width: 18%;
+height: 12px;
+}
+
+
+    </style>
 </head>
 <body>
 <div class="bk"></div>
@@ -41,7 +52,7 @@
     </div>
 
     <div class="branding-head" avalonctrl="basic">
-        <div class="state">已有用户</div>
+        <div class="state bg_orange">热门项目</div>
         <div class="icon"><img src="img/project.png"></div>
         <div class="brand-info">
             <h1>停车宝</h1>
@@ -50,10 +61,11 @@
         </div>
         <div class="new-progress-container">
             <div class="new-progress-group">
+                <div class="focus_left">关注度:</div>
                 <div class="new-progress" style="width:70%">
-                    <div class="new-progress-bar" style="width: 100%;"></div>
+                    <div class="new-progress-bar" style="width: 50%;"></div>
                 </div>
-                <div class="new-progress-sta"><p>关注:100%</p></div>
+                <div class="new-progress-sta"><p>50%</p></div>
             </div>
         </div>
     </div>
@@ -66,7 +78,6 @@
     </div>
     <div class="extra-files">
         <div class="map "><a href="">点击查看项目预期地址</a></div>
-        <div class="map "><a href="">点击查看关注人分布图</a></div>
     </div>
 
     <div class="title-control content-container" ms-controller="title-controller" ms-on-tap="toggle_content('team_intro')">
@@ -74,7 +85,7 @@
             <em id="em_team_intro"></em>
     </div>
 
-    <div class="article-list" id="team_intro">
+    <div class="article-list" id="team_intro"  style="display:none">
         <article class="team">
             <div class="item">
                 <p>团队具有老中青结合优势，专业国际催眠大师加盟，具有有多年互联网及电子商务和连锁行业经验，对于商业模式，运营盈利具有丰富管理经验。</p>
@@ -88,7 +99,7 @@
             </div><div class="item">
                 <h3>敬江河</h3>
                 <p class="avatar"><img src="img/project1.png"></p>
-                
+
                 <p class="gray">华中科技大学自动化学院控制工程与控制理论专业 硕士研究曾在华为任职研发工程师，开发经验丰富，具有系统级架构能力。<br></p>
             </div>
         </article>
@@ -100,44 +111,45 @@
     </div>
 
     <!-- items -->
-    <div  id="team_detail">
+    <div  id="team_detail" style="display:none">
         <section class="quick">
             <a href="">
                 <img src="img/market.png">
-                <h4>创建项目</h4>
+                <h4>市场调研</h4>
             </a>
             <a href="">
                 <img src="img/market2.png">
-                <h4>我的项目</h4>
+                <h4>竞争优势</h4>
             </a>
             <a href="">
                 <img src="img/market3.png">
-                <h4>我的资料</h4>
-            </a>                
+                <h4>商业模式</h4>
+            </a>
         </section>
 
         <div class="article-list" id="team_intro">
             <article class="shop">
-                <span><h2 style="height:60px">现有店铺概况</h2></span>
-                <span style="text-align:right; height:60px">
+                <div style="width:100%"><h2 style="height:40px">现有店铺概况</h2></div>
+                <!-- <span style="text-align:right; height:60px">
                     <h4 style="line-height:60px">点前店铺(切换)：
                     <em style="color:#FF3D00">星都店</em></h4>
-                </span>
+                </span> -->
 
-                <span><h4>盈利可分红时间：8个月</h4></span>
-                <span><h4>店铺营业面积：150平方米</h4></span>
+                <span style="clear:both; width:100%"><h4 class="orange">店铺名称：星都店</h4></span>
+                <span><h4>店铺总投入：8个月</h4></span>
+                <span><h4>从筹备到运营周期：8个月</h4></span>
 
-                <span><h4>筹备总资产：1000万</h4></span>
-                <span><h4>筹备到运营周期：8个月</h4></span>
-
-                <span><h4>客流量：50</h4></span>
-                <span><h4>人均消费</h4></span>
+                <span><h4>开业至盈利时间：10个月</h4></span>
+                <span><h4>人均消费： 100元</h4></span>
 
                 <span><h4>上级营业总收入：1000万</h4></span>
-                <span><h4>上年营业总利润</h4></span>
+                <span><h4>上年营业净利润：1000万</h4></span>
 
+                <!-- <span><h4>上季度营业收入：100万</h4></span>
+
+                <span><h4>客流量：50</h4></span> -->
                 <!-- for address you should reset width to 100% -->
-                <span style="width:100%"><h4>店铺地址：成都市武侯区倪家桥领事馆路200号</h4></span>
+                <span style="width:100%"><h4><i class="fa fa-map-marker"></i>店铺地址：成都市武侯区倪家桥领事馆路200号</h4></span>
             </article>
         </div>
 
@@ -161,11 +173,11 @@
 
         <div class="article-list">
             <article class="review">
-                <h2>项目品鉴</h2>
+                <h2>联系人</h2>
 
                 <h4>订座电话：028-88888888</h4>
+                <h4>本平台会员折扣优惠：8折</h4>
                 <h4>联系人：张先生</h4>
-                <h4>折扣优惠：8折</h4>
 
                 <!-- for address you should reset width to 100% -->
                 <span style="width:100%"><h4>店铺地址：成都市武侯区倪家桥领事馆路200号</h4></span>
@@ -176,8 +188,10 @@
             <article class="story">
                 <h2>项目大事记</h2>
 
-                <h4>团队具有老中青结合优势，专业国际催眠大师加盟，具有有多年互联网及电子商务和连锁行业经验，对于商业模式，运营盈利具有丰富管理经验。</h4>
+                <h4>2015-4-18      公司成立</h4>
+                <h4>2016-4-18      公司纪念日。公司发展成为大公司。</h4>
             </article>
+
         </div>
 
         <div class="article-list">
@@ -190,9 +204,13 @@
             <div class="video "><a href="">百度相关视频</a></div>
             <div class="video "><a href="">腾讯视频</a></div>
         </div>
+
+        <div class="extra-files">
+            <div class="map "><a href="">点击查看关注人分布图</a></div>
+        </div>
     </div>
 
-    <div class="title-control content-container" ms-controller="title-controller" 
+    <div class="title-control content-container" ms-controller="title-controller"
     ms-on-tap="toggle_content('requirement')" style="margin-top:5px">
             <h1>合伙需求</h1>
             <em id="em_requirement"></em>
@@ -203,12 +221,9 @@
         2. 参照detail.js文件中关于block的简单js代码
         3. 在html copy commonbox 的写法 根据需要更改标题 文字 按钮等。。
     -->
-    <div  id="requirement">
+    <div  id="requirement"  style="display:none">
         <section class="require-block">
-            <a id="block">
-                <img src="img/block.png">
-                <h4>店铺指标</h4>
-            </a>
+
             <a  id="block1">
                 <img src="img/block1.png">
                 <h4>股权设置</h4>
@@ -216,67 +231,97 @@
             <a  id="block2">
                 <img src="img/block2.png">
                 <h4>资金用途</h4>
-            </a> 
+            </a>
+            <a id="block">
+                <img src="img/block.png">
+                <h4>运营管控</h4>
+            </a>
             <a  id="block3">
-                <img src="img/block3.png">
-                <h4>收益比例</h4>
-            </a>                    
+                <img src="img/logout.png">
+                <h4>退出机制</h4>
+            </a>
         </section>
 
-         <div class="article-list">
-            <article class="">
-                <h2>关注详情</h2>
+        <div style="height: 50px;line-height: 52px;background-size: 32px;
+                    padding-left: 10px;text-align: center;background: #EEE;" id="contract">
+            <a style="font-size:16px;" class="orange" ms-controller="title-controller"
+            ms-on-tap="open_contract()">+点击查看合伙协议摘要</a>
+        </div>
 
-            <div class="new-progress-container">
-                <div class="new-progress-group">
-                    <div class="new-progress" style="width:100%">
-                        <div class="new-progress-bar" style="width: 25%;"></div>
-                    </div>
-                    <!--reset p style-->
-                    <div class="new-progress-sta">
-                        <p style="line-height:20px">单笔40万，已合伙1/4份（股本合伙）</p>
-                    </div>
-                </div>
-            </div> 
-
-            <div class="new-progress-container">
-                <div class="new-progress-group">
-                    <div class="new-progress" style="width:100%">
-                        <div class="new-progress-bar" style="width: 50%;"></div>
-                    </div>
-                    <!--reset p style-->
-                    <div class="new-progress-sta">
-                        <p style="line-height:20px">单笔20万，已合伙1/4份（消费合伙）</p>
-                    </div>
-                </div>
-            </div> 
-
-            <div class="new-progress-container">
-                <div class="new-progress-group">
-                    <div class="new-progress" style="width:100%">
-                        <div class="new-progress-bar" style="width: 100%;"></div>
-                    </div>
-                    <!--reset p style-->
-                    <div class="new-progress-sta">
-                        <p style="line-height:20px">单笔50万，已合伙1/2份（领头）</p>
-                    </div>
-                </div>
-            </div>        
-
-            </article>
+        <div id="pic-contract" class="slider-container clearfix" style="display:none">
+            <ul>
+                <li>
+                    <a href="img/head.jpg"><img src="img/head.jpg"></a>
+                </li>
+                <li>
+                    <img src="img/head.jpg">
+                </li>
+                <li>
+                    <img src="img/head.jpg">
+                </li>
+                <li>
+                    <img src="img/head.jpg">
+                </li>
+            </ul>
         </div>
     </div>
+
+    <div class="article-list" style="margin-top:5px">
+       <article class="">
+           <h1>关注详情</h1>
+
+       <div class="new-progress-container">
+           <div class="new-progress-group">
+             <!--reset p style-->
+             <div class="new-progress-sta" style="float:left">
+                 <p style="line-height:16px">消费合伙单笔40万 | 股份占比(25%) <br> 共计(20)份 | 可享有消费体验卷(5000)元</p>
+             </div>
+
+               <div class="new-progress" style="width:100%">
+                   <div class="new-progress-bar" style="width: 25%;"></div>
+               </div>
+
+           </div>
+       </div>
+
+       <div class="new-progress-container" style="margin-top:5px">
+           <div class="new-progress-group">
+             <div class="new-progress-sta" style="float:left">
+                 <p style="line-height:16px">消费合伙单笔40万 | 股份占比(25%) <br> 共计(20)份 | 可享有消费体验卷(5000)元</p>
+             </div>
+
+               <div class="new-progress" style="width:100%">
+                   <div class="new-progress-bar" style="width: 50%;"></div>
+               </div>
+           </div>
+       </div>
+
+       <div class="new-progress-container" style="margin-top:5px">
+           <div class="new-progress-group">
+             <div class="new-progress-sta" style="float:left">
+                 <p style="line-height:16px">消费合伙单笔40万 | 股份占比(25%) <br> 共计(20)份 | 可享有消费体验卷(5000)元</p>
+             </div>
+
+               <div class="new-progress" style="width:100%">
+                   <div class="new-progress-bar" style="width: 100%;"></div>
+               </div>
+
+           </div>
+       </div>
+
+       </article>
+   </div>
 
         <div class="title-control content-container" style="margin-top:5px">
             <h1>我要</h1>
         </div>
 
         <div class="get-more">
-                <a class="home"><span>领头</span></a>
-                <a class="first"><span>消费合伙</span></a>
-                <a class="second"><span>股本合伙</span></a>
-                <a class="third fixed">
-                    <span style="border:none" class="fixed">已合伙</span>
+                <a class="home"><span><i class="fa fa-star-o"></i>关注</span></a>
+                <a class="first"><span><i class="fa fa-road"></i>参加路演</span></a>
+                <a class="second"><span><i class="fa fa-hand-rock-o"></i>合伙运营</span></a>
+                <a class="third">
+                    <span style="border:none"><i class="fa fa-flag-o"></i>项目领头</span>
                 </a>
         </div>
 
@@ -285,7 +330,7 @@
                 <h2>关注更多项目</h2>
             </article>
         </div>
-        
+
         <!--Fill this part by your way  -->
         <section class="stars pub-title">
                 <div class="list-container">
@@ -389,7 +434,7 @@
     <i><b></b></i>
     <a id="share-wechat" class="share"><em></em><span>分享</span></a>
     <i><b></b></i>
-    <a id="send-intention" class="send-intention"><span>发送投资意向</span></a>
+    <a id="send-intention" class="send-intention"><span>发送合伙意向</span></a>
 </div>
 
 </body>

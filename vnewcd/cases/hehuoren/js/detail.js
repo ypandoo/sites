@@ -38,17 +38,22 @@
     var self = this;
     this.avalon_title_control = avalon.define("title-controller", function (vm) {
          vm.toggle_content=function(id){
-            if ($('#'+id).is(':visible')) 
+            if ($('#'+id).is(':visible'))
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_up.png)");  
+                $('#em_'+id).css("background-image", "url(img/arrow_up.png)");
                 $('#'+id).fadeOut();
             }
             else
             {
-                $('#em_'+id).css("background-image", "url(img/arrow_down.png)");  
+                $('#em_'+id).css("background-image", "url(img/arrow_down.png)");
                 $('#'+id).fadeIn();
             }
         };
+
+        vm.open_contract = function(){
+          $('#contract').hide();
+          $('#pic-contract').fadeIn();
+        }
     });
 }).call(define('title-space'));
 
@@ -70,7 +75,7 @@
 
 //Shop-block
 (function(){
-    
+
     var self = this,
         $block=$('#block'),
         $block1=$('#block1'),
@@ -102,7 +107,7 @@
 
 //分享二维码
 (function(){
-    
+
     var self = this,
         $share=$('#share-wechat'),
         $box = $('#common-notice-box'),
