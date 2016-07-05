@@ -116,6 +116,7 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: 100% 100%;
+      z-index:-1;
     }
 
     .rtext{
@@ -352,7 +353,7 @@
 
   <!-- Start Page -->
   <div id='index' style="display:">
-    <div class='start animated infinite pulse' ms-on-click='start()'></div>
+    <div class='start animated infinite pulse' ms-on-click='start()' style="z-index:999"></div>
     <div class='date'></div>
   </div>
 
