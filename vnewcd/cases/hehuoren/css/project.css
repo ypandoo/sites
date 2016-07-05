@@ -171,7 +171,7 @@
 .new-section-list section {
     position: relative;
     width: 100%;
-    padding: 17px 5.6% 4px;
+    padding: 17px 5.6% 8px;
     margin-bottom: 6px;
     background: #FFF;
     overflow: hidden;
@@ -608,7 +608,7 @@
 a.fixed
 {
     background-color:rgb(255, 61, 0);
-    
+
 }
 
 a.fixed span.fixed
