@@ -20,6 +20,98 @@
     <link rel="Bookmark" href="/favicon.ico" />
     <link href="css/base.css" rel="stylesheet"/>
 <link href="css/user_detail.css" rel="stylesheet" />
+
+<style>
+.branding-head {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #DCDCDC;
+        padding-top: 10px;
+}
+
+.branding-head .focus {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    height: 20px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+    /* background: rgba(200,200,200,.8); */
+}
+
+.branding-head .state {
+    position: absolute;
+    left: 5%;
+    top: 20px;
+    height: 20px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+    /* background: rgba(200,200,200,.8); */
+}
+
+.branding-head .icon {
+    display: inline-block;
+    width: 100%;
+    min-height: 93px;
+    margin-top: 14px;
+}
+
+.branding-head .icon img {
+    width: 25%;
+    max-width: 125px;
+    border-radius: 8px;
+}
+
+.branding-head .brand-info {
+    min-height: 94px;
+    margin-top: 4px;
+    padding-bottom: 16px;
+}
+
+.branding-head .brand-info h1 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.branding-head .brand-info p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.branding-head .brand-info p.extra {
+    font-size: 12px;
+    color: #C9C9C9;
+    margin-top: 8px;
+}
+
+.branding-head .new-progress-container {
+    width: 100%;
+    padding: 20px 22px 14px 20px;
+    background: #EEE;
+    height: auto;
+}
+
+.focus_left {
+    float: left;
+    width: 18%;
+    height: 12px;
+}
+
+.branding-head .new-progress-container .new-progress-group .new-progress-sta p {
+    font-size: 14px;
+}
+</style>
 </head>
 <body>
 <div class="bk"></div>
@@ -42,11 +134,31 @@
                 <ul class="hidden-menu"></ul>
             </div>
         </div>
-        <div class="personal-info">
+        <!-- <div class="personal-info">
             <img src="img/head.jpg" width="100%" height="auto">
+        </div> -->
+
+        <div class="branding-head" avalonctrl="basic">
+            <div class="state bg_orange">机构投资人</div>
+            <div class="icon"><img src="img/head.jpg"></div>
+            <!-- <div class="brand-info">
+                <h1>停车宝</h1>
+                <p>为物业和车主提供与智能停车有关的一站式服务</p>
+                <p class="extra">移动支付 共享经济 智能硬件 车后市场 信息技术</p>
+            </div> -->
+            <!-- <div class="new-progress-container">
+                <div class="new-progress-group">
+                    <div class="focus_left">关注度:</div>
+                    <div class="new-progress" style="width:70%">
+                        <div class="new-progress-bar" style="width: 50%;"></div>
+                    </div>
+                    <div class="new-progress-sta"><p>50%</p></div>
+                </div>
+            </div> -->
         </div>
+
         <div class="personal-brief">
-            <h3><span>王学峰</span><span>·</span><span>源渡创投</span><span>&nbsp;</span><span>合伙人</span></h3>
+            <h3><span style="font-size:24px">王学峰</span><br><span>源渡创投</span><span>&nbsp;</span><span>合伙人</span></h3>
             <h4><span>旅游业,投资行业,物流,家居建材,互联网金融</span></h4>
             <div class="follow">
                 <a class="following" href="#following">关注:&nbsp;<span>4</span></a>
