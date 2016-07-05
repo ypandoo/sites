@@ -1477,13 +1477,3 @@ display: inline-block;
     text-align: center;
     margin-top: 30px;
 }
-
-.home_des{
-  width: 85%;
-      margin-left: 7.5%;
-      font-size: 14px;
-      line-height: 20px;
-      color: #585858;
-      text-align: center;
-      letter-spacing: 1px;
-}
