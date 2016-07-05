@@ -30,7 +30,7 @@
         "img/card5_2.png",
         "img/card5_3.png",
 
-        "img/date.png",
+        "img/date2.png",
         "img/friend.png",
         "img/prize.png",
         "img/logo.jpg",

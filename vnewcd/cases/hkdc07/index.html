@@ -116,12 +116,19 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: 100% 100%;
+      z-index:-1;
     }
 
     .rtext{
       margin-top: 10%;
       width: 70%;
       margin-left: 15%;
+    }
+
+    .rtext2{
+      margin-top: 10%;
+      width: 60%;
+      margin-left: 20%;
     }
 
     .rbutton{
@@ -346,7 +353,7 @@
 
   <!-- Start Page -->
   <div id='index' style="display:">
-    <div class='start animated infinite pulse' ms-on-click='start()'></div>
+    <div class='start animated infinite pulse' ms-on-click='start()' style="z-index:999"></div>
     <div class='date'></div>
   </div>
 
@@ -415,7 +422,7 @@
   </div>
 
   <div id="r4" style="display:none">
-    <div class="rtext"><img src="img/rtext4.png" width="100%"/></div>
+    <div class="rtext2"><img src="img/rtext4.png" width="100%"/></div>
 
     <div class="rbutton_layer">
     <div class="rbutton_share" ms-on-click='share()'><img src="img/rbutton_share.png" width="100%"/></div>

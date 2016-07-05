@@ -34,12 +34,12 @@
 }
 /*公共标题*/
 .pub-title h3{
-    display: inline-block;
-    line-height: 60px;
-    text-align: center;
-    width: 100%;
-    font-size: 28px;
-    font-weight: bolder;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
+  font-size: 28px;
+  font-weight: bolder;
 }
 /*首屏*/
 .section-container{
@@ -158,7 +158,7 @@
 }
 .section-container .reward .bk-num .num-container p {
     display: inline-block;
-    font-size: 530px;
+    font-size: 400px;
     line-height: 400px;
     font-family: 'OpenSans';
     font-weight: bolder;
@@ -308,7 +308,7 @@
 }
 .section-container .regist div a{
   display: inline-block;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 18px;
       border: 1px solid #7d7d7d;
       border-radius: 3px;
@@ -1168,7 +1168,7 @@ display: inline-block;
 }
 .section-container .quick a{
     display: inline-block;
-    height: 120px;
+    height: 140px;
     width: 50%;
     float: left;
     text-align: center;
@@ -1179,19 +1179,19 @@ display: inline-block;
 }
 .section-container .quick a img{
     display: inline-block;
-    width: 25px;
+    width: 36px;
     height: auto;
 }
 .section-container .quick a h4{
-    font-size: 15px;
+    font-size: 18px;
     line-height: 30px;
     font-weight: 900;
     white-space: nowrap;
 }
 .section-container .quick a p{
-    font-size: 12px;
-    line-height: 22px;
-    white-space: nowrap;
+  ont-size: 12px;
+      line-height: 16px;
+      white-space: nowrap;
 }
 .section-container .empty{
     height: 50px;
@@ -1479,11 +1479,11 @@ display: inline-block;
 }
 
 .home_des{
-  width: 90%;
-    margin-left: 5%;
-    font-size: 12px;
-    line-height: 18px;
-    color: #737373;
-    text-align: center;
-    letter-spacing: 1px;
+  width: 85%;
+      margin-left: 7.5%;
+      font-size: 14px;
+      line-height: 20px;
+      color: #585858;
+      text-align: center;
+      letter-spacing: 1px;
 }
