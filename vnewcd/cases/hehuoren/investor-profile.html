@@ -19,8 +19,8 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
     <link rel="Bookmark" href="/favicon.ico" />
     <link href="css/base.css" rel="stylesheet"/>
-<link href="css/user_detail.css" rel="stylesheet" />
-
+    <link href="css/user_detail.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 <style>
 .branding-head {
     position: relative;
@@ -111,34 +111,97 @@
 .branding-head .new-progress-container .new-progress-group .new-progress-sta p {
     font-size: 14px;
 }
+
+em.follow_star {
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  background: url(img/stars_empty.png) no-repeat center;
+  background-size: 18px;
+}
+
+em.follow_star_fill{
+  background: url(img/stars_solid.png) no-repeat center;
+  background-size:18px;
+}
+
+.popup{
+  position: fixed;;
+  width: 80%;
+  margin-left: 10%;
+  top:20%;
+  z-index: 999;
+  background: #FFF;
+  border-radius : 5px;
+}
+
+.popup h2{
+  font-size: 18px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.popup li{
+  float:none;
+text-align: left;
+padding: 15px 20px 15px 20px;
+border-top: 1px solid #f3f3f3;
+}
+
+.popup li i{
+margin-right: 5px
+color:red;
+}
+
+
 </style>
 </head>
 <body>
 <div class="bk"></div>
-<div class="page-container">
-    <div class="details" ms-controller="investor-details">
-        <div id="login-failed" class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
-        <div id="header" class="newhead">
-            <div class="logo touch-href" data-href="/"></div>
-            <div class="options">
-                <span></span>
-                <ul class="hidden-menu">
-                    <li class="touch-href" data-href="/startup">闪投项目</li>
-                    <li class="touch-href" data-href="/startup#type:com-industry:-district:-order:new">最新项目</li>
-                    <li class="touch-href border" data-href="/investor">投资人</li>
-                    <li class="line"></li>
-                </ul>
-            </div>
-            <div class="account">
-                <span></span>
-                <ul class="hidden-menu"></ul>
-            </div>
-        </div>
-        <!-- <div class="personal-info">
-            <img src="img/head.jpg" width="100%" height="auto">
-        </div> -->
 
-        <div class="branding-head" avalonctrl="basic">
+<div id ="projects" class="popup" style="display:none" ms-controller='invite_ctrl'>
+    <div>
+      <h2>请选择合伙的项目</h2>
+    </div>
+
+    <ul>
+      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>聚美优品</li>
+      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>京东商城</li>
+      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>服务到家配送</li>
+      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>饿了吗</li>
+      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>糯米团购</li>
+
+    </ul>
+ </div>
+
+
+<div class="page-container">
+    <div id="header" class="newhead">
+        <div class="logo touch-href" ></div>
+        <div class="options ">
+            <span></span>
+            <ul class="hidden-menu">
+                <li class="touch-href" >闪投项目</li>
+                <li class="touch-href" >最新项目</li>
+                <li class="touch-href border" >投资人</li>
+                <li class="line"></li>
+            </ul>
+        </div>
+        <div class="account">
+            <span></span>
+            <ul class="hidden-menu"></ul>
+        </div>
+    </div>
+
+    <div class="details">
+        <div id="login-failed" class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
+
+        <div class="branding-head">
+            <em class="follow_star follow_star_fill"></em>
             <div class="state bg_orange">机构投资人</div>
             <div class="icon"><img src="img/head.jpg"></div>
             <!-- <div class="brand-info">
@@ -234,16 +297,22 @@
 
 
 
- <h2 style="font-size: 18px;padding-left:15px;line-height: 50px;">邀请TA:</h2>
-        <div class="get-more">
-                <a class="home"><span>领头</span></a>
-                <a class="first"><span>消费合伙</span></a>
-                <a class="second"><span>股本合伙</span></a>
-                <a class="third fixed">
-                    <span style="border:none" class="fixed">已合伙</span>
-                </a>
-        </div>
-    </div>
+   <h2 style="font-size: 18px;padding-left:15px;line-height: 50px;">邀请TA:</h2>
+
+  <div class="get-more" ms-controller="invite_ctrl" >
+          <a class="home" style="width:33.33%" ms-on-tap='invite()'>
+            <span><i class="fa fa-flag-o" aria-hidden="true"></i> 领头</span>
+          </a>
+          <a class="first" style="width:33.33%" ms-on-tap="invite()">
+            <span><i class="fa fa-money" aria-hidden="true"></i>  消费合伙</span>
+          </a>
+          <!-- <a class="second"><span>股本合伙</span></a> -->
+          <a class="third" style="width:33.33%" ms-on-tap="invite()">
+              <span style="border:none"><i class="fa fa-bar-chart" aria-hidden="true"></i>股本合伙</span>
+          </a>
+  </div>
+
+</div>
 
     <!--div id="slide-page" class="slide-page">
         <div class="header"><a id="slide-back"></a><h3 id="slide-title"></h3></div>

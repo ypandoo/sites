@@ -1401,6 +1401,7 @@ body.footer-close-bottom .banner-footer {
   line-height:30px;
   padding-left:30px;
   cursor:pointer;
+  letter-spacing: 1px;
 }
 .newhead .hidden-menu li.line{
     height: 1px;
