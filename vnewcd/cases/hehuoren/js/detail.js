@@ -51,8 +51,8 @@
         };
 
         vm.open_contract = function(){
-          $('#contract').hide();
-          $('#pic-contract').fadeIn();
+          $('#contract').fadeOut(200, function(){$('#pic-contract').fadeIn();});
+
         }
     });
 }).call(define('title-space'));
