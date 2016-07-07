@@ -137,8 +137,24 @@
                         data-required-message='显示优先级输入错误!' data-min-message='显示优先级输入错误!' data-max-message='显示优先级输入错误!'/>
                       <p>说明:输入0-100任意数字，数字越大在前端页面显示的时候该珍品越靠前。若保持为0，珍品将按照录入的时间排序显示。</p>
                     </div>
-
                  </div>
+
+                 <hr>
+                 <!-- <div class="row">
+                   <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
+                     <span>选择展馆编号：</span>
+                   </div>
+                   <div class="col-md-4 page-header"  style="height:60px;line-height:60px; font-size:16px">
+                       <select ms-duplex='@list_type' class="form-control"
+                               ms-rules="{required:true}"  data-required-message='文章发布板块不能为空!'
+                               ms-mouseleave="@list_type_change" style="margin-top:10px">
+                       <option >新展快讯</option>
+                       </select>
+                   </div>
+                   <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
+                     <a style="cursor:pointer" ms-click="@content_detail()">发布新的文章</a>
+                   </div>
+                 </div> -->
 
                   <hr>
                   <label for="pic_list"><strong>珍品图片：</strong>(可以多选文件，单个文件大小在1M之内，分辨率为长宽一致的正方形，支持jpg,jpeg,bmp,png格式)</label>
@@ -160,6 +176,20 @@
                           <p>当前上传视频:{{@video}}</p>
                     </div>
                   <div id="video_upload"></div>
+
+                  <hr>
+                  <label for="item_audio_cn"><strong>珍品中文解说：</strong>(仅能单选文件，文件大小在10M之内，仅支持mp3格式)</label>
+                    <div id="item_audio_cn" style="margin:20px 0 20px 0">
+                          <p>当前上传音频:{{@audio_cn}}</p>
+                    </div>
+                  <div id="audio_cn_upload"></div>
+
+                  <hr>
+                  <label for="item_audio_tibet"><strong>珍品藏语解说：</strong>(仅能单选文件，文件大小在10M之内，仅支持mp3格式)</label>
+                    <div id="item_audio_tibet" style="margin:20px 0 20px 0">
+                          <p>当前上传音频:{{@audio_tibet}}</p>
+                    </div>
+                  <div id="audio_tibet_upload"></div>
 
                   <hr>
                   <label><strong>文字说明</strong></label>

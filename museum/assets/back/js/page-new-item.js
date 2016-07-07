@@ -9,6 +9,8 @@
                    item_name: '',
                    item_title: '',
                    video: '',
+                   audio_cn: '',
+                   audio_tibet: '',
                    isNewItem: true,
                    item_priority: 0,
                    item_description: '',
@@ -48,6 +50,8 @@
                               'id': items_ctrl.item_id,
                               'item_name':  items_ctrl.item_name,
                               'video':  items_ctrl.video,
+                              'audio_cn': items_ctrl.audio_cn,
+                              'audio_tibet': items_ctrl.audio_tibet,
                               'item_priority':  items_ctrl.item_priority,
                               'item_description': ue.getContent(),
                               'pics': items_ctrl.pics
@@ -119,7 +123,11 @@
                      //get data
                      items_ctrl.item_id = items_ctrl.data[e].ITEM_ID;
                      items_ctrl.item_name = items_ctrl.data[e].ITEM_NAME;
+
                      items_ctrl.video = items_ctrl.data[e].ITEM_VIDEO;
+                     items_ctrl.audio_cn = items_ctrl.data[e].ITEM_AUDIO_CN;
+                     items_ctrl.audio_tibet = items_ctrl.data[e].ITEM_AUDIO_TIBET;
+
                      items_ctrl.item_priority = items_ctrl.data[e].ITEM_PRIORITY;
                      ue.setContent(items_ctrl.data[e].ITEM_DESCRIPTION);
                      //get pics
@@ -225,6 +233,8 @@
                      items_ctrl.show['item_detail'] = 1;
                      items_ctrl.pics=[];
                      items_ctrl.video='';
+                     items_ctrl.audio_cn='';
+                     items_ctrl.audio_tibet='';
                      items_ctrl.priority = 0;
                      items_ctrl.isNewItem = true;
 
@@ -317,6 +327,54 @@
           }
         }
     	});
+
+      var up_audio_cn = $('#audio_cn_upload').Huploadify({
+      		auto:false,
+      		fileTypeExts:'*.mp3;*.aac',
+      		multi:false,
+      		formData:{id:'0'},
+      		fileSizeLimit:10240,
+      		showUploadedPercent:true,
+      		showUploadedSize:true,
+      		removeTimeout:500,
+      		uploader:base_url+'Item/add_audio_cn',
+      		onUploadStart:function(file){
+            up_audio_cn.settings('formData', {id: items_ctrl.item_id});
+            console.log('开始上传:'+ items_ctrl.item_id);
+      		},
+          onUploadSuccess: function(file, data, response) {
+            var obj = JSON.parse(data);
+            console.log('上传完成:'+data);
+            if (obj.success==1) {
+              items_ctrl.audio_cn = obj.data.file_name;
+              console.log(items_ctrl.audio_cn);
+            }
+          }
+      	});
+
+        var up_audio_tibet = $('#audio_tibet_upload').Huploadify({
+        		auto:false,
+        		fileTypeExts:'*.mp3;*.aac',
+        		multi:false,
+        		formData:{id:'0'},
+        		fileSizeLimit:10240,
+        		showUploadedPercent:true,
+        		showUploadedSize:true,
+        		removeTimeout:500,
+        		uploader:base_url+'Item/add_audio_tibet',
+        		onUploadStart:function(file){
+              up_audio_tibet.settings('formData', {id: items_ctrl.item_id});
+              console.log('开始上传:'+ items_ctrl.item_id);
+        		},
+            onUploadSuccess: function(file, data, response) {
+              var obj = JSON.parse(data);
+              console.log('上传完成:'+data);
+              if (obj.success==1) {
+                items_ctrl.audio_tibet = obj.data.file_name;
+                console.log(items_ctrl.audio_tibet);
+              }
+            }
+        	});
 
   var ue = UE.getEditor('editor');
 

@@ -101,6 +101,75 @@ class Item extends CI_Controller {
          echo json_encode($data_result);
     }
 
+    public function add_audio_cn()
+    {
+         $id = $this->input->post('id');
+         if(!$id)
+         {
+             $data_result["success"] = 0;
+             $data_result["errorCode"] = 1;
+             $data_result['message'] = "Upload failed![err=1][id=".$id."]";
+             $data_result["data"] = 0;
+             echo json_encode($data_result);
+             exit;
+         }
+
+        $original_name = iconv('UTF-8', 'GBK', $_FILES['file']['name']);
+        if ($original_name) {
+             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/audio/".$original_name);
+        }
+        else {
+            $data_result["success"] = 0;
+            $data_result["errorCode"] = 2;
+            $data_result['message'] = "Upload failed![err=2]";
+            $data_result["data"] = 0;
+            echo json_encode($data_result);
+            exit;
+        }
+
+        $data_result["success"] = 1;
+        $data_result["errorCode"] = 0;
+        $data_result['message'] = "uploadfile success";
+        $data_result['data'] = ['file_name'=>$original_name];
+
+         echo json_encode($data_result);
+    }
+
+    public function add_audio_tibet()
+    {
+         $id = $this->input->post('id');
+         if(!$id)
+         {
+             $data_result["success"] = 0;
+             $data_result["errorCode"] = 1;
+             $data_result['message'] = "Upload failed![err=1][id=".$id."]";
+             $data_result["data"] = 0;
+             echo json_encode($data_result);
+             exit;
+         }
+
+        $original_name = iconv('UTF-8', 'GBK', $_FILES['file']['name']);
+        if ($original_name) {
+             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/audio/".$original_name);
+        }
+        else {
+            $data_result["success"] = 0;
+            $data_result["errorCode"] = 2;
+            $data_result['message'] = "Upload failed![err=2]";
+            $data_result["data"] = 0;
+            echo json_encode($data_result);
+            exit;
+        }
+
+        $data_result["success"] = 1;
+        $data_result["errorCode"] = 0;
+        $data_result['message'] = "uploadfile success";
+        $data_result['data'] = ['file_name'=>$original_name];
+
+         echo json_encode($data_result);
+    }
+
+
     public function save_item()
     {
          $id = $this->input->post('id');
@@ -116,6 +185,8 @@ class Item extends CI_Controller {
 
          $item_name = $this->input->post('item_name');
          $video = $this->input->post('video');
+         $audio_cn = $this->input->post('audio_cn');
+         $audio_tibet = $this->input->post('audio_tibet');
          $item_priority = $this->input->post('item_priority');
          $item_description = $this->input->post('item_description');
          $pics = $this->input->post('pics');
@@ -124,6 +195,12 @@ class Item extends CI_Controller {
          $insertdata['ITEM_NAME'] = $item_name;
          if ($video) {
            $insertdata['ITEM_VIDEO'] = $video;
+         }
+         if ($audio_cn) {
+           $insertdata['ITEM_AUDIO_CN'] = $audio_cn;
+         }
+         if ($audio_tibet) {
+           $insertdata['ITEM_AUDIO_TIBET'] = $audio_tibet;
          }
          $insertdata['ITEM_PRIORITY'] = $item_priority;
          $insertdata['ITEM_DESCRIPTION'] = $item_description;
@@ -167,6 +244,8 @@ class Item extends CI_Controller {
 
          $item_name = $this->input->post('item_name');
          $video = $this->input->post('video');
+         $audio_cn = $this->input->post('audio_cn');
+         $audio_tibet = $this->input->post('audio_tibet');
          $item_priority = $this->input->post('item_priority');
          $item_description = $this->input->post('item_description');
          $pics = $this->input->post('pics');
@@ -175,6 +254,12 @@ class Item extends CI_Controller {
          $insertdata['ITEM_NAME'] = $item_name;
          if ($video) {
            $insertdata['ITEM_VIDEO'] = $video;
+         }
+         if ($audio_cn) {
+           $insertdata['ITEM_AUDIO_CN'] = $audio_cn;
+         }
+         if ($audio_tibet) {
+           $insertdata['ITEM_AUDIO_TIBET'] = $audio_tibet;
          }
          $insertdata['ITEM_PRIORITY'] = $item_priority;
          $insertdata['ITEM_DESCRIPTION'] = $item_description;
