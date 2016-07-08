@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+
+<title>个人消息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+</head>
+ <style>
+body{
+font-family:"Microsoft YaHei"
+}
+ </style>
+
+<body>
+	
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html" data-ajax="false"><img src="images/go_back.png"/></a>
+		<h1 class="header-title">个人消息</h1>
+	</header>
+	<div style="margin-top:15px; text-align:center">
+		<span id="total_bonus" style="font-size:2em; font-weight:bold; color:#00925f; text-decoration: underline;"></span>
+	</div>
+	
+	<div data-role="collapsibleset" data-theme="a" data-content-theme="a" id="msg_table">
+
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready ( function(){
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = "personal_score.php";
+			window.location.href = "login.html";
+		}
+		
+		//dina table
+		//$('#my-table').dynatable();
+		var submit_data = {
+				'phone': localStorage.mobile,
+			};
+		$.ajax({
+         url: 'msg_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+			
+						//change json
+			var total = 0;
+			for(var i = 0; i < data.length; ++i)
+			{
+				var msg_id = data[i]['msg_id'];
+				var content = '<div data-role="collapsible" id= "'+ msg_id +'">';
+				var title;
+				var msg_content = data[i]['msg_content'];
+				if(data[i]['msg_unread'] == 1)
+				{
+					title = '<h3 font-size:25px>' + msg_content.substr(0,10)+ '... '+ data[i]['msg_date']+'</h3>';
+				}
+				else
+				{
+					title = '<h3>' +msg_content.substr(0,10)+ '... ' + data[i]['msg_date']+'</h3>';
+				}
+				content = content + title + '<p>' + msg_content + '</p>' + '<p>' + '--'  + data[i]['msg_date'] + '</div>';
+				$("#msg_table").append(content);
+				/*$("#"+msg_id+"").bind('expand', function () {
+					var submit_data = {'msg_id' : msg_id};
+						alert("a");
+					$.post('msg_set_read.php', submit_data,
+							function(data) {
+							    
+								},"json")	
+				})
+				
+				/*var div = document.createElement('div');
+				div.innerHTML = content;
+				document.querySelector('#msg_table').appendChild(div);*/
+			}
+			$('#msg_table').collapsibleset('refresh');
+			
+			//mark all message read
+			var submit_data = {'phone' : localStorage.mobile};
+			$.post('msg_set_read.php', submit_data,
+					function(data) {
+						
+						},"json")	
+			//end
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+		 
+	//End doc ready*/
+	});
+	</script>
+	
+</body>
+</html>

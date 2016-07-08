@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>用户登录</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="index.html"><img src="images/home.png"/></a>
+		<h1 class="header-title">登录</h1>
+	</header>
+
+	<div id="content" class="content-login">
+		<h2 class="login-main-title">欢迎登录捷豹路虎中国</h2>
+		<p class="large-input"><input type="text" id="username" placeholder="手机号" name="username"/></p>
+		<p class="large-input"><input type="password" id="password" placeholder="输入密码" name="password"/></p>
+		<span id="submit-login" class="submit">
+			<span class="a1">登录中...</span>
+			<span class="a2">登录</span>
+		</span>
+		<div class="login-op">
+			<a class="to-reg" href="reg.html">立即注册</a>
+			<a class="to-forget" href="forget.html">忘记密码？</a>
+		</div>
+	</div>
+
+<script src="http://m.oppo.com/js/bootstrap.js"></script>
+<script src="http://m.oppo.com/js/oppo.js" host="http://m.oppo.com/" id="id-js-set-host"></script>
+<script src="http://m.oppo.com/js/lib/jquery-2.0.3.min.js"></script>
+<script src="http://m.oppo.com/js/lib/jquery.touchSwipe.js"></script>
+<script src="http://m.oppo.com/js/move.js"></script>
+<script src="http://m.oppo.com/js/template.min.js"></script>
+<script src="http://m.oppo.com/js/config.js"></script>
+<script src="http://m.oppo.com/js/base.js"></script>
+<script src="http://m.oppo.com/content/js/head.js"></script>
+<script>
+setTimeout(function(){
+	var _optj = _optj || [];
+	(function() {
+		var op = document.createElement("script");
+		op.src = "http://m.oppo.com/js/optj.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(op, s);
+	})();
+}, 3000);
+</script><script>
+	var callback_url = '';
+	var callback = window.location.search.match(/callback\=(.+)/);
+	if( Array.isArray( callback ) ) {
+		callback_url = callback[1];
+	}
+
+	User.fetch( 'http://m.oppo.com/proxy/checklogin/', function(json) {
+		var statusCode = json['statusCode'];
+
+		if ( statusCode == '1' ) {
+			var url = !!callback_url ? callback_url : '/';
+			window.location.href = decodeURIComponent( url );
+		}
+	});
+
+	function jsRedirect(url) {
+		if(url.indexOf('?') > -1) {
+			url += '&t=' + Math.random();
+		} else {
+			url += '?t=' + Math.random();
+		}
+		window.location.href = url;
+	}
+
+	if ( !! getCookie("OPPOSID") ) {
+		//jsRedirect('index.html');
+	}
+
+	//登录UI状态改变
+	var loginBtnClicked = false;
+	function loginUiChange(flag) {
+		if(flag == 1) {
+			loginBtnClicked = true;
+			$('.submit').find('.a1').show();
+			$('.submit').find('.a2').hide();
+		} else {
+			loginBtnClicked = false;
+			$('.submit').find('.a1').hide();
+			$('.submit').find('.a2').show();
+		}
+	}
+
+	//登录中动画
+	var loginingMovieCounter = 1;
+
+	function loginingMovie() {
+		var str = '';
+		for(var i = 0; i < 3; i++) {
+			if(i < loginingMovieCounter) {
+				str += '.';
+			} else {
+				str += '&nbsp;';
+			}
+		}
+		$(".submit").find('.a1').html('登录中' + str);
+		if(loginingMovieCounter++ >= 3)
+			loginingMovieCounter = 1;
+	}
+
+	//登录
+	function loginSubmit() {
+		var username = $('#username').val();
+		var password = $('#password').val();
+		var data = {
+			'url' : 'http://m.oppo.com/proxy/loginvalidate',
+			'queryData':{
+				'mobile': username,
+				'password': password,
+				'refer' : urlencode(document.referrer),
+				'callback' : callback_url
+			},
+			'type' : 'POST'
+		};
+
+		$(this).queryRecord(data, function(msg) {
+			if(msg.status == 1){
+				loginUiChange(0);
+				var callbackUrl = decodeURIComponent( msg.callback );
+				window.location.href = callbackUrl;
+			}else{
+				alert(msg.error_message);
+				loginUiChange(0);
+			}
+		});
+	}
+
+	$(function(){
+		$('#submit-login').click(function(){
+			var username = $('#username').val();
+			var password = $('#password').val();
+			if(username == '') {
+				alert('请输入用户名');
+				$('#username').focus();
+				return false;
+			}
+			if(password == '') {
+				alert('请输入密码');
+				$('#password').focus();
+				return false;
+			}
+			if(false == loginBtnClicked) {
+				loginUiChange(1);
+				loginSubmit();
+			}
+		});
+
+		//登录中动画
+		setInterval(loginingMovie, 1000);
+	});
+
+	$(document).keyup(function(e) {
+		if(e.keyCode == 13) {
+			if(false == loginBtnClicked) {
+				loginUiChange(1);
+				loginSubmit();
+			}
+		}
+	});
+
+	//第三方登录时获取ip
+	$(function(){
+		var ip = '';
+		_ajax('http://m.oppo.com/proxy/getip', null, function(data){
+			ip = data.ip;
+		});
+		$(".login-third").find("a").click(function(){
+			var urlx = $(this).attr("data");
+			var backurl = document.referrer;
+			if('' == backurl || undefined == backurl) {
+				backurl = 'http://m.oppo.com/'; //如果空则跳回首页
+			}
+			backurl = urlencode(backurl);
+
+			urlx = "http://m.oppo.com/proxy/thirdLogin?q=interface/h5/"+urlx+"&ip="+ip+"&back="+backurl;
+			window.location.href = urlx;
+		});
+
+	});
+</script>
+	
+</body>
+</html>

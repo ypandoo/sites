@@ -1,0 +1,127 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content=""/>
+    <meta name="keywords" content="年终奖,奖金,工资,财气"/>
+    <title>年终奖你该拿多少?</title>
+	<script type="text/javascript" src="js/require.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/survey.js" charset="UTF-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/survey.css">
+   </head>
+<body>
+<div class="window">
+    <div class="page-loading-mask"></div>
+
+	<div class="pages">
+		<div class="page home">
+			<div class="page-content">
+				<h1></h1>
+				<div class="start"><div><span>开始</span></div></div>
+			</div>
+		</div>
+		<div class="page result">
+			<div class="page-content">
+				<div class="score">
+					<b>60</b>
+					<span>你的<i>geek</i>指数</span>
+				</div>
+				<p class="discription"></p>
+				<ul class="options">
+					<li><span class="share">给好友看看</span></li>
+					<li>再玩一次</li>
+					<li>点击进入微信公众号</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+   <div class="share_overmask">
+		<div class="share_arrow"></div>
+		<div class="share_words"></div>
+   </div>
+   
+</div>
+
+
+<script>
+window.page_config = {"subject":[
+                     {"voteid":"10228794","subjectid":"248567","title":"下班回家，哪件事是必须要做的？","desc":""
+					 ,"answer":"","option":[{"voteid":"10228794","subjectid":"248567","optionid":"574327","title":"看会电视。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248567","optionid":"574328","title":"网络游戏。","score":"3","desc":""},
+					 {"voteid":"10228794","subjectid":"248567","optionid":"574329","title":"运动健身。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248567","optionid":"574330","title":"看书听歌。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248567","optionid":"574331","title":"躺着发呆。","score":"5","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248568","title":"你的工作单位是怎么发年终奖的？\n","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248568","optionid":"574332","title":"年底13或14或N+1薪制。","score":"8","desc":""},
+					 {"voteid":"10228794","subjectid":"248568","optionid":"574333","title":"额外发的，看公司效益。","score":"10","desc":""},
+					 {"voteid":"10228794","subjectid":"248568","optionid":"574334","title":"按项目提成算总账当年终奖。","score":"12","desc":""},
+					 {"voteid":"10228794","subjectid":"248568","optionid":"574335","title":"完全看老板心情发的。","score":"6","desc":""},
+					 {"voteid":"10228794","subjectid":"248568","optionid":"574336","title":"年终奖是什么？","score":"3","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248569","title":"你会和你的同事、朋友等披露年终奖的数字吗？","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248569","optionid":"574337","title":"不会，这是个人隐私。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248569","optionid":"574338","title":"知心的人可以披露下。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248569","optionid":"574339","title":"别人先说的话，我也会说。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248569","optionid":"574340","title":"我们都是私下大方讨论的。","score":"3","desc":""},
+					 {"voteid":"10228794","subjectid":"248569","optionid":"574341","title":"我们很透明，拿多少公开的。","score":"5","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248570","title":"你会因为年终奖达不到你的预期而在次年选择离职吗？","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248570","optionid":"574342","title":"会啊，辛苦一年就看这个了。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248570","optionid":"574343","title":"我会综合考量值不值得留下。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248570","optionid":"574344","title":"不会，不要在意一时的得失。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248570","optionid":"574345","title":"我想知道为啥不按时发工资。","score":"5","desc":""},
+					 {"voteid":"10228794","subjectid":"248570","optionid":"574346","title":"我是老板，我来打酱油的。","score":"3","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248571","title":"你的项目还有一个月上线，投资人突然撤资怎么办？\n","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248571","optionid":"574347","title":"找人借钱，借不到就算了。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248571","optionid":"574348","title":"果断放弃项目。","score":"3","desc":""},
+					 {"voteid":"10228794","subjectid":"248571","optionid":"574349","title":"把不动产卖了用来投资","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248571","optionid":"574350","title":"找人合伙一起投资。","score":"5","desc":""},
+					 {"voteid":"10228794","subjectid":"248571","optionid":"574351","title":"不开心的产品狗安静路过。","score":"9","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248781","title":"正在外面休假，公司突然有事需要你处理，怎么办？","desc":"","answer":"","option":
+					 [{"voteid":"10228794","subjectid":"248781","optionid":"574842","title":"表示正在休假，让其他人做。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248781","optionid":"574843","title":"找人接手帮忙，并掌握进度。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248781","optionid":"574844","title":"休假中，不可能让公司找到。","score":"5","desc":""},
+					 {"voteid":"10228794","subjectid":"248781","optionid":"574845","title":"停止休假，赶回公司工作。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248781","optionid":"574846","title":"  借口12306买不到反程票。","score":"3","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248782","title":"某天你中了彩票大奖，你会拿来做以下哪种投资?","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248782","optionid":"574847","title":"投资入股其他生意。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248782","optionid":"574848","title":"炒股、基金、期货。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248782","optionid":"574849","title":"买房、买门面投资。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248782","optionid":"574850","title":"创业，开店当老板。","score":"5","desc":""},
+					 {"voteid":"10228794","subjectid":"248782","optionid":"574851","title":"从不买，哪里会中。","score":"3","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248783","title":"新搬来的邻居，邀你去他家做客，你会怎么反应？","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248783","optionid":"574852","title":"犹豫了一下，还是决定要去。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248783","optionid":"574853","title":"陌生人家中不去，直接拒绝。","score":"3","desc":""},
+					 {"voteid":"10228794","subjectid":"248783","optionid":"574854","title":"愉快答应，带上食物一起去。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248783","optionid":"574855","title":"说自己还有事，委婉拒绝。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248783","optionid":"574856","title":"最喜欢聚会，带朋友一起去。","score":"5","desc":""}]},
+					 
+					 {"voteid":"10228794","subjectid":"248784","title":"遇到初恋情人，对方邀请你投资她/他的项目，你会?","desc":"","answer":"","option":[
+					 {"voteid":"10228794","subjectid":"248784","optionid":"574857","title":"接受，也许因此还能复合。","score":"3","desc":""},
+					 {"voteid":"10228794","subjectid":"248784","optionid":"574858","title":"拒绝，害怕会旧情复燃。","score":"9","desc":""},
+					 {"voteid":"10228794","subjectid":"248784","optionid":"574859","title":"拒绝，不想和初恋有纠缠。","score":"7","desc":""},
+					 {"voteid":"10228794","subjectid":"248784","optionid":"574860","title":"接受，工作和爱情是两码事。","score":"11","desc":""},
+					 {"voteid":"10228794","subjectid":"248784","optionid":"574861","title":"先问问对方约吗？再做决定。","score":"5","desc":""}]}],
+					 
+					 "result":[{"range_start":"0","range_end":"50","conclusion":"给包辣条！","summary":"你只能自怜自悯了，不用你倒贴就算不错啦！"},
+					 {"range_start":"51","range_end":"65","conclusion":"1W以下","summary":"还可以啦！虽然得到的年终奖不多，但也算是对一年辛勤工作的一份回馈。"},
+					 {"range_start":"66","range_end":"75","conclusion":"1W-2W","summary":"不错哦！努力有了回报！在众人之中获得了良好的口碑，多抽点时间出去旅行吧。\n"},
+					 {"range_start":"76","range_end":"85","conclusion":"2W-5W！","summary":"很有实力！表现不俗，收入颇丰，你是个很有才华的人，好运会常伴。"},
+					 {"range_start":"86","range_end":"100","conclusion":"5W+ ！","summary":"土豪就是你！快把你快乐和成功的秘诀也分享给身边的人吧！"}],
+					 "show_score":true,"share":{"icon":"","title":"测测你该发多少年终奖？",
+					 "abstract":"年底公司忙得热火朝天，私下员工讨论如火如荼。到底发多少？一起来做个测试吧！"},
+					 "weixin":{"username":"jjjfan","nickname":"大燕网"},
+					 "style":{"color":"#37b9a1","cover":"http://vfun.sinaapp.com/money/images/0.jpg",
+					  "banner":"","color_action":"#108872",
+					  "color_result":"#E84C36"},"index":{"name":"财气"},"next":{"title":"我不信！再测一次",
+					  "url":""},"publish_url":"","voteid":"10228794"};
+</script>
+
+ </body>
+</html><!--[if !IE]>|xGv00|118ce0e465f2e255b8ab2d1e0c2fcd09<![endif]-->

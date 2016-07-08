@@ -1,0 +1,244 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/jquery.dynatable.css" />
+<link rel="stylesheet" href="css/table.css" />
+<title>增加注册人员信息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">增加注册人员信息</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="sales" placeholder="经销商" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="city" placeholder="城市" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="state" placeholder="省份" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="first_name" placeholder="姓" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="last_name" placeholder="名" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="name" placeholder="姓名" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="number" placeholder="卓越帐号" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="position" placeholder="职位" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="regdate" placeholder="注册日期" value=""/></div>
+		</div>
+		
+
+		
+		<span id="add_jb" class="submit">
+			<span class="a2">添加到捷豹名单</span>
+		</span>
+		
+		<span id="add_lh" class="submit">
+			<span class="a2">添加到陆虎名单</span>
+		</span>
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.dynatable.js"></script>
+	<script type="text/javascript">
+	
+		$(document).ready(function (e) {
+			/*if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = "addquestion.html";
+				window.location.href = "login.html";
+			}*/
+			
+		});
+		
+		
+		$('#add_jb').on('click', function(){
+			var sales = $('#sales').val();
+			var city = $('#city').val();
+			var state = $('#state').val();
+			var first_name = $('#first_name').val();
+			var last_name = $('#last_name').val();
+			var name = $('#name').val();
+			var number = $('#number').val();
+			var position = $('#position').val();
+			var regdate = $('#regdate').val();
+			
+			if(sales == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			
+			if(city == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(state == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(first_name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(last_name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(number == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(position == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(regdate == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			
+			
+			var submit_data = {
+		    'sales': sales,
+			'city':city,
+			'state':state,
+			'first_name':first_name,
+			'last_name':last_name,
+			'name':name,
+			'number':number,
+			'position':position,
+			'regdate':regdate
+			};
+			
+			
+			$.post('back_reg_jb.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						
+						alert(data.msg);
+					}
+					;
+				},
+				"json") 	
+		});
+		
+		$('#add_lh').on('click', function(){
+			var sales = $('#sales').val();
+			var city = $('#city').val();
+			var state = $('#state').val();
+			var first_name = $('#first_name').val();
+			var last_name = $('#last_name').val();
+			var name = $('#name').val();
+			var number = $('#number').val();
+			var position = $('#position').val();
+			var regdate = $('#regdate').val();
+			
+			if(sales == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			
+			if(city == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(state == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(first_name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(last_name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(name == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(number == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(position == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			if(regdate == ''){
+				alert('请务必输入正确');
+				return false;
+			}
+			
+			
+			var submit_data = {
+		    'sales': sales,
+			'city':city,
+			'state':state,
+			'first_name':first_name,
+			'last_name':last_name,
+			'name':name,
+			'number':number,
+			'position':position,
+			'regdate':regdate
+			};
+			
+			
+			$.post('back_reg_lh.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						
+						alert(data.msg);
+					}
+					;
+				},
+				"json") 
+		});
+	</script>
+</body>
+</html>

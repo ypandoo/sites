@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no;"/>
+    <!-- device-width网页宽度默认等于屏幕宽度
+    initial-scale初始的缩放比例
+    maximum-scale允许用户缩放到的最大比例
+    minimum-scale允许用户缩放到的最小比例
+    user-scalable用户是否可以手动缩放 -->
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- 取消识别电话 -->
+    <meta name="format-detection" content="email=no"/>
+    <!-- 取消识别email地址 -->
+    <meta name="format-detection" content="address=no;">
+    <!-- 取消识别地址 -->
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript" src="assets/js/vnewbase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flip.min.js"></script>
+    <script type="text/javascript" src="assets/js/chrisscript.js"></script>
+    <script type="text/javascript" src="assets/js/wxshare.js"></script>
+    <title>趣翻商贸,全新接触</title>
+	
+	<style>
+	 #glasspane {
+	     position:absolute;
+		 width:260px;
+		 height:240px;
+		 z-index:15;
+		 bottom:15%;
+		 left:50%;
+		 text-align:center;
+		 margin:-125px 0 0 -125px;
+		 background-size:100% 100%;
+		 background-image: url(assets/img/box.png);
+		 font-family: Droid Sans, Arial, Helvetica, sans-serif;
+		 font-size: 2em;
+	 }
+
+	 #glasspane h2 {
+		font-weight: normal;
+	 }
+
+	 #glasspane .title {
+		font-size: 2em;
+		color:# rgba(255, 255, 0, 0.8);
+	 }
+
+	 #glasspane a:hover {
+		color:# yellow;
+	 }
+
+	 #glasspane a {
+		text-decoration: none;
+		color:# #cccccc;
+		font-size: 3.5em;
+	 }
+
+	 #glasspane p {
+		color:# rgba(65, 65, 220, 1.0);
+		font-size: 15px;
+		font-family: 'Microsoft YaHei', Palatino, Arial, Helvetica, sans-serif;
+	 }
+	 
+	 #prize_des{
+		position:relative; 
+		top:10px; 
+	 }
+	 
+	 #user_data{
+		position:relative; 
+		top:12px; 
+	 }
+	 
+	 .submit_btn
+	 {
+		width:120px;
+		font-size: 16px;
+		background-color:rgb(102, 48, 48);
+		color: white;
+		line-height:30px;
+	 }
+	 
+	 input{border-radius: 5px;}
+	 
+	 #submit_notice{
+		  top: 30%;
+		  z-index: 1999;
+		  width: 300px;
+		  position: absolute;
+		  width: 260px;
+		  height: 260px;
+		  z-index: 15;
+		  /* left: 50%; */
+		  text-align: center;
+	 }
+	 
+	</style>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?315cf650261d0e7fd051346196844a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+	<img src='logo.jpg' />
+</div>
+</head>
+<body>
+<img src="logo.jpg" style="display:none">
+<section class="gift">
+    <img class="bg_dw" src="assets/img/information_bg.jpg" alt="">
+
+    <div class="content">
+        <img class="bg_dw spokesmanbg" src="" alt="" id="title"/>
+    </div>
+	
+    <!--a href="javascript:void(0);" onclick="musicbotton();">
+        <img class="music2 block" src="assets/img/music.png" alt="">
+    </a>
+    <audio id="player-audio" class="audio" controls="controls" loop="loop" style="opacity:0;" autoplay="autoplay">
+        <!--<source src="music.ogg" type="audio/ogg"/>-->
+        <!--source src="music.mp3" type="audio/mpeg"/>
+    </audio-->
+	
+	<div id="glasspane" style="z-index:999;" >
+	<p id = "prize_des" style="color:white; font-size:20px; font-weight:normal">
+		<span id="prize_show" style="">
+			填&nbsp;写&nbsp;获&nbsp;奖&nbsp;者&nbsp;信&nbsp;息
+		</span>
+	</p>
+	
+	<div id = "user_data" style="margin-top:10px; font-size:18px; line-height:18px">
+		<p>
+			<input id="name" type="text" placeholder="姓名">
+		</p>
+		
+		<p style="margin-top:15px">
+			<input id="tel" type="text" placeholder="手机号">
+		</p>
+		
+		<p style="margin-top:15px">
+			<input id="mail" type="text" placeholder="邮箱地址">
+		</p>
+		<p  style="margin-top:15px">
+			<input value="提交资料" id="save-btn" type="button" class = "submit_btn">
+		</p>	
+	</div>
+	
+	<div id = "submit_notice" style="display:none">
+		<a href = "http://hkmb.hktdc.com/sc"><img src="assets/img/tip.png" width="260px"/></a>
+	</div>
+</section>
+
+<script>
+	var prize = 0;
+    $(document).ready(function () {
+       
+	   prize = getQueryString("prize");
+	   if(prize == null || prize == '')
+	   {
+			window.location.href = "index.html";
+	   }
+	   
+	   var prize_check = getCookie("prize");
+	   if(prize_check == null || prize_check == '')
+	   {
+			window.location.href = "index.html";
+	   }
+	   
+	   if(prize == 1)
+	   {
+			$('#title').attr('src', 'assets/img/prize1.png');
+	   }
+	   else if(prize == 2)
+	   {
+			$('#title').attr('src', 'assets/img/prize2.png');
+	   }
+	   else if(prize == 3)
+	   {
+			$('#title').attr('src', 'assets/img/prize3.png');
+	   }
+	   else
+	   {
+			window.location.href = "index.html";
+	   }
+    });
+	
+$("#save-btn").bind("click", function() {
+	var btn = $(this);
+	var name = $("#name").val();
+	if (name == '') {
+		alert("请输入姓名");
+		return
+	}
+	
+	var tel = $("#tel").val();
+	if (tel == '') {
+		alert("请输入手机号");
+		return
+	}
+	
+	var mail = $("#mail").val();
+	if (mail == '') {
+		alert("请输入邮箱地址");
+		return
+	}
+
+	var submitData = {
+		tel: tel,
+		name: name,
+		mail: mail,
+		prize_name: prize,
+	};
+
+	$.post('index.php?ac=acw', submitData,
+	function(data) {
+		if (data.status == 1) {
+			$("#submit_notice").show();
+			delCookie("prize");
+			return;
+		} else {
+		    alert(data.msg);
+			return;
+		}
+	},
+	"json")
+});
+
+</script>
+</body>
+</html>

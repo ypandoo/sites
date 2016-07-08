@@ -1,0 +1,131 @@
+﻿<?php
+require_once('func.php');
+session_begin();
+if (!isset($_SESSION['user']) || !isset($_SESSION['pass'])) {
+    jump('index.php');
+}
+require_once('config.php');
+$link = conn_db($hostname, $username, $password, $database);
+if (!$link) {
+    echo "Mysql conncet ERROR";
+}
+$sql = "SELECT uid FROM users WHERE usr_name='" . $_SESSION['user'] . "'";
+$ret = runquery($sql, $link);
+$row = getresult($ret);
+$uid = $row['uid'];
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>快问快答比赛</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/page.css" />
+<style type="text/css">
+
+#pagecount{margin:10px auto 2px auto; padding-bottom:20px; text-align:left}
+#pagecount span{margin:4px; font-size:14px}
+
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+var curPage = 1; //当前页码
+var total,pageSize,totalPage;
+//获取数据
+function getData(page){ 
+	var pagenum;
+	if(page<=totalPage) pagenum=page-1;
+	$.ajax({
+		type: 'POST',
+		url: 'pages.php',
+		data: {'pageNum':pagenum},
+		dataType:'json',
+		beforeSend:function(){
+			$("#list ul").append("<li id='loading'>loading...</li>");
+		},
+		success:function(json){
+			$("#list ul").empty();
+			total = json.total; //总记录数
+			pageSize = json.pageSize; //每页显示条数
+			curPage = page; //当前页
+			totalPage = json.totalPage; //总页数
+			var li = "";
+			var ti=page;
+			var rel;
+			var list = json.list;
+			//处理下一题
+			if(curPage<totalPage)
+			{			
+				rel=(parseInt(curPage)+1);
+				$.each(list,function(index,array){ //遍历json数据列
+				li += "<li>"+(ti++)+"  ."+array['title']
+				+"<br/><input rel='"+rel+"' type='radio' name='"+array['qid']+"' value='A'>"+array['A']+"</input>"
+				+"<br/><input rel='"+rel+"' type='radio' name='"+array['qid']+"' value='B'>"+array['B']+"</input>"
+				+"<br/><input rel='"+rel+"' type='radio' name='"+array['qid']+"' value='C'>"+array['C']+"</input>"
+				+"<br/><input rel='"+rel+"' type='radio' name='"+array['qid']+"' value='D'>"+array['D']+"</input>"
+				+"</li><br/>";			
+				});
+			}
+			else
+			{
+				li="已经是最后一题,谢谢! <a href='page.html'>再来一次</a>";
+			}			
+			
+			$("#list ul").append(li);
+		},
+		complete:function(){ //生成分页条
+			//getPageBar();
+			//页码大于最大页数
+			if(curPage>totalPage) curPage=totalPage;
+			//页码小于1
+			pageStr="<input type='submit' value='提交答卷'/><br/><br/>";
+			if(curPage<1) curPage=1;
+		},
+		error:function(){
+			alert("数据加载失败");
+		}
+	});
+}
+
+$(function(){
+	getData(1);
+	$("#list ul li input").live('click',function(){
+		var rel = $(this).attr("rel");
+		if(rel){
+			getData(rel);
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<br/>
+<div align="left">
+<font size="10pt">快问快答大赛</font></div>
+
+<div align="right">
+<table width="20%" style="margin-right:20px;margin_top:0px" border='0'>
+<tr align="right">
+<td>
+ID:<a href='#'><?
+echo $_SESSION['user'];
+?></a>&nbsp;&nbsp;UID:<?
+echo $uid;
+?>
+&nbsp;&nbsp;<a href="logout.php">注销</a>
+</td>
+
+</table>
+</div>
+<hr>
+<br>
+
+<div align='center' id="list">
+	<ul></ul>
+</div>
+
+<div align='center' style="margin-top:30px;"><a href='index.php'>返回首页</a></div>
+<div align="center" style="margin-top:30px;">Copyright PataApp Studio 2015</div>
+
+</body>
+</html>

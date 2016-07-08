@@ -1,0 +1,513 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>我刚上传了我的靓照！速来围观！</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript">
+</script>
+
+<style>
+.topbar-right {
+position: absolute;
+right: 18px;
+top: 8px;
+width: 28px;
+height: 28px;
+}
+
+.topbar-right img {
+width: 30px;
+height: 30px;
+}
+
+#bonus_items .first {
+  margin-left: 0;
+}
+
+#bonus_items li {
+  margin-top: 18px;
+}
+#bonus_items .thumbnail-image {
+	text-align: center;
+}
+#bonus_items h3 {
+font-size: 18px;
+margin-bottom: 8px;
+color:#46A973;
+/* line-height: 1.2em; */
+/* height: 3em; */
+}
+
+.thumbnail {
+display: block;
+padding: 4px;
+line-height: 20px;
+border: 1px solid #ddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+
+img {
+width: auto;
+height: auto;
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;
+max-width: 250px;
+max-height:250px;
+}
+
+.thumbnail .caption {
+padding: 9px;
+color: #555;
+}
+
+.btn-primary {
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top,#08c,#04c);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+background-image: -webkit-linear-gradient(top,#08c,#04c);
+background-image: -o-linear-gradient(top,#08c,#04c);
+background-image: linear-gradient(to bottom,#08c,#04c);
+background-repeat: repeat-x;
+border-color: #04c #04c #002a80;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn {
+margin-top: 5px;
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+background-repeat: repeat-x;
+border: 1px solid #ccc;
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+}
+
+p {
+font-size: 14px;
+margin-bottom: 2px;
+}
+
+.thumbnail .caption {
+margin-left: 5%;
+}
+body {
+background: url('') no-repeat center center;
+  margin:0;
+  height:100%;
+  min-height:100%;
+}
+
+ul{
+max-width: 90%;
+margin-left: 5%;
+}
+
+#userinfo {
+position:absolute;
+width:310px;
+height:400px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -155px;
+margin-top: -175px;
+}
+
+#wait {
+position:absolute;
+width:260px;
+height:50px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -25px;
+}
+
+#userinfo h2 {
+font-weight: normal;
+font-size: 1em;
+text-align: center;
+margin-top:15px;
+}
+
+#userinfo a:hover {
+color:# yellow;
+}
+
+#userinfo a {
+text-decoration: none;
+color:# #cccccc;
+font-size: 3.5em;
+}
+
+#userinfo p {
+color:# rgba(65, 65, 220, 1.0);
+font-size: 10pt;
+font-family: 'Microsoft YaHei', Palatino, Arial, Helvetica, sans-serif;
+margin-top: 6px;
+margin-left: 20px;
+text-align: left;
+margin-right: 20px;
+}
+
+.submit
+{
+	padding: 8px 0;
+	font-size: 15px;
+}
+
+.used-status li {
+display: inline-block;
+float: left;
+width: 50%;
+text-align: center;
+cursor: pointer;
+}
+.sharemcover {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+display: none;
+z-index: 20000;
+}
+</style>
+
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">分享靓照·邀请朋友点赞</h1>
+		<a class="topbar-right" onclick="support()"><img src="images/like.png" width="30px"/></a>
+	</header>
+
+	<div id="content" class="content-login" style="margin-top:5%">
+		<div style="top:10%; position:absolute; width:90%; left:5%; right:5%; text-align:center">
+		<p><h1 style="font-size:2.5em"></h1></p>
+		</div>
+		<div id="des">
+			<span id="share"></span>
+		</div>
+	
+		<!--div style="top:35%; position:absolute"></div>
+		<div style="top:20%; position:absolute; width:90%; left:5%; right:5%; text-align:center">
+			<p><img id="pic" src="" width="80%"></p>
+			<p><span id="say"></span></p>
+		</div>
+		<!--div style="margin-top:60pxl; font-size: 25px"><p>捷豹路虎销售技能大赛</p></div>
+		
+		<div style= "bottom: 10%; position: absolute; left:25%; width: 50%;">
+			<span id="submit-login" class="submit">
+			<span class="a1"></span>
+			<!--span class="a2">分享到朋友圈</span>
+			</span>
+		</div-->	
+		
+		<div id="content" class="order-detail">
+			<ul id="bonus_items" class="row-fluid">
+			  
+			</ul>
+		</div>
+			
+		<div id="sharemcover0" class="sharemcover" style=" display:none;overflow:hidden;">
+			<img src="images/share.png" style="width:100%;height:20%">
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/cookie.js" type="text/javascript"></script> 
+	
+	<script>
+
+		var phone;
+		var bRunning = false;
+		var imgbase = "http://jlrsalesacademy-pic.stor.sinaapp.com/";
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1;
+		var today_try = 'pic_detail'+mm+'d' + dd;
+	
+		function getQueryString(name)
+		{
+			// 如果链接没有参数，或者链接中不存在我们要获取的参数，直接返回空
+			if(location.href.indexOf("?")==-1 || location.href.indexOf(name+'=')==-1)
+			{
+				return '';
+			}
+		 
+			// 获取链接中参数部分
+			var queryString = location.href.substring(location.href.indexOf("?")+1);
+		 
+			// 分离参数对 ?key=value&key2=value2
+			var parameters = queryString.split("&");
+		 
+			var pos, paraName, paraValue;
+			for(var i=0; i<parameters.length; i++)
+			{
+				// 获取等号位置
+				pos = parameters[i].indexOf('=');
+				if(pos == -1) { continue; }
+		 
+				// 获取name 和 value
+				paraName = parameters[i].substring(0, pos);
+				paraValue = parameters[i].substring(pos + 1);
+		 
+				// 如果查询的name等于当前name，就返回当前值，同时，将链接中的+号还原成空格
+				if(paraName == name)
+				{
+					return unescape(paraValue.replace(/\+/g, " "));
+				}
+			}
+			return '';
+		};
+		 
+		$('#submit-login').on('click',function(){
+			
+			//$("#sharemcover0").show();
+			var record_id = getQueryString("user");
+			if(record_id == null)
+				return;
+				
+			var value = $(".a1").text();
+			var numb = value.match(/\d/g);
+			numb = numb.join("");
+			numb = parseInt(numb)+1;
+			var num_new = numb + "赞";
+			$(".a1").text(num_new);
+			var score = 1;
+			if(phone)
+			{
+				score = 2;
+			}
+			var submit_data = {'record_id': id, 'score':score};
+			bRunning = true;
+			
+			//item info
+			$.post('share_pic_add.php', submit_data,
+				function(data) {
+					if(data) {
+						bRunning = false;
+						
+					} else {
+						//alert(data.msg);
+						bRunning = false;
+						return;
+					}
+				},
+				"json")	
+		});
+		
+		$(document).ready ( function(){
+			var record_id = getQueryString("user");
+			if(record_id == null)
+				return;
+				
+			//get phone
+			if(window.localStorage)
+			{
+				if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+				{
+				}
+				else
+				{
+					phone = localStorage.mobile;
+				}
+			}else{
+				phone = getCookie("mobile");
+			}
+			
+			//already got prized
+			var submit_data = {
+				'record_id': record_id
+			};  
+		
+			$.post('share_pic_detail.php', submit_data,
+				function(data) {
+					if(data)
+					{
+						//$("#share").html("月冠军:"+data.name);
+						/*var imgSrc = imgbase+data[0]['pic_name'];
+						document.getElementById("pic").src=imgSrc;
+						var content = "<p><b>"+data[0]['usr_name']+"</b>于"+data[0]['upload_time']+"说:<br>"+data[0]['msg']+"</p>";
+			            $("#say").html(content);
+						$(".a1").html(data[0]['number']+"赞");*/
+						
+						
+						var content = '<li><div class="thumbnail"><div class="thumbnail-image">';
+						var img = imgbase + data[0]['pic_name'];
+						var id_string = new String(data[0]['record_id']);
+						id_string = id_string.replace(/(^\s*)|(\s*$)/g, "");
+						content = content + '<img src="'+img+'"></img></div><div class="caption">';
+						var name = '<h3>'+ '<b>'+data[0]['usr_name']+'</b></h3>';
+						var msg =  '<p>' + data[0]['msg']+'</p>';
+						var time =  '<p>' + data[0]['upload_time']+'</p>';
+						var btnExchange = '<input type="button" class = "btn" value="' + data[0]['number']+'赞" id = "'+ data[0]['record_id']+'" onclick="order_confirm(this.id)"></input>';
+						var end ='</div></div></li>';
+						content = content + name+ msg + time + btnExchange + end;
+						
+						var li = document.createElement('li');
+						li.innerHTML = content;
+						document.querySelector('#bonus_items').appendChild(li);
+					}
+					else{
+						alert("读取信息错误!");
+					}
+				},
+				"json")	
+			
+		});
+		
+		function order_confirm(id)
+		{
+			//check running
+			if(bRunning)
+				return;
+			bRunning = true;
+			
+			document.getElementById(id).disabled = true;
+			
+			//no phone friend add num
+			if(phone == null)
+			{
+				var times = parseInt(getCookie(today_try));
+				if(times)
+				{
+					alert("您已经点过赞了！");
+					return;
+				}
+				
+				var submit_data = {'record_id': id};
+				$.post('share_pic_add_nologin.php', submit_data,
+				function(data) {
+					if(data && data.status == 1) {
+						//alert(data.msg);点赞成功
+						add_number(id);
+						bRunning = false;
+						setCookie(today_try, 1);
+						return;
+					} else {
+						alert(data.msg);
+						bRunning = false;
+						return;
+					}
+				},
+				"json")	
+				document.getElementById(id).disabled = false;
+				return;
+			}
+			
+			//has login
+			var score = 2;
+			var submit_data = {'record_id': id, 'score':score, 'phone': phone};		
+			//item info
+			$.post('share_pic_add.php', submit_data,
+				function(data) {
+					if(data && data.status != 0) {
+						//alert(data.msg);点赞成功
+						add_number(id);
+						post_add_number(id);
+						bRunning = false;
+						document.getElementById(id).disabled = false;
+						return;
+					} else {
+						alert(data.msg);
+						bRunning = false;
+						document.getElementById(id).disabled = false;
+						return;
+					}
+				},
+				"json")	
+		}
+		
+		$("#sharemcover0").click(function () {
+			$("#sharemcover0").hide();
+		});
+		
+		function support() {
+			$("#sharemcover0").show();
+		}
+		
+		function add_number(id)
+		{
+			var value = document.getElementById(id).value;
+			var numb = value.match(/\d/g);
+			numb = numb.join("");
+			numb = parseInt(numb)+1;
+			var num_new = numb + "赞";
+			document.getElementById(id).value = num_new;
+		}
+		
+		function post_add_number(id)
+		{
+			var submit_data = {'record_id': id};
+			
+			//item info
+			$.post('share_pic_add_number.php', submit_data,
+				function(data) {
+				},
+				"json")	
+		}
+	</script>
+
+</html>

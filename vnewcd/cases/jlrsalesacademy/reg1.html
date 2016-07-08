@@ -1,0 +1,242 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>注册</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="login.html"><img src="images/home.png"/></a>
+		<h1 class="header-title">注册-手机验证</h1>
+	</header>
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="mobile" placeholder="手机号" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-width40">
+				<div class="reg-row-border"><input type="text" id="reg-validation" placeholder="短信验证码" /></div>
+			</div>
+			<div class="reg-row-width60">
+				<div class="reg-row-btn">
+					<span class="btn-send">发送验证码</span>
+				</div>
+			</div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="password" id="pass" placeholder="输入新密码" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="password" id="repass" placeholder="重复密码" value=""/></div>  
+		</div>
+		<div style="height:auto;line-height:20px;overflow:hidden;margin:0px 20px;margin-bottom:10px;color:#F00;display:none;" id="error-tip">提示</div>
+
+		<div class="reg-row">
+			<span id="submit-loading" class="submit" style="display: none;">正在验证...</span>
+			<span id="submit-reg-next" class="submit">下一步</span>
+		</div>
+	</div>	
+	
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script src="js/move.js"></script>
+<script src="js/template.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/base.js"></script>
+<script src="js/head.js"></script>
+
+<script>
+
+	var isWXBind = false;
+
+	var counter = 0; //验证码倒计时
+	var msgSendOk = false; //是否已发短信
+	var validateNum = '0000';
+	
+	$(function(){
+		var vCodeFromInput = '',
+			mobile;
+		var selected = '1';
+		$('.btn-send').on('click', function(){
+			if(counter > 0) {
+				return false;
+			}
+			mobile = $('#mobile').val();
+			if(undefined == mobile ||  '' == mobile) {
+				errTip('请输入手机号');
+				$('#mobile').focus();
+				return false;
+			}
+			setGrayCss(1);
+
+			var submit_data = {
+				'mobile' : mobile,
+			};
+			
+						
+			$.post('mobile_validate.php', submit_data,
+				function(data) {
+					if(data && data.code == 0) {
+						msgSendOk = true;
+						setGray();
+						errTip('短信发送成功，请注意查收!' );
+						validateNum = data.validate_num;
+						
+					} else if (data && data.status != 0) {
+						errTip('发送短信验证失败');
+						setGrayCss(0);
+					} else {
+						setGrayCss(0);
+					}
+				},
+				"json")	
+			
+			
+			/*$('#reg-validation').queryRecord(data, function(msg) {
+				if(msg && msg.status == 1) {
+					msgSendOk = true;
+					setGray();
+					errTip('短信发送成功，请注意查收');
+				} else if (msg && msg.status == 0) {
+					errTip(msg.error_message);
+					refreshCheckcode();
+					setGrayCss(0);
+				} else {
+					setGrayCss(0);
+				}
+			});*/
+		});
+
+		$('#submit-reg-next').on('click', function(){
+			vCodeFromInput = $('#reg-validation').val();
+			if(vCodeFromInput == ''){
+				errTip('请输入短信验证码');
+				return false;
+			}
+			if(false == msgSendOk) {
+				errTip('还未发送短信验证码');
+				return false;
+			}
+			
+			if(vCodeFromInput != validateNum)
+			{
+				errTip('短信验证码错误');
+				return false;
+			}
+			regConfirm();
+		});
+		
+		
+		//注册确认
+		function regConfirm() {
+			var pass = $('#pass').val();
+			var repass = $('#repass').val();
+			
+			if('' == pass) {
+				errTip('请输入密码');
+				$('#pass').focus();
+				return false;
+			}
+			
+			if('' == repass) {
+				errTip('请确认密码');
+				$('#repass').focus();
+				return false;
+			}
+			
+			if(pass.length < 6){
+				errTip('密码过短！');
+				$('#pass').focus();
+				return false;
+			}
+					
+			if(pass != repass) {
+				errTip('两次密码不一致');
+				return false;
+			}
+			
+			$('#submit-loading').show();
+			$('#submit-reg-next').hide();
+			
+			sessionStorage.mobile = $('#mobile').val();
+			sessionStorage.password = pass;
+			sessionStorage.firstRegFinish = "T";
+			window.location.href = "reg2.php";
+		}
+	});
+	
+//注册成功后自动登录
+function autoLogin(username, password) {
+	var data = {
+		'url' : 'proxy/loginvalidate',
+		'queryData':{
+			'mobile': username,
+			'password': password,
+			'refer' : urlencode(document.referrer),
+			'callback' : 'reg_success.html'
+		},
+		'type' : 'POST'
+	};
+
+	$(this).queryRecord(data, function(msg) {
+		if(msg.status == 1){
+
+			if ( isWXBind ) {
+				weixinBind(username, password);
+			} else {
+				window.location.href = 'reg_success.html';
+			}
+
+		}
+	});
+}
+
+$(function(){
+	$(".reg-row-img, .reg-row-tip").click(function(){
+		refreshCheckcode();
+	});	
+});
+
+var timer;
+function setGray() {
+	clearInterval(timer);
+	setGrayCss(1);
+	timer = setInterval(function(){
+		$(".btn-send").html('再次获取'+(--counter)+'秒');
+		if(counter <= 0) {
+			clearInterval(timer);
+			setGrayCss(0);
+		}
+	},1000);	
+}
+function setGrayCss(flag) {
+	if(1 == flag) {
+		counter = 60;
+		$(".btn-send").html("发送中...");
+		$(".btn-send").addClass('reg-row-btn-gray');
+	} else {
+		counter = 0;
+		clearInterval(timer);
+		$(".btn-send").removeClass('reg-row-btn-gray');
+		$(".btn-send").html("发送验证码");
+	}
+}
+
+
+function errTip(str){
+	$('#error-tip').html(str).show();
+}
+</script>
+	
+</body>
+</html>

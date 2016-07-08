@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>个人信息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script src="js/cookie.js"></script>
+
+<script>
+function logout() {
+		localStorage.removeItem("mobile");
+		localStorage.removeItem("jlrlogin");
+		delCookie("mobile");
+		window.location.href = "login.html";
+ }
+</script>
+</head>
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html" ><img src="images/home.png"/></a>
+		<h1 class="header-title">个人中心</h1>
+		<a class="topbar-right" href="msg.html"><img id="msg_img" src="images/msg.png"/></a>
+		<!--span id="cart-count" class="cart-count"></span-->
+	</header>
+
+	<div id="content" class="order-detail">
+		<div class="user-main">
+
+			<div style="text-align:center;margin-top:10%;" >
+			  <p><a href="personal_info.html"><img src="images/personal_info.png" height="45px" style="margin-top:2%"></a></p>
+			  <p><a href="personal_bonus.html?sorts[bonus_date]=-1"><img src="images/personal_activity_score.png" height="45px" style="margin-top:2%"></a></p>
+			  <p><a href="personal_quescore_all.html"><img src="images/personal_score.png" height="45px" style="margin-top:2%"></a></p>
+			  <p><a href="personal_bonus_item.html"><img src="images/personal_prize.png" height="45px" style="margin-top:2%"></a></p>
+			  <p><a href="personal_honer.html"><img src="images/personal_honer.png" height="45px"  style="margin-top:2%"></a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div style="position:absolute; bottom:15px; right:15px"><img src="images/logout.png" width="30px" height="30px" onclick="javascript:logout()"></div>
+	<div>
+
+<script src="js/jquery-2.0.3.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready ( function(){
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = "personal_info.html";
+			window.location.href = "login.html";
+		}
+		
+		//check unread msg
+		var submit_data = {
+				'phone' : localStorage.mobile
+				//'name' : localStorage.name
+			};
+						
+		$.post('info_check_msg.php', submit_data,
+			function(data) {
+				if(data && data.status == 1) 
+				{
+					//use unread icon
+					document.getElementById("msg_img").src="images/msg_unread.png";
+				}
+			},
+			"json")	
+		
+		
+	});
+</script>	
+
+<script>
+
+</script>
+	
+</body>
+</html>

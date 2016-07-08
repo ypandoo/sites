@@ -1,0 +1,107 @@
+/* CSS Document */
+/*
+website:   shake
+date:      01/05/2014
+author:    joan
+email:     joan@manro.com.cn
+*/
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+
+/** 设置默认字体 **/
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body,
+button, input, select, textarea /* for ie */ {
+    font:100% Microsoft Yahei,微软雅黑, Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+img {
+	border: none;
+}
+body{font-size: 12px;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;font-size:100%;} 
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 10px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none outside none;margin: 0;padding: 0;}
+button, input {line-height: normal;}
+button, input, select, textarea {font-size: 100%;margin: 0;outline: 0 none;vertical-align: baseline;}
+i, em, cite, u{ font-style: normal; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
+sup { vertical-align: text-top; } /* 重置，减少对行高的影响 */
+sub { vertical-align: text-bottom; }
+
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+textarea{resize:none;}
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.clearfix {zoom:1;}
+.mark { background: #ff0; }
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* 常用的通用样式 Common Style */
+
+/* 隐藏 */
+.hide { display: none; }
+.show { display: block !important; }
+
+/* 清除浮动 */
+.clear:after { content: '\20'; display: block; height: 0; clear: both; }
+.clear { *zoom: 1;float: none!important;clear:both;}
+
+
+/* inline block */
+.inline-block { display: inline-block; *display: inline; }
+
+.fl{float:left; display:inline;}
+.fr{float:right; display:inline;}
+/* Clearfix */
+.clearfix:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+*html .clearfix{height:1%;}
+*+html .clearfix{height:1%;}
+body{ box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}

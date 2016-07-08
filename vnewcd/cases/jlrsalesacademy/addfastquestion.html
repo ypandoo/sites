@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>添加快问快答题目</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html"><img src="images/go_back.png"/></a>
+		<h1 class="header-title">添加快问快答题目</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="q_name" placeholder="题目" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="opt_a" placeholder="选项A" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="opt_b" placeholder="选项B" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="opt_c" placeholder="选项C" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="opt_d" placeholder="选项D" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border">
+			<select id="answer" placeholder="请选择正确答案">
+				<option value="请选择正确答案">请选择正确答案</option>
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border">
+			<select id="department" placeholder="请选择题目类型">
+				<option value="请选择题目类型">请选择题目类型</option>
+				<option value="jb">捷豹</option>
+				<option value="lh">路虎</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="q_date" placeholder="日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<span id="submit-q" class="submit">
+			<span class="a2">提交</span>
+		</span>
+	</div>
+	
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.touchSwipe.js"></script>
+	<script src="js/template.min.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/head.js"></script>
+		
+	<script type="text/javascript">
+	
+		var bRunning = false;
+	
+		$(document).ready(function (e) {
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = "addquestion.html";
+				window.location.href = "login.html";
+			}
+			
+		});
+		
+		
+		$('#submit-q').on('click', function(){
+			
+			if(bRunning)
+			{
+				alert("正在上传题目，请稍候！");
+				return;
+			}
+			
+			bRunning = true;
+				
+			// 判断是否填写完毕
+			var qname = $('#q_name').val();
+			var opt_a = $('#opt_a').val();
+			var opt_b = $('#opt_b').val();
+			var opt_c = $('#opt_c').val();
+			var opt_d = $('#opt_d').val();
+			var answer = $('#answer').val();
+			var department = $('#department').val();
+			var q_date = $('#q_date').val();
+			
+			if(qname == ''){
+				alert('请输入题目');
+				return false;
+			}
+			
+			if(opt_a == ''){
+				alert('请输入选项A');
+				return false;
+			}
+			if(opt_b == ''){
+				alert('请输入选项B');
+				return false;
+			}
+			if(opt_c == ''){
+				alert('请输入选项C');
+				return false;
+			}
+			if(opt_d == ''){
+				alert('请输入选项D');
+				return false;
+			}
+			
+			if(answer == 0){
+				alert('请选择答案');
+				return false;
+			}
+			
+			if(department == '请选择题目类型'){
+				alert('请选择捷豹或路虎');
+				return false;
+			}
+			
+			if(q_date == ''){
+				alert('请输入日期');
+				return false;
+			}
+			
+			var submit_data = {
+				'q_name' : qname,
+				'opt_a': opt_a,
+				'opt_b': opt_b,
+				'opt_c': opt_c,
+				'opt_d': opt_d,
+				'answer': answer,
+				'department':department,
+				'q_date' : q_date
+			};
+			
+			
+			$.post('addfastquestion.php', submit_data, function(data){
+					if(data && data.status == 0)
+					{
+						alert(data.msg);
+						//清空内容
+						$('#q_name').val('');
+						$('#opt_a').val('');
+						$('#opt_b').val('');
+						$('#opt_c').val('');
+						$('#opt_d').val('');
+						bRunning = false;
+					}
+					else if (data && data.status != 0)
+					{
+						alert(data.msg);
+						bRunning = false;
+					}
+					;
+				},
+				"json") 	
+		});
+	</script>
+</body>
+</html>

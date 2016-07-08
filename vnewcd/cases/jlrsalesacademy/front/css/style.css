@@ -1,0 +1,175 @@
+/*******************Create by Mrlv****************************/
+body{font:normal 12px 'Microsoft YaHei',Arial,Corbel,Verdana,Helvetica,sans-serif;background:#000000; margin:0; padding:0;}
+.page{position:relative;background:#000000;width:640px;overflow:hidden;margin:0 auto;}
+.fixed{position:fixed;}
+
+a:link,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+/*首页*/
+.index-logo{margin-top:180px; text-align:center;}
+.welcome{width:640px; height:214px; background:url(../images/index_bg.jpg) center center no-repeat;margin-top:98px;}
+.pre,.next{width:100%; height:73px; display:inline-block; }
+.pre{background:url(../images/arrow.png) top center no-repeat;}
+.next{background:url(../images/arrow.png) bottom center no-repeat;}
+.welcome .text{font-size:40px; color:#fff; text-align:center;}
+.jaguar-logo{width:100%; text-align:center;margin-top:75px;}
+/*******************路虎登录****************************/
+.lh-login-bg{height:1008px; background:url(../images/lh-login-bg.jpg) no-repeat;}
+.lh-login-bg-new{height:1008px; background:url(../images/lh-login-bg-new.jpg) no-repeat;}
+.more{width:640px; height:69px;margin-top:27px; line-height:69px; box-sizing:border-box; padding-right:60px; background:url(../images/lh-login-right-top.png) right center no-repeat; font-size:24px; color:#fff; text-align:right;}
+.more a{ color:#fff;}
+.logo{margin-top:80px; text-align:center;}
+.login{width:405px; margin:0 auto;}
+.user{ margin-top:70px;}
+.user input{width:374px; height:73px; line-height:73px; padding-left:27px; font-size:36px; color:#525252; background-color:#3e3e3e; border:1px #fff solid;}
+.tips{ font-size:28px; color:#fff;margin-left:30px;}
+.tips a{ color:#fff; text-decoration:underline;}
+.confirm{width:100%; text-align:center;}
+.confirm input{border:0; background:0;text-align:center; font-size:62px; color:#fff; cursor:pointer;}
+#lh-sub-btn{ width:233px; height:79px; background:url(../images/sign_btn.png) no-repeat; margin-top:100px; font-size:39px;}
+.backtop{ position:absolute; bottom:0;width:100%; height:146px; background:url(../images/lh-login-btn-bg.png) center center no-repeat;}
+/*索引页*/
+.reference-top{width:640px; height:602px; background:url(../images/reference_bg.jpg) center center no-repeat;}
+.reference-bottom{width:640px; height:406px; background:url(../images/reference_bg1.jpg) center center no-repeat;}
+.reference-top .reference-logo{padding-top:80px; text-align:center;}
+.competition{width:508px; margin:0 auto;padding-top:50px;}
+/*大赛总览*/
+.competition-bg{width:640px; height:auto; background:url(../images/reference_bg1.jpg) repeat-y; padding-bottom:30px;}
+.nav{width:640px; height:54px; line-height:54px;}
+.lh-match-1{ background:url(../images/lh-match-navi-1.jpg) no-repeat;}
+.lh-match-2{ background:url(../images/lh-match-navi-2.jpg) no-repeat;}
+.lh-match-3{ background:url(../images/lh-match-navi-3.jpg) no-repeat;}
+.lh-match-4{ background:url(../images/lh-match-navi-4.jpg) no-repeat;}
+.lh-live-1{ background:url(../images/lh-live-navi-1.jpg) no-repeat;}
+.lh-live-2{ background:url(../images/lh-live-navi-2.jpg) no-repeat;}
+.lh-live-3{ background:url(../images/lh-live-navi-3.jpg) no-repeat;}
+.lh-live-4{ background:url(../images/lh-live-navi-4.jpg) no-repeat;}
+.lh-hd-1-1{ background:url(../images/lh-hd-1-1.jpg) no-repeat;}
+.lh-hd-1-2{ background:url(../images/lh-hd-1-2.jpg) no-repeat;}
+.lh-hd-2-1{ background:url(../images/lh-hd-2-1.jpg) no-repeat;}
+.lh-hd-2-2{ background:url(../images/lh-hd-2-2.jpg) no-repeat;}
+.lh-hd-2-3{ background:url(../images/lh-hd-2-3.jpg) no-repeat;}
+.lh-hd-3-1{ background:url(../images/lh-hd-3-1.jpg) no-repeat;}
+.lh-hd-3-2{ background:url(../images/lh-hd-3-2.jpg) no-repeat;}
+.nav ul li{width:160px;  text-align:center; float:left;}
+.nav ul li a{width:160px; height:54px; display:inline-block; color:#fff; font-size:24px;}
+/*.nav ul li a:hover,.nav ul li a.on{ background-color:#12854d;}*/
+.competition-content{width:579px; margin:0 auto;padding-top:40px;}
+.competition-text{width:100%; height:auto; margin-top:35px;padding:15px 50px 0 50px; background-color:#e5e5e5; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.competition-text .title{ font-size:32px; color:#113553; text-align:center;margin-top:20px;}
+.competition-text .summary{ width:100%; font-size:24px;padding-top:35px; padding-bottom:45px; color:#000; line-height:28px; text-indent:2em; background:url(../images/border.png) bottom center no-repeat;}
+/*奖项设置*/
+.award{width:579px; height:929px; margin:0 auto;padding-top:40px; background-color:#e5e5e5;padding:0 50px 0 50px;box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.award .title{ font-size:32px; color:#113553; text-align:center;padding-top:40px;}
+.border{ text-align:center; padding-top:35px; padding-bottom:50px;}
+.award-box{width:180px; text-align:center;}
+.award-box .name{ font-size:24px; color:#11844c;}
+.award-box .number{ font-size:24px; color:#53697c;}
+/*往期回顾*/
+.past{width:580px; margin:40px auto; background-color:#e5e5e5; padding-bottom:15px; text-align:center;}
+.video{ padding-top:15px; margin:0 auto;}
+/*报名入口*/
+.sign-up{width:579px; height:858px; background:url(../images/sign_bg.jpg) no-repeat; margin:40px auto;}
+.sign-logo{ text-align:center; padding-top:70px;}
+.sign-up .summary{padding-top:350px;width:495px; margin:0 auto;}
+.sign-up .summary .title{ font-size:32px; color:#113553;}
+.sign-up .summary .text{font-size:24px;padding-top:35px; padding-bottom:45px; color:#000; line-height:28px; text-indent:2em;}
+.sign-button{width:100%; height:79px; line-height:79px; background:url(../images/sign_btn.png) center center no-repeat; text-align:center; font-size:40px;}
+.sign-button a{width:233px; height:79px; display:inline-block; color:#fff;}
+/*赛事花絮*/
+.event-content{ background-color:#e5e5e5; margin:40px auto;width:583px; padding:50px 0 50px 15px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.video-box{ height:212px;}
+.video-box .text{width:305px;}
+.video-box .title{ font-size:32px; color:#113553;}
+.video-box .summary{ font-size:24px; color:#000;margin-top:20px;}
+/*入围名单*/
+.list-title{font-size:32px; color:#113553; text-align:center;}
+.name-list{width:443px;margin:30px auto auto;}
+.name-list ul li{ font-size:24px; color:#000;width:443px; height:65px; line-height:65px; background:url(../images/border.png) bottom center no-repeat;}
+.name-list ul li .name{ float:left;margin-left:50px;}
+.name-list ul li .area{width:100px; float:right; text-align:left;}
+.list-number{width:110px; padding-top:20px; margin:0 auto;}
+.list-number a{ float:left; width:20px; height:20px; margin-left:15px; display:inline-block; background:url(../images/name_btn.png) right center no-repeat;}
+.list-number a:hover,.list-number a.on{background:url(../images/name_btn.png) left center no-repeat;}
+/*选手简介*/
+.player{ padding-left:40px; padding-right:40px;}
+.player-box{ height:196px;}
+.player-box .text{width:265px;}
+.player-box .title{ font-size:32px; color:#113553;}
+.player-box .summary{ font-size:24px; color:#757575;margin-top:20px;}
+.player-box .border{ text-align:center; padding-top:25px; padding-bottom:25px;}
+/*精彩互动*/
+.hd-bg{ height:1008px; background:url(../images/lh-hd-bg.jpg) no-repeat; }
+.hd-bg .logo{ margin:0 auto; padding-top:110px;}
+.hd-bg .hd-btn-bg{ position:relative;margin:0 auto; width:513px; height:377px; background:url(../images/lh-hd-titile.png) no-repeat;}
+.hd-bg .qa-btn{ float:left; width:120px; height:120px; margin-left:60px; margin-top:60px; cursor:pointer;}
+.hd-bg .my-btn{float:right; width:120px; height:120px; margin-right:60px; margin-top:60px; cursor:pointer;}
+.hd-bg .vote-btn{float:left; width:120px; height:120px; margin-left:195px; margin-top:20px; cursor:pointer;}
+
+.hd-qa-bg{ min-height:1008px; height:auto; padding-bottom:30px; background:url(../images/competition_bg.jpg) repeat-y;}
+.hd-qa-bg .nav{width:640px; height:54px; line-height:54px;}
+.hd-qa-bg .nav ul li{ width:320px;  text-align:center; float:left;}
+.hd-qa-bg .nav ul li a{width:320px; height:54px; display:inline-block; color:#fff; font-size:24px;}
+/*.hd-qa-bg .nav ul li a:hover,.hd-qa-bg .nav ul li a.on{ background-color:#12854d;}*/
+.hd-qa-bg .hd-qa-content{width:521px; height:auto;  background:#e5e5e5; margin:0 auto;padding:20px 30px; margin-top:40px;}
+.hd-qa-bg .hd-qa-content .question{ width:475px; height:auto; min-height:60px; padding:20px;}
+.hd-qa-bg .hd-qa-content .answer{ width:475px; height:auto; min-height:60px; padding:20px; margin-top:-30px;}
+.hd-qa-bg .hd-qa-content ul li{ min-height:175px; height:auto; border-bottom:1px #fff solid; padding-bottom:15px;}
+.hd-qa-bg .hd-qa-content ul li .left{ float:left; width:47px; min-height:60px;}
+.hd-qa-bg .hd-qa-content ul li .right{ float:left; width:400px; font-size:24px; min-height:60px;}
+.hd-qa-bg .hd-qa-content .question .right{ padding-top:20px; padding-left:10px; color:#3d6282;}
+.hd-qa-bg .hd-qa-content .answer .right{ padding-left:10px; color:#939393;}
+.hd-qa-bg .hd-qa-content .answer .left{ padding-top:6px;}
+
+.ask-title{ font-size:46px; color:#3d6282; text-align:center; padding-top:20px;}
+.ask-textarea{ text-align:center;}
+.ask-textarea #textarea{margin:0 auto; margin-top:40px; resize:none; width:508px; height:341px;}
+.sub-btn{ margin-top:45px; text-align:center;}
+#sub-btn{ width:344px; height:101px; background:url(../images/ask-btn.jpg) no-repeat; font-size:36px; color:#fff; border:0;}
+
+.rule-title{ font-size:32px;color:#3d6282; text-align:center; padding-top:20px;}
+.rule-text{ font-size:24px;}
+.rule-text p{ text-indent:50px; line-height:150%; padding-bottom:20px;}
+.rule-title .border{ text-align:center; padding-top:0px; padding-bottom:15px;}
+
+.hd-vote-list{ clear:both; height:300px;}
+.vote-list{ float:left; width:200px; height:300px; margin-left:40px;}
+.vote-heart{ width:155px; height:33px; margin-left:30px; margin-top:10px; background:url(../images/vote-heart.png) left center no-repeat; padding-left:50px; font-size:32px; line-height:32px;color:#a1a1a1;}
+.vote-btn{ margin-top:10px; text-align:center;}
+.vote-btn input{ border:0; width:158px; height:44px; background:url(../images/vote-btn-bg.png) no-repeat; font-size:24px; color:#fff; cursor:pointer;}
+.line{ float:left; padding:40px 20px;}
+
+.hd-vote-content{width:521px; height:auto;  background:#e5e5e5; margin:0 auto;padding:20px 30px 30px 30px; margin-top:40px;}
+
+
+.hd-ask-bg{ height:1009px; background:url(../images/competition_bg.jpg) no-repeat;}
+.hd-ask-bg .nav{width:640px; height:54px; line-height:54px;}
+.hd-ask-bg .nav ul li{ width:213px;  text-align:center; float:left;}
+.hd-ask-bg .nav ul li a{width:213px; height:54px;display:inline-block; color:#fff; font-size:24px;}
+/*.hd-ask-bg .nav ul li a:hover,.hd-ask-bg .nav ul li a.on{ background-color:#12854d;}*/
+.hd-ask-bg .hd-ask-content{width:521px; height:836px;  background:#e5e5e5; margin:0 auto;padding:20px 30px; margin-top:40px;}
+.hd-ask-content .question{ width:475px; height:auto; min-height:60px; padding:20px;}
+.hd-ask-content .answer{ width:475px; height:auto; min-height:60px; padding:20px; margin-top:-30px;}
+.hd-ask-content ul li{ min-height:175px; height:auto; border-bottom:1px #fff solid; padding-bottom:15px;}
+.hd-ask-content ul li .left{ float:left; width:47px; min-height:60px;}
+.hd-ask-content ul li .right{ float:left; width:400px; font-size:24px; min-height:60px;}
+.hd-ask-content .question .right{ padding-top:20px; padding-left:10px; color:#3d6282;}
+.hd-ask-content .answer .right{ padding-left:10px; color:#939393;}
+.hd-ask-content .answer .left{ padding-top:6px;}
+
+.ask-input{ margin:0 auto; margin-bottom:15px;}
+.ask-input input{ width:512px; height:73px; background:#fff; border:0; font-size:24px; line-height:24px; padding-left:20px; overflow:hidden;}
+.ask-textarea #intro{margin:0 auto; margin-top:10px; resize:none; width:508px; height:240px;}
+.ask-title{ font-size:46px; color:#3d6282; text-align:center; padding-top:20px; padding-bottom:30px;}
+.ask-question-title{font-size:46px; color:#3d6282; text-align:center; padding-bottom:30px;}
+.hd-ask-content .line{ position:relative; padding:0; width:521px;}
+.ask-textarea span{ padding-left:20px; color:#3d6282; font-size:32px; }
+
+.ask-question-textarea{margin:0 auto; resize:none; width:508px; height:240px;}
+
+.ask-textarea{ text-align:left; padding-top:20px;}
+
+
+
+
+

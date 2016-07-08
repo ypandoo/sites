@@ -1,0 +1,156 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" >
+<link rel="stylesheet" href="css/jquery.dynatable.css" />
+<link rel="stylesheet" href="css/table.css" />
+<title>查询个人分数</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.dynatable.js"></script>
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">查询个人分数</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="begin_date" placeholder="本周开始日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="end_date" placeholder="本周结束日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="month" placeholder="手机号" value=""/></div>
+		</div>
+		
+		<span id="query_week" class="submit">
+			<span class="a2">查询个人分数</span>
+		</span>
+		
+		<div style="margin-top:15px width:80%">
+		    <table id="my-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-dynatable-column="usr_name" data-dynatable-no-sort='true' class="dynatable-head">姓名
+                        </th>
+						<th data-dynatable-column="phone" data-dynatable-no-sort='true' class="dynatable-head">手机
+                        </th>
+                        <th data-dynatable-column="total_score" data-dynatable-no-sort='true' class="dynatable-head">答题积分
+                        </th>
+						<th data-dynatable-column="extra_score" data-dynatable-no-sort='true' class="dynatable-head">活动积分
+                        </th>
+						<th data-dynatable-column="dealer" data-dynatable-no-sort='true' class="dynatable-head">经销商
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="my-body">
+                </tbody>
+            </table>
+		</div>
+		
+		<!--span id="add_week" class="submit">
+			<span class="a2">生成周冠军</span>
+		</span-->
+	</div>
+	
+	<script type="text/javascript">
+
+		 var json1 = [
+                  {
+                    "usr_name": "暂未显示",
+                    "phone": "0",
+					"total_score": 0,
+					"extra_score": 0
+                  },
+                ];
+				
+		var mytable =  $('#my-table').dynatable({
+			  //data sets
+			  dataset: {
+				records: json1,
+			  },
+			  
+			  //features
+			  features: {
+				  paginate: false,
+				  search: false,
+				  recordCount: false
+			  },
+	
+			}).data('dynatable');
+		
+		$(document).ready(function (e) {
+			//initialize table
+			
+		});
+		
+		
+		$('#query_week').on('click', function(){
+			
+			// 判断是否填写完毕
+			var begin_date = $('#begin_date').val();
+			var end_date = $('#end_date').val();
+			var phone = $('#month').val();
+			
+			if(begin_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(end_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(month == ''){
+				alert('请务必输入正确的手机号');
+				return false;
+			}
+			
+			
+			var submit_data = {
+				'begin_date': begin_date,
+				'end_date': end_date,
+				'phone':phone,
+			};
+			
+			
+			$.post('query_one_score.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						//update records
+						//mytable.settings.dataset.originalRecords = data;
+						//mytable.process();
+						$("#my-body").html("");
+						for(var i = 0; i < data.length; ++i)
+						{
+							var content = "<tr><td>"+data[i]['usr_name']+'</td>';
+							content += "<td>"+data[i]['phone']+'</td>';
+							content += "<td>"+data[i]['total_score']+'</td>';
+							content += "<td>"+data[i]['extra_score']+'</td>';
+							content += "<td>"+data[i]['dealer']+'</td></tr>';
+							$("#my-body").append(content);
+						}
+					}
+				},
+				"json") 	
+		});
+			
+	</script>
+</body>
+</html>

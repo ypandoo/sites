@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>我获得了捷豹路虎销售技能大赛周冠军！速来围观！</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript">
+</script>
+
+<style>
+.submit:hover {
+background: #018557;
+}
+.submit {
+color: #fff;
+background-color: #00925f;
+border-radius: 6px;
+padding: 10px 0;
+font-size: 18px;
+text-align: center;
+display: block;
+margin: 0 0px 0px 0px;
+cursor: pointer;
+width: 100%;
+position:absolute;
+}
+
+#des{
+position: absolute;
+top: 36%;
+margin-left: 10%;
+margin-right: 10%;
+width: 80%;
+text-align: center;
+font-size: 25px;
+font-weight: bold;
+color: white;
+}
+
+body
+{
+	background: url('images/win_background.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:#BB2626;
+}
+
+.submit
+{
+	background-color: #BB2626;
+}
+
+.sharemcover {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+display: none;
+z-index: 20000;
+}
+
+</style>
+
+</head>
+<body>
+
+	<!--header id="header" class="header-topbar">
+		<h1 class="header-title">捷豹陆虎销售技能大赛周冠军</h1>
+	</header-->
+
+	<div id="content" class="content-login" style="margin-top:5%">
+		<!--img src="images/dati2.png" width="80%" style="z-index:1"/-->
+		<div id="des">
+			<span id="share"></span>
+		</div>
+	
+		<!--div style="top:35%; position:absolute"><img src="images/week_honer.png" width="280px"></div-->
+		<!--div style="position:absolute; top:35% font-size: 2em; color:white"><p>周冠军</p></div-->
+		
+		<div style= "bottom: 10%; position: absolute; left:25%; width: 50%;">
+			<span id="submit-login" class="submit" style=" display:none;">
+			<span class="a1">分享并获取积分</span>
+			<span class="a2">分享并获取积分</span>
+			</span>
+		</div>	
+		
+		<div id="sharemcover0" class="sharemcover" style=" display:none;overflow:hidden;">
+			<img src="images/share.png" style="width:100%;height:20%">
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+
+		function getQueryString(name)
+		{
+			// 如果链接没有参数，或者链接中不存在我们要获取的参数，直接返回空
+			if(location.href.indexOf("?")==-1 || location.href.indexOf(name+'=')==-1)
+			{
+				return '';
+			}
+		 
+			// 获取链接中参数部分
+			var queryString = location.href.substring(location.href.indexOf("?")+1);
+		 
+			// 分离参数对 ?key=value&key2=value2
+			var parameters = queryString.split("&");
+		 
+			var pos, paraName, paraValue;
+			for(var i=0; i<parameters.length; i++)
+			{
+				// 获取等号位置
+				pos = parameters[i].indexOf('=');
+				if(pos == -1) { continue; }
+		 
+				// 获取name 和 value
+				paraName = parameters[i].substring(0, pos);
+				paraValue = parameters[i].substring(pos + 1);
+		 
+				// 如果查询的name等于当前name，就返回当前值，同时，将链接中的+号还原成空格
+				if(paraName == name)
+				{
+					return unescape(paraValue.replace(/\+/g, " "));
+				}
+			}
+			return '';
+		};
+		 
+		$('#submit-login').on('click',function(){
+			
+			$("#sharemcover0").show();
+			//normal access
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				return;
+			}
+			
+			//mobile is not the same
+			if(localStorage.mobile != getQueryString("p"))
+			{
+				return;
+			}
+			
+			//update honer table
+			var submit_data = {
+				'phone': localStorage.mobile,
+				'start_date': getQueryString("bd"),
+				'end_date':getQueryString("ed"),
+				'month':getQueryString("m")
+			};
+		
+			$.post('get_week_honer.php', submit_data,
+				function(data) {
+					if(data.status == 1)
+					{
+						alert("积分领取成功！");
+						$("#submit-login").hide();
+					}
+					else{
+						alert("获取积分失败!");
+					}
+				},
+				"json")	
+			
+			
+		});
+		
+		$(document).ready ( function(){
+		     //var name = decodeURI(getQueryString("name"));
+			var phone = getQueryString("p");
+			//already got prized
+			var submit_data = {
+				'phone': phone
+			};  
+		
+			$.post('get_name_from_phone.php', submit_data,
+				function(data) {
+					if(data.status == 1)
+					{
+						$("#share").html("周冠军<br>"+data.name);
+					}
+					else{
+						alert("读取周冠信息错误!");
+					}
+				},
+				"json")	
+			
+			//normal access
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				$("#submit-login").hide();
+				return;
+			}
+			
+			//mobile is not the same
+			if(localStorage.mobile != getQueryString("p"))
+			{
+				$("#submit-login").hide();  
+				return;
+			}
+			
+			//already got prized
+			var submit_data = {
+				'phone': localStorage.mobile,
+				'start_date': getQueryString("bd"),
+				'end_date':getQueryString("ed"),
+				'month':getQueryString("m")
+			};  
+		
+			$.post('honer_share_prized.php', submit_data,
+				function(data) {
+					if(data.status == 1)
+					{
+						return;
+					}
+					else{
+						$("#submit-login").show();
+					}
+				},
+				"json")	
+			
+		});
+		
+		$("#sharemcover0").click(function () {
+			$("#sharemcover0").hide();
+		});
+	</script>
+
+</html>

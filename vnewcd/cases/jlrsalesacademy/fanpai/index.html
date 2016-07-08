@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no;"/>
+    <!-- device-width网页宽度默认等于屏幕宽度
+    initial-scale初始的缩放比例
+    maximum-scale允许用户缩放到的最大比例
+    minimum-scale允许用户缩放到的最小比例
+    user-scalable用户是否可以手动缩放 -->
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- 取消识别电话 -->
+    <meta name="format-detection" content="email=no"/>
+    <!-- 取消识别email地址 -->
+    <meta name="format-detection" content="address=no;">
+    <!-- 取消识别地址 -->
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript" src="assets/js/vnewbase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flip.min.js"></script>
+    <script type="text/javascript" src="assets/js/chrisscript.js"></script>
+    <script type="text/javascript" src="assets/js/wxshare.js"></script>
+    <title>趣翻商贸,全新接触</title>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?315cf650261d0e7fd051346196844a03";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+	<img src='logo.jpg' />
+</div>
+</head>
+<body>
+<img src="logo.jpg" style="display:none">
+<section class="gift">
+    <img class="bg_dw" src="assets/img/information_bg.jpg" alt="">
+
+    <div class="content">
+        <img class="bg_dw spokesmanbg" src="assets/img/gift_title.png" alt=""/>
+    </div>
+	
+	<div style="width:60%; left:20% ;position:absolute; top:30%">
+		<a href="gift.html"><img class="bg_dw " src="assets/img/start.png" alt=""/></a>
+		<br>
+		<a href="rule.html"><img class="bg_dw " src="assets/img/gorule.png" alt=""/></a>
+	<div>
+    <!--a href="javascript:void(0);" onclick="musicbotton();">
+        <img class="music2 block" src="assets/img/music.png" alt="">
+    </a>
+    <audio id="player-audio" class="audio" controls="controls" loop="loop" style="opacity:0;" autoplay="autoplay">
+        <!--<source src="music.ogg" type="audio/ogg"/>-->
+        <!--source src="music.mp3" type="audio/mpeg"/>
+    </audio-->
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('.fancybox').fancybox();
+        //getKeySum();
+        //getUserCard();
+
+        $(".music2").click(function () {
+            $(".music2").toggleClass("music_g2");
+        });
+    });
+    var musicflag = true;
+    function musicbotton() {
+        if (musicflag == true) {
+            document.getElementById('player-audio').pause();
+            musicflag = false;
+        } else {
+            document.getElementById('player-audio').play();
+            musicflag = true;
+        }
+    }
+</script>
+</body>
+</html>

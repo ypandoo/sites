@@ -1,0 +1,357 @@
+body{margin: 0;}
+@charset "utf-8";
+body,dl,dd,h1,h2,h3,h4,h5,h6,p,span{margin:0;padding:0px;}
+body{font:14px/1.5 tahoma,simsun,Microsoft YaHei,sans-serif;-webkit-tap-highlight-color: rgba(0,0,0,0)}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+img{border: none;padding: 0;margin:0;}
+em,i,b{font-style:normal}
+ul,ol{list-style:none;margin:0;padding:0;}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+table{border-collapse:collapse;border-spacing:0}
+input,select,option{outline:none}
+.hid{text-indent: -999px; height: 0; font-size: 0;}
+.por{position:relative;}
+.poa{position:absolute;}
+.di-none{display:none;}
+.clearfix:after{ content:" " ; clear: both; display: block;}
+/*横屏提示*/
+.mask{width:100%; height:100%; background:#000;position: fixed;left:0;top: 0;z-index:50;display:none;}
+.mask i{width: 128px;height: 194px;background: url(http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/hengping.png) 0 0 no-repeat;background-size: 128px 194px;display: block;margin: 0 auto;-webkit-animation: maskAni 1.5s ease infinite alternate;animation: maskAni 1.5s ease infinite alternate;}
+.mask span{font-size:22px;display:block;color:#ffd40a; text-align:center;width: 100%;height: 25px;padding-top: 10px;}
+@media screen and (min-aspect-ratio: 13/9) {
+    #mask{display: block;}
+}
+.txt{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/txt.png") ; background-size: 320px 2491px ;}
+.sprites{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sprites.png") ; background-size: 250px 400px ;}
+
+/* 通用 */
+.content{ height: 504px; width: 320px; margin: 0 auto ; -webkit-transform-origin: center top ; z-index: 2 ; position: relative; overflow: hidden;}
+.item-8 .content{overflow: visible;}
+.secBg{ position: absolute; top: 0; left: 0; z-index: 1}
+.arrow{ width: 30px; height: 24px; background-position: -6px -60px; position: absolute; left: 50%; margin-left: -15px; top: 92%;}
+.arrow2{ background-position: -47px -60px; }
+.musicDiv{ position: fixed; top: 18px; right: 15px;}
+.musicOn{ width: 23px; height: 23px; background-position: 0 0;}
+.musicStop{ width: 23px; height: 24px; background-position: 0 -27px ;}
+
+/*sec1*/
+.item-1{ background: #b17b43 ;}
+.dialogue{ -webkit-transform-origin: center center ;  opacity: 0; z-index: 20 ; position: relative;}
+.dialogue-black{ width: 296px; height: 117px; background-position: 0 -94.5px ; overflow: hidden;}
+.dialogue-1{ width: 298px; height: 117px; background-position:-9px -385.5px ; overflow: hidden;}
+.dialogue-2{ width: 298px; height: 117px; background-position: 0 -1509px; overflow: hidden;}
+.dialogue-3{ width: 298px; height: 117px; background-position: -10px -1867px; overflow: hidden;}
+.dialogue-green{  width: 103px;  height: 75px;  background-position: -24px -564px; overflow: hidden;}
+.dialogue-s1{  width: 100px;  height: 81px;  background-position: -11px -765px; overflow: hidden;}
+.dialogue-s2{  width: 103px;  height: 75px;  background-position:  -177px -765px; overflow: hidden;}
+.dialogue-s3{  width: 103px;  height: 75px;  background-position:  -11px -929px; overflow: hidden;}
+
+.item1-txt1{ width: 107px; height: 20px; background-position: -28px -18px ; margin: 18px 0 0 28px ;}
+.item1-txt2{ width: 248px; height: 43px; background-position: -25px -44px ; margin:  8px 0 0 28px;}
+.item-1 .dialogue-black{ margin: 330px 0 0 15px }
+
+/*sec2*/
+.item-2{ background: #996228 ;}
+.item-2 .dialogue-black{ margin: 350px 0 0 15px ;}
+.item2-txt1{width: 228px; height: 22px; background-position: -10px -224px; margin: 30px 0 0 35px;-webkit-transform: scale(1.1,1.2);}
+.item2-txt2{width: 248px; height: 20px; background-position: -10px -251px; margin: 8px 0 0 35px;-webkit-transform: scale(1.1,1.2);}
+.sec2-dadDiv{ position: absolute; }
+.sec2-dad{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec2-dad.png") ; width: 134px; height: 167px; position: absolute; background-size: 801px auto ; top: -4px; left: 172px;}
+.sec2-dads{ }
+.sec2-dadBody{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec2-dadBody.png") ; width: 79px; height: 185px; background-size: 79px auto ; position: absolute; top: 154px; left: 200px;}
+/*sec3*/
+.item-3{ background: #e1b48a ;}
+.item-3 .dialogue-1{ margin: 330px 0 0 15px }
+.item3-txt1{width: 114px; height: 20px; background-position: -10px -306px; margin: 21px 0 0 28px;}
+.item3-txt2{width: 248px; height: 44px; background-position: -10px -332px; margin: 8px 0 0 28px;}
+.flowerDiv{ position: absolute; top: 132px; left: 35px; width: 177px; height: 108px; }
+.flower{ width: 15px; height: 15px; background-position: -4px -92px ; position: absolute;}
+.flower1{ -webkit-transform: rotate(10deg) ; top: 0; left: 53px;}
+.flower2{ -webkit-transform: rotate(306deg) ; top: 80px; left: 38px;}
+.flower3{ -webkit-transform: rotate(6deg) ; top: 65px; left: 134px;}
+
+/*sec4*/
+.item-4{ background: #e6c7a5 ;}
+.item-4 .dialogue-green{ margin: 62px 0 0 84px ; }
+.item-4 .dialogue-1{ margin: 210px 0 0 12px ; z-index: 10 ; position: relative;}
+.item4-txt1{width: 72px; height: 27px; background-position: -28px -522px; margin: 17px 0 0 11px;}
+.item4-txt2{  width: 236px; height: 21px; background-position: -18px -654px; margin: 42px 0 0 33px;-webkit-transform: scale(1.1,1.35);}
+.sec4-teacher{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec4-teacher.png") ; position: absolute; width: 124px; height: 157px; background-size: 374px 157px ; top: 20px; left: 206px;}
+.sec4-teacherBody{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec4-teacherBody.png") ; position: absolute; width: 166px; height: 379px; background-size: 166px 379px ; top: 137px; left: 156px;}
+
+/*sec5*/
+.item-5{ background: #e3bb71 ;}
+.item-5 .dialogue-s1{ margin:60px 0 0 13px; }
+.item-5 .dialogue-s2{ margin: -13px 0 0 215px; }
+.item-5 .dialogue-s3{ margin: -30px 0 0 3px; }
+.item-5 .dialogue-black{ margin: 95px 0 0 8px; }
+.item5-txt1{width: 82px; height: 34px; background-position: -10px -719px; margin: 22px 0 0 10px;}
+.item5-txt2{width: 82px; height: 34px; background-position: -197px -715px; margin: 25px 0 0 10px;}
+.item5-txt3{width: 82px; height: 34px; background-position: -28px -880px; margin: 22px 0 0 14px;}
+.item5-txt4{  width: 137px; height: 23px; background-position: -21px -1061px; margin: 19px 0 0 33px;}
+.item5-txt5{  width: 236px; height: 23px; background-position: -21px -1085px; margin: 0 0 0 33px;}
+.item5-txt6{  width: 236px; height: 23px; background-position: -21px -1109px; margin: 1px 0 0 33px;}
+
+/*sec6*/
+.item-6{ background: #bb8952 ;}
+.item-6 .dialogue-black{ margin: 343px 0 0 8px; z-index: 10 ; position: relative;}
+.item6-txt1{width: 235px; height: 34px; background-position:-21px -1146px; margin: 24px 0 0 31px;-webkit-transform: scale(1.1,1.35);}
+.sec6-boy{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec6-boy.png") ; width: 182px; height: 213px; background-size: 182px 213px ; position: absolute; top: 167px; left: 58px; z-index: 1}
+.sec6-mom{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec6-mom.png") ; width: 160px; height: 185px; background-size: 1120px 212px; position: absolute; top: 73px; left: 28px;}
+.sec6-dad{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec6-dad.png") ; width: 55px; height: 75px; background-size: 113px auto; position: absolute; top: 22px; left: 179px;}
+.sec6-dadBody{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec6-dadBody.png") ; width: 70px; height: 272px; background-size: 70px auto ; position: absolute; top: 82px; left: 198px;}
+.sigh{ width: 27px; height: 23px; background-position: -55px -16px ; position: absolute; top: 129px; left: 132px;}
+/*sec7*/
+.item-7{ background: #8e6428 ;}
+.item-7 .dialogue-black{ margin: 343px 0 0 8px; }
+.item7-txt1{width: 160px; height: 25px; background-position:-21px -1238px; margin: 20px 0 0 31px;}
+.item7-txt2{width: 235px; height: 20px; background-position:-21px -1264px; margin: 0 0 0 31px;}
+.item7-txt3{width: 46px; height: 26px; background-position:-19px -1285px; margin: 0 0 0 30px;}
+
+/*sec8*/
+.item-8{ background: #946f32 ; position: relative;}
+.item-8 .content{ height: 100%;}
+/*.item-8 .dialogue-black{ margin: 343px 0 0 8px; }*/
+.sec8-boss{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec8-boss.png"); background-size: 939px 210px ; width: 157px; height: 210px; position: absolute; top: 119px; left: 142px;}
+.item8-txt1{width: 235px; height: 34px; background-position:-14px -1326px; margin: 24px 0 0 31px;-webkit-transform: scale(1.1,1.35);}
+.fire1{ width: 36px; height: 40px; background-position: -103px -5px ; position: absolute; top: 87px; left: 254px;}
+.fire2{ width: 36px; height: 40px; background-position: -103px -5px ; position: absolute; top: 50px; left: 154px; -webkit-transform: scale(0.7) rotate(320deg)}
+.sec8-bossBody{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec8-bossBody.png") ; width: 320px; height: 270px; background-size: 320px auto ; position: absolute; top: 264px; left: 15px;}
+.sec8-boy{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec8-boy.png") ; width: 239px; height: 323px; background-size: 239px 323px ; position: absolute; left: -14px; bottom: 0px; -webkit-transform-origin: bottom left ; z-index: 10}
+.item-8 .dialogue{ z-index: 11 ; position: absolute; top: 61%; left: 3%; opacity: 1; }
+
+
+/*sec9*/
+.item-9{ background: #567eb3 ;}
+.item-9 .dialogue-2{ margin: 343px 0 0 8px; }
+.item9-txt1{width: 160px; height: 25px; background-position:-21px -1407px; margin: 20px 0 0 31px;}
+.item9-txt2{width: 235px; height: 20px; background-position:-21px -1433px; margin: 0 0 0 31px;}
+.item9-txt3{width: 115px; height: 26px; background-position:-21px -1455px; margin: 0 0 0 31px;}
+
+/*sec10*/
+.item-10{ background: #5f84b7 ;}
+.item-10 .dialogue-2{ margin: 343px 0 0 8px; }
+.item10-txt1{width: 241px; height: 34px; background-position:-21px -1650px; margin: 24px 0 0 24px;}
+
+/*sec11*/
+.item-11{ background: #6f8cb7 ;}
+.item-11 .dialogue-3{ margin: 343px 0 0 8px; }
+.item11-txt1{width: 253px; height: 25px; background-position:-7px -1763px; margin:17px 0 0 27px;}
+.item11-txt2{width: 250px; height: 20px; background-position:-10px -1789px; margin: 0 0 0 30px;}
+.item11-txt3{width: 245px; height: 26px; background-position:-9px -1811px; margin: 0 0 0 28px;}
+
+/*sec12*/
+.item-12{ background: #ebb96e ;}
+.item12-txt1{width: 205px; height: 35px; background-position:-53px -2023px; margin:130px 0 0 54px;}
+.item12-txt2{width: 87px; height: 21px; background-position:-110px -2088px; margin:25px 0 0 113px;}
+.item12-txt3{width: 205px; height: 24px; background-position:-53px -2125px; margin:20px 0 0 54px;}
+.item12-txt4{width: 205px; height: 24px; background-position:-53px -2150px; margin:0 0 0 54px;}
+
+/*sec13*/
+.item-13{ background: #ecb28d ;}
+.item-13 .dialogue-3{ margin: 343px 0 0 8px; }
+.item-13-Txt{ margin-top: 45px;}
+.item13-txt1{width: 44px; height: 25px; background-position:-148px -2200px; margin: 0 auto 7px;}
+.item13-txt2{width: 112px; height: 25px; background-position:-115px -2230px; margin: 0 auto 7px;}
+.item13-txt3{width: 182px; height: 25px; background-position:-80px -2259px; margin: 0 auto 7px;}
+.item13-txt4{width: 125px; height: 25px; background-position:-101px -2288px; margin: 0 auto 7px;}
+.sec13-person{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sec13-person.png") ; position: absolute; bottom: 0; left: 0; width: 320px; height: 162px; background-size: 320px 162px ; z-index: 1}
+.item13-main{ z-index: 2 ; position: relative;}
+.nextIdeaLogo{ width: 186px; height: 103px; background-position: -2px -274px ; margin: 29px auto 0; display: block; opacity: 0;}
+.tencentLogo{ width: 213px; height: 27px; background-position: 0px -246px ; margin: 8px auto 0; opacity: 0;}
+.item-13-Btn{ margin:41px 0 0 37px;}
+.againBtn{ width: 120px; height: 40px; background-position: -2px -121px ; float: left; margin-right: 6px; display: block;}
+.shareBtn{ width: 120px; height: 40px; background-position: -2px -162px ; float: left; }
+.footerBtn{ width: 245px; margin: 40px auto 0 ;}
+.footerBtn p{ color: #502f22 ; font-size: 7.5px;text-align: center}
+.footerBtn a{ font-size: 13px; text-decoration: underline; color: #fff ; font-family: '\5FAE\8F6F\96C5\9ED1';}
+.homeBtn{ float: left;}
+.blogBtn{ display: inline-block; vertical-align: middle ;width: 58px; height: 18px; background-position: -58px -210px ;}
+.nextHref{ margin: 10px auto ; display: block; height: 16px; width: 116px; background-position: -6px -229px ; opacity: 0;}
+
+
+
+/*分享指引*/
+.shareGuide{ width: 100%; height: 100%; background: rgba(0,0,0,.5) ; position: fixed; top: 0; left: 0; display: none;}
+.shareArrow{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareArrow.png") ; width: 234px; height: 143px; background-size: 234px 143px ; position: absolute; top: 0; right: 8%; }
+
+/*loadingBar*/
+.loading{ background: #f1bd71 ; width: 100%; height: 100%;}
+.loadingBar{ position: absolute; top: 40%; left: 0; right: 0; margin: 0 auto; text-align: center; -webkit-animation: loadingBar 2s infinite ; }
+.loadingNum{ position: absolute; top: 55%; left: 0; width: 100%; text-align: center; color: #fff ; font-family: '\5FAE\8F6F\96C5\9ED1'; font-size: 24px;}
+@-webkit-keyframes loadingBar{
+    0%{-webkit-transform: rotate(0deg)}
+    100%{-webkit-transform: rotate(360deg)}
+}
+/*动画*/
+.play .arrow{ -webkit-animation: arrow 1s infinite alternate ;}
+@-webkit-keyframes arrow{
+    0%{ -webkit-transform: translateY(0) ;}
+    100%{ -webkit-transform: translateY(-10px) ;}
+}
+.item-1.play .dialogue{ -webkit-animation: dialogue 0.8s 0.3s ease both;}
+
+
+.item-8 .dialogue{ opacity: 0;}
+
+/*.item-9.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-10.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-11.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-12.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+
+@-webkit-keyframes dialogue{
+    0%{ -webkit-transform: translateY(50px) ; opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) ; opacity: 1;}
+}
+
+.item-1.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item-1.play .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+@-webkit-keyframes opacity{
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
+/*sec2*/
+.play.item-2 .sec2-dad{ -webkit-animation: sec2-dad 1s steps(6)  infinite ;}
+@-webkit-keyframes sec2-dad{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -801px 0}
+}
+/*.play.item-2 .sec2-dads{ -webkit-animation: sec2-dads 0.8s 0.8s 1  ease both;}*/
+@-webkit-keyframes sec2-dads{
+    0%{-webkit-transform: translateX(200px) }
+    100%{ -webkit-transform: translateX(0px) }
+}
+.item-2.play .dialogue{ -webkit-animation: dialogue2 0.8s 0.3s ease both;}
+@-webkit-keyframes dialogue2{
+    0%{ -webkit-transform: translateY(50px) scale(0.9,0.8); opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) scale(0.9,0.8) ; opacity: 1;}
+}
+.item-2.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item-2.play .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec3*/
+.item-3.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-3 .flower1{ -webkit-animation: flower 2s infinite linear ;}
+.play.item-3 .flower2{ -webkit-animation: flower 1.5s infinite linear ;}
+.play.item-3 .flower3{ -webkit-animation: flower2 1.2s  infinite linear ;}
+@-webkit-keyframes flower{
+    0%{ -webkit-transform: rotate(0deg)}
+    100%{ -webkit-transform: rotate(360deg)}
+}
+@-webkit-keyframes flower2{
+    0%{ -webkit-transform: rotate(360deg)}
+    100%{ -webkit-transform: rotate(0deg)}
+}
+.play.item-3 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.play.item-3 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec4*/
+.item-4.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+@-webkit-keyframes dialogue4{
+    0%{ -webkit-transform: translateY(50px) scale(0.9,0.7); opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) scale(0.9,0.7) ; opacity: 1;}
+}
+.play.item-4 .dialogue-green{ -webkit-animation: opacity 1s .5s ease both ; }
+.play.item-4 .sec4-teacher{ -webkit-animation: sec4-teacher .6s steps(3)  infinite alternate ;}
+@-webkit-keyframes sec4-teacher{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -374px 0}
+}
+.item-4.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+/*sec5*/
+.play.item-5 .firTxt{ -webkit-animation: opacity 1.5s 2.5s ease both ; }
+.play.item-5 .secTxt{ -webkit-animation: opacity 1.5s 3s ease both ; }
+.play.item-5 .dialogue-s1{ -webkit-animation: opacity 1s 1s ease both ; }
+.play.item-5 .dialogue-s2{ -webkit-animation: opacity 1s 1.5s ease both ; }
+.play.item-5 .dialogue-s3{ -webkit-animation: opacity 1s 2.0s ease both ; }
+.item-5.play .dialogue-black{ -webkit-animation: dialogue .8s 2s ease both;}
+
+/*sec6*/
+.item-6.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+.play.item-6 .sigh{ -webkit-animation: sigh 1s infinite both ;}
+@-webkit-keyframes sigh{
+   0%{ -webkit-transform: translate(0,0) ; opacity: 0;}
+   20%{ opacity: 1;}
+   50%{ -webkit-transform: translate(10px,10px) ; opacity: 1;}
+   100%{ -webkit-transform: translate(10px,10px) ; opacity: 0;}
+}
+.play.item-6 .sec6-mom{ -webkit-animation: sec6-mom 2s steps(7)  infinite ;}
+@-webkit-keyframes sec6-mom{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -1120px 0}
+}
+.play.item-6 .sec6-dad{ -webkit-animation: sec6-dad 1s steps(2)  infinite ;}
+@-webkit-keyframes sec6-dad{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -116px 0}
+}
+.play.item-6 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+/*7*/
+.item-7.play .dialogue{ -webkit-animation: dialogue .8s 0.5s ease both;}
+.play.item-7 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.play.item-7 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+.play.item-7 .thirTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec8*/
+.play.item-8 .sec8-boss{ -webkit-animation: sec8-boss 2s steps(6) infinite ;}
+@-webkit-keyframes sec8-boss{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -939px 0}
+}
+.item-8.play .dialogue{ -webkit-animation: dialogue4  0.8s 0.5s ease both;}
+.play.item-8 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item8-txt1 { -webkit-transform: scale(1.1,1.35);}
+.play.item-8 .fire1{ -webkit-animation: fire .2s infinite ;}
+.play.item-8 .fire2{ -webkit-animation: fire .2s infinite ;}
+@-webkit-keyframes fire{
+    0%{ -webkit-transform: translate(0px,0)}
+    100%{ -webkit-transform: translate(2px,0)}
+}
+
+/*9*/
+.item-9.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-9 .firTxt{ -webkit-animation: opacity 1s 0.8s ease both ; }
+.play.item-9 .secTxt{ -webkit-animation: opacity 1.2s 1.2s ease both ; }
+/*10*/
+.item-10.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+.play.item-10 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item10-txt1 { -webkit-transform: scale(1.2,1.3);}
+
+/*sec11*/
+.item-11.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-11 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both}
+.play.item-11 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both}
+.play.item-11 .thirTxt{ -webkit-animation: opacity 1.2s 2s ease both}
+
+
+/*sec12*/
+.item12-txt1,.item12-txt2,.item12-txt3,.item12-txt4{ opacity: 0;}
+.play.item-12 .firTxt{ -webkit-animation: opacity 1.5s ease both}
+.play.item-12 .secTxt{ -webkit-animation: opacity 1.5s .8s ease both}
+.play.item-12 .thirTxt{ -webkit-animation: opacity 1.5s 1.5s ease both}
+.play.item-12 .forTxt{ -webkit-animation: opacity 1.5s 2s ease both}
+
+/*sec13*/
+.item13-txt1,.item13-txt2,.item13-txt3,.item13-txt4{ opacity: 0;}
+.play.item-13 .firTxt{ -webkit-animation: opacity 1s ease both}
+.play.item-13 .secTxt{ -webkit-animation: opacity 1s .5s ease both}
+.play.item-13 .thirTxt{ -webkit-animation: opacity 1s 1s ease both}
+.play.item-13 .forTxt{ -webkit-animation: opacity 1s 1.5s ease both}
+.play.item-13 .sec13-person{ -webkit-animation: sec13-person .4s 1.5s ease-out both ;}
+@-webkit-keyframes sec13-person{
+    0%{ -webkit-transform: translateY(162px)}
+    100%{ -webkit-transform: translateY(0)}
+}
+.play.item-13 .nextIdeaLogo{ -webkit-animation: fadeInUp .8s 1.3s ease both ;}
+.play.item-13 .nextHref{ -webkit-animation: fadeInUp .8s 1.7s ease both ;}
+.play.item-13 .tencentLogo{ -webkit-animation: fadeInUp .8s 2.3s ease both ;}
+@-webkit-keyframes fadeInUp{
+    0%{opacity:0;-webkit-transform:translateY(20px)}
+    100%{opacity:1;-webkit-transform:translateY(0)}
+}
+.play.item-13 .item-13-Btn{ -webkit-animation: opacity 1s 2s ease both ;}
+.play.item-13 .footerBtn{ -webkit-animation: opacity 1s 2.3s ease both ;}
+
+
+
+
+/*  |xGv00|ce343736871f3e44a57fc8863b06dafc */

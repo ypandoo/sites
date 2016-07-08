@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>每日签到</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript">
+</script>
+
+<style>
+.submit:hover {
+background: #018557;
+}
+.submit {
+color: #fff;
+background-color: #00925f;
+border-radius: 6px;
+padding: 10px 0;
+font-size: 18px;
+text-align: center;
+display: block;
+margin: 0 0px 0px 0px;
+cursor: pointer;
+width: 100%;
+position:absolute;
+}
+
+#des{
+position: absolute;
+top: 35%;
+margin-left: 10%;
+margin-right: 10%;
+width: 80%;
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+color: #34A169;
+}
+</style>
+
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">每日签到</h1>
+	</header>
+
+	<div id="content" class="content-login" style="margin-top:5%">
+		<img src="images/dati2.png" width="80%" style="z-index:1"/>
+		<div id="des">
+			<span>每天签到即可获得20积分哦.<br>记得每天来哦！</span>
+		
+		</div>
+		<div style= "bottom: 30%; position: absolute; left:25%; width: 50%;">
+			<span id="submit-login" class="submit">
+			<span class="a1">已签到</span>
+			<span class="a2">立刻签到</span>
+			</span>
+		</div>	
+	</div>
+</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+
+				 
+		/*$('#submit-login').on('click',function(){
+			
+		});*/
+		
+		$(document).ready ( function(){
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = "daily.html";
+				window.location.href = "login.html";
+			}
+			
+			//check already 
+			var submit_data = {
+				'phone': localStorage.mobile,
+			};
+		
+		$.post('check_daily.php', submit_data,
+			function(data) {
+				if(data.status == 1)
+				{
+							$('#submit-login').bind('click', function () {
+							var submit_data = {
+								'phone': localStorage.mobile,
+								'bonus_score': 20,
+								'bonus_type': '每日签到',
+								'bonus_neg': 0
+							};
+						
+							$.post('daily.php', submit_data,
+								function(data) {
+									if(data.status == 1) 
+									{
+											$('.submit').find('.a1').show();
+											$('.submit').find('.a2').hide();
+											$('#submit-login').unbind("click");
+											$('#submit-login').css('background-color',"#959595");
+											$('#des').html('您今天已经签过到啦!');
+											window.location.replace("checkin_already.html");
+									}
+									else{
+										alert(data.msg);
+									}
+								},
+								"json")	
+							});
+				}
+				else{
+					$('.submit').find('.a1').show();
+					$('.submit').find('.a2').hide();
+					$('#submit-login').css('background-color',"#959595");
+					$('#des').html('您今天已经签过到啦!<br>记得明天再来哦:)');
+					window.location.replace("checkin_already.html");
+				}
+			},
+			"json")	
+			
+			
+			
+		});
+	</script>
+
+</html>

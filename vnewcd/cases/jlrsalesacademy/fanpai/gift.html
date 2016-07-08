@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no;"/>
+    <!-- device-width网页宽度默认等于屏幕宽度
+    initial-scale初始的缩放比例
+    maximum-scale允许用户缩放到的最大比例
+    minimum-scale允许用户缩放到的最小比例
+    user-scalable用户是否可以手动缩放 -->
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- 取消识别电话 -->
+    <meta name="format-detection" content="email=no"/>
+    <!-- 取消识别email地址 -->
+    <meta name="format-detection" content="address=no;">
+    <!-- 取消识别地址 -->
+
+    <link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<script type="text/javascript" src="assets/js/vnewbase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flip.min.js"></script>
+    <script type="text/javascript" src="assets/js/chrisscript.js"></script>
+    <script type="text/javascript" src="assets/js/wxshare.js"></script>
+    <title>趣翻商贸,全新接触</title>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?315cf650261d0e7fd051346196844a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+	<img src='logo.jpg' />
+</div>
+</head>
+<body>
+<img src="logo.jpg" style="display:none">
+<section class="gift">
+    <img class="bg_dw" src="assets/img/information_bg.jpg" alt="">
+
+    <div class="content">
+        <img class="bg_dw spokesmanbg" src="" alt="">
+        <!--p>你已集齐 <span id="getkeysum"></span> 张卡牌</p-->
+        <ul id="prize">
+            <li class="r7" id="l1" style="background: url('assets/img/pai1.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li class="r7" id="l2" style="background: url('assets/img/pai2.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li id="l3" style="background: url('assets/img/pai3.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li class="r7" id="l4" style="background: url('assets/img/pai4.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li class="r7" id="l5" style="background: url('assets/img/pai5.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li id="l6" style="background: url('assets/img/pai6.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li class="r7" id="l7" style="background: url('assets/img/pai7.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li class="r7" id="l8" style="background: url('assets/img/pai8.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+            <li id="l9" style="background: url('assets/img/pai9.png') 0 0 no-repeat; background-size: 100% 100%"></li>
+        </ul>
+        <div id="data"></div>
+    </div>
+    <!--a href="javascript:void(0);" onclick="musicbotton();">
+        <img class="music2 block" src="assets/img/music.png" alt="">
+    </a>
+    <audio id="player-audio" class="audio" controls="controls" loop="loop" style="opacity:0;" autoplay="autoplay">
+        <!--<source src="music.ogg" type="audio/ogg"/>-->
+        <!--source src="music.mp3" type="audio/mpeg"/>
+    </audio-->
+</section>
+<div id="card" class="card" style="display: none;">
+    <img id="giftjpg" src="" alt="">
+    <!--img id="giftgif" class="gif" src="" alt=""-->
+	<a class="button" style="top:10%; background:url(); font-size:22px; font-weight:bold; color:rgb(119, 43, 28); font-family:'microsoft YaHei'"><span id="show_title">标题</span></a>
+	<a class="button" style="top:22%; background:url(); color:rgb(56, 29, 29);; line-height:20px;font-family:'microsoft YaHei';text-align:left"><span id="show_content">内容</span></a>
+	
+    <a href="javascript:$.fancybox.close();" class="button button_above" id="continue">继续翻牌</a>
+	<a href="javascript:$.fancybox.close();" class="button" id="more">了解更多</a>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.fancybox').fancybox();
+        //getKeySum();
+        //getUserCard();
+
+        $(".music2").click(function () {
+            $(".music2").toggleClass("music_g2");
+        });
+    });
+    var musicflag = true;
+    function musicbotton() {
+        if (musicflag == true) {
+            document.getElementById('player-audio').pause();
+            musicflag = false;
+        } else {
+            document.getElementById('player-audio').play();
+            musicflag = true;
+        }
+    }
+</script>
+</body>
+</html>

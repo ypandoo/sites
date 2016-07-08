@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/jquery.dynatable.css" />
+<link rel="stylesheet" href="css/table.css" />
+<title>周冠军评选</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">周冠军评选</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="begin_date" placeholder="本周开始日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="end_date" placeholder="本周结束日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="month" placeholder="本周所属月份(如二月就填写 2)" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border">
+			<select id="department" placeholder="请选择捷豹或路虎">
+				<option value="请选择捷豹或路虎">请选择捷豹或路虎</option>
+				<option value="lh">路虎</option>
+				<option value="jb">捷豹</option>
+			</select>
+			</div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="name" placeholder="周冠军姓名" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="phone" placeholder="周冠军电话" value=""/></div>
+		</div>
+		
+		<span id="send_msg" class="submit">
+			<span class="a2">生成积分网页并发消息给周冠</span>
+		</span>
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.dynatable.js"></script>
+	<script type="text/javascript">
+	
+		$(document).ready(function (e) {
+			/*if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = "addquestion.html";
+				window.location.href = "login.html";
+			}*/
+			
+		});
+		
+		
+		$('#send_msg').on('click', function(){
+			
+			// 判断是否填写完毕
+			var begin_date = $('#begin_date').val();
+			var end_date = $('#end_date').val();
+			var month = $('#month').val();
+			var name = $('#name').val();
+			var phone = $('#phone').val();
+			
+			if(begin_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(end_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(month == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			
+			if(name == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			
+			if(phone == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			
+			var department = $('#department').val();
+			if(department == "请选择捷豹或路虎")
+			{
+				return;
+			}
+			
+			var submit_data = {
+				'start_date': begin_date,
+				'end_date': end_date,
+				'month': month,
+				'department':department,
+				'name' : name,
+				'phone': phone
+			};
+			
+			
+			$.post('honer_week_msg.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						
+						alert(data.msg);
+					}
+					;
+				},
+				"json") 	
+		});
+	</script>
+</body>
+</html>

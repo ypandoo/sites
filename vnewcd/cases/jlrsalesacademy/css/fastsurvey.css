@@ -1,0 +1,239 @@
+html, body, ul, li, h1, span, h2, p {
+  margin: 0px;
+  padding: 0px; }
+
+.page-loading-mask {
+  background: url(../images/info-loading.gif) center center no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 10001; }
+
+ul {
+  list-style: none; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: 'Microsoft YaHei', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background-color: #fff;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; }
+
+.progress {
+  height: 35px;
+  overflow: hidden;
+  margin-top: 15px;
+  position: relative;
+  z-index: 10; }
+  .progress div {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0px auto;
+    background-color: #fff; }
+    .progress div span {
+      font-size: 25px; }
+
+h2 {
+  font-size: 18px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: -5px; }
+
+.window {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+  .window .pages {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform 0.3s; }
+    .window .pages .page {
+      width: 100%;
+      height: 100%;
+      float: left;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      background-color: #ededed; }
+
+.options li {
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  color: #fff; }
+  .options li:active {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.125) inset; }
+  .options li a, .options li a:hover {
+    color: #fff;
+    text-decoration: none; }
+
+.page-content {
+  padding: 20px 20px;
+  padding-top: 25px;
+  font-size: 14px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+.home {
+  padding: 0px;
+  padding-top: 50px;
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; }
+  .home .page-content {
+    padding: 0px;
+    height: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100%; }
+  .home h1 {
+    height: 300px;
+    color: #fff;
+    line-height: 200px;
+    font-size: 18px;
+    text-align: center; }
+  .home .start {
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    bottom: 0px; }
+    .home .start div {
+      width: 100%;
+      height: 130px;
+      position: absolute;
+      bottom: 10px; }
+    .home .start span {
+      display: block;
+      width: 110px;
+      height: 110px;
+      line-height: 110px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: bold;
+      color: #fff;
+      margin: 0px auto;
+      border-radius: 70px;
+      border: 8px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+      text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6); }
+  .home .state {
+    text-align: center;
+    color: #ccc;
+    width: 100%;
+    position: absolute;
+    bottom: 20px; }
+
+.result .score {
+  width: 140px;
+  height: 140px;
+  border-radius: 100px;
+  border: 8px solid #dedede;
+  margin: 0px auto;
+  margin-top: 0;
+  text-align: center; }
+  .result .score b {
+    font-size: 50px;
+    line-height: 80px;
+    font-weight: 400;
+    color: #fff;
+    display: block;
+    margin-top: 5px; }
+  .result .score span {
+    /*background-color: #000;*/
+    display: inline-block;
+    position: relative;
+    padding: 2px;
+    top: -3px;
+    color: #fff;
+    font-size: 18px; }
+    .result .score span i {
+      font-style: normal; }
+.result .conclusion {
+  width: 232px;
+  height: 155px;
+  margin: 0px auto;
+  margin-top: 15px;
+  text-align: center;
+  background-image: url(../images/conclusion.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 232px 155px; }
+  .result .conclusion span {
+    display: block;
+    padding-top: 38px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg); }
+.result .discription {
+  font-size: 18px;
+  margin-top: 15px; }
+.result .options {
+  text-align: center; }
+.result .share {
+  display: inline-block;
+  padding-left: 25px;
+  background-size: 20px;
+  background-image: url(http://mat1.gtimg.com/www/mobtosite/survey/share.png);
+  background-repeat: no-repeat;
+  background-position: 0px 1px; }
+
+.share_overmask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); }
+
+.share_overmask.show {
+  display: block;
+  z-index: 100; }
+
+.share_overmask .share_arrow, .share_overmask .share_words {
+  display: block;
+  background-image: url(http://imgcache.gtimg.cn/tencentvideo_v1/vstyle/mobile/v2/style/aun/img/aun_share_tips.png);
+  -webkit-background-size: 308px 82px;
+  background-size: 308px 82px; }
+
+.share_overmask .share_arrow {
+  float: right;
+  margin: 5px 20px 0 0;
+  width: 78px;
+  height: 76px;
+  background-position: -230px 0; }
+
+.share_overmask .share_words {
+  margin: 100px auto 0;
+  width: 222px;
+  height: 82px; }
+/*  |xGv00|0009eff6252f55e3bf9fc2f3a9ea6d26 */

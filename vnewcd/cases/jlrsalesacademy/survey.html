@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="content-language" content="zh-CN" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>问卷调查</title>
+<link rel="stylesheet" type="text/css" href="css/index.min.css">
+<style>
+.block1
+{
+	float:left;
+	display:block;
+}
+
+.block2
+{
+	display: block;
+}
+
+
+</style>
+</head>
+<body>
+<header id="header" class="header-topbar">
+	<h1 class="header-title">问卷调查</h1>
+</header>
+
+<section class="clearfix">
+	<!--div class="tip-1">亲，留下您的宝贵意见，您的意见能帮助我们做得更好！</div>
+	<div class="tip-2"></div-->
+	
+	<div class="qa-1 wrapper">
+		<p class="title">1.您喜欢我们每天推送的小故事吗？</p>
+		<br><p class="block1"><input type="checkbox" name="fuc1" onclick="clickA1()" id="a1"/>A：</p><p class="block2"><label>非常喜欢，故事内容都很新颖，收获很多。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc1" onclick="clickA2()" id="a2"/>B：</p><p class="block2"><label>喜欢，大部分故事很有吸引力，部分故事无亮点。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc1" onclick="clickA3()" id="a3"/>C：</p><p class="block2"><label>一般，可看可不看，只为完成比赛。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc1" onclick="clickA4()" id="a4"/>D：</p><p class="block2"><label>不喜欢，大部分故事篇幅太长，浪费时间。</label></p>
+	</div>
+	
+	<div class="qa-1 wrapper">
+		<p class="title">2.您喜欢本次大赛的活动吗？</p>
+		<br><p class="block1"><input type="checkbox" name="fuc2" id="b1" onclick="clickB1()"/>A：</p><p class="block2"><label>非常喜欢，每天都玩，乐在其中。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc2" id="b2" onclick="clickB2()"/>B：</p><p class="block2"><label>喜欢，空闲之余参与答题，感受大赛氛围。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc2" id="b3" onclick="clickB3()"/>C：</p><p class="block2"><label>一般，选择性参与，并不渴望奖励。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc2" id="b4" onclick="clickB4()"/>D：</p><p class="block2"><label>毫无兴趣，只是看故事，不想在这方面浪费时间。</label></p>
+	</div>
+	
+	<div class="qa-1 wrapper">
+		<p class="title">3.您对本次大赛奖品有什么感想？</p>
+		<br><p class="block1"><input type="checkbox" name="fuc3" id="c1" onclick="clickC1()"/>A：</p><p class="block2"><label>奖品设置合理、机会均等，话费的设置，实用又便捷。<label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc3" id="c2" onclick="clickC2()"/>B：</p><p class="block2"><label>奖品奖励适中，获奖概率需要一定付出。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc3" id="c3" onclick="clickC3()"/>C：</p><p class="block2"><label>奖品设置不够吸引人，名次也很难拿到。</label></p>
+		<br><p class="block1"><input type="checkbox" name="fuc3" id="c4" onclick="clickC4()"/>D：</p><p class="block2"><label>奖品设置太差，毫无兴趣。</label></p>
+	</div>
+	
+	<div class="qa-2 wrapper">
+		<p class="title">4.您觉得每天推送的故事对您有帮助吗？</p>
+		<br><p><textarea name="suggest" rows="5" title="您的意见将帮助我们做的更好"></textarea></p>
+	</div>
+	
+	<div class="other wrapper">
+		<p class="alcenter"><a class="submitBtn btns" onclick="submitInfo()">提交</a></p>
+	</div>
+</section>
+
+<div id="bgDiv" class="bgDiv hidden"></div>
+<div id="tipDialog" class="dialog hidden">
+	<div class="dialog-content">
+		<p class="dialog-tip">感谢您的反馈！我们将做得更好！</p>
+		<p class="alcenter"><a class="btns confirmBtn">好的</a></p>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/common.min.js"></script>
+<script type="text/javascript" src="js/cookie.js"></script>
+<script type="text/javascript">
+
+var answer1, answer2, answer3;
+var phone;
+
+$(document).ready ( function(){	
+		phone = getCookie("mobile");
+		if(phone == null)
+		{
+			sessionStorage.preTab = location.href;
+			window.location.href = "login.html";
+		}
+});
+
+$(function() {
+	ac.tool.input("textarea", "#a1a0a0", "#000");
+});
+
+function clearA1()
+{
+	$("input[name='fuc1']").each(function() {
+		$(this).prop('checked', false);
+	});
+}
+
+function clearB1()
+{
+	$("input[name='fuc2']").each(function() {
+		$(this).prop('checked', false);
+	});
+}
+
+function clearC1()
+{
+	$("input[name='fuc3']").each(function() {
+		$(this).prop('checked', false);
+	});
+}
+
+
+function clickA1()
+{
+	clearA1();
+	$("#a1").prop('checked', true);
+	answer1 = 'A';
+}
+
+function clickA2()
+{
+	clearA1();
+	$("#a2").prop('checked', true);
+	answer1 = 'B';
+}
+
+function clickA3()
+{
+	clearA1();
+	$("#a3").prop('checked', true);
+	answer1 = 'C';
+}
+
+function clickA4()
+{
+	clearA1();
+	$("#a4").prop('checked', true);
+	answer1 = 'D';
+}
+
+function clickC1()
+{
+	clearC1();
+	$("#c1").prop('checked', true);
+	answer3 = 'A';
+}
+
+function clickC2()
+{
+	clearC1();
+	$("#c2").prop('checked', true);
+	answer3 = 'B';
+}
+
+function clickC3()
+{
+	clearC1();
+	$("#c3").prop('checked', true);
+	answer3 = 'C';
+}
+
+function clickC4()
+{
+	clearC1();
+	$("#c4").prop('checked', true);
+	answer3 = 'D';
+}
+
+function clickB1()
+{
+	clearB1();
+	$("#b1").prop('checked', true);
+	answer2 = 'A';
+}
+
+function clickB2()
+{
+	clearB1();
+	$("#b2").prop('checked', true);
+	answer2 = 'B';
+}
+
+function clickB3()
+{
+	clearB1();
+	$("#b3").prop('checked', true);
+	answer2 = 'C';
+}
+
+function clickB4()
+{
+	clearB1();
+	$("#b4").prop('checked', true);
+	answer2 = 'D';
+}
+/**
+ * 提交
+ * @returns {Boolean}
+ */
+function submitInfo() {
+	var funcV1 = "";
+	$("input[name='fuc1']").each(function() {
+		if ($(this).is(":checked")) {
+			funcV1 += "1,";
+		} else{
+			funcV1 += "-1,";
+		}
+	});
+	if (funcV1 == "-1,-1,-1,-1,") {
+		ac.dialog.open("tipDialog");
+		$(".dialog-tip").html("有未选择的题目，请完成后再提交哦！期待你的答案。");
+		return false;
+	}
+	
+	var funcV2 = "";
+	$("input[name='fuc2']").each(function() {
+		if ($(this).is(":checked")) {
+			funcV2 += "1,";
+		} else{
+			funcV2 += "-1,";
+		}
+	});
+	if (funcV2 == "-1,-1,-1,-1,") {
+		ac.dialog.open("tipDialog");
+		$(".dialog-tip").html("有未选择的题目，请完成后再提交哦！期待你的答案。");
+		return false;
+	}
+	
+	var funcV3 = "";
+	$("input[name='fuc3']").each(function() {
+		if ($(this).is(":checked")) {
+			funcV3 += "1,";
+		} else{
+			funcV3 += "-1,";
+		}
+	});
+	if (funcV3 == "-1,-1,-1,-1,") {
+		ac.dialog.open("tipDialog");
+		$(".dialog-tip").html("有未选择的题目，请完成后再提交哦！期待你的答案。");
+		return false;
+	}
+
+	var content = $.trim($("textarea").val());
+	if (content == "" || content == $("textarea").attr("title")) {
+		ac.dialog.open("tipDialog");
+		$(".dialog-tip").html("第四题未填写呢，简单地说两句吧！");
+		return false;
+	}
+	if(!ac.tool.checkSpecialChar(content)){
+		return false;
+	}
+	if(content.length>200){
+		alert("问题四的建议请控制在200字以内！");
+		return false;
+	}
+
+	var submit_data = {answer1: answer1,
+		answer2: answer2,
+		answer3: answer3,
+		answer4: content,
+		phone: phone};
+						
+	$.post('survey.php', submit_data,
+		function(resp) {
+			if (null == resp) {
+			alert("提交失败!");
+			return false;
+			}
+			
+			var status = parseInt(resp.no);
+			switch (status) {
+				case 100:
+					ac.dialog.open("tipDialog");
+					$(".dialog-tip").html("感谢您的反馈！我们将做得更好！");
+					//var url = ac.tool.getHost();
+					//$(".confirmBtn").attr("href", url).css({"text-decoration":"none"});
+					window.location.href = "finish_survey.html";
+					break;
+				case 101:
+					ac.dialog.open("tipDialog");
+					$(".dialog-tip").html("您已经提交过调查了！");
+					break;
+				default:
+					alert(resp.msg);
+					break;
+					}
+		},
+		"json")	
+				
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>个人荣誉</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+
+<style>
+ul li{
+  width: 33%;
+  float: left;
+  hight: 150px;
+}
+
+hr{
+	border:none;
+	border-top:1px solid rgb(140, 211, 111);
+	height:0;
+}
+
+</style>
+<body>
+
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html"><img src="images/home.png"/></a>
+		<h1 class="header-title">个人荣誉</h1>
+	</header>
+	
+<script src="js/jquery-2.0.3.min.js"></script>
+	
+	<div style="text-align:center; margin-top:10px height:20px"><h2 style="color:#48B78A">周冠军奖杯</h2></div>
+	
+	<div style="height:150px"><ul id="ul-week"></ul></div>
+
+	<div style="text-align:center; margin-top:10px ;height:20px;"><h2 style="color:#48B78A">月冠军奖杯</h2></div>
+	<div style="height:150px"><ul id="ul-month"></ul></div>
+	
+	<div style="text-align:center; margin-top:10px ;height:20px; display:none;"><h2 style="color:#48B78A">总冠军奖杯</h2></div>
+
+<script src="js/jquery-2.0.3.min.js"></script>
+<script>
+	$(document).ready ( function(){
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = "personal_score.php";
+			window.location.href = "login.html";
+		}
+		
+		//dina table
+		//$('#my-table').dynatable();
+		var submit_data = {
+				'phone': localStorage.mobile,
+			};
+		$.ajax({
+         url: 'personal_week_honer_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+			
+			//change json
+			var total = 0;
+			for(var i = 0; i < data.length; ++i)
+			{
+				var content = '<li><div><img src="images/9.png" width="100px"></div>';
+				var honer_date = data[i]['honer_date'];
+				var date = '<div><p>' + honer_date.substr(0,10) +' 获得</p></div></li>' ;
+				content = content+date;
+				
+				$("#ul-week").append(content);
+			}
+			//end
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+		 
+		 $.ajax({
+         url: 'personal_month_honer_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+			
+			//change json
+			var total = 0;
+			for(var i = 0; i < data.length; ++i)
+			{
+				var content = '<li><div><img src="images/10.png" width="100px"></div>';
+				var honer_date = data[i]['honer_date'];
+				var date = '<div><p>' + honer_date.substr(0,10) +' 获得</p></div></li>' ;
+				content = content+date;
+				
+				$("#ul-month").append(content);
+			}
+			//end
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+		 
+	//End doc ready*/
+	});
+
+</script>
+	
+</body>
+</html>

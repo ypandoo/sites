@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>个人成绩</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html"><img src="images/go_back.png"/></a>
+		<h1 class="header-title">个人成绩</h1>
+	</header>
+	
+	<div id="content" class="content-userinfo">
+		<div id="user-info" class="user-body">
+			<ul>
+				<li id="view-week">
+					<div class="userinfo-password">
+						<span class="info-left">本周成绩</span>
+						<span class="info-right">点击查看本周成绩</span>
+					</div>
+				</li>
+				
+				<li id="view-month">
+					<div class="userinfo-password">
+						<span class="info-left">本月成绩</span>
+						<span class="info-right">点击查看本月成绩</span>
+					</div>
+				</li>
+				
+				<li id="view-all">
+					<div class="userinfo-password">
+						<span class="info-left">总成绩</span>
+						<span class="info-right">点击查看总成绩</span>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.touchSwipe.js"></script>
+	<script type="text/javascript">
+	$(document).ready ( function(){
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = "personal_quescore_all.html";
+			window.location.href = "login.html";
+		}
+	});
+	</script>
+
+	<script>
+		$('#view-week').on('click',function(){
+			window.location.href = "personal_quescore_week.html";
+		});
+		
+		$('#view-month').on('click',function(){
+			window.location.href = "personal_quescore_month.html";
+		});
+		
+		$('#view-all').on('click',function(){
+			window.location.href = "personal_quescore_year.html";
+		});
+
+	</script>
+	
+</body>
+</html>

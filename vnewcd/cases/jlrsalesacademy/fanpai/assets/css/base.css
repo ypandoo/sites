@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {color: #000000;font-family: \5fae\8f6f\96c5\9ed1, Arial, sans-serif;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {margin: 0;padding: 0;}
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {display: inline-block;*display: inline;*zoom: 1;}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {font-family: \5fae\8f6f\96c5\9ed1, Arial, sans-serif;font-size: 12px;line-height: 1.5;}
+input, select, textarea {font-size: 100%;}
+/* 去掉各Table  cell 的边距并让其边重合 */
+table {border-collapse: collapse;border-spacing: 0;}
+/* IE bug fixed: th 不继承 text-align */
+th {text-align: inherit;}
+/* 去除默认边框 */
+fieldset, img {border: 0;}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {display: block;}
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {border: 0;font-variant: normal;}
+/* 一致的 del 样式 */
+del {text-decoration: line-through;}
+address, caption, cite, code, dfn, em, th, var {font-style: normal;font-weight: 500;}
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {list-style: none;}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {text-align: left;}
+/* 让链接在 hover 状态下不显示下划线 */
+a:hover {text-decoration:none;}
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {text-decoration:none;}
+/* 清除浮动 */
+.clear-block:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clear-block {display: inline-block;}
+* html .clear-block {height: 1%;}
+.clear-block {display: block;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+/* 隐藏, 通常用来与 JS 配合 */
+body .fn-hide {display: none;}
+/* 设置内联, 减少浮动带来的bug */
+.fn-left, .fn-right {display: inline-block;}
+/* 一些常用排版样式 */
+.imgblock img {display: block;}
+.imgblock-center img {display: block;margin: 0 auto;}
+.block {display: block;}
+.fn-left {float: left;}
+.fn-right {float: right;}
+.fn-center {margin: 0 auto;}
+.aleft {text-align: left;}
+.aright {text-align: right;}
+.acenter {text-align: center;}
+.baseline {vertical-align: baseline;}
+.over-flow{overflow: hidden;}
+.inline-block {display: inline-block;*display: inline;*zoom: 1;}
+.full-width {width: 100%;}
+.pos-parent, .parent {position: relative;}
+.pos-child, .child {position: absolute;}
+/*常用边距
+ * spacing helpers
+ * p,m = padding,margin
+ * a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+ * s,m,sm,l,n = small(5px),medium(10px),smallmedium(15px),large(20px),none(0px)
+ * ml,ll = morelarge(30px), largelarge(40px)
+ */
+.ptn, .pvn, .pan {padding-top: 0px !important;}
+.pts, .pvs, .pas {padding-top: 5px !important;}
+.ptm, .pvm, .pam {padding-top: 10px !important;}
+.ptsm, .pvsm, .pasm {padding-top: 15px !important;}
+.ptl, .pvl, .pal {padding-top: 20px !important;}
+.ptml, .pvml, .paml {padding-top: 30px !important;}
+.ptll, .pvll, .pall {padding-top: 40px !important;}
+.prn, .phn, .pan {padding-right: 0px !important;}
+.prs, .phs, .pas {padding-right: 5px !important;}
+.prm, .phm, .pam {padding-right: 10px !important;}
+.prsm, .phsm, .pasm {padding-right: 15px !important;}
+.prl, .phl, .pal {padding-right: 20px !important;}
+.prml, .phml, .paml {padding-right: 30px !important;}
+.prll, .phll, .pall {padding-right: 40px !important;}
+.pbn, .pvn, .pan {padding-bottom: 0px !important;}
+.pbs, .pvs, .pas {padding-bottom: 5px !important;}
+.pbm, .pvm, .pam {padding-bottom: 10px !important;}
+.pbsm, .pvsm, .pasm {padding-bottom: 15px !important;}
+.pbl, .pvl, .pal {padding-bottom: 20px !important;}
+.pbml, .pvml, .paml {padding-bottom: 30px !important;}
+.pbll, .pvll, .pall {padding-bottom: 40px !important;}
+.pln, .phn, .pan {padding-left: 0px !important;}
+.pls, .phs, .pas {padding-left: 5px !important;}
+.plm, .phm, .pam {padding-left: 10px !important;}
+.plsm, .phsm, .pasm {padding-left: 15px !important;}
+.pll, .phl, .pal {padding-left: 20px !important;}
+.plml, .phml, .paml {padding-left: 30px !important;}
+.plll, .phll, .pall {padding-left: 40px !important;}
+.mtn, .mvn, .man {margin-top: 0px !important;}
+.mts, .mvs, .mas {margin-top: 5px !important;}
+.mtm, .mvm, .mam {margin-top: 10px !important;}
+.mtsm, .mvsm, .masm {margin-top: 15px !important;}
+.mtl, .mvl, .mal {margin-top: 20px !important;}
+.mtml, .mvml, .maml {margin-top: 30px !important;}
+.mtll, .mvll, .mall {margin-top: 40px !important;}
+.mrn, .mhn, .man {margin-right: 0px !important;}
+.mrs, .mhs, .mas {margin-right: 5px !important;}
+.mrm, .mhm, .mam {margin-right: 10px !important;}
+.mrsm, .mhsm, .masm {margin-right: 15px !important;}
+.mrl, .mhl, .mal {margin-right: 20px !important;}
+.mrml, .mhml, .maml {margin-right: 30px !important;}
+.mrll, .mhll, .mall {margin-right: 40px !important;}
+.mbn, .mvn, .man {margin-bottom: 0px !important;}
+.mbs, .mvs, .mas {margin-bottom: 5px !important;}
+.mbm, .mvm, .mam {margin-bottom: 10px !important;}
+.mbsm, .mvsm, .masm {margin-bottom: 15px !important;}
+.mbl, .mvl, .mal {margin-bottom: 20px !important;}
+.mbml, .mvml, .maml {margin-bottom: 30px !important;}
+.mbll, .mvll, .mall {margin-bottom: 40px !important;}
+.mln, .mhn, .man {margin-left: 0px !important;}
+.mls, .mhs, .mas {margin-left: 5px !important;}
+.mlm, .mhm, .mam {margin-left: 10px !important;}
+.mlsm, .mhsm, .masm {margin-left: 15px !important;}
+.mll, .mhl, .mal {margin-left: 20px !important;}
+.mlml, .mhml, .maml {margin-left: 30px !important;}
+.mlll, .mhll, .mall {margin-left: 40px !important;}
+/* media */
+.media {margin: 0px 0px;*zoom: 1;}
+.media:after, .bd:after {content: "\20";display: block;height: 0;clear: both;}
+.media .bd {vertical-align: baseline;display: table-cell;width: 10000px;*width: auto;*zoom: 1;}
+.media .bd > :first-child {margin-top: 0;}
+.media .bd > :last-child {margin-bottom: 0;}
+.media .img {float: left;}
+.media .img img, .media .bd img, .media .imgext img {display: block;}
+.media .imgext {float: right;}
+.mediaVertical .bd {display: block;width: inherit;}
+/*复选框或单选框与文字对齐*/
+.in-align{vertical-align:middle; margin-top:-2px; margin-bottom:1px;}

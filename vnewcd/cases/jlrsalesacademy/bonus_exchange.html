@@ -1,0 +1,541 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>积分兑换</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<style>
+#bonus_items .first {
+  margin-left: 0;
+}
+
+#bonus_items li {
+  margin-top: 10px;
+}
+#bonus_items .thumbnail-image {
+	text-align: center;
+}
+#bonus_items h3 {
+font-size: 14px;
+margin-bottom: 8px;
+color:#46A973;
+/* line-height: 1.2em; */
+/* height: 3em; */
+}
+
+.thumbnail {
+display: block;
+padding: 4px;
+line-height: 20px;
+border: 1px solid #ddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+  float: left;
+  width: 40%;
+  margin-left: 5%;
+  margin-bottom: 10px;
+}
+
+img {
+width: auto;
+height: 100px;
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;
+}
+
+.thumbnail .caption {
+padding: 9px;
+color: #555;
+}
+
+.btn-primary {
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top,#08c,#04c);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+background-image: -webkit-linear-gradient(top,#08c,#04c);
+background-image: -o-linear-gradient(top,#08c,#04c);
+background-image: linear-gradient(to bottom,#08c,#04c);
+background-repeat: repeat-x;
+border-color: #04c #04c #002a80;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn {
+margin-top: 5px;
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 12px;
+line-height: 20px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+background-repeat: repeat-x;
+border: 1px solid #ccc;
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+}
+
+p {
+font-size: 12px;
+margin-bottom: 1px;
+}
+
+.thumbnail .caption {
+margin-left: 5%;
+}
+body {
+background: url('') no-repeat center center;
+  margin:0;
+  height:100%;
+  min-height:100%;
+}
+
+#userinfo {
+position:absolute;
+width:260px;
+height:350px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box1.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -175px;
+}
+
+#wait {
+position:absolute;
+width:260px;
+height:50px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box1.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -25px;
+}
+
+.used-status li {
+display: inline-block;
+float: left;
+width: 50%;
+text-align: center;
+cursor: pointer;
+}
+
+#userinfo h2 {
+font-weight: normal;
+font-size: 1em;
+text-align: center;
+margin-top:15px;
+}
+
+#userinfo a:hover {
+color:# yellow;
+}
+
+#userinfo a {
+text-decoration: none;
+color:# #cccccc;
+font-size: 3.5em;
+}
+
+#userinfo p {
+color:# rgba(65, 65, 220, 1.0);
+font-size: 10pt;
+font-family: 'Microsoft YaHei', Palatino, Arial, Helvetica, sans-serif;
+margin-top: 6px;
+margin-left: 20px;
+text-align: left;
+margin-right: 20px;
+}
+
+.submit
+{
+	padding: 8px 0;
+	font-size: 15px;
+}
+
+.Sold {/** text **/
+font-size: 3em;
+color: rgba(255, 63, 63, 1);
+/*background-color:rgba(0,0,0,0.5);*/
+text-align:center;
+/*position: relative;
+width:200;
+height:80;*/
+line-height:2;
+/**adjust as needed**/ 
+top: 40%; 
+left: 116;
+-webkit-transform: rotate(-20deg); /**safari, chrome**/
+-moz-transform: rotate(-20deg); /**firefox**/
+transform: rotate(-20deg); /**other browsers**/
+}
+
+</style>
+</head>
+
+<body>
+	<header id="header" class="header-topbar">
+		<!--a class="go-back" href="info.html"><img src="images/home.png"/></a-->
+		<h1 class="header-title">积分兑换</h1>
+		<!--a class="topbar-right" href="msg.html"><img src="images/msg.png"/></a>
+		<!--span id="cart-count" class="cart-count"></span-->
+	</header>
+	
+	<ul class="used-status">
+			<li><span id="coupon-unuse" class="current-span">按库存排序</span></li>
+			<li><span id="coupon-used">按积分排序</span></li>
+	</ul>
+	
+	<div id="content" class="order-detail">
+		<ul id="bonus_items" class="row-fluid">
+		  
+		</ul>
+	</div>
+	
+	<!-- order detail -->
+	<div id = "userinfo" style="display:none">
+		<p><h2>订单确认</h2></p>
+		<p style="font-size:9">
+			<span id="prized" > 
+				请仔细核对您的积分兑换订单信息！订单提交后，相应积分会被扣除！
+			</span>
+		</p>
+		
+		<div id="item_confirm">
+		</div>
+		
+		<p>
+			<span id="save-btn" class="submit" onclick="bonus_exchange()">
+				提交资料
+			</span>
+		</p>
+		<p>
+			<span id="cancel-btn" class="submit" onclick="order_cancel()">
+				取消订单
+			</span>
+		</p>
+    </div>
+	
+	<div id = "wait" style="display:none">
+		<p><h2 style="font-size:20px;margin:10px;"><b>订单生成中..请稍候..</h2></p>
+    </div>
+	
+	<!--div id="check_more_div" style="text-align:center; width:80%; display:none; margin-left:10%">
+		<p>
+			<span id="check_more" class="submit" onclick="check_more()">
+				查看更多商品...
+			</span>
+		</p>
+	</div-->
+	
+<script src="js/jquery-2.0.3.min.js"></script>
+
+<script src="js/head.js"></script>
+<script type="text/javascript">
+	var item_id;
+	var bRunning = false;
+	var phone;
+	var imgbase = "http://jlrsalesacademy-item.stor.sinaapp.com/";
+	var limit;
+	var sort;
+	
+	function getQueryString(name)
+		{
+			// 如果链接没有参数，或者链接中不存在我们要获取的参数，直接返回空
+			if(location.href.indexOf("?")==-1 || location.href.indexOf(name+'=')==-1)
+			{
+				return '';
+			}
+		 
+			// 获取链接中参数部分
+			var queryString = location.href.substring(location.href.indexOf("?")+1);
+		 
+			// 分离参数对 ?key=value&key2=value2
+			var parameters = queryString.split("&");
+		 
+			var pos, paraName, paraValue;
+			for(var i=0; i<parameters.length; i++)
+			{
+				// 获取等号位置
+				pos = parameters[i].indexOf('=');
+				if(pos == -1) { continue; }
+		 
+				// 获取name 和 value
+				paraName = parameters[i].substring(0, pos);
+				paraValue = parameters[i].substring(pos + 1);
+		 
+				// 如果查询的name等于当前name，就返回当前值，同时，将链接中的+号还原成空格
+				if(paraName == name)
+				{
+					return unescape(paraValue.replace(/\+/g, " "));
+				}
+			}
+			return '';
+		};
+	
+	
+	$(document).ready ( function(){
+		if(window.localStorage)
+		{
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = location.href;
+				window.location.href = "login.html";
+			}
+			else
+			{
+				phone = localStorage.mobile;
+			}
+		}else{
+			phone = getCookie("mobile");
+			if(phone == null)
+			{
+				sessionStorage.preTab = location.href;
+				window.location.href = "login.html";
+			}
+		}
+		
+		sort = getQueryString("sort");
+		if(!sort)
+		{
+			sort = 0;
+		}
+		
+		if(sort == 1)
+		{
+			$('#coupon-unuse').removeClass('current-span');
+			$('#coupon-used').addClass('current-span');
+		}
+		else
+		{
+			$('#coupon-unuse').addClass('current-span');
+			$('#coupon-used').removeClass('current-span');
+		}
+		
+		showList(sort);
+		
+		/*query item info
+		var submit_data = {
+				'phone': phone,
+			};
+			
+		$.ajax({
+         url: 'bonus_exchange_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+				//change json
+				var total = 0;
+				for(var i = 0; i < data.length; ++i)
+				{
+					var content = '<li id="li'+ data[i]['item_id']+'"><div class="thumbnail"><div class="thumbnail-image">';
+					var img = imgbase + data[i]['item_pic'];
+					content = content + '<img src="'+img+'"></img></div><div class="caption">';
+					var caption = '<h3>'+ '<b>'+data[i]['item_name']+'</b></h3>';
+					//var desp =  '<p>' + data[i]['item_desp']+'</p>';
+					var stock = '<p>' + '<b>商品库存: </b>'+ data[i]['item_num']+' 件</p>';
+					var value = '<p>' + '<b>兑换所需积分: </b>' + data[i]['item_value']+' 积分</p>';
+					var btnExchange = '<a class = "btn" id="' + data[i]['item_id']+'" onclick="order_confirm(this.id)">	查看详情  </a>';
+					var end ='</div></div></li>';
+					content = content + caption + stock + value + btnExchange + end;
+					
+					var li = document.createElement('li');
+					li.innerHTML = content;
+					document.querySelector('#bonus_items').appendChild(li);
+				}
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });*/
+	});
+	
+	function bonus_exchange()
+	{
+		var submit_data = {
+				'item_id': item_id,
+				'phone' : localStorage.mobile
+			};
+		
+		//item info
+		$.post('bonus_exchange_execute.php', submit_data,
+			function(data) {
+				if(data && data.status == 1) {
+					alert("兑换积分成功！");
+					location.reload(true);
+					item_id = 0;
+					$("#item_confirm").html("");
+					
+				} else {
+					$("#userinfo").hide();
+					$("#wait").hide();
+					$("#item_confirm").html("");
+					alert(data.msg);
+				}
+			},
+			"json")	
+	}
+	
+	function order_confirm(id)
+	{
+		var baseURL = "bonus_item_detail.html?item_id="+id;
+		window.location.href = baseURL;
+		
+	}
+	
+	function order_cancel()
+	{
+		$("#userinfo").hide();
+		$("#item_confirm").html("");
+	}
+	
+	function showList(param_sort)
+	{
+		
+		sort = param_sort;
+			
+		var submit_data = {
+				'sort': sort
+			};
+			
+		$.ajax({
+         url: 'bonus_exchange_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: true,
+         success:function(data) {
+		 
+			var lis = document.querySelectorAll('#bonus_items li');
+			for(var i=0; li=lis[i]; i++) {
+				li.parentNode.removeChild(li);
+			}
+			
+			//change json
+			var total = 0;
+			for(var i = 0; i < data.length; ++i)
+			{
+				var content = '<li id="li'+ data[i]['item_id']+'"><div class="thumbnail"><div class="thumbnail-image">';
+				var img; 
+				/*var soldout = '<p class="Sold"><span class="middle">抢光啦!</span></p>';*/
+				
+				if(parseInt(data[i]['item_num']) <= 0)
+				{
+					img = imgbase + data[i]['item_pic4'];
+				}
+				else
+				{
+					img = imgbase + data[i]['item_pic'];
+
+				}
+				content = content + '<img src="'+img+'"></img>';
+				content = content + '</div><div class="caption">';
+				
+				var item_name = data[i]['item_name'];
+				var caption = '<h3>'+ '<b>'+item_name+'</b></h3>';
+				//var desp =  '<p>' + data[i]['item_desp']+'</p>';
+				var stock = '<p>' + '<b>库存: </b>'+ data[i]['item_num']+' 件</p>';
+				var value = '<p>' + '<b>兑换积分: </b>' + data[i]['item_value']+'</p>';
+				var btnExchange = '<a class = "btn" id="' + data[i]['item_id']+'" onclick="order_confirm(this.id)">	查看详情  </a>';
+				var end ='</div></div></li>';
+				content = content + caption + stock + value + btnExchange + end;
+				
+				var li = document.createElement('li');
+				li.innerHTML = content;
+				document.querySelector('#bonus_items').appendChild(li);
+			}
+			
+			if( (parseInt(data.length) % 4) == 0)
+			{
+				$("#check_more_div").show();
+			}
+			
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+		
+	}
+	
+	function check_more()
+	{
+		limit = parseInt(limit)+4;
+		var new_url = "bonus_exchange.html?limit="+limit;
+		window.location.replace(new_url);
+	}
+	
+	$('#coupon-unuse').on('click',function(){
+				$('#coupon-unuse').addClass('current-span');
+				$('#coupon-used').removeClass('current-span');
+				showList(0);
+			});
+
+	$('#coupon-used').on('click',function(){
+		$('#coupon-unuse').removeClass('current-span');
+		$('#coupon-used').addClass('current-span');
+		showList(1);
+	});
+</script>	
+
+<script>
+
+</script>
+	
+</body>
+</html>

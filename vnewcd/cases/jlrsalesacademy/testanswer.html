@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+
+<title>密码修改</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+<body>
+
+	
+	<div id="content" class="change-password">
+		<form action="#" method="post">
+			<span id="submit-password" class="submit">确定</span>
+		</form>
+	</div>
+	
+<script src="js/bootstrap.js"></script>
+<script src="js/oppo.js" host="" id="id-js-set-host"></script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script src="js/move.js"></script>
+<script src="js/template.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/base.js"></script>
+<script src="js/head.js"></script>
+	
+<script>
+	$(function(){
+		$('#submit-password').on('click', function(){
+
+			var dataObject = { "qid0": 1,
+                   "qid1": 2,
+				   "qid2": 3,
+				   "qid3": 4,
+				   "qid4": 5,
+				   "aid0": 3,
+				   "aid1": 3,
+				   "aid2": 3,
+				   "aid3": 3,
+				   "aid4": 3};
+				   
+			$.post('testanswer.php', dataObject,
+				function(data) {
+					if(data && data.code == 0) {
+						alert(data.score+data.msg);
+					} else if (data && data.code != 0) {
+						alert(data.score+data.msg);
+					}
+				},
+				"json")	
+			
+		});
+		
+	});
+</script>
+	
+</body>
+</html>

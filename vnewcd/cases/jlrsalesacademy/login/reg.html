@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<link rel="bookmark" href="http://m.oppo.com/favicon.ico"/>
+<link rel="shortcut icon" href="http://m.oppo.com/favicon.ico" type="image/x-icon" />
+<title>捷豹陆虎中国</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="index.html"><img src="images/home.png"/></a>
+		<h1 class="header-title">注册</h1>
+	</header>
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="mobile" placeholder="手机号" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-width40">
+				<div class="reg-row-border"><input type="text" id="reg-validation" placeholder="短信验证码" /></div>
+			</div>
+			<div class="reg-row-width60">
+				<div class="reg-row-btn">
+					<span class="btn-send">发送验证码</span>
+				</div>
+			</div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="pass" placeholder="输入新密码" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="repass" placeholder="重复密码" value=""/></div>
+		</div>
+		<div style="height:auto;line-height:20px;overflow:hidden;margin:0px 20px;margin-bottom:10px;color:#F00;display:none;" id="error-tip">提示</div>
+		<div class="reg-row reg-agree-btn">
+			<img class="rule_check" src="http://m.oppo.com/images/select_ok.jpg" />
+			<span>&nbsp;&nbsp;我已阅读并同意&lt;<a href="rule.html">捷豹陆虎中国用户注册协议</a>&gt;</span></div>
+		<div class="reg-row">
+			<span id="submit-loading" class="submit" style="display: none;">正在提交...</span>
+			<span id="submit-reg-next" class="submit">立即注册</span>
+		</div>
+	</div>	
+<footer id="footer">
+	<ul id="foot-state">
+				<li><a href="javascript:User.login();">登录</a></li>
+		<li><a href="reg1.html">注册</a></li>
+		<li><a href="javascript:;">返回顶部</a></li>
+	</ul>
+</footer>	
+<script src="js/bootstrap.js"></script>
+<script src="js/oppo.js" host="http://m.oppo.com/" id="id-js-set-host"></script>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.touchSwipe.js"></script>
+<script src="js/move.js"></script>
+<script src="js/template.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/base.js"></script>
+<script src="js/head.js"></script>
+<script>
+setTimeout(function(){
+	var _optj = _optj || [];
+	(function() {
+		var op = document.createElement("script");
+		op.src = "http://m.oppo.com/js/optj.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(op, s);
+	})();
+}, 3000);
+</script><script>
+	var Y = window.Y || {};
+
+	Y.query = function(url, key) {
+
+		if( !url || url.indexOf("?") == -1 ) {
+			return;
+		}
+
+		var query = url.substring(url.indexOf("?") + 1),
+			params = {};
+
+		if( !!query ) {
+			var i = 0,
+				urls = query.split("&"),
+				len = urls.length;
+
+			for(; i<len; i++ ) {
+				var param = urls[i].split("=");
+
+				params[param[0]] = decodeURIComponent( param[1] );
+			}
+		}
+
+		if( !!key ) {
+			if( !!params[key] ) {
+				return params[key];
+			}
+		}
+
+		return params;
+	};
+
+	var isWXBind = !!Y.query( window.location.href, 'type' ) && Y.query( window.location.href, 'type' ) == 'wxbind';
+
+	var counter = 0; //验证码倒计时
+	var msgSendOk = false; //是否已发短信
+
+	$(function(){
+		var vCodeFromInput = '',
+			mobile;
+		var selected = '1';
+		$('.btn-send').on('click', function(){
+			if(counter > 0) {
+				return false;
+			}
+			mobile = $('#mobile').val();
+			if(undefined == mobile ||  '' == mobile) {
+				errTip('请输入手机号');
+				$('#mobile').focus();
+				return false;
+			}
+			setGrayCss(1);
+			var checkcode = $("#checkcode").val();
+			if('' == checkcode && checkcode.length < 4) {
+				errTip('请输入图片验证码');
+				$("#checkcode").focus();
+				setGrayCss(0);
+				return false;
+			}
+			var data = {
+				'url' : 'http://m.oppo.com/proxy/account',
+				'queryData':{
+					'q': 'user/getmobilecode',
+					'mobile': mobile,
+					'checkcode': checkcode
+				},
+				'type' : 'POST'
+			};
+			
+			$('#reg-validation').queryRecord(data, function(msg) {
+				if(msg && msg.status == 1) {
+					msgSendOk = true;
+					setGray();
+					errTip('短信发送成功，请注意查收');
+				} else if (msg && msg.status == 0) {
+					errTip(msg.error_message);
+					refreshCheckcode();
+					setGrayCss(0);
+				} else {
+					setGrayCss(0);
+				}
+			});
+		});
+
+		if ( isWXBind ) {
+			$('#submit-reg-next').html('注册并绑定');
+		}
+
+		$('#submit-reg-next').on('click', function(){
+			vCodeFromInput = $('#reg-validation').val();
+			if(vCodeFromInput == ''){
+				errTip('请输入短信验证码');
+				return false;
+			}
+			if(false == msgSendOk) {
+				errTip('还未发送短信验证码');
+				return false;
+			}
+			if(selected == '1'){
+				regConfirm();
+			}else{
+				errTip('需要同意用户注册协议');
+				return;
+			}
+		});
+		
+		$('.rule_check').on('click',function(){
+			if(selected == '1'){
+				selected = '0';
+				$('.rule_check').attr('src','http://m.oppo.com/images/select_no.jpg');
+			}else{
+				selected = '1';
+				$('.rule_check').attr('src','http://m.oppo.com/images/select_ok.jpg');
+			}
+		});
+		
+		//注册确认
+		function regConfirm() {
+			var pass = $('#pass').val();
+			var repass = $('#repass').val();
+			if('' == pass) {
+				errTip('请输入密码');
+				$('#pass').focus();
+				return false;
+			}
+			
+			if('' == repass) {
+				errTip('请确认密码');
+				$('#repass').focus();
+				return false;
+			}
+			
+			if(pass != repass) {
+				errTip('两次密码不一致');
+				return false;
+			}
+
+			$('#submit-loading').show();
+			$('#submit-reg-next').hide();
+
+			var data = {
+				'url' : config.server + 'md5',
+				'queryData':{
+					'account': mobile,
+					'password': pass
+				},
+				'type' : 'POST'
+			};
+			
+			$(this).queryRecord(data, function(msg) {
+				mobile = $('#mobile').val();
+				var data = {
+					'url' : 'http://m.oppo.com/proxy/account',
+					'queryData':{
+						'q': 'user/htmlregister',
+						'sms': vCodeFromInput,
+						'vertify': msg.code,
+						'password': pass,
+						'password2': repass,
+						'mobile': mobile,
+						'refer': urlencode(document.referrer)
+					},
+					'type' : 'POST'
+				};
+				
+				$(this).queryRecord(data, function(msg) {
+					if(msg.status == 1){
+						errTip('注册成功');
+						$('#submit-loading').hide();
+						$('#submit-reg-next').show();
+						autoLogin(mobile, pass);
+					}else{
+						errTip(msg.error_message);
+						$('#submit-loading').hide();
+						$('#submit-reg-next').show();
+					}
+				});
+			});
+
+			/*
+			$(this).queryRecord(data, function(msg) {
+				mobile = $('#mobile').val();
+				var data = {
+					'url' : 'http://m.oppo.com/proxy/account',
+					'queryData':{
+						'q': 'user/htmlregister',
+						'sms': vCodeFromInput,
+						'vertify': msg.code,
+						'password': pass,
+						'password2': repass,
+						'mobile': mobile,
+						'refer': urlencode(document.referrer)
+					},
+					'type' : 'POST'
+				};
+				
+				$(this).queryRecord(data, function(msg) {
+					if(msg.status == 1){
+						errTip('注册成功');
+						autoLogin(mobile, pass);
+					}else{
+						errTip(msg.error_message);
+					}
+				});
+			});
+			*/
+		}
+	});
+	
+//注册成功后自动登录
+function autoLogin(username, password) {
+	var data = {
+		'url' : 'http://m.oppo.com/proxy/loginvalidate',
+		'queryData':{
+			'mobile': username,
+			'password': password,
+			'refer' : urlencode(document.referrer),
+			'callback' : 'reg_success.html'
+		},
+		'type' : 'POST'
+	};
+
+	$(this).queryRecord(data, function(msg) {
+		if(msg.status == 1){
+
+			if ( isWXBind ) {
+				weixinBind(username, password);
+			} else {
+				window.location.href = 'reg_success.html';
+			}
+
+		}
+	});
+}
+
+function weixinBind(username, password) {
+	var url = window.location.href,
+		code = !!Y.query(url, 'code') ? Y.query(url, 'code') : '';
+
+	$.ajax({
+		url: "http://m.oppo.com/proxy/account",
+		data: {
+			'q': 'weixin/bind',
+			'mobile': username,
+			'password': password,
+			'code' : code,
+			'refer': ''
+		},
+		dataType: "json",
+		type: "POST",
+		success: function(json) {
+			var json = typeof json == "string" ? JSON.parse( json ) : json;
+
+			var data = json["response"];
+
+			var status = data["status"];
+
+			if( status === '1' ) {
+
+				localStorage.setItem('shopGoodsId', '448');
+
+				alert( '恭喜您绑定成功！' );
+
+				setTimeout( function() {
+					window.location.href = 'http://m.oppo.com/order/index.html';
+				}, 300 );
+			} else if( status === '-1004' ) {
+				var sessionkey = "WX_" + data['data']["openid"].trim();
+
+				Y.cookie( 'OPPOSID', sessionkey, 24 * 60 * 60 * 1000, "/", ".oppo.com", false, true );
+
+				window.location.href = "http://m.oppo.com/hd/weixin/over.html";
+			} else {
+				alert( data["error_message"] );
+				window.location.href = "http://m.oppo.com/hd/weixin/bind.html?code=" + code;
+			}
+		}
+	});
+}
+
+$(function(){
+	$(".reg-row-img, .reg-row-tip").click(function(){
+		refreshCheckcode();
+	});	
+});
+
+var timer;
+function setGray() {
+	clearInterval(timer);
+	setGrayCss(1);
+	timer = setInterval(function(){
+		$(".btn-send").html('再次获取'+(--counter)+'秒');
+		if(counter <= 0) {
+			clearInterval(timer);
+			setGrayCss(0);
+		}
+	},1000);	
+}
+function setGrayCss(flag) {
+	if(1 == flag) {
+		counter = 60;
+		$(".btn-send").html("发送中...");
+		$(".btn-send").addClass('reg-row-btn-gray');
+	} else {
+		counter = 0;
+		clearInterval(timer);
+		$(".btn-send").removeClass('reg-row-btn-gray');
+		$(".btn-send").html("发送验证码");
+	}
+}
+
+//刷新验证码
+var checkcodeSrc = '';
+function refreshCheckcode() {
+	var obj = $(".reg-row-img");
+	if('' == checkcodeSrc) {
+		checkcodeSrc = $(obj).find('img').attr('src');
+	}
+	$(obj).find('img').attr('src', checkcodeSrc + '?' + new Date())
+}
+
+function errTip(str){
+	$('#error-tip').html(str).show();
+}
+</script>
+	<script>
+	(function(window, undefined) {
+		setTimeout(function(){
+			(function() {
+				var map = document.createElement("script");
+				map.src = "http://ds.tj.oppo.com/map/js/statistics.js";
+				var s = document.getElementsByTagName("script")[0]; 
+				s.parentNode.insertBefore(map, s);
+			})();
+			
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-44864529-1', 'oppo.com');
+			ga('send', 'pageview');
+			
+		}, 200);
+	})(this || window);
+	</script>
+	
+</body>
+</html>

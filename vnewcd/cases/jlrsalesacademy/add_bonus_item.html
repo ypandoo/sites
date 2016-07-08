@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>添加商品</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html"><img src="images/go_back.png"/></a>
+		<h1 class="header-title">添加商品</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="item_id" placeholder="积分商品6位编号" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="item_name" placeholder="积分商品名称" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="item_desp" placeholder="积分商品说明" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="item_num" placeholder="积分商品数量" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="item_value" placeholder="所需积分" value=""/></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic" placeholder="上传封面图片"></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic1" placeholder="上传细节图片1"></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic2" placeholder="上传细节图片2"></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic3" placeholder="上传细节图片3"></div>
+		</div>
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic4" placeholder="上传卖光了图片"></div>
+		</div>
+		
+		<div class="" id="tip"></div>
+		<div class=""><ul id="report"><!-- 演示报告 --></ul></div>
+		
+		<div class="reg-row">
+		<span id="submit-q" class="submit">
+			<span class="a2">提交</span>
+		</span>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/mobileFix.mini.js"></script>
+	<script src="js/exif.js"></script>
+	<script src="js/lrz.js"></script>
+		
+	<script type="text/javascript">
+	    var b64;
+		var pic_name = "";
+		var pic_name1 = "";
+		var pic_name2 = "";
+		var pic_name3 = "";
+		var pic_name4 = "";
+		
+		//------------------login check-------------------------
+		$(document).ready(function (e) {
+			if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+			{
+				sessionStorage.preTab = "addquestion.html";
+				window.location.href = "login.html";
+			}
+			
+		});	
+		
+		//-------------------Demo report----------------------
+		function demo_report(title, src, size) {
+			var img = new Image(),
+				li = document.createElement('li'),
+				size = (size / 1024).toFixed(2) + 'KB';
+
+			img.onload = function () {
+				var content = '<ul>' +
+					'<li>'+ title +'（'+ img.width +' X '+ img.height +'）</li>' +
+					'<li class="text-cyan">'+ size +'</li>' +
+					'</ul>';
+
+				li.className = 'item';
+				li.innerHTML = content;
+				li.appendChild(img);
+				document.querySelector('#report').appendChild(li);
+			};
+
+			img.src = src;
+		}
+		
+		
+		//-------------------upload file change--------------------------
+		$("#item_pic").change(function(){
+		    if(this.files[0].type != "image/jpeg")
+			{
+				alert("图像必须为jpg/jpeg格式！");
+				return
+			}
+			
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('客户端预压的图片', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+				//upload pic
+				var item_id = $('#item_id').val();
+                if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号(每个商品编号必须唯一)'); return false; } 
+				pic_name = item_id+"_item_cover";
+				upload_pic(pic_name, b64, 0);
+		      });
+        })
+		
+		$("#item_pic1").change(function(){
+		    if(this.files[0].type != "image/jpeg")
+			{
+				alert("图像必须为jpg/jpeg格式！");
+				return
+			}
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('客户端预压的图片', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+				//upload pic
+				var item_id = $('#item_id').val();
+                if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号(每个商品编号必须唯一)'); return false; } 
+				pic_name1 = item_id+"_pic1";
+				upload_pic(pic_name1, b64, 1);
+		      });
+        })
+		
+		$("#item_pic2").change(function(){
+		    if(this.files[0].type != "image/jpeg")
+			{
+				alert("图像必须为jpg/jpeg格式！");
+				return
+			}
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('客户端预压的图片', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+				//upload pic
+				var item_id = $('#item_id').val();
+                if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号(每个商品编号必须唯一)'); return false; } 
+				pic_name2 = item_id+"_pic2";
+				upload_pic(pic_name2, b64, 2);
+		      });
+        })
+		
+		$("#item_pic3").change(function(){
+		    if(this.files[0].type != "image/jpeg")
+			{
+				alert("图像必须为jpg/jpeg格式！");
+				return
+			}
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('客户端预压的图片', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+				//upload pic
+				var item_id = $('#item_id').val();
+                if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号(每个商品编号必须6位且唯一)'); return false; } 
+				pic_name3 = item_id+"_pic3";
+				upload_pic(pic_name3, b64, 3);
+		      });
+        })
+		
+		$("#item_pic4").change(function(){
+		    if(this.files[0].type != "image/jpeg")
+			{
+				alert("图像必须为jpg/jpeg格式！");
+				return
+			}
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('客户端预压的图片', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+				//upload pic
+				var item_id = $('#item_id').val();
+                if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号(每个商品编号必须6位且唯一)'); return false; } 
+				pic_name4 = item_id+"_pic4";
+				upload_pic(pic_name4, b64, 4);
+		      });
+        })
+		
+		//upload function
+		function upload_pic(pic_name, b64, type)
+		{
+				var submit_data={'pic_name' : pic_name,'pic': b64}; 
+				var tip = document.querySelector( '#tip'); 
+				var report = document.querySelector( '#report'); 
+				tip.innerHTML = '<p>正在上传数据..图片上传较慢请稍等，务必不要重复操作，等待完成！</p>' ; 
+				setTimeout(function () {
+					// 发送到后端
+					$.ajax({ type: 'POST', 
+							url: "upload_one_pic.php", 
+							data: submit_data, 
+							success: function(data) 
+									{
+										alert(data.msg); 
+										tip.innerHTML='<p>图片上传成功..</p> ';
+									},
+							complete: function() {}, 
+							error:function(){}, 
+							dataType: "json" });
+				}, 100);
+		}
+		
+		//------------------submit data---------------------------
+		$('#submit-q').on('click', function(){
+            // 判断是否填写完毕
+            var item_id = $('#item_id').val();
+            var item_name = $('#item_name').val();
+            var item_desp = $('#item_desp').val();
+            var item_value = $('#item_value').val();
+            var item_num = $("#item_num").val();
+            if(item_id == '' || item_id.length != 6){ alert('请输入正确积分商品编号'); return false; } 
+            if(item_name == ''){ alert('请输入积分商品名称'); return false; }
+            if(item_desp == ''){ alert('请输入积分商品描述'); return false; }
+            if(item_value == '' || parseInt(item_value) < 0 ){ alert( '请正确输入积分商品所需积分'); return false; }
+            if(item_num=='' || parseInt(item_num) < 0 ){ alert( '请正确输入积分商品件数'); return false; } 
+            var submit_data={'item_id' : item_id, 'item_name': item_name, 
+                             'item_desp': item_desp, 'item_value': item_value, 
+                             'item_num': item_num, 
+							 'pic_name': pic_name+'.jpeg', 'pic_name1':pic_name1+'.jpeg', 'pic_name2':pic_name2+'.jpeg'
+							 ,'pic_name3':pic_name3+'.jpeg','pic_name4':pic_name4+'.jpeg'}; 
+							 
+            // 以下为演示用内容 
+            var tip = document.querySelector( '#tip'); 
+            var report = document.querySelector( '#report'); 
+            tip.innerHTML = '<p>正在上传数据..图片较多请稍等，务必不要重复提交！</p>' ; 
+            setTimeout(function () {
+                // 发送到后端
+                $.ajax({ type: 'POST', 
+                        url: "add_bonus_item.php", 
+                        data: submit_data, 
+                        success: function(data) 
+						        {
+       								alert(data.msg); 
+									tip.innerHTML='<p>数据上传成功..</p> ';
+									location.reload();
+								},
+                        complete: function() {}, 
+                        error:function(){}, 
+                        dataType: "json" });
+            }, 100);
+        })
+	</script>
+</body>
+</html>

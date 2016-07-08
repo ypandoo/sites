@@ -1,0 +1,554 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>晒照赢大奖</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<style>
+
+.btn
+{
+	
+}
+.topbar-right {
+position: absolute;
+right: 18px;
+top: 8px;
+width: 28px;
+height: 28px;
+}
+
+.topbar-right img {
+width: 30px;
+height: 30px;
+}
+
+#bonus_items .first {
+  margin-left: 0;
+}
+
+#bonus_items li {
+  margin-top: 18px;
+}
+#bonus_items .thumbnail-image {
+	text-align: center;
+}
+#bonus_items h3 {
+font-size: 18px;
+margin-bottom: 8px;
+color:#46A973;
+/* line-height: 1.2em; */
+/* height: 3em; */
+}
+
+.thumbnail {
+display: block;
+padding: 4px;
+line-height: 20px;
+border: 1px solid #ddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+
+img {
+width: auto;
+height: auto;
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;
+max-width: 250px;
+max-height:250px;
+}
+
+.thumbnail .caption {
+padding: 9px;
+color: #555;
+}
+
+.btn-primary {
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top,#08c,#04c);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+background-image: -webkit-linear-gradient(top,#08c,#04c);
+background-image: -o-linear-gradient(top,#08c,#04c);
+background-image: linear-gradient(to bottom,#08c,#04c);
+background-repeat: repeat-x;
+border-color: #04c #04c #002a80;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn {
+margin-top: 5px;
+width:80px;
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+background-repeat: repeat-x;
+border: 1px solid #ccc;
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+}
+
+p {
+font-size: 14px;
+margin-bottom: 2px;
+}
+
+.thumbnail .caption {
+margin-left: 5%;
+}
+body {
+background: url('') no-repeat center center;
+  margin:0;
+  height:100%;
+  min-height:100%;
+}
+
+ul{
+max-width: 90%;
+margin-left: 5%;
+}
+
+#userinfo {
+position:absolute;
+width:310px;
+height:400px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -155px;
+margin-top: -175px;
+text-shadow:0 0 0 #494949;
+}
+
+#wait {
+position:absolute;
+width:260px;
+height:50px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -25px;
+}
+
+#userinfo h2 {
+font-weight: normal;
+font-size: 1em;
+text-align: center;
+margin-top:15px;
+}
+
+#userinfo a:hover {
+color:# yellow;
+}
+
+#userinfo a {
+text-decoration: none;
+color:# #cccccc;
+font-size: 3.5em;
+}
+
+#userinfo p {
+color:# rgba(65, 65, 220, 1.0);
+font-size: 10pt;
+font-family: 'Microsoft YaHei', Palatino, Arial, Helvetica, sans-serif;
+margin-top: 6px;
+margin-left: 20px;
+text-align: left;
+margin-right: 20px;
+}
+
+.submit
+{
+	padding: 8px 0;
+	font-size: 15px;
+}
+
+.used-status li {
+display: inline-block;
+float: left;
+width: 50%;
+text-align: center;
+cursor: pointer;
+}
+
+#header {
+padding: 17px;
+}
+
+body, div, h1, h2, h3, h4, p, ol, ul, li {
+text-shadow: 0 0 0 #494949;
+
+}
+
+input[type="button"]:disabled {
+    background: #46A973;
+}
+
+</style>
+</head>
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back"><img src="images/question.png"  width="30px"/></a>
+		<h1 class="header-title">晒照赢大奖</h1>
+		<a class="topbar-right" href="upload_pic.html"><img src="images/cam.png" width="30px"/></a>
+		<!--span id="cart-count" class="cart-count"></span-->
+	</header>
+	<div>
+		<p style="font-size:14px; text-align:center;margin-top:5px;color:#00925F">晒出交车时与客户的欢乐照片<br>收集更多点赞，赢取大奖</p>
+	<div>
+	
+	<ul class="used-status">
+			<li><span id="coupon-unuse" class="current-span">按人气排序</span></li>
+			<li><span id="coupon-used">按时间排序</span></li>
+	</ul>
+		
+	<div id="content" class="order-detail">
+		<ul id="bonus_items" class="row-fluid">
+		  
+		</ul>
+	</div>
+	
+	<!-- order detail -->
+	<div id = "userinfo" style="display:none; color: #494949" onClick="order_cancel()">
+		<p><h2>活动规则</h2></p>
+		<p style="font-size:9">
+			<span id="prized" > 
+				<p><b>活动时间：</b>3月16日-5月2日</p>
+				<p><b>活动规则:</b><br> 
+1.每位捷豹路虎销售顾问完成注册都可上传照片参与活动，在活动时间内已上传的照片通过点赞作为投票方式。<br>
+2.上传的照片需要是捷豹路虎销售顾问与客户提车时欢乐照片，其它照片视为无效。 <br>
+3.参与活动的捷豹路虎销售顾问可分享自己上传的照片，并邀请好友参与投票。每个微信号每天只能对同一张照片点赞一次，重复无效。<br>
+4.活动结束时，点赞数最多的前十名将获得100积分奖励。</p>
+                <p><b>活动奖励：</b><br>
+1.第一次上传照片即可获得参与奖50积分。<br>
+2.每次点赞可获得2积分，每天对不同照片的前10次点赞视为有效，积分上限为20积分。<br>
+3.活动结束时，点赞数最多的前十名将获得100积分奖励。</p><br>
+			</span>
+		</p>
+		
+		<!--p>
+			<span id="cancel-btn" class="submit" onclick="order_cancel()">
+				我知道了
+			</span>
+		</p-->
+    </div>
+	
+	<!--div id = "wait" style="display:none">
+		<p><h2 style="font-size:20px;margin:10px;"><b>订单生成中..请稍候..</h2></p>
+    </div-->
+	
+	<div id="check_more_div" style="text-align:center; width:80%; display:none; margin-left:10%">
+		<p>
+			<span id="check_more" class="submit" onclick="check_more()">
+				查看更多靓照...
+			</span>
+		</p>
+	</div>
+	
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/cookie.js" type="text/javascript"></script>
+<script src="js/head.js"></script>
+<script type="text/javascript">
+	var sort = 0;
+	var bRunning = false;
+	var imgbase = "http://jlrsalesacademy-pic.stor.sinaapp.com/";
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
+	var today_try = 'share'+mm+'d' + dd;
+	var limit;
+	var sort;
+	var phone;
+		function getQueryString(name)
+		{
+			// 如果链接没有参数，或者链接中不存在我们要获取的参数，直接返回空
+			if(location.href.indexOf("?")==-1 || location.href.indexOf(name+'=')==-1)
+			{
+				return '';
+			}
+		 
+			// 获取链接中参数部分
+			var queryString = location.href.substring(location.href.indexOf("?")+1);
+		 
+			// 分离参数对 ?key=value&key2=value2
+			var parameters = queryString.split("&");
+		 
+			var pos, paraName, paraValue;
+			for(var i=0; i<parameters.length; i++)
+			{
+				// 获取等号位置
+				pos = parameters[i].indexOf('=');
+				if(pos == -1) { continue; }
+		 
+				// 获取name 和 value
+				paraName = parameters[i].substring(0, pos);
+				paraValue = parameters[i].substring(pos + 1);
+		 
+				// 如果查询的name等于当前name，就返回当前值，同时，将链接中的+号还原成空格
+				if(paraName == name)
+				{
+					return unescape(paraValue.replace(/\+/g, " "));
+				}
+			}
+			return '';
+		};
+		
+	function showList(param_sort, param_limit, first_time)
+	{
+		//if(sort == param_sort && param_limit == limit && first_time == 0)
+			//return;
+		
+		sort = param_sort;
+		limit = param_limit;
+			
+		var submit_data = {
+				'limit': param_limit,
+				'sort' : param_sort
+			};
+			
+		$.ajax({
+         url: 'share_pic_query.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+		 
+			var lis = document.querySelectorAll('#bonus_items li');
+			for(var i=0; li=lis[i]; i++) {
+				li.parentNode.removeChild(li);
+			}
+			
+			//change json
+			var total = 0;
+			for(var i = 0; i < data.length; ++i)
+			{
+				var content = '<li><div class="thumbnail"><div class="thumbnail-image">';
+				var img = imgbase + data[i]['pic_name'];
+				var id_string = new String(data[i]['record_id']);
+				id_string = id_string.replace(/(^\s*)|(\s*$)/g, "");
+				var url = '<a href="share_pic_detail.html?user='+ id_string +'">';
+				content = content + url+ '<img src="'+img+'"></img></a></div><div class="caption">';
+				var name = '<h3>'+ '<b>'+data[i]['usr_name']+'</b></h3>';
+				var msg =  '<p>' + data[i]['msg']+'</p>';
+				var time =  '<p>' + data[i]['upload_time']+'</p>';
+				var btnExchange = '<input type="button" class = "btn" value="' + data[i]['number']+'赞" id = "'+ data[i]['record_id']+'" onclick="order_confirm(this.id)"></input>';
+				var end ='</div></div></li>';
+				content = content + name+ msg + time + btnExchange + end;
+				
+				var li = document.createElement('li');
+				li.innerHTML = content;
+				document.querySelector('#bonus_items').appendChild(li);
+			}
+			if( (parseInt(data.length) % 4) == 0)
+			{
+				$("#check_more_div").show();
+			}
+			
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+		
+	}
+	
+	$('#coupon-unuse').on('click',function(){
+				$('#coupon-unuse').addClass('current-span');
+				$('#coupon-used').removeClass('current-span');
+				sort = 0;
+				showList(sort, limit, 0);
+			});
+
+	$('#coupon-used').on('click',function(){
+		$('#coupon-unuse').removeClass('current-span');
+		$('#coupon-used').addClass('current-span');
+		sort = 1;
+		showList(sort, limit, 0);
+		//showUsed();
+	});
+	
+	var phone;
+	$(document).ready ( function(){
+		
+		phone = getCookie("mobile");
+		
+		/*var times = getCookie("times");
+		if(times)
+		{
+			//setCookie(today_try, times);
+		}
+		else{
+			setCookie(today_try, 0);
+		}*/
+		
+		//query item info
+		limit = getQueryString("limit");
+		if(!limit)
+		{
+			limit = 4;
+		}
+		
+		sort = getQueryString("sort");
+		if(!sort)
+		{
+			sort = 0;
+		}
+		
+		if(sort == 1)
+		{
+			$('#coupon-unuse').removeClass('current-span');
+			$('#coupon-used').addClass('current-span');
+		}
+		else
+		{
+			$('#coupon-unuse').addClass('current-span');
+			$('#coupon-used').removeClass('current-span');
+		}
+		
+		showList(sort, limit, 1);
+	});
+	
+	function order_confirm(id)
+	{
+	    //check running
+		if(bRunning)
+			return;
+		bRunning = true;
+
+		//check login
+		if(!phone)
+		{
+			alert("请登录!");
+			return;
+		}
+		
+		document.getElementById(id).disabled = true;
+		
+		var score = 2;
+		var submit_data = {'record_id': id, 'score':score, 'phone': phone};
+		
+		//item info
+		$.post('share_pic_add.php', submit_data,
+			function(data) {
+				if(data && data.status != 0) {
+					//alert(data.msg);点赞成功
+					add_number(id);
+					post_add_number(id);
+					bRunning = false;
+					document.getElementById(id).disabled = false;
+					return;
+				} else {
+					alert(data.msg);
+					bRunning = false;
+					document.getElementById(id).disabled = false;
+					return;
+				}
+			},
+			"json")	
+	}
+	
+	$('.go-back').on("click",function(){
+	  $("#userinfo").show();
+	})
+	
+	function order_cancel()
+	{
+		$("#userinfo").hide();
+		//$("#item_confirm").html("");
+	}
+	
+	function check_more()
+	{
+		limit = parseInt(limit)+4;
+		var new_url = "share_pic.html?limit="+limit+"&sort="+sort;
+		window.location.replace(new_url);
+	}
+	
+	function add_number(id)
+	{
+		var value = document.getElementById(id).value;
+		var numb = value.match(/\d/g);
+		numb = numb.join("");
+		numb = parseInt(numb)+1;
+		var num_new = numb + "赞";
+		document.getElementById(id).value = num_new;
+	}
+	
+	function post_add_number(id)
+	{
+		var submit_data = {'record_id': id};
+		
+		//item info
+		$.post('share_pic_add_number.php', submit_data,
+			function(data) {
+			},
+			"json")	
+	}
+	
+</script>	
+
+<script>
+
+</script>
+	
+</body>
+</html>

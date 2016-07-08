@@ -1,0 +1,457 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>查看商品信息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<style>
+#bonus_items .first {
+  margin-left: 0;
+}
+
+#bonus_items li {
+  margin-top: 18px;
+}
+#bonus_items .thumbnail-image {
+	text-align: center;
+}
+#bonus_items h3 {
+font-size: 18px;
+margin-bottom: 8px;
+color:#46A973;
+/* line-height: 1.2em; */
+/* height: 3em; */
+}
+
+.thumbnail {
+display: block;
+padding: 4px;
+line-height: 20px;
+border: 1px solid #ddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+-webkit-transition: all .2s ease-in-out;
+-moz-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+
+img {
+width: auto;
+height: 250px;
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;
+}
+
+.thumbnail .caption {
+padding: 9px;
+color: #555;
+}
+
+.btn-primary {
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top,#08c,#04c);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+background-image: -webkit-linear-gradient(top,#08c,#04c);
+background-image: -o-linear-gradient(top,#08c,#04c);
+background-image: linear-gradient(to bottom,#08c,#04c);
+background-repeat: repeat-x;
+border-color: #04c #04c #002a80;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn {
+margin-top: 5px;
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+background-repeat: repeat-x;
+border: 1px solid #ccc;
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+}
+
+p {
+font-size: 14px;
+margin-bottom: 2px;
+}
+
+.thumbnail .caption {
+margin-left: 5%;
+}
+body {
+background: url('') no-repeat center center;
+  margin:0;
+  height:100%;
+  min-height:100%;
+}
+
+ul{
+max-width: 90%;
+margin-left: 5%;
+}
+
+#userinfo {
+position:absolute;
+width:260px;
+height:350px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box1.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -175px;
+}
+
+#wait {
+position:absolute;
+width:260px;
+height:50px;
+z-index:15;
+text-align:center;
+background-size:100% 100%;
+background-image: url(images/box1.png);
+font-family: "Microsoft YaHei", Droid Sans, Arial, Helvetica, sans-serif;
+font-size: 2em;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-left: -130px;
+margin-top: -25px;
+}
+
+#userinfo h2 {
+font-weight: normal;
+font-size: 1em;
+text-align: center;
+margin-top:15px;
+}
+
+#userinfo a:hover {
+color:# yellow;
+}
+
+#userinfo a {
+text-decoration: none;
+color:# #cccccc;
+font-size: 3.5em;
+}
+
+#userinfo p {
+color:# rgba(65, 65, 220, 1.0);
+font-size: 10pt;
+font-family: 'Microsoft YaHei', Palatino, Arial, Helvetica, sans-serif;
+margin-top: 6px;
+margin-left: 20px;
+text-align: left;
+margin-right: 20px;
+}
+
+.submit
+{
+	padding: 8px 0;
+	font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+	<header id="header" class="header-topbar">
+		<!--a class="go-back" href="info.html"><img src="images/home.png"/></a-->
+		<h1 class="header-title">查看商品信息</h1>
+		<!--a class="topbar-right" href="msg.html"><img src="images/msg.png"/></a>
+		<!--span id="cart-count" class="cart-count"></span-->
+	</header>
+
+	<div id="bonus_items" class="order-detail">
+		<!--ul id="bonus_items" class="row-fluid">
+		  
+		</ul-->
+	</div>
+	
+	<!-- order detail -->
+	<div id = "userinfo" style="display:none">
+		<p><h2>订单确认</h2></p>
+		<p style="font-size:9">
+			<span id="prized" > 
+				请仔细核对您的积分兑换订单信息！订单提交后，相应积分会被扣除！
+			</span>
+		</p>
+		
+		<div id="item_confirm">
+		</div>
+		
+		<p>
+			<span id="save-btn" class="submit" onclick="bonus_exchange()">
+				提交资料
+			</span>
+		</p>
+		<p>
+			<span id="cancel-btn" class="submit" onclick="order_cancel()">
+				取消订单
+			</span>
+		</p>
+    </div>
+	
+	<div id = "wait" style="display:none">
+		<p><h2 style="font-size:20px;margin:10px;"><b>订单生成中..请稍候..</h2></p>
+    </div>
+	
+<script src="js/jquery-2.0.3.min.js"></script>
+
+<script src="js/head.js"></script>
+<script type="text/javascript">
+	var item_id;
+	var bRunning = false;
+	
+	var phone;
+		function getQueryString(name)
+		{
+			// 如果链接没有参数，或者链接中不存在我们要获取的参数，直接返回空
+			if(location.href.indexOf("?")==-1 || location.href.indexOf(name+'=')==-1)
+			{
+				return '';
+			}
+		 
+			// 获取链接中参数部分
+			var queryString = location.href.substring(location.href.indexOf("?")+1);
+		 
+			// 分离参数对 ?key=value&key2=value2
+			var parameters = queryString.split("&");
+		 
+			var pos, paraName, paraValue;
+			for(var i=0; i<parameters.length; i++)
+			{
+				// 获取等号位置
+				pos = parameters[i].indexOf('=');
+				if(pos == -1) { continue; }
+		 
+				// 获取name 和 value
+				paraName = parameters[i].substring(0, pos);
+				paraValue = parameters[i].substring(pos + 1);
+		 
+				// 如果查询的name等于当前name，就返回当前值，同时，将链接中的+号还原成空格
+				if(paraName == name)
+				{
+					return unescape(paraValue.replace(/\+/g, " "));
+				}
+			}
+			return '';
+		};
+	
+	$(document).ready ( function(){
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = "personal_info.html";
+			window.location.href = "login.html";
+		}
+		
+		var imgbase = "http://jlrsalesacademy-item.stor.sinaapp.com/";
+		
+		item_id = getQueryString("item_id");
+		if(!item_id)
+		{
+			sessionStorage.preTab = "personal_info.html";
+			window.location.href = "login.html";
+		}
+		
+		//query item info
+		var submit_data = {
+				'item_id': item_id,
+			};
+		$.ajax({
+         url: 'bonus_item_query_byid.php',
+         type: "POST",
+         data: submit_data,
+         dataType: "json",
+		 async: false,
+         success:function(data) {
+		
+				var content = '<div class="thumbnail"><div class="thumbnail-image">';
+				var img = imgbase + data[0]['item_pic'];
+				content = content + '<img src="'+img+'"></img></div><div class="caption">';
+				var caption = '<hr><h3>'+ '<b>'+data[0]['item_name']+'</b></h3>';
+				var stock = '<p>' + '<b>商品库存: </b>'+ data[0]['item_num']+' 件</p>';
+				var value = '<p>' + '<b>兑换所需积分: </b>' + data[0]['item_value']+' 积分</p>';
+				var btnExchange = '<a class = "btn" id="' + data[0]['item_id']+'" onclick="order_confirm(this.id)">	立即兑换  </a>';
+				//var end ='';
+				var desp =  '<br><br><p><h3>商品文字说明</h3></p><p><hr>' + data[0]['item_desp']+'</p>';
+				var item_pics = '<br><p><h3>商品图片展示</h3></p><hr></div>';
+				if(data[0]['item_pic1'] != "" && data[0]['item_pic1'] != ".jpeg")
+				{
+					var img1 = imgbase + data[0]['item_pic1'];
+					item_pics = item_pics + '<div class="thumbnail-image"><img src="'+img1+'" style="height:auto"></img></div>>';
+				}
+				if(data[0]['item_pic2'] != "" && data[0]['item_pic2'] != ".jpeg")
+				{
+					var img2 = imgbase + data[0]['item_pic2'];
+					item_pics = item_pics + '<div class="thumbnail-image"><img src="'+img2+'" style="height:auto"></img></div>';
+				}
+				if(data[0]['item_pic3'] != "" && data[0]['item_pic2'] != ".jpeg")
+				{
+					var img3 = imgbase + data[0]['item_pic3'];
+					item_pics = item_pics + '<div class="thumbnail-image"><img src="'+img3+'" style="height:auto"></img></div>';
+				}
+				item_pics = item_pics + '</div>';
+ 				
+				content = content + caption + stock + value + btnExchange + desp+item_pics;
+				
+				//var li = document.createElement('li');
+				//li.innerHTML = content;
+				$('#bonus_items').append(content);
+			
+			},
+		 error:function(){
+				alert("读取信息错误！");
+				return;
+			}
+         });
+	});
+	
+	function bonus_exchange()
+	{
+		var submit_data = {
+				'item_id': item_id,
+				'phone' : localStorage.mobile
+			};
+		
+		//item info
+		$.post('bonus_exchange_execute.php', submit_data,
+			function(data) {
+				if(data && data.status == 1) {
+					alert("兑换积分成功！");
+					location.reload(true);
+					item_id = 0;
+					$("#item_confirm").html("");
+					
+				} else {
+					$("#userinfo").hide();
+					$("#wait").hide();
+					$("#item_confirm").html("");
+					alert(data.msg);
+				}
+			},
+			"json")	
+	}
+	
+	function order_confirm(id)
+	{
+		if(bRunning)
+			return;
+			
+		item_id = id;
+		var itemData;
+		var personalData;
+		
+		var submit_data = {'item_id': item_id};
+		
+
+		$("#wait").show();
+		bRunning = true;
+		//item info
+		$.post('item_info_query.php', submit_data,
+			function(data) {
+				if(data) {
+					item_data = data;
+							//personal info 
+					var submit_data_person = {'phone': localStorage.mobile};
+					//item info
+					$.post('person_info_query.php', submit_data_person,
+						function(data_person) {
+							if(data_person) {
+								personal_data = data_person;
+								if(!item_data || !data_person)
+									return;
+								
+								var caption = '<p><b>兑换商品:  </b>'+item_data['item_name']+'</p>';
+								var value = '<p><b>所需积分:  </b>' + item_data['item_value']+' 积分</p>';
+								var person_name = '<p><b>用户姓名:  </b>' + data_person['usr_name']+'</p>';
+								var person_mobile = '<p><b>用户电话:  </b>' + data_person['phone']+'</p>';
+								var person_sales = '<p><b>所属经销商:  </b><br>' + data_person['dealer']+'</p>';
+								var content = caption + value + person_name + person_mobile + person_sales;
+								
+								$("#item_confirm").append(content);
+								$("#wait").hide();
+								//item info
+								$("#userinfo").show();
+								bRunning = false;
+							} else {
+								$("#userinfo").hide();
+								$("#wait").hide();
+								bRunning = false;
+								alert("查询商品信息失败");
+								return;
+							}
+						},
+						"json")	
+					
+				} else {
+				    bRunning = false;
+					$("#wait").hide();
+					$("#userinfo").hide();
+					alert("查询商品信息失败！");
+					return;
+				}
+			},
+			"json")	
+	}
+	
+	function order_cancel()
+	{
+		$("#userinfo").hide();
+		$("#item_confirm").html("");
+	}
+	
+	
+</script>	
+
+<script>
+
+</script>
+	
+</body>
+</html>

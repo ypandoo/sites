@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--微信大转盘抽奖程序由KuangGanlin于2014-2-25日修改
+修改后,转动的度数和所得的奖项主要用index.php来控制-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+
+<title>幸运大转盘抽奖</title>
+<link href="css/activity-style.css" rel="stylesheet" type="text/css">
+<style>
+div{
+overflow:hidden;
+}
+</style>
+</head>
+
+<body class="activity-lottery-winning">
+<div class="main">
+<script type="text/javascript">
+/*var loadingObj = new loading(document.getElementById('loading'),{radius:20,circleLineWidth:8});   
+    loadingObj.show();   */
+</script>
+ <div id="outercont">
+<div id="outer-cont">
+<div id="outer"><img src="images/activity-lottery-1.png" width="310px"></div>
+</div>
+<div id="inner-cont">
+<div id="inner"><img src="images/activity-lottery-2.png"></div>
+</div>
+</div>
+<div class="content">
+<div class="boxcontent boxyellow" id="result" style="display:none">
+<div class="box">
+<div class="title-orange" style="color:#000000;"><span>恭喜你中奖了</span></div>
+<div class="Detail">
+            <a class="ui-link" href="#" id="opendialog" style="display: none;" data-rel="dialog"></a>
+<p>你中了：<span class="red" id="prizetype">一等奖</span></p>
+<p>你的兑奖SN码：<span class="red" id="sncode"></span></p>
+<p class="red">本次兑奖码已经关联你的微信号，你可向公众号发送 兑奖 进行查询!</p>
+               
+<p>
+<input name="" class="px" id="tel" type="text" placeholder="输入您的手机号码">
+</p>
+<p>
+<input class="pxbtn" id="save-btn" name="提 交" type="button" value="提 交">
+</p>
+</div>
+</div>
+</div>
+<div class="boxcontent boxyellow">
+<div class="box">
+<div class="title-green"><span>奖项设置：</span></div>
+<div class="Detail">
+<p>特等奖：100积分 </p>
+<p>一等奖：50积分 </p>
+<p>二等奖：30积分 </p>
+<p>三等奖：20积分 </p>
+<p>四等奖：10积分 </p>
+<p>五等奖：5积分 </p>
+<p>特别奖：再来一次</p>
+</div>
+</div>
+</div>
+<div class="boxcontent boxyellow">
+<div class="box">
+<div class="title-green">活动说明：</div>
+<div class="Detail">
+<p>本次活动每人每天可以转3次. </p>
+<p>中奖所获积分可以前去个人中心查看. </p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<script src="js/jquery.js" type="text/javascript"></script> 
+<script src="js/cookie.js" type="text/javascript"></script> 
+
+<script type="text/javascript">
+function randomRange(min, max) {
+	var randomNumber;
+	randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+	return randomNumber;
+}//end func 获得范围内随机整数
+
+var phone;
+$(document).ready ( function(){	
+	if(window.localStorage)
+	{
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = location.href;
+			window.location.href = "login.html";
+		}
+		else
+		{
+			phone = localStorage.mobile;
+		}
+	}else{
+		phone = getCookie("mobile");
+		if(phone == null)
+		{
+			sessionStorage.preTab = location.href;
+			window.location.href = "login.html";
+		}
+	}
+});
+
+$(function() {
+	window.requestAnimFrame = (function() {
+		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+		function(callback) {
+			window.setTimeout(callback, 1000 / 60)
+		}
+	})();
+	var totalDeg = 360 * 3 + 0;
+	var steps = [];
+	var lostDeg = [36, 66, 96, 156, 186, 216, 276, 306, 336];//这是以前不在获奖范围内的度数
+	var prizeDeg = [6, 126, 246]; //这是以前获取的度数,分别为一等奖度数、二等奖度数、三等奖度数
+	//var lostDeg = [36, 66, 96, 156, 186, 216, 276, 306, 336];//这是我修改后的,其实不起作用了
+	//var prizeDeg = [6,36, 66, 96, 126,156, 186, 216,246, 276, 306, 336];//这是我修改后的,其实不起作用了
+	
+	var all_deg = [6, 36, 66, 96, 126, 156, 186, 216, 246, 276, 306, 336];
+	
+	var prize_text = "不要灰心！";
+	var lucky_num = 3;
+	var prized = 0;
+	var bonus_score = 0;
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1;
+	var today_try = 'm'+mm+'d' + dd;
+	
+	var prize, sncode;
+	var count = 0;
+	var now = 0;
+	var a = 0.01;
+	var strmsg;
+	var outter, inner, timer, running = false;
+	function countSteps() {
+		var t = Math.sqrt(2 * totalDeg / a);
+		var v = a * t;
+		for (var i = 0; i < t; i++) {
+			steps.push((2 * v * i - a * i * i) / 2)
+		}
+		steps.push(totalDeg)
+	}
+	function step() {
+	
+		outter.style.webkitTransform = 'rotate(' + steps[now++] + 'deg)';
+		outter.style.MozTransform = 'rotate(' + steps[now++] + 'deg)';
+		if (now < steps.length) {
+			requestAnimFrame(step)
+		} else {
+			running = false;
+			setTimeout(function() {
+			
+				if (prized == 1) {
+					alert("恭喜您中了" + prize_text + "!中奖信息已提交!");
+					//submit 
+					var submit_data = {
+								'phone': phone,
+								'bonus_score': bonus_score,
+								'bonus_type': '大转盘',
+								'bonus_neg': 0
+							};
+						
+					$.post('dzp.php', submit_data,
+						function(data) {
+							if(data.status == 1) 
+							{
+								//alert('中奖信息已成功提交！');
+							}
+							else{
+								alert('中奖信息提交失败');
+							}
+						},
+						"json")	
+				}	
+				else if(lucky_num == 11){
+					alert("恭喜您中了再来一次！");
+					var times = getCookie("times");
+					if(times)
+					{
+						times--;
+						setCookie(today_try, times);
+					}
+					else{
+						setCookie(today_try, 0);
+					}
+					
+				}else
+				{
+					alert("谢谢您的参与，下次再接再厉");
+				}
+			},
+			200)
+		}
+	}
+	//大概看了下，源码中是没有给start传参的，所以函数里的deg都是随机生成的，所以最后转盘转动的度数也会随机。如果给start传参，转盘的转动的度数就会确定（即你穿的角度+360*5），那么位置也就确定了。
+	function start(deg) {
+		var num = randomRange(1, 100);
+		lucky_num = 3;
+		prized = 0;
+		bonus_score = 0;
+		if(num == 1)//特等奖
+		{
+			lucky_num = 10;
+			prize_text = "特等奖";
+			prized = 1;
+			bonus_score = 100;
+		}
+		else if(num == 2 || num == 3)//1
+		{
+			lucky_num = 0;
+			prize_text = "一等奖";
+			prized = 1;
+			bonus_score = 50;
+		}
+		else if(num >= 4 && num <= 7)//2
+		{
+			lucky_num = 4;
+			prize_text = "二等奖";
+			prized = 1;
+			bonus_score = 30;
+		}
+		else if(num >= 8 && num <= 16)//3
+		{
+			lucky_num = 8;
+			prize_text = "三等奖";
+			prized = 1;
+			bonus_score = 20;
+		}
+		else if(num >= 17 && num <= 32)//4
+		{
+			lucky_num = 6;
+			prize_text = "四等奖";
+			prized = 1;
+			bonus_score = 10;
+		}
+		else if(num >= 33 && num <= 83)//5
+		{
+			lucky_num = 2;
+			prize_text = "五等奖";
+			prized = 1;
+			bonus_score = 5;
+		}
+		else if(num >= 84 && num <= 94)//再来一次
+		{
+			lucky_num = 11;
+			prize_text = "再来一次";
+		}
+		else
+		{
+			lucky_num = 1;
+			prize_text = "不要灰心！";
+		}
+		
+		deg = all_deg[lucky_num];
+		
+		//alert("random"+num+"lucky_num"+lucky_num);
+		running = true;
+		clearInterval(timer);
+		totalDeg = 360 * 5 + deg;
+		steps = [];
+		now = 0;
+		countSteps();
+		requestAnimFrame(step)
+	}
+	window.start = start;
+	
+	outter = document.getElementById('outer');
+	inner = document.getElementById('inner');
+	i = 10;
+	
+	$("#inner").click(function() {
+		if (running) return;
+		
+		var times = parseInt(getCookie(today_try));
+		if(times && times >= 3)
+		{
+			alert("亲，您今天已经参加过活动了喔！明天再来吧~");
+			return;
+		}
+		
+		if(times)
+		{
+			times++;
+			setCookie(today_try, times);
+		}
+		else
+		{
+			setCookie(today_try, 1);
+		}
+
+		prize = null;
+		start();
+		//running = false;		
+	})
+});
+
+</script>
+
+
+</body></html>

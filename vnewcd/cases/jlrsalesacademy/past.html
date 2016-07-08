@@ -1,0 +1,226 @@
+﻿
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>往期答卷</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="js/jquery-2.0.3.min.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+    var timer;
+	var counter = 5;
+	$(document).ready ( function(){
+		
+		if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+		{
+			sessionStorage.preTab = location.href;
+			window.location.replace( "login.html");
+			return;
+		}
+	
+		var submit_data1 = {
+				'phone': localStorage.mobile,
+				'date': 1
+		};
+		
+		$.post('paperstatus.php', submit_data1,
+				function(data) {
+					if(data && data.state == 0) {
+						$("#day1").html("周一答卷已完成");
+						$("#day1").unbind("click");
+						$("#day1").css('background-color',"#656867");
+					} 
+					else if (data && data.state == 1) {
+						//$("#day1").html("周一已完成")
+						$('#day1').bind('click', function () {
+							que_date(1);
+						});
+					}
+					else
+					{
+						$("#day1").html("周一答卷未开始");
+						$("#day1").unbind("click");
+						$("#day1").css('background-color',"#656867");
+					}
+				},
+				"json")	
+		
+		var submit_data2 = { 
+				'phone': localStorage.mobile,
+				'date': 2
+		};
+		
+		$.post('paperstatus.php', submit_data2,
+				function(data) {
+					if(data && data.state == 0) {
+						$("#day2").html("周二答卷已完成");
+						$("#day2").unbind("click");
+						$("#day2").css('background-color',"#656867");
+					} 
+					else if (data && data.state == 1) {
+						//$("#day1").html("周一已完成")
+						$('#day2').bind('click', function () {
+							que_date(2);
+						});
+					}
+					else
+					{
+						$("#day2").html("周二答卷未开始");
+						$("#day2").unbind("click");
+						$("#day2").css('background-color',"#656867");
+					}
+				},
+				"json")	
+		
+		var submit_data3 = {
+				'phone': localStorage.mobile,
+				'date': 3
+		};
+		$.post('paperstatus.php', submit_data3,
+				function(data) {
+					if(data && data.state == 0) {
+						$("#day3").html("周三答卷已完成");
+						$("#day3").unbind("click");
+						$("#day3").css('background-color',"#656867");
+					} 
+					else if (data && data.state == 1) {
+						$('#day3').bind('click', function () {
+							que_date(3);
+						});
+					}
+					else
+					{
+						$("#day3").html("周三答卷未开始");
+						$("#day3").unbind("click");
+						$("#day3").css('background-color',"#656867");
+					}
+				},
+				"json")	
+				
+		var submit_data4 = {
+				'phone': localStorage.mobile,
+				'date': 4
+		};
+		$.post('paperstatus.php', submit_data4,
+				function(data) {
+					if(data && data.state == 0) {
+						$("#day4").html("周四答卷已完成");
+						$("#day4").unbind("click");
+						$("#day4").attr("disabled", true);
+						$("#day4").css('background-color',"#656867");
+					} 
+					else if (data && data.state == 1) {
+						$('#day4').bind('click', function () {
+							que_date(4);
+						});
+					}
+					else
+					{
+						$("#day4").html("周四答卷未开始");
+						$("#day4").unbind("click");
+						$("#day4").attr("disabled", true);
+						$("#day4").css('background-color',"#656867");
+					}
+				},
+				"json")	
+				
+		var submit_data5 = {
+				'phone': localStorage.mobile,
+				'date': 5
+		};
+		
+		$.post('paperstatus.php', submit_data5,
+				function(data) {
+					if(data && data.state == 0) {
+						$("#day5").html("周五答卷已完成");
+						$("#day5").unbind("click");
+						$("#day5").attr("disabled", true);
+						$("#day5").css('background-color',"#656867");
+					} 
+					else if (data && data.state == 1) {
+						$('#day5').bind('click', function () {
+							que_date(5);
+						});
+					}
+					else
+					{
+						$("#day5").html("周五答卷未开始");
+						$("#day5").unbind("click");
+						$("#day5").attr("disabled", true);
+						$("#day5").css('background-color',"#656867");
+					}
+				},
+				"json")
+		//timer
+		/*timer = setInterval(function(){
+		var myDate=new Date();
+		var myDay = myDate.getDay();
+		for(var i = myDay; i <= 5; i++)
+		{
+			var weekday = ["周一答卷未开始","周二答卷未开始","周三答卷未开始","周四答卷未开始","周五答卷未开始","周六答卷未开始","周日答卷未开始"]
+			$("#day"+i).html(weekday[i]);
+			$("#day"+i).unbind("click");
+			$("#day"+i).attr("disabled", true);
+			$("#day"+i).css('background-color',"#656867");
+		}
+			if(counter <= 0) {
+			    clearInterval(timer);
+			}
+		},1000);*/	
+				
+		
+		
+				
+	});
+</script>
+</head>
+<body>
+
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">往期答卷</h1>
+	</header>
+
+	<div id="content" class="content-login" style="margin-top:5%">
+		
+		<div class="reg-row" style="">
+			<span class="submit" id="day1">周一答卷未完成</span>
+		</div>
+		
+		<div class="reg-row">
+			<span class="submit" id="day2">周二答卷未完成</span>
+		</div>
+		
+		<div class="reg-row">
+			<span class="submit" id="day3">周三答卷未完成</span>
+		</div>
+		
+		<div class="reg-row">
+			<span class="submit" id="day4">周四答卷未完成</span>
+		</div>
+		
+		<div class="reg-row">
+			<span class="submit" id="day5">周五答卷未完成</span>
+		</div>
+		
+		</span>
+	</div>
+
+	<script language="javascript">
+		
+		function que_date(ndate)
+		{
+			var par = 'showque.html?qdate=' + ndate;
+			window.location.href = par;
+		}
+		
+		
+	</script>
+</body>
+</html>

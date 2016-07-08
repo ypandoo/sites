@@ -1,0 +1,204 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/jquery.dynatable.css" />
+<link rel="stylesheet" href="css/table.css" />
+<title>每日数据查询</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.dynatable.js"></script>
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<h1 class="header-title">每日数据查询</h1>
+	</header>
+	
+	<div>
+	<span id="jb"></span><br>
+	<span id="lh"></span><br>
+	<span id="total"></span><br>
+	<span id="dzp_lh"></span><br>
+	<span id="dzp_jb"></span><br>
+	<span id="pic_lh"></span><br>
+	<span id="pic_jb"></span><br>
+	<span id="fast_lh"></span><br>
+	<span id="fast_jb"></span><br>
+	</div>
+	
+	<hr>
+		
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="begin_date" placeholder="本周开始日期（如2015-2-18）" value=""/></div>
+		</div>
+		
+		<span id="query_week" class="submit">
+			<span class="a2">每日数据查询</span>
+		</span>
+		
+		<div style="margin-top:15px width:80%">
+		    <table id="my-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-dynatable-column="jb_daily_total" data-dynatable-no-sort='true' class="dynatable-head">捷豹答题人数
+                        </th>
+						<th data-dynatable-column="lh_daily_total" data-dynatable-no-sort='true' class="dynatable-head">路虎答题人数
+                        </th>
+                        <th data-dynatable-column="jb_daily_full_score" data-dynatable-no-sort='true' class="dynatable-head">捷豹满分人数
+                        </th>
+						<th data-dynatable-column="lh_daily_full_score" data-dynatable-no-sort='true' class="dynatable-head">路虎满分人数
+                        </th>
+						<th data-dynatable-column="daily_all" data-dynatable-no-sort='true' class="dynatable-head">总参与人数
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="my-body">
+                </tbody>
+            </table>
+		</div>
+		
+		<!--span id="add_week" class="submit">
+			<span class="a2">生成周冠军</span>
+		</span-->
+	</div>
+	
+	<script type="text/javascript">
+
+				
+		var mytable =  $('#my-table').dynatable({
+			  
+			  //features
+			  features: {
+				  paginate: false,
+				  search: false,
+				  recordCount: false
+			  },
+	
+			}).data('dynatable');
+		
+		$(document).ready(function (e) {
+			//initialize table
+			var submit_data = {};
+			
+			$.post('daily_reg_query.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						$("#jb").text("捷豹注册人数: "+data.jb);
+						$("#lh").text("路虎注册人数: "+data.lh);
+						var total = parseInt(data.jb) + parseInt(data.lh);
+						$("#total").text("总注册人数: "+total);
+						$("#dzp_jb").text("捷豹大转盘人数: "+data.dzp_jb);
+						$("#dzp_lh").text("路虎大转盘人数: "+data.dzp_lh);
+						$("#pic_jb").text("捷豹晒照人数: "+data.pic_jb);
+						$("#pic_lh").text("路虎晒照人数: "+data.pic_lh);
+						$("#fast_jb").text("捷豹快问快答人数: "+data.fast_jb);
+						$("#fast_lh").text("路虎快问快答人数: "+data.fast_lh);
+					}
+				},
+				"json")  
+			
+		});
+		
+		
+		$('#query_week').on('click', function(){
+			
+			// 判断是否填写完毕
+			var date = $('#begin_date').val();
+
+			
+			if(begin_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			
+			
+			var submit_data = {
+				'date': date,
+			};
+			
+			$.post('daily_data_query.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						//update records
+						//mytable.settings.dataset.originalRecords = data;
+						//mytable.process();
+						$("#my-body").html("");
+							var content = "<tr><td>"+data['jb_daily_total']+'</td>';
+							content += "<td>"+data['lh_daily_total']+'</td>';
+							content += "<td>"+data['jb_daily_full_score']+'</td>';
+							content += "<td>"+data['lh_daily_full_score']+'</td>';
+							content += "<td>"+data['daily_all']+'</td></tr>';
+							$("#my-body").append(content);
+					}
+				},
+				"json") 	
+		});
+		
+		$('#add_week').on('click', function(){
+			
+			// 判断是否填写完毕
+			var begin_date = $('#begin_date').val();
+			var end_date = $('#end_date').val();
+			var month = $('#month').val();
+			
+			if(begin_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(end_date == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			if(month == ''){
+				alert('请务必输入正确的年月日');
+				return false;
+			}
+			
+			var department = $('#department').val();
+			if(department == "请选择捷豹或路虎")
+			{
+				return;
+			}
+			
+			var submit_data = {
+				'begin_date': begin_date,
+				'end_date': end_date,
+				'month': month,
+				'department':department,
+			};
+			
+			
+			$.post('honer_week_execute.php', submit_data, function(data){
+					if(data.status == 0)
+					{
+						alert(data.msg);
+					}
+					else 
+					{
+						alert("生成周冠军成功！");
+					}
+					;
+				},
+				"json") 	
+		});
+	</script>
+</body>
+</html>
