@@ -551,13 +551,13 @@ input[type="text"][disabled] {
 
 .newhead-container
 {
-    position: relative;
-    background: #ff3d00;
-    height: 250px;
-    overflow: hidden;
-    z-index: 1;
-    text-align: center;
-    padding-top: 60px;
+  position: relative;
+  background: #ff3d00;
+  height: 220px;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  padding-top: 80px;
 }
 
 .newhead-container .title
@@ -572,12 +572,14 @@ input[type="text"][disabled] {
     font-size: 18px;
     color: white;
     font-weight: 500;
+    line-height: :32px;
 }
 .newhead-container .title h2
 {
-    font-size: 14px;
-    color: white;
-    font-weight: 500;
+  font-size: 14px;
+      color: white;
+      font-weight: 500;
+      line-height: 38px;
 }
 
 .newhead-container .title h1 small
@@ -587,17 +589,18 @@ input[type="text"][disabled] {
 
 .personal-head
 {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    position: relative;
-    margin-left: -50px;
-    left: 50%;
-    border: 5px solid #FFF;
-    border-radius: 50% 50%;
-    text-align: center;
-    background-image: url('../img/personal-center.png');
-    background-size: 100% 100%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  /* position: relative; */
+  margin-left: 10%;
+  left: 20%;
+  border: 5px solid #FFF;
+  border-radius: 50% 50%;
+  text-align: center;
+  background-image: url('../img/personal-center.png');
+  background-size: 100% 100%;
+  float: left;
 }
 
 /*快速入口*/
@@ -637,22 +640,23 @@ input[type="text"][disabled] {
 
 .quick a.mymessage:after
 {
-    content: 'New';
-    display: inline-block;
-    position: absolute;
-    width: 60px;
-    height: 16px;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 900;
-    color: #fff;
-    right: -50px;
-    top: -90px;
-    /* top: 0px; */
-    text-align: center;
-    background: #FF3D00;
-    -webkit-transform: rotate(45deg);
-    /* transform: rotate(45deg); */
-    position: Relative;
+  content: '21';
+      display: inline-block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      /* line-height: 16px; */
+      font-weight: 500;
+      color: #fff;
+      right: -20px;
+      top: -70px;
+      /* top: 0px; */
+      text-align: center;
+      background: #FF3D00;
+      /* -webkit-transform: rotate(45deg); */
+      /* transform: rotate(45deg); */
+      position: Relative;
+      border-radius: 40px;
+      padding: 1px;
 }
-

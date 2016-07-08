@@ -22,7 +22,53 @@
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/angelcrunch.jq.c.js"></script>
+<style>
+.newhead-container {
+  position: relative;
+      background: #ff3d00;
+      height: 180px;
+      overflow: hidden;
+      z-index: 1;
+      text-align: center;
+      padding-top: 40px;
+}
 
+.personal-head {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    /* position: relative; */
+    margin-left: 10%;
+    left: 20%;
+    border: 5px solid #FFF;
+    border-radius: 50% 50%;
+    text-align: center;
+    background-image: url('img/personal-center.png');
+    background-size: 100% 100%;
+    float: left;
+}
+
+.newhead-container .title {
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+}
+
+.newhead-container .title h1 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    line-height: :32px;
+}
+
+.newhead-container .title h2 {
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+</style>
 </head>
 <body>
 <div class="details">
@@ -47,32 +93,45 @@
     </div>
     </div>
 
+    <div class="newhead-container">
+        <div class="personal-head">
+        </div>
+        <div class="title">
+          <h1>您好, Super Lei</h1>
+          <h2>当前会员等级：认证合伙人</h2>
+        </div>
+    </div>
+
     <div class="registration modules">
         <!-- Back-up form -->
-        <div class="avatar-area" style="background:#ff2d2d">
+        <!-- <div class="avatar-area" style="background:#ff2d2d">
             <h1 style="color:white">创建您的合伙人资料</h1>
             <p style="color:white">轻松找寻合伙项目开启财富之旅</p>
-        </div>
+        </div> -->
 
 
         <div class="investor-type layer-btn" style="height:auto; border:none" >
             <a>
-              <h2>1. 操作说明</h2>
-              <h4>项目等级跟资料完善程度有关。资料越完善投资人越容易关注到您</h4>
+              <h2>1. 会员等级</h2>
+              <h4>根据个人资料的完整程度分为：</h4>
+              <h4>一般合伙人 -> 认证合伙人 -> 经验合伙人 -> 机构合伙人</h4>
           </a>
         </div>
 
         <div class="investor-type layer-btn" style="height:auto; border:none" >
             <a>
-              <h2>2. 重点说明</h2>
-              <h4>项目等级跟资料完善程度有关。资料越完善投资人越容易关注到您</h4>
+              <h2>2. 会员等级注释</h2>
+              <h4>一般合伙人：</h4><h4>初涉实体店铺合伙运营经验，需上传相关证明</h4>
+              <h4>经验合伙人：</h4><h4>有过多次(3次以上)实体店铺合伙运营经验，或基金，私募公司高管。有强大的实体店铺资源，能提供其他创业支持资源</h4>
+              <h4>机构合伙人：</h4><h4>投资机构，公司机构，基金业协会备案登记的私募股权基金</h4>
           </a>
         </div>
 
         <div class="investor-type layer-btn" style="height:auto; border:none" >
             <a>
               <h2>3. 其他说明</h2>
-              <h4>项目等级跟资料完善程度有关。资料越完善投资人越容易关注到您</h4>
+              <h4>*为必填选项。</h4>
+              <h4>不断提升会员等级，可查看的项目信息将会更加全面完整。并可约谈项目参与路演。</h4>
           </a>
         </div>
 
@@ -118,7 +177,9 @@
 
     <div>
     <a class="submit-new-btn text_btn active_start">
-                   + 创建合伙人</a>
+                   + 首次填写个人资料</a>
+    <a class="submit-new-btn text_btn active_start" style="margin-top:10px; margin-bottom:20px">
+                    + 修改个人资料/提升会员等级</a>
     </div>
 
 </div>
