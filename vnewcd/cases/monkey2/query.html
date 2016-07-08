@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" >
+<link rel="stylesheet" href="css/jquery.dynatable.css" />
+<link rel="stylesheet" href="css/table.css" />
+<title>查询个人分数</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.dynatable.js"></script>
+</head>
+ 
+
+<body>
+
+		<div style="margin-top:15px width:80%">
+		    <table id="my-table" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th data-dynatable-column="user_name" data-dynatable-no-sort='true' class="dynatable-head">姓名
+                        </th>
+						<th data-dynatable-column="phone" data-dynatable-no-sort='true' class="dynatable-head">手机
+                        </th>
+                        <th data-dynatable-column="telecom" data-dynatable-no-sort='true' class="dynatable-head">答题积分
+                        </th>
+						<th data-dynatable-column="item_name" data-dynatable-no-sort='true' class="dynatable-head">活动积分
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="my-body">
+                </tbody>
+            </table>
+		</div>
+		
+		<!--span id="add_week" class="submit">
+			<span class="a2">生成周冠军</span>
+		</span-->
+	</div>
+	
+	<script type="text/javascript">
+			
+	
+			$.post('query.php', function(data){
+						var json1 = data;
+						var mytable =  $('#my-table').dynatable({
+							  //data sets
+							  dataset: {
+								records: json1,
+							  },
+							  
+							  //features
+							  features: {
+								  paginate: false,
+								  search: false,
+								  recordCount: false
+							  },}).data('dynatable');
+		
+					},
+				"json"); 	
+			
+	</script>
+</body>
+</html>

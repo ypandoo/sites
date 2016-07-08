@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+     <script src="jquery.js"></script>
+    <script src="crafty.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <link href="animation.css" rel="stylesheet">
+
+    <title>男人的内心有颗坚硬的水煮蛋</title>
+    <style>
+    body,div,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,iframe,input,textarea,select,label,article,aside,footer,header,menu,nav,section,time,audio,video {
+      margin:0;
+      padding:0;
+    }
+    article,aside,footer,header,hgroup,nav,section,audio,canvas,video,img {
+        display: block;
+    }
+    body {
+        font-size: 100%; 
+        font-family:Helvetica,STHeiti,Droid Sans Fallback;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+    }
+    textarea {
+        resize: none;
+    }
+    iframe,img {
+        border:0;
+    }
+    ul,ol {
+        list-style:none;
+    }
+    input,
+    select,
+    textarea {
+        outline: 0;
+        -webkit-user-modify: read-write-plaintext-only;
+    }
+    input {
+        -webkit-appearance: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    body,html{
+        width: 100%; 
+        height: 100%; 
+        position: relative;
+        overflow: hidden;
+        margin: 0; padding: 0;
+        /*background: #000;*/
+        /*background: #13a438;*/
+        background-image:url('images/Caopi.png');
+        background-size: 100% 100%;
+    }
+
+
+    #gamestart{
+        width: 100%;
+        position: absolute;
+        top: 0; bottom: 0; 
+        z-index: 11;
+    }
+    .start_bg {
+        position: absolute;
+        top: -44px; left: 0; z-index: -1;
+        width: 100%;
+        background: url(images/jz.gif) no-repeat center center;
+    }
+    #gamestart .btn,.zhiyin .btn {
+        width: 160px;
+        height: 60px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 58px;
+        color: #333;
+        position: absolute;
+        left: 50%;
+        margin: 0 0 0 -80px;
+        font-size: 20px;
+        font-family: 'Microsoft YaHei';
+        color: #333;
+    }
+    #gamestart .rule{
+        bottom: 115px;
+        background-image: url(images/btn_rule.png);
+        background-size: 100% 100%;
+    }
+    #gamestart .start,.zhiyin .start{
+       
+        bottom: 40px;
+        background-image: url(images/btn_start.png);
+        background-size: 100% 100%;
+    }
+    .zhiyin .start {
+        bottom:20px !important;
+    }
+    .IOS #gamestart .rule{
+        bottom: 140px;
+    }
+    .IOS #gamestart .start,.zhiyin .start{
+        bottom: 80px;
+    }
+    .athour {
+        width: 100%; text-align: center; padding: 10px 0;
+        position: absolute;
+        left: 0; bottom: 0;
+    }
+    .IOS .athour{
+        bottom: 44px;
+    }
+    .athour span{
+        font-size: 11px;
+        color: #1c5b35;
+    }
+    .athour span:nth-of-type(1){
+        padding-right: 10px;
+    }
+
+#interface .life{display:none}
+    .ruleshadow{
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background:rgba(0,0,0,0.8);
+        z-index: 10;
+    }
+    
+    .rulebox{
+        width: 250px; height: 300px;
+        position: absolute;
+        left: 50%; top: 40%;
+        margin: -150px 0 0 -125px;
+        background-image: url(images/box.png);
+        background-size: 100% 100%;
+        border-radius: 5px;
+        opacity: 0; z-index: -1;
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        font-family: 'Microsoft YaHei'
+    }
+    .x_rulebox{
+        width: 130px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    right: 7px;
+    /* top: 10px; */
+    background: url(images/x_rulebox.png) no-repeat left top;
+    background-size: 100%;
+    bottom: -70px;
+    left: 50%;
+    margin-left: -65px;
+    }
+    .rulebox h3{
+        color: #FFF700;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 0;
+        margin: 0;
+    }
+    .rulebox p{
+        color: #fff;
+        font-size: 14px;
+        line-height: 24px;
+        margin: 0;
+    }
+    .daoju_1{
+        display: inline;
+        float: left;
+        width: 40px; height: 30px;
+        background: url(images/daoju_1.png) no-repeat left top;
+        background-size: 100%;
+    }
+    .daoju_2{
+        display: inline;
+        float: left;
+        width: 42px; height: 47px;
+        background: url(images/daoju_2.png) no-repeat left top;
+        background-size: 100%;
+    }
+     .daoju_3{
+        display: inline;
+        float: left;
+        width: 34px; height: 46px;
+        background: url(images/daoju_3.png) no-repeat left top;
+        background-size: 100%;
+    }
+    .daoju_item{
+        padding: 8px 0
+    }
+    .daoju_item p{
+        line-height: 20px;
+        padding-left: 50px;
+    }
+    @-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+.opacity{
+    opacity: 1;
+}
+.r_index{
+        z-index: 11;
+    }
+.ruleshadow{
+    display: none;
+}
+
+
+.daojishi {
+    /*position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0; display: none;
+    z-index: 11;
+    background: url(images/daojishu_bg.png) repeat left top;
+    background-size: 100%;*/
+    display: none;
+}
+.daojishiline{
+    width: 100%;
+    height: 95px;
+    position: absolute;
+    top: 109px;
+    left: 0;
+    background: #ffe400;
+    z-index: 1;
+}
+.daojishibox{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    height: 80px;
+    margin-top: 0px;
+    padding: 0;
+    z-index: 999;
+    background-color: rgba(174, 229, 254, 0.88);
+    margin-left: -50%;
+    left: 50%;
+    text-align: center;
+    border-top: 2px solid #0E729F;
+    border-bottom: 2px solid #0E729F;
+}
+.daojishipangzi {
+    width: 111px;
+    height: 102px;
+    position: absolute;
+    left: 50%; bottom: 50px;
+    margin: 0 0 0 -55px;
+    background: url(images/daojishipangzi.png) no-repeat left top;
+    background-size: 100%;
+    z-index: -1;
+}
+.daojishinum{
+    font-size: 50px;
+    color: #0E729F;
+    line-height: 80px;
+}
+
+.gameend{
+    position: absolute;
+    width: 100%;
+    top: 0; bottom: 0;z-index: 11;
+    /*background: #08b134 url(images/game_end.jpg) no-repeat center top;*/
+    background-size: 100%;
+    display:none;
+}
+.game_fenshu {
+    width: 100%; text-align: center;
+    padding: 40px 0 0;
+    font-size: 36px; color: #ffff00;
+}
+.game_fenshu span {
+    font-size: 70px;
+}
+.game_paiming {
+    color: #ffff00;
+    font-size: 18px;
+    text-align: center;
+display:none
+}
+#jiantou{ display: none;}
+
+.game_ogain{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #ffff00;
+    color: #333;
+    box-shadow: 0 5px 0px #07942c;
+    box-shadow: 0 5px 0px rgba(0,0,0,0.17);
+    position: absolute;
+    left: 50%; bottom: 92px;
+    margin: 0 0 0 -40%;
+}
+.game_chakan{
+    width: 36%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #0047c5;
+    color: #fff;
+    box-shadow: 0 5px 0px #07942c;
+    box-shadow: 0 5px 0px rgba(0,0,0,0.17);
+    position: absolute;
+    left: 10%; bottom: 36px;
+}
+.game_share{
+    width: 36%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #f8317c;
+    color: #fff;
+    box-shadow: 0 5px 0px #07942c;
+    box-shadow: 0 5px 0px rgba(0,0,0,0.17);
+    position: absolute;
+    right: 10%; bottom: 36px;
+}
+.IOS .game_ogain{
+    bottom: 112px;
+}
+.IOS .game_chakan{
+    bottom: 56px;
+}
+.IOS .game_share{
+    bottom: 56px;
+}
+
+.listwarp{
+    background: #0b9f31;
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 100%;
+    z-index: 11;
+    display:none;
+}
+.listcent{
+    width:290px;
+    position: absolute;
+    left: 50%; top: 15px; bottom: 0;
+    margin: 0 0 0 -145px;
+}
+.listtab{
+    width: 100%;
+    height: 35px;
+}
+.listtab li {
+    width: 50%;
+    display: inline; float: left;
+    height: 35px; line-height: 35px;
+    text-align: center;
+    color: #fff; font-size: 15px;
+}
+.listtab li.current{
+    color: #0b9f31;
+    background: #d1f8db;
+}
+.listbox{
+    overflow: hidden;
+    display: none;
+} 
+.listbox ul{
+    margin-top: -1px;
+    /*background: #d1f8db;*/
+} 
+.show{
+    display: block;
+}
+.listbox li {
+    height: 40px; line-height: 40px;
+    border-top:  1px solid #fff;
+    border-bottom:  1px solid #a5ddb3;
+} 
+.listbox li i{
+    font-size: 16px;
+    display: inline; float: left;
+    color: #ff4e00;
+    font-style: normal;
+    width: 50px; text-align: center;
+    padding: 0 5px;
+} 
+.listbox li img{
+    width: 32px; height: 32px;
+    display: inline; float: left;
+    margin:  4px 5px 0;
+}
+.listbox li strong{
+    padding: 0 5px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+    width: 110px; line-height: 40px; overflow: hidden;
+    display: inline; float: left;
+}
+.listbox li span{
+    color: #0b9f31;
+    font-size: 18px;
+    display: inline; float: left;
+    width: 58px; padding: 0 5px; text-align: left;
+}
+.listbox li.current{
+    background: #88e5a0;
+    border: none;
+}
+#huojiang_list li img{
+    margin: 4px 10px 0;
+}
+#huojiang_list li strong{
+    width: 110px;
+}
+#huojiang_list li span{
+    width: 108px;
+}
+.guizetxt{
+    font-size: 13px;
+    color: #fff; padding: 5px 0; line-height: 20px;
+    position: absolute;
+    bottom: 0; width: 100%;
+    left: 0;
+}
+.share_1{
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #f8317c;
+    color: #fff;
+    box-shadow: 0 5px 0px #07942c;
+    box-shadow: 0 5px 0px rgba(0,0,0,0.17);
+    position: absolute;
+    left: 0%; bottom: 36px;
+}
+.again_1{
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #ffff00;
+    color: #333;
+    box-shadow: 0 5px 0px #07942c;
+    box-shadow: 0 5px 0px rgba(0,0,0,0.17);
+    position: absolute;
+    right: 0%; bottom: 36px;
+}
+.IOS .share_1{
+    bottom: 56px
+}
+.IOS .again_1{
+    bottom: 56px
+}
+
+
+.QQloading{
+    width: 46px; height: 46px;
+    position: absolute;
+    left: 50%; top: 50%;
+    margin: -23px 0 0 -23px;display:inline-block;
+    background-position: left top;
+}
+.QQloading,.QQloading i{
+    background-image:url(images/loading.png);
+    background-repeat:no-repeat;display:inline-block;
+    -webkit-background-size:92px 46px;
+    -moz-background-size:92px 46px;
+    -o-background-size:92px 46px;
+    background-size:92px 46px;
+}
+.QQloading i {
+    width: 46px; height: 46px;
+    background-position: right top;
+    -webkit-animation-name: rotateRight;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+@-webkit-keyframes rotateRight {
+   from {-webkit-transform:rotate(360deg);}
+   to {-webkit-transform:rotate(0deg);}
+}
+.listbox li .QQloading i{
+    width: 46px;
+    padding: 0;
+    float: none;
+    display: block;
+}
+.listinner{
+    position: absolute;
+    top: 35px; bottom: 80px;
+    width: 100%;
+}
+#paihang_list,#huojiang_list{
+    position: absolute;
+    overflow: hidden;
+    top: 0; bottom: 50px;
+    width: 100%;
+    background: #d1f8db;
+}
+.scroll{
+    position: absolute;
+    width: 100%;
+
+}
+.weblogin{
+    width: 100%; height: 100%;
+    position: absolute;
+    min-height: 400px;
+    top: 0; bottom: 0;
+    display: none;
+    z-index: 15;
+}
+.weblogin span {
+    position: absolute;
+    right: 10px; top: 10px;
+    color: #246183;
+}
+.weixin_layer{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/weinxin_share.png) no-repeat right top rgba(0, 0, 0, 0.6);
+    -webkit-background-size:320px 150px;
+    -moz-background-size: 320px 150px;
+    -o-background-size: 320px 150px;
+    background-size: 320px 150px;
+    z-index: 999999;
+}
+.sharebox{
+    background: #f6f6f6;
+    height: 132px; overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: -132px;
+    /*display: none;*/
+    z-index: 13;
+}
+.sharebox ul{
+    height: 33px;
+    padding: 30px 0;
+    width: 160px;
+    margin: 0 auto; overflow: hidden;
+    text-align:center;
+}
+.sharebox ul li {
+    /*display: inline; float: left;*/
+    display:inline-block;
+    width: 33px; height: 33px; overflow: hidden;
+    margin: 0 10px;
+    background: url(images/sheraicon.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: 165px 33px;
+    -moz-background-size: 165px 33px;
+    -o-background-size: 165px 33px;
+    background-size: 165px 33px;
+}
+.sharebox p {
+    width: 100%; font-size: 14px;
+    height:38px; line-height:38px;
+    border-top:solid 1px #c2c2c2;
+    background:#dadada; 
+    text-align:center; 
+    color: #333;
+}
+.sharebox ul li.sharet {
+background-position: 0 0;
+}
+.sharebox ul li.shareqzone {
+background-position: -33px 0;
+}
+.sharebox ul li.sharewb {
+background-position: -66px 0;
+}
+.chenghao {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 172px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffff00;
+    text-shadow:0 0 5px rgba(0,0,0,0.8);
+}
+.chenghao p {
+    font-size: 32px;
+    text-align: center;
+}
+.IOS .chenghao{
+    bottom: 192px;
+}
+
+.control{
+    width: 110px; height: 110px;
+    background: url(images/img_contorl.png) no-repeat left top;
+    background-size: 100%;
+    position: absolute;
+    bottom: 0; left: 50%;
+    margin-left: -55px;
+    z-index: 999;
+    display: none;
+}
+.control div{
+    display: inline-block;
+    position: absolute;
+}
+.control .top{
+    width: 33px; height: 39px;
+    top: 0; left:50%;margin: 0 0 0 -16px;
+}
+.control .right{
+    width: 39px; height: 33px;
+    right: 0; top:50%; margin: -16px 0 0 0;
+}
+.control .bottom{
+    width: 33px; height: 39px;
+    bottom: 0; left:50%;margin: 0 0 0 -16px;
+}
+.control .left{
+    width: 39px; height: 33px;
+    left: 0; top:50%; margin: -16px 0 0 0;
+}
+
+
+/*#interface {display: none; position: relative; z-index: 2;}
+#interface .life {position: absolute; right: 5px; top: 15px; font: 900 24px/36px '微软雅黑'; text-indent: 45px; background: url(images/life_s.png) no-repeat; color: 
+
+#ffea00; z-index:11;}*/
+#gamescore 
+{
+    text-align: center; 
+    display:none;
+    position: absolute;
+    width: 150px;
+    height: 81px;
+    right: 20px;
+    top:20%;
+    background-image: url(images/tip.png);
+    background-size: 100% 100%;
+}
+
+#gamescore span {
+
+    font-family: 'Microsoft YaHei'; 
+    font-size:18px; 
+    line-height: 30px !important;
+    text-align: center;
+}
+
+#cr-stage{
+    position: absolute;
+    left: 50%;
+    margin: 0px 0 0 -50%;
+}
+.zhiyin {
+    /*position: absolute;
+    display: none;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 11;
+    background: #03250c url(images/zhiyin_m.png) no-repeat left top;
+    background-size: 100%;*/
+}
+
+/*.gameoverbox{
+    width:320px;
+    height:85px;
+    background:url(images/gameover.png) no-repeat center center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    background-size:100%;
+    margin: -42px 0 0 -160px;
+    display:none;
+    z-index:13;
+}   */
+.fenshubox{
+    position: absolute;
+    width:100%;
+    top:50px;
+    left:0;
+    z-index:13;
+    display: none;
+}
+.fenshubox h3{
+    text-align:center;
+    font-size: 15px;
+    color: #ffff00;
+}
+.fenshubox p{
+    text-align:center;
+    font-size: 48px;
+    color: #ffff00;
+}
+.listtab li.hide,.hide{
+    display:none;
+}
+
+.sharemcover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 20000;
+        }
+
+.demo--label{margin:20px 20px 0 0;display:inline-block}
+.demo--radio{display:none}
+.demo--radioInput{background-color:#fff;border:2px solid #333;border-radius:0%;display:inline-block;height:16px;margin-right:5px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+.demo--radio:checked + .demo--radioInput:after{background-color:#333;border-radius:0%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+
+
+.pt-page-moveCycle {
+    -webkit-animation: moveCycle 1s linear  infinite ;
+    animation: moveCycle 1s linear  infinite ;
+}
+
+
+@-webkit-keyframes moveCycle {
+
+     0% { -webkit-transform: translateX(-100%); transform: translateX(-100%); opacity: 0.7}
+    50% { -webkit-transform: translateX(0%); transform: translateX(0%);opacity: 0.7}
+    100% { -webkit-transform: translateX(100%); transform: translateX(100%); opacity: 0.7}
+}
+@keyframes moveCycle {
+    0% { -webkit-transform: translateX(-100%); transform: translateX(-100%);opacity: 0.7}
+    50% { -webkit-transform: translateX(0%); transform: translateX(0%);opacity: 0.7}
+    100% { -webkit-transform: translateX(100%); transform: translateX(100%); opacity: 0.7}
+}
+
+</style>
+</head>
+<body>
+    <div id="loading" style="position: absolute;
+                            top: 40%;
+                            width: 100%;
+                            height: 60px;
+                            margin-top: 0px;
+                            padding: 0;
+                            z-index: 999;
+                            background-color: rgba(174, 229, 254, 0.88);
+                            margin-left: -50%;
+                            left: 50%;
+                            text-align: center;
+                            border-top: 1px solid;
+                            border-bottom: 1px solid;"> 
+        <span style="line-height: 60px;
+                    font-size: 20px;
+                    font-family: 'Microsoft YaHei';
+                    font-weight: 600;">
+         努力加载中...</span>
+    </div>
+
+    <!-- 游戏启动界面/S -->
+    <div id="gamestart" style="">
+        <div style="position:absolute;top:0;width:100%; margin-top:0px">
+            <img src="images/index_top.png" width="100%" />
+        </div>
+        <div style="width:70%; margin-left:15%; margin-top:120px">
+            <img src="images/index_title.png" width="100%" />
+        </div>
+   
+        <img src="images/game_start.png" class="start_bg" style="top: 0px; height:100%; width:100% ">
+        <div class="btn rule" id="_gamerule"></div>
+        <div class="btn start" id="_gamestart"></div>
+
+        <div class="ruleshadow"></div>
+        <div class="rulebox">
+            <span class="x_rulebox"></span>
+        </div>
+
+        <div id="copyright" style="    position: absolute;
+                                        bottom: 10px;
+                                        width: 90%;
+                                        z-index: 999;
+                                        left: 5%;">
+            <img src="images/copyright.png" width="100%" />
+        </div>
+    </div>
+
+
+<!-- 游戏启动界面/E -->
+
+<!--规则说明/E-->
+
+<!-- 倒计时/S -->
+    <div class="daojishi">
+        <div class="daojishibox">
+            <!--div style="font-size: 20px;font-family: 'Microsoft YaHei';">游戏即将开始</div-->
+            <div class="daojishinum">5</div>
+        </div>
+
+        <div style="position:absolute; bottom:35px; width:100%; left:50%">
+            <img src = "images/Qiuyuan.png" width="92px" style="margin-left:-46px;"/>
+        </div>
+
+        <div style="position:absolute; bottom:35px; width:100%; left:50%">
+            <img src="images/move.png" id="move" class="pt-page-moveCycle" width="40px" style="margin-left:-30px;"/>
+        </div>
+
+    </div>
+
+
+<!-- 倒计时/E -->
+<!--div class="gameoverbox"></div>
+
+<!-- 游戏结束/S -->
+<div class="gameend"></div>
+
+<!--Main scene-->
+<div id="cr-stage" style="width: 320px; height: 480px; overflow: hidden;">
+            <div id="interface"><div class="life"></div></div>
+            <div id="gamescore">
+                <span id="distance" style="position: absolute;top: 10px;left: 13px; font-size:17px; font-weight:bold">剩1000米</span>
+            </div>
+            <div id="gametest"></div>
+    <div style="position: absolute; z-index: 10; -webkit-transform: scale(1, 1); left: 0px; top: 0px; "></div>
+    <canvas id="myCanvas" width="320" height="480" style="position: absolute; left: 0px; top: 0px; z-index: 10; "></canvas>
+</div>
+
+<!--被狗咬了-->
+<div id="bite" 
+     style="position:absolute; top:150px; width:300px; left:50%; 
+            margin-left:-150px;display:none" 
+     class="">
+    <img src="images/300.gif" width="300px" height="225px"></div>
+</div>
+
+<div id="recover" style="background-image:url(images/recoverbox.png);
+    width: 300px;
+    height: 230px;
+    margin-left: -150px;
+    top: 150px;
+    left: 50%;
+    background-size: 100% 100%;
+    position: absolute;
+    display: none;">
+
+     <div id="_phone"  
+    style="background-image: url(images/phone.png);
+        width: 140px;
+        height: 30px;
+        bottom: 85px;
+        left: 120px;
+        background-size: 100% 100%;
+        position: absolute;" >
+        <input type="text" placeholder="预留手机号" 
+            style="border:none; background-color: rgba(255, 255, 255, 0);
+                   padding:8px 0 2px 10px;"></input>
+    </div>
+
+    <div style="position: absolute;
+    bottom: 55px;
+    left: 123px;
+    font-family: 'Microsoft YaHei';
+    font-weight: bold;
+    color: #333;">
+    <label class="demo--label">
+        <input class="demo--radio" type="radio" name="demo-radio">
+        <span class="demo--radioInput"></span>苹果
+    </label>
+        <label class="demo--label">
+            <input class="demo--radio" type="radio" name="demo-radio">
+            <span class="demo--radioInput"></span>安卓
+        </label>
+    </div>
+
+    <div id="_recover" class="btn" 
+    style="background-image: url(images/confirm.png);
+        width: 70px;
+    height: 32px;
+    /* margin-left: -50px; */
+    bottom: 12px;
+    left: 150px;
+    background-size: 100% 100%;
+    position: absolute;
+    " ></div>
+
+
+</div>
+
+<!--到达终点-->
+<div id="goal" class="pt-page-moveFromTop" 
+    style="position:relative; width:100%; height:60%; display:none; background-image:url(images/goal_bg.png); background-size: 100% 100%">
+    <img src="images/keeper.png" style=" position:absolute; bottom:5px; left:50%; margin-left:-50%" width="100%" onclick="share()">
+    <img id="click" src="images/click.png" style="position: absolute;
+                                        bottom: 15px;
+                                        left: 50%;
+                                        margin-left: -20px;
+                                        width: 40px; display:none" onclick="share()" >
+</div>
+
+<!--横幅-->
+<div id="header" class="pt-page-moveFromTop"
+     style="position:absolute;top:0;width:100%; margin-top:0px;z-index: 999;display:none">
+            <img src="images/header.png" width="100%" />
+</div>
+
+<!--share-->
+<div id="sharemcover0" class="sharemcover" style=" display:none;">
+    <img src="images/share.png" style="width:90%;margin-left:5%">
+</div>
+
+<script>
+var path = 'http://vnewcd.com/yinhun'  // 域名
+var game_path = 'images/';    // 游戏载入路径
+
+Crafty.config = {
+    speed: 5,               // 移动速度
+    score: 1000,               // 初始化分数
+    level: 3,               // 关卡数
+    addemeny: true,        // 障碍开关
+    supertime: 0,           // 无敌距离(可连续增加)
+    acceleration:1.5,          // 加速度
+    gamestart: false,        // 游戏是否已经开始
+    recover: false,
+    delta: 1,
+    bite: false
+}
+
+$(function() {
+    $.map(['_olagame','_olaviewW','_olaviewH'],function(n){
+        if(window[n]){
+            Crafty.GameError = true;
+            return false;
+        }
+    })
+
+    if(!Crafty.GameError){
+        window._olagame = null;
+        window._olaviewW = window.innerWidth;
+        window._olaviewH = window.innerHeight;
+        var canvas = document.getElementById("myCanvas");  
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        Crafty.init(window._olaviewW, window._olaviewH);
+        Crafty.canvas.init();
+        Crafty.canvas._canvas.style.zIndex = '10';
+        Crafty.scene("Loading");
+    }
+
+});
+
+Crafty.extend({
+    startScore: function(){
+        // 坚持1秒-5米
+        window._olagame = setInterval(function(){
+            Crafty.config.score -=  Crafty.config.delta;
+            if(Crafty.config.score <= 0)
+            {
+                Crafty.config.score = 0;
+                Crafty("Player").die();
+                
+            }
+
+            if(Crafty.config.score >= 190 && Crafty.config.score <= 200)
+            {
+                Crafty.config.level = 8;
+                Crafty.config.acceleration += 0.5;
+            }
+            $("#distance").text('剩'+Crafty.config.score+'米');
+        },200);
+    },
+    stopScore: function(){
+       clearInterval(window._olagame); 
+    }
+})
+Crafty.c("Player", {
+    hp: {
+        current: 1, // 初始3条生命
+        max: 1 // 最多3条生命
+    },
+    movementSpeed: Crafty.config.speed,
+    super: false,
+    archer: false,
+    lives: 1,
+    ship: "Qiuyuan",
+    supership: "Qiuyuan_Super_Pic",
+    shootship: "Qiuyuan_Shoot_Pic",
+    collisionship: "Qiuyuan_Collision_Pic",
+    init: function() {
+        var stage = $('#cr-stage');
+        this.requires("2D,DOM,SpriteAnimation,"+this.ship+",Twoway,Keyboard,Tween,Collision")
+        .attr({
+            x: Crafty.viewport.width/2-this.w/2,
+            y: Crafty.viewport.height - this.h - 35,
+            z:9,
+            dynamic: true
+        })
+        .collision(new Crafty.polygon([13,58],[27,58],[33,69],[40,69],[43,47],[33,23],[54,9],[77,14],[77,42],[81,67],[83,74],[65,84],[33,72],[24,85],[12,85],[4,70]))
+        /*.reel('PlayerMovingLeft', 450, [[0,0],[0,1],[0,2],[0,3]])
+        .reel('PlayerMovingRight',  450, [[1,0],[1,1],[1,2],[1,3]])
+        .animate('PlayerMovingLeft', -1)*/
+        .twoway(this.movementSpeed);    // 角度
+        this.bind('Moved',function(from) {
+            if(this.x+this.w > Crafty.viewport.width ||
+                this.x+this.w < this.w || 
+                this.y+this.h-15 < this.h || 
+                this.y+this.h+15 > Crafty.viewport.height){
+                this.attr({
+                    x:from.x, 
+                    y:from.y
+                });
+            }
+        }).bind("KeyDown",function(e){
+            if(this.has(this.shootship)){
+                if(e.keyCode == 38 || e.keyCode == 32){
+                    var ball = Crafty('Ball');
+                    ball.animate("Running",-1);
+                    ball.shooting = true;
+                    return false;
+                }
+            }
+        }).bind("Hurt",function(that) {
+            var self = this;
+            // 销毁一切触碰的障碍物
+            that.destroy();
+            if (that.gettype() == 'jersey') 
+            {
+                //碰到鸡蛋加速
+                //Crafty.startScore();
+                //Crafty.config.addemeny = true;
+                //player = Crafty.e("Player");
+                //Crafty("Player").archer = false;
+                // 奇数关卡跑动时，加速度+0.5
+                Crafty.config.acceleration += 0.3;
+                Crafty.config.delta += 1;
+                //Crafty.config.GoalBackGround = false;
+                $('#interface,#gamescore').fadeIn();
+            } 
+            else if (that.gettype() == 'pile' && !this.super) 
+            {
+               
+                //复活
+                if (!Crafty.config.recover) 
+                { 
+                    Crafty.config.bite = true;
+                    changeScene();
+                }; 
+                
+            }
+        })
+        return this;
+    },
+
+    die: function() {
+        Crafty.stopScore();
+        Crafty.pause(true);
+        Crafty.trigger('GameOver', Crafty.config.score);
+    }
+});
+
+Crafty.c("Gameover",{
+
+    init: function(){
+        /*this.requires("2D,DOM,Image").attr({x: 0, y: window._olaviewH * 0.382, z: 9}).image(game_path+"Gameover.png", "no-repeat");*/
+        $('#cr-stage').hide();
+        $('#goal').show();
+
+        setTimeout(function(){
+             $("#click").show();
+            $("#click").addClass("pt-page-moveFromTop");
+        },3000)
+        
+    }
+});
+
+Crafty.c("Enemy", {
+    init: function() {
+        var player = Crafty("Player");
+        //所必须的模块
+        this.requires("2D,DOM,Collision")
+        //超出视窗的时候则销毁
+        .bind("EnterFrame",function() {
+            if (this.x > Crafty.viewport.width + this.w || this.x < -this.w || this.y < -this.h || this.y > Crafty.viewport.height + this.h) {
+                this.destroy();
+            }
+        }).onHit("Player",function(ent) {
+            Crafty(player[0]).trigger("Hurt", this);
+        });
+    },
+    gettype: function() {
+        return this.type;
+    }
+});
+
+// 狗狗
+Crafty.c("Pile", {
+    type: "pile",
+    init: function() {
+        this.requires("Enemy,Pile_pic").attr({
+            y: -this.h,
+            x: Crafty.math.randomInt(0, Crafty.viewport.width - this.w),
+            dynamic: true
+        })
+        /*.collision(new Crafty.polygon([0,39], [16, 0], [33, 39]))*/
+        .bind("EnterFrame",function() {
+            this.y += 2 * Crafty.config.acceleration;
+        });
+    }
+});
+
+
+// 鸡蛋
+Crafty.c("Jersey", {
+    type: "jersey",
+    init: function() {
+        var player = Crafty("Player");
+        this.requires("Enemy,Jersey_pic").attr({
+            y: -this.h,
+            x: Crafty.math.randomInt(0, Crafty.viewport.width - this.w),
+            dynamic: true
+        }).bind("EnterFrame",function() {
+            this.y += 8;
+        });
+    }
+});
+
+// 银
+Crafty.sprite(92, 95, game_path + "Qiuyuan.png", {
+    Qiuyuan: [0, 0]
+});
+
+// 狗
+Crafty.sprite(92, 80, game_path + "Pile.png", {
+    Pile_pic: [0, 0]
+});
+
+// 鸡蛋
+Crafty.sprite(92, 53, game_path + "Jersey.png", {
+    Jersey_pic: [0, 0]
+});
+
+
+// 游戏加载
+Crafty.scene("Loading",function() {
+    var toLoad = [
+            game_path + "Caopi.png",
+            game_path + "Qiuyuan.png",
+            game_path + "Pile.png",
+            game_path + "Jersey.png",
+
+            game_path + "click.png",
+            game_path + "move.png",
+            game_path + "keeper.png",
+            game_path + "index_title.png",
+
+            game_path + "header.png",
+            game_path + "recoverbox.png",
+            game_path + "share.png",
+            game_path + "index_top.png",
+
+            game_path + "daoju_2.png",
+            game_path + "daoju_1.png",
+
+
+            game_path + "btn_start.png",
+            game_path + "btn_rule.png",
+            game_path + "confirm.png",
+            game_path + "game_start.png",
+        ];
+
+    var ola_denglu = $(".ola_denglu");
+    var button = $('#_gamestart'),
+        curtain = $('#gamestart'),
+        getrule = $('#_gamerule'),
+        load = $('#_gameload'),
+        begin =$("#_gamestart2"),
+        guide = $('.zhiyin');
+
+    $("#gamestart").show();
+
+    $(".game_ogain").click(function(){
+        window.location.reload();
+    })
+
+    $(".again_1").click(function(){
+        window.location.reload();
+    })
+
+    getrule.on('click',function() { // 查看游戏规则
+        // 规则弹出窗口动画
+        $(".ruleshadow").show();
+        $(".rulebox").addClass("bounceIn animated r_index");
+        setTimeout(function(){
+            $(".rulebox").addClass("opacity").removeClass("bounceIn animated")
+        },800)
+        // 关闭弹出窗口动画
+        $(".x_rulebox").click(function(){
+            $(".rulebox").addClass("bounceOut animated");
+            setTimeout(function(){
+                $(".ruleshadow").hide();
+                $(".rulebox").removeClass("opacity bounceOut animated r_index")
+            },800)
+        });
+    })
+
+    load = $('#loading');
+    Crafty.load(toLoad, function() {
+        button.on('click', function(){
+            $('.daojishi').show();
+            $('#header').show();
+            curtain.hide();
+            var begintime,num = 5;
+            $(".daojishinum").text(num);
+            begintime = setInterval(function(){
+                if(num <= 1){
+                    clearInterval(begintime);
+                    $(".daojishi,.zhiyin").remove(); //删掉倒计时
+                    setPoints();
+                }else{
+                    $(".daojishinum").text(--num);
+                }
+             },1000);
+        });
+    },function(e) {
+        var src = e.src ||"";
+        load.find("span").text(~~e.percent+"%");
+        if (e.percent == 100) {$('#loading').hide();};
+    },function(e) {
+        load.text("游戏加载失败，请刷新页面重试");
+    });
+},function(e) {
+    $('#loading').hide();
+});
+
+function setPoints(x,y){
+    var backgroundBg,player;
+    _oldPlayer = Crafty("Player");
+
+    Crafty.config.gamestart = true;
+    $("#gamescore").show();
+
+    //Define new scene
+    Crafty.defineScene('Normal',function() {
+            //Bind Gameloop to the Scene
+            Crafty.unbind("EnterFrame");
+            Crafty.bind("EnterFrame",function(frame) {
+                //$('#cr-stage .life').show();
+                spotObject(frame.frame);
+            })
+            
+        Crafty.startScore();
+        Crafty.config.addemeny = true;
+        player = Crafty.e("Player");
+        });
+
+    //Define new scene
+    Crafty.defineScene('Bite',function() {
+
+            Crafty.stopScore();
+            Crafty.config.addemeny = false;
+
+
+            var bite =  $("#bite");
+            bite.addClass("pt-page-moveFromLeft");
+            bite.show();
+
+            setTimeout(function(){
+
+                bite.hide();
+
+                var recover =  $("#recover");
+                recover.addClass("opacity").addClass("bounceIn animated");
+                recover.show();
+
+                $('#cr-stage').hide();
+
+                $('#_recover').on('click',function() { //
+                            recover.addClass("bounceOut animated");
+                            setTimeout(function(){
+                                recover.hide();
+                                recover.removeClass("opacity bounceOut animated r_index")
+                                Crafty.config.score += 1;
+                                Crafty.config.recover = true;
+                                Crafty.config.bite = false;
+                                $('#cr-stage').show();
+
+                                setPoints(); 
+                                
+                            },800)
+                        
+            });
+                
+            },3000)
+
+
+
+            $('#interface,#gamescore').fadeOut();
+        });
+
+
+    //_oldPlayer = undefined;
+    Crafty.config.changeing = false;
+    Crafty.config.bite ? Crafty.enterScene('Bite') : Crafty.enterScene('Normal');
+}
+
+Crafty.config.changeing = false;
+
+// 变更射门关卡
+function changeScene(){
+    Crafty.stopScore();
+    Crafty.config.changeing = true;
+    Crafty.config.addemeny = false;
+
+    setPoints();
+
+    /*if(Crafty("Jersey").length <= 0 && Crafty("Pile").length <= 0){
+        
+    }else{
+        // 通过计算障碍物的数量，保证人物到球门前没有任何障碍物
+        clearTimeout(Crafty.config.changeing)
+        Crafty.config.changeing = setTimeout(function(){
+            changeScene();
+        },50)
+    }*/
+}
+
+// 活动障碍物对象
+function spotObject(frame) {
+
+    //
+    if(Crafty.config.addemeny && !Crafty.config.changeing){
+
+        if (frame % (38 * Math.ceil(Crafty.config.level / 2)) == 0 && Crafty("Jersey").length < 1) {
+            Crafty.e("Jersey");
+        }
+
+        if (frame % Math.floor(61 / Math.ceil(Crafty.config.level / 2)) == 0 && Crafty("Pile").length < Crafty.config.level) {
+            Crafty.e("Pile");
+
+        }
+    }
+};
+
+Crafty.bind("setBackGround",function(frame) {
+    Crafty.stage.elem.style.backgroundPosition = "0px " + frame * Crafty.config.acceleration + "px";
+    
+})
+
+// 游戏结束场景
+Crafty.bind("GameOver",function(score) {
+    Crafty.e("Gameover");
+    Crafty.config.gamestart = false;
+    //alert("gameover");
+    /*setTimeout(function(){
+        $(".gameend").show();
+        $(".game_fenshu span").text(score)
+        $('.chenghao p').text(window.ola_title(score))
+        $(".fenshubox").hide();
+        $(".gameoverbox").hide();
+    },2000)*/
+});
+</script>
+
+<script type="text/javascript">
+        
+    if ($(window).height() > 480) {
+        $(".start_bg").css({'top':'0px'})
+    };
+    if ($(window).height() < 481) {
+        $(".gameend").css({
+            'background':'#08b134 url(images/game_end.jpg) no-repeat center -32px',
+            'background-size': '100%'
+        })
+        $(".chenghao").css({
+            'bottom':'136px'
+        })
+    };
+    
+    // 规则弹出窗口动画
+    $("#_gamerule").bind('touchstart',function(){
+        
+        $(".ruleshadow").show();
+        $(".rulebox").addClass("bounceIn animated r_index");
+        setTimeout(function(){
+            $(".rulebox").addClass("opacity").removeClass("bounceIn animated")
+        },800)
+        
+    });
+    $(".x_rulebox").bind('touchstart',function(){
+        $(".rulebox").addClass("bounceOut animated");
+        setTimeout(function(){
+            $(".ruleshadow").hide();
+            $(".rulebox").removeClass("opacity bounceOut animated r_index")
+        },800)
+    });
+
+
+
+ /**
+ * iTouch
+ */
+var iTouch = function(){
+    this.startX = 0;
+    this.startY = 0;
+    this.curX = 0;
+    this.curY = 0;
+    this.endX = 0;
+    this.endY = 0;
+    this.distance =1;
+    this.init();
+}
+iTouch.prototype = {
+    moveTop: function(){},
+    moveBottom: function(){},
+    moveLeft: function(){},
+    moveRight: function(){},
+    touchStart: function (event) {
+        this.curY = Crafty("Player").y;
+        this.curX = Crafty("Player").x;
+        this.startX = event.touches[0].pageX;
+        this.startY = event.touches[0].pageY;
+    },
+    touchEnd: function(event, _this) {
+        if(Crafty("Player").archer){
+                var e = {
+                    key:38,
+                    keyCode:38,
+                    type:"keydown"
+                }
+            Crafty("Player").trigger('Interaction',e);
+        }
+    },
+    touchMove: function (event, _this) {
+        event.preventDefault();
+        this.curX = event.targetTouches[0].pageX;
+        this.curY = event.targetTouches[0].pageY-Crafty("Player").h;
+
+        if(this.curX + Crafty("Player").w - 30 > 92.5 && this.curX - 30 + Crafty("Player").w <= window.innerWidth && this.curY + Crafty("Player").h + 10> 92.5 && this.curY + Crafty("Player").h < window.innerHeight+10){
+            if(!Crafty("Player").archer){
+                Crafty("Player").tween({x:this.curX - 30},60);
+            }else{
+                Crafty("Player").tween({x:this.curX - 30},60);
+            }
+        }
+
+
+    },
+    init: function(){
+        var _this = this;
+        var dombox = document.getElementById('cr-stage');
+        dombox.addEventListener("touchmove", function(){
+            _this.touchMove(event, _this);
+        }, false);
+        dombox.addEventListener("touchstart", function(){
+            _this.touchStart(event, _this);
+        }, false);
+        dombox.addEventListener("touchend", function(){
+            _this.touchEnd(event, _this);
+        }, false);
+    }
+}
+
+new iTouch();
+
+
+//Cookie    
+var Cookie = {
+    set: function(e, t, n, r, i) {
+        typeof n == "undefined" && (n = new Date((new Date).getTime() + 36e5)),
+        document.cookie = e + "=" + escape(t) + (n ? "; expires=" + n.toGMTString() : "") + (r ? "; path=" + r : "; path=/") + (i ? ";domain=" + i : "")
+    },
+    get: function(e) {
+        var t = document.cookie.match(new RegExp("(^| )" + e + "=([^;]*)(;|$)"));
+        return t != null ? unescape(t[2]) : null
+    },
+    clear: function(e, t, n) {
+        this.get(e) && (document.cookie = e + "=" + (t ? "; path=" + t : "; path=/") + (n ? "; domain=" + n : "") + ";expires=Fri, 02-Jan-1970 00:00:00 GMT")
+    }
+};
+
+
+//取URL参数
+
+function getUrlParam(name){
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	if (r!=null) return unescape(r[2]); return null; //返回参数值
+} 
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+//Share
+function share()
+{
+    $("#sharemcover0").show();
+}
+
+$("#sharemcover0").click(function () {
+    $("#sharemcover0").hide();
+});
+
+</script>
+</iframe></body></html>

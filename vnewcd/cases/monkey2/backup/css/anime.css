@@ -1,0 +1,144 @@
+
+
+.ani_opc_tran_1{animation:opc_tran_1 1s;-webkit-animation:opc_tran_1 1s;}
+@keyframes opc_tran_1{
+	0%{opacity:0;transform:scale(0,0)}
+	100%{opacity:1;transform:scale(1,1)}
+}
+@-webkit-keyframes opc_tran_1{
+	0%{opacity:0;-webkit-transform:scale(0,0)}
+	100%{opacity:1;-webkit-transform:scale(1,1)}
+}
+
+.ani_opc_1{animation:opc_1 1s;-webkit-animation:opc_1 1s;}
+@keyframes opc_1{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+@-webkit-keyframes opc_1{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+
+.ani_tran_2{animation:tran_2 1.5s;-webkit-animation:tran_2 1.5s;}
+@keyframes tran_2{
+	0%{opacity:0;transform:scale(0,0)}
+	100%{opacity:1;transform:scale(1,1)}
+}
+@-webkit-keyframes tran_2{
+	0%{opacity:0;-webkit-transform:scale(0,0)}
+	100%{opacity:1;-webkit-transform:scale(1,1)}
+}
+
+.ani_opc_2{animation:opc_2 1.5s;-webkit-animation:opc_2 1.5s;}
+@keyframes opc_2{
+	0%{opacity:0;}
+	30%{opacity:1;}
+	70%{opacity:1;}
+	100%{opacity:0;}
+}
+@-webkit-keyframes opc_2{
+	0%{opacity:0;}
+	30%{opacity:1;}
+	70%{opacity:1;}
+	100%{opacity:0;}
+}
+
+.ani_tran_3{animation:tran_3 0.35s infinite;-webkit-animation:tran_3 0.35s infinite;}
+@keyframes tran_3{
+	0%{transform:translate(-1px,1px)}
+	25%{transform:translate(1px,-1px)}
+	50%{transform:translate(-1px,1px)}
+	75%{transform:translate(1px,-1px)}
+	100%{transform:translate(0,0)}
+}
+@-webkit-keyframes tran_3{
+	0%{-webkit-transform:translate(-1px,1px)}
+	25%{-webkit-transform:translate(1px,-1px)}
+	50%{-webkit-transform:translate(-1px,1px)}
+	75%{-webkit-transform:translate(1px,-1px)}
+	100%{-webkit-transform:translate(0,0)}
+}
+
+.ani_tran_4{animation:tran_4 1s infinite;-webkit-animation:tran_4 1s infinite;}
+@keyframes tran_4{
+	0%{transform:translate(3px,0)}
+	15%{transform:translate(-3px,0)}
+	30%{transform:translate(3px,0)}
+	45%{transform:translate(-3px,0)}
+	60%{transform:translate(0,0)}
+	100%{transform:translate(0,0)}
+}
+@-webkit-keyframes tran_4{
+	0%{-webkit-transform:translate(3px,0)}
+	15%{-webkit-transform:translate(-3px,0)}
+	30%{-webkit-transform:translate(3px,0)}
+	45%{-webkit-transform:translate(-3px,0)}
+	60%{-webkit-transform:translate(0,0)}
+	100%{-webkit-transform:translate(0,0)}
+}
+
+
+.ani_tran_5{animation:tran_5 0.6s;-webkit-animation:tran_5 0.6s;}
+@keyframes tran_5{
+	0%{transform:translate(0,0)}
+	66%{transform:translate(-100%,-65%)}
+	100%{transform:translate(65%,-130%)}
+}
+@-webkit-keyframes tran_5{
+	0%{-webkit-transform:translate(0,0)}
+	66%{-webkit-transform:translate(-100%,-65%)}
+	100%{-webkit-transform:translate(65%,-130%)}
+}
+
+.ani_tran_6{animation:tran_6 1s infinite;-webkit-animation:tran_6 1s infinite;}
+@keyframes tran_6{
+	0%{transform:scale(0.9,0.9)}
+	50%{transform:scale(1,1)}
+	100%{transform:scale(0.9,0.9)}
+}
+@-webkit-keyframes tran_6{
+	0%{-webkit-transform:scale(0.9,0.9)}
+	50%{-webkit-transform:scale(1,1)}
+	100%{-webkit-transform:scale(0.9,0.9)}
+}
+
+.ani_tran_7{animation:tran_7 1.5s;-webkit-animation:tran_7 1.5s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;}
+@keyframes tran_7{
+	0%{opacity:1;transform:translate(0,0)}
+	100%{opacity:0.1;transform:translate(-90%,0)}
+}
+@-webkit-keyframes tran_7{
+	0%{opacity:1;-webkit-transform:translate(0,0)}
+	100%{opacity:0.1;-webkit-transform:translate(-90%,0)}
+}
+
+.ani_tran_8{animation:tran_8 1.5s;-webkit-animation:tran_8 1.5s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;}
+@keyframes tran_8{
+	0%{opacity:1;transform:translate(0,0)}
+	100%{opacity:0.1;transform:translate(90%,0)}
+}
+@-webkit-keyframes tran_8{
+	0%{opacity:1;-webkit-transform:translate(0,0)}
+	100%{opacity:0.3;-webkit-transform:translate(90%,0)}
+}
+
+.ani_tran_9{animation:tran_9 1.5s;-webkit-animation:tran_9 1.5s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;}
+@keyframes tran_9{
+	0%{opacity:1;transform:translate(0,0)}
+	100%{opacity:0.1;transform:translate(0,90%)}
+}
+@-webkit-keyframes tran_9{
+	0%{opacity:1;-webkit-transform:translate(0,0)}
+	100%{opacity:0.1;-webkit-transform:translate(0,90%)}
+}
+
+.ani_tran_10{animation:tran_10 1.5s;-webkit-animation:tran_10 1.5s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;}
+@keyframes tran_10{
+	0%{opacity:1;transform:translate(0,0)}
+	100%{opacity:0.1;transform:translate(0,-90%)}
+}
+@-webkit-keyframes tran_10{
+	0%{opacity:1;-webkit-transform:translate(0,0)}
+	100%{opacity:0.1;-webkit-transform:translate(0,-90%)}
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>解救大圣一起过猴年</title>
+		<link href="css/style.css?v3.3" rel="stylesheet" type="text/css"/>
+		<link href="css/anime.css?v2.8" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.js?v10.10"></script>
+		<script src="js/vnewbase.js?v10.10"></script>
+
+
+		<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?7b2e11bbcab6a6d1e712370ff299ef66";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+	</head>
+<body>
+		<!--中奖-->
+		<div id="2" style="">
+				<div class="page4_ren" id="p40info">
+					<p id="p48Gift"  style="position: absolute;top: 152px;
+    											font-family: 'Microsoft YaHei';
+    											left: 120px;
+    											font-weight: bold;
+    											color: #E61E1E;
+    											font-size: 16px;">
+						手机话费红包</p>
+
+					<input type="text" id="phone" class="phone" placeholder="这里输入手机号"/>
+					<select class="telecom" id="telecom">
+						<option selected="true" value="mobile">我是移动手机</option>
+						<option value="unicom">我是联通手机</option>
+						<option value="telecom">我是电信手机</option>
+					</select>
+					<input type="text" id="name" class="name" placeholder="这里输入微信昵称"/>
+					<div class="m_but49"><a onclick="submitInfo()" style="z-index:999"><img src="images/but48.png"></a></div>
+				</div>
+		</div>
+
+
+<script type="text/javascript">
+var gitf;
+var gifts = ['手机流量红包','10元话费红包','20元话费红包','50元话费红包'];
+	gift = gifts[randomRange(0,3)];
+document.getElementById("p48Gift").innerHTML = gift; 
+function submitInfo()
+{
+	//
+	var phone = document.getElementById("phone").value;
+	var name = document.getElementById("name").value;
+	var telecom = document.getElementById("telecom").value;
+	if(!phone || phone.length <= 0){
+		alert("手机号不能为空！");
+		return false;
+	}else if(!name || name.length <= 0){
+		alert("微信昵称不能为空！");
+		return false;
+	}
+
+	$.ajax({
+		type:'post',//可选get
+		url:'save_words.php',
+		dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+		data:{
+			phone: phone,
+			name: name,
+			gift: gift,
+			telecom: telecom
+		},
+		success:function(msg){
+			if(msg.status == '1'){
+				alert('提交成功!');
+			}else{
+				alert('您提交的手机号已经中过奖了！请重新提交新号码！');
+			}
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			alert('提交失败:'+XMLHttpRequest.responseText);
+		}
+	});
+}
+</script>
+	
+</body>
+</html>
