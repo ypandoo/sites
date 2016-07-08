@@ -66,21 +66,21 @@ border-top:1px solid #f2f2f2;color:#757575; font-size:12px; cursor:pointer; back
 #header .nav ul li:hover{ background:#fff;}
 #header .nav ul li:hover>a{ color:#cc0000; background-position:0px -165px;}
 #homeContent{ width:100%; height:auto; z-index:10; position:relative;}
-#homeProduct{ width:100%; height:175px; background:#f9f9f9; padding:80px 0px; overflow:hidden;float:left;}
-.homeProduct{ width:1000px; height:175px; margin:0 auto;}
-.homeProduct ul li{ width:300px; height:175px; float:left; background:#fff; margin-right:50px; position:relative; overflow:hidden;}
+#homeProduct{ width:100%; height:150px; background:#f9f9f9; padding:40px 0px; overflow:hidden;float:left;}
+.homeProduct{ width:1000px; height:150px; margin:0 auto;}
+.homeProduct ul li{ width:300px; height:150px; float:left; background:#fff; margin-right:50px; position:relative; overflow:hidden;}
 .homeProduct ul li a{ display:block; width:300px; height:175px;}
-.homeProduct ul li .homeProImg{ width:220px; height:185px; position:absolute; left:-46px; top:0px;}
-.homeProduct ul li .homeProTitle{ width:79px; height:20px; position:absolute; left:210px; top:70px;line-height:20px; font-weight:bold; font-size:14px; overflow:hidden; text-align:right;}
+.homeProduct ul li .homeProImg{ width:220px; height:185px; position:absolute; left:25px; top:0px;}
+.homeProduct ul li .homeProTitle{ width:79px; height:20px; position:absolute; left:210px; top:50px;line-height:20px; font-weight:bold; font-size:14px; overflow:hidden; text-align:right;}
 .homeProduct ul li .homeProTitle .homeProLine{ width:4px; height:40px; float:left; background:#cc0000;}
 .homeProduct ul li .homeProTitle .homeProLine span{ display:block; width:4px; height:20px; background:#636363;}
 .homeProduct ul li .homeProTitle .homeProName{ width:60px; height:40px; float:left; float:left; padding-left:5px; line-height:20px; margin-top:-20px; color:#cc0000;}
-.homeProduct ul li .homeProTitle .homeProName span{ display:block; color:#3e3e3e; opacity:1;}
+.homeProduct ul li .homeProTitle .homeProName span{ display:block; color:#FFF; opacity:1;}
 .homeProduct ul li .homeProTitle .homeProName strong{ display:block; opacity:0;}
-.homeProduct ul li .homeProPlus{ width:80px; height:25px; position:absolute; left:200px; top:100px; line-height:25px;}
+.homeProduct ul li .homeProPlus{ width:80px; height:25px; position:absolute; left:200px; top:80px; line-height:25px;}
 .homeProduct ul li .homeProPlus span{ float:left; display:block; text-transform:uppercase; font-weight:bold; color:#d7d7d7;}
-.homeProduct ul li .homeProPlus div{ width:25px; height:25px; float:right; background:#d7d7d7; text-align:center; line-height:25px; color:#fff;}
-.homeProduct ul li:hover .homeProImg{ left:-26px;}
+.homeProduct ul li .homeProPlus div{ width:25px; height:25px; float:right;  text-align:center; line-height:25px; color:#fff;}
+.homeProduct ul li:hover .homeProImg{ left:-0px;}
 .homeProduct ul li:hover .homeProLine{ margin-top:-20px;}
 .homeProduct ul li:hover .homeProName{ margin-top:0px;}
 .homeProduct ul li:hover .homeProName span{ opacity:0;}
