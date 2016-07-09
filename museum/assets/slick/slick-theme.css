@@ -27,7 +27,7 @@
 
     display: block;
 
-    width: 20px;
+    width: 30px;
     height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
@@ -67,7 +67,7 @@
 .slick-next:before
 {
     /*font-family: 'slick';*/
-    font-size: 20px;
+    font-size: 30px;
     line-height: 1;
 
     opacity: .75;
@@ -124,13 +124,13 @@
 /* Dots */
 .slick-dotted.slick-slider
 {
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 
 .slick-dots
 {
     position: absolute;
-    bottom: -55px;
+    bottom: -25px;
 
     display: block;
 
