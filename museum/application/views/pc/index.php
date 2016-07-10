@@ -10,7 +10,7 @@
 
 <style>
 .btn_black{
-    background: black;
+    background:rgba(0,0,0,0.3) ;
     /* height: 40px; */
     /* width: 80px; */
     /* line-height: 40px; */
@@ -254,7 +254,7 @@ margin: 0 auto;
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    background: black;
+    background:rgba(0,0,0,0.3); ;
     padding: 30px 0 30px 0;">
   <div style="width:180px; float:left; padding-left:20px">
     <p style="    font-size: 20px;
@@ -302,7 +302,7 @@ margin: 0 auto;
     	<div id="homeProduct" style="background: #333333;">
     		<div class="homeProduct">
             	<ul>
-                	<li style="    background: black;"><a href="product.html">
+                	<li style="    background:rgba(0,0,0,0.3); ;"><a href="product.html">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro1.png')?>" width="150" height="150" alt="休闲小菜"></div>
                         <div class="homeProTitle">
                         	<div class="homeProLine animate"><span></span></div>
@@ -312,7 +312,7 @@ margin: 0 auto;
                         	<span class="animate">more</span><div class="animate">+</div>
                         </div></a>
                     </li>
-                    <li style="    background: black;"><a href="product.html">
+                    <li style="    background:rgba(0,0,0,0.3); ;"><a href="product.html">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro2.png')?>" width="150" height="150" alt="调味料"></div>
                         <div class="homeProTitle" style="left:200px;">
                         	<div class="homeProLine animate"><span></span></div>
@@ -322,7 +322,7 @@ margin: 0 auto;
                         	<span class="animate">more</span><div class="animate">+</div>
                         </div></a>
                     </li>
-                    <li style="margin-right:0px;    background: black;"><a href="product.html">
+                    <li style="margin-right:0px;    background:rgba(0,0,0,0.3); ;"><a href="product.html">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro3.png')?>" width="150" height="150" alt="什锦泡菜"></div>
                         <div class="homeProTitle" style="">
                         	<div class="homeProLine animate"><span></span></div>
@@ -368,11 +368,11 @@ margin: 0 auto;
   </div>
 </div>
 
-<div class="line_btn" style="background:black;">
+<div class="line_btn" style="background:rgba(0,0,0,0.3); ;">
   <a style="color:white;    color: blanchedalmond;cursor: pointer;">查阅更多新闻 · VIEW MORE</a></div>
 
 
-<div style=" margin: 20px 0 0px 0; background:black; width:100% ">
+<div style=" margin: 20px 0 0px 0; background:rgba(0,0,0,0.3); ; width:100% ">
 <div style=" height: 120px; width:1000px; margin: 0 auto; padding:20px 0 20px 0">
   <div class="link-item">
     <p class="link-item-title">资讯</p>

@@ -75,7 +75,7 @@
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/investor_list.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
 <script>
 
 </script>

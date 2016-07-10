@@ -10,8 +10,11 @@
                    get_pic_path: function(path){
                      return upload_img+path;
                    },
-                   get_detail_link : function(e){
+                   get_detail_link : function(e = 0){
                      return base_url+'item/view/'+e;
+                   },
+                   get_detail_link_pc : function(e = 0){
+                     return base_url+'Pc/view/'+e;
                    },
 
                    get_items_with_pic:function(){
