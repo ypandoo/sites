@@ -13,6 +13,18 @@ class Item extends CI_Controller {
        $this->load->view('item_detail', $data);
     }
 
+    public function view_pc($item_id)
+    {
+      $data['item_id'] = $item_id;
+      if ( ! file_exists(APPPATH.'/views/pc/item_list.php') || !  $data['item_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/item_detail', $data);
+    }
+
 
     public function add_pic()
     {

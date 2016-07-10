@@ -14,7 +14,7 @@
                      return base_url+'item/view/'+e;
                    },
                    get_detail_link_pc : function(e = 0){
-                     return base_url+'Pc/view/'+e;
+                     return base_url+'item/view_pc/'+e;
                    },
 
                    get_items_with_pic:function(){
