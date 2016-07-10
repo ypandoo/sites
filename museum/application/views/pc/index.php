@@ -316,7 +316,7 @@ margin: 0 auto;
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro2.png')?>" width="150" height="150" alt="调味料"></div>
                         <div class="homeProTitle" style="left:200px;">
                         	<div class="homeProLine animate"><span></span></div>
-                            <div class="homeProName animate" style="width:55px;"><strong class="animate">展览回顾</strong><span class="animate">展览回顾</span></div>
+                            <div class="homeProName animate" style="width:60px;"><strong class="animate">展览回顾</strong><span class="animate">展览回顾</span></div>
                         </div>
                         <div class="homeProPlus">
                         	<span class="animate">more</span><div class="animate">+</div>

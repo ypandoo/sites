@@ -55,8 +55,8 @@ $route['item'] = 'item';
 $route['content/(:any)'] = 'content/view/$1';
 $route['content'] = 'content';
 
-$route['pc'] = 'pc/view/index';
+$route['Pc'] = 'Pc/view/index';
 
-$route['default_controller'] = 'pc';
+$route['default_controller'] = 'Pc/view';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
