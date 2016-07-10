@@ -4,7 +4,7 @@ class Item extends CI_Controller {
     public function view($item_id)
     {
       $data['item_id'] = $item_id;
-      if ( ! file_exists(APPPATH.'/views/item_list.php') || !  $data['item_id'])
+      if ( ! file_exists(APPPATH.'/views/item_detail.php') || !  $data['item_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();
@@ -16,7 +16,7 @@ class Item extends CI_Controller {
     public function view_pc($item_id)
     {
       $data['item_id'] = $item_id;
-      if ( ! file_exists(APPPATH.'/views/pc/item_list.php') || !  $data['item_id'])
+      if ( ! file_exists(APPPATH.'/views/pc/item_detail.php') || !  $data['item_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();

@@ -57,6 +57,17 @@ class Navi_model extends CI_Model
         return $data;
     }
 
+    public function getItemById($id)
+    {
+        $query = $this->db->get('T_NAVI', array('NAVI_CODE' => $id) );
+        $data["success"] = true;
+        $data["errorCode"] = 0;
+        $data["error"] = 0;
+        $data["message"] = 'get_items succeeded!';
+        $data['data'] = $query->result_array();
+        return $data;
+    }
+
 
     public function deleteItem($item_id)
     {

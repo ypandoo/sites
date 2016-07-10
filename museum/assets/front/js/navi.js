@@ -53,9 +53,9 @@
                             if(data.hasOwnProperty('success')){
                                   if(data.success == 1){
                                       self.framework.list = data.data;
-                                      self.framework.navi_code = data.data[0].NAVI_CODE;
-                                      self.framework.navi_html = data.data[0].NAVI_HTML;
-                                      self.framework.navi_name = data.data[0].NAVI_NAME;
+                                      // self.framework.navi_code = data.data[0].NAVI_CODE;
+                                      // self.framework.navi_html = data.data[0].NAVI_HTML;
+                                      // self.framework.navi_name = data.data[0].NAVI_NAME;
 
                                   }
                                   else{
@@ -73,6 +73,42 @@
                         });
     };
 
+    this.get_item_by_id = function(){
+        var url = base_url+'Navi/get_item_by_id';
+        var item_id = $('#item_id').attr('data-id');
+        if(!item_id)
+        {
+          alert('数据错误！');
+          return;
+        }
+        var submit_data = {'item_id':item_id};
+
+        base_remote_data.ajaxjson(
+                          url, //url
+                          function(data){
+                            if(data.hasOwnProperty('success')){
+                                  if(data.success == 1){
+                                      self.framework.navi_code = data.data[0].NAVI_CODE;
+                                      self.framework.navi_html = data.data[0].NAVI_HTML;
+                                      self.framework.navi_name = data.data[0].NAVI_NAME;
+
+                                  }
+                                  else{
+                                      alert(data.message);
+                                  }
+                              }
+                            else {
+                              alert('返回值错误!');
+                            }
+                        },
+                        submit_data,
+                        function()
+                        {
+                          alert('网络错误!');
+                        });
+    };
+
     self.get_list();
+    self.get_item_by_id();
 
 }).call(define('space_navi'));

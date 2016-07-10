@@ -13,6 +13,18 @@ class Navi extends CI_Controller {
        $this->load->view('item_detail', $data);
     }
 
+    public function view_pc($item_id)
+    {
+      $data['item_id'] = $item_id;
+      if ( ! file_exists(APPPATH.'/views/pc/navi.php') || !  $data['item_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/navi', $data);
+    }
+
     public function save_item()
     {
          $id = $this->input->post('item_code');
@@ -74,6 +86,26 @@ class Navi extends CI_Controller {
       $this->load->model('Navi_model');
       $page_start = $this->input->post('page_start');
       $result = $this->Navi_model->getItems($page_start);
+
+      if ($result['success'] == 1) {
+        echo json_encode($result);
+        exit;
+      }
+      else {
+        $data_result["success"] = 0;
+        $data_result["errorCode"] = 1;
+        $data_result['message'] = "get_items failed![err=1]";
+        $data_result['data'] = 0;
+        exit;
+      }
+    }
+
+    public function get_item_by_id()
+    {
+      $tableName = 'T_NAVI';
+      $this->load->model('Navi_model');
+      $id = $this->input->post('item_id');
+      $result = $this->Navi_model->getItemById($id);
 
       if ($result['success'] == 1) {
         echo json_encode($result);
