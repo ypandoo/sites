@@ -11,7 +11,8 @@
 
                    content_id: '',
                    content_title: '',
-                   content_author:'Admin',
+                   content_author:'',
+                   content_cover:'',
                    content_text:'',
                    content_html:'',
                    content_type:'',
@@ -51,6 +52,7 @@
                               'content_html':  ue.getContent(),
                               'content_text':  ue.getContentTxt(),
                               'content_author': content_ctrl.content_author,
+                              'content_cover': content_ctrl.content_cover,
                               'content_type': content_ctrl.content_type
                       };
 
@@ -124,6 +126,7 @@
                      content_ctrl.content_publish_time = content_ctrl.list[e].PUBLISH_TIME;
                      content_ctrl.content_text = content_ctrl.list[e].CONTENT_TEXT;
                      content_ctrl.content_type = content_ctrl.list[e].CONTENT_TYPE;
+                     content_ctrl.content_cover = content_ctrl.list[e].CONTENT_COVER;
 
                      ue.setContent(content_ctrl.list[e].CONTENT_HTML);
 
@@ -174,7 +177,8 @@
                      content_ctrl.show['content_list'] = 0;
                      content_ctrl.show['content_detail'] = 1;
                      content_ctrl.content_title='';
-                     content_ctrl.content_author='Admin';
+                     content_ctrl.content_author='';
+                     content_ctrl.content_cover='';
                      content_ctrl.content_type = '';
                      content_ctrl.isNew = true;
 
@@ -222,13 +226,44 @@
             content_ctrl.page_start = 0;
             content_ctrl.page_end = false;
             content_ctrl.get_list(e);
-          }
+          },
+
+          get_pic_path: function(){
+            return upload_img+content_ctrl.content_cover;
+          },
   });
 
 
   //Init codes run once
   //content_ctrl.get_list();
   var ue = UE.getEditor('editor');
+
+  //uploadify-progress
+  var up = $('#pic_upload').Huploadify({
+      auto:false,
+      fileTypeExts:'*.jpg;*.jpeg;*.bmp;*.png',
+      multi:false,
+      formData:{id:'0'},
+      fileSizeLimit:1024,
+      showUploadedPercent:true,
+      showUploadedSize:true,
+      removeTimeout:500,
+      uploader:base_url+'Item/add_pic',
+      onUploadStart:function(file){
+        up.settings('formData', {id: content_ctrl.content_id});
+        console.log('开始上传:'+content_ctrl.content_id);
+      },
+      onUploadSuccess: function(file, data, response) {
+        console.log('上传成功:');
+        var obj = JSON.parse(data);
+        if (obj.success==1) {
+          content_ctrl.content_cover = obj.data.file_path;
+          // items_ctrl.pics.push({'ITEM_ID': items_ctrl.item_id,'PIC_ID':obj.data.file_id, 'PATH': obj.data.file_path});
+          console.log(content_ctrl.content_cover);
+        }
+
+      }
+    });
 
 
 }).call(define('space_content'));

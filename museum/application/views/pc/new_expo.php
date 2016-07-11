@@ -205,80 +205,128 @@ letter-spacing: 2px;
   font-size: 14px;
   line-height: 24px;
 }
+.content_html img{
+  width: 100%;
+}
+
+.hidden-menu li{
+  height: 60px;
+      font-size: 16px;
+      line-height: 60px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255,0,0,0.3);
+}
+
+.expo_item{
+  width: 30%;
+      float: left;
+      background: #FFF;
+      border: 1px solid rgba(102, 102, 102, 0.4);
+      margin: 1.5%;
+}
+
+.expo_item:hover{
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.expo_item p{
+  line-height: 48px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+    cursor: pointer;
+    color:#cc0000;
+}
+
+.expo_check{
+  border-top: 1px solid rgba(102, 102, 102, 0.19);
+}
+
+.expo_check p:hover{
+  background: rgba(197, 11, 11, 0.82);
+  color: white;
+}
+
+.expo_check a:hover{
+  background: rgba(197, 11, 11, 0.82);
+    color: white;
+}
+
+.expo_item_container{
+  padding: 10px;
+}
+
+.expo_item:hover {
+    box-shadow: 0 0 38px rgba(0,0,0,.3);
+    transition: all .15s ease;
+}
+
+h2, h4{
+  text-align: center;
+  font-weight: 500;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.expo_text{
+  padding: 0px 10px 10px 10px;
+}
+.expo_text h2{
+  font-size: 18px;
+      line-height: 50px;
+      color: black;
+}
+
+.expo_text h4{
+  font-size: 12px;
+  line-height: 24px;
+  color: #666;
+}
 </style>
 </head>
 
-<body style="background:#333333"  ms-controller="sd-list" >
-<!-- data -->
-<div id="item_id" data-id="<?php echo $item_id?>"></div>
+<body style="background:#333333">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
-<img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;    margin-top: 20px;">
+<img src="<?php echo base_url('assets/pc/img/ztdh.jpg')?>" width="100%"/>
 </div>
 
-<!-- service and pics -->
-<div style=" background:#333333; width:100%; clear:both; margin:20px 0 20px 0; height:540px">
-<div style="width:1000px; margin:0 auto; ">
-
-  <div style="float:left">
-    <div class="shadow" style="width:600px; height:400px;">
-    <div class="slider slider-for" style="width:600px; height:400px;">
-    					<div class="single-item-top" ms-for='($index, item_info) in @items_list' ms-attr="{dataId:$index}">
-                <img ms-attr="{src:@get_pic_path(item_info.PATH)}" /><div class="item_name_bg"><p >{{ item_info.ITEM_NAME}}</p></div>
-              </div>
-    </div>
-    </div>
-    <div class="slider slider-nav" style="width:600px; height:120px; margin-top:20px;">
-    					<div class="single-item-bottom"  ms-for='($index, item_info) in @items_list' ms-attr="{dataId:$index}">
-                <img ms-attr="{src:@get_pic_path(item_info.PATH)}" /></div>
-    </div>
-  </div>
-
-  <div style="width:380px; margin-left:20px; float:left; height:540px; background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
-    <div style="padding:60px 0px 0px 40px; text-align:left;height:100px">
-      <p class="title_text">SELF-SERVICE </p>
-      <p class="title_text_en" style="font-size:18px">自助服务</p>
-      <div class="dash"></div>
-    </div>
-
-    <div style="width:220px; padding:0px 40px 0 40px">
-      <div class="service-container"><a class="service">
-        <i class="fa fa-volume-up" aria-hidden="true"></i></i>收听中文语音解说
-      </a></div>
-      <div class="service-container"><a class="service">
-        <i class="fa fa-volume-up" aria-hidden="true"></i>收听藏文语音解说
-      </a></div>
-      <div class="service-container"><a class="service">
-        <i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说
-      </a></div>
-      <div class="service-container"><a class="service">
-        <i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图
-      </a></div>
-      <div class="service-container"><a class="service" href="/Pc/view/item_list">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i></i>返回馆藏珍品列表
-      </a></div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- HEADER -->
+<!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; " ms-controller="sd-list">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
     <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text">珍品简介</p>
-      <p class="title_text_en">COLLECTION DETAIL</p>
-      <div class="dash"></div>
+      <p class="title_text">新展快讯</p>
+      <p class="title_text_en">NEW EXHIBITIONS </p>
+      <div class="dash" style="width:130px"></div>
     </div>
-    <div style="padding:0 80px 0 80px; text-align:left; font-size:12px; color:#636363;margin-bottom:20px">
-      <div class="item-des" ms-html="@items_list[0].ITEM_DESCRIPTION " >
+
+
+  <div style="  width:90%; margin-left:5%; margin-top:20px">
+    <div class="expo_item"  ms-for='($index, item_info) in @list'>
+      <div class="expo_item_container">
+      <img ms-attr="{src:@get_pic_path(item_info.CONTENT_COVER)}" width="100%"/>
+
+      </div>
+      <div class="expo_text">
+        <h2>{{item_info.CONTENT_TITLE}}</h2>
+        <h4>{{@get_content_text(item_info.CONTENT_TEXT)}}</h4>
+      </div>
+      <div class="expo_check">
+        <a ms-click="@get_detail_link($index)"><p>查看详情</p></a>
       </div>
     </div>
+
   </div>
+
+  </div>
+</div>
+
+
+
 </div>
 
 
@@ -288,30 +336,13 @@ letter-spacing: 2px;
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/pc/js/item_detail.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/new_expo.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 
 <script>
 
 $(document).ready(function(){
-  $('.slider-for').slick({
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   arrows: false,
-   fade: true,
-   asNavFor: '.slider-nav'
- });
- $('.slider-nav').slick({
-   slidesToShow: 3,
-   slidesToScroll: 1,
-   asNavFor: '.slider-for',
-   dots: true,
-   focusOnSelect: true,
-   arrows:true,
-  //  centerMode:true,
-   infinite: true,
- });
 
 });
 

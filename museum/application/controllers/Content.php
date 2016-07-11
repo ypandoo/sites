@@ -12,6 +12,59 @@ class Content extends CI_Controller {
        $this->load->view('content_detail', $data);
     }
 
+    public function add_pic()
+    {
+         $id = $this->input->post('id');
+         if(!$id)
+         {
+             $data_result["success"] = 0;
+             $data_result["errorCode"] = 1;
+             $data_result['message'] = "Upload failed![err=1]. id = ".$id;
+             $data_result["data"] = 0;
+             echo json_encode($data_result);
+             exit;
+         }
+
+        $original_name = iconv('UTF-8', 'GBK', $_FILES['file']['name']);
+        $fileParts = pathinfo($original_name);
+        $file_id = md5(uniqid(rand()));
+        $namewithoutpath = $file_id.'.'.$fileParts['extension'];
+        if ($namewithoutpath) {
+             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/img/".$namewithoutpath);
+        }
+        else {
+            $data_result["success"] = 0;
+            $data_result["errorCode"] = 2;
+            $data_result['message'] = "Upload failed![err=2]";
+            $data_result["data"] = 0;
+            echo json_encode($data_result);
+            exit;
+        }
+
+       $insertdata['ITEM_ID'] = $id;
+       $insertdata['PIC_ID'] = $file_id;
+       $insertdata['PATH'] = $namewithoutpath;
+
+       $tableName = 'T_PIC';
+       $this->load->model('Item_model');
+       $result = $this->Item_model->addPic($insertdata,$tableName);
+
+       if ($result['success'] == 1) {
+         $data_result["success"] = 1;
+         $data_result["errorCode"] = 0;
+         $data_result['message'] = "Upload succeeded!";
+         $data_result['data'] = ['file_id'=>$file_id, 'file_path'=>$namewithoutpath, 'database_info'=>$result];
+       }
+       else {
+         $data_result["success"] = 0;
+         $data_result["errorCode"] = 3;
+         $data_result['message'] = "Upload failed![err=3]";
+         $data_result['data'] = ['file_id'=>$file_id, 'file_path'=>$namewithoutpath, 'database_info'=>$result];
+       }
+
+       echo json_encode($data_result);
+    }
+
     public function new_content()
     {
          $content_id = $this->input->post('content_id');
@@ -36,6 +89,7 @@ class Content extends CI_Controller {
          $content_html = $this->input->post('content_html');
          $content_text = $this->input->post('content_text');
          $content_author = $this->input->post('content_author');
+         $content_cover = $this->input->post('content_cover');
 
          $insertdata['CONTENT_ID'] = $content_id;
          $insertdata['CONTENT_TITLE'] = $content_title;
@@ -44,6 +98,7 @@ class Content extends CI_Controller {
          $insertdata['PUBLISH_TIME'] = date("Y-m-d H:i:s");
          $insertdata['AUTHOR'] = $content_author;
          $insertdata['CONTENT_TYPE'] = $content_type;
+         $insertdata['CONTENT_COVER'] = $content_cover;
 
          $this->load->model('Content_model');
          $result = $this->Content_model->addItem($insertdata);
@@ -87,6 +142,7 @@ class Content extends CI_Controller {
          $content_html = $this->input->post('content_html');
          $content_text = $this->input->post('content_text');
          $content_author = $this->input->post('content_author');
+         $content_cover = $this->input->post('content_cover');
 
          $insertdata['CONTENT_ID'] = $content_id;
          $insertdata['CONTENT_TITLE'] = $content_title;
@@ -95,6 +151,7 @@ class Content extends CI_Controller {
          $insertdata['PUBLISH_TIME'] = date("Y-m-d H:i:s");
          $insertdata['AUTHOR'] = $content_author;
          $insertdata['CONTENT_TYPE'] = $content_type;
+         $insertdata['CONTENT_COVER'] = $content_cover;
 
          $this->load->model('Content_model');
          $result = $this->Content_model->updateContent($insertdata);

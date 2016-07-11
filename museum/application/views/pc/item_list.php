@@ -265,8 +265,11 @@ margin: 0 auto;
 
 <body style="background:#333333"  ms-controller="items_ctrl">
 
-<div style="background:rgba(0,0,0,0.3); width:100%; height:120px"></div>
-
+<!-- <div style="background:rgba(0,0,0,0.3); width:100%; height:120px"></div> -->
+<!-- banner -->
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
+<img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
+</div>
 <div id="table">
       <div id="table-cell">
           <div id="center">

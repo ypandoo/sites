@@ -15,10 +15,10 @@ echo  '<div class="nav">
         </div>
       </li>
       <li>
-        <a href="product.html" class="animate">展览</a>
+        <a href="/Pc/view/new_expo" class="animate">展览</a>
         <div class="subNav" style="display: none;">
-              <a href="/into-the-ai/">新展快讯</a>
-              <a href="/development-process/">展览回顾</a>
+              <a href="/Pc/view/new_expo">新展快讯</a>
+              <a href="/Pc/view/expo_review">展览回顾</a>
         </div>
       </li>
       <li>

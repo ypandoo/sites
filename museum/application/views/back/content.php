@@ -145,6 +145,25 @@
                     </div>
                   </div>
 
+                  <div class="row">
+                    <div class="col-md-2"><label><strong>文章作者:</strong></label></div>
+                    <div class="col-md-10">
+                       <input class="form-control"  ms-duplex='@content_author' ms-rules="{required:true}"  data-required-message='文章作者不能为空!' />
+                    </div>
+                  </div>
+
+                  <!-- 封面图 -->
+                  <hr>
+                  <label for="pic_list"><strong>封面图片：</strong>(单个文件大小在1M之内，尺寸600*400，支持jpg,jpeg,bmp,png格式)</label>
+                  <ul id="pic_list" style="margin:20px 0 20px 0">
+                      <li>
+                          <div>
+                              <img ms-attr="{src:@get_pic_path()}" height="100px"/>
+                          </div>
+                      </li>
+                  </ul>
+                  <div id="pic_upload" style="clear:both"></div>
+
                   <hr>
                   <div class="row">
                       <div class="col-md-2"><label><strong>文章发布模块:</strong></label></div>
@@ -165,6 +184,7 @@
                   <label><strong>文章内容</strong></label>
                   <script id="editor" type="text/plain" style="width:100%;height:200px;"></script>
 
+
                   <hr>
                   <button type="submit" class="btn btn-primary" ms-visible='@isNew'>发布文章</button>
                   <button type="submit" class="btn btn-primary" ms-visible='!@isNew'>更新文章</button>
@@ -183,6 +203,7 @@
     <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/common/js/bootstrap.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/common/js/ie10-viewport-bug-workaround.js') ?>"></script>
+    <script src="<?php echo base_url('assets/common/js/jquery.Huploadify.js') ?>"></script>
     <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 
     <!-- UE -->

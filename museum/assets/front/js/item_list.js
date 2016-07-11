@@ -13,7 +13,7 @@
                    get_detail_link : function(e){
                      return base_url+'item/view/'+e;
                    },
-                   get_detail_link_pc : function(es){
+                   get_detail_link_pc : function(e){
                      return base_url+'item/view_pc/'+e;
                    },
 
