@@ -8,6 +8,7 @@
                    item_id: '',
                    item_name: '',
                    item_title: '',
+                   item_position: '',
                    video: '',
                    audio_cn: '',
                    audio_tibet: '',
@@ -54,7 +55,8 @@
                               'audio_tibet': items_ctrl.audio_tibet,
                               'item_priority':  items_ctrl.item_priority,
                               'item_description': ue.getContent(),
-                              'pics': items_ctrl.pics
+                              'pics': items_ctrl.pics,
+                              'item_position': items_ctrl.item_position
                       };
 
                       //Ajax
@@ -127,6 +129,7 @@
                      items_ctrl.video = items_ctrl.data[e].ITEM_VIDEO;
                      items_ctrl.audio_cn = items_ctrl.data[e].ITEM_AUDIO_CN;
                      items_ctrl.audio_tibet = items_ctrl.data[e].ITEM_AUDIO_TIBET;
+                     items_ctrl.item_position = items_ctrl.data[e].ITEM_POSITION;
 
                      items_ctrl.item_priority = items_ctrl.data[e].ITEM_PRIORITY;
                      ue.setContent(items_ctrl.data[e].ITEM_DESCRIPTION);
@@ -235,6 +238,7 @@
                      items_ctrl.video='';
                      items_ctrl.audio_cn='';
                      items_ctrl.audio_tibet='';
+                     items_ctrl.item_position='';
                      items_ctrl.priority = 0;
                      items_ctrl.isNewItem = true;
 

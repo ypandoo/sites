@@ -214,7 +214,11 @@ letter-spacing: 2px;
       font-size: 16px;
       line-height: 60px;
       cursor: pointer;
-      border-bottom: 1px solid rgba(255,0,0,0.3);
+      border-bottom: 1px solid rgba(51,51,51,0.1);
+}
+
+.hidden-menu li .selected{
+  color:red;
 }
 </style>
 </head>
@@ -224,8 +228,8 @@ letter-spacing: 2px;
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;    margin-top: 20px;">
-<img src="<?php echo base_url('assets/pc/img/ztdh.jpg')?>" width="100%"/>
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
@@ -236,12 +240,13 @@ letter-spacing: 2px;
     <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:10px"></i>当前展厅：{{@navi_name}}</p>
       <!-- <p class="title_text_en">MUSEUM NAVIGATION </p> -->
-      <div class="dash" style="width:200px"></div>
+      <!-- <div class="dash" style="width:200px"></div> -->
     </div>
 
     <div style="width:260px;float:left;padding: 20px;">
     <ul class="hidden-menu">
         <li ms-for='($index, item_info) in @list' ms-attr="{dataId:$index}" ms-click='@swith_to_selected($index)'>
+            <i class="fa fa-arrow-right" aria-hidden="true" style="padding-right:10px; color:#cc0000" ms-if='item_info.NAVI_CODE == @navi_code'></i>
             {{item_info.NAVI_NAME}}
         </li>
     </ul>

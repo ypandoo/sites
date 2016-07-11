@@ -140,6 +140,12 @@
                  </div>
 
                  <hr>
+                 <div class="row">
+                   <div class="col-md-2"><label><strong>珍品位置编号（请在展厅导航里查阅）:</strong></label></div>
+                   <div class="col-md-10">
+                      <input class="form-control"  ms-duplex='@item_position' ms-rules="{required:true}"  data-required-message='珍品位置编号!' />
+                   </div>
+                 </div>
                  <!-- <div class="row">
                    <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
                      <span>选择展馆编号：</span>

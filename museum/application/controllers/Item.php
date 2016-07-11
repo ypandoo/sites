@@ -201,10 +201,12 @@ class Item extends CI_Controller {
          $audio_tibet = $this->input->post('audio_tibet');
          $item_priority = $this->input->post('item_priority');
          $item_description = $this->input->post('item_description');
+         $item_position = $this->input->post('item_position');
          $pics = $this->input->post('pics');
 
          $insertdata['ITEM_ID'] = $id;
          $insertdata['ITEM_NAME'] = $item_name;
+          $insertdata['ITEM_POSITION'] = $item_position;
          if ($video) {
            $insertdata['ITEM_VIDEO'] = $video;
          }
@@ -260,10 +262,12 @@ class Item extends CI_Controller {
          $audio_tibet = $this->input->post('audio_tibet');
          $item_priority = $this->input->post('item_priority');
          $item_description = $this->input->post('item_description');
+         $item_position = $this->input->post('item_position');
          $pics = $this->input->post('pics');
 
          $insertdata['ITEM_ID'] = $id;
          $insertdata['ITEM_NAME'] = $item_name;
+         $insertdata['ITEM_POSITION'] = $item_position;
          if ($video) {
            $insertdata['ITEM_VIDEO'] = $video;
          }

@@ -13,6 +13,42 @@
               'video':'',
               'description': '',
               'path': ''},
+        play_cn:false,
+        _play_cn:function(){
+          if(self.framework.play_cn == true)
+          {
+               self.framework.play_cn = false;
+               audio.pause();
+          }
+          else {
+            self.framework.play_cn = true;
+            audio.play();
+          }
+        },
+        play_tibet:false,
+        _play_tibet:function(){
+          if(self.framework.play_tibet == true)
+          {
+               self.framework.play_tibet = false;
+               audio2.pause();
+          }
+          else {
+            self.framework.play_tibet = true;
+            audio2.play();
+          }
+        },
+
+        play_video: function(){
+          // $('.popup').show();
+          $('.popup').slideDown(200,function(){});
+          $('.bk').show(0,function(){$(this).css('opacity',0.7)});
+        },
+
+        close_video: function(){
+          $('.bk').css('opacity',0);
+          setTimeout(function(){  $('.bk').hide();},400);
+          $('.popup').hide();
+        },
         get_pic_path: function(e){
             return self.get_pic_path(e);
         },
@@ -21,6 +57,9 @@
         },
         direct_to_list_path: function(){
            window.location.href = base_url + 'pages/view/item_list';
+        },
+        direct2map:function(){
+           window.location.href = base_url+'Navi/view_pc/'+self.framework.items_list[0].ITEM_POSITION;
         }
     });
 
@@ -65,5 +104,47 @@
     };
 
     this.get_list();
+
+    var url = "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/music.mp3" ;
+    window.audio = document.createElement("audio");
+    var source = document.createElement("source");
+    audio.id = "audio" ;
+    source.type = "audio/mpeg" ;
+    source.src = url ;
+    source.autoplay = "autoplay" ;
+    audio.addEventListener("ended",function(){
+        audio.play();
+    },false);
+    audio.appendChild(source);
+
+    var url2 = "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/music.mp3" ;
+    window.audio2 = document.createElement("audio");
+    var source2 = document.createElement("source");
+    audio2.id = "audio2" ;
+    source2.type = "audio/mpeg" ;
+    source2.src = url ;
+    source2.autoplay = "autoplay" ;
+    audio2.addEventListener("ended",function(){
+        audio2.play();
+    },false);
+    audio2.appendChild(source2);
+
+
+    //audio.play();
+    // //    关闭音乐
+    // var musicBtn = $("#musicDiv");
+    // var musicStop = $("#musicDiv .musicStop");
+    // var musicOn = $("#musicDiv .musicOn");
+    // musicBtn.tap(function() {
+    //     if (audio.paused) {
+    //         musicOn.show();
+    //         musicStop.hide();
+    //         audio.play();
+    //     } else {
+    //         musicOn.hide();
+    //         musicStop.show();
+    //         audio.pause();
+    //     }
+    // });
 
 }).call(define('view_sd'));

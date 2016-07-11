@@ -192,7 +192,7 @@ letter-spacing: 2px;
 
 .service-container{
   height: 70px;
-       border-top: 1px solid rgba(255, 0, 0, 0.1);
+       border-top: 1px solid rgba(51, 51, 51, 0.1);
 
 }
 
@@ -205,10 +205,58 @@ letter-spacing: 2px;
   font-size: 14px;
   line-height: 24px;
 }
+
+/*popup*/
+.popup{
+  position: fixed;;
+  width: 600px;
+  height: 450px;
+  padding: 50px;
+  left: 50%;
+  margin-left: -300px;
+  top:10%;
+  z-index: 9999;
+  background: #FFF;
+  border-radius : 5px;
+}
+
+.popup h2{
+  font-size: 18px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.popup li{
+  float:none;
+text-align: left;
+padding: 15px 20px 15px 20px;
+border-top: 1px solid #f3f3f3;
+}
+
+.popup li i{
+margin-right: 5px ;
+color:red;
+}
+.bk{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0;
+  z-index: 10;
+  display: none;
+  -webkit-transition:opacity .5s ease;
+  -o-transition:opacity .5s ease;
+  -moz-transition:opacity .5s ease;
+  transition:opacity .5s ease;
+  z-index: 9998;
+}
+
 </style>
 </head>
 
 <body style="background:#333333"  ms-controller="sd-list" >
+  <div class="bk"></div>
 <!-- data -->
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
 
@@ -216,6 +264,14 @@ letter-spacing: 2px;
 <div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
 <img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
 </div>
+
+<!--video -->
+<div class="popup" style="display:none">
+<div style="position: absolute;top: 0;font-size: 20px;right: 0;padding: 10px; cursor:pointer" ms-click='{@close_video()}'>X</div>
+<video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls" width="600px" height="450px">
+your browser does not support the video tag
+</video>
+ </div>
 
 <!-- service and pics -->
 <div style=" background:#333333; width:100%; clear:both; margin:20px 0 20px 0; height:540px">
@@ -243,16 +299,21 @@ letter-spacing: 2px;
     </div>
 
     <div style="width:220px; padding:0px 40px 0 40px">
-      <div class="service-container"><a class="service">
-        <i class="fa fa-volume-up" aria-hidden="true"></i></i>收听中文语音解说
+      <div class="service-container" ms-click= '{@_play_cn()}'><a class="service">
+        <span ms-if='!@play_cn'><i class="fa fa-play" aria-hidden="true"></i></i>收听中文语音解说</span>
+        <span ms-if='@play_cn' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭中文语音解说</span>
       </a></div>
-      <div class="service-container"><a class="service">
-        <i class="fa fa-volume-up" aria-hidden="true"></i>收听藏文语音解说
+
+      <div class="service-container" ms-click= '{@_play_tibet()}'><a class="service">
+        <span ms-if='!@play_tibet'><i class="fa fa-play" aria-hidden="true"></i></i>收听藏文语音解说</span>
+        <span ms-if='@play_tibet' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭藏文语音解说</span>
       </a></div>
-      <div class="service-container"><a class="service">
+
+
+      <div class="service-container" ms-click='{@play_video()}'><a class="service">
         <i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说
       </a></div>
-      <div class="service-container"><a class="service">
+      <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
         <i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图
       </a></div>
       <div class="service-container"><a class="service" href="/Pc/view/item_list">
