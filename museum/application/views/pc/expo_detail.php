@@ -283,9 +283,21 @@ h2, h4{
   line-height: 24px;
   color: #666;
 }
+.content_html img{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.content_html p{
+  font-weight: 500;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  /*letter-spacing: 1px*/
+}
 </style>
 </head>
-
+<div id="content_id" data-id="<?php echo $content_id?>"></div>
 <body style="background:#333333">
 
 <!-- banner -->
@@ -296,30 +308,18 @@ h2, h4{
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "    ms-controller="sd-list">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
     <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text">新展快讯</p>
-      <p class="title_text_en">NEW EXHIBITIONS </p>
+      <p class="title_text"> {{@content_title}}</p>
+      <p class="title_text_en">展览详情 · EXHIBITION DETAIL </p>
       <div class="dash" style="width:130px"></div>
     </div>
 
 
   <div style="  width:90%; margin-left:5%; margin-top:20px">
-    <div class="expo_item"  ms-for='($index, item_info) in @list'>
-      <div class="expo_item_container">
-      <img ms-attr="{src:@get_pic_path(item_info.CONTENT_COVER)}" width="100%"/>
-
-      </div>
-      <div class="expo_text">
-        <h2>{{item_info.CONTENT_TITLE}}</h2>
-        <h4>{{@get_content_text(item_info.CONTENT_TEXT)}}</h4>
-      </div>
-      <div class="expo_check">
-        <a ms-click="@get_detail_link_pc($index)"><p>查看详情</p></a>
-      </div>
-    </div>
-
+    <!-- <p ms-text="@content_title" class="content_title"></p> -->
+    <div class="content_html" ms-html="@content_html ">
   </div>
 
   </div>
@@ -336,7 +336,7 @@ h2, h4{
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/expo_review.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/content_detail.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 

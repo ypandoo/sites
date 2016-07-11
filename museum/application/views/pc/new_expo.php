@@ -289,8 +289,8 @@ h2, h4{
 <body style="background:#333333">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;    margin-top: 20px;">
-<img src="<?php echo base_url('assets/pc/img/ztdh.jpg')?>" width="100%"/>
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
@@ -316,7 +316,7 @@ h2, h4{
         <h4>{{@get_content_text(item_info.CONTENT_TEXT)}}</h4>
       </div>
       <div class="expo_check">
-        <a ms-click="@get_detail_link($index)"><p>查看详情</p></a>
+        <a ms-click="@get_detail_link_pc($index)"><p>查看详情</p></a>
       </div>
     </div>
 
