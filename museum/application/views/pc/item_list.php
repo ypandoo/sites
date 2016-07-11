@@ -284,57 +284,7 @@ margin: 0 auto;
 
 
 <!-- header -->
-<div id="header">
-  <h1><a href="index.html"><img src="<?php echo base_url('assets/pc/img/logo.png') ?>" width="250" height="50" alt="西藏博物馆"></a></h1>
-  <div class="nav">
-  <ul>
-    <li>
-        <a href="index.html" class="animate">首页</a>
-    </li>
-      <li>
-        <a href="about.html" class="animate">资讯 </a>
-        <div class="subNav" style="display: none;">
-            	<a href="/into-the-ai/">西博简介</a>
-              <a href="/development-process/">西博动态</a>
-              <a href="/development-process/">新馆建设</a>
-        </div>
-      </li>
-      <li>
-        <a href="product.html" class="animate">展览</a>
-        <div class="subNav" style="display: none;">
-              <a href="/into-the-ai/">新展快讯</a>
-              <a href="/development-process/">展览回顾</a>
-        </div>
-      </li>
-      <li>
-        <a href="research.html" class="animate">藏品</a>
-        <div class="subNav" style="display: none;">
-              <a href="/into-the-ai/">珍品赏析</a>
-              <a href="/development-process/">藏品保护</a>
-        </div>
-      </li>
-      <li>
-        <a href="contact.html" class="animate">服务</a>
-        <div class="subNav" style="display: none;">
-        <a href="/into-the-ai/">基本陈列</a>
-        <a href="/development-process/">参观指南</a>
-        <a href="/development-process/">360全景</a>
-        <a href="/development-process/">移动平台</a>
-        </div>
-      </li>
-      <li>
-        <a href="contact.html" class="animate">活动</a>
-        <div class="subNav" style="display: none;">
-        <a href="/into-the-ai/">活动邀约</a>
-        <a href="/development-process/">志愿者风采</a>
-        <a href="/development-process/">西博课堂</a>
-        </div>
-      </li>
-  </ul>
-  </div>
-</div>
-
-
+<?php include 'header.php';?>
 
 <div style=" background:#333333; width:100%; clear:both; overflow:hidden; ">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
@@ -356,64 +306,8 @@ margin: 0 auto;
 </div>
 
 
-<div style=" margin: 20px 0 0px 0; background:rgba(0,0,0,0.3); width:100% ">
-<div style=" height: 120px; width:1000px; margin: 0 auto; padding:20px 0 20px 0">
-  <div class="link-item">
-    <p class="link-item-title">资讯</p>
-    <p class="link-item-text">西博简介</p>
-    <p class="link-item-text">西博动态</p>
-    <p class="link-item-text">新馆建设</p>
-  </div>
-  <div class="link-item">
-    <p class="link-item-title">展览</p>
-    <p class="link-item-text">新展快讯</p>
-    <p class="link-item-text">展览回顾</p>
-  </div>
-  <div class="link-item">
-    <p class="link-item-title">藏品</p>
-    <p class="link-item-text">珍品赏析</p>
-    <p class="link-item-text">藏品保护</p>
-  </div>
-  <div class="link-item">
-    <p class="link-item-title">服务</p>
-    <p class="link-item-text">基本陈列</p>
-    <p class="link-item-text">参观指南</p>
-    <p class="link-item-text">360全景</p>
-  </div>
-  <div class="link-item">
-    <p class="link-item-title">活动</p>
-    <p class="link-item-text">活动邀约</p>
-    <p class="link-item-text">志愿者风采</p>
-    <p class="link-item-text">西博课堂</p>
-  </div>
-  <div class="link-item">
-    <p class="link-item-title">移动平台</p>
-    <p class="link-item-text">投票</p>
-    <p class="link-item-text">文创小店</p>
-    <p class="link-item-text">语音导航</p>
-  </div>
-
-  <div class="link-item" style="width:300px">
-    <p class="link-item-title">联系方式</p>
-    <p class="link-item-text">地址</p>
-    <p class="link-item-text">电话</p>
-    <p class="link-item-text">邮箱</p>
-  </div>
-
-  <div class="link-item">
-    <p class="link-item-title">微信公众平台</p>
-    <img src="" width="80px" style="margin:10px"/>
-  </div>
-
-
-</div>
-</div>
-
-<div id="homeFooter">
-<div class="homeFooter">
-        <div class="homeFooterBottom">Copyright(C)西藏博物馆&nbsp;&nbsp;&nbsp;&nbsp;蜀ICP备11020230号&nbsp;&nbsp;&nbsp;&nbsp;</div>
-</div>
-</div>
+<!-- footer -->
+<?php include 'footer.php';?>
 
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
@@ -440,53 +334,7 @@ $(".nav li").hover(function(){
 },function(){
 	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
 })
-
-
-	// $(".proMenu").click(function(){
-	// 	$("#wra_opacity").fadeIn();
-	// 	$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".xuan_left").hover(function(){
-	// 		$(".wj_xuanleft",this).stop().animate({right:-50},600)
-	// 	},function(){
-	// 		$(".wj_xuanleft",this).stop().animate({right:0},600)
-	// 	})
-	// 	$(".xuan_right").hover(function(){
-	// 		$(".wj_xuanright",this).stop().animate({left:-50},600)
-	// 	},function(){
-	// 		$(".wj_xuanright",this).stop().animate({left:0},600)
-	// 	})
-	// })
-	// $(".wra_opacity").click(function(){
-	// 	$("#wra_opacity").fadeOut();
-	// })
-	// var navH = $("#header").offset().top;
-	// $(window).scroll(function(){
-	// 		var scroH = $(this).scrollTop();
-	// 		if(scroH>=navH){
-	// 			$("#header").css({"top":0});
-	// 		}else if(scroH<navH){
-	// 			$("#header").css({"top":25});
-	// 		}
-	// 	})
 </script>
-<script>
-// $('.homeNewsList').myScroll({visible:1});
-// var container2_Interval = new Array();
-// $(".homeCaseBtn a").each(function (index, ele) {
-//     var random = Math.random();
-//     var objID = $(ele).attr("id");
-// 	$(ele).css({opacity:random+0.2,"font-size":Math.random()*8+12});
-//     var currentLeft = parseFloat($(ele).css("left").replace("px", ""));
-//     container2_Interval[objID] = setInterval(function () {
-//       $(ele).stop().animate({left: currentLeft + 40 + 30 * random}, 5 * 1000 + index * 400, "easeOutCubic"
-//             , function () {
-//               $(ele).stop().animate({left: currentLeft - 40 - 30 * random}, 5 * 1000 + index * 400, "easeOutCubic");
-//             });
-//     }, 2 * 5 * 1000 + index * 400);
-// });
-</script>
+
 
 </html>
