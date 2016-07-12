@@ -178,14 +178,14 @@ margin: 0 auto;
     display: table;
     width:100%;
     height: 420px;
-    background: #333333;
+    background: rgba(0, 0, 0, 0.3);;
 }
 #table-cell{
     display: table-cell;
     vertical-align: middle;
 }
 #center{
-    background: #333333;
+    /*background: #333333;*/
     width: 1280px;
     margin: 0 auto;
 }
@@ -289,12 +289,12 @@ margin: 0 auto;
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; ">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; margin-top:20px">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
     <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">馆藏珍品</p>
       <p class="title_text_en">MUSEUM COLLECTION</p>
-      <div class="dash"></div>
+      <div class="dash" style="width:160px"></div>
     </div>
 
     <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; ">

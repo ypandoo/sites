@@ -9,8 +9,8 @@ echo  '<div class="nav">
       <li>
         <a href="about.html" class="animate">资讯 </a>
         <div class="subNav" style="display: none;">
-            	<a href="/into-the-ai/">西博简介</a>
-              <a href="/development-process/">西博动态</a>
+            	<a href="/Pc/view/about">西博简介</a>
+              <a href="/Pc/view/dynamic">西博动态</a>
               <a href="/development-process/">新馆建设</a>
         </div>
       </li>
@@ -43,7 +43,7 @@ echo  '<div class="nav">
         <div class="subNav" style="display: none;">
         <a href="/into-the-ai/">活动邀约</a>
         <a href="/development-process/">志愿者风采</a>
-        <a href="/development-process/">西博课堂</a>
+        <a href="/Pc/view/lesson">西博课堂</a>
         </div>
       </li>
   </ul>

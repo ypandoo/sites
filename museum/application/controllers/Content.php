@@ -15,7 +15,7 @@ class Content extends CI_Controller {
     public function view_expo_new($content_id)
     {
       $data['content_id'] = $content_id;
-      if ( ! file_exists(APPPATH.'/views/new_expo.php') || !  $data['content_id'])
+      if ( ! file_exists(APPPATH.'/views/pc/new_expo.php') || !  $data['content_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();
@@ -27,13 +27,37 @@ class Content extends CI_Controller {
     public function view_expo_review($content_id)
     {
       $data['content_id'] = $content_id;
-      if ( ! file_exists(APPPATH.'/views/expo_review.php') || !  $data['content_id'])
+      if ( ! file_exists(APPPATH.'/views/pc/expo_review.php') || !  $data['content_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();
        }
 
        $this->load->view('pc/expo_detail', $data);
+    }
+
+    public function view_dynamic($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/dynamic_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/dynamic_detail', $data);
+    }
+
+    public function view_lesson($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/lesson_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/lesson_detail', $data);
     }
 
     public function add_pic()

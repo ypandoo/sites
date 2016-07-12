@@ -174,7 +174,7 @@ margin: 0 auto;
             <p style=" line-height:20px">西藏博物馆坐落于拉萨市罗布林卡东南角，是西藏第一座具有现代化功能的博物馆。1994年7月列入西藏自治区成立30周年大庆援藏62项工程之一，于1999年10月中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。博物馆占地面积53959平方米，总建筑面积23508平方米，展厅面6积10451平方米。馆区中轴线上依次坐落着序言厅、主展馆和…文物库房。西藏博物馆具有鲜明的藏族传统建筑艺术特点，同时又深刻体…现了现代建筑的实用特点和艺术神韵。
             </p>
           </div>
-          <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black">VIEW MORE</a></div>
+          <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black" href="/Pc/view/about">VIEW MORE</a></div>
       </div>
 
       <div style="width:300px; float:left; height:470px; background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
@@ -248,13 +248,13 @@ margin: 0 auto;
 </div>
 
 <div class="line_btn" style="background: #cc0000;">
-  <a style="color:white;    color: blanchedalmond;cursor: pointer;">查阅更多珍品 · VIEW MORE</a></div>
+  <a style="color:white;    color: blanchedalmond;cursor: pointer;" href="/Pc/view/item_list">查阅更多珍品 · VIEW MORE</a></div>
 
 <div id="homeContent">
     	<div id="homeProduct" style="background: #333333;">
     		<div class="homeProduct">
             	<ul>
-                	<li style="    background:rgba(0,0,0,0.3); ;"><a href="product.html">
+                	<li style="    background:rgba(0,0,0,0.3); ;"><a href="/navi/view_pc/1">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro1.png')?>" width="150" height="150" alt="休闲小菜"></div>
                         <div class="homeProTitle">
                         	<div class="homeProLine animate"><span></span></div>
@@ -264,7 +264,7 @@ margin: 0 auto;
                         	<span class="animate">more</span><div class="animate">+</div>
                         </div></a>
                     </li>
-                    <li style="    background:rgba(0,0,0,0.3); ;"><a href="product.html">
+                    <li style="    background:rgba(0,0,0,0.3); ;"><a href="/Pc/view/expo_review">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro2.png')?>" width="150" height="150" alt="调味料"></div>
                         <div class="homeProTitle" style="left:200px;">
                         	<div class="homeProLine animate"><span></span></div>
@@ -274,7 +274,7 @@ margin: 0 auto;
                         	<span class="animate">more</span><div class="animate">+</div>
                         </div></a>
                     </li>
-                    <li style="margin-right:0px;    background:rgba(0,0,0,0.3); ;"><a href="product.html">
+                    <li style="margin-right:0px;    background:rgba(0,0,0,0.3); ;"><a href="/Pc/view/360">
                     	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro3.png')?>" width="150" height="150" alt="什锦泡菜"></div>
                         <div class="homeProTitle" style="">
                         	<div class="homeProLine animate"><span></span></div>
@@ -289,7 +289,7 @@ margin: 0 auto;
           </div>
 </div>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden ">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden " ms-controller="expo_list_ctrl">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6">
     <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">西博动态</p>
@@ -297,37 +297,32 @@ margin: 0 auto;
       <div class="dash"></div>
     </div>
 
-    <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; ">
+    <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; "
+      ms-for='($index, item_info) in @list'>
       <div class="news_item">
-      <p class="news_title">
-        <span>2016-5-11</span>博物馆新闻
+      <a ms-click='{@direct2detail(item_info.CONTENT_ID)}'><p class="news_title">
+        <span>{{item_info.PUBLISH_TIME}}</span>{{item_info.CONTENT_TITLE}}
       </p>
       <p class="news_content">
-        西藏博物馆坐落于拉萨市罗布林卡东南角，是西藏第一座具有现代化功能的博物馆。1994年7月列入西藏自治区成立30周年大庆援藏62项工程之一，于1999年10月中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。博物馆占地面积53959平方米，总建筑面积23508平方米，展厅面6积10451平方米。馆区中轴线上依次坐落着序言厅、主展馆和…文物库房。西藏博物馆具有鲜明的藏族传统建筑艺术特点，同时又深刻体…现了现代建筑的实用特点和艺术神韵。
-      </p>
+        {{@get_content_text_pc(item_info.CONTENT_TEXT)}}
+      </p></a>
     </div>
-
-    <div class="news_item" style="border:none">
-    <p class="news_title">
-      <span>2016-5-11</span>博物馆新闻
-    </p>
-    <p class="news_content">
-      西藏博物馆坐落于拉萨市罗布林卡东南角，是西藏第一座具有现代化功能的博物馆。1994年7月列入西藏自治区成立30周年大庆援藏62项工程之一，于1999年10月中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。博物馆占地面积53959平方米，总建筑面积23508平方米，展厅面6积10451平方米。馆区中轴线上依次坐落着序言厅、主展馆和…文物库房。西藏博物馆具有鲜明的藏族传统建筑艺术特点，同时又深刻体…现了现代建筑的实用特点和艺术神韵。
-    </p>
-  </div>
     </div>
 
   </div>
 </div>
 
 <div class="line_btn" style="background:rgba(0,0,0,0.3); ;">
-  <a style="color:white;    color: blanchedalmond;cursor: pointer;">查阅更多新闻 · VIEW MORE</a></div>
+  <a style="color:white;    color: blanchedalmond;cursor: pointer;" href="/Pc/view/dynamic">查阅更多新闻 · VIEW MORE</a></div>
 
 <!-- footer -->
 <?php include 'footer.php';?>
 
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
+<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/dynamic.js') ?>"></script>
 
 
 </body>
@@ -394,22 +389,6 @@ $(".nav li").hover(function(){
 	// 			$("#header").css({"top":25});
 	// 		}
 	// 	})
-</script>
-<script>
-// $('.homeNewsList').myScroll({visible:1});
-// var container2_Interval = new Array();
-// $(".homeCaseBtn a").each(function (index, ele) {
-//     var random = Math.random();
-//     var objID = $(ele).attr("id");
-// 	$(ele).css({opacity:random+0.2,"font-size":Math.random()*8+12});
-//     var currentLeft = parseFloat($(ele).css("left").replace("px", ""));
-//     container2_Interval[objID] = setInterval(function () {
-//       $(ele).stop().animate({left: currentLeft + 40 + 30 * random}, 5 * 1000 + index * 400, "easeOutCubic"
-//             , function () {
-//               $(ele).stop().animate({left: currentLeft - 40 - 30 * random}, 5 * 1000 + index * 400, "easeOutCubic");
-//             });
-//     }, 2 * 5 * 1000 + index * 400);
-// });
 </script>
 
 </html>

@@ -23,7 +23,7 @@
                    },
 
                    direct2detail:function(e){
-                     window.location.href = base_url+'content/view_dynamic/'+e;
+                     window.location.href = base_url+'content/view_lesson/'+e;
                    },
 
                    get_content_by_type:function(){
@@ -45,7 +45,7 @@
                                            alert('返回值错误!');
                                          }
                                      },
-                                     {'list_type': '西博动态'},
+                                     {'list_type': '西博课堂'},
                                      function()
                                      {
                                        alert('网络错误!');
@@ -57,4 +57,4 @@
   //Init codes run once
   items_ctrl.get_content_by_type();
 
-}).call(define('space_new_expo_list'));
+}).call(define('space_knowledge_list'));
