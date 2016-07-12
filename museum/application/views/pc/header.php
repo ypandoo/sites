@@ -11,7 +11,7 @@ echo  '<div class="nav">
         <div class="subNav" style="display: none;">
             	<a href="/Pc/view/about">西博简介</a>
               <a href="/Pc/view/dynamic">西博动态</a>
-              <a href="/development-process/">新馆建设</a>
+              <a href="">新馆建设</a>
         </div>
       </li>
       <li>
@@ -25,25 +25,26 @@ echo  '<div class="nav">
         <a href="/Pc/view/item_list" class="animate">藏品</a>
         <div class="subNav" style="display: none;">
               <a href="/Pc/view/item_list">珍品赏析</a>
-              <a href="/development-process/">藏品保护</a>
+              <a href="">藏品保护</a>
         </div>
       </li>
       <li>
         <a href="/Navi/view_pc/1" class="animate">服务</a>
         <div class="subNav" style="display: none;">
         <a href="/Navi/view_pc/1">展厅导览</a>
-        <a href="/into-the-ai/">基本陈列</a>
-        <a href="/development-process/">参观指南</a>
-        <a href="/development-process/">360全景</a>
-        <a href="/development-process/">移动平台</a>
+        <!--a href="/into-the-ai/">基本陈列</a-->
+        <a href="">参观指南</a>
+        <a href="">360全景</a>
+        <a href="">移动平台</a>
         </div>
       </li>
       <li>
-        <a href="contact.html" class="animate">活动</a>
+        <a href="/Pc/view/lesson" class="animate">活动</a>
         <div class="subNav" style="display: none;">
-        <a href="/into-the-ai/">活动邀约</a>
-        <a href="/development-process/">志愿者风采</a>
         <a href="/Pc/view/lesson">西博课堂</a>
+        <a href="">活动邀约</a>
+        <a href="">志愿者风采</a>
+
         </div>
       </li>
   </ul>
