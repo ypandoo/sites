@@ -1627,3 +1627,28 @@ body.footer-close-bottom .banner-footer {
 .bg_green{
   background:#74c374
 }
+
+.multi-select{
+  width:90%;
+  margin-left: 5%;
+  height: 100px;
+}
+
+.multi-select .item{
+  width: 23%;
+  margin: 1%;
+  float: left;
+  font-size: 12px;
+  border: 1px solid rgba(204, 202, 202, 0.39);
+  padding: 5px 5px;
+  text-align: Center;
+  background: rgba(158, 158, 158, 0.06);
+  color: rgb(187, 187, 187);
+  border-radius: 5px;
+}
+
+.multi-select .mulselected{
+  border: 1px solid rgba(255, 0, 0, 0.46);
+    background: rgba(255, 0, 0, 0.05);
+    color: rgb(255, 46, 46);
+}

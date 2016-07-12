@@ -617,7 +617,7 @@ input:focus{
 }
 .page-logo .text{
     float: left;
-    width: 70%;
+    width: 75%;
     height: 100%;
     max-width: 310px;
     padding-left:20px;
@@ -652,6 +652,7 @@ input:focus{
     float: right;
     height: 100%;
     background: #f5f5f5;
+        line-height: 32px;
 }
 .page-name button{
     display: inline-block;

@@ -163,16 +163,38 @@
 }).call(space_framework);
 
 
-//获取行业列表
 (function(){
-    this.list=[];
+  var spectality = avalon.define({
+                  $id: "spectality-controller",
+                  item0:false,click0: function() {spectality.item0 = !spectality.item0;},
+                  item1:false,click1: function() {spectality.item1 = !spectality.item1;},
+                  item2:false,click2: function() {spectality.item2 = !spectality.item2;},
+                  item3:false,click3: function() {spectality.item3 = !spectality.item3;},
+                  item4:false,click4: function() {spectality.item4 = !spectality.item4;},
+                  item5:false,click5: function() {spectality.item5 = !spectality.item5;},
+                  item6:false,click6: function() {spectality.item6 = !spectality.item6;},
+                  item7:false,click7: function() {spectality.item7 = !spectality.item7;},
+                  item8:false,click8: function() {spectality.item8 = !spectality.item8;},
+                  item9:false,click9: function() {spectality.item9 = !spectality.item9;},
 
-    data_list=[{child:["移动电商","测试"],name:"移动互联网"},{child:["火锅","连锁经营"],name:"餐饮娱乐"}];
+              });
+var area = avalon.define({
+                $id: "area-controller",
+                item0:false,click0: function() {area.item0 = !area.item0;},
+                item1:false,click1: function() {area.item1 = !area.item1;},
+                item2:false,click2: function() {area.item2 = !area.item2;},
+                item3:false,click3: function() {area.item3 = !area.item3;},
+                item4:false,click4: function() {area.item4 = !area.item4;},
+                item5:false,click5: function() {area.item5 = !area.item5;},
+                item6:false,click6: function() {area.item6 = !area.item6;},
+                item7:false,click7: function() {area.item7 = !area.item7;},
+                item8:false,click8: function() {area.item8 = !area.item8;},
+                item9:false,click9: function() {area.item9 = !area.item9;},
 
-    space_framework.industry.list = space_industry.list = data_list;
-    space_framework.industry.second_level=space_framework.second_level();
+            });
 
-}).call(space_industry);
+}).call(define('space_mulselect'));
+
 
 
 /*标题控制*/

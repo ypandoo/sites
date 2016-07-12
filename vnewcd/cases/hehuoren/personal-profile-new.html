@@ -25,6 +25,53 @@
     <script src="js/image_upload.min.js"></script>
     <script src="js/angelcrunch.image_tools.jq.c.js"></script>
 
+    <style>
+    .newhead-container {
+      position: relative;
+          background: #ff3d00;
+          height: 180px;
+          overflow: hidden;
+          z-index: 1;
+          text-align: center;
+          padding-top: 40px;
+    }
+
+    .personal-head {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        /* position: relative; */
+        margin-left: 10%;
+        left: 20%;
+        border: 5px solid #FFF;
+        border-radius: 50% 50%;
+        text-align: center;
+        background-image: url('img/personal-center.png');
+        background-size: 100% 100%;
+        float: left;
+    }
+
+    .newhead-container .title {
+        text-align: center;
+        color: white;
+        margin-top: 25px;
+    }
+
+    .newhead-container .title h1 {
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        line-height: :32px;
+    }
+
+    .newhead-container .title h2 {
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+        line-height: 28px;
+    }
+
+    </style>
 </head>
 <body>
 <div class="details">
@@ -51,9 +98,17 @@
 
     <div class="registration modules">
         <!-- Back-up form -->
-        <div class="avatar-area" ms-controller="title-controller">
+        <!-- <div class="avatar-area" ms-controller="title-controller">
             <h1>{{_head_text_h2_}}</h1>
             <p>{{_head_text_h4_}}</p>
+        </div> -->
+        <div class="newhead-container">
+            <div class="personal-head">
+            </div>
+            <div class="title">
+              <h1>您好, 新会员</h1>
+              <h2>欢迎您！</h2>
+            </div>
         </div>
 
 
@@ -66,25 +121,30 @@
         <div style="background:white;" id="invistor0">
             <div id="item-container" class="item-container">
                 <div id="basic_desc">
-                    <div class="page-logo">
+                    <label class="page-desc clearfix" style="margin-top:5px;height:20px">
+                        <p><b>请您提交真实完备的信息，以便快速通过审核。*为必填项目。</b></p>
+                    </label>
+                    <div class="page-logo" style="height:120px">
                         <label id="upload-trigger" class="container">
                             <div id="upload-progress" class="progress transition"></div>
                             <img>
                             <input id="upload-input" class="default-hidden" type="file">
                         </label>
                         <div class="text">
-                            <h3>本人头像</h3>
-                            <p>宽高512px的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                            <h3>*本人头像</h3>
+                            <p>头像将出现在您的个人中心及一些其他列表中.清晰的头像能提高您的诚信度.宽高512px的正方形标志,支持JPG,PNG格式,不大于2MB </p>
                         </div>
                     </div>
 
                     <label class="page-name">
-                        <span>真实姓名</span><input id="form-name" maxlength="20">
+                        <span>*昵称</span><input id="form-name" maxlength="20">
                     </label>
 
-
+                    <label class="page-desc clearfix" style="margin-top:5px;height:20px">
+                        <p><b>请选择所在地最近的街道。</b></p>
+                    </label>
                     <label id="select2" class="page-name">
-                        <span style="width:30%">选择工作圈</span><em></em><p></p>
+                        <span style="width:30%">*选择工作圈</span><em></em><p></p>
                         <select name="stage" class="stage">
                             <option value="请选择区域" selected="">请选择区域</option>
                             <option value="成都">成都</option>
@@ -97,8 +157,11 @@
                             <option value="大使馆路">大使馆路</option>
                         </select>
                     </label>
+                    <label class="page-desc clearfix" style="margin-top:5px;height:20px">
+                        <p><b>请选择所在地最近的街道。</b></p>
+                    </label>
                     <label id="select2" class="page-name">
-                        <span style="width:30%">选择生活圈</span><em></em><p></p>
+                        <span style="width:30%">*选择生活圈</span><em></em><p></p>
                         <select name="stage" class="stage">
                             <option value="请选择区域" selected="">请选择区域</option>
                             <option value="成都">成都</option>
@@ -112,11 +175,11 @@
                         </select>
                     </label>
                     <label class="page-name">
-                        <span>文化程度</span><input id="form-name" maxlength="20">
+                        <span>*文化程度</span><input id="form-name" maxlength="20">
                     </label>
-                     <label class="page-name">
+                     <!-- <label class="page-name">
                         <span>公司职位</span><input id="form-name" maxlength="20">
-                    </label>
+                    </label> -->
 
                     <!-- <div class="addition-agreement">
                         <p>您需了解 <a href="/agreement/service">《合火人用户服务协议》</a> 及其附件 <a class="ci-link" href="/agreement/risk">《风险揭示书》</a> 中的所有内容 ，并愿意承担投资带来的风险才能继续。</p>
@@ -138,7 +201,7 @@
                     <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为一般合火人</a>
 
                     <a class="submit-new-btn text_btn active_orange_outline_slim"
-                     id="btn_invistor0" ms-on-tap="toggle_content(0)"  ms-controller="title-controller">+进一步完善资料提升等级</a>
+                     id="btn_invistor0" ms-on-tap="toggle_content(0)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
             </div>
 
@@ -154,6 +217,45 @@
 
             <div id="item-container" class="item-container">
                 <div id='info_founder'>
+                  <label class="page-description" >
+                      <span style="width:50%">*可提供附加值（可多选）</span>
+                  </label>
+
+                  <div class="multi-select" ms-controller="spectality-controller" style="    height: 113px;">
+                    <div class="item" ms-class="mulselected:item0" ms-click="click0()">附加值</div>
+                    <div class="item" ms-class="mulselected:item1" ms-click="click1()">附加值</div>
+                    <div class="item" ms-class="mulselected:item2" ms-click="click2()">附加值</div>
+                    <div class="item" ms-class="mulselected:item3" ms-click="click3()">附加值</div>
+                    <div class="item" ms-class="mulselected:item4" ms-click="click4()">附加值</div>
+                    <div class="item" ms-class="mulselected:item5" ms-click="click5()">附加值</div>
+                    <div class="item" ms-class="mulselected:item6" ms-click="click6()">附加值</div>
+                    <div class="item" ms-class="mulselected:item7" ms-click="click7()">附加值</div>
+                    <div class="item" ms-class="mulselected:item8" ms-click="click8()">附加值</div>
+                    <div class="item" ms-class="mulselected:item9" ms-click="click9()">附加值</div>
+                  </div>
+
+                  <label class="page-description" >
+                      <span style="width:50%">*擅长领域（可多选）</span>
+                  </label>
+
+                  <div class="multi-select" ms-controller="area-controller" style="    height: 113px;">
+                    <div class="item" ms-class="mulselected:item0" ms-click="click0()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item1" ms-click="click1()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item2" ms-click="click2()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item3" ms-click="click3()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item4" ms-click="click4()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item5" ms-click="click5()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item6" ms-click="click6()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item7" ms-click="click7()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item8" ms-click="click8()">擅长领域</div>
+                    <div class="item" ms-class="mulselected:item9" ms-click="click9()">擅长领域</div>
+                  </div>
+
+
+                  <label class="page-desc clearfix" style="margin-top:5px;height:20px">
+                      <p><b>根据国家相关法规要求。您需要经过实名认证后才可进一步使用合伙人平台提供的各种服务。本平台
+                      承诺不会将该部分信息用于实名认证意外的的任何其他目的。</b></p>
+                  </label>
                     <div class="page-logo">
                         <label id="upload-trigger" class="container">
                             <div id="upload-progress" class="progress transition"></div>
@@ -162,7 +264,7 @@
                         </label>
                         <div class="text">
                             <h3>*身份证扫描件或拍照</h3>
-                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                            <p>获得其他合伙人和项目方信任，获得更多合伙运营机会。像素在512x512px以上的正方形。支持JPG、PNG格式，文件不大于2MB </p>
                         </div>
                     </div>
                     <div class="page-logo">
@@ -173,7 +275,7 @@
                         </label>
                         <div class="text">
                             <h3>*本人头像(需核实一致)</h3>
-                            <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                            <p>头像将出现在您的个人中心及一些其他列表中.清晰的头像能提高您的诚信度.宽高512px的正方形,支持JPG,PNG格式,不大于2MB</p>
                         </div>
                     </div>
                     <div class="page-logo">
@@ -189,7 +291,7 @@
                     </div>
 
 
-                    <label class="page-description">
+                    <!-- <label class="page-description">
                         <span>合伙理念</span>
                         <textarea id="form-desc"></textarea>
                     </label>
@@ -197,16 +299,13 @@
                     <label class="page-description">
                         <span>个人简介</span>
                         <textarea id="form-desc"></textarea>
-                    </label>
-                    <label class="page-description">
-                        <span>可提供附加值</span>
-                        <textarea id="form-desc"></textarea>
-                    </label>
+                    </label> -->
+
 
                     <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为认证合火人</a>
 
                     <a class="submit-new-btn text_btn active_orange_outline_slim"
-                    id="btn_invistor1" ms-on-tap="toggle_content(1)"  ms-controller="title-controller">+进一步完善资料提升等级</a>
+                    id="btn_invistor1" ms-on-tap="toggle_content(1)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
 
             </div>
@@ -222,20 +321,123 @@
 
                 <div id='detail_desc'>
                     <label class="page-desc clearfix" style="margin-top:5px">
-                        <p><b>上传任意一种证明（三选一）即可成为经验合伙人</b></p>
+                        <p><b>请上传证明文件，至少选择下列其中一种</b></p>
                     </label>
-                    <div class="page-logo">
+
+                    <div>
+                      <label class="page-description" >
+                          <span style="width:50%">固定资产证明</span>
+                      </label>
+
+                        <div class="pic_layer">
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project1.png" width="100%" height="100%">
+                            </div>
+
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project2.png" width="100%" height="100%">
+                            </div>
+                        </div>
+
+                        <!-- <label class="page-desc" style="padding-top:15px">
+                            <p><b>上传新图片</b></p>
+                        </label> -->
+                        <div class="page-logo clearfix">
+                            <label id="upload-trigger" class="container">
+                                <div id="upload-progress" class="progress transition"></div>
+                                <img>
+                                <input id="upload-input" class="default-hidden" type="file">
+                            </label>
+                            <div class="text">
+
+                              <p>满足条件：个人名下固定资产市值50万元人民币以上的相关证明。<br>
+                              证明材料：固定资产证明的扫描件或者高清拍照。最多上传5张。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                      <label class="page-description" >
+                          <span style="width:50%">收入证明</span>
+                      </label>
+
+                        <div class="pic_layer">
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project1.png" width="100%" height="100%">
+                            </div>
+
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project2.png" width="100%" height="100%">
+                            </div>
+                        </div>
+
+                        <div class="page-logo clearfix">
+                            <label id="upload-trigger" class="container">
+                                <div id="upload-progress" class="progress transition"></div>
+                                <img>
+                                <input id="upload-input" class="default-hidden" type="file">
+                            </label>
+                            <div class="text">
+
+                              <p>满足条件：最近三年个人年均收入不低于10万元人民币。<br>
+                              证明材料：加盖公司公章的收入证明或者高清拍照。最多上传5张。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                      <label class="page-description" >
+                          <span style="width:50%">金融资产证明</span>
+                      </label>
+
+                        <div class="pic_layer">
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project1.png" width="100%" height="100%">
+                            </div>
+
+                            <div class="divide33">
+                                <div class="close"></div>
+                                <img src="img/project2.png" width="100%" height="100%">
+                            </div>
+                        </div>
+
+                        <div class="page-logo clearfix" style="height:120px">
+                            <label id="upload-trigger" class="container">
+                                <div id="upload-progress" class="progress transition"></div>
+                                <img>
+                                <input id="upload-input" class="default-hidden" type="file">
+                            </label>
+                            <div class="text">
+
+                              <p><b>满足条件：</b>个人名下货币资产或证券类资产市值不低于20万人民币。<br>
+                              <b>证明材料：</b>1.银行账户六个月的流水账单的扫描件或高清图片。
+                              2.股票基金等其他金融资产账户的前一交易日账户额度证明扫描件或高清图片.
+                              最多上传5张。</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <div class="page-logo">
                         <label id="upload-trigger" class="container">
                             <div id="upload-progress" class="progress transition"></div>
                             <img>
                             <input id="upload-input" class="default-hidden" type="file">
                         </label>
                         <div class="text">
-                            <h3>固定资产证明(可领头)</h3>
-                            <p>个人名下固定资产市值30万元人民币以上的相关证明。</p>
+                            <h3>*固定资产证明(可领头)</h3>
+                            <p>满足条件：个人名下固定资产市值50万元人民币以上的相关证明。<br>
+                            证明材料：固定资产证明的扫描件或者高清拍照。最多上传5张。</p>
                         </div>
-                    </div>
-                    <div class="page-logo">
+                    </div> -->
+                    <!-- <div class="page-logo">
                         <label id="upload-trigger" class="container">
                             <div id="upload-progress" class="progress transition"></div>
                             <img>
@@ -245,9 +447,9 @@
                             <h3>收入证明</h3>
                             <p>最近三年个人年均收入不低于8万元人民币</p>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="page-logo">
+                    <!-- <div class="page-logo">
                         <label id="upload-trigger" class="container">
                             <div id="upload-progress" class="progress transition"></div>
                             <img>
@@ -257,11 +459,11 @@
                             <h3>金融资产证明</h3>
                             <p>个人名下货币资产或证券类资产市值不低于5万元人民币</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为经验合火人</a>
                     <a class="submit-new-btn text_btn active_orange_outline_slim"
-                    id="btn_invistor2" ms-on-tap="toggle_content(2)"  ms-controller="title-controller">+进一步完善资料提升等级</a>
+                    id="btn_invistor2" ms-on-tap="toggle_content(2)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
               </div>
         </div>
@@ -272,32 +474,76 @@
             <em id="em_agent_invistor"></em>
          </div> -->
 
-        <div id="invistor3"  style="background:white; display:none">
-                <div class="page-logo">
-                    <label id="upload-trigger" class="container">
-                        <div id="upload-progress" class="progress transition"></div>
-                        <img>
-                        <input id="upload-input" class="default-hidden" type="file">
-                    </label>
-                    <div class="text">
-                        <h3>实缴注册资本</h3>
-                        <p>实缴注册资本在100万元人民币以上</p>
-                    </div>
-                </div>
-                <div class="page-logo">
-                    <label id="upload-trigger" class="container">
-                        <div id="upload-progress" class="progress transition"></div>
-                        <img>
-                        <input id="upload-input" class="default-hidden" type="file">
-                    </label>
-                    <div class="text">
-                        <h3>机构资产证明</h3>
-                        <p>总资产或管理资产不低于200万元人民币</p>
-                    </div>
-                </div>
+<div style="background:white; display:none" id="invistor3">
+          <div>
+            <label class="page-description" >
+                <span style="width:50%">实缴注册资本证明</span>
+            </label>
+
+              <div class="pic_layer">
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project1.png" width="100%" height="100%">
+                  </div>
+
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project2.png" width="100%" height="100%">
+                  </div>
+              </div>
+
+              <div class="page-logo clearfix">
+                  <label id="upload-trigger" class="container">
+                      <div id="upload-progress" class="progress transition"></div>
+                      <img>
+                      <input id="upload-input" class="default-hidden" type="file">
+                  </label>
+                  <div class="text">
+
+                    <p>满足条件：实缴注册资本在100万元人民币以上。<br>
+                    证明材料：实缴注册资本证明的扫描件或者高清拍照。最多上传5张。</p>
+                  </div>
+              </div>
+          </div>
+
+          <div>
+            <label class="page-description" >
+                <span style="width:50%">实缴注册资本证明</span>
+            </label>
+
+              <div class="pic_layer">
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project1.png" width="100%" height="100%">
+                  </div>
+
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project2.png" width="100%" height="100%">
+                  </div>
+              </div>
+
+              <div class="page-logo clearfix">
+                  <label id="upload-trigger" class="container">
+                      <div id="upload-progress" class="progress transition"></div>
+                      <img>
+                      <input id="upload-input" class="default-hidden" type="file">
+                  </label>
+                  <div class="text">
+
+                    <p>满足条件：实缴注册资本在100万元人民币以上。<br>
+                    证明材料：实缴注册资本证明的扫描件或者高清拍照。最多上传5张。</p>
+                  </div>
+              </div>
+          </div>
+
+          <label class="page-name">
+              <span>*您在公司职位</span><input id="form-name" maxlength="20" placeholder="请输入您的职位">
+          </label>
+
 
                 <a id="subbmit-btn" class="submit-new-btn text_btn active_orange_outline_slim">保存并申请成为机构合火人</a>
-        </div>
+</div>
 
         <!-- <div id="item-container" class="item-container">
         <div class="regist pub-title" style="display:block">
