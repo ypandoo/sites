@@ -44,7 +44,7 @@
     }*/
 
 #bg {
-  background: url('<?php echo base_url('assets/front/img/main_yuejian.jpg') ?>') no-repeat  fixed;
+  background: url('<?php echo base_url('assets/front/img/main_yuequ.jpg') ?>') no-repeat  fixed;
   -webkit-background-size:  cover;
   -moz-background-size:  cover;
   -o-background-size:  cover;
@@ -59,7 +59,7 @@ position: absolute;
 top: 10%;
 right: 20px;
 /* background-size: 145px 410px; */
-background: url('<?php echo base_url('assets/front/img/main_yuejian_menu.png') ?>') 145px 410px;
+background: url('<?php echo base_url('assets/front/img/main_yuequ_menu.png') ?>') 145px 410px;
 background-size: cover;
 }
 
