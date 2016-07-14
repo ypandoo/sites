@@ -18,13 +18,30 @@
     <meta name="format-detection" content="telephone=yes" />
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/item_detail.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
+    <style>
+    .service-container{
+height: 40px;
+float: left;
+line-height: 40px;
+width: 50%;
+    }
+
+    .service span{
+          font-size: 16px;
+    }
+
+    .service span i{
+          margin-right: 5px;
+    }
+    </style>
 </head>
 
 <body>
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
 <div class="bk"></div>
 
-<div class="details" ms-controller="sd-list">
+<div class="details" ms-controller="sd-list" style="margin-top:46px">
         <div id="header" class="newhead">
             <div class="logo touch-href" ms-click="{@direct_to_list_path()}"></div>
         </div>
@@ -39,10 +56,10 @@
                       </div>
                     </div>
 
-                <div class="fin-info">
+                <!-- <div class="fin-info">
                     <p class="left pro-info-unit"><span>展出位置:B23F</span></p>
                     <p class="right pro-info-unit"><span>视频解说</span></p>
-                </div>
+                </div> -->
 
                 <div class="list-container">
                     <ul id="list-container">
@@ -54,15 +71,61 @@
                     </ul>
                 </div>
 
-                <div style="height:10px; background-color:#eeeeee"></div>
-                <div class="personal-summary" style="clear:both">
-                      <h1>展品介绍</h1>
-                      <div class="item" ms-html="@data.description ">
-                      </div>
-                </div>
+
+
+
               </div>
             </section>
 
+        </div>
+
+        <div class="page-title" style="margin-top:15px">
+          <h2>自助服务 </h2>
+          <h4 style="letter-spacing: 1px;">Self-Service</h4>
+        </div>
+
+        <div style="clear:both; overflow:hidden;padding: 20px 25px;">
+          <div class="service-container" ms-click= '{@_play_cn()}'><a class="service">
+            <span ms-if='!@play_cn'><i class="fa fa-play" aria-hidden="true"></i></i>收听中文语音解说</span>
+            <span ms-if='@play_cn' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭中文语音解说</span>
+          </a></div>
+
+          <div class="service-container" ms-click= '{@_play_tibet()}'><a class="service">
+            <span ms-if='!@play_tibet'><i class="fa fa-play" aria-hidden="true"></i></i>收听藏文语音解说</span>
+            <span ms-if='@play_tibet' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭藏文语音解说</span>
+          </a></div>
+
+
+          <!-- <div class="service-container" ms-click='{@play_video()}'><a class="service">
+            <span><i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说</span>
+          </a></div> -->
+          <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
+            <span><i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图</span>
+          </a></div>
+        </div>
+
+        <div class="page-title" style="margin-top:15px">
+          <h2>视频解说 </h2>
+          <h4 style="letter-spacing: 1px;">Antiquities</h4>
+        </div>
+
+        <div  style="margin-top:20px; padding-left:25px; padding-right:25px">
+          <div style="width:100%">
+          <video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">
+          您的浏览器不支持 video 标签。
+          </video>
+          </div>
+        </div>
+
+
+        <div class="page-title" style="margin-top:25px">
+          <h2>展品介绍 </h2>
+          <h4 style="letter-spacing: 1px;">Antiquities</h4>
+        </div>
+
+        <div class="content" style="clear:both; margin-top:20px" >
+              <p class="html" ms-html="@data.description ">
+              </p>
         </div>
 </div>
 </body>

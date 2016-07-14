@@ -1199,3 +1199,68 @@ display: inline-block;
     margin-left: 2%;
     font-size: 16px;
 }
+
+/*头部reset*/
+.newhead {
+      position: absolute;
+      top: 0;
+      background: rgb(255, 255, 255);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0 8px 6px -6px #505050;
+      -moz-box-shadow: 0 8px 6px -6px #505050;
+      box-shadow: 0 8px 6px -6px #505050;
+}
+
+.newhead .logo {
+    background: url(../img/logo.png) no-repeat left center;
+    background-size: auto 30px;
+}
+
+.newhead .options span {
+    background:url(../img/logo.png) no-repeat right center;
+    background-size:auto 30px;
+}
+.newhead .account span{
+    background:url(../img/wap_user_h.svg) no-repeat 50% 80%;
+    background-size:auto 18px;
+}
+.newhead .account.active span{
+    width: 24px;
+    height: 24px;
+    background-size:auto 24px !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50% 50%;
+}
+.newhead .hidden-menu li {
+    color:#FC5830;
+}
+
+.newhead-container
+{
+    position: relative;
+    background: #ec422b;
+    height: 180px;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.newhead-container .title
+{
+    line-height: 30px;
+    text-align: center
+}
+
+.newhead-container .title h1
+{
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.newhead-container .title h1 small
+{
+    font-size: 50%;
+}

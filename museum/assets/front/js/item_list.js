@@ -11,10 +11,14 @@
                      return upload_img+path;
                    },
                    get_detail_link : function(e){
-                     return base_url+'item/view/'+e;
+                     window.location.href = base_url+'item/view/'+e;
                    },
                    get_detail_link_pc : function(e){
                      return base_url+'item/view_pc/'+e;
+                   },
+
+                   get_content_text: function(e){
+                     return e.substr(0, 45)+'...';
                    },
 
                    get_items_with_pic:function(){
