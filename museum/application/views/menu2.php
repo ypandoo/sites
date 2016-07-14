@@ -87,7 +87,7 @@ background-size: cover;
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script>
 $(document).ready(function(){
-$('#menu').slideDown(2000,function(){});
+  setTimeout(function(){$('#menu').slideDown(2000,function(){});}, 1000);
 });
 </script>
 </html>
