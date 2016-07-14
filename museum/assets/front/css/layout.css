@@ -529,14 +529,19 @@ input[type="text"][disabled] {
 }
 
 /*头部reset*/
-.newhead{
-    position: absolute;
-    top: 0;
-    background: rgba(255,255,255,.01);
+.newhead {
+      position: absolute;
+      top: 0;
+      background: rgb(255, 255, 255);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0 8px 6px -6px #e2e2e2;
+      -moz-box-shadow: 0 8px 6px -6px #e2e2e2;
+      box-shadow: 0 8px 6px -6px #e2e2e2;
 }
+
 .newhead .logo {
-    background:url(../img/logo_white.png) no-repeat left center;
-    background-size:auto 25px;
+    background: url(../img/logo.png) no-repeat left center;
+    background-size: auto 30px;
 }
 
 .newhead .options span {
@@ -586,18 +591,4 @@ input[type="text"][disabled] {
 .newhead-container .title h1 small
 {
     font-size: 50%;
-}
-.content .html p{
-   padding: 0px 25px 0 25px;
-}
-
-.content .html p span{
-      font-family: 微软雅黑, "Microsoft YaHei";
-      font-size: 12px;
-      line-height: 25px;
-}
-
-.content .html p img{
-  width: 100%;
-  margin: 20px 0 20px 0;
 }

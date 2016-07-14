@@ -1209,9 +1209,29 @@ body.footer-close-bottom .banner-footer {
   height: 20px;
   float: left;
   margin-top: 12px;
-  margin-left: 1%;
+  margin-left: 10px;
   background: url(../img/logo_white.png) no-repeat left center;
   background-size: auto 25px;
+}
+
+/*----------------- Page title  --------------------*/
+.page-title{
+  margin-top: 66px;
+margin-left: 25px;
+border-left: 3px solid #cc0000;
+padding-left: 10px;
+}
+
+.page-title h2{
+    font-size: 22px;
+    /* font-weight: 600; */
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.page-title h4{
+  font-size: 14px;
+    /* font-weight: 600; */
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .newhead .logo[data-href] {
@@ -1464,4 +1484,23 @@ body.footer-close-bottom .banner-footer {
 }
 .new-page-result .content em{
   color:#FC5830;
+}
+
+/*page content*/
+.content .html p{
+  padding: 0px 25px 0 25px;
+  /* font-family: 微软雅黑, "Microsoft YaHei"; */
+  font-size: 14px;
+  line-height: 20px;
+  color: #545454;
+}
+
+.content .html p span{
+      /*font-family: 微软雅黑, "Microsoft YaHei";*/
+      font-size: 14px;
+      line-height: 20px;
+}
+
+.content .html p img{
+  width: 100%;
 }

@@ -18,8 +18,12 @@
                      window.location.href = base_url+'content/view_expo_new/'+items_ctrl.list[e].CONTENT_ID;
                    },
 
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
+                   },
+
                    get_content_text: function(e){
-                     return e.substr(0, 57)+'...';
+                     return e.substr(0, 48)+'...';
                    },
 
                    get_content_by_type:function(){

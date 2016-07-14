@@ -1,6 +1,6 @@
 <?php
 echo '<div id="header">';
-echo '<h1><a href="Pc/view/index"><img src="'.base_url('assets/pc/img/logo.png').'" width="250" height="50" alt="西藏博物馆"></a></h1>';
+echo '<h1><a href="Pc/view/index"><img src="'.base_url('assets/pc/img/logo.png').'" width="200" height="50" alt="西藏博物馆"></a></h1>';
 echo  '<div class="nav">
   <ul>
     <li>

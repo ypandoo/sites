@@ -31,9 +31,9 @@
             <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
         </div>
 
-
-        <div class="newhead-container">
-            <img src="<?php echo base_url('assets/front/img/detail_basiclayout.png') ?>" width="180px"/>
+        <div class="page-title">
+          <h2>基本陈列</h2>
+          <h4>Layout</h4>
         </div>
 
         <div class="content" style="margin-top:20px">

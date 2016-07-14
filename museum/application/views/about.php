@@ -31,9 +31,9 @@
             <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
         </div>
 
-
-        <div class="newhead-container">
-            <img src="<?php echo base_url('assets/front/img/detail_about.png') ?>" width="180px"/>
+        <div class="page-title">
+          <h2>西博简介</h2>
+          <h4>About Us</h4>
         </div>
 
         <div class="content" style="margin-top:20px">
@@ -46,8 +46,8 @@
     <div style="margin-top:40px">
     <div>
 
-    <div style="height:20px; background: #ec422b;">
-    </div>
+    <!-- <div style="height:20px; background: #ec422b;">
+    </div> -->
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>

@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=yes" />
 
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/dynamic.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/new_expo.css') ?>">
 </head>
 <body>
 <div class="bk"></div>
@@ -32,15 +32,13 @@
         </div>
 
 
-        <div class="newhead-container">
-            <img src="<?php echo base_url('assets/front/img/detail_construction.png') ?>" width="180px"/>
+        <div class="page-title">
+          <h2>新馆建设</h2>
+          <h4>New Buildings</h4>
         </div>
 
-        <div class="content"  ms-for='($index, item_info) in @list'>
-            <div class="news_img"  ms-click="@get_detail_link($index)">
-              <img src="<?php echo base_url('assets/front/img/default_news.png') ?>" width="60px" height="60px">
-            </div>
-            <div class="item"  ms-click="@get_detail_link($index)">
+        <div class="content"  style="margin-top:20px">
+            <div class="item"  ms-for='($index, item_info) in @list'  ms-click="@get_detail_link($index)">
              <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
                 <h2>{{item_info.CONTENT_TITLE}}</h2>
                 <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>

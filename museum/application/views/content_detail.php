@@ -29,11 +29,18 @@
             <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href"></div></a>
         </div>
 
-        <div class="content_detail">
-              <p ms-text="@content_title" class="content_title"></p>
-              <p class="content_time">{{@author}}发表于:{{@content_time}}</p>
-              <div class="content_html" ms-html="@content_html ">
-              </div>
+        <div class="page-title" >
+          <h2>{{@content_title}}</h2>
+          <h4>{{@author}}发表于:{{@content_time}}</h4>
+        </div>
+
+        <div class="content" style="margin-top:40px">
+              <!-- <p ms-text="@content_title" class="content_title"></p>
+              <p class="content_time">{{@author}}发表于:{{@content_time}}</p> -->
+
+              <p class="html" ms-html="@content_html">
+
+              </p>
         </div>
 </div>
 

@@ -32,21 +32,25 @@
         </div>
 
 
-        <div class="newhead-container">
-            <img src="<?php echo base_url('assets/front/img/detail_exporeview.png') ?>" width="180px"/>
+        <div class="page-title">
+          <h2>展览回顾</h2>
+          <h4>Exhibitions Review</h4>
         </div>
 
+        <div style="margin-top:20px">
         <div class="content"  ms-for='($index, item_info) in @list'>
             <div class="news_img"  ms-click="@get_detail_link($index)">
-              <img src="<?php echo base_url('assets/front/img/default_news.png') ?>" width="60px" height="60px">
+              <img ms-attr="{src:@get_cover($index)}" width="100%" >
             </div>
             <div class="item"  ms-click="@get_detail_link($index)">
              <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
-                <h2>{{item_info.CONTENT_TITLE}}</h2>
-                <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>
+                <h2>{{item_info.CONTENT_TITLE}}</h2><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>
+                <!-- <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
             </div>
           </a>
         </div>
+      </div>
+
     </div>
 
 </body>

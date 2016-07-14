@@ -33,7 +33,7 @@ html,body{-webkit-text-size-adjust:none; height:auto; color:#3e3e3e;background:b
 #ztBanner ol li:hover,#ztBanner ol li.bannerCur{ opacity:1;}
 #content{ width:100%; height:auto;}
 #header{ width:1000px; height:50px; position:fixed; left:50%; margin-left:-500px;
-  top:25px; z-index:1000;font-family:LatoLight,'\5FAE\8EDF\6B63\9ED1\9AD4';
+  top:25px; z-index:1000;font-family:LatoLight,'\5FAE\8EDF\6B63\9ED1\9AD4';background: rgb(20, 12, 12);
 }
 #header .lanuge{ width:80px; height:20px; position:absolute; right:0px; top:-21px; font-size:12px;}
 #header h1{    display: block;

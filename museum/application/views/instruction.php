@@ -32,8 +32,9 @@
         </div>
 
 
-        <div class="newhead-container">
-            <img src="<?php echo base_url('assets/front/img/detail_instruction.png') ?>" width="180px"/>
+        <div class="page-title">
+          <h2>参观指南</h2>
+          <h4>Notice</h4>
         </div>
 
         <div class="content" style="margin-top:20px;">
