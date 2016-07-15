@@ -182,12 +182,12 @@
          vm.toggle_content=function(id){
             if ($('#'+id).is(':visible'))
             {
-                $('#em_'+id).css("background-image", "url(img/plus.png)");
+                $('#em_'+id).css("background-image", "url(img/paper.png)");
                 $('#'+id).fadeOut();
             }
             else
             {
-                $('#em_'+id).css("background-image", "url(img/substract.png)");
+                $('#em_'+id).css("background-image", "url(img/edit.png)");
                 $('#'+id).fadeIn();
             }
         };

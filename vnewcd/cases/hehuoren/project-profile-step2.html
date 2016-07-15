@@ -51,8 +51,8 @@
     <div class="registration modules">
         <!-- Back-up form -->
         <div class="avatar-area">
-            <h1>完善您的预热项目信息</h1>
-            <p>创建您的个人项目，达成投资意向</p>
+            <h1>完善预热类项目信息</h1>
+            <p>创始团队的实力和完备性是合伙人非常看中的要素<br>请尽可能将团队成员填写清晰</p>
         </div>
 
     </div>
@@ -64,12 +64,13 @@
         <div id="item-container" class="item-container">
 
             <div class=" title-control page-title " ms-controller="title-controller"
-                 ms-on-tap="toggle_content('info_founder')" style="margin-top:0px">
+                 ms-on-tap="toggle_content('info_founder')" style="margin-top:0px; ">
                 <h1>创始人信息</h1>
-                <em id="em_info_founder"></em>
+                <em id="em_info_founder" style="background: url('img/edit.png') no-repeat;
+    background-size: 20px 20px;"></em>
             </div>
 
-            <div id='info_founder' style="display:none">
+            <div id='info_founder'>
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
                         <div id="upload-progress" class="progress transition"></div>
@@ -77,21 +78,25 @@
                         <input id="upload-input" class="default-hidden" type="file">
                     </label>
                     <div class="text">
-                        <h3>上传头像</h3>
+                        <h3>*真实头像</h3>
                         <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
                     </div>
                 </div>
 
                 <label class="page-name">
-                    <span>姓名</span><input id="form-name" maxlength="20">
+                    <span>*真实姓名</span><input maxlength="20">
                 </label>
 
                 <label class="page-name">
-                    <span>邮箱</span><input id="form-one" maxlength="25">
+                    <span>*常用手机</span><input maxlength="25">
+                </label>
+
+                <label class="page-name">
+                    <span>*微信号</span><input maxlength="25">
                 </label>
 
                 <label id="select_position1" class="page-name select-position-group">
-                    <span>项目中职位</span><em></em><p></p>
+                    <span>*项目中职位</span><em></em><p></p>
                     <select name="position">
                         <option value="请选择您的职位" selected="">请选择您的职位</option>
                         <option value="市场负责人">市场负责人</option>
@@ -103,75 +108,20 @@
                 </label>
 
                 <label class="page-description">
-                    <span>个人描述</span>
+                    <span>*个人描述</span>
                     <textarea id="form-desc"></textarea>
+                </label>
+                <label class="page-desc">
+                    <p>展现个性和亮点。体现和别人不一样的地方。行业从业经验，兴趣爱好等。</p>
                 </label>
 
 
-                <a id="subbmit-btn" class="submit-new-btn text_btn active">+保存创始人信息</a>
+                <a id="subbmit-btn" class="btn-orange-o-solid">+保存创始人信息</a>
 
-            </div>
+                <label class="page-name">
+                    <span>其他团队成员信息</span><input maxlength="20">
+                </label>
 
-            <div class=" title-control page-title " ms-controller="title-controller"
-                 ms-on-tap="toggle_content('info_team')">
-                <h1>团队信息</h1>
-                <em id="em_info_team"></em>
-            </div>
-
-            <div id="info_team"  style="display:none">
-            <div ms-controller="team-controller" ms-repeat-el='list'>
-                <div class="page-logo">
-                            <label id="upload-trigger" class="container">
-                                <div id="upload-progress" class="progress transition"></div>
-                                <img>
-                                <input id="upload-input" class="default-hidden" type="file">
-                            </label>
-                            <div class="text">
-                                <h3>上传头像</h3>
-                                <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
-                            </div>
-                </div>
-
-                        <label class="page-name">
-                            <span>姓名</span><input maxlength="20" value="">
-                        </label>
-
-                        <label class="page-name">
-                            <span>邮箱</span><input maxlength="25" value="">
-                        </label>
-
-                        <label id="select_position2" class="page-name select-position-group">
-                            <span>项目中职位</span><em></em><p></p>
-                            <select name="position">
-                                <option value="0" selected="">请选择您的职位</option>
-                                <option value="市场负责人">市场负责人</option>
-                                <option value="技术负责人">技术负责人</option>
-                                <option value="运营负责人">运营负责人</option>
-                                <option value="创始人">创始人</option>
-                                <option value="产品负责人">产品负责人</option>
-                            </select>
-                        </label>
-
-                        <label class="page-description">
-                            <span>个人描述</span>
-                            <textarea id="form-desc"></textarea>
-                        </label>
-
-            </div>
-            <a  class="submit-new-btn text_btn add_new_member_btn"
-            ms-on-tap="add()" ms-controller="team-controller">+增加新成员</a>
-            <a  class="submit-new-btn text_btn active">保存团队成员信息</a>
-          </div>
-
-
-            <div class=" title-control page-title " ms-controller="title-controller"
-                 ms-on-tap="toggle_content('info_mentor')" >
-                <h1>顾问导师(选填)</h1>
-                <em id="em_info_mentor"></em>
-            </div>
-
-            <div id="info_mentor"  style="display:none">
-              <div ms-controller="mentor-controller" ms-repeat-el='list'>
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
                         <div id="upload-progress" class="progress transition"></div>
@@ -179,32 +129,128 @@
                         <input id="upload-input" class="default-hidden" type="file">
                     </label>
                     <div class="text">
-                        <h3>上传头像</h3>
+                        <h3>*真实头像</h3>
                         <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
                     </div>
                 </div>
 
                 <label class="page-name">
-                    <span>姓名</span><input  maxlength="20" value="">
+                    <span>*真实姓名</span><input maxlength="20">
                 </label>
 
                 <label class="page-name">
-                    <span>邮箱</span><input  maxlength="25" value="">
+                    <span>*常用手机</span><input maxlength="25">
+                </label>
+
+                <label class="page-name">
+                    <span>*微信号</span><input maxlength="25">
+                </label>
+
+                <label id="select_position1" class="page-name select-position-group">
+                    <span>*项目中职位</span><em></em><p></p>
+                    <select name="position">
+                        <option value="请选择您的职位" selected="">请选择您的职位</option>
+                        <option value="市场负责人">市场负责人</option>
+                        <option value="技术负责人">技术负责人</option>
+                        <option value="运营负责人">运营负责人</option>
+                        <option value="创始人">创始人</option>
+                        <option value="产品负责人">产品负责人</option>
+                    </select>
                 </label>
 
                 <label class="page-description">
-                    <span>个人描述</span>
+                    <span>*个人描述</span>
                     <textarea id="form-desc"></textarea>
                 </label>
+                <label class="page-desc">
+                    <p>展现个性和亮点。体现和别人不一样的地方。行业从业经验，兴趣爱好等。</p>
+                </label>
+
+
+                <a id="subbmit-btn" class="btn-orange-none">+增加团队成员信息</a>
+                <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队成员信息</a>
+
+                <div class="dash"></div>
             </div>
-            <a class="submit-new-btn text_btn add_new_member_btn"
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_team')">
+                <h1>团队介绍</h1>
+                <em id="em_info_team"></em>
+            </div>
+
+            <div id="info_team"  style="display:none">
+            <div ms-controller="team-controller" ms-repeat-el='list'>
+              <label class="page-description">
+                  <span>团队介绍</span>
+                  <textarea id="form-desc"></textarea>
+              </label>
+              <label class="page-desc">
+                  <p>介绍团队最突出的亮点。如来自腾讯，百度的团队。组建3年持续创意的团队。团队在餐饮行业深根多年且有丰富的经验等。</p>
+              </label>
+              <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队介绍</a>
+              <div class="dash"> </div>
+          </div>
+        </div>
+
+
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('info_mentor')" >
+                <h1>顾问导师(选填可跳过填写下一栏)</h1>
+                <em id="em_info_mentor"></em>
+            </div>
+
+            <div id="info_mentor"  style="display:none">
+              <div ms-controller="mentor-controller" ms-repeat-el='list'>
+                <label class="page-desc">
+                    <p>邀请资深人士最为项目的导师能提升项目影响力。请如实填写。</p>
+                </label>
+                <div class="page-logo">
+                    <label id="upload-trigger" class="container">
+                        <div id="upload-progress" class="progress transition"></div>
+                        <img>
+                        <input id="upload-input" class="default-hidden" type="file">
+                    </label>
+                    <div class="text">
+                        <h3>顾问头像</h3>
+                        <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+                    </div>
+                </div>
+
+                <label class="page-name">
+                    <span>顾问姓名</span><input  maxlength="20" value="">
+                </label>
+
+                <label id="consult_position" class="page-name select-position-group">
+                    <span>*项目中职位</span><em></em><p></p>
+                    <select name="position">
+                        <option value="请选择您的职位" selected="">请选择您的方向</option>
+                        <option value="技术顾问">技术顾问</option>
+                        <option value="产品顾问">产品顾问</option>
+                        <option value="法律">法律</option>
+                        <option value="财务">财务</option>
+                        <option value="管理">管理</option>
+                        <option value="市场">市场</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </label>
+
+                <label class="page-description">
+                    <span>顾问简介</span>
+                    <textarea id="form-desc" placeholder="一句话介绍顾问导师的亮点，最多100字"></textarea>
+                </label>
+            </div>
+            <a class="btn-orange-none"
             ms-on-tap="add()" ms-controller="mentor-controller">+增加新导师</a>
-            <a class="submit-new-btn text_btn active">保存导师</a>
+            <a class="btn-orange-o-solid">保存导师</a>
+
+            <div class="dash"></div>
           </div>
 
             <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('info_news')">
-                <h1>新闻报道(选填)</h1>
+                <h1>新闻报道(选填可跳过填写下一栏)</h1>
                 <em id="em_info_news"></em>
             </div>
 
@@ -223,9 +269,9 @@
                 </label>
               </div>
 
-                <a class="submit-new-btn text_btn add_new_member_btn"
+                <a class="btn-orange-none"
                 ms-on-tap="add()" ms-controller="news-controller">+增加新闻 </a>
-                <a class="submit-new-btn text_btn active">保存新闻</a>
+                <a class="btn-orange-o-solid">保存新闻</a>
 
 
             </div>
@@ -267,10 +313,10 @@
 </div>
 
 <div style="margin-top:30px">
-  <label class="page-desc clearfix" style="margin-top:5px">
+  <!-- <label class="page-desc clearfix" style="margin-top:5px">
       <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
-  </label>
-  <a class="submit-new-btn text_btn active_grey_outline_slim">
+  </label> -->
+  <a class="btn-black-o-shadow">
                     完成填写等待审核</a>
    <a class="submit-new-btn text_btn active_orange_outline_slim">
                   + 进一步完善资料提升等级</a>

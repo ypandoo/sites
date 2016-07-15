@@ -1652,3 +1652,121 @@ body.footer-close-bottom .banner-footer {
     background: rgba(255, 0, 0, 0.05);
     color: rgb(255, 46, 46);
 }
+
+.btn-black{
+    background: black;
+    color: white;
+    font-size: 16px;
+    /*border: 1px solid #323333;*/
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-black-o{
+    background: white;
+    color: #323333;
+    font-size: 16px;
+    border: 1px solid #323333;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-black-o-shadow{
+    background: white;
+    color: #323333;
+    font-size: 16px;
+    border: 1px solid #323333;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 1px 1px 2px;
+
+}
+
+.btn-orange{
+    background: #ff2d2d;
+    color: white;
+    font-size: 16px;
+    /*border: 1px solid #323333;*/
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-orange-o{
+    background: white;
+    color: #ff2d2d;
+    font-size: 16px;
+    border: 1px solid #ff2d2d;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-orange-o-solid {
+  background: #FFF7F7;
+  margin: 10px;
+  color: #ff2d2d;
+  font-size: 14px;
+  border: 1px solid #FFC5C5;
+  border-radius: 5px;
+  line-height: 40px;
+  height: 40px;
+  width: 60%;
+  margin-left: 20%;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-orange-none {
+  background: white;
+  margin: 0px;
+  color: #ff2d2d;
+  font-size: 14px;
+  /*border: 1px solid #FFC5C5;
+  border-radius: 5px;*/
+  line-height: 40px;
+  height: 40px;
+  width: 60%;
+  margin-left: 20%;
+  text-align: center;
+  display: inline-block;
+}
+/* ------------- controls   --------------------*/
+.page-name input{
+  line-height: 32px;
+}
+
+.page-description textarea:focus {
+    outline: none;
+    background: white;
+    /* padding: 5px; */
+}
+
+.dash{
+  height: 1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
