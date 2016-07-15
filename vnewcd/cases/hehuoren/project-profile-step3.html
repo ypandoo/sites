@@ -52,8 +52,8 @@
     <div class="registration modules">
         <!-- Back-up form -->
         <div class="avatar-area">
-            <h1>完善热门项目信息</h1>
-            <p>创建您的个人项目，达成投资意向</p>
+            <h1>完善路演类项目信息</h1>
+            <p>建议由创始人亲自填写</p>
         </div>
     </div>
 
@@ -63,39 +63,40 @@
 
             <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('detail_desc')" style="margin-top:0px">
-                <h1>详细描述</h1>
-                <em id="em_detail_desc"></em>
+                <h1>竞争&模式</h1>
+                <em id="em_detail_desc"  style="background: url('img/edit.png') no-repeat;
+    background-size: 20px 20px;"></em>
             </div>
 
-            <div id='detail_desc' style="display:none">
+            <div id='detail_desc'>
 
                 <label class="page-desc" style="margin-top:5px">
-                    <p>根据产品瞄准的需求或有此需求的用户量</p>
+                    <p>如市场规模，用户规模，目标客户群，同行业竞争对手概况等。最多300字。</p>
                 </label>
                 <label class="page-description">
-                    <span>市场调研</span>
+                    <span>*市场调研</span>
                     <textarea id=""></textarea>
                 </label>
 
                 <label class="page-desc">
-                    <p>描述诸如独特技术，团队实力，优势资源等核心竞争力</p>
+                    <p>如人才，团队，市场营销，产品，渠道，企业文化等。尽可能找到与同行业的差异化竞争。</p>
                 </label>
                 <label class="page-description">
-                    <span>竞争优势</span>
+                    <span>*竞争优势</span>
                     <textarea id=""></textarea>
                 </label>
 
                 <label class="page-desc">
-                    <p>如何获取用户，如何盈利</p>
+                    <p>简单描述项目的产供销，如何赢得客户，如何盈利</p>
                 </label>
                 <label class="page-description">
-                    <span>商业模式</span>
+                    <span>*商业模式</span>
                     <textarea id=""></textarea>
                 </label>
 
 
-                <a id="subbmit-btn" class="submit-new-btn text_btn active">保存信息</a>
-
+                <a id="subbmit-btn" class="btn-orange-o-solid">保存信息</a>
+                <div class="dash"></div>
             </div>
 
             <div class=" title-control page-title " ms-controller="title-controller"
@@ -104,7 +105,10 @@
                 <em id="em_project_pic"></em>
             </div>
 
-            <div id="project_pic" class="border_grey"  style="display:none">
+            <div id="project_pic"  style="display:none">
+              <label class="page-desc">
+                  <p>建议选择有代表性的图片，如现有门店，产品，团队面貌等。</p>
+              </label>
                 <label class="page-desc" style="padding-top:15px">
                     <p><b>已有图片</b></p>
                 </label>
@@ -134,19 +138,20 @@
                         <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
                     </div>
                 </div>
+                <div class="dash"></div>
             </div>
 
 
             <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('project_video')">
-                <h1>项目视频</h1>
+                <h1>项目视频(选填可跳入下一步)</h1>
                 <em id="em_project_video"></em>
             </div>
 
             <div id="project_video"  style="display:none">
 
                  <label class="page-desc">
-                    <p>建议只填写主流媒体及科技媒体对您项目的报道，这些报道比较有参考价值</p>
+                    <p>如创始人录制的项目介绍视频等。</p>
                 </label>
 
                 <div ms-controller="vedio-controller" ms-repeat-el='list'>
@@ -158,21 +163,22 @@
                     <span>视频链接</span><input maxlength="50" value="">
                 </label>
               </div>
-                <a id="subbmit-btn" class="submit-new-btn add_new_member_btn"
+                <a id="subbmit-btn" class="btn-orange-none"
                 ms-on-tap="add()" ms-controller="vedio-controller">+增加视频</a>
-                <a id="subbmit-btn" class="submit-new-btn text_btn active">+保存修改</a>
+                <a id="subbmit-btn" class="btn-orange-o-solid">+保存修改</a>
+                <div class="dash"></div>
             </div>
 
 
             <div class=" title-control page-title " ms-controller="title-controller"
                 ms-on-tap="toggle_content('project_history')" >
-               <h1>项目大事记</h1>
+               <h1>项目大事记(选填可跳入下一步)</h1>
                <em id="em_project_history"></em>
            </div>
 
            <div id="project_history"  style="display:none">
                <label class="page-desc" style="margin-top:5px">
-                   <p>项目成立，用户调研结果，版本上线，重大合作，数据里程碑，重要成员加入</p>
+                   <p>媒体报道能增加事件的可信度，不建议填写项目官网进行的报道。如项目成立，首店开业，重大合作，重要成员变化，媒体采访，企业并购，关键合作伙伴等。</p>
                </label>
 
                <div  ms-controller="history-controller" ms-repeat-el='list'>
@@ -186,10 +192,11 @@
                </label>
              </div>
 
-             <a id="subbmit-btn" class="submit-new-btn add_new_member_btn"
+             <a id="subbmit-btn" class="btn-orange-none"
              ms-on-tap="add()" ms-controller="history-controller">+增加大事记</a>
 
-             <a class="submit-new-btn text_btn active">保存大事记</a>
+             <a class="btn-orange-o-solid">保存大事记</a>
+             <div class="dash"></div>
            </div>
    </div>
 
@@ -206,46 +213,75 @@
             <div id="shop_brief"  style="display:none">
 
                <div  ms-controller="shop-controller" ms-repeat-el='list'>
-                <label class="page-desc" style="margin-top:5px">
+                <!-- <label class="page-desc" style="margin-top:5px">
                     <p><b>店铺信息</b></p>
-                </label>
+                </label> -->
                 <label class="page-name">
-                    <span>店铺名称</span><input maxlength="20" value="">
+                    <span>*店铺名称</span><input maxlength="20" value="">
                 </label>
 
                 <label class="page-name">
-                    <span>店铺地址</span><input maxlength="20" value="">
+                    <span>*店铺地址</span><input maxlength="20" value="">
                 </label>
                 <label class="page-name">
-                    <span>店铺筹备总资产</span><input maxlength="20" value="">
+                    <span style="width:40%">*店铺筹备总投入</span>
+                    <input maxlength="20" value="" style="width:50%;float:left">
+                    <span style="width:10%">元</span>
                 </label>
                 <label class="page-name">
-                    <span>从筹备到运营周期</span><input maxlength="20" value="">
+                  <span style="width:40%">*从筹备到运营周期</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">天</span>
                 </label>
                 <label class="page-name">
-                    <span> 盈利可分红时间</span><input maxlength="20" value="">
+                  <span style="width:40%">*盈利可分红时间</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">天</span>
+                    <!-- <span> 盈利可分红时间</span><input maxlength="20" value=""> -->
                 </label>
                 <label class="page-name">
-                    <span>人均消费</span><input maxlength="20" value="">
+                  <span style="width:40%">*客流量</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">位/日</span>
+                    <!-- <span>人均消费</span><input maxlength="20" value=""> -->
                 </label>
                 <label class="page-name">
-                    <span>上年度营业收入</span><input maxlength="20" value="">
+                  <span style="width:40%">*人均消费</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">元</span>
+                    <!-- <span>人均消费</span><input maxlength="20" value=""> -->
                 </label>
                 <label class="page-name">
-                    <span>上年度净利润</span><input maxlength="20" value="">
+                  <span style="width:40%">*上年度营业收入</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">元</span>
+                    <!-- <span>上年度营业收入</span><input maxlength="20" value=""> -->
                 </label>
                 <label class="page-name">
-                    <span>上季度营业收入</span><input maxlength="20" value="">
+                  <span style="width:40%">*上年度净利润</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">元</span>
+                    <!-- <span>上年度净利润</span><input maxlength="20" value=""> -->
                 </label>
                 <label class="page-name">
-                    <span>上季度净利润</span><input maxlength="20" value="">
+                  <span style="width:40%">*上季度营业收入</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">元</span>
+                    <!-- <span>上季度营业收入</span><input maxlength="20" value=""> -->
+                </label>
+                <label class="page-name">
+                  <span style="width:40%">*上季度净利润</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">元</span>
+                    <!-- <span>上季度净利润</span><input maxlength="20" value=""> -->
                 </label>
 
               </div>
 
-                <a id="subbmit-btn" class="submit-new-btn add_new_member_btn"
+                <a id="subbmit-btn" class="btn-orange-none"
                 ms-on-tap="add()" ms-controller="shop-controller">+增加店铺</a>
-                <a class="submit-new-btn text_btn active">保存店铺信息</a>
+                <a class="btn-orange-o-solid">保存店铺信息</a>
+                <div class="dash"></div>
             </div>
 
             <div class=" title-control page-title " ms-controller="title-controller"
@@ -256,27 +292,101 @@
 
             <div id="shop_review"  style="display:none">
                 <label class="page-name">
-                    <span>店铺位置</span><input maxlength="20" value="">
+                    <span>*店铺位置</span><input maxlength="20" value="">
                 </label>
                 <label class="page-name">
-                    <span>订座电话</span><input maxlength="20" value="">
+                    <span>*订座电话</span><input maxlength="20" value="">
                 </label>
 
                 <label class="page-name">
-                    <span>联系人</span><input maxlength="20" value="">
+                    <span>*联系人</span><input maxlength="20" value="">
                 </label>
 
                 <label class="page-desc" style="margin-top:5px">
-                    <p>折扣信息仅限本平台会员使用</p>
+                    <p>折扣信息仅限本平台会员专享</p>
                 </label>
                 <label class="page-name">
-                    <span>折扣优惠</span><input maxlength="20" value="">
+                  <span style="width:40%">*折扣优惠</span>
+                  <input maxlength="20" value="" style="width:50%;float:left">
+                  <span style="width:10%">折</span>
+                    <!-- <span>折扣优惠</span><input maxlength="20" value=""> -->
                 </label>
+            </div>
+
+            <div class=" title-control page-title " ms-controller="title-controller"
+                 ms-on-tap="toggle_content('detail_roadmap')" style="margin-top:0px">
+                <h1>项目路演</h1>
+                <em id="em_detail_roadmap"></em>
+            </div>
+
+            <div id='detail_roadmap' style="display:none">
+              <label class="page-desc clearfix" style="margin-top:5px">
+                  <p style="">项目路演是优质项目与智慧合伙人线下交流的开端。因此整个合伙经营过程中显得尤为重要。提前最好路演的策划与准备工作。以更主动的态势，让合伙人更加深入详细的了解项目。建立良好的信息基础。才能以最快的速度达成合伙意向</p>
+              </label>
+
+              <label class="page-name">
+                  <span style="width:100%">*过往是否举行过项目路演：</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " >是</div>
+                <div class="item" >否</div>
+              </div>
+
+              <label class="page-name">
+                  <span style="width:100%">*是否已准备好商业计划书：</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " >是</div>
+                <div class="item" >否</div>
+              </div>
+
+              <label class="page-name">
+                  <span style="width:100%">*项目路演的筹备周期为：</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " >1个月</div>
+                <div class="item" >1-3个月</div>
+                <div class="item" >3-6个月</div>
+                <div class="item" >1年</div>
+              </div>
+
+              <label class="page-name">
+                  <span style="width:100%">*自身有无路演场地</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " >有</div>
+                <div class="item" >无</div>
+              </div>
+
+              <label class="page-name">
+                  <span style="width:100%">*路演中项目说明人身份为：</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " style="width:30%">核心团队成员</div>
+                <div class="item" style="width:30%">非核心团队成员</div>
+              </div>
+
+              <label class="page-name">
+                  <span style="width:100%">*是否需要合伙人平台协助参与项目路演筹备工作：</span>
+              </label>
+
+              <div class="multi-select" ms-controller="spectality-controller" style="    height: 28px;">
+                <div class="mulselected item " >是</div>
+                <div class="item" >否</div>
+              </div>
+
+                <a id="subbmit-btn" class="btn-orange-o-solid">保存信息</a>
+                <div class="dash"></div>
             </div>
 
 
 <!-- 行业选择 -->
-<div id="industry-choose" class="industry-choose">
+<!-- <div id="industry-choose" class="industry-choose">
     <div class="element-container"  ms-controller="industry-select">
         <h4 class="title">选择项目所在行业，最多可选择5个</h4>
         <div class="select">
@@ -290,7 +400,7 @@
         <div class="input">
             <span>已选取的行业</span>
             <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
-            <a ms-on-tap="write_new()">添加</a-->
+            <a ms-on-tap="write_new()">添加</a>
         </div>
         <div class="selected industry">
             <div class="industry-container">
@@ -302,17 +412,23 @@
             <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
         </div>
     </div>
-</div>
+</div> -->
 
 </div>
-<div style="margin-top:30px">
-  <label class="page-desc clearfix" style="margin-top:5px">
-      <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
-  </label>
-  <a class="submit-new-btn text_btn active_grey_outline_slim">
-                    完成填写等待审核</a>
-   <a class="submit-new-btn text_btn active_orange_outline_slim">
-                  + 进一步完善资料提升等级</a>
+
+
+
+
+
+
+<label class="page-desc" style="margin-top:30px">
+    <p>真实的填写每一个项目信息，会让项目在合伙运营期间更加的顺畅。</p>
+</label>
+<div>
+  <a class="btn-black-o-shadow" style="margin-bottom:10px">
+                    保存申请成为路演项目</a>
+   <a class="btn-orange" style="margin-bottom:10px">
+                  + 继续完善资料提升项目等级</a>
 </div>
 
 
