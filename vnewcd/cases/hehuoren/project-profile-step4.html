@@ -51,8 +51,8 @@
     <div class="registration modules">
         <!-- Back-up form -->
         <div class="avatar-area">
-            <h1>完善路演项目信息</h1>
-            <p>创建您的个人项目，达成投资意向</p>
+            <h1>完善热门类项目信息</h1>
+            <p>请重视能提供资金外资源需求的合伙人</p>
         </div>
 
     </div>
@@ -62,13 +62,14 @@
 
           <div class=" title-control page-title " ms-controller="title-controller"
                ms-on-tap="toggle_content('invest')" >
-              <h1>投</h1>
-              <em id="em_invest"></em>
+              <h1>股权设置</h1>
+              <em id="em_invest" style="background: url('img/edit.png') no-repeat;
+  background-size: 20px 20px;"></em>
           </div>
 
-          <div id='invest' style="display:none">
+          <div id='invest' style="">
             <label id="shop_type" class="page-name select-position-group">
-                <span>店铺类型</span><em></em><p></p>
+                <span>*店铺类型</span><em></em><p></p>
                 <select name="position">
                     <option value="新店开设" selected="true">新店开设</option>
                     <option value="老店重组">老店重组</option>
@@ -76,13 +77,19 @@
             </label>
 
             <div id="new_shop">
+              <label class="page-name">
+                <span style="width:40%">*营业面积（预估）</span>
+                <input maxlength="20" value="" style="width:50%;float:left">
+                <span style="width:10%">平方米</span>
+              </label>
+              <!-- </label>
                  <label class="page-name">
-                    <span>营业面积（预估）</span><input maxlength="20" value="">
-                </label>
+                    <span>*营业面积（预估）</span><input maxlength="20" value="">
+                </label> -->
             </div>
 
             <div id="old_shop" style="display:none">
-                <label class="page-name">
+                <!-- <label class="page-name">
                     <span>地址</span><input maxlength="20" value="">
                 </label>
                 <label class="page-name">
@@ -132,110 +139,164 @@
                     <div class="text">
                         <p>支持JPG、PNG格式，文件不大于2MB </p>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
-            <label class="page-desc clearfix" style="margin-top:5px">
+            <!-- <label class="page-desc clearfix" style="margin-top:5px">
                     <p><b>股权设置</b></p>
+            </label> -->
+
+            <label class="page-name">
+              <span style="width:40%">*项目总投入资金</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+            <label class="page-desc clearfix" style="">
+                    <p>项目方出资金额不低于项目总投入金额的30%</p>
             </label>
 
             <label class="page-name">
-                <span style="width:40%">消费合伙单笔额度(万元)</span>
-                <input maxlength="20" value="" style="width:60%">
+              <span style="width:40%">*项目方出资</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
             </label>
-
-            <div class="two-buttons">
-                <label class="page-name left">
-                    <span style="width:60%">股份占比(%) </span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-                <label class="page-name right">
-                    <span style="width:60%">共计(份)</span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-            </div>
-
-            <label class="page-name clearfix">
-                <span style="width:40%">股本合伙单笔额度(万元)</span>
-                <input maxlength="20" value="" style="width:60%">
-            </label>
-            <div class="two-buttons">
-                <label class="page-name left">
-                    <span style="width:60%">股份占比(%) </span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-                <label class="page-name right">
-                    <span style="width:60%">共计(份)</span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-            </div>
-
-            <label class="page-name clearfix">
-                <span style="width:40%">领头合伙单笔额度(万元)</span>
-                <input maxlength="20" value="" style="width:60%">
-            </label>
-            <div class="two-buttons">
-                <label class="page-name left">
-                    <span style="width:60%">股份占比(%) </span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-                <label class="page-name right">
-                    <span style="width:60%">共计(份)</span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-            </div>
 
             <label class="page-name">
-                <span>项目总额(万元)</span><input maxlength="20" value="">
+              <span style="width:40%">*项目方股份占比</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
             </label>
 
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b>项目方出资(万元)：出资金额应不低于项目总额的30%。</b></p>
+            <label class="page-name">
+              <span style="width:40%">*合伙方出资</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
             </label>
 
-            <div class="two-buttons">
+            <label class="page-name">
+              <span style="width:40%">*合伙方股份占比</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*项目方收益比例</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*合伙方收益比例</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
+
+
+            <label class="page-desc clearfix" style="">
+                    <p><b>消费合伙</b></p>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*单笔额度</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*股份占比</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*共计</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">份</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*享有可消费体验券价值</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <!-- <div class="two-buttons">
                 <label class="page-name left">
-                    <span style="width:60%">项目方出资:</span>
-                    <input maxlength="20" value="" style="width:40%">
-                </label>
-                <label class="page-name right">
                     <span style="width:60%">股份占比(%) </span>
                     <input maxlength="20" value="" style="width:40%">
                 </label>
-            </div>
-
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b>合伙方出资(万元)</b></p>
+                <label class="page-name right">
+                    <span style="width:60%">共计(份)</span>
+                    <input maxlength="20" value="" style="width:40%">
+                </label>
+            </div> -->
+            <label class="page-desc clearfix" style="">
+                    <p><b>股本合伙</b></p>
             </label>
 
-            <div class="two-buttons">
-                <label class="page-name left">
-                    <span style="width:70%">合伙方出资:</span>
-                    <input maxlength="20" value="" style="width:30%">
-                </label>
-                <label class="page-name right">
-                    <span style="width:70%">股份占比(%) </span>
-                    <input maxlength="20" value="" style="width:30%">
-                </label>
-            </div>
-
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b> 收益比例(%)</b></p>
+            <label class="page-name">
+              <span style="width:40%">*单笔额度</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
             </label>
 
-            <div class="two-buttons">
-                <label class="page-name left">
-                    <span style="width:70%">项目方收益比例:</span>
-                    <input maxlength="20" value="" style="width:30%">
-                </label>
-                <label class="page-name right">
-                    <span style="width:70%">合伙方收益比例 </span>
-                    <input maxlength="20" value="" style="width:30%">
-                </label>
-            </div>
+            <label class="page-name">
+              <span style="width:40%">*股份占比</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
 
-            <label class="page-desc clearfix" style="margin-top:5px">
+            <label class="page-name">
+              <span style="width:40%">*共计</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">份</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*享有可消费体验券价值</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-desc clearfix" style="">
+                    <p><b>领头合伙</b></p>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*单笔额度</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*股份占比</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*共计</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">份</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*享有可消费体验券价值</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+
+            <label class="page-description">
+                <span>*合伙人其他收益方式</span>
+                <textarea id=""></textarea>
+            </label>
+            <label class="page-desc">
+                <p>如每季提留净利润的10%.根据每位合伙人给予该项目营业额所作出的贡献大小，予以分红</p>
+            </label>
+
+            <!-- <label class="page-desc clearfix" style="margin-top:5px">
                     <p><b> 证件提交</b></p>
             </label>
 
@@ -371,24 +432,25 @@
                     <div class="right">
                     <a id="subbmit-btn" class="submit-new-btn text_btn active_orange">同意</a>
                      </div>
-            </div>
-
+            </div> -->
+            <a id="subbmit-btn" class="btn-orange-o-solid">保存信息</a>
+            <div class="dash"></div>
           </div><!--end of tou -->
 
 
           <div class=" title-control page-title " ms-controller="title-controller"
                ms-on-tap="toggle_content('raise')" >
-              <h1>融</h1>
+              <h1>资金用途</h1>
               <em id="em_raise"></em>
           </div>
 
           <div id='raise' style="display:none">
-            <label class="page-desc clearfix" style="margin-top:5px">
+            <!-- <label class="page-desc clearfix" style="margin-top:5px">
                     <p><b> 资金用途</b></p>
-            </label>
+            </label> -->
 
             <label id="chain_type" class="page-name select-position-group">
-                <span>是否加盟</span><em></em><p></p>
+                <span>*是否加盟</span><em></em><p></p>
                 <select name="position">
                     <option value="是" >是</option>
                     <option value="否" selected="true">否</option>
@@ -397,60 +459,94 @@
 
             <div id="chain" style="display:none">
               <label class="page-name">
-                  <span>加盟费用</span><input maxlength="20" value="">
+                <span style="width:40%">*加盟费用</span>
+                <input maxlength="20" value="" style="width:50%;float:left">
+                <span style="width:10%">元</span>
               </label>
+              <!-- <label class="page-name">
+                  <span>加盟费用（））</span><input maxlength="20" value="">
+              </label> -->
             </div>
 
-
             <label class="page-name">
-                <span>预付租金费用</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>管理/技术人员储备开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>开业前的员工储备培训开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>开业后的员工开支</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修预付款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修工程款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>装修饰品物料款</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>生产/经商设备</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>场地设备/器材</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>物料采购</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>融资费用</span><input maxlength="20" value="">
-            </label>
-            <label class="page-name">
-                <span>企业成立开办费用</span><input maxlength="20" value="">
+              <span style="width:40%">*预付租金费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
             </label>
 
             <label class="page-name">
-                <span>流动资金</span><input maxlength="20" value="">
+              <span style="width:40%">*开业前的员工储备培训开支</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元/月</span>
             </label>
+
             <label class="page-name">
-                <span>企业储备金</span><input maxlength="20" value="">
+              <span style="width:10%">*共计</span>
+              <input maxlength="20" value="" style="width:30%;float:left">
+              <span style="width:10%">月</span>
+              <span style="width:10%">*合计</span>
+              <input maxlength="20" value="" style="width:30%;float:left">
+              <span style="width:10%">元</span>
             </label>
+
             <label class="page-name">
-                <span>财务监管系统</span><input maxlength="20" value="">
+              <span style="width:40%">*开业后的员工开支</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元/月</span>
             </label>
+
             <label class="page-name">
-                <span>广告宣传</span><input maxlength="20" value="">
+              <span style="width:10%">*共计</span>
+              <input maxlength="20" value="" style="width:30%;float:left">
+              <span style="width:10%">月</span>
+              <span style="width:10%">*合计</span>
+              <input maxlength="20" value="" style="width:30%;float:left">
+              <span style="width:10%">元</span>
             </label>
+
+            <label class="page-name">
+              <span style="width:40%">*装修费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*首次原料采购费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*企业成立开办费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*流动资金</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*风险储备金</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*广告费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+            <label class="page-name">
+              <span style="width:40%">*财务费用</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">元</span>
+            </label>
+
+
             <label class="page-name" style="background:#C1C1C1">
                 <span style="background:#C1C1C1">合计</span>
                 <input style="background:#C1C1C1"maxlength="20" value="0" disabled="disabled">
@@ -458,49 +554,77 @@
 
             <label class="page-description">
                 <span>备注</span>
-                <textarea id=""></textarea>
+                <textarea id="" placeholder="如需具体说明的资金用途，最多300字"></textarea>
             </label>
 
-            <label class="page-description">
-                <span>资金外核心需求</span>
-                <textarea id=""></textarea>
-            </label>
+            <a id="subbmit-btn" class="btn-orange-o-solid">保存信息</a>
+            <div class="dash"></div>
 
           </div><!--- end of rong-->
 
 
             <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('manage')" >
-                <h1>管</h1>
+                <h1>运营管控</h1>
                 <em id="em_manage"></em>
             </div>
 
             <div id='manage' style="display:none">
-            <label class="page-desc clearfix" style="margin-top:5px">
-                    <p><b>经营指标</b></p>
-            </label>
 
             <label class="page-name clearfix">
-                <span style="width:60%">合伙成功后开店时间不可超过(天)</span>
-                <input maxlength="20" value="" style="width:40%">
+                <span style="width:80%">*合伙成功(85%项目资金到帐)开店时间不超过</span>
+                <input maxlength="20" value="" style="width:10%;float:left">
+                <span style="width:10%">天</span>
             </label>
-            <label class="page-name clearfix">
-                <span style="width:60%">毛利率不得低于(%)</span>
-                <input maxlength="20" value="" style="width:40%">
+            <label class="page-name">
+              <span style="width:40%">*毛利率不低于</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">%</span>
             </label>
-            <label class="page-name clearfix">
-                <span style="width:60%">股东管理办法及要求</span>
-                <input maxlength="20" value="" style="width:40%">
-            </label>
-            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+添加股东管理办法及要求</a>
 
-            <label class="page-name clearfix">
-                <span style="width:60%">资金监管</span>
-                <input maxlength="20" value="" style="width:40%">
+            <label class="page-name">
+              <span style="width:40%">*分红周期</span>
+              <input maxlength="20" value="" style="width:50%;float:left">
+              <span style="width:10%">天/次</span>
             </label>
-            <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+添加资金监管</a>
 
-            <label class="page-name clearfix">
+
+            <label class="page-description">
+                <span>*股东管理办法及要求</span>
+                <textarea id="" placeholder=""></textarea>
+            </label>
+
+            <label class="page-desc clearfix" >
+                <p >如：1.多久召开一次全员大会。2.非合伙人大会期间项目日常方工作情况汇报对象。3.领导人如何参与项目运营及其他合伙人管理等。
+                  （请充分重视合伙人，并合理安排在项目未来合伙经营及合伙人关系处理中领头人将起到至关重要的的作用）</p>
+            </label>
+            <!-- <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+添加股东管理办法及要求</a> -->
+            <label class="page-description">
+                <span>*资金监管</span>
+                <textarea id="" placeholder=""></textarea>
+            </label>
+
+            <label class="page-desc clearfix" >
+                <p >如：1.每日财报通过合伙人Q群披露。2.项目开业前，大额资金使用。邀请领头人进行账户共管。
+                  3.聘请第三方公司进行账户监管。4.安装财务监控视频等。
+                  </p>
+            </label>
+
+            <label class="page-desc clearfix" style="background: #F5F5F5;">
+                <p style="color:black">项目方硬性承诺。如合伙经营运营成功（85%项目资金到账）后。项目方未完成以上承诺，由此造成的损失由项目方全部承担。
+                  </p>
+            </label>
+
+            <div class="multi-select" ms-controller="spectality-controller" style="    height: 40px;padding-left: 5%;
+    margin-top: -5px;
+    background: #F5F5F5; width:100%; margin-left:0">
+              <div class="mulselected item " >同意</div>
+              <div class="item" >不同意</div>
+            </div>
+            <div class="dash"></div>
+            <!-- <a id="subbmit-btn" class="submit-new-btn add_new_member_btn">+添加资金监管</a> -->
+
+            <!-- <label class="page-name clearfix">
                 <span style="width:60%">分红周期(天 / 次)</span>
                 <input maxlength="20" value="" style="width:40%">
             </label>
@@ -536,9 +660,10 @@
                 <div class="text">
                     <p>支持JPG、PNG格式，文件不大于2MB </p>
                 </div>
-            </div>
+            </div> -->
 
-            <a id="subbmit-btn" class="submit-new-btn text_btn active_dark">下载合作协议模版</a>
+            <a id="subbmit-btn" class="btn-orange-o-solid">保存信息</a>
+            <div class="dash"></div>
             </div>
           </div>
         </div>
@@ -547,11 +672,50 @@
 
       <div class=" title-control page-title " ms-controller="title-controller"
            ms-on-tap="toggle_content('quit')" >
-          <h1>退</h1>
+          <h1>退出机制</h1>
           <em id="em_quit"></em>
       </div>
 
-      <div id='quit' style="display:none">
+      <div id="quit" style="display:none">
+
+      <label class="page-desc">
+          <p>上传合伙协议摘要图片，最多6张。</p>
+      </label>
+
+        <div class="pic_layer">
+            <div class="divide33">
+                <div class="close"></div>
+                <img src="img/project1.png" width="100%" height="100%">
+            </div>
+
+            <div class="divide33">
+                <div class="close"></div>
+                <img src="img/project2.png" width="100%" height="100%">
+            </div>
+        </div>
+        <div class="page-logo clearfix">
+            <label id="upload-trigger" class="container">
+                <div id="upload-progress" class="progress transition"></div>
+                <img>
+                <input id="upload-input" class="default-hidden" type="file">
+            </label>
+            <div class="text">
+                <p>像素在512x512px以上的正方形标志。支持JPG、PNG格式，文件不大于2MB </p>
+            </div>
+        </div>
+        <a id="subbmit-btn" class="btn-orange-none" style="background: #FFF7F7;
+    width: 100%;margin-left:0px">查看/下载合伙人协议模板</a>
+        <label class="page-description">
+            <span>退出方式</span>
+            <textarea id=""></textarea>
+        </label>
+        <a class="btn-orange-o-solid">保存信息</a>
+
+
+
+        <div class="dash" style="margin-bottom:40px"></div>
+
+      <!-- <div id='quit' style="display:none">
         <label class="page-desc clearfix" style="margin-top:5px">
                 <p><b> 退出机制一：份额股转让解决方案</b></p>
         </label>
@@ -566,16 +730,16 @@
             <span style="width:30%">退出机制二</span>
             <textarea style="width:70%" id=""></textarea>
         </label>
-    </div><!-- end of quit-->
+    </div><!-- end of quit>
 
 
 
-    </div>
+    <!-- </div> -->
 
 </div>
 
 <!-- 行业选择 -->
-<div id="industry-choose" class="industry-choose">
+<!-- <div id="industry-choose" class="industry-choose">
     <div class="element-container"  ms-controller="industry-select">
         <h4 class="title">选择项目所在行业，最多可选择5个</h4>
         <div class="select">
@@ -589,7 +753,7 @@
         <div class="input">
             <span>已选取的行业</span>
             <!--input type="text" maxlength="8" ms-duplex="input" ms-on-keypress="input_enter()">
-            <a ms-on-tap="write_new()">+添加</a-->
+            <a ms-on-tap="write_new()">+添加</a-
         </div>
         <div class="selected industry">
             <div class="industry-container">
@@ -601,16 +765,16 @@
             <a ms-attr-class="btn_confirm?'confirm active':'confirm'" ms-on-tap="confirm_choose()">确定</a>
         </div>
     </div>
-</div>
+</div> -->
 
-</div>
+</div></div>
 
-<div style="margin-top:30px">
-  <label class="page-desc clearfix" style="margin-top:5px">
-      <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
+<div style="margin-top:30px; margin-bottom:40px">
+  <label class="page-desc" style="margin-top:5px">
+      <p><b>信任同样需要量化，理性的项目方往往更加重视运营过程中对合伙人的尊重，沟通和理解，并提前建立良好的退出机制</b></p>
   </label>
-   <a class="submit-new-btn text_btn active_orange_outline_slim">
-                  + 进一步完善资料提升等级</a>
+   <a class="btn-black-o-shadow">
+                  + 保存并申请成为热门类项目</a>
 </div>
 
 </div>
