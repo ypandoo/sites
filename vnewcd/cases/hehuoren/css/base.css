@@ -1725,6 +1725,35 @@ body.footer-close-bottom .banner-footer {
     display: inline-block;
 }
 
+.btn-orange-o-small{
+    background: white;
+    color: #ff2d2d;
+    font-size: 14px;
+    border: 1px solid #ff2d2d;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-blue-o{
+    background: white;
+    color: #4857b6;
+    font-size: 16px;
+    border: 1px solid #4857b6;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 60%;
+    margin: 4px 20%;
+    text-align: center;
+    display: inline-block;
+
+}
+
 .btn-orange-o-solid {
   background: #FFF7F7;
   margin: 10px;
