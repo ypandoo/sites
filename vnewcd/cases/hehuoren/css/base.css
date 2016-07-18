@@ -1693,7 +1693,7 @@ body.footer-close-bottom .banner-footer {
     margin-left: 10%;
     text-align: center;
     display: inline-block;
-    box-shadow: 1px 1px 2px;
+    box-shadow: 1px 1px 4px #A7A7A7;
 
 }
 

@@ -22,30 +22,9 @@
     this.base_home=this.base_protocol+this.base_host;
     this.base_ua=navigator.userAgent.toLowerCase();
     this.api={
-/*        login:this.base_mobile+'v2/home/login',
-        log:'http://api.angelcrunch.com/v1/log/m',
-        user_info: this.base_mobile + 'v4/home/profile',
-        host_id:this.base_mobile+'v3/host_id',
-        com_details:this.base_mobile+'v2/startup/m_detail',
-        com_finace_info:this.base_mobile+'v2/startup/m_finance',
-        com_basic_info:this.base_mobile+'v2/startup/base_info',
-        com_bp:this.base_mobile+'v2/startup/pb',
-        com_follow:this.base_mobile+'v2/follow',
-        com_unfollow:this.base_mobile+'v2/unfollow',
-        com_vc_standard:this.base_mobile+'v3/startup/vc',
-        com_vc_info:this.base_mobile+'v3/startup/vc_info',
-        com_vc_query:this.base_mobile+'v3/startup/vc_query',
-        industry_list:this.base_mobile+'v4/settings/business_list'*/
     };
 
     this.base_config={
-        //缓存时间
-/*        cachetime:7*24*60*60*1000,
-        //账户信息保存字段名
-        account_save_key:'account_info',
-        last_log_time_key:'last_log_time',
-        search_com_history_key:'com_search_history',
-        client_version_key:'client_version'*/
     };
     this.base_status={
         support_touch:typeof document.ontouchstart!='undefined',
@@ -302,7 +281,7 @@
         save_cookie(account_key.role,account_info.role);
         save_cookie('isapp','yes');
     }
-    
+
     //登陆状态
     if(account_info.token.length>5){
         account_info.is_login=true;
@@ -434,11 +413,11 @@
         },
         item:[],
         create_item:function(array){
-            var cache='';
-            for(var i in array){
-                cache+="<li class=\"touch-href\" data-href=\""+array[i][0]+"\">"+array[i][1]+"</li>";
-            }
-            return cache;
+            // var cache='';
+            // for(var i in array){
+            //     cache+="<li class=\"touch-href\" data-href=\""+array[i][0]+"\">"+array[i][1]+"</li>";
+            // }
+            // return cache;
         }
     };
     //登录后显示用户头像
@@ -477,5 +456,5 @@
         $account.touchtap(display_controll);
         $bk.touchtap(function(){if(sta)headoption_display.hide();});
     });
-    
+
 }).call(this);

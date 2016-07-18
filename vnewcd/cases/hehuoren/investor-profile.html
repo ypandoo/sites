@@ -192,6 +192,14 @@ color:red;
 </head>
 <body>
 <div class="bk"></div>
+<div id="share_friend" style="display:none;    z-index: 99999;
+    width: 200px;
+    position: fixed;
+    top: 20px;
+    right: 0px;"
+     ms-controller='invite_ctrl' >
+  <img src="img/share-friend.png" width="100%"  ms-click="share_friend_close()"/>
+</div>
 
 <div id ="projects" class="popup" style="display:none" ms-controller='invite_ctrl'>
     <div style=>
@@ -261,8 +269,8 @@ color:red;
             <h3><span style="font-size:24px">王学峰</span><br><span>源渡创投</span><span>&nbsp;</span><span>合伙人</span></h3>
             <h4><span>旅游业,投资行业,物流,家居建材,互联网金融</span></h4>
             <div class="follow">
-                <a class="following" href="#following">关注:&nbsp;<span>4</span></a>
-                <a class="follower" href="#follower">粉丝:&nbsp;<span>2833</span></a>
+                <a class="following" href="">关注:&nbsp;<span>4</span></a>
+                <a class="follower" href="">粉丝:&nbsp;<span>2833</span></a>
             </div>
         </div>
 
@@ -340,7 +348,7 @@ color:red;
           <a class="home" style="width:33.33%" ms-on-tap='invite()'>
             <span><i class="fa fa-flag-o" aria-hidden="true"></i> 领头</span>
           </a>
-          <a class="first" style="width:33.33%" ms-on-tap="invite()">
+          <a class="first" style="width:33.33%" ms-on-tap="share_friend()">
             <span><i class="fa fa-money" aria-hidden="true"></i>  消费合伙</span>
           </a>
           <!-- <a class="second"><span>股本合伙</span></a> -->
@@ -351,21 +359,6 @@ color:red;
 
 </div>
 
-    <!--div id="slide-page" class="slide-page">
-        <div class="header"><a id="slide-back"></a><h3 id="slide-title"></h3></div>
-        <div id="slide-list" class="follow-list" ms-controller="follow-list">
-            <a ms-repeat="data" ms-href="get_url(el.id)">
-                <div class="avatar">
-                    <img ms-src="el.avatar">
-                </div>
-                <div class="summary">
-                    <h4><span class="name" ms-text="el.name"></span>&nbsp;<span class="title" ms-text="el.company+' '+el.title"></span></h4>
-                    <p class="desc" ms-html="el.summary.substr(0,40)+(el.summary.length>39?'...':'')"></p>
-                </div>
-            </a>
-            <div id="slide-loading" class="loading"><em></em></div>
-        </div>
-    </div-->
 </div>
 
 <!--提交项目结果：文字提示页-->
@@ -385,35 +378,9 @@ color:red;
     </div>
 </div>
 
-<!--提交项目列表-->
-<div id="submit-com-list" class="submit-com-list"  ms-controller="entre-list">
-    <h4 class="title" ms-text="'向“'+data.name+'”提交项目'"></h4>
-    <div class="list-container">
-        <ul>
-            <li ms-if="data.list" ms-repeat="data.list" ms-data-id="el.id" ms-on-tap="data.select">
-                <img ms-src="el.logo">
-                <div>
-                    <h4 ms-text="el.name"></h4>
-                    <p ms-text="'预融资额：'+el.amount"></p>
-                </div>
-                <em></em>
-            </li>
-            <div class="btn-group">
-                <a id="list-cancle" class="cancle">取消</a><a id="list-confirm" class="confirm">提交</a>
-            </div>
-        </ul>
-    </div>
-</div>
 
 <!--navigator-->
 <div style="margin-top:60px"></div>
-<!--div class="address-navigator">
-            <a class="home"><span><b>当前位置：</b></span></a>
-            <a class="first"><span>项目集锦</span></a>
-            <a class="second"><span>项目详细</span></a>
-            <a class="third"><span>个人详细</span></a>
-</div> -->
-
 <div class="easy-direct">
     <a class="back" href="index.html"> <i class="fa fa-angle-left" aria-hidden="true"></i></a>
     <a href="index.html">首页</a>

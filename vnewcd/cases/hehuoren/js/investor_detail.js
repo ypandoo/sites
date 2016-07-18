@@ -27,6 +27,19 @@
         choose_project_display.hide();
       }
 
+      vm.share_friend = function() {
+        $("#share_friend").show();
+        var $bk=$('.bk');
+        $bk.show(0,function(){$(this).css('opacity',0.7)});
+      }
+
+      vm.share_friend_close = function() {
+        $("#share_friend").hide();
+        var $bk=$('.bk');
+        $bk.css('opacity',0);
+        setTimeout(function(){$bk.hide();},400);
+      }
+
       vm.type_sel = function(e){
         if (e==0) {
           vm._type_sel0 = 1;
