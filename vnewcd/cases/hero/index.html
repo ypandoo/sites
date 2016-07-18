@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" >
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>我已变身成为麦麦正义联萌的一员啦！你也快来一起联"萌"吧！</title>
+<link href="style.css" rel="stylesheet">
+<script src="js/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">
+// 判断是否是分享链接
+
+//(function(){
+//	var data=window.location.hash;
+//	if(data==""){
+//		window.location="share.html?url="+data;
+//	}
+//})();
+
+var url = location.href; //获取url中"?"符后的字串
+var posurl = url.indexOf("#");
+if (posurl >=0) {
+  var str = url.substr(posurl+1);
+  window.location.href = "share.html?url=" + str;
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b0bada2cc8609960a5224733dc7784eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+<div id="share_img" style='display:none;'>
+ <img src="images/2-1.png"/>
+</div>
+<div id="viewport">
+<div id="pages">
+<div id="page1" class="page">
+<div class="btn" id="page1_btn">
+<!--<img src="" class="people">
+<img src="" class="text">-->
+<button id="btn1"></button>
+<button id="btn1-1"></button>
+</div>
+</div>
+<div id="page2" class="page">
+<button id="btn2" class="btn"></button>
+</div>
+<div id="page3" class="page">
+<table id="role">
+<tr><td><a><img src="images/3-2.png"></a></td><td><a><img src="images/3-1.png"></a></td></tr>
+<tr><td><a><img src="images/3-3.png"></a></td><td><a><img src="images/3-4.png"></a></td></tr>
+<tr><td><a><img src="images/3-5.png"></a></td><td><a><img src="images/3-6.png"></a></td></tr>
+</table>
+</div>
+<div id="page4" class="page">
+ <div id="teach"><img src="images/teach.png"></div>
+  <canvas id="bgcanvas"></canvas>
+  <canvas id="canvas"></canvas>
+  <div class="first_upload"><input class="file" type="file" value="" id="fileImg"/></div>
+  <div class="operate btn" >
+  <input id="Left" type="button" value=""/>
+  <input id="Right" type="button" value="" />
+  <input id="Max" type="button" value="" />
+  <input id="Min" type="button" value="" />
+  <br>
+  <input id="Back" type="button" value=""  />
+  <a id="ReSelect" ><input class="file" type="file" value="" id="fileImg2" /></a>
+  <input id="Complete" type="button" value="" />
+  <input id="ResponeImg" type="hidden" value="" />
+</div>
+</div>
+<div id="page5" class="page">
+<canvas id="result_canvas"></canvas>
+</div>
+</div>
+</div>
+<div id="tip"><img src="images/share.png"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
