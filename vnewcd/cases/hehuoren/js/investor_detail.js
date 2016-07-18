@@ -17,12 +17,25 @@
   // this.invite = avalon.define('industry-select', function (vm) {
   this.invite_ctrl = avalon.define('invite_ctrl', function (vm) {
 
+      vm._type_sel0 = 1;
+      vm._type_sel1 = 0;
       vm.invite = function(){
         choose_project_display.show();
       };
 
       vm.close_project = function(){
         choose_project_display.hide();
+      }
+
+      vm.type_sel = function(e){
+        if (e==0) {
+          vm._type_sel0 = 1;
+          vm._type_sel1 = 0;
+        }
+        else{
+          vm._type_sel0 = 0;
+          vm._type_sel1 = 1;
+        }
       }
   });
 
