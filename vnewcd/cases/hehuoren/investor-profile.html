@@ -111,10 +111,19 @@
 .branding-head .new-progress-container .new-progress-group .new-progress-sta p {
     font-size: 14px;
 }
+ .follow1 {
+    position: absolute;
+    width: 34px;
+    height: 40px;
+    background: #f5f5f5;
+    z-index: 8;
+    right: 5%;
+    top: 0;
+    box-shadow: 0 2px 1px 0 #ccc;
+}
 
 em.follow_star {
   display: inline-block;
-  position: absolute;
   top: 12px;
   right: 12px;
   width: 34px;
@@ -149,7 +158,7 @@ em.follow_star_fill{
   float:none;
 text-align: left;
 padding: 15px 20px 15px 20px;
-border-top: 1px solid #f3f3f3;
+border-bottom:  1px solid #f3f3f3;
 }
 
 .popup li i{
@@ -157,6 +166,27 @@ margin-right: 5px ;
 color:red;
 }
 
+.share-type{
+  width: 100%;
+}
+
+.share-type div{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.share-type div p{
+  height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      color: #C1C1C1;
+      background: #F3F3F3;
+}
+.share-type .type-selected{
+  color: red;
+  background: white;
+}
 
 </style>
 </head>
@@ -164,18 +194,25 @@ color:red;
 <div class="bk"></div>
 
 <div id ="projects" class="popup" style="display:none" ms-controller='invite_ctrl'>
-    <div style="border-bottom: 2px solid red;">
-      <h2>请选择合伙的项目</h2>
+    <div style=>
+      <h2 style=" background: red;
+    color: white;
+">请选择合伙的项目</h2>
     </div>
 
+        <div class="share-type">
+          <div><p ms-class="type-selected:_type_sel0" ms-click="type_sel(0)">消费合伙</p></div>
+          <div><p ms-class="type-selected:_type_sel1" ms-click="type_sel(1)">股本合伙</p></div>
+        </div>
     <ul>
-      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>聚美优品</li>
-      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>京东商城</li>
-      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>服务到家配送</li>
-      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>饿了吗</li>
-      <li ms-on-tap='close_project()'><i class="fa fa-flag-o" aria-hidden="true"></i>糯米团购</li>
+      <li ms-on-tap='close_project()'></i>聚美优品</li>
+      <li ms-on-tap='close_project()'></i>京东商城</li>
+      <li ms-on-tap='close_project()'><i class="fa fa-check-circle" aria-hidden="true"></i>服务到家配送</li>
+      <li ms-on-tap='close_project()'></i>饿了吗</li>
+      <li ms-on-tap='close_project()' style="border:none">糯米团购</li>
 
     </ul>
+
  </div>
 
 
@@ -201,7 +238,7 @@ color:red;
         <div id="login-failed" class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
 
         <div class="branding-head">
-            <em class="follow_star follow_star_fill"></em>
+            <div class="follow1"><em class="follow_star"></em></div>
             <div class="state bg_orange">机构投资人</div>
             <div class="icon"><img src="img/head.jpg"></div>
             <!-- <div class="brand-info">
@@ -369,12 +406,22 @@ color:red;
 </div>
 
 <!--navigator-->
-<div style="margin-top:30px"></div>
-<div class="address-navigator">
+<div style="margin-top:60px"></div>
+<!--div class="address-navigator">
             <a class="home"><span><b>当前位置：</b></span></a>
             <a class="first"><span>项目集锦</span></a>
             <a class="second"><span>项目详细</span></a>
             <a class="third"><span>个人详细</span></a>
+</div> -->
+
+<div class="easy-direct">
+    <a class="back" href="index.html"> <i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    <a href="index.html">首页</a>
+    <a>|<a>
+    <a href="investor-profile.html">投资人列表</a>
+    <a>|<a>
+    <a>投资人详情</a>
+    <a class="forward"> <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 </div>
 
 

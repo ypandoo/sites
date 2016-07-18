@@ -436,17 +436,16 @@
 .tab a{
     display: inline-block;
     font-size: 16px;
-    padding: 3px 0;
+    padding: 5px 10px;
     font-weight: 500;
 }
 .tab a.left{
-    padding-left: 2px;
     margin-right: 15px;
     border-bottom: 2px solid #fff;
 }
 .tab a.left.active{
-    padding-left: 2px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #ff3d00;
+    color:#ff3d00
 }
 .tab a.right{
     padding-left: 1px;
@@ -608,7 +607,7 @@
 a.fixed
 {
     background-color:rgb(255, 61, 0);
-    
+
 }
 
 a.fixed span.fixed

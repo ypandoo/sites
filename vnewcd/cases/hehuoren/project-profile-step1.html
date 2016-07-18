@@ -19,6 +19,7 @@
     <link href="css/base.css" rel="stylesheet"/>
     <link href="css/project_regist.css" rel="stylesheet"/>
     <link href="css/project_active.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/angelcrunch.jq.c.js"></script>
@@ -52,8 +53,8 @@
     <div class="registration modules">
         <!-- Back-up form -->
         <div class="avatar-area">
-            <h1>完善您的项目基本信息</h1>
-            <p>创建您的个人项目，达成投资意向</p>
+            <h1>完善展示类项目信息</h1>
+            <p>介绍您的项目，一分钟让合伙人知道您在做什么</p>
         </div>
 
     </div>
@@ -61,16 +62,16 @@
     <!-- 展示项目 -->
     <div class=""  style="background:white">
         <div id="item-container" class="item-container">
-            <div class=" title-control page-title " ms-controller="title-controller"
+            <!-- <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('basic_desc')">
                 <h1>基本描述</h1>
                 <em id="em_basic_desc"></em>
-            </div>
+            </div> -->
 
-            <div id="basic_desc" style="display:none">
+            <div id="basic_desc" >
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
-                        <div id="upload-progress" class="progress transition"></div>
+                        <div id="upload-progress" clasßs="progress transition"></div>
                         <img>
                         <input id="upload-input" class="default-hidden" type="file">
                     </label>
@@ -81,10 +82,11 @@
                 </div>
 
                 <label class="page-name">
-                    <span>项目名称</span><input id="form-name" maxlength="20">
+                    <span style="width:30%">项目名称</span>
+                    <input maxlength="20" placeholder="简洁清晰,传达印象明确">
                 </label>
                 <label class="page-desc">
-                    <p>名称需简洁清晰，传递印象明确</p>
+                    <p>尽量不要使用公司名称。建议使用产品或品牌名称。最多16字。</p>
                 </label>
 
                 <label id="brand" class="page-name select-position-group">
@@ -96,18 +98,22 @@
                 </label>
 
                 <label class="page-name">
-                    <span>一句话介绍</span><input id="form-one" maxlength="25">
+                    <span>一句话介绍</span><input maxlength="25" placeholder="一句话让投资人看懂你的项目">
                 </label>
                 <label class="page-desc">
-                    <p>用最精炼的一句话来概括你的产品(25字以内)</p>
+                    <p>推荐两种简单的描述方法(最多25字)：<br> 1.类比法：举出模式类似的项目。如"顺旺基"-中国的麦当劳
+                    2.差别法：说明目标人群和其需求。如"常乐足道"-亚健康人群的调理专家.</p>
                 </label>
 
                 <label class="page-description">
                     <span>产品介绍</span>
-                    <textarea id="form-desc"></textarea>
+                    <textarea></textarea>
+                </label>
+                <label class="page-desc">
+                    <p>简单介绍项目概况。针对的目标客户群。让合伙人快速了解你的优势项目。<br>最多输入300字,还剩300字。</p>
                 </label>
 
-                <label class="page-name industry" ms-controller="industry-select">
+                <!-- <label class="page-name industry" ms-controller="industry-select">
                     <span>所属行业</span><em ms-on-tap="box_show()"></em>
                 </label>
                 <label class="page-desc industry">
@@ -115,6 +121,14 @@
                     <div class="industry-container" ms-controller="industry-select">
                         <span ms-repeat="input_selected" ms-on-tap="cancle_input_industry($index)"><i ms-text="el"></i><em>×</em></span>
                     </div>
+                </label> -->
+
+                <label id="industry" class="page-name">
+                    <span>所属行业</span><em></em><p></p>
+                    <select name="stage" class="stage">
+                        <option value="行业1">行业1</option>
+                        <option value="行业2">行业2</option>
+                    </select>
                 </label>
 
                 <label id="select1" class="page-name">
@@ -145,8 +159,10 @@
                           </select>
                       </label>
                 </div>
-
-                <a id="subbmit-btn" class="submit-new-btn text_btn add_new_member_btn" ms-on-tap='add_shop()'>+增加开店地址</a>
+                <label class="page-desc">
+                    <p>您可根据项目自身需求填写多个(最多不超过4咯)项目预期开店地址。通过查看关注该项目合伙人的分布图逐步确定最终店铺位置。</p>
+                </label>
+                <a id="subbmit-btn" class="submit-new-btn text_btn add_new_member_btn" ms-on-tap='add_shop()'>+增加预期开店地址</a>
 
                 <!-- <div id="open_plan">
                     <label id="select2" class="page-name">
@@ -172,14 +188,14 @@
 
      <div style="margin-top:30px">
 
-     <label class="page-desc clearfix" style="margin-top:5px">
+     <!-- <label class="page-desc clearfix" style="margin-top:5px">
          <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
-     </label>
+     </label> -->
 
       <a class="submit-new-btn text_btn active_grey_outline_slim">
-                        完成填写等待审核</a>
+                        保存并申请成为展示类项目</a>
        <a class="submit-new-btn text_btn active_orange_outline_slim">
-                      + 进一步完善资料提升等级</a>
+                      + 继续完善资料提升项目等级</a>
        </div>
 </div>
 
