@@ -1691,6 +1691,7 @@ body.footer-close-bottom .banner-footer {
     height: 40px;
     width: 80%;
     margin-left: 10%;
+    margin-bottom: 10px;
     text-align: center;
     display: inline-block;
     box-shadow: 1px 1px 4px #A7A7A7;
@@ -1709,6 +1710,7 @@ body.footer-close-bottom .banner-footer {
     margin-left: 10%;
     text-align: center;
     display: inline-block;
+    margin-bottom: 10px;
 }
 
 .btn-orange-o{
