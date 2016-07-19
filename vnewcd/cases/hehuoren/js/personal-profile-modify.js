@@ -182,6 +182,10 @@
          vm.toggle_content=function(id){
                 $('#btn_invistor'+id).fadeOut();
                 $('#cancel-btn'+id).fadeOut();
+
+                for (var i = parseInt(id); i >= 0; i--) {
+                  $('#invistor'+parseInt(id)).hide();
+                }
                 $('#invistor'+(parseInt(id)+1)).fadeIn();
         };
     });
