@@ -51,13 +51,13 @@
 .section-container .reward{
     position: relative;
     background: #ff3d00;
-    height: 580px;
+    height: 500px;
     overflow: hidden;
     z-index: 1;
 }
 .section-container .reward .title{
     width: 100%;
-    padding-top: 85px;
+    padding-top: 55px;
 }
 .section-container .reward .title h3{
     color: #fff;
@@ -155,7 +155,7 @@
     width: 200%;
     margin-left: -50%;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .section-container .reward .bk-num .num-container p {
     display: inline-block;
