@@ -243,11 +243,16 @@ display: inline-block;
     width: 23%;
 }
 .page-name input{
-    display: inline-block;
-    width: 77%;
-    float: right;
-    height: 100%;
-    background: #f5f5f5;
+  display: inline-block;
+      width: 60%;
+      float: right;
+      height: 80%;
+      background: #f5f5f5;
+      margin-top: 5px;
+      border-radius: 5px;
+}
+input:focus {
+    background: white;
 }
 .page-name button{
     display: inline-block;
@@ -646,14 +651,7 @@ input:focus{
 .page-name span{
     width: 40%;
 }
-.page-name input{
-    display: inline-block;
-    width: 60%;
-    float: right;
-    height: 100%;
-    background: #f5f5f5;
-        line-height: 32px;
-}
+
 .page-name button{
     display: inline-block;
     width: 70px;

@@ -1741,6 +1741,20 @@ body.footer-close-bottom .banner-footer {
     display: inline-block;
 }
 
+.btn-black-o-small{
+    background: white;
+    color: black;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 5px;
+    line-height: 40px;
+    height: 40px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    display: inline-block;
+}
+
 .btn-blue-o{
     background: white;
     color: #4857b6;
