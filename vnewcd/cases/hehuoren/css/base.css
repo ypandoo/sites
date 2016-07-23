@@ -2053,3 +2053,72 @@ overflow-y: scroll;
     background: #666;
     color: #fff;
 }
+
+
+/*share -type*/
+.popup{
+  position: fixed;;
+  width: 80%;
+  margin-left: 10%;
+  top:20%;
+  z-index: 999;
+  background: #FFF;
+  border-radius : 5px;
+}
+
+.popup h2{
+  font-size: 18px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.popup li{
+  float:none;
+text-align: left;
+padding: 15px 20px 15px 20px;
+border-bottom:  1px solid #f3f3f3;
+}
+
+.popup li i{
+margin-right: 5px ;
+/*color:red;*/
+}
+
+.popup .confirm{
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+#share_friend .img{
+  z-index: 99999;
+      width: 50px;
+      position: fixed;
+      top: 20px;
+      right: 0px;
+}
+.share-type{
+  width: 100%;
+}
+
+.share-type div{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.share-type div p{
+  height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      color: #C1C1C1;
+      background: #F3F3F3;
+}
+.share-type .type-selected{
+  color: red;
+  background: white;
+  border-top: 1px solid;
+}
