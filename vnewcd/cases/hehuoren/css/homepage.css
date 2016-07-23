@@ -51,7 +51,7 @@
 .section-container .reward{
     position: relative;
     background: #ff3d00;
-    height: 490px;
+    height: 470px;
     overflow: hidden;
     z-index: 1;
 }
@@ -65,7 +65,7 @@
 .section-container .reward .tag-group{
     width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
 }
 .section-container .reward .tag-group .selector{
