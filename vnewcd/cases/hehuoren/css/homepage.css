@@ -51,13 +51,13 @@
 .section-container .reward{
     position: relative;
     background: #ff3d00;
-    height: 500px;
+    height: 490px;
     overflow: hidden;
     z-index: 1;
 }
 .section-container .reward .title{
     width: 100%;
-    padding-top: 55px;
+    padding-top: 45px;
 }
 .section-container .reward .title h3{
     color: #fff;
@@ -65,7 +65,7 @@
 .section-container .reward .tag-group{
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     position: relative;
 }
 .section-container .reward .tag-group .selector{
