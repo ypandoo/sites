@@ -2,12 +2,17 @@
 (function(){
   var $bk=$('.bk');
   choose_project_display={
-      show:function(){
-          $('#projects').slideDown(200,function(){});
+      show:function(id){
+          $('#'+id).slideDown(200,function(){});
           $bk.show(0,function(){$(this).css('opacity',0.7)});
       },
-      hide:function(){
-          $('#projects').slideUp(200,function(){});
+      hide:function(id){
+          $('#'+id).slideUp(200,function(){});
+          $bk.css('opacity',0);
+          setTimeout(function(){$bk.hide();},400);
+      },
+      close_popup:function(){
+          $('.popup').slideUp(200,function(){});
           $bk.css('opacity',0);
           setTimeout(function(){$bk.hide();},400);
       }
@@ -19,12 +24,29 @@
 
       vm._type_sel0 = 1;
       vm._type_sel1 = 0;
-      vm.invite = function(){
-        choose_project_display.show();
+      vm.invite = function(id){
+        choose_project_display.show(id);
       };
 
-      vm.close_project = function(){
-        choose_project_display.hide();
+      vm.close_project = function(id){
+        choose_project_display.hide(id);
+      }
+
+      vm.close_popup = function(id){
+        choose_project_display.close_popup(id);
+      }
+
+      vm.share_friend = function() {
+        $("#share_friend").show();
+        var $bk=$('.bk');
+        $bk.show(0,function(){$(this).css('opacity',0.7)});
+      }
+
+      vm.share_friend_close = function() {
+        $("#share_friend").hide();
+        var $bk=$('.bk');
+        $bk.css('opacity',0);
+        setTimeout(function(){$bk.hide();},400);
       }
 
       vm.type_sel = function(e){

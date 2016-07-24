@@ -36,7 +36,7 @@ line-height: 12px;
 <div id="details" class="details">
     <div class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div>
     <div id="header" class="newhead">
-        <div class="logo touch-href" ></div>
+        <div class="logo touch-href" data-href="index.html"></div>
         <div class="options">
             <span></span>
             <ul class="hidden-menu">
@@ -227,6 +227,17 @@ line-height: 12px;
         <div class="extra-files">
             <div class="map "><a href="">点击查看关注人分布图</a></div>
         </div>
+
+        <div class="new-progress-container" style="padding:0;background: #EEEEEE;">
+            <div class="new-progress-group">
+                <div class="focus_left" style="float: left;width: 30%;height: 12px;
+    line-height: 12px;padding: 16px 0 16px 16px;">路演参与热度:</div>
+                <div class="new-progress" style="width:50%; margin-top:18px">
+                    <div class="new-progress-bar" style="width: 50%;"></div>
+                </div>
+                <div class="new-progress-sta" style="width:15%"><p style="margin-top:18px">50%</p></div>
+            </div>
+        </div>
     </div>
 
     <div class="title-control content-container" ms-controller="title-controller"
@@ -263,8 +274,10 @@ line-height: 12px;
 
         <div style="height: 50px;line-height: 52px;background-size: 32px;
                     padding-left: 10px;text-align: center;background: #EEE;" id="contract">
-            <a style="font-size:16px;" class="orange" ms-controller="title-controller"
-            ms-on-tap="open_contract()">+点击查看合伙协议摘要</a>
+            <a style="font-size:16px;" class="" ms-controller="title-controller"
+            ms-on-tap="open_contract()">
+            <i class="fa fa-file-text-o" aria-hidden="true" style="margin-right:10px; font-size:24px"></i>
+            点击查看合伙协议摘要</a>
         </div>
 
         <div id="pic-contract" class="slider-container clearfix" style="display:none">
@@ -436,7 +449,26 @@ line-height: 12px;
     <div class="mg"></div>
     <div class="image"><img src="img/project1.png"></div>
     <div class="text">
-        <p>这是一个通用的弹出框，链接为橘红色。
+        <p>俞海华
+
+江苏路海物联网科技有限公司 · 总经理
+自信乐观，工作有激情，涉足过广告、汽车 电子、互联网、物联网等多个行业，喜欢旅游、游泳、台球等，另外金融理财方面颇具天赋，
+康涛
+
+曾任工商银行江苏分行投行部总经理，资深企业管理和金融专家，高级经济师。东南大学、南京理工大学客座教授，中国物联网研究发展中心投资顾问,如意物联网产业（政府）引导基金管理人。
+
+邓扬敏
+
+南京理工大学硕士
+曾就职于润和软件、东软集团等公司，担任首席技术官，主持过多个重大项目的开发，具有丰富的项目管理和开发经验。
+林云龙
+
+曾任职于南通测绘院、东大商贸、中南集团等公司，担任项目经理和市场运营总监等职，对房地产市场和物业公司较为熟悉。
+
+王镇瑜
+
+江苏路海物联网科技有限公司 · 工程总监
+曾任职于三宝集团、钱旺信控集团等公司，担任高级项目经理、副总经理职务，在物联网应用领域具有独特的设计与施工能力与实战经验。
         <a href="">［这是一条链接］</a>，按钮样式如下。</p>
     </div>
     <div class="btn-group">

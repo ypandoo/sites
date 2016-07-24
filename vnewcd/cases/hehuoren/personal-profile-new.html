@@ -19,6 +19,7 @@
     <link href="css/base.css" rel="stylesheet"/>
     <link href="css/personal-profile-new.css" rel="stylesheet"/>
     <link href="css/personal-profile-new-active.css" rel="stylesheet"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/angelcrunch.jq.c.js"></script>
@@ -79,7 +80,7 @@
 
     <div id="head-container" class="head-container">
     <div id="header" class="newhead">
-        <div class="logo touch-href" data-href="/"></div>
+        <div class="logo touch-href" data-href="index.html"></div>
         <div class="options">
             <span></span>
             <ul class="hidden-menu">
@@ -131,7 +132,7 @@
                             <input id="upload-input" class="default-hidden" type="file">
                         </label>
                         <div class="text">
-                            <h3>*本人头像</h3>
+                            <h3>本人头像</h3>
                             <p>头像将出现在您的个人中心及一些其他列表中.清晰的头像能提高您的诚信度.宽高512px的正方形标志,支持JPG,PNG格式,不大于2MB </p>
                         </div>
                     </div>
@@ -198,9 +199,9 @@
                         </div>
                     </div> -->
 
-                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为一般合火人</a>
+                    <a  href="confirm.html" id="subbmit-btn" class="btn-black-o-shadow">保存并申请成为一般合火人</a>
 
-                    <a class="submit-new-btn text_btn active_orange_outline_slim"
+                    <a class="btn-orange"
                      id="btn_invistor0" ms-on-tap="toggle_content(0)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
             </div>
@@ -302,9 +303,9 @@
                     </label> -->
 
 
-                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为认证合火人</a>
+                    <a  href="confirm.html" id="subbmit-btn" class="btn-black-o-shadow">保存并申请成为认证合火人</a>
 
-                    <a class="submit-new-btn text_btn active_orange_outline_slim"
+                    <a class="btn-orange"
                     id="btn_invistor1" ms-on-tap="toggle_content(1)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
 
@@ -461,8 +462,8 @@
                         </div>
                     </div> -->
 
-                    <a id="subbmit-btn" class="submit-new-btn text_btn active_grey_outline_slim">保存并申请成为经验合火人</a>
-                    <a class="submit-new-btn text_btn active_orange_outline_slim"
+                    <a  href="confirm.html" id="subbmit-btn" class="btn-black-o-shadow">保存并申请成为经验合火人</a>
+                    <a class="btn-orange"
                     id="btn_invistor2" ms-on-tap="toggle_content(2)"  ms-controller="title-controller">+继续完善资料提升会员等级</a>
                 </div>
               </div>
@@ -477,7 +478,7 @@
 <div style="background:white; display:none" id="invistor3">
           <div>
             <label class="page-description" >
-                <span style="width:50%">实缴注册资本证明</span>
+                <span style="width:50%">投资案例证明</span>
             </label>
 
               <div class="pic_layer">
@@ -498,10 +499,11 @@
                       <img>
                       <input id="upload-input" class="default-hidden" type="file">
                   </label>
-                  <div class="text">
+                  <div class="text" style="height:120px">
 
-                    <p>满足条件：实缴注册资本在100万元人民币以上。<br>
-                    证明材料：实缴注册资本证明的扫描件或者高清拍照。最多上传5张。</p>
+                    <p>满足条件：有实体店铺合伙运营经验并且单笔合伙额度大于5万元人民币。<br>
+                    证明材料：1. 披露机构或公司真实信息的合伙案例新闻报道网址 2. 加盖公章的合伙协议，公司章程等文件。
+                    以上文件的数码或高清扫描件，最多上传5张。</p>
                   </div>
               </div>
           </div>
@@ -537,12 +539,74 @@
               </div>
           </div>
 
+          <div>
+            <label class="page-description" >
+                <span style="width:50%">机构资产证明</span>
+            </label>
+
+              <div class="pic_layer">
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project1.png" width="100%" height="100%">
+                  </div>
+
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project2.png" width="100%" height="100%">
+                  </div>
+              </div>
+
+              <div class="page-logo clearfix">
+                  <label id="upload-trigger" class="container">
+                      <div id="upload-progress" class="progress transition"></div>
+                      <img>
+                      <input id="upload-input" class="default-hidden" type="file">
+                  </label>
+                  <div class="text">
+
+                    <p>满足条件：总资产或管理资产不低于200万元人民币。<br>
+                    证明材料：机构资产证明的扫描件或者高清拍照。最多上传5张。</p>
+                  </div>
+              </div>
+          </div>
+
+          <div>
+            <label class="page-description" >
+                <span style="width:50%">机构净利润证明</span>
+            </label>
+
+              <div class="pic_layer">
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project1.png" width="100%" height="100%">
+                  </div>
+
+                  <div class="divide33">
+                      <div class="close"></div>
+                      <img src="img/project2.png" width="100%" height="100%">
+                  </div>
+              </div>
+
+              <div class="page-logo clearfix">
+                  <label id="upload-trigger" class="container">
+                      <div id="upload-progress" class="progress transition"></div>
+                      <img>
+                      <input id="upload-input" class="default-hidden" type="file">
+                  </label>
+                  <div class="text">
+
+                    <p>满足条件：最近3年每年净利润不低于30万人民币。<br>
+                    证明材料：机构净利润证明的扫描件或者高清拍照。最多上传5张。</p>
+                  </div>
+              </div>
+          </div>
+
           <label class="page-name">
               <span>*您在公司职位</span><input id="form-name" maxlength="20" placeholder="请输入您的职位">
           </label>
 
 
-                <a id="subbmit-btn" class="submit-new-btn text_btn active_orange_outline_slim">保存并申请成为机构合火人</a>
+                <a href="confirm.html" id="subbmit-btn" class="btn-orange">保存并申请成为机构合火人</a>
 </div>
 
         <!-- <div id="item-container" class="item-container">

@@ -63,14 +63,33 @@
 
         <div id="item-container" class="item-container">
 
+          <div class=" title-control page-title " ms-controller="title-controller"
+               ms-on-tap="toggle_content('info_team')">
+              <h1>团队介绍</h1>
+              <em id="em_info_team"  style="background: url('img/edit.png') no-repeat;background-size: 20px 20px;"></em>
+          </div>
+
+          <div id="info_team"  style="">
+          <div ms-controller="team-controller" ms-repeat-el='list'>
+            <label class="page-description">
+                <span>团队介绍</span>
+                <textarea id="form-desc"></textarea>
+            </label>
+            <label class="page-desc">
+                <p>介绍团队最突出的亮点。如来自腾讯，百度的团队。组建3年持续创意的团队。团队在餐饮行业深根多年且有丰富的经验等。</p>
+            </label>
+            <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队介绍</a>
+            <div class="dash"> </div>
+          </div>
+          </div>
+
             <div class=" title-control page-title " ms-controller="title-controller"
                  ms-on-tap="toggle_content('info_founder')" style="margin-top:0px; ">
                 <h1>创始人信息</h1>
-                <em id="em_info_founder" style="background: url('img/edit.png') no-repeat;
-    background-size: 20px 20px;"></em>
+                <em id="em_info_founder"></em>
             </div>
 
-            <div id='info_founder'>
+            <div id='info_founder' style="display:none">
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
                         <div id="upload-progress" class="progress transition"></div>
@@ -172,27 +191,6 @@
 
                 <div class="dash"></div>
             </div>
-
-            <div class=" title-control page-title " ms-controller="title-controller"
-                 ms-on-tap="toggle_content('info_team')">
-                <h1>团队介绍</h1>
-                <em id="em_info_team"></em>
-            </div>
-
-            <div id="info_team"  style="display:none">
-            <div ms-controller="team-controller" ms-repeat-el='list'>
-              <label class="page-description">
-                  <span>团队介绍</span>
-                  <textarea id="form-desc"></textarea>
-              </label>
-              <label class="page-desc">
-                  <p>介绍团队最突出的亮点。如来自腾讯，百度的团队。组建3年持续创意的团队。团队在餐饮行业深根多年且有丰富的经验等。</p>
-              </label>
-              <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队介绍</a>
-              <div class="dash"> </div>
-          </div>
-        </div>
-
 
 
             <div class=" title-control page-title " ms-controller="title-controller"
@@ -312,13 +310,13 @@
 
 </div>
 
-<div style="margin-top:30px">
-  <!-- <label class="page-desc clearfix" style="margin-top:5px">
-      <p><b>操作说明：完成填写等待审核 或者 进一步完善资料提升等级。请选择一种方式。。。</b></p>
-  </label> -->
-  <a class="btn-black-o-shadow">
+<div style="margin-top:40px">
+  <label class="page-desc" style="">
+      <p>智慧合伙人会更多关注与青睐资料填写更为完善的项目。</p>
+  </label>
+  <a class="btn-black-o-shadow"  href="confirm.html">
                     完成填写等待审核</a>
-   <a class="submit-new-btn text_btn active_orange_outline_slim">
+   <a href="project-profile-step3.html" class="submit-new-btn text_btn active_orange_outline_slim">
                   + 进一步完善资料提升等级</a>
 </div>
 

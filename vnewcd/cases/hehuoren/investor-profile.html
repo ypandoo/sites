@@ -21,6 +21,7 @@
     <link href="css/base.css" rel="stylesheet"/>
     <link href="css/user_detail.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
 <style>
 .branding-head {
     position: relative;
@@ -138,82 +139,65 @@ em.follow_star_fill{
   background-size:18px;
 }
 
-.popup{
-  position: fixed;;
-  width: 80%;
-  margin-left: 10%;
-  top:20%;
-  z-index: 999;
-  background: #FFF;
-  border-radius : 5px;
-}
 
-.popup h2{
-  font-size: 18px;
-  text-align: center;
-  line-height: 60px;
-}
 
-.popup li{
-  float:none;
-text-align: left;
-padding: 15px 20px 15px 20px;
-border-bottom:  1px solid #f3f3f3;
+i{
+  margin-right: 5px;
 }
-
-.popup li i{
-margin-right: 5px ;
-color:red;
-}
-
-.share-type{
-  width: 100%;
-}
-
-.share-type div{
-  width: 50%;
-  float: left;
-  text-align: center;
-}
-
-.share-type div p{
-  height: 40px;
-      line-height: 40px;
-      font-size: 14px;
-      color: #C1C1C1;
-      background: #F3F3F3;
-}
-.share-type .type-selected{
-  color: red;
-  background: white;
-}
-
 </style>
 </head>
 <body>
-<div class="bk"></div>
+<div class="bk" ms-controller='invite_ctrl' ms-click="close_popup()"></div>
+
+<div id="share_friend" ms-controller='invite_ctrl' class="popup" style="display:none; background:transparent" >
+  <div class="img"><img src="img/arrow-share.png" width="100%" />
+  </div>
+  <div style="text-align:center; font-size:16px; color:white">
+    <img src="img/logo_new.png" width="100px"/>
+    <br>建议在浏览器中打开
+  </div>
+</div>
 
 <div id ="projects" class="popup" style="display:none" ms-controller='invite_ctrl'>
-    <div style=>
-      <h2 style=" background: red;
-    color: white;
-">请选择合伙的项目</h2>
+    <div>
+      <h2>请选择合伙的项目</h2>
     </div>
 
-        <div class="share-type">
-          <div><p ms-class="type-selected:_type_sel0" ms-click="type_sel(0)">消费合伙</p></div>
-          <div><p ms-class="type-selected:_type_sel1" ms-click="type_sel(1)">股本合伙</p></div>
-        </div>
-    <ul>
-      <li ms-on-tap='close_project()'></i>聚美优品</li>
-      <li ms-on-tap='close_project()'></i>京东商城</li>
-      <li ms-on-tap='close_project()'><i class="fa fa-check-circle" aria-hidden="true"></i>服务到家配送</li>
-      <li ms-on-tap='close_project()'></i>饿了吗</li>
-      <li ms-on-tap='close_project()' style="border:none">糯米团购</li>
+   <div class="share-type">
+    <div><p ms-class="type-selected:_type_sel0" ms-click="type_sel(0)">消费合伙</p></div>
+    <div><p ms-class="type-selected:_type_sel1" ms-click="type_sel(1)">股本合伙</p></div>
+   </div>
 
+    <ul>
+      <li ></i>聚美优品</li>
+      <li ></i>京东商城</li>
+      <li ><i class="fa fa-check-circle" aria-hidden="true"></i>服务到家配送</li>
+      <li ></i>饿了吗</li>
+      <li  style="border:none">糯米团购</li>
     </ul>
 
+    <div ms-on-tap="close_project('projects')" class="confirm">
+      确定
+    </div>
  </div>
+
+ <div id ="projects2" class="popup" style="display:none" ms-controller='invite_ctrl'>
+     <div style="border-bottom:1px solid rgba(0,0,0,0.1)">
+       <h2>请选择合伙的项目</h2>
+     </div>
+
+     <ul>
+       <li ></i>聚美优品</li>
+       <li ></i>京东商城</li>
+       <li ><i class="fa fa-check-circle" aria-hidden="true"></i>服务到家配送</li>
+       <li ></i>饿了吗</li>
+       <li  style="border:none">糯米团购</li>
+     </ul>
+
+     <div ms-on-tap="close_project('projects2')" class="confirm">
+       确定
+     </div>
+  </div>
 
 
 <div class="page-container">
@@ -261,8 +245,8 @@ color:red;
             <h3><span style="font-size:24px">王学峰</span><br><span>源渡创投</span><span>&nbsp;</span><span>合伙人</span></h3>
             <h4><span>旅游业,投资行业,物流,家居建材,互联网金融</span></h4>
             <div class="follow">
-                <a class="following" href="#following">关注:&nbsp;<span>4</span></a>
-                <a class="follower" href="#follower">粉丝:&nbsp;<span>2833</span></a>
+                <a class="following" href="">关注:&nbsp;<span>4</span></a>
+                <a class="follower" href="">粉丝:&nbsp;<span>2833</span></a>
             </div>
         </div>
 
@@ -308,11 +292,7 @@ color:red;
 
         <div class="pesonal-info">
             <div>
-                <h1>投资理念</h1>
-                <div><p>1、团队拥有一定的行业资源和经验。</p><p>2、团队有很强的执行力和凝聚力。</p><p></p></div>
-            </div>
-            <div>
-                <h3>可提供的附加价值</h3>
+                <h1 style="color:black">可提供的附加价值</h1>
                 <ul class="mark-list">
                     <li>管理咨询经验其他服务</li>
                     <li>商业模式分析</li>
@@ -320,7 +300,7 @@ color:red;
                 </ul>
             </div>
             <div>
-                <h3>擅长领域</h3>
+                <h1 style="color:black">擅长领域</h1>
                 <ul class="mark-list">
                     <li>旅游</li>
                     <li>金融</li>
@@ -334,38 +314,18 @@ color:red;
 
 
 
-   <h2 style="font-size: 18px;padding-left:15px;line-height: 50px;">邀请TA:</h2>
-
-  <div class="get-more" ms-controller="invite_ctrl" >
-          <a class="home" style="width:33.33%" ms-on-tap='invite()'>
-            <span><i class="fa fa-flag-o" aria-hidden="true"></i> 领头</span>
-          </a>
-          <a class="first" style="width:33.33%" ms-on-tap="invite()">
-            <span><i class="fa fa-money" aria-hidden="true"></i>  消费合伙</span>
-          </a>
-          <!-- <a class="second"><span>股本合伙</span></a> -->
-          <a class="third" style="width:33.33%" ms-on-tap="invite()">
-              <span style="border:none"><i class="fa fa-bar-chart" aria-hidden="true"></i>股本合伙</span>
+  <h2 style="font-size: 18px;padding-left:15px;line-height: 50px;">邀请TA:</h2>
+  <div class="get-more" ms-controller="invite_ctrl">
+          <a class="home"><span><i class="fa fa-star-o"></i>关注</span></a>
+          <a class="first" ms-click="invite('projects')"><span><i class="fa fa-money" ></i>消费合伙</span></a>
+          <a class="second" ms-click="invite('projects2')"><span><i class="fa fa-hand-rock-o" ></i>股本合伙</span></a>
+          <a class="third" ms-click='share_friend()'>
+              <span style="border:none"><i class="fa fa-flag-o"></i>项目领头</span>
           </a>
   </div>
 
 </div>
 
-    <!--div id="slide-page" class="slide-page">
-        <div class="header"><a id="slide-back"></a><h3 id="slide-title"></h3></div>
-        <div id="slide-list" class="follow-list" ms-controller="follow-list">
-            <a ms-repeat="data" ms-href="get_url(el.id)">
-                <div class="avatar">
-                    <img ms-src="el.avatar">
-                </div>
-                <div class="summary">
-                    <h4><span class="name" ms-text="el.name"></span>&nbsp;<span class="title" ms-text="el.company+' '+el.title"></span></h4>
-                    <p class="desc" ms-html="el.summary.substr(0,40)+(el.summary.length>39?'...':'')"></p>
-                </div>
-            </a>
-            <div id="slide-loading" class="loading"><em></em></div>
-        </div>
-    </div-->
 </div>
 
 <!--提交项目结果：文字提示页-->
@@ -385,35 +345,9 @@ color:red;
     </div>
 </div>
 
-<!--提交项目列表-->
-<div id="submit-com-list" class="submit-com-list"  ms-controller="entre-list">
-    <h4 class="title" ms-text="'向“'+data.name+'”提交项目'"></h4>
-    <div class="list-container">
-        <ul>
-            <li ms-if="data.list" ms-repeat="data.list" ms-data-id="el.id" ms-on-tap="data.select">
-                <img ms-src="el.logo">
-                <div>
-                    <h4 ms-text="el.name"></h4>
-                    <p ms-text="'预融资额：'+el.amount"></p>
-                </div>
-                <em></em>
-            </li>
-            <div class="btn-group">
-                <a id="list-cancle" class="cancle">取消</a><a id="list-confirm" class="confirm">提交</a>
-            </div>
-        </ul>
-    </div>
-</div>
 
 <!--navigator-->
 <div style="margin-top:60px"></div>
-<!--div class="address-navigator">
-            <a class="home"><span><b>当前位置：</b></span></a>
-            <a class="first"><span>项目集锦</span></a>
-            <a class="second"><span>项目详细</span></a>
-            <a class="third"><span>个人详细</span></a>
-</div> -->
-
 <div class="easy-direct">
     <a class="back" href="index.html"> <i class="fa fa-angle-left" aria-hidden="true"></i></a>
     <a href="index.html">首页</a>
