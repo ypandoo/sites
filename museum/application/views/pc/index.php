@@ -78,25 +78,6 @@ text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
   margin-top: 10px;
 }
 
-/*title*/
-.title_text{
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: 1px;
-  color: #3e3e3e;
-  text-shadow: rgba(255, 0, 0, 0.2) 0 1px 0;
-  font-weight: 600;
-}
-
-.title_text_en{
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0px;
-  color: #3e3e3e;
-  text-shadow: rgba(255, 0, 0, 0.2) 0 1px 0;
-}
 
 .news_item{
     padding-bottom: 20px;
@@ -165,37 +146,58 @@ margin: 0 auto;
     overflow: hidden;
     height:470px">
           <img src="<?php echo base_url('assets/pc/img/basic.jpg')?>" width="100%" height="200px"/>
-          <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
+          <div class="title_section">
+            <div class="title_block">
             <p class="title_text">西博简介</p>
             <p class="title_text_en">About Us</p>
-            <div class="dash"></div>
+            </div>
           </div>
           <div style="padding:0 80px 0 80px; text-align:left; font-size:12px; color:#636363;margin-bottom:20px">
-            <p style=" line-height:20px">西藏博物馆坐落于拉萨市罗布林卡东南角，是西藏第一座具有现代化功能的博物馆。1994年7月列入西藏自治区成立30周年大庆援藏62项工程之一，于1999年10月中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。博物馆占地面积53959平方米，总建筑面积23508平方米，展厅面6积10451平方米。馆区中轴线上依次坐落着序言厅、主展馆和…文物库房。西藏博物馆具有鲜明的藏族传统建筑艺术特点，同时又深刻体…现了现代建筑的实用特点和艺术神韵。
+            <p style=" line-height:20px">
+              西藏博物馆是由国家直接投资兴建的西藏自治区唯一一座国家一级博物馆。1999年10月，中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。
+              博物馆占地面积5万余平方米，展厅面积1万平方米，整体建筑具有鲜明的藏族传统建筑艺术特色，同时兼具现代建筑的实用特点与功能，是传统与现代建筑风格有机结合的典范...
+
             </p>
           </div>
-          <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black" href="/Pc/view/about">VIEW MORE</a></div>
+          <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black" href="/Pc/view/about">详细介绍</a></div>
       </div>
 
       <div style="width:300px; float:left; height:470px; background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
-        <div style="padding:60px 0px 20px 40px; text-align:left;height:100px">
+        <!-- <div style="padding:60px 0px 20px 40px; text-align:left;height:100px">
           <p class="title_text">VISITING </p>
           <p class="title_text">GUIDE</p>
           <p class="title_text_en">参观指南</p>
           <div class="dash"></div>
+        </div> -->
+
+        <div class="title_section">
+          <div class="title_block">
+          <p class="title_text">参观指南</p>
+          <p class="title_text_en">Visiting Guide</p>
+          </div>
         </div>
 
-        <div style="width:220px; padding:40px 40px 0 40px">
+        <div style="width:220px; padding:0px 40px 0 40px">
           <p style="    letter-spacing: 1px; font-size:12px; text-align:left">
-            <b>开放时间：</b><br>
-            上午，09:00~12:00 <br>
-            下午，14:30~17:30 <br><br>
-            <b>Tips：</b>免费开放，周一闭馆<br>
-            本馆遇有重大活动或重要设备设施维修保养时，可根据需要临时闭馆，届时将告示公众。<br><br>
+            <b>开馆时间:</b><br>
+            夏秋季(5月1日至10月31日):<br>
+            09:30-17:30 (17:00游客停止入场)<br><br>
+
+            冬春季(11月1日至次年4月30日):<br>
+            10:30-17:00(16:30游客停止入场)<br><br>
+
+            周一闭馆（节假日除外）<br><br>
+
+            <b>公交线路：</b><br>
+            公交车2,8,13,24路至西藏博物馆站下车即到<br><br>
+
             <b>地址：</b> 西藏自治区拉萨市城关区罗布林卡路19号<br><br>
             <b>电话：</b>0891-6835244　6812210<br>
 
           </p>
+          <div style="padding: 3px 5px; overflow: hidden; margin-top:30px">
+            <a class="btn_black" href="/Pc/view/instruction">详细了解</a>
+          </div>
         </div>
       </div>
   </div>
@@ -209,6 +211,8 @@ margin: 0 auto;
     background:rgba(0,0,0,0.3); ;
     padding: 30px 0 30px 0;">
   <div style="width:180px; float:left; padding-left:20px">
+    <div style="    border-left: 2px solid #cc0000;
+    padding-left: 15px;">
     <p style="    font-size: 20px;
     font-weight: 600;
     line-height: 20px;
@@ -217,7 +221,8 @@ margin: 0 auto;
     text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;">珍品赏析 </p>
     <p style="font-size: 16px;font-weight:600;line-height:18px;letter-spacing:1px;color:#FFF;font-family:'黑体';margin-top:10px">TREASURE APPRECIATION</p>
     <!-- <p style="font-size: 16px;font-weight:600;line-height:18px;letter-spacing:1px;color:#FFF; font-family:'黑体'"></p> -->
-    <div class="dash"></div>
+    <!-- <div class="dash"></div> -->
+  </div>
   </div>
   <div style="width:600px; float:left; height:240px">
     <div class='collection' style="padding-top:30px">
@@ -225,7 +230,7 @@ margin: 0 auto;
         <div class="collection_item"><img src="<?php echo base_url('assets/pc/img/item2.png')?>" height="180px"/></div>
     </div>
   </div>
-  <div style="width:200px;float:left;">
+  <div style="width:200px;float:left;" id="desc1">
     <p style="    font-size: 20px;
     font-weight: 600;
     line-height: 20px;
@@ -243,7 +248,27 @@ margin: 0 auto;
     letter-spacing: 1px;
     text-shadow: rgba(232, 0, 0, 0.2) 0 1px 0;">
       双体陶罐出土于昌都卡若遗址，制作工艺纯熟，代表了卡若文化的制陶水平和卡若先民高超的器物造型能力，是新石器时代西藏陶器的代表和点睛之作，也是西藏博物馆的镇馆之宝。</p>
-  </div>
+ </div>
+
+ <div style="width:200px;float:left;display:none" id="desc2">
+   <p style="    font-size: 20px;
+   font-weight: 600;
+   line-height: 20px;
+   letter-spacing: 1px;
+   color: #cc0000;
+   font-family: '仿宋';
+   text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;">双体陶罐 </p>
+   <p style="    font-size: 12px;
+   font-weight: 500;
+   line-height: 18px;
+   color: #636363;
+   font-family: 'Microsoft YaHei';
+   margin-top: 20px;
+   padding-right: 20px;
+   letter-spacing: 1px;
+   text-shadow: rgba(232, 0, 0, 0.2) 0 1px 0;">
+     双体陶罐出土于昌都卡若遗址，制作工艺纯熟，代表了卡若文化的制陶水平和卡若先民高超的器物造型能力，是新石器时代西藏陶器的代表和点睛之作，也是西藏博物馆的镇馆之宝。</p>
+</div>
 </div>
 </div>
 

@@ -68,6 +68,25 @@ text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
   margin-top: 10px;
 }
 
+/*title*/
+.title_text{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 1px;
+  color: #3e3e3e;
+  text-shadow: rgba(255, 0, 0, 0.2) 0 1px 0;
+  font-weight: 600;
+}
+
+.title_text_en{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #3e3e3e;
+  text-shadow: rgba(255, 0, 0, 0.2) 0 1px 0;
+}
 
 .news_item{
     padding-bottom: 20px;
@@ -264,18 +283,6 @@ h2, h4{
   line-height: 24px;
   color: #666;
 }
-.content_html img{
-  width: 80%;
-  margin-left: 10%;
-}
-
-.content_html p{
-  font-weight: 500;
-  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-  line-height: 24px;
-  font-size: 14px;
-  /*letter-spacing: 1px*/
-}
 </style>
 </head>
 
@@ -283,33 +290,39 @@ h2, h4{
 
 <!-- banner -->
 <div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
-<img src="<?php echo base_url('assets/pc/img/xb.jpg')?>" width="100%"/>
+<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="about_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#f2f2f2;   padding-bottom: 80px; position:relative">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">西博简介</p>
-      <p class="title_text_en">About Us</p>
+      <p class="title_text">基本陈列</p>
+      <p class="title_text_en">Routine Exhibitions</p>
       </div>
     </div>
 
-    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text"><i class="fa fa-eye" aria-hidden="true" style="margin-right:10px"></i> 西博简介 </p>
-      <!-- <p class="title_text_en">作者：{{@author}} | {{@content_time}}</p>>
-      <!-- <div class="dash" style="width:130px"></div> 
-    </div> -->
-
 
   <div style="  width:90%; margin-left:5%; margin-top:20px">
-    <!-- <p ms-text="@content_title" class="content_title"></p> -->
-    <div class="content_html" ms-html="@html ">
+    <div class="expo_item"  ms-for='($index, item_info) in @list'>
+      <div class="expo_item_container">
+      <img ms-attr="{src:@get_pic_path(item_info.CONTENT_COVER)}" width="100%"/>
+
+      </div>
+      <div class="expo_text">
+        <h2>{{item_info.CONTENT_TITLE}}</h2>
+        <h4>{{@get_content_text(item_info.CONTENT_TEXT)}}</h4>
+      </div>
+      <div class="expo_check">
+        <a ms-click="@get_detail_link_pc($index)"><p>查看详情</p></a>
+      </div>
     </div>
+
+  </div>
 
   </div>
 </div>
@@ -325,7 +338,7 @@ h2, h4{
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/about.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/basic_list.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 

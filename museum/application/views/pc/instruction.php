@@ -289,20 +289,20 @@ h2, h4{
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="about_ctrl">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="instruction_ctrl">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#f2f2f2;   padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">西博简介</p>
-      <p class="title_text_en">About Us</p>
+      <p class="title_text">参观指南</p>
+      <p class="title_text_en">Visiting Guide</p>
       </div>
     </div>
 
     <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text"><i class="fa fa-eye" aria-hidden="true" style="margin-right:10px"></i> 西博简介 </p>
       <!-- <p class="title_text_en">作者：{{@author}} | {{@content_time}}</p>>
-      <!-- <div class="dash" style="width:130px"></div> 
+      <!-- <div class="dash" style="width:130px"></div>
     </div> -->
 
 
@@ -325,7 +325,7 @@ h2, h4{
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/about.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/instruction.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 

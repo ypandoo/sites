@@ -17,6 +17,7 @@ echo  '<div class="nav">
       <li>
         <a href="/Pc/view/new_expo" class="animate">展览</a>
         <div class="subNav" style="display: none;">
+              <a href="/Pc/view/basic_list">基本陈列</a>
               <a href="/Pc/view/new_expo">新展快讯</a>
               <a href="/Pc/view/expo_review">展览回顾</a>
         </div>

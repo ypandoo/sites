@@ -75,6 +75,7 @@
                           ms-mouseleave="@list_type_change" style="margin-top:10px">
                   <option >新展快讯</option>
                   <option>展览回顾</option>
+                  <option>基本陈列</option>
                   <option>西博动态</option>
                   <option>新馆建设</option>
                   <option>藏品保护</option>
@@ -172,6 +173,7 @@
                                 ms-rules="{required:true}"  data-required-message='文章发布板块不能为空!'>
                         <option >新展快讯</option>
                         <option>展览回顾</option>
+                        <option>基本陈列</option>
                         <option>西博动态</option>
                         <option>新馆建设</option>
                         <option>藏品保护</option>
