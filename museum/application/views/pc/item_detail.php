@@ -292,10 +292,17 @@ your browser does not support the video tag
   </div>
 
   <div style="width:380px; margin-left:20px; float:left; height:540px; background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
-    <div style="padding:60px 0px 0px 40px; text-align:left;height:100px">
+    <!-- <div style="padding:60px 0px 0px 40px; text-align:left;height:100px">
       <p class="title_text">SELF-SERVICE </p>
       <p class="title_text_en" style="font-size:18px">自助服务</p>
       <div class="dash"></div>
+    </div> -->
+
+    <div class="title_section">
+      <div class="title_block">
+      <p class="title_text"><a href="/pc/view/dynamic">自助服务</a></p>
+      <p class="title_text_en">SELF-SERVICE</p>
+      </div>
     </div>
 
     <div style="width:220px; padding:0px 40px 0 40px">
@@ -330,14 +337,28 @@ your browser does not support the video tag
 
 <div style=" background:#333333; width:100%; clear:both; overflow:hidden; " ms-controller="sd-list">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
-    <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
+
+    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">珍品简介</p>
       <p class="title_text_en">COLLECTION DETAIL</p>
       <div class="dash"></div>
+    </div> -->
+
+    <div class="title_section">
+      <div class="title_block">
+      <p class="title_text"><a href="/pc/view/dynamic">文字介绍</a></p>
+      <p class="title_text_en">Description</p>
+      </div>
     </div>
-    <div style="padding:0 80px 0 80px; text-align:left; font-size:12px; color:#636363;margin-bottom:20px">
+
+    <!-- <div style="padding:0 80px 0 80px; text-align:left; font-size:12px; color:#636363;margin-bottom:20px">
       <div class="item-des" ms-html="@items_list[0].ITEM_DESCRIPTION " >
       </div>
+    </div> -->
+
+    <div style="  width:90%; margin-left:5%; margin-top:20px">
+      <!-- <p ms-text="@content_title" class="content_title"></p> -->
+      <div class="content_html" ms-html="@items_list[0].ITEM_DESCRIPTION">
     </div>
   </div>
 </div>
@@ -356,24 +377,6 @@ your browser does not support the video tag
 <script>
 
 $(document).ready(function(){
-  $('.slider-for').slick({
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   arrows: false,
-   fade: true,
-   asNavFor: '.slider-nav'
- });
- $('.slider-nav').slick({
-   slidesToShow: 3,
-   slidesToScroll: 1,
-   asNavFor: '.slider-for',
-   dots: true,
-   focusOnSelect: true,
-   arrows:true,
-  //  centerMode:true,
-   infinite: true,
- });
-
 });
 
 $(".nav li").hover(function(){

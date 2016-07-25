@@ -144,7 +144,7 @@ margin: 0 auto;
 </style>
 </head>
 
-<body style="background:#333333"   ms-controller="expo_list_ctrl">
+<body style="background:#333333"   ms-controller="protect_ctrl">
 <div id="container">
 
 <!-- banner -->
@@ -157,30 +157,37 @@ margin: 0 auto;
 
 <div style=" width:100%; clear:both; overflow:hidden; margin-top:20px">
   <div style="width:1000px; margin:0 auto; overflow:hidden;" class="bg_content">
-    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text">西博课堂</p>
-      <p class="title_text_en">KNOWLEDGE</p>
-      <div class="dash"></div>
-    </div> -->
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">西博课堂</p>
-      <p class="title_text_en">knowledge</p>
+      <p class="title_text">藏品保护</p>
+      <p class="title_text_en">Antiquities Protection</p>
       </div>
     </div>
 
+    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
+      <p class="title_text">藏品保护</p>
+      <p class="title_text_en">Antiquities Protection</p>
+      <div class="dash"></div>
+    </div> -->
+    <!-- <div class="content"  style="margin-top:20px">
+        <div class="item"  ms-for='($index, item_info) in @list'  ms-click="@get_detail_link($index)">
+         <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -
+            <h2>{{item_info.CONTENT_TITLE}}</h2>
+            <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>
+        </div>
+      </a>
+    </div> -->
     <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; "
       ms-for='($index, item_info) in @list'>
       <div class="news_item">
-      <a ms-click='{@direct2detail(item_info.CONTENT_ID)}'><p class="news_title">
+      <a ms-click='{@get_detail_link_pc($index)}'><p class="news_title">
         <span>{{item_info.PUBLISH_TIME}}</span>{{item_info.CONTENT_TITLE}}
       </p>
       <p class="news_content">
         {{@get_content_text_pc(item_info.CONTENT_TEXT)}}
       </p></a>
     </div>
-
     </div>
 
   </div>
@@ -196,7 +203,7 @@ margin: 0 auto;
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/knowledge.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/protect.js') ?>"></script>
 
 </body>
 

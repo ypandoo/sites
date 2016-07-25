@@ -3,31 +3,26 @@
 
   //avalon control space
   var items_ctrl = avalon.define({
-                   $id: 'protect_ctrl',
-                   list:[],
+                   $id: 'items_ctrl',
+                   data:[],
                    sort: 0,
 
                    get_pic_path: function(path){
                      return upload_img+path;
                    },
                    get_detail_link : function(e){
-                     window.location.href = base_url+'content/view/'+items_ctrl.list[e].CONTENT_ID;
+                     window.location.href = base_url+'item/view/'+e;
                    },
-
                    get_detail_link_pc : function(e){
-                     window.location.href = base_url+'content/view_protect/'+items_ctrl.list[e].CONTENT_ID;
+                     return base_url+'item/view_pc/'+e;
                    },
 
                    get_content_text: function(e){
                      return e.substr(0, 45)+'...';
                    },
 
-                   get_content_text_pc: function(e){
-                     return e.substr(0, 300)+'...';
-                   },
-
-                   get_content_by_type:function(){
-                     var url = base_url+'Content/get_list';
+                   get_items_with_pic:function(){
+                     var url = base_url+'Item/get_items_with_pic';
                      base_remote_data.ajaxjson(
                                        url, //url
                                        function(data){
@@ -35,7 +30,15 @@
                                                if(data.success == 1){
                                                    console.log(data);
                                                    console.log('获取列表及图片成功！');
-                                                   items_ctrl.list = data.data;
+                                                   items_ctrl.data = data.data;
+
+                                                   $('.banner-top').slick({
+                                                   centerMode: true,
+                                                   centerPadding: '40px',
+                                                   adaptiveHeight: true,
+                                                   slidesToShow: 3,
+                                                   dots: true,
+                                                 });
                                                }
                                                else{
                                                    alert(data.message);
@@ -45,7 +48,7 @@
                                            alert('返回值错误!');
                                          }
                                      },
-                                     {'list_type': '藏品保护'},
+                                     '',
                                      function()
                                      {
                                        alert('网络错误!');
@@ -55,6 +58,6 @@
 
 
   //Init codes run once
-  items_ctrl.get_content_by_type();
+  items_ctrl.get_items_with_pic();
 
-}).call(define('protect_list'));
+}).call(define('space_view_items'));

@@ -310,11 +310,21 @@ h2, h4{
 
 <div style=" background:#333333; width:100%; clear:both; overflow:hidden; "    ms-controller="sd-list">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#f2f2f2;   padding-bottom: 80px; position:relative">
-    <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
+
+    <div class="title_section">
+      <div class="title_block">
+      <p class="title_text"><a href="/pc/view/lesson">西博课堂</a></p>
+      <p class="title_text_en">Lessons</p>
+      </div>
+    </div>
+
+    <div class="title_name"><p>{{@content_title}}</p><p class="title_author">作者：{{@author}}  |  发表于：{{@content_time}}</p></div>
+
+    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text"><i class="fa fa-eye" aria-hidden="true" style="margin-right:10px"></i> {{@content_title}} </p>
       <p class="title_text_en">作者：{{@author}} | {{@content_time}}</p>
-      <!-- <div class="dash" style="width:130px"></div> -->
-    </div>
+      <!-- <div class="dash" style="width:130px"></div> --
+    </div> -->
 
 
   <div style="  width:90%; margin-left:5%; margin-top:20px">

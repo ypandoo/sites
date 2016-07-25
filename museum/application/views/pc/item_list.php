@@ -274,12 +274,18 @@ margin: 0 auto;
       <div id="table-cell">
           <div id="center">
             <div class="banner-top">
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/1.jpg')?>" /><div class="item_name_bg"><p >翡翠提梁壶</p></div></div>
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/2.jpg')?>" /><div class="item_name_bg"><p >夜光陶瓷碗</p></div></div>
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/3.jpg')?>" /><div class="item_name_bg"><p >金贲巴瓶</p></div></div>
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/1.jpg')?>"  /><div class="item_name_bg"><p >翡翠提梁壶</p></div></div>
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/2.jpg')?>" /><div class="item_name_bg"><p >夜光陶瓷碗</p></div></div>
-              <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/3.jpg')?>" /><div class="item_name_bg"><p >金贲巴瓶</p></div></div>
+
+              <!-- <div style="width:100%"  ms-for='($index, item_info) in @data'>
+                <div class="single-item">
+                  <a ms-attr="{href:@get_detail_link_pc(item_info.ITEM_ID)}"><img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
+                  <div class="item_name_bg2"><p >{{item_info.ITEM_NAME}}</p></div></div></a>
+              </div> -->
+
+              <div class="banner-item"  ms-for='($index, item_info) in @data'>
+                <a ms-attr="{href:@get_detail_link_pc(item_info.ITEM_ID)}"><img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
+                <div class="item_name_bg"><p>{{item_info.ITEM_NAME}}</p></div></a>
+              </div>
+
             </div>
           </div>
       </div>
@@ -291,17 +297,20 @@ margin: 0 auto;
 
 <div style=" background:#333333; width:100%; clear:both; overflow:hidden; margin-top:20px">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
-    <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
+
+    <div class="title_section">
+      <div class="title_block">
       <p class="title_text">馆藏珍品</p>
-      <p class="title_text_en">MUSEUM COLLECTION</p>
-      <div class="dash" style="width:160px"></div>
+      <p class="title_text_en">Antiquities</p>
+      </div>
     </div>
+
 
     <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; ">
       <div style="width:100%"  ms-for='($index, item_info) in @data'>
         <div class="single-item">
           <a ms-attr="{href:@get_detail_link_pc(item_info.ITEM_ID)}"><img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
-          <div class="item_name_bg2"><p >{{item_info.ITEM_NAME}}</p></div></div></a>
+          <div class="item_name_bg2"><p> {{item_info.ITEM_NAME}} </p></div></div></a>
       </div>
     </div>
 
@@ -315,22 +324,11 @@ margin: 0 auto;
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
+<script src="<?php echo base_url('assets/pc/js/item_list.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 
 <script>
-
-$(document).ready(function(){
-  $('.banner-top').slick({
-  centerMode: true,
-  centerPadding: '40px',
-  adaptiveHeight: true,
-  slidesToShow: 3,
-  dots: true,
-});
-
-});
 
 $(".nav li").hover(function(){
 	$(".subNav,.subMenu",this).stop(false,true).slideDown();

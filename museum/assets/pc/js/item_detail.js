@@ -2,10 +2,10 @@
 (function(){
     var self = this;
 
-    this.list = [];
-    this.list_index = 0;
+    self.list = [];
+    self.list_index = 0;
 
-    this.framework =  avalon.define({
+    self.framework =  avalon.define({
         $id:"sd-list",
         items_list:[],
         data:{'id':'',
@@ -64,12 +64,12 @@
     });
 
 
-    this.get_pic_path = function(path){
+    self.get_pic_path = function(path){
       return upload_img+path;
     }
 
     //get data via ajax
-    this.get_list = function(){
+    self.get_list = function(){
         var item_id = $('#item_id').attr('data-id');
         if(!item_id)
         {
@@ -87,6 +87,8 @@
                                       console.log('获取列表及图片成功！');
                                       self.list = self.framework.items_list = data.data;
                                       //self.btn_display(0);
+
+                                      self.run_slick();
                                   }
                                   else{
                                       alert(data.message);
@@ -103,7 +105,7 @@
                         });
     };
 
-    this.get_list();
+    self.get_list();
 
     var url = "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/music.mp3" ;
     window.audio = document.createElement("audio");
@@ -128,6 +130,27 @@
         audio2.play();
     },false);
     audio2.appendChild(source2);
+
+
+    self.run_slick = function() {
+      $('.slider-for').slick({
+       slidesToShow: 1,
+       slidesToScroll: 1,
+       arrows: false,
+       fade: true,
+       asNavFor: '.slider-nav'
+     });
+     $('.slider-nav').slick({
+       slidesToShow: 3,
+       slidesToScroll: 1,
+       asNavFor: '.slider-for',
+       dots: true,
+       focusOnSelect: true,
+       arrows:true,
+       //centerMode:true,
+       infinite: true,
+     });
+    }
 
 
     //audio.play();

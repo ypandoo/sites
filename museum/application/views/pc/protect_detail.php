@@ -214,71 +214,123 @@ letter-spacing: 2px;
       font-size: 16px;
       line-height: 60px;
       cursor: pointer;
-      border-bottom: 1px solid rgba(51,51,51,0.1);
+      border-bottom: 1px solid rgba(255,0,0,0.3);
 }
 
-.hidden-menu li .selected{
-  color:red;
+.expo_item{
+  width: 30%;
+      float: left;
+      background: #FFF;
+      border: 1px solid rgba(102, 102, 102, 0.4);
+      margin: 1.5%;
 }
 
-.selected{
-  font-weight: bold;
+.expo_item:hover{
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.expo_item p{
+  line-height: 48px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
+    cursor: pointer;
+    color:#cc0000;
+}
+
+.expo_check{
+  border-top: 1px solid rgba(102, 102, 102, 0.19);
+}
+
+.expo_check p:hover{
+  background: rgba(197, 11, 11, 0.82);
+  color: white;
+}
+
+.expo_check a:hover{
+  background: rgba(197, 11, 11, 0.82);
+    color: white;
+}
+
+.expo_item_container{
+  padding: 10px;
+}
+
+.expo_item:hover {
+    box-shadow: 0 0 38px rgba(0,0,0,.3);
+    transition: all .15s ease;
+}
+
+h2, h4{
+  text-align: center;
+  font-weight: 500;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.expo_text{
+  padding: 0px 10px 10px 10px;
+}
+.expo_text h2{
+  font-size: 18px;
+      line-height: 50px;
+      color: black;
+}
+
+.expo_text h4{
+  font-size: 12px;
+  line-height: 24px;
+  color: #666;
+}
+.content_html img{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.content_html p{
+  font-weight: 500;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+  /*letter-spacing: 1px*/
 }
 </style>
 </head>
-
+<div id="content_id" data-id="<?php echo $content_id?>"></div>
 <body style="background:#333333">
-<!-- data -->
-<div id="item_id" data-id="<?php echo $item_id?>"></div>
 
 <!-- banner -->
 <div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
-<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
+<img src="<?php echo base_url('assets/pc/img/xb.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="navi_ctrl" >
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
+<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "    ms-controller="sd-list">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#f2f2f2;   padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">展厅导航</p>
-      <p class="title_text_en">Navigator</p>
+      <p class="title_text"><a href="/pc/view/protect">藏品保护</a></p>
+      <p class="title_text_en">Antiquities Protection</p>
       </div>
     </div>
 
-    <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:10px"></i>当前展厅：{{@navi_name}}</p>
-      <!-- <p class="title_text_en">MUSEUM NAVIGATION </p> -->
-      <!-- <div class="dash" style="width:200px"></div> --
-    </div> -->
+    <div class="title_name"><p>{{@content_title}}</p><p class="title_author">作者：{{@author}}  |  发表于：{{@content_time}}</p></div>
 
-    <div style="width:260px;float:left;padding: 20px;">
-    <!-- <p class="title_text"><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:10px"></i>当前展厅：{{@navi_name}}</p> -->
-    <ul class="hidden-menu">
-        <li ms-for='($index, item_info) in @list' ms-attr="{dataId:$index}" ms-click='@swith_to_selected($index)' ms-css="{'font-weight': item_info.NAVI_CODE == @navi_code ? 600:500 }">
-            <i class="fa fa-arrow-right" aria-hidden="true" style="padding-right:10px; color:#cc0000" ms-if='item_info.NAVI_CODE == @navi_code'></i>
-            {{item_info.NAVI_NAME}}
-        </li>
-    </ul>
+
+  <div style="  width:90%; margin-left:5%; margin-top:20px">
+    <!-- <p ms-text="@content_title" class="content_title"></p> -->
+    <div class="content_html" ms-html="@content_html ">
   </div>
 
-  <div style="    width: 640px;float: left;padding: 0px 20px 0px 20px; margin-top:-50px">
-    <div class="item-des" >
-      <div ms-html="@navi_html" class="content_html" ></div>
-    </div>
   </div>
-    <!-- <div class="bottom_fix" ms-click='@switch_navi()'>
-        切换展馆
-    </div> -->
-    </div>
+</div>
 
 
 
-
-  </div>
 </div>
 
 
@@ -288,7 +340,7 @@ letter-spacing: 2px;
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/navi.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/content_detail.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 

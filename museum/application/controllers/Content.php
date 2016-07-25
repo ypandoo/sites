@@ -84,6 +84,18 @@ class Content extends CI_Controller {
        $this->load->view('pc/construction_detail', $data);
     }
 
+    public function view_protect($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/protect_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/protect_detail', $data);
+    }
+
 
     public function add_pic()
     {
