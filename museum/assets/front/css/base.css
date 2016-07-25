@@ -6,14 +6,28 @@
 /*/
 /**/
 .html strong{
-  font-size: 18px;
+  /*font-size: 16px;*/
   font-weight: 600;
 }
+
+.page-title-name{
+  text-align: center;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+padding: 50px 0 10px 0;
+width: 80%;
+margin-left: 10%;
+}
+
+.page-title-name h2{
+font-size: 24px;
+font-weight: 600;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, ins, kbd, bdi, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {

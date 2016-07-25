@@ -74,6 +74,9 @@ background-size: cover;
     <div class="menu" id="menu" style="display:none">
 
       <a href='<?php echo base_url('pages/view/item_list') ?>'><div class="menu_item" style="margin-top:8px"></div></a>
+      <div class="menu_item"></div>
+      <a href='<?php echo base_url('pages/view/navi') ?>'><div class="menu_item" ></div></a>
+
       <!-- <a href='<?php echo base_url('pages/view/new_expo') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/layout') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>

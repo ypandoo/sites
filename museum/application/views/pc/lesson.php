@@ -166,7 +166,7 @@ margin: 0 auto;
     <div class="title_section">
       <div class="title_block">
       <p class="title_text">西博课堂</p>
-      <p class="title_text_en">knowledge</p>
+      <p class="title_text_en">Knowledge Share</p>
       </div>
     </div>
 

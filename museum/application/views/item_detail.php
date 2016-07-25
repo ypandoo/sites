@@ -102,11 +102,15 @@ width: 50%;
           <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
             <span><i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图</span>
           </a></div>
+
+          <div class="service-container"><a class="service" href="/pages/view/item_list">
+            <span><i class="fa fa-arrow-right" aria-hidden="true"></i>返回馆藏珍品列表</span>
+          </a></div>
         </div>
 
         <div class="page-title" style="margin-top:15px">
           <h2>视频解说 </h2>
-          <h4 style="letter-spacing: 1px;">Antiquities</h4>
+          <h4 style="letter-spacing: 1px;">Video</h4>
         </div>
 
         <div  style="margin-top:20px; padding-left:25px; padding-right:25px">
@@ -118,14 +122,20 @@ width: 50%;
         </div>
 
 
-        <div class="page-title" style="margin-top:25px">
+        <div class="page-title" style="margin-top:25px; margin-bottom:60px">
           <h2>展品介绍 </h2>
-          <h4 style="letter-spacing: 1px;">Antiquities</h4>
+          <h4 style="letter-spacing: 1px;">Antiquities Explanation</h4>
         </div>
 
         <div class="content" style="clear:both; margin-top:20px" >
               <p class="html" ms-html="@data.description ">
               </p>
+        </div>
+
+        <div style="margin-top:40px">
+        <div>
+
+        <div style="height:20px; background: #ec422b;">
         </div>
 </div>
 </body>

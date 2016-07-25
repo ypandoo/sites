@@ -82,11 +82,11 @@
 
 .expo_text h2{
   line-height: 30px;
-      font-family: 'Microsoft YaHei';
-      letter-spacing: 0.1em;
-      /* background-color: white; */
-      margin-left: 10px;
-      font-size: 14px;
+  font-family: 'Microsoft YaHei';
+  letter-spacing: 0px;
+  /* background-color: #e2e2e2; */
+  margin-left: 5px;
+  font-size: 12px;
 }
     </style>
 </head>
@@ -99,13 +99,13 @@
         <a href="/pages/view/menu3"><div class="logo touch-href"></div></a>
     </div>
 
-     <div class="banner-top">
+     <!-- <div class="banner-top">
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/1.jpg')?>" /><div class="item_name_bg"><p >翡翠提梁壶</p></div></div>
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/2.jpg')?>" /><div class="item_name_bg"><p >夜光陶瓷碗</p></div></div>
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/3.jpg')?>" /><div class="item_name_bg"><p >金贲巴瓶</p></div></div>
-    </div>
+    </div> -->
 
-    <div class="page-title" style="margin-top:15px">
+    <div class="page-title" style="margin-top:65px">
       <h2>馆藏珍品 </h2>
       <h4 style="letter-spacing: 1px;">Antiquities</h4>
     </div>
@@ -125,7 +125,6 @@
     </div>
 
     </div>
-    <div class="position-occupy"></div>
     <!-- <div class="page-turn-occupy"></div>
     <div class="page-turn">
         <div class="page-turn2">
@@ -134,6 +133,12 @@
         <a class="btn next-page">下一页</a>
         </div>
     </div> -->
+
+    <div style="margin-top:40px">
+    <div>
+
+    <div style="height:20px; background: #ec422b;">
+    </div>
 
 </div>
 
@@ -144,16 +149,16 @@
 <script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 <script>
-$(document).ready(function(){
-  $('.banner-top').slick({
-  adaptiveHeight: true,
-  slidesToShow: 1,
-  dots: true,
-  arrows: false,
-  autoplay: true,
-autoplaySpeed: 2000,
-});
-
-});
+// $(document).ready(function(){
+//   $('.banner-top').slick({
+//   adaptiveHeight: true,
+//   slidesToShow: 1,
+//   dots: true,
+//   arrows: false,
+//   autoplay: true,
+// autoplaySpeed: 2000,
+// });
+//
+// });
 </script>
 </html>

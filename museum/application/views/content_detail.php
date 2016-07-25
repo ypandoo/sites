@@ -29,7 +29,12 @@
             <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href"></div></a>
         </div>
 
-        <div class="page-title" >
+        <div class="page-title" ms-click="@get_type_link()">
+          <h2>{{@content_type}}</h2>
+          <h4>{{@get_content_name_en()}}</h4>
+        </div>
+
+        <div class="page-title-name" >
           <h2>{{@content_title}}</h2>
           <h4>{{@author}}发表于:{{@content_time}}</h4>
         </div>

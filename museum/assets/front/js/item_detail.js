@@ -115,6 +115,7 @@
         $all_infozone.fadeOut(300,function(){self.info(i);$all_infozone.fadeIn(300)});
         self.selector(i);
         self.list_index = i;
+        self.info(index);
     };
 
     //     //sample data

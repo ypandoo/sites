@@ -44,7 +44,8 @@
             </div>
             <div class="item"  ms-click="@get_detail_link($index)">
              <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
-                <h2>{{item_info.CONTENT_TITLE}}</h2><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>
+                <h2>{{item_info.CONTENT_TITLE}}</h2>
+                <!-- <h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
                 <!-- <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
             </div>
           </a>
