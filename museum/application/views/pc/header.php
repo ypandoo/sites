@@ -11,7 +11,7 @@ echo  '<div class="nav">
         <div class="subNav" style="display: none;">
             	<a href="/Pc/view/about">西博简介</a>
               <a href="/Pc/view/dynamic">西博动态</a>
-              <a href="">新馆建设</a>
+              <a href="/Pc/view/construction">新馆建设</a>
         </div>
       </li>
       <li>

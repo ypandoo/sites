@@ -15,19 +15,19 @@ class Content extends CI_Controller {
     public function view_expo_new($content_id)
     {
       $data['content_id'] = $content_id;
-      if ( ! file_exists(APPPATH.'/views/pc/new_expo.php') || !  $data['content_id'])
+      if ( ! file_exists(APPPATH.'/views/pc/new_expo_detail.php') || !  $data['content_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();
        }
 
-       $this->load->view('Pc/expo_detail', $data);
+       $this->load->view('Pc/new_expo_detail', $data);
     }
 
     public function view_expo_review($content_id)
     {
       $data['content_id'] = $content_id;
-      if ( ! file_exists(APPPATH.'/views/pc/expo_review.php') || !  $data['content_id'])
+      if ( ! file_exists(APPPATH.'/views/pc/expo_detail.php') || !  $data['content_id'])
        {
            // Whoops, we don't have a page for that!
            show_404();
@@ -70,6 +70,18 @@ class Content extends CI_Controller {
        }
 
        $this->load->view('pc/basic_detail', $data);
+    }
+
+    public function view_construction($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/construction_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/construction_detail', $data);
     }
 
 

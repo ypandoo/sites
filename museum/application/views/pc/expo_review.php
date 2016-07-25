@@ -298,10 +298,12 @@ h2, h4{
 
 <div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
-    <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text">新展快讯</p>
-      <p class="title_text_en">NEW EXHIBITIONS </p>
-      <div class="dash" style="width:130px"></div>
+
+    <div class="title_section">
+      <div class="title_block">
+      <p class="title_text">展览回顾</p>
+      <p class="title_text_en">Exhibitions Review</p>
+      </div>
     </div>
 
 

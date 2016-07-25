@@ -13,9 +13,16 @@
                    get_detail_link : function(e){
                      window.location.href = base_url+'content/view/'+items_ctrl.list[e].CONTENT_ID;
                    },
+                   get_detail_link_pc : function(e){
+                     window.location.href = base_url+'content/view_construction/'+items_ctrl.list[e].CONTENT_ID;
+                   },
 
                    get_content_text: function(e){
                      return e.substr(0, 45)+'...';
+                   },
+
+                   get_content_text_pc: function(e){
+                     return e.substr(0, 300)+'...';
                    },
 
                    get_content_by_type:function(){
