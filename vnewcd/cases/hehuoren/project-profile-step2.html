@@ -70,7 +70,7 @@
           </div>
 
           <div id="info_team"  style="">
-          <div ms-controller="team-controller" ms-repeat-el='list'>
+          <div  ms-repeat-el='list'>
             <label class="page-description">
                 <span>团队介绍</span>
                 <textarea id="form-desc"></textarea>
@@ -141,6 +141,8 @@
                     <span>其他团队成员信息</span><input maxlength="20">
                 </label>
 
+
+                <div ms-controller="team-controller" ms-repeat-el='list'>
                 <div class="page-logo">
                     <label id="upload-trigger" class="container">
                         <div id="upload-progress" class="progress transition"></div>
@@ -185,9 +187,13 @@
                     <p>展现个性和亮点。体现和别人不一样的地方。行业从业经验，兴趣爱好等。</p>
                 </label>
 
+                <a class="btn-black-none" ms-click="del()">-删除该成员</a>
+             </div>
 
-                <a id="subbmit-btn" class="btn-orange-none">+增加团队成员信息</a>
-                <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队成员信息</a>
+
+                <div style="background: #fff7f7;margin-top: 30px; padding-top: 15px;">
+                  <a id="subbmit-btn" class="btn-orange-o-small" ms-on-tap="add()"  ms-controller="team-controller">+增加团队成员信息</a>
+                <a id="subbmit-btn" class="btn-orange-o-solid">+保存团队成员信息</a></div>
 
                 <div class="dash"></div>
             </div>
@@ -238,10 +244,13 @@
                     <span>顾问简介</span>
                     <textarea id="form-desc" placeholder="一句话介绍顾问导师的亮点，最多100字"></textarea>
                 </label>
+                <a class="btn-black-none" ms-click="del()">-删除该导师</a>
             </div>
-            <a class="btn-orange-none"
-            ms-on-tap="add()" ms-controller="mentor-controller">+增加新导师</a>
+
+            <div style="background: #fff7f7;margin-top: 30px; padding-top: 15px;">
+            <a class="btn-orange-o-small" ms-on-tap="add()"  ms-controller="mentor-controller">+增加新导师</a>
             <a class="btn-orange-o-solid">保存导师</a>
+          </div>
 
             <div class="dash"></div>
           </div>

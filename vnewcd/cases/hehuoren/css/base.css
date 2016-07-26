@@ -1713,6 +1713,21 @@ body.footer-close-bottom .banner-footer {
     margin-bottom: 10px;
 }
 
+
+.btn-black-none {
+    background: white;
+    margin: 5px;
+    color: #000000;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    display: inline-block;
+    /*border: 1px solid rgba(0,0,0,0.6);*/
+    border-radius: 5px;
+}
 .btn-orange-o{
     background: white;
     color: #ff2d2d;

@@ -162,11 +162,18 @@
                 <label class="page-name">
                     <span>视频链接</span><input maxlength="50" value="">
                 </label>
+
+                <a class="btn-black-none" ms-click="del()">-删除该视频</a>
               </div>
-                <a id="subbmit-btn" class="btn-orange-none"
+
+              <div style="background: #fff7f7;margin-top: 30px; padding-top: 15px;">
+                <a id="subbmit-btn" class="btn-orange-o-small"
                 ms-on-tap="add()" ms-controller="vedio-controller">+增加视频</a>
                 <a id="subbmit-btn" class="btn-orange-o-solid">+保存修改</a>
-                <div class="dash"></div>
+              </div>
+
+              <div class="dash"></div>
+
             </div>
 
 
@@ -190,12 +197,17 @@
                    <span>事件内容</span>
                    <textarea id=""></textarea>
                </label>
+
+               <a class="btn-black-none" ms-click="del()">-删除大事记</a>
              </div>
 
-             <a id="subbmit-btn" class="btn-orange-none"
+             <div style="background: #fff7f7;margin-top: 30px; padding-top: 15px;">
+             <a id="subbmit-btn" class="btn-orange-o-small"
              ms-on-tap="add()" ms-controller="history-controller">+增加大事记</a>
 
              <a class="btn-orange-o-solid">保存大事记</a>
+            </div>
+
              <div class="dash"></div>
            </div>
    </div>
@@ -276,11 +288,15 @@
                     <!-- <span>上季度净利润</span><input maxlength="20" value=""> -->
                 </label>
 
+                <a class="btn-black-none" ms-click="del()">-删除店铺</a>
               </div>
 
-                <a id="subbmit-btn" class="btn-orange-none"
+              <div style="background: #fff7f7;margin-top: 30px; padding-top: 15px;">
+                <a id="subbmit-btn" class="btn-orange-o-small"
                 ms-on-tap="add()" ms-controller="shop-controller">+增加店铺</a>
                 <a class="btn-orange-o-solid">保存店铺信息</a>
+              </div>
+
                 <div class="dash"></div>
             </div>
 

@@ -223,6 +223,13 @@
           }
           vm.list.push({'name':'', 'email':''});
         };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
+        };
+
     });
 }).call(define('team-space'));
 
@@ -239,6 +246,12 @@
             return;
           }
           vm.list.push({'name':'', 'email':''});
+        };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
         };
     });
 }).call(define('mentor-space'));
@@ -257,6 +270,12 @@
           }
           vm.list.push({'title':'', 'link':''});
         };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
+        };
     });
 }).call(define('news-space'));
 
@@ -272,6 +291,12 @@
             return;
           }
           vm.list.push({'title':'', 'link':''});
+        };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
         };
     });
 }).call(define('vedio-space'));
@@ -290,6 +315,12 @@
           }
           vm.list.push({'date':'', 'content':''});
         };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
+        };
     });
 }).call(define('history-space'));
 
@@ -306,6 +337,12 @@
           }
           vm.list.push({'name':'', 'location':''});
         };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
+        };
     });
 }).call(define('shop-space'));
 
@@ -321,6 +358,12 @@
             return;
           }
           vm.list.push({'name':'', 'location':''});
+        };
+
+        vm.del = function() {
+          if (vm.list.size() >= 1) {
+          vm.list.pop();
+        }
         };
     });
 }).call(define('eval-space'));
