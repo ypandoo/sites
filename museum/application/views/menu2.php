@@ -78,8 +78,10 @@ background-size: cover;
         <div class="menu_item" style="margin-top:8px"></div>
 
       <a href='<?php echo base_url('pages/view/lesson') ?>'><div class="menu_item" ></div></a>
+      <a href='http://mp.weixin.qq.com/s?__biz=MzIzMDI4MDM1OQ==&mid=100000127&idx=1&sn=69b7a2337783870b80c2bcf9388fdb23&scene=20#wechat_redirect'>
+        <div class="menu_item" ></div></a>
 
-      <div class="menu_item" style="margin-top:8px"></div>
+      <!-- <div class="menu_item" style="margin-top:8px"></div> -->
 
       <!-- <a href='<?php echo base_url('pages/view/layout') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>

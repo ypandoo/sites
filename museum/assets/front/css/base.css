@@ -7,6 +7,7 @@
 /**/
 .html strong{
   /*font-size: 16px;*/
+  font-family: 'Microsoft YaHei';
   font-weight: 600;
 }
 
@@ -19,8 +20,10 @@ margin-left: 10%;
 }
 
 .page-title-name h2{
-font-size: 24px;
-font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Microsoft YaHei';
+  line-height: 32px;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -37,7 +40,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0;
   color: #333;
   font-size: 14px;
-  font-family: "PingHei","Lucida Grande","Lucida Sans Unicode","Helvetica","Arial","Verdana","sans-serif";
+  font-family:"PingHei","Lucida Grande","Lucida Sans Unicode","Helvetica","Arial","Verdana","sans-serif";
   font-style: inherit;
   font-weight: inherit;
   -webkit-tap-highlight-color: rgba(255,255,255,0);
@@ -1507,16 +1510,21 @@ padding-left: 10px;
 /*page content*/
 .content .html p{
   padding: 0px 25px 0 25px;
-  /* font-family: 微软雅黑, "Microsoft YaHei"; */
-  font-size: 14px;
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
   line-height: 20px;
   color: #545454;
+  letter-spacing: 1px;
 }
 
 .content .html p span{
       /*font-family: 微软雅黑, "Microsoft YaHei";*/
       font-size: 14px;
       line-height: 20px;
+}
+
+.content .html p strong span{
+      font-family: 微软雅黑, "Microsoft YaHei";
 }
 
 .content .html p img{

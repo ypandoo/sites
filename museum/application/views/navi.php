@@ -18,21 +18,37 @@
     <meta name="format-detection" content="telephone=yes" />
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/navi.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
+    <style>
+    .hidden-menu {
+    position: fixed;
+    top: 100px;
+}
+    </style>
+
 </head>
 
 <body  ms-controller="navi_ctrl">
+
+<div id="item_id" data-id="1"></div>
 <div class="bk"></div>
-<div class="details">
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu2') ?>"><div class="logo touch-href"></div></a>
-        </div>
-        <div class="content_detail">
-              <p   ms-text="@navi_name" class="content_title"></p>
-              <div ms-html="@navi_html" class="content_html" ></div>
-        </div>
+
+<div id="header" class="newhead" >
+    <a href="/pages/view/menu3"><div class="logo touch-href"></div></a>
 </div>
 
-<div style="margin-top:20px">
+<div class="page-title" style="margin-top:65px">
+  <h2>展厅导览</h2>
+  <h4 style="letter-spacing: 1px;">Navigator</h4>
+</div>
+
+<div class="page-title-name" >
+  <h2><i class="fa fa-location-arrow" aria-hidden="true" style="padding-right:10px"></i>当前展厅: {{@navi_name}}</h2>
+</div>
+
+<div class="content_detail" style="margin-bottom:40px">
+      <!-- <p   ms-text="@navi_name" class="content_title"></p> -->
+      <div ms-html="@navi_html" class="content_html" ></div>
 </div>
 
 <div  id='navi_list'>
