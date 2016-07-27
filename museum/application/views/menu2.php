@@ -73,9 +73,9 @@ background-size: cover;
 
     <div class="menu" id="menu" style="display:none">
 
-        <div class="menu_item" style="margin-top:8px"></div>
-        <div class="menu_item" style="margin-top:8px"></div>
-        <div class="menu_item" style="margin-top:8px"></div>
+      <a href="http://wap.koudaitong.com/v2/showcase/homepage?alias=296w162q"><div class="menu_item" style="margin-top:8px"></div></a>
+        <div class="menu_item" ></div>
+        <div class="menu_item" ></div>
 
       <a href='<?php echo base_url('pages/view/lesson') ?>'><div class="menu_item" ></div></a>
       <a href='http://mp.weixin.qq.com/s?__biz=MzIzMDI4MDM1OQ==&mid=100000127&idx=1&sn=69b7a2337783870b80c2bcf9388fdb23&scene=20#wechat_redirect'>

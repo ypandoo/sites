@@ -61,6 +61,9 @@
         },
         direct_to_list_path: function(){
            window.location.href = base_url + 'pages/view/item_list';
+        },
+        direct2map:function(){
+           window.location.href = base_url+'Navi/view/'+self.framework.items_list[0].ITEM_POSITION;
         }
     });
 
