@@ -20,6 +20,40 @@
     <link href="css/mymessage.css" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet">
 
+    <style>
+          .item .left{
+            float: left;
+            width: 10%;
+            line-height: 65px;
+          }
+
+          .item .right{
+            float: right;
+            width: 80%;
+            line-height: 65px;
+            padding-left: 15px;
+          }
+
+          .content .item input {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            font-size: 12px;
+            line-height: 65px;
+            margin: 0;
+            border: none;
+              border: none;
+              background-color: transparent;
+          }
+
+          .item h3{
+            line-height: 18px;
+          }
+          .item h4{
+            line-height: 16px;
+            color: #666;
+          }
+    </style>
 </head>
 <body>
 <div class="bk"></div>
@@ -62,51 +96,72 @@
         <div class="content" ms-controller="profile">
 
           <div style="height: 30px; border-top: 1px solid rgba(0,0,0,0.1); background: white;padding:0px 20px">
-              <p style="float:right;line-height:30px">
+              <p style="float:right;line-height:30px;">
                 <i class="fa fa-check-square-o green" aria-hidden="true"></i>
                 <!-- if not check unread, make follow i tag visible-->
                 <i class="fa fa-square-o green" aria-hidden="true" style="display:none"></i>
-                仅显示已读
+                仅显示未读
              </p>
-              <p style="float:left;line-height:30px"><i class="fa fa-reply green" aria-hidden="true" style="margin-right:5px"></i>标记全部信息为已读</p>
+              <p style="float:right;line-height:30px; margin-right:20px">
+                <i class="fa fa-reply green" aria-hidden="true" style="margin-right:5px"></i>标记为已读</p>
+                <p style="float:right;line-height:30px; margin-right:20px">
+                  <i class="fa fa-trash-o orange" aria-hidden="true" style="margin-right:5px"></i>删除</p>
           </div>
 
+            <a href="message-detail.html">
             <div class="item">
-                <a href="message-detail.html">
-                <b><span class="time"><small> 2016-02-02  20:56:33</small></span>
-                <h2>连锁经营方案</h2>
-                <h3>这是一条新的消息。</h3></b>
-               </a>
-            </div>
+                <div class="left">
+                  <input type="CHECKBOX"/>
+                </div>
+                <div class="left"><img width="20px" height="14px" src="img/message-close.png"></div>
+                <div class="right">
+                  <b><h2>厨房项目      </h2>
+                  <h4>2016-02-02  20:56:33</h4>
+                  <h3>这是一条新的消息这是一条新的消息...</h3></b>
+                </div>
+            </div></a>
+
+            <a href="message-detail.html">
+            <div class="item">
+                <div class="left">
+                  <input type="CHECKBOX"/>
+                </div>
+                <div class="left"><img width="20px" height="14px" src="img/message-close.png"></div>
+                <div class="right">
+                  <b><h2>厨房项目      </h2>
+                  <h4>2016-02-02  20:56:33</h4>
+                  <h3>这是一条新的消息这是一条新的消息...</h3></b>
+                </div>
+            </div></a>
+
+            <a href="message-detail.html">
+            <div class="item">
+                <div class="left">
+                  <input type="CHECKBOX"/>
+                </div>
+                <div class="left"><img width="20px" height="18px" src="img/message-open.png"></div>
+                <div class="right">
+                  <h2>厨房项目      </h2>
+                  <h4>2016-02-02  20:56:33</h4>
+                  <h3>这是一条新的消息这是一条新的消息...</h3>
+                </div>
+            </div></a>
+
+            <a href="message-detail.html">
+            <div class="item">
+                <div class="left">
+                  <input type="CHECKBOX"/>
+                </div>
+                <div class="left"><img width="20px" height="18px" src="img/message-open.png"></div>
+                <div class="right">
+                  <h2>厨房项目      </h2>
+                  <h4>2016-02-02  20:56:33</h4>
+                  <h3>这是一条新的消息这是一条新的消息...</h3>
+                </div>
+            </div></a>
 
 
-            <div class="item">
-               <a href="message-detail.html">
-                <b><span class="time"><small> 2016-02-02  20:56:33</small></span>
-                <h2>厨房项目      </h2>
-                <h3>这是一条新的消息。</h3></b>
-              </a>
-            </div>
 
-            <div class="item">
-               <a href="message-detail.html">
-                <span class="time"><small> 2016-02-02  20:56:33</small></span>
-                <h2>经营方案的项目     </h2>
-                <h3>测试测试。。</h3>
-              </a>
-            </div>
-
-            <div class="item">
-                <span class="time"><small> 2016-02-02  20:56:33</small></span>
-                <h2>快速启动的项目   </h2>
-                <h3>这是一条新的消息。快速启动连锁经营方案的项目已经启动。请收到消息后立刻删除。</h3>
-            </div>
-
-            <div class="item">
-             <span class="time"><small> 2016-02-02  20:56:33</small></span>
-                <h2>快速启动连锁    </h2>
-                <h3>这是一条新的消息。</h3>
-            </div>
 
 
         </div>
