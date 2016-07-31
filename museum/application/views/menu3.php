@@ -78,8 +78,8 @@ background-size: cover;
       <a href='<?php echo base_url('navi/view/1') ?>'><div class="menu_item" ></div></a>
 
       <a href='http://mp.weixin.qq.com/s?__biz=MzIzMDI4MDM1OQ==&mid=100000001&idx=1&sn=de5fd443de966840d00836bca64d3d85&scene=20#wechat_redirect'><div class="menu_item" ></div></a>
-      <!--a href='<?php echo base_url('pages/view/layout') ?>'><div class="menu_item" ></div></a>
-      <a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>
+      <a href='<?php echo base_url('pages/view/links') ?>'><div class="menu_item" ></div></a>
+      <!--a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/dynamic') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/instruction') ?>'><div class="menu_item"></div></a>
       <a href='<?php echo base_url('pages/view/construction') ?>'><div class="menu_item" ></div></a>

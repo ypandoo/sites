@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+.link-item-text a{
+  color: white;
+}
 /**/
 .bg_content{
   background: #f2f2f2;
