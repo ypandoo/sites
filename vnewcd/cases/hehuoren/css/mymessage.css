@@ -134,7 +134,7 @@
     height: 70px;
     background: #f5f5f5;
     margin-top: 4px;
-    padding: 5px 10px 0px 10px;
+    padding: 5px 20px 0px 20px;
 }
 
 .content .item h2{
@@ -576,4 +576,35 @@ input[type="text"][disabled] {
 .newhead-container .title h1 small
 {
     font-size: 50%;
+}
+
+.tab{
+    width: 100%;
+    text-align: center;
+    padding: 8px 0 8px;
+    border-top: 1px solid #f5f5f5;
+        background-color: white;
+}
+.tab a{
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+.tab a.left{
+    margin-right: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.left.active{
+    border-bottom: 2px solid #ff3d00;
+    color:#ff3d00
+}
+.tab a.right{
+    padding-left: 1px;
+    margin-left: 15px;
+    border-bottom: 2px solid #fff;
+}
+.tab a.right.active{
+    padding-left: 1px;
+    border-bottom: 2px solid #000;
 }

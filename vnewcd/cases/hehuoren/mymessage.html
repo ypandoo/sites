@@ -49,10 +49,27 @@
         <div class="newhead-container">
             <img src="img/message-white.png" width="60px"/>
             <div class="title"><h1>我的消息</h1></div>
+            <div style="color:white">未读：333条 | 总计: 500条 </div>
+        </div>
+
+        <div class="tab">
+            <a class="left active">发布的</a>
+            <a id="regist_link" class="right">关注的</a>
+            <a id="regist_link" class="right">洽谈的</a>
+            <a id="regist_link" class="right">合伙中</a>
         </div>
 
         <div class="content" ms-controller="profile">
 
+          <div style="height: 30px; border-top: 1px solid rgba(0,0,0,0.1); background: white;padding:0px 20px">
+              <p style="float:right;line-height:30px">
+                <i class="fa fa-check-square-o green" aria-hidden="true"></i>
+                <!-- if not check unread, make follow i tag visible-->
+                <i class="fa fa-square-o green" aria-hidden="true" style="display:none"></i>
+                仅显示已读
+             </p>
+              <p style="float:left;line-height:30px"><i class="fa fa-reply green" aria-hidden="true" style="margin-right:5px"></i>标记全部信息为已读</p>
+          </div>
 
             <div class="item">
                 <b><span class="time"><small> 2016-02-02  20:56:33</small></span>
