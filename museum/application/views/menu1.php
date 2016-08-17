@@ -16,7 +16,11 @@
     <meta name="revisit-after"  content="1 days" />
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
+
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/about.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
 </head>
 
 <style>
@@ -67,27 +71,111 @@ background-size: cover;
   height: 50px;
   width: 145px;
 }
+
+.row{
+  width: 90%;
+  margin-left: 5%;
+}
+
+.row .item{
+  width: 48%;
+  float: left;
+  height: 50px;
+  text-align: center;
+  padding-top: 7.5px;
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
 </style>
 
-<body id="bg">
+<body >
 
-    <div class="menu" id="menu" style="display:none">
+    <!-- <div class="menu" id="menu" style="display:none"> -->
 
-      <a href='<?php echo base_url('pages/view/about') ?>'><div class="menu_item" style="margin-top:8px"></div></a>
+      <!-- <a href='<?php echo base_url('pages/view/about') ?>'><div class="menu_item" style="margin-top:8px"></div></a>
       <a href='<?php echo base_url('pages/view/new_expo') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/basic') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/dynamic') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/instruction') ?>'><div class="menu_item"></div></a>
       <a href='<?php echo base_url('pages/view/construction') ?>'><div class="menu_item" ></div></a>
-      <a href='<?php echo base_url('pages/view/protect') ?>'><div class="menu_item"></div></a>
+      <a href='<?php echo base_url('pages/view/protect') ?>'><div class="menu_item"></div></a> -->
 
+      <div id="header" class="newhead">
+          <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
+      </div>
+
+      <!-- banner -->
+      <div class="banner-top" style="margin-top:46px">
+        <div><img src="<?php echo base_url('assets\front\img\menu/banner1.jpg')?>" width="100%" style="z-index:-1"/></div>
+        <div><img src="<?php echo base_url('assets\front\img\menu/banner2.jpg')?>" width="100%"/></div>
+        <div><img src="<?php echo base_url('assets\front\img\menu/banner3.jpg')?>" width="100%"/></div>
+      </div>
+
+      <div class="page-title" style="margin-top:20px">
+        <h2>悦见</h2>
+      </div>
+
+    <div class="row" style="margin-top:10px">
+      <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/about') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_about.png') ?>' height="35px">
+      </a></div>
+      <div class="item"><a href='<?php echo base_url('pages/view/new_expo') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_new_expo.png') ?>' height="35px">
+      </a></div>
     </div>
+
+    <div class="row">
+      <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/basic') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_layout.png') ?>' height="35px">
+      </a></div>
+      <div class="item"><a href='<?php echo base_url('pages/view/expo_review') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_review.png') ?>' height="35px">
+      </a></div>
+    </div>
+
+    <div class="row">
+      <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/dynamic') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_dynamic.png') ?>' height="35px">
+      </a></div>
+      <div class="item"><a href='<?php echo base_url('pages/view/instruction') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_instruction.png') ?>' height="35px">
+      </a></div>
+    </div>
+
+    <div class="row">
+      <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/construction') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_construct.png') ?>' height="35px">
+      </a></div>
+      <div class="item"><a href='<?php echo base_url('pages/view/protect') ?>'>
+        <img src='<?php echo base_url('assets\front\img\menu\m1_protect.png') ?>' height="35px">
+      </a></div>
+    </div>
+
+    <!-- <div style="height:20px; background: #ec422b; position:fixed; bottom:0; width:100%"> -->
+</div>
+    <!-- </div> -->
 </body>
+
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
+
 <script>
+
 $(document).ready(function(){
-  setTimeout(function(){$('#menu').slideDown(2000,function(){});}, 1000);
+  $('.banner-top').slick({
+  dots: true,
+  infinite: true,
+  speed:1500,
+  slidesToShow: 1,
+  adaptiveHeight: true,
+  autoplay: true,
+  autoplaySpeed: 1500,
+  arrows: true
 });
+
+});
+
 </script>
 </html>
