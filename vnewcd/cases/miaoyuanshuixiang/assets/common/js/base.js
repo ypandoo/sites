@@ -7,8 +7,8 @@
 		// this.base_url = 'http://www.vnewcd.com/';
     // this.upload_img = 'http://www.vnewcd.com/uploads/img/';
 
-    this.base_url = 'http://127.0.0.1/';
-    this.upload_img = 'http://127.0.0.1/uploads/img/';
+    this.base_url = 'http://www.vnewcd.com/cases/miaoyuanshuixiang/';
+    this.upload_img = 'http://www.vnewcd.com/cases/miaoyuanshuixiang/uploads/img/';
 
     this.page_interval = 10;
 
