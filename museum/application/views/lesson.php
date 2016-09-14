@@ -28,7 +28,7 @@
         <!--头部-->
 
         <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
+            <a href="<?php echo base_url('pages/view/menu3') ?>"><div class="logo touch-href" data-href="/"></div></a>
         </div>
 
 
