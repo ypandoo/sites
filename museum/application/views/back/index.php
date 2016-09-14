@@ -176,6 +176,19 @@
                   </ul>
                   <div id="pic_upload" style="clear:both"></div>
 
+                  <hr><hr>
+                  <div class="row">
+                    <div class="col-md-5"><label><strong>是否为十大珍品:(十大珍品将会要求上传语音和视频信息)</strong></label></div>
+                    <div class="col-md-1">
+                      <label>
+                       <input class="checkbox" type="checkbox" ms-duplex-checked="@item_is_topten"
+                        ms-rules="{required:true}"  data-required-message='是否十大珍品!'/>
+                      </lable>
+                    </div>
+                  </div>
+
+
+                  <div ms-visible='@item_is_topten'>
                   <hr>
                   <label for="item_video"><strong>珍品视频：</strong>(仅能单选文件，文件大小在10M之内，仅支持mp4格式)</label>
                     <div id="item_video" style="margin:20px 0 20px 0">
@@ -196,6 +209,7 @@
                           <p>当前上传音频:{{@audio_tibet}}</p>
                     </div>
                   <div id="audio_tibet_upload"></div>
+                </div>
 
                   <hr>
                   <label><strong>文字说明</strong></label>

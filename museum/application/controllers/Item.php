@@ -202,6 +202,7 @@ class Item extends CI_Controller {
          $item_priority = $this->input->post('item_priority');
          $item_description = $this->input->post('item_description');
          $item_position = $this->input->post('item_position');
+         $item_is_topten = $this->input->post('item_is_topten');
          $pics = $this->input->post('pics');
 
          $insertdata['ITEM_ID'] = $id;
@@ -218,6 +219,7 @@ class Item extends CI_Controller {
          }
          $insertdata['ITEM_PRIORITY'] = $item_priority;
          $insertdata['ITEM_DESCRIPTION'] = $item_description;
+         $insertdata['ITEM_IS_TOPTEN'] = $item_is_topten;
 
          $this->load->model('Item_model');
          $result = $this->Item_model->addItem($insertdata);
@@ -264,6 +266,7 @@ class Item extends CI_Controller {
          $item_description = $this->input->post('item_description');
          $item_position = $this->input->post('item_position');
          $pics = $this->input->post('pics');
+         $item_is_topten = $this->input->post('item_is_topten');
 
          $insertdata['ITEM_ID'] = $id;
          $insertdata['ITEM_NAME'] = $item_name;
@@ -279,6 +282,7 @@ class Item extends CI_Controller {
          }
          $insertdata['ITEM_PRIORITY'] = $item_priority;
          $insertdata['ITEM_DESCRIPTION'] = $item_description;
+         $insertdata['ITEM_IS_TOPTEN'] = $item_is_topten;
 
          $this->load->model('Item_model');
          $result = $this->Item_model->updateItem($insertdata);
@@ -329,6 +333,44 @@ class Item extends CI_Controller {
       $tableName = 'T_ITEM';
       $this->load->model('Item_model');
       $result = $this->Item_model->getItemsWithPic();
+
+      if ($result['success'] == 1) {
+        echo json_encode($result);
+        exit;
+      }
+      else {
+        $data_result["success"] = 0;
+        $data_result["errorCode"] = 1;
+        $data_result['message'] = "get_items failed![err=1]";
+        $data_result['data'] = 0;
+        exit;
+      }
+    }
+
+    public function get_items_topten_with_pic()
+    {
+      $tableName = 'T_ITEM';
+      $this->load->model('Item_model');
+      $result = $this->Item_model->getItemsToptenWithPic(0);
+
+      if ($result['success'] == 1) {
+        echo json_encode($result);
+        exit;
+      }
+      else {
+        $data_result["success"] = 0;
+        $data_result["errorCode"] = 1;
+        $data_result['message'] = "get_items failed![err=1]";
+        $data_result['data'] = 0;
+        exit;
+      }
+    }
+
+    public function get_items_normal_with_pic()
+    {
+      $tableName = 'T_ITEM';
+      $this->load->model('Item_model');
+      $result = $this->Item_model->getItemsNormalWithPic(0);
 
       if ($result['success'] == 1) {
         echo json_encode($result);

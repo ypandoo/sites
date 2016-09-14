@@ -8,6 +8,8 @@
                      '新馆建设': ['New Contructions', 'construction'],
                      '藏品保护': ['Antiquities Protection', 'protect'],
                      '西博课堂': ['Knowledge Share', 'lesson'],
+                     '活动邀约': ['Activities', 'activity'],
+                     '志愿者风采': ['Volunteer', 'volunteer']
                     };
 
     self.framework =  avalon.define({

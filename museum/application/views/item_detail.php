@@ -79,6 +79,7 @@ width: 50%;
 
         </div>
 
+        <div ms-visible="@item_is_topten">
         <div class="page-title" style="margin-top:15px">
           <h2>自助服务 </h2>
           <h4 style="letter-spacing: 1px;">Self-Service</h4>
@@ -120,6 +121,7 @@ width: 50%;
           </video>
           </div>
         </div>
+      </div>
 
 
         <div class="page-title" style="margin-top:25px; margin-bottom:60px">

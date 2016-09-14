@@ -13,11 +13,13 @@
     this.framework =  avalon.define({
         $id:"sd-list",
         items_list:[],
+        item_is_topten: 0,
         data:{'id':'',
               'name': '',
               'video':'',
               'description': '',
-              'path': ''},
+              'path': '',
+              },
         select:function(index){
             self.index(index);
         },
@@ -60,7 +62,13 @@
             return 'url('+e+')';
         },
         direct_to_list_path: function(){
-           window.location.href = base_url + 'pages/view/item_list';
+          if(parseInt(self.framework.items_list[0].ITEM_IS_TOPTEN)){
+            window.location.href = base_url + 'pages/view/item_list';
+          }
+          else{
+            window.location.href = base_url + 'pages/view/item_list_normal';
+          }
+
         },
         direct2map:function(){
            window.location.href = base_url+'Navi/view/'+self.framework.items_list[0].ITEM_POSITION;
@@ -84,6 +92,7 @@
                 self.framework.data.name = c.ITEM_NAME;
                 self.framework.data.video = c.VIDEO;
                 self.framework.data.description = c.ITEM_DESCRIPTION;
+                self.framework.item_is_topten = parseInt(c.ITEM_IS_TOPTEN);
                 self.framework.data.path = self.get_pic_path(c.PATH);
             }
     };

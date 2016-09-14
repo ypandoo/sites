@@ -80,6 +80,8 @@
                   <option>新馆建设</option>
                   <option>藏品保护</option>
                   <option>西博课堂</option>
+                  <option>活动邀约</option>
+                  <option>志愿者风采</option>
                   </select>
               </div>
               <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
@@ -178,6 +180,8 @@
                         <option>新馆建设</option>
                         <option>藏品保护</option>
                         <option>西博课堂</option>
+                        <option>活动邀约</option>
+                        <option>志愿者风采</option>
                         </select>
                       </div>
                   </div>

@@ -3,26 +3,31 @@
 
   //avalon control space
   var items_ctrl = avalon.define({
-                   $id: 'items_ctrl',
-                   data:[],
+                   $id: 'expo_list_ctrl',
+                   list:[],
                    sort: 0,
 
                    get_pic_path: function(path){
                      return upload_img+path;
                    },
                    get_detail_link : function(e){
-                     window.location.href = base_url+'item/view/'+e;
-                   },
-                   get_detail_link_pc : function(e){
-                     return base_url+'item/view_pc/'+e;
+                     window.location.href = base_url+'content/view/'+items_ctrl.list[e].CONTENT_ID;
                    },
 
                    get_content_text: function(e){
                      return e.substr(0, 45)+'...';
                    },
 
-                   get_items_with_pic:function(){
-                     var url = base_url+'Item/get_items_topten_with_pic';
+                   get_content_text_pc: function(e){
+                     return e.substr(0, 300)+'...';
+                   },
+
+                   direct2detail:function(e){
+                     window.location.href = base_url+'content/view_acitivity/'+e;
+                   },
+
+                   get_content_by_type:function(){
+                     var url = base_url+'Content/get_list';
                      base_remote_data.ajaxjson(
                                        url, //url
                                        function(data){
@@ -30,7 +35,7 @@
                                                if(data.success == 1){
                                                    console.log(data);
                                                    console.log('获取列表及图片成功！');
-                                                   items_ctrl.data = data.data;
+                                                   items_ctrl.list = data.data;
                                                }
                                                else{
                                                    alert(data.message);
@@ -40,7 +45,7 @@
                                            alert('返回值错误!');
                                          }
                                      },
-                                     '',
+                                     {'list_type': '活动邀约'},
                                      function()
                                      {
                                        alert('网络错误!');
@@ -50,6 +55,6 @@
 
 
   //Init codes run once
-  items_ctrl.get_items_with_pic();
+  items_ctrl.get_content_by_type();
 
-}).call(define('space_view_items'));
+}).call(define('space_knowledge_list'));

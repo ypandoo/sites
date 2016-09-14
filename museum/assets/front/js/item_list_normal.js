@@ -22,7 +22,7 @@
                    },
 
                    get_items_with_pic:function(){
-                     var url = base_url+'Item/get_items_topten_with_pic';
+                     var url = base_url+'Item/get_items_normal_with_pic';
                      base_remote_data.ajaxjson(
                                        url, //url
                                        function(data){

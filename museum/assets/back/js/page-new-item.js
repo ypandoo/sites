@@ -9,6 +9,7 @@
                    item_name: '',
                    item_title: '',
                    item_position: '',
+                   item_is_topten: 0,
                    video: '',
                    audio_cn: '',
                    audio_tibet: '',
@@ -56,7 +57,8 @@
                               'item_priority':  items_ctrl.item_priority,
                               'item_description': ue.getContent(),
                               'pics': items_ctrl.pics,
-                              'item_position': items_ctrl.item_position
+                              'item_position': items_ctrl.item_position,
+                              'item_is_topten': items_ctrl.item_is_topten ? 1:0
                       };
 
                       //Ajax
@@ -132,6 +134,7 @@
                      items_ctrl.item_position = items_ctrl.data[e].ITEM_POSITION;
 
                      items_ctrl.item_priority = items_ctrl.data[e].ITEM_PRIORITY;
+                     items_ctrl.item_is_topten = parseInt(items_ctrl.data[e].ITEM_IS_TOPTEN);
                      ue.setContent(items_ctrl.data[e].ITEM_DESCRIPTION);
                      //get pics
                      items_ctrl.get_pics(items_ctrl.item_id);
@@ -241,6 +244,7 @@
                      items_ctrl.item_position='';
                      items_ctrl.priority = 0;
                      items_ctrl.isNewItem = true;
+                     items_ctrl.item_is_topten = 0;
 
                      //random id for new item_name
                      items_ctrl.item_id = space_random.string(32, true, false);;

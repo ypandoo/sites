@@ -99,15 +99,15 @@
         <a href="/pages/view/menu2"><div class="logo touch-href"></div></a>
     </div>
 
-     <div class="banner-top">
+     <!-- <div class="banner-top">
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/1.jpg')?>" /><div class="item_name_bg"><p >翡翠提梁壶</p></div></div>
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/2.jpg')?>" /><div class="item_name_bg"><p >夜光陶瓷碗</p></div></div>
       <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/3.jpg')?>" /><div class="item_name_bg"><p >金贲巴瓶</p></div></div>
-    </div>
+    </div> -->
 
-    <div class="page-title" style="margin-top:20px">
-      <h2 style="letter-spacing:1px">十大珍品 </h2>
-      <h4 style="letter-spacing: 1px;">Top 10 Antiquities</h4>
+    <div class="page-title" style="margin-top:66px">
+      <h2 style="letter-spacing:1px">馆藏珍品 </h2>
+      <h4 style="letter-spacing: 1px;">Antiquities</h4>
     </div>
 
     <div style=" margin-top:20px; padding-left:15px; padding-right:15px" ms-controller="items_ctrl">
@@ -146,19 +146,19 @@
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/item_list_normal.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 <script>
-$(document).ready(function(){
-  $('.banner-top').slick({
-  adaptiveHeight: false,
-  slidesToShow: 1,
-  dots: true,
-  arrows: false,
-  autoplay: true,
-autoplaySpeed: 2000,
-});
-
-});
+// $(document).ready(function(){
+//   $('.banner-top').slick({
+//   adaptiveHeight: false,
+//   slidesToShow: 1,
+//   dots: true,
+//   arrows: false,
+//   autoplay: true,
+// autoplaySpeed: 2000,
+// });
+//
+// });
 </script>
 </html>

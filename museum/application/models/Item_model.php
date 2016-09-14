@@ -75,6 +75,40 @@ class Item_model extends CI_Model
         return $data;
     }
 
+    public function getItemsToptenWithPic($start)
+    {
+
+      $this->db->select('*');
+      $this->db->from('T_ITEM');
+      $this->db->where('T_ITEM.ITEM_IS_TOPTEN', '1');
+      $this->db->join('T_PIC', 'T_ITEM.ITEM_ID = T_PIC.ITEM_ID');
+      $this->db->group_by('T_ITEM.ITEM_ID');
+      $query = $this->db->get();
+      $data["success"] = true;
+      $data["errorCode"] = 0;
+      $data["error"] = 0;
+      $data["message"] = 'get_items succeeded!';
+      $data['data'] = $query->result_array();
+      return $data;
+    }
+
+    public function getItemsNormalWithPic($start)
+    {
+
+      $this->db->select('*');
+      $this->db->from('T_ITEM');
+      $this->db->where('T_ITEM.ITEM_IS_TOPTEN', '0');
+      $this->db->join('T_PIC', 'T_ITEM.ITEM_ID = T_PIC.ITEM_ID');
+      $this->db->group_by('T_ITEM.ITEM_ID');
+      $query = $this->db->get();
+      $data["success"] = true;
+      $data["errorCode"] = 0;
+      $data["error"] = 0;
+      $data["message"] = 'get_items succeeded!';
+      $data['data'] = $query->result_array();
+      return $data;
+    }
+
     public function getItemsWithPic()
     {
         $this->db->select('*');

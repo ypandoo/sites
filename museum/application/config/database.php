@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'qdm121114323.my3w.com:3306',
-	'username' => 'qdm121114323',
-	'password' => 'lei000lei',
-	'database' => 'qdm121114323_db',
+	'hostname' => '114.55.112.244:3306',
+	'username' => 'vnewcd',
+	'password' => 'bK4cJqcVx5cvcXQ5',
+	'database' => 'vnewcd',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -16,49 +16,45 @@
     <meta name="revisit-after"  content="1 days" />
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
+
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/content_detail.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/new_expo.css') ?>">
 </head>
-
 <body>
-<div id="content_id" data-id="<?php echo $content_id?>"></div>
 <div class="bk"></div>
+<div id="details" class="details"  ms-controller="expo_list_ctrl">
+    <!--首页-->
+    <div id="main-page" class="main-page slide-page">
+        <!--头部-->
 
-<div class="details" ms-controller="sd-list">
         <div id="header" class="newhead">
-            <div class="logo touch-href"  ms-click="@get_type_link()"></div>
+            <a href="<?php echo base_url('pages/view/menu3') ?>"><div class="logo touch-href" data-href="/"></div></a>
         </div>
 
-        <div class="page-title" ms-click="@get_type_link()">
-          <h2>{{@content_type}}</h2>
-          <h4>{{@get_content_name_en()}}</h4>
+
+        <div class="page-title">
+          <h2>活动邀约</h2>
+          <h4>Activities</h4>
         </div>
 
-        <div class="page-title-name" >
-          <h2>{{@content_title}}</h2>
-          <h4>{{@author}}发表于:{{@content_time}}</h4>
+        <div class="content"  style="margin-top:20px">
+            <div class="item"  ms-for='($index, item_info) in @list'  ms-click="@get_detail_link($index)">
+             <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
+                <h2>{{item_info.CONTENT_TITLE}}</h2>
+                <!-- <h3>{{item_info.PUBLISH_TIME}}</h3> -->
+                <h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3>
+            </div>
+          </a>
         </div>
+    </div>
 
-        <div class="content" style="margin-top:40px">
-              <!-- <p ms-text="@content_title" class="content_title"></p>
-              <p class="content_time">{{@author}}发表于:{{@content_time}}</p> -->
-
-              <p class="html" ms-html="@content_html">
-
-              </p>
-        </div>
-</div>
-
-<div style="margin-top:40px">
-<div>
-
-<div style="height:20px; background: #ec422b;">
-</div>
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/content_detail.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/activity.js') ?>"></script>
+
 <script>
+
 </script>
 </html>
