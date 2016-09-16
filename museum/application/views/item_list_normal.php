@@ -94,7 +94,7 @@
 <body>
 <!-- <div class="bk"></div>
 <div class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div> -->
-<div class="details" >
+<div class="details"   ms-controller="items_ctrl">
     <div id="header" class="newhead" >
         <a href="/pages/view/menu2"><div class="logo touch-href"></div></a>
     </div>
@@ -110,10 +110,10 @@
       <h4 style="letter-spacing: 1px;">Antiquities</h4>
     </div>
 
-    <div style=" margin-top:20px; padding-left:15px; padding-right:15px" ms-controller="items_ctrl">
+    <div style=" margin-top:20px; padding-left:15px; padding-right:15px; overflow:hidden">
       <div class="expo_item"  ms-for='($index, item_info) in @data' >
         <div class="expo_item_container" ms-click="@get_detail_link(item_info.ITEM_ID)">
-        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%"/>
+        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%" height="120px"/>
 
         </div>
         <div class="expo_text" ms-click="@get_detail_link(item_info.ITEM_ID)">
@@ -123,6 +123,22 @@
       </div>
 
     </div>
+
+    <div ms-visible='@show_more' ms-click='@get_items_with_pic()' style="clear: both;
+    width: 90%;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    /* border: 1px solid; */
+    height: 40px;
+    margin-left: 5%;
+    margin-top: 5%;
+    background: rgba(0,0,0,0.1);">
+      加载更多珍品
+    </div>
+
+
 
     </div>
     <!-- <div class="page-turn-occupy"></div>

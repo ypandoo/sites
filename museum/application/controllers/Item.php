@@ -370,7 +370,8 @@ class Item extends CI_Controller {
     {
       $tableName = 'T_ITEM';
       $this->load->model('Item_model');
-      $result = $this->Item_model->getItemsNormalWithPic(0);
+      $page_start = $this->input->post('page_start');
+      $result = $this->Item_model->getItemsNormalWithPic($page_start);
 
       if ($result['success'] == 1) {
         echo json_encode($result);

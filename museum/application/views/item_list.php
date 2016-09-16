@@ -113,7 +113,7 @@
     <div style=" margin-top:20px; padding-left:15px; padding-right:15px" ms-controller="items_ctrl">
       <div class="expo_item"  ms-for='($index, item_info) in @data' >
         <div class="expo_item_container" ms-click="@get_detail_link(item_info.ITEM_ID)">
-        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%"/>
+        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%" height="120px"/>
 
         </div>
         <div class="expo_text" ms-click="@get_detail_link(item_info.ITEM_ID)">

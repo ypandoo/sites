@@ -98,6 +98,8 @@ class Item_model extends CI_Model
       $this->db->select('*');
       $this->db->from('T_ITEM');
       $this->db->where('T_ITEM.ITEM_IS_TOPTEN', '0');
+      $interval = $this->config->item('page_interval');
+      $this->db->limit( $interval, $start);
       $this->db->join('T_PIC', 'T_ITEM.ITEM_ID = T_PIC.ITEM_ID');
       $this->db->group_by('T_ITEM.ITEM_ID');
       $query = $this->db->get();
