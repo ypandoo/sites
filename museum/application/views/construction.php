@@ -46,6 +46,12 @@
             </div>
           </a>
         </div>
+
+        <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
+          加载更多...
+        </div>
+
+        <div style="margin-top:20px"></div>
     </div>
 
 </body>

@@ -1530,3 +1530,18 @@ padding-left: 10px;
 .content .html p img{
   width: 100%;
 }
+
+.show_more{
+  clear: both;
+  width: 90%;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 0px;
+  font-size: 12px;
+  /* border: 1px solid; */
+  height: 40px;
+  margin-left: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: rgba(0,0,0,0.1);
+}

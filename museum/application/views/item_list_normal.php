@@ -124,17 +124,7 @@
 
     </div>
 
-    <div ms-visible='@show_more' ms-click='@get_items_with_pic()' style="clear: both;
-    width: 90%;
-    text-align: center;
-    padding: 10px;
-    letter-spacing: 1px;
-    font-size: 14px;
-    /* border: 1px solid; */
-    height: 40px;
-    margin-left: 5%;
-    margin-top: 5%;
-    background: rgba(0,0,0,0.1);">
+    <div ms-visible='@show_more' ms-click='@get_items_with_pic()' class="show_more">
       加载更多珍品
     </div>
 

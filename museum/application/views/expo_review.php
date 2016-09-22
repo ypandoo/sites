@@ -37,7 +37,7 @@
           <h4>Exhibitions Review</h4>
         </div>
 
-        <div style="margin-top:20px">
+        <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
         <div class="content"  ms-for='($index, item_info) in @list'>
             <div class="news_img"  ms-click="@get_detail_link($index)">
               <img ms-attr="{src:@get_cover($index)}" width="100%" >
@@ -51,6 +51,12 @@
           </a>
         </div>
       </div>
+
+      <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
+        加载更多...
+      </div>
+
+      <div style="margin-top:20px"></div>
 
     </div>
 

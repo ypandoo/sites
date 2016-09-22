@@ -16,13 +16,14 @@
 }
 
 .content {
-  /* width: 100%; */
+  width: 48%;
   /* height: 80px; */
   position: relative;
   /* border-radius: 20px; */
   /* background-color: #f5f5f5; */
   /* margin-bottom: 5px; */
-  margin: 20px 25px 20px 25px;
+  margin: 10px 1% 10px 1%;
+  float: left;
   border: 1px solid rgba(0, 0, 0, 0.11);
   box-shadow: 3px 2px 6px #dcdcdc;
 }
@@ -43,8 +44,8 @@
 
 .content .news_img
 {
-  /*padding: 10px;
-height: 80px;*/
+  /*padding: 10px;*/
+height: 120px;
 }
 /*简介*/
 .content .summary {
@@ -144,19 +145,19 @@ height: 80px;*/
 .content .item {
   position: absolute;
   width: 100%;
-  height: 42px;
+  height: 38px;
   background: #f6f6f6;
   /* margin-top: 4px; */
-  padding: 10px;
+  padding: 5px;
   /* float: left; */
   bottom: 0px;
 }
 
 .content .item h2{
-  font-size: 14px;
-  line-height: 25px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  ont-size: 12px;
+      line-height: 15px;
+      font-weight: 500;
+      letter-spacing: 0px;
   /*color: #cc0000;*/
 }
 

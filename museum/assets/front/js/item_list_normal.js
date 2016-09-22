@@ -30,8 +30,8 @@
                                        function(data){
                                          if(data.hasOwnProperty('success')){
                                                if(data.success == 1){
-                                                   console.log(data);
-                                                   console.log('获取列表及图片成功！');
+                                                  //  console.log(data);
+                                                  //  console.log('获取列表及图片成功！');
                                                    for (var i = 0; i < data.data.length; i++) {
                                                     items_ctrl.data.push(data.data[i]);
                                                    }
@@ -45,7 +45,7 @@
                                                    else {
                                                      items_ctrl.show_more  = false;
                                                    }
-                                                   console.log('page_start:'+items_ctrl.page_start);
+                                                  //  console.log('page_start:'+items_ctrl.page_start);
 
                                                }
                                                else{

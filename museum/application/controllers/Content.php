@@ -10,6 +10,7 @@ class Content extends CI_Controller {
        }
 
        $this->load->view('content_detail', $data);
+
     }
 
     public function view_expo_new($content_id)

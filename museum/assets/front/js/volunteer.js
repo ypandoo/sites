@@ -6,6 +6,8 @@
                    $id: 'expo_list_ctrl',
                    list:[],
                    sort: 0,
+                   page_start: 0,
+                   show_more: false,
 
                    get_pic_path: function(path){
                      return upload_img+path;
@@ -31,21 +33,27 @@
                      base_remote_data.ajaxjson(
                                        url, //url
                                        function(data){
-                                         if(data.hasOwnProperty('success')){
-                                               if(data.success == 1){
-                                                   console.log(data);
-                                                   console.log('获取列表及图片成功！');
-                                                   items_ctrl.list = data.data;
-                                               }
-                                               else{
-                                                   alert(data.message);
-                                               }
-                                           }
+                                         if(data.success == 1){
+                                             for (var i = 0; i < data.data.length; i++) {
+                                              items_ctrl.list.push(data.data[i]);
+                                             }
+
+                                             //长度大与interval 就加到起始位置
+                                             if (data.data.length == page_interval) {
+                                               items_ctrl.page_start += data.data.length;
+                                               //show more
+                                               items_ctrl.show_more  = true;
+                                             }
+                                             else {
+                                               items_ctrl.show_more  = false;
+                                             }
+                                         }
                                          else {
                                            alert('返回值错误!');
                                          }
                                      },
-                                     {'list_type': '志愿者风采'},
+                                     {'list_type': '志愿者风采',
+                                      'page_start': items_ctrl.page_start},
                                      function()
                                      {
                                        alert('网络错误!');

@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/expo_review.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
 </head>
 <body>
 <div class="bk"></div>
@@ -31,13 +33,20 @@
             <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
         </div>
 
+        <!-- banner -->
+        <div class="banner-top" style="margin-top:46px">
+          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
+          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner1.jpg')?>" width="100%"/></div>
+          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner3.jpg')?>" width="100%"/></div>
+        </div>
 
-        <div class="page-title">
+
+        <div class="page-title"   style="margin-top:20px">
           <h2>基本陈列</h2>
           <h4>Routine Exhibitions</h4>
         </div>
 
-        <div style="margin-top:20px">
+        <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
         <div class="content"  ms-for='($index, item_info) in @list'>
             <div class="news_img"  ms-click="@get_detail_link($index)">
               <img ms-attr="{src:@get_cover($index)}" width="100%" >
@@ -52,6 +61,12 @@
         </div>
       </div>
 
+      <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
+        加载更多...
+      </div>
+
+      <div style="margin-top:20px"></div>
+
     </div>
 
 </body>
@@ -59,8 +74,22 @@
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/basic_list.js') ?>"></script>
+<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 
 <script>
 
+$(document).ready(function(){
+  $('.banner-top').slick({
+  dots: true,
+  infinite: true,
+  speed:1500,
+  slidesToShow: 1,
+  adaptiveHeight: false,
+  autoplay: true,
+  autoplaySpeed: 1500,
+  arrows: true
+});
+
+});
 </script>
 </html>
