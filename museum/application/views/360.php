@@ -145,6 +145,7 @@
   margin-top: 46px;
   cursor: move;
   z-index: 100;
+  position: relative;
 }
 .pano .controls {
   position: relative;
@@ -186,10 +187,13 @@
      <img src="<?php echo base_url('assets/front/img/demo_photo.jpg')?>" />
     </div> -->
 
-    <div id="myPano" class="pano" style="z-index:-1">
-      <div class="controls">
-        <a href="#" class="left">&laquo;</a>
-        <a href="#" class="right">&raquo;</a>
+    <div id="myPano" class="pano">
+      <!-- <img src="<?php echo base_url('assets/front/img/demo_photo.jpg')?>" /> -->
+
+      <div style="position: absolute;
+    bottom: 0px;
+    right: 10px;">
+        <img src="<?php echo base_url('assets/front/img/move.png')?>" width="50px"/>
       </div>
     </div>
 
@@ -198,9 +202,9 @@
     </div>
 
     <div class="locations">
-      <div :css="[@item, @selected && @selected_css]"  ms-click="@switch_view('main_floor')">场馆1</div>
-      <div :css="[@item, @selected && @selected_css]"  ms-click="@switch_view('main_floor')">场馆2</div>
-      <div :css="[@item, @selected && @selected_css]"  ms-click="@switch_view('main_floor')">场馆3</div>
+      <div :css="[@item, @selected_mainfloor && @selected_css]"  ms-click="@switch_view('main_floor')">场馆1</div>
+      <div :css="[@item, @selected_2f && @selected_css]"  ms-click="@switch_view('2f')">场馆2</div>
+      <div :css="[@item, @selected_3f && @selected_css]"  ms-click="@switch_view('3f')">场馆3</div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
@@ -208,9 +212,9 @@
     </div>
 
     <div class="locations">
-      <div class="item">古代展</div>
-      <div class="item">近代展</div>
-      <div class="item selected">现代展</div>
+      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">史前文化展</a></div>
+      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">近代展</a></div>
+      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">现代展</a></div>
     </div>
   </div>
 <!--
