@@ -138,6 +138,39 @@
   background: rgba(255, 0, 0, 0.1);
   color:rgba(255, 0, 0, 0.9);
 }
+
+.pano {
+  width: 100%;
+  height: 300px;
+  margin-top: 46px;
+  cursor: move;
+  z-index: 100;
+}
+.pano .controls {
+  position: relative;
+  top: 40%;
+}
+.pano .controls a {
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+  color: #eee;
+  font-size: 3em;
+  width: 20px;
+  height: 20px;
+  z-index: 999;
+}
+.pano .controls a.left {
+  left: 10px;
+}
+.pano .controls a.right {
+  right: 10px;
+}
+.pano.moving .controls a {
+  opacity: 0.4;
+  color: #eee;
+}
+
     </style>
 </head>
 
@@ -149,8 +182,15 @@
 
 
     <div  ms-controller="t_ctrl">
-    <div class="panorama">
+    <!-- <div class="panorama">
      <img src="<?php echo base_url('assets/front/img/demo_photo.jpg')?>" />
+    </div> -->
+
+    <div id="myPano" class="pano" style="z-index:-1">
+      <div class="controls">
+        <a href="#" class="left">&laquo;</a>
+        <a href="#" class="right">&raquo;</a>
+      </div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
@@ -179,21 +219,19 @@
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/jquery.panorama_viewer.js') ?>"></script>
+<!-- <script src="<?php echo base_url('assets/common/js/jquery.panorama_viewer.js') ?>"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
-
+<script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
 <script>
-
-$(".panorama").panorama_viewer({
-   repeat: true,              // The image will repeat when the user scroll reach the bounding box. The default value is false.
-   direction: "horizontal",    // Let you define the direction of the scroll. Acceptable values are "horizontal" and "vertical". The default value is horizontal
-   animationTime: 1000,         // This allows you to set the easing time when the image is being dragged. Set this to 0 to make it instant. The default value is 700.
-   easing: "ease-out",         // You can define the easing options here. This option accepts CSS easing options. Available options are "ease", "linear", "ease-in", "ease-out", "ease-in-out", and "cubic-bezier(...))". The default value is "ease-out".
-   overlay: false               // Toggle this to false to hide the initial instruction overlay
- });
-
+/* jshint jquery: true */
+jQuery(document).ready(function($){
+  $("#myPano").pano({
+    img: "<?php echo base_url('assets/front/img/demo_photo.jpg')?>"
+  });
+});
 </script>
+
 </html>
