@@ -202,19 +202,18 @@
     </div>
 
     <div class="locations">
-      <div :css="[@item, @selected_mainfloor && @selected_css]"  ms-click="@switch_view('main_floor')">场馆1</div>
-      <div :css="[@item, @selected_2f && @selected_css]"  ms-click="@switch_view('2f')">场馆2</div>
+      <div :css="[@item, @selected_mainfloor && @selected_css]"  ms-click="@switch_view('main_floor')">史前文化展导览1</div>
+      <div :css="[@item, @selected_2f && @selected_css]"  ms-click="@switch_view('2f')">史前文化展导览2</div>
       <div :css="[@item, @selected_3f && @selected_css]"  ms-click="@switch_view('3f')">场馆3</div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>导航到展览 Navigate to Expo</h4>
+      <h4>查看展览及展厅导览 Expo & Location Info</h4>
     </div>
 
     <div class="locations">
       <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">史前文化展</a></div>
-      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">近代展</a></div>
-      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">现代展</a></div>
+      <div class="item"><a href="<?php echo base_url('pages/view/navi') ?>">展厅导览</a></div>
     </div>
   </div>
 <!--

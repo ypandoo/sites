@@ -110,6 +110,7 @@ background-size: cover;
       <div class="banner-top" style="margin-top:46px">
         <div><img src="<?php echo base_url('assets\front\img\m\index-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
         <div><img src="<?php echo base_url('assets\front\img\m\index-banner1.jpg')?>" width="100%"/></div>
+        <div><img src="<?php echo base_url('assets\front\img\m\index-banner4.jpg')?>" width="100%"/></div>
         <div><img src="<?php echo base_url('assets\front\img\m\index-banner3.jpg')?>" width="100%"/></div>
       </div>
 
@@ -169,7 +170,7 @@ $(document).ready(function(){
   infinite: true,
   speed:1500,
   slidesToShow: 1,
-  adaptiveHeight: true,
+  adaptiveHeight: false,
   autoplay: true,
   autoplaySpeed: 1500,
   arrows: true

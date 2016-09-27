@@ -38,6 +38,8 @@
           <div><img src="<?php echo base_url('assets\front\img\m\routine-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
           <div><img src="<?php echo base_url('assets\front\img\m\routine-banner1.jpg')?>" width="100%"/></div>
           <div><img src="<?php echo base_url('assets\front\img\m\routine-banner3.jpg')?>" width="100%"/></div>
+          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner4.jpg')?>" width="100%"/></div>
+          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner5.jpg')?>" width="100%"/></div>
         </div>
 
 

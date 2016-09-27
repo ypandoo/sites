@@ -98,7 +98,7 @@ margin-top: 10px;
   <div class="banner-top" style="margin-top:46px">
     <div><img src="<?php echo base_url('assets\front\img\m\item-banner1.jpg')?>" width="100%" style="z-index:-1"/></div>
     <div><img src="<?php echo base_url('assets\front\img\m\item-banner2.jpg')?>" width="100%"/></div>
-    <!-- <div><img src="<?php echo base_url('assets\front\img\menu/banner3.jpg')?>" width="100%"/></div> -->
+    <div><img src="<?php echo base_url('assets\front\img\m\item-banner3.jpg')?>" width="100%"/></div>
   </div>
 
   <div class="page-title" style="margin-top:20px">
