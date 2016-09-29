@@ -145,9 +145,9 @@
   });
 
 
-  jQuery(document).ready(function($) {
-    Self.framework.switch_expo(1);
-  });
+  // jQuery(document).ready(function($) {
+  //   Self.framework.switch_expo(1);
+  // });
 
 
 }).call(define('space_360'));

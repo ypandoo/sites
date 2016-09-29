@@ -260,11 +260,11 @@
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
 <script>
 // /* jshint jquery: true */
-// jQuery(document).ready(function($){
-//   $("#myPano").pano({
-//     img: "<?php echo base_url('assets/front/img/demo_photo.jpg')?>"
-//   });
-// });
+jQuery(document).ready(function($){
+  $("#myPano").pano({
+    img: "<?php echo base_url('assets/front/img/360/bwg1.jpg')?>"
+  });
+});
 </script>
 
 </html>
