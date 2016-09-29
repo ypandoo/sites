@@ -371,7 +371,7 @@
 
   var up_audio_tibet = $('#audio_tibet_upload').Huploadify({
     auto: false,
-    fileTypeExts: '*.mp3;*.aac',
+    fileTypeExts: '*.mp3;*.aac;*.wav',
     multi: false,
     formData: {
       id: '0'

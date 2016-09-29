@@ -144,8 +144,7 @@
 
   });
 
-  //get data via ajax
-  /* jshint jquery: true */
+
   jQuery(document).ready(function($) {
     Self.framework.switch_expo(1);
   });
