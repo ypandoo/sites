@@ -94,7 +94,18 @@ class Item extends CI_Controller {
 
         $original_name = iconv('UTF-8', 'GBK', $_FILES['file']['name']);
         if ($original_name) {
-             move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/video/".$original_name);
+              if (is_dir($_SERVER['DOCUMENT_ROOT']."/uploads/video/") && is_writable($_SERVER['DOCUMENT_ROOT']."/uploads/video/")) {
+                  // do upload logic here
+              } else {
+                $data_result["success"] = 0;
+                $data_result["errorCode"] = 1005;
+                $data_result['message'] = 'error for upload';
+                $data_result['data'] = ['file_name'=>$original_name];
+
+                 echo json_encode($data_result);
+                 die;
+              }
+             $result = move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/uploads/video/".$original_name);
         }
         else {
             $data_result["success"] = 0;

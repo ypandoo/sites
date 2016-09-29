@@ -101,7 +101,7 @@ width: 50%;
             <span><i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说</span>
           </a></div> -->
           <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
-            <span><i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图</span>
+            <span><i class="fa fa-map" aria-hidden="true"></i>查看场馆导览</span>
           </a></div>
 
           <div class="service-container"><a class="service" href="/pages/view/item_list">
@@ -116,7 +116,7 @@ width: 50%;
 
         <div  style="margin-top:20px; padding-left:25px; padding-right:25px">
           <div style="width:100%">
-          <video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">
+          <video id='video' controls="controls">
           您的浏览器不支持 video 标签。
           </video>
           </div>
