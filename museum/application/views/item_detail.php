@@ -116,7 +116,7 @@ width: 50%;
 
         <div  style="margin-top:20px; padding-left:25px; padding-right:25px">
           <div style="width:100%">
-          <video id='video' controls="controls">
+          <video id='video' controls="controls" width="320px" height="240px">
           您的浏览器不支持 video 标签。
           </video>
           </div>

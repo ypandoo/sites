@@ -315,12 +315,12 @@
 
   var up_video = $('#video_upload').Huploadify({
     auto: false,
-    fileTypeExts: '*.ogg',
+    fileTypeExts: '*.ogg;*.ogv;*.mp4',
     multi: false,
     formData: {
       id: '0'
     },
-    fileSizeLimit: 10240,
+    fileSizeLimit: 25240,
     showUploadedPercent: true,
     showUploadedSize: true,
     removeTimeout: 500,
