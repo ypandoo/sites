@@ -118,7 +118,7 @@ margin-top: 10px;
   <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/360') ?>'>
     <img src='<?php echo base_url('assets\front\img\menu\m2_360.png') ?>' height="35px">
   </a></div>
-  <div class="item"><a href='<?php echo base_url('navi/view/1') ?>'>
+  <div class="item"><a href='<?php echo base_url('pages/view/nav') ?>'>
     <img src='<?php echo base_url('assets\front\img\menu\m2_navi.png') ?>' height="35px">
   </a></div>
 </div>

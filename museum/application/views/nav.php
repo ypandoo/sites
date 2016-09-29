@@ -212,26 +212,32 @@
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>场景全景图</h4>
+      <h4>切换楼层导览</h4>
     </div>
 
     <div class="locations">
-      <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">全景图一</div>
-      <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')">全景图二</div>
+      <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">博物馆一楼</div>
+      <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')">博物馆二楼</div>
+      <div :css="[@item, @qj3 && @selected_css]"  ms-click="@switch_view('3')">博物馆三楼</div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>切换展厅</h4>
+      <h4>查看展厅详细信息</h4>
     </div>
 
-    <div class="locations">
-      <div :css="[@item, @zl1 && @selected_css]"  ms-click="@switch_expo('1')">外立面与大厅</div>
-      <div :css="[@item, @zl2 && @selected_css]"  ms-click="@switch_expo('2')">史前文化展</div>
-      <div :css="[@item, @zl3 && @selected_css]"  ms-click="@switch_expo('3')">地方与祖国关系史</div>
-      <div :css="[@item, @zl4 && @selected_css]"  ms-click="@switch_expo('4')">二十一度唐卡展</div>
-      <div :css="[@item, @zl5 && @selected_css]"  ms-click="@switch_expo('5')">西藏民俗文化展</div>
-      <div :css="[@item, @zl6 && @selected_css]"  ms-click="@switch_expo('6')">西藏佛教艺术展</div>
-      <div :css="[@item, @zl7 && @selected_css]"  ms-click="@switch_expo('7')">藏族戏剧用品展</div>
+    <div class="locations" ms-visible='@show1'>
+    </div>
+
+    <div class="locations" ms-visible='@show2'>
+      <div class="item2"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy')?>">史前文化展</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/eQHiDLQlgm8o3HgWhqEAAuGuBdoCnqC0')?>">地方与祖国关系</a></div>
+    </div>
+
+    <div class="locations" ms-visible='@show3'>
+      <div class="item2"><a href="<?php echo base_url('content/view/CkOQamG5KmDWYxtjN2ihRtvkr9Mm7w2l')?>">二十一度唐卡展</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/ywhOFzPmXul3KzsPnW6zvJc6bmtbwMQ2')?>">西藏民俗文化展</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/WKqMynDOMJAQ5lojJe5RMDjFepwJkoGr')?>">西藏佛教艺术展</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/ESAtkiNhq7HfvHmaxMWMlaDZBhh0S5hp')?>">藏族戏剧用品展</a></div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
@@ -256,7 +262,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/nav.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
 <script>
 // /* jshint jquery: true */
