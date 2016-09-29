@@ -132,6 +132,20 @@
   border-radius: 5px;
 }
 
+.locations .item2{
+  float: left;
+  width: 31%;
+  margin: 1%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+  height: 32px;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 6px;
+  border-radius: 5px;
+}
+
 .locations .selected
 {
   border: 1px solid rgba(255, 0, 0, 0.4);
@@ -198,23 +212,39 @@
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>场景切换 Switch View</h4>
+      <h4>场景全景图</h4>
     </div>
 
     <div class="locations">
-      <div :css="[@item, @selected_mainfloor && @selected_css]"  ms-click="@switch_view('main_floor')">史前文化展导览1</div>
-      <div :css="[@item, @selected_2f && @selected_css]"  ms-click="@switch_view('2f')">史前文化展导览2</div>
-      <div :css="[@item, @selected_3f && @selected_css]"  ms-click="@switch_view('3f')">场馆3</div>
+      <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">全景图一</div>
+      <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')">全景图二</div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>查看展览及展厅导览 Expo & Location Info</h4>
+      <h4>切换展厅</h4>
     </div>
 
     <div class="locations">
-      <div class="item"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy') ?>">史前文化展</a></div>
-      <div class="item"><a href="<?php echo base_url('pages/view/navi') ?>">展厅导览</a></div>
+      <div :css="[@item, @zl1 && @selected_css]"  ms-click="@switch_expo('1')">外立面与大厅</div>
+      <div :css="[@item, @zl2 && @selected_css]"  ms-click="@switch_expo('2')">史前文化展</div>
+      <div :css="[@item, @zl3 && @selected_css]"  ms-click="@switch_expo('3')">地方与祖国关系史</div>
+      <div :css="[@item, @zl4 && @selected_css]"  ms-click="@switch_expo('4')">二十一度唐卡展</div>
+      <div :css="[@item, @zl5 && @selected_css]"  ms-click="@switch_expo('5')">西藏民俗文化展</div>
+      <div :css="[@item, @zl6 && @selected_css]"  ms-click="@switch_expo('6')">西藏佛教艺术展</div>
+      <div :css="[@item, @zl7 && @selected_css]"  ms-click="@switch_expo('7')">藏族戏剧用品展</div>
     </div>
+
+    <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
+      <h4>了解更多陈列信息</h4>
+    </div>
+
+    <div class="locations" style="margin-bottom:40px">
+      <div class="item2"><a href="">基本陈列</a></div>
+      <div class="item2"><a href="">展览回顾</a></div>
+      <div class="item2"><a href="">最新展览</a></div>
+    </div>
+
+
   </div>
 <!--
     <div style="margin-top:40px">
@@ -229,12 +259,12 @@
 <script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
 <script>
-/* jshint jquery: true */
-jQuery(document).ready(function($){
-  $("#myPano").pano({
-    img: "<?php echo base_url('assets/front/img/demo_photo.jpg')?>"
-  });
-});
+// /* jshint jquery: true */
+// jQuery(document).ready(function($){
+//   $("#myPano").pano({
+//     img: "<?php echo base_url('assets/front/img/demo_photo.jpg')?>"
+//   });
+// });
 </script>
 
 </html>

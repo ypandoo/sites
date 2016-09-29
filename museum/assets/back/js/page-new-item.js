@@ -315,7 +315,7 @@
 
   var up_video = $('#video_upload').Huploadify({
     auto: false,
-    fileTypeExts: '*.ogg;*.ogv;*.mp4',
+    fileTypeExts: '*.ogg;*.ogv;*.mp4;*.webm',
     multi: false,
     formData: {
       id: '0'

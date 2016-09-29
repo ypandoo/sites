@@ -5,13 +5,15 @@
       this[s] = {} : (this[s] || {});
   };
 
-  // this.base_url = 'http://www.vnewcd.com/';
-  // this.upload_img = 'http://www.vnewcd.com/uploads/img/';
-  // this.upload_img = 'http://127.0.0.1/uploads/video/';
+  // this.base_url = 'http://www.tibetmuseum.cn/';
+  // this.upload_img = 'http://www.tibetmuseum.cn/uploads/img/';
+  // this.upload_img = 'http://www.tibetmuseum.cn/uploads/video/';
+  // this.upload_img = 'http://www.tibetmuseum.cn/uploads/audio/';
 
   this.base_url = 'http://127.0.0.1/';
   this.upload_img = 'http://127.0.0.1/uploads/img/';
   this.upload_video = 'http://127.0.0.1/uploads/video/';
+  this.upload_audio = 'http://127.0.0.1/uploads/audio/';
 
   this.page_interval = 10;
 

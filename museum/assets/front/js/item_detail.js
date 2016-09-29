@@ -32,24 +32,26 @@
       self.prev();
     },
 
+    audio_cn: null,
+    audio_zw: null,
     play_cn: false,
     _play_cn: function() {
       if (self.framework.play_cn == true) {
         self.framework.play_cn = false;
-        audio.pause();
+        window.audio.pause();
       } else {
         self.framework.play_cn = true;
-        audio.play();
+        window.audio.play();
       }
     },
     play_tibet: false,
     _play_tibet: function() {
       if (self.framework.play_tibet == true) {
         self.framework.play_tibet = false;
-        audio2.pause();
+        window.audio2.pause();
       } else {
         self.framework.play_tibet = true;
-        audio2.play();
+        window.audio2.play();
       }
     },
 
@@ -92,9 +94,15 @@
       self.framework.data.name = c.ITEM_NAME;
       self.framework.data.video = c.VIDEO;
       self.framework.video_path = upload_video + c.ITEM_VIDEO;
+      self.framework.audio_cn = upload_audio + c.ITEM_AUDIO_CN;
+      self.framework.audio_zw = upload_audio + c.ITEM_AUDIO_TIBET;
       self.framework.data.description = c.ITEM_DESCRIPTION;
       self.framework.item_is_topten = parseInt(c.ITEM_IS_TOPTEN);
       self.framework.data.path = self.get_pic_path(c.PATH);
+
+      add_video_node();
+      add_audio_node();
+      add_audio_node_zw();
     }
   };
 
@@ -166,7 +174,6 @@
             self.list = self.framework.items_list = data.data;
             self.info(0);
             // self.add_audio_node(self.framework.data.video);
-            add_video_node();
             //self.btn_display(0);
           } else {
             alert(data.message);
@@ -296,32 +303,31 @@
   );
 
   function add_audio_node() {
-    // var url = upload_vedio + self.framework.audio;
-    // window.audio = document.createElement("audio");
-    // var source = document.createElement("source");
-    // audio.id = "audio";
-    // source.type = "audio/mpeg";
-    // source.src = url;
-    // source.autoplay = "autoplay";
-    // audio.addEventListener("ended", function() {
-    //   audio.play();
-    // }, false);
-    // audio.appendChild(source);
+    var url = self.framework.audio_cn;
+    window.audio = document.createElement("audio");
+    var source = document.createElement("source");
+    window.audio.id = "audio";
+    source.type = "audio/mpeg";
+    source.src = url;
+    source.autoplay = "autoplay";
+    window.audio.addEventListener("ended", function() {
+      window.audio.play();
+    }, false);
+    window.audio.appendChild(source);
   }
 
   function add_audio_node_zw() {
-    // var url2 =
-    //   "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/music.mp3";
-    // window.audio2 = document.createElement("audio");
-    // var source2 = document.createElement("source");
-    // audio2.id = "audio2";
-    // source2.type = "audio/mpeg";
-    // source2.src = url;
-    // source2.autoplay = "autoplay";
-    // audio2.addEventListener("ended", function() {
-    //   audio2.play();
-    // }, false);
-    // audio2.appendChild(source2);
+    var url = self.framework.audio_zw;
+    window.audio2 = document.createElement("audio");
+    var source2 = document.createElement("source");
+    window.audio2.id = "audio2";
+    source2.type = "audio/mpeg";
+    source2.src = url;
+    source2.autoplay = "autoplay";
+    window.audio2.addEventListener("ended", function() {
+      window.audio2.play();
+    }, false);
+    window.audio2.appendChild(source2);
   }
 
   function add_video_node() {
