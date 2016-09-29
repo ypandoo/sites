@@ -84,7 +84,7 @@
           Self.framework.qj2 = false;
           $("#myPano").pano({
             img: base_url + 'assets/front/img/360/' + Self.expo_arr[
-              Self.current]['pic1'],
+              Self.current]['pic1']
           });
           break;
         case 2:
@@ -92,7 +92,7 @@
           Self.framework.qj2 = true;
           $("#myPano").pano({
             img: base_url + 'assets/front/img/360/' + Self.expo_arr[
-              Self.current]['pic2'],
+              Self.current]['pic2']
           });
           break;
         default:
@@ -100,7 +100,7 @@
           Self.framework.qj2 = false;
           $("#myPano").pano({
             img: base_url + 'assets/front/img/360/' + Self.expo_arr[
-              Self.current]['pic1'],
+              Self.current]['pic1']
           });
       }
     },
