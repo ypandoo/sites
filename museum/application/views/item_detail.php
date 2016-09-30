@@ -100,9 +100,9 @@ width: 50%;
           <!-- <div class="service-container" ms-click='{@play_video()}'><a class="service">
             <span><i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说</span>
           </a></div> -->
-          <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
+          <!-- <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
             <span><i class="fa fa-map" aria-hidden="true"></i>查看场馆导览</span>
-          </a></div>
+          </a></div> -->
 
           <div class="service-container"><a class="service" href="/pages/view/item_list">
             <span><i class="fa fa-arrow-right" aria-hidden="true"></i>返回馆藏珍品列表</span>
