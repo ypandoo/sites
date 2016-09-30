@@ -31,6 +31,7 @@
               //  console.log(data);
               //  console.log('获取列表及图片成功！');
               items_ctrl.data = data.data;
+              items_ctrl.run_slick();
             } else {
               alert(data.message);
             }
@@ -45,6 +46,18 @@
     }
   });
 
+
+
+  items_ctrl.run_slick = function() {
+    $('.banner-top').slick({
+      adaptiveHeight: false,
+      slidesToShow: 1,
+      dots: false,
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+  }
 
   //Init codes run once
   items_ctrl.get_items_with_pic();

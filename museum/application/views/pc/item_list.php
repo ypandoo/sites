@@ -300,7 +300,7 @@ margin: 0 auto;
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">十大珍品</p>
+      <p class="title_text">十大精品</p>
       <p class="title_text_en">Top10 Collection</p>
       </div>
     </div>

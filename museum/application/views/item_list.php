@@ -94,23 +94,25 @@
 <body>
 <!-- <div class="bk"></div>
 <div class="notification red"><i class="txt">关注失败, 请稍后重试.</i><i class="close">×</i></div> -->
-<div class="details" >
+<div class="details"  ms-controller="items_ctrl" >
     <div id="header" class="newhead" >
         <a href="/pages/view/menu2"><div class="logo touch-href"></div></a>
     </div>
 
-     <div class="banner-top">
-      <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/1.jpg')?>" /><div class="item_name_bg"><p >翡翠提梁壶</p></div></div>
-      <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/2.jpg')?>" /><div class="item_name_bg"><p >夜光陶瓷碗</p></div></div>
-      <div class="banner-item"><img src="<?php echo base_url('assets/pc/img/items/3.jpg')?>" /><div class="item_name_bg"><p >金贲巴瓶</p></div></div>
+
+     <div class="banner-top" >
+       <div class="banner-item"  ms-for='($index, item_info) in @data'>
+         <img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
+         <!-- <div class="item_name_bg"><p >{{@item_info.ITEM_NAME}}</p></div> -->
+       </div>
     </div>
 
     <div class="page-title" style="margin-top:20px">
-      <h2 style="letter-spacing:1px">十大珍品 </h2>
-      <h4 style="letter-spacing: 1px;">Top 10 Antiquities</h4>
+      <h2 style="letter-spacing:1px">十大精品 </h2>
+      <h4 style="letter-spacing: 1px;">Top10 Collection</h4>
     </div>
 
-    <div style=" margin-top:20px; padding-left:15px; padding-right:15px" ms-controller="items_ctrl">
+    <div style=" margin-top:20px; padding-left:15px; padding-right:15px">
       <div class="expo_item"  ms-for='($index, item_info) in @data' >
         <div class="expo_item_container" ms-click="@get_detail_link(item_info.ITEM_ID)">
         <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%" height="120px"/>
@@ -144,22 +146,12 @@
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
-<!-- <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script> -->
+<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 <script>
-$(document).ready(function(){
-  $('.banner-top').slick({
-  adaptiveHeight: false,
-  slidesToShow: 1,
-  dots: true,
-  arrows: false,
-  autoplay: true,
-autoplaySpeed: 2000,
-});
 
-});
 </script>
 </html>
