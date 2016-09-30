@@ -268,7 +268,7 @@ color:red;
 <!--video -->
 <div class="popup" style="display:none">
 <div style="position: absolute;top: 0;font-size: 20px;right: 0;padding: 10px; cursor:pointer" ms-click='{@close_video()}'>X</div>
-<video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls" width="600px" height="450px">
+<video id='video' controls="controls" width="600px" height="450px">
 your browser does not support the video tag
 </video>
  </div>
@@ -306,6 +306,7 @@ your browser does not support the video tag
     </div>
 
     <div style="width:220px; padding:0px 40px 0 40px">
+      <div ms-visible="@item_is_topten">
       <div class="service-container" ms-click= '{@_play_cn()}'><a class="service">
         <span ms-if='!@play_cn'><i class="fa fa-play" aria-hidden="true"></i></i>收听中文语音解说</span>
         <span ms-if='@play_cn' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭中文语音解说</span>
@@ -320,9 +321,11 @@ your browser does not support the video tag
       <div class="service-container" ms-click='{@play_video()}'><a class="service">
         <i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说
       </a></div>
-      <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
+
+    </div>
+      <!-- <div class="service-container"><a class="service"  ms-click="{@direct2map()}">
         <i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图
-      </a></div>
+      </a></div> -->
       <div class="service-container"><a class="service" href="/Pc/view/item_list">
         <i class="fa fa-arrow-left" aria-hidden="true"></i></i>返回馆藏珍品列表
       </a></div>

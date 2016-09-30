@@ -126,7 +126,7 @@ width: 50%;
 
         <div class="page-title" style="margin-top:25px; margin-bottom:60px">
           <h2>展品介绍 </h2>
-          <h4 style="letter-spacing: 1px;">Antiquities Explanation</h4>
+          <h4 style="letter-spacing: 1px;">Antiquities Introduction</h4>
         </div>
 
         <div class="content" style="clear:both; margin-top:20px" >

@@ -267,10 +267,10 @@ margin: 0 auto;
 
 <!-- <div style="background:rgba(0,0,0,0.3); width:100%; height:120px"></div> -->
 <!-- banner -->
-<!-- <div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
 <img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
-</div> -->
-<div id="table" style="padding-top:100px">
+</div>
+<!-- <div id="table">
       <div id="table-cell">
           <div id="center">
             <div class="banner-top">
@@ -279,7 +279,7 @@ margin: 0 auto;
                 <div class="single-item">
                   <a ms-attr="{href:@get_detail_link_pc(item_info.ITEM_ID)}"><img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
                   <div class="item_name_bg2"><p >{{item_info.ITEM_NAME}}</p></div></div></a>
-              </div> -->
+              </div> --
 
               <div class="banner-item"  ms-for='($index, item_info) in @data'>
                 <a ms-attr="{href:@get_detail_link_pc(item_info.ITEM_ID)}"><img  ms-attr="{src:@get_pic_path(item_info.PATH)}" />
@@ -289,7 +289,7 @@ margin: 0 auto;
             </div>
           </div>
       </div>
-</div>
+</div> -->
 
 
 <!-- header -->
@@ -300,8 +300,8 @@ margin: 0 auto;
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">十大珍品</p>
-      <p class="title_text_en">Top10 Collection</p>
+      <p class="title_text">馆藏珍品</p>
+      <p class="title_text_en">Antiquities</p>
       </div>
     </div>
 
@@ -324,7 +324,7 @@ margin: 0 auto;
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/pc/js/item_list.js') ?>"></script>
+<script src="<?php echo base_url('assets/pc/js/item_list_normal.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
 
