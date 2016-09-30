@@ -106,7 +106,7 @@ margin-top: 10px;
   </div>
 
 <div class="row" style="margin-top:10px">
-  <div class="item"  style="margin-right:4%"><a href=''>
+  <div class="item"  style="margin-right:4%"><a href='<?php echo base_url('pages/view/shop') ?>'>
     <img src='<?php echo base_url('assets\front\img\menu\m3_shop.png') ?>' height="35px">
   </a></div>
   <div class="item"><a href='<?php echo base_url('pages/view/activity') ?>'>
@@ -123,11 +123,11 @@ margin-top: 10px;
   </a></div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="item"  style="margin-right:4%"><a href='http://mp.weixin.qq.com/s?__biz=MzIzMDI4MDM1OQ==&mid=100000127&idx=1&sn=69b7a2337783870b80c2bcf9388fdb23&scene=20#wechat_redirect'>
     <img src='<?php echo base_url('assets\front\img\menu\m3_vote.png') ?>' height="35px">
   </a></div>
-</div>
+</div> -->
 
 
 

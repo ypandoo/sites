@@ -82,6 +82,7 @@
                   <option>西博课堂</option>
                   <option>活动邀约</option>
                   <option>志愿者风采</option>
+                  <option>文创小店</option>
                   </select>
               </div>
               <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
@@ -173,7 +174,7 @@
                       <div class="col-md-10">
                         <select ms-duplex='@content_type' class="form-control"
                                 ms-rules="{required:true}"  data-required-message='文章发布板块不能为空!'>
-                        <option >新展快讯</option>
+                        <option>新展快讯</option>
                         <option>展览回顾</option>
                         <option>基本陈列</option>
                         <option>西博动态</option>
@@ -182,6 +183,7 @@
                         <option>西博课堂</option>
                         <option>活动邀约</option>
                         <option>志愿者风采</option>
+                        <option>文创小店</option>
                         </select>
                       </div>
                   </div>
