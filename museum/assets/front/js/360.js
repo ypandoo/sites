@@ -7,43 +7,50 @@
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
     'pic1': 'bwg1.jpg',
-    'pic2': 'bwg2.jpg'
+    'pic2': 'bwg2.jpg',
+    'show_pic2': 1,
   }, {
     'expo_name': '史前文化展',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
     'pic1': 'sq1.jpg',
-    'pic2': 'sq2.jpg'
+    'pic2': 'sq2.jpg',
+    'show_pic2': 1,
   }, {
     'expo_name': '地方与祖国关系史陈列',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
     'pic1': 'gx1.jpg',
-    'pic2': 'gx2.jpg'
+    'pic2': 'gx2.jpg',
+    'show_pic2': 1,
   }, {
     'expo_name': '二十一度唐卡展',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
-    'pic1': 'sq1.jpg',
-    'pic2': 'sq2.jpg'
+    'pic1': 'tk1.jpg',
+    'pic2': 'tk1.jpg',
+    'show_pic2': 0,
   }, {
     'expo_name': '西藏民俗文化展',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
-    'pic1': 'sq1.jpg',
-    'pic2': 'sq2.jpg'
+    'pic1': 'ms1.jpg',
+    'pic2': 'ms2.jpg',
+    'show_pic2': 1,
   }, {
     'expo_name': '西藏佛教艺术展',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
-    'btn1_pic': 'sq1.jpg',
-    'btn2_pic': 'sq2.jpg'
+    'pic1': 'fx1.jpg',
+    'pic2': 'fx2.jpg',
+    'show_pic2': 0,
   }, {
     'expo_name': '藏族戏剧用品展',
     'btn1_name': '全景图1',
     'btn2_name': '全景图2',
-    'pic1': 'sq1.jpg',
-    'pic2': 'sq2.jpg'
+    'pic1': 'xq1.jpg',
+    'pic2': 'xq2.jpg',
+    'show_pic2': 0,
   }, ];
 
   Self.framework = avalon.define({
@@ -68,6 +75,7 @@
     },
     qj1: true,
     qj2: false,
+    show_pic2: true,
 
     zl1: true,
     zl2: false,
@@ -82,6 +90,7 @@
         case 1:
           Self.framework.qj1 = true;
           Self.framework.qj2 = false;
+
           $("#myPano").pano({
             img: base_url + 'assets/front/img/360/' + Self.expo_arr[
               Self.current]['pic1']
@@ -103,6 +112,9 @@
               Self.current]['pic1']
           });
       }
+      Self.framework.show_pic2 = Self.expo_arr[Self.current][
+        'show_pic2'
+      ];
     },
 
     switch_expo: function(id) {

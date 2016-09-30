@@ -217,7 +217,7 @@
 
     <div class="locations">
       <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">全景图一</div>
-      <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')">全景图二</div>
+      <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')" ms-visible='@show_pic2'>全景图二</div>
     </div>
 
     <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
