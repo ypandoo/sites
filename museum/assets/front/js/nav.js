@@ -2,9 +2,9 @@
   var Self = this;
 
   Self.current = 0;
-  Self.pic1 = 'bwg1.jpg';
-  Self.pic2 = 'bwg2.jpg';
-  Self.pic3 = 'bwg3.jpg';
+  Self.pic1 = '3.jpg';
+  Self.pic2 = '2.jpg';
+  Self.pic3 = '1.jpg';
 
   Self.framework = avalon.define({
     $id: "t_ctrl",

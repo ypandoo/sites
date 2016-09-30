@@ -231,11 +231,11 @@
     <div class="locations" ms-visible='@show2'>
       <div class="item2"><a href="<?php echo base_url('content/view/oltTe8ysPLPyjfktRA3IV1WKneU5FFiy')?>">史前文化展</a></div>
       <div class="item2"><a href="<?php echo base_url('content/view/eQHiDLQlgm8o3HgWhqEAAuGuBdoCnqC0')?>">地方与祖国关系</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/CkOQamG5KmDWYxtjN2ihRtvkr9Mm7w2l')?>">二十一度唐卡展</a></div>
+      <div class="item2"><a href="<?php echo base_url('content/view/ywhOFzPmXul3KzsPnW6zvJc6bmtbwMQ2')?>">西藏民俗文化展</a></div>
     </div>
 
     <div class="locations" ms-visible='@show3'>
-      <div class="item2"><a href="<?php echo base_url('content/view/CkOQamG5KmDWYxtjN2ihRtvkr9Mm7w2l')?>">二十一度唐卡展</a></div>
-      <div class="item2"><a href="<?php echo base_url('content/view/ywhOFzPmXul3KzsPnW6zvJc6bmtbwMQ2')?>">西藏民俗文化展</a></div>
       <div class="item2"><a href="<?php echo base_url('content/view/WKqMynDOMJAQ5lojJe5RMDjFepwJkoGr')?>">西藏佛教艺术展</a></div>
       <div class="item2"><a href="<?php echo base_url('content/view/ESAtkiNhq7HfvHmaxMWMlaDZBhh0S5hp')?>">藏族戏剧用品展</a></div>
     </div>
