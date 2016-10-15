@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>参赛信息</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+.upload_img{
+  width: 80%;
+  margin: 0 auto;
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  padding: 10px;
+}
+
+.info{
+  width: 80%;
+  /* margin-left: 10%; */
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.upload_btn{
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.img{
+  /*height: 180px;*/
+  /* width: 100%; */
+  text-align: center;
+  /* vertical-align: middle; */
+  /* padding: 10px; */
+  margin-top: 20px;
+}
+
+
+.file {
+  position: relative;
+  display: inline-block;
+  background: #f9f9dd;
+  border: 1px solid #fe8d2b;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #ff7e10;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+/*.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}*/
+
+.input_underline{
+  border-bottom: 1px solid rgba(255,125,14,0.5);
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 180px;
+  margin-left: 10px;
+  letter-spacing: 1px;
+}
+
+.row{
+  margin: 20px;
+}
+
+.row label{
+      letter-spacing: 1px;
+}
+
+.row textarea{
+  border: 1px solid rgba(255,125,14,0.5);
+  border-radius: 10px;
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(255,125,14,0.5);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:   rgba(255,125,14,0.5);
+}
+
+.bottom{
+  position: fixed;
+      bottom: 0;
+      background-image: url(images/menu_bg.jpg);
+      background-size: 100% 100%;
+      width: 100%;
+}
+
+.bottom .item{
+  width: 24.99999%;
+  float: left;
+  height: auto;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.bg{
+  background-image: url("images/bg.jpg");
+  background-size: 100% 100%;
+}
+
+.title{
+  width: 100%;
+  padding:30px 0 30px 0;
+  text-align: center;
+}
+
+label{
+  color: rgba(255,125,14,1);
+  font-size: 16px;
+}
+</style>
+
+</head>
+
+
+<body class="bg">
+
+<div><img src="images/head-min.png" width="100%"></div>
+
+<div class="title"><img src="images/register_t1.png" width="75%"></div>
+
+<div  ms-controller="info">
+<form class="cmxform" ms-validate="@validate" >
+<div class="info">
+
+  <div class="row">
+    <label for="name">*学生姓名：</label>
+    <input type="text" class="input_underline" name="name" placeholder="请输入学生姓名"
+     ms-duplex="@name" ms-rules="{required:true, minlength:2}"
+     data-required-message="请输入姓名（中文或字母3-8个字符)"
+     data-required-message="姓名不能小于2个字符"></input>
+  </div>
+
+  <div class="row">
+    <label for="age">*学生年龄：</label>
+    <input type="number" class="input_underline" name="age" placeholder="请输入学生年龄"
+    ms-duplex="@age" ms-rules="{required:true}" data-required-message="请输入学生年龄" ></input>
+  </div>
+
+  <div class="row">
+    <label for="tel">*家长手机：</label>
+    <input type="text" class="input_underline" name="tel" placeholder="请输入家长手机"
+   ms-duplex="@tel"
+   ms-rules="{required:true,minlength:6}"
+   data-required-message="请输入电话"
+   data-required-message="电话不能小于6位数字"></input>
+  </div>
+
+  <!-- <div class="row">
+    <label for="grade">*就读年级：</label>
+    <input type="text" class="input_underline" name="grade" placeholder="请输入就读年级"
+    ms-duplex="@grade"
+    ms-rules="{required:true}"
+    data-required-message="请输入就读年级"></input>
+  </div>
+
+  <div class="row">
+    <label for="school">*所在学校：</label>
+    <input type="text" class="input_underline" name="school" placeholder="请输入所在学校"
+    ms-duplex="@school"
+    ms-rules="{required:true}"
+    data-required-message="请输入所在学校"></input>
+  </div> -->
+
+  <div class="row">
+    <label for="description">*作品描述：</label>
+  </div>
+
+  <div class="row">
+        <textarea type="text" class="text_area" placeholder="请输入作品描述(最多200字)" name="description"
+        ms-duplex="@description"
+        ms-rules="{required:true}"
+        data-required-message="请输入作品描述"></textarea>
+  </div>
+
+</div>
+
+<div class="title"><img src="images/register_t2.png" width="75%"></div>
+
+<div class="upload_img">
+    <div class="img" >
+      <img src="images/box.png" width="90%" id="img"></img>
+    </div>
+
+    <div class="upload_btn">
+      <a href="javascript:;" class="file">上传/修改作品
+      <input type="file" name="" id="upload_img" >
+      </a>
+    </div>
+
+</div>
+
+<div style="text-align: center;
+    background-image: url(images/submit.png);
+    background-size: 100% 100%;
+    height: 50px;
+    width: 150px;
+    margin: 20px auto;">
+  <input class="submit" type="submit" value=" ">
+</div>
+
+</form>
+</div>
+
+<div style="margin-bottom:100px; margin-top:-20px; z-index:-1"><img src="images/focus.png" width="100%"> </div>
+
+<div class="bottom">
+  <div class="item"><a href="index.html"><img src="images/index.png" height="80px"></a></div>
+  <div class="item"><a href="rule.html"><img src="images/rule.png" height="80px"></a></div>
+  <div class="item"><a href="register.html"><img src="images/register.png" height="80px"></a></div>
+  <div class="item"><a href="vote.html"><img src="images/vote.png" height="80px"></a></div>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
+<script src="js/html5ImgCompress.min.js"></script>
+
+
+<script type="text/javascript">
+var vm = avalon.define({
+    $id: "info",
+    name: '',
+    age: '',
+    tel: '',
+    grade: '',
+    school: '',
+    description: '',
+    validate: {
+        onError: function (reasons) {
+            reasons.forEach(function (reason) {
+                console.log(reason.getMessage())
+            })
+        },
+        onValidateAll: function (reasons) {
+            if (reasons.length) {
+                alert(reasons[0].getMessage());
+            } else {
+                console.log('全部通过')
+                // ajax和服务器通信上传base64图片等操作
+                $.ajax({
+                  type:'post',//可选get
+                  url:'save_words.php',
+                  dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+                  data:{
+                    'TEL': vm.tel,
+                    'NAME': vm.name,
+                    'AGE': vm.age,
+                    'DESCRIPTION': vm.description
+                  },
+                  success:function(msg){
+                    if(msg.status == '1'){
+                      alert('作品提交成功！您的参赛号码是：！之后您可使用此号码在投票页面随时搜索到您的作品页面！');
+                    }else{
+                      alert('您提交的手机号已经中过奖了！请重新提交新号码！');
+                    }
+                  },
+                  error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('提交失败:'+XMLHttpRequest.responseText);
+                  }
+                });
+            }
+        }
+    }
+})
+
+  $('#upload_img').change(function(e){
+    new html5ImgCompress(e.target.files[0], {
+      maxWidth: 640,
+      before: function(file) {
+        console.log('压缩前...');
+        // 这里一般是对file进行filter，例如用file.type.indexOf('image') > -1来检验是否是图片
+        // 如果为非图片，则return false放弃压缩（不执行后续done、fail、complete），并相应提示
+      },
+      done: function (base64, file) {
+        console.log('压缩成功...');
+        // img = new Image();
+        //var src = window.URL.createObjectURL(file);
+        // img.src = file;
+        // img.width = '100%';
+        //
+        // img.onload = function() {$('#img').prepend(img)};
+        $("#img").attr('src', file);
+      },
+      fail: function(file) {
+        console.log('压缩失败...');
+      },
+      complete: function(file) {
+        console.log('压缩完成...');
+      },
+      notSupport: function(file) {
+        console.log('浏览器不支持！')
+        // 不支持操作，例如PC在这里可以采用swfupload上传
+      }
+    });
+})
+</script>
+
+</body>
+</html>
