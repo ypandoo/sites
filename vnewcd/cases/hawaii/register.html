@@ -83,8 +83,8 @@
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  width: 180px;
-  margin-left: 10px;
+  width: 160px;
+  /*margin-left: 10px;*/
   letter-spacing: 1px;
 }
 
@@ -125,6 +125,7 @@
       background-image: url(images/menu_bg.jpg);
       background-size: 100% 100%;
       width: 100%;
+      border-top: 2px solid white;
 }
 
 .bottom .item{
@@ -267,6 +268,7 @@ var vm = avalon.define({
     grade: '',
     school: '',
     description: '',
+    base64:'',
     validate: {
         onError: function (reasons) {
             reasons.forEach(function (reason) {
@@ -277,8 +279,12 @@ var vm = avalon.define({
             if (reasons.length) {
                 alert(reasons[0].getMessage());
             } else {
-                console.log('全部通过')
+                // console.log('全部通过')
                 // ajax和服务器通信上传base64图片等操作
+                if (vm.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined') {
+                  alert('请上传照片');
+                  return;
+                }
                 $.ajax({
                   type:'post',//可选get
                   url:'save_words.php',
@@ -287,11 +293,12 @@ var vm = avalon.define({
                     'TEL': vm.tel,
                     'NAME': vm.name,
                     'AGE': vm.age,
-                    'DESCRIPTION': vm.description
+                    'DESCRIPTION': vm.description,
+                    'PIC':vm.base64
                   },
                   success:function(msg){
                     if(msg.status == '1'){
-                      alert('作品提交成功！您的参赛号码是：！之后您可使用此号码在投票页面随时搜索到您的作品页面！');
+                      alert('参赛作品提交成功！现在将带您前往作品页面！您之后可使用您提交的手机号在【投票】页随时搜索到您的作品页面以方便为您的作品加油拉票！');
                     }else{
                       alert('您提交的手机号已经中过奖了！请重新提交新号码！');
                     }
@@ -321,6 +328,7 @@ var vm = avalon.define({
         // img.width = '100%';
         //
         // img.onload = function() {$('#img').prepend(img)};
+        vm.base64 = file;
         $("#img").attr('src', file);
       },
       fail: function(file) {
