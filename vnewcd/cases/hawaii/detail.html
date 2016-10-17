@@ -238,18 +238,39 @@ margin-top: 15px;
 color: rgba(255, 125, 64, 1);
 }
 
+.share{
+    position: fixed;;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 82, 35, 0.9);;
+    z-index: 999;
+    display: none;
+    /*transition: all 0.8s;*/
+    /*transform: translate(0px, 0px);*/
+}
+
+.share .pointer{
+    width: 33%;
+    right: 6%;
+    top: 3%;
+    position: absolute;
+}
+
+
 </style>
 
 </head>
 
 
-<body class="bg">
+<body class="bg"  ms-controller="info" >
 
 <div><img src="images/head-min.png" width="100%"></div>
 
 <div class="title"><img src="images/detail_t1.png" width="75%"></div>
 
-<div  ms-controller="info" style="    width: 90%;
+<div style="    width: 90%;
     margin-left: 5%;
     overflow: hidden;
     background-size: 100% 100%;
@@ -270,8 +291,11 @@ color: rgba(255, 125, 64, 1);
     </div>
 
     <div class="buttons">
-      <div class="left" :click="@share()">
-        <div class="button"></div>
+      <div class="left" :click="@share_page()">
+        <div class="button" style="background-image:url('images/wechat.png');
+        background-size:30px 30px;
+        background-position:center; background-repeat:no-repeat">
+        </div>
       </div>
       <div class="right">
         <div class="button" :click="@add_vote()"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></div>
@@ -296,6 +320,26 @@ color: rgba(255, 125, 64, 1);
   <div class="item"><a href="rule.html"><img src="images/rule.png" height="80px"></a></div>
   <div class="item"><a href="register.html"><img src="images/register.png" height="80px"></a></div>
   <div class="item"><a href="vote.html"><img src="images/vote.png" height="80px"></a></div>
+</div>
+
+<div class="share" id="share_page" :click="@close_share()">
+			<div><img src="images/share_text.png" width="100%"></div>
+</div>
+
+<div style="    width: 80%;
+    margin-left: 6%;
+    position: fixed;
+    margin-top: 40%;
+    border-radius: 15px;
+    border: 1px solid rgba(255,125,64,1);
+    text-align: center;
+    top: 0;
+    padding: 4%;
+    background: #f6f6e4;
+    /* margin: 0 auto; */">
+      <!-- <i class="fa fa-exclamation-triangle fa-2x" style="color:rgba(255,125,64,1)" aria-hidden="true"></i> -->
+      <p style="font-size:14px; text-align:left; line-height:20px">我们需要获取您的手机号以作为发放奖品和投票的凭证。我们承诺将不会将您的手机号用于活动以外的任何其他用途。</p>
+      <input class="input_underline" placeholder="请输入您的手机号码"></input>
 </div>
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
@@ -325,8 +369,13 @@ var vm = avalon.define({
     add_vote: function(){
       vm.vote = parseInt(vm.vote) + 1;
     },
-    share: function(){
-
+    share_page: function(){
+      var current_page = $('#share_page');
+      current_page.fadeIn();
+    },
+    close_share:function(){
+      var current_page = $('#share_page');
+      current_page.fadeOut();
     }
 })
 
@@ -358,7 +407,6 @@ function get_data()
     }
   });
 }
-
 
 
 </script>
