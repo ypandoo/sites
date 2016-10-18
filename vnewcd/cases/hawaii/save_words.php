@@ -52,7 +52,9 @@ $result = $dbobj->query($sql);
 // not allow drawing
 if( $dbobj->num_rows($result) > 0)
 {
-	$json_arr =array('status'=>1001, 'msg'=>'您提交的手机号已经中过奖了！请重新提交新号码！');
+	$sql = "UPDATE `t_hawaii` set `NAME` ='".$name."', `AGE` = '".$age."',`DESCRIPTION`='".$des."', `PIC` = '".$picname."' where `TEL` = '".$phone."'";
+	$result = $dbobj->query($sql);
+	$json_arr =array('status'=>1, 'msg'=>'修改资料成功');
 	echo json_encode($json_arr);
 	exit;
 }
@@ -68,7 +70,7 @@ if(!$result)
 	exit;
 }
 
-$json_arr =array('status'=>1, 'msg'=>'Success!');
+$json_arr =array('status'=>1, 'msg'=>'上传参赛作品成功!');
 echo json_encode($json_arr);
 
 ?>

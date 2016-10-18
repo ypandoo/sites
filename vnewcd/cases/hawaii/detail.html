@@ -53,14 +53,15 @@
   position: relative;
   display: inline-block;
   background: #f9f9dd;
-  border: 1px solid #fe8d2b;
-  border-radius: 4px;
+  border-bottom: 1px solid #fe8d2b;
+  /* border-radius: 4px; */
   padding: 4px 12px;
   overflow: hidden;
   color: #ff7e10;
   text-decoration: none;
   text-indent: 0;
   line-height: 20px;
+  letter-spacing: 4px;
 }
 .file input {
     position: absolute;
@@ -106,17 +107,25 @@
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    rgba(255,125,14,0.5);
+    font-size: 14px;
+    text-align:center;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color:    rgba(255,125,14,0.5);
    opacity:  1;
+   font-size: 14px;
+   text-align:center;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
    color:    rgba(255,125,14,0.5);
    opacity:  1;
+   font-size: 14px;
+   text-align:center;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:   rgba(255,125,14,0.5);
+   font-size: 14px
+   text-align:center;
 }
 
 .bottom{
@@ -244,7 +253,7 @@ color: rgba(255, 125, 64, 1);
     top: 0px;
     width: 100%;
     height: 100%;
-    background: rgba(78, 82, 35, 0.9);;
+    background: rgba(45, 45, 45, 0.9);
     z-index: 999;
     display: none;
     /*transition: all 0.8s;*/
@@ -258,6 +267,61 @@ color: rgba(255, 125, 64, 1);
     position: absolute;
 }
 
+.input_underline2 {
+    border: 1px solid rgba(255,125,14,0.5);
+    -webkit-appearance: none;
+    background-color: transparent;
+    height: 24px;
+    border-radius: 15px;
+    /* border-top: 0px; */
+    /* border-left: 0px; */
+    /* border-right: 0px; */
+    width: 90%;
+    /* margin-left: 10px; */
+    letter-spacing: 1px;
+}
+
+
+.agree{
+  position: relative;
+    display: inline-block;
+    /* background: #ffffea; */
+    /* border-bottom: 1px solid #fe8d2b; */
+    /* border-radius: 4px; */
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #ff7e10;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-size: 14px;
+}
+
+.modal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: transparent;
+  top:0;
+  left:0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.notice_box{
+  width: 80%;
+  margin-left: 6%;
+  position: fixed;
+  margin-top: 40%;
+  text-align: center;
+  top: 0;
+  padding: 4%;
+  background-image: url('images/dialog_bg-min.png');
+  background-size:100% 100%;
+}
 
 </style>
 
@@ -326,22 +390,6 @@ color: rgba(255, 125, 64, 1);
 			<div><img src="images/share_text.png" width="100%"></div>
 </div>
 
-<div style="    width: 80%;
-    margin-left: 6%;
-    position: fixed;
-    margin-top: 40%;
-    border-radius: 15px;
-    border: 1px solid rgba(255,125,64,1);
-    text-align: center;
-    top: 0;
-    padding: 4%;
-    background: #f6f6e4;
-    /* margin: 0 auto; */">
-      <!-- <i class="fa fa-exclamation-triangle fa-2x" style="color:rgba(255,125,64,1)" aria-hidden="true"></i> -->
-      <p style="font-size:14px; text-align:left; line-height:20px">我们需要获取您的手机号以作为发放奖品和投票的凭证。我们承诺将不会将您的手机号用于活动以外的任何其他用途。</p>
-      <input class="input_underline" placeholder="请输入您的手机号码"></input>
-</div>
-
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
 <script src="js/html5ImgCompress.min.js"></script>
@@ -353,6 +401,7 @@ var tel = getQueryString('id');
 if(tel == '' || tel == null || typeof tel == 'undefined')
 {
   alert('Sorry！我们没能找到该手机号对应的作品！请更换手机号再试一次！');
+  window.location.href = 'vote.html';
 }
 else{
   get_data();
@@ -367,7 +416,31 @@ var vm = avalon.define({
     vote:'',
     pic:'',
     add_vote: function(){
+      var myDate = new Date();
+      var today = myDate.getFullYear().toString();
+      today += (myDate.getMonth()+1);
+      today += myDate.getDate();
+      var vote_number = getCookie(today);
+      if(vote_number == '' || vote_number == null || typeof vote_number == 'undefined')
+      {
+        vote_number = 1;
+        vm.vote = parseInt(vm.vote) + 1;
+        setCookie(today, vote_number);
+        update_vote();
+        return;
+      }
+
+      if(parseInt(vote_number) >= 3)
+      {
+        alert('您今天的投票名额已用完！明天再来吧！');
+        return;
+      }
+
+      setCookie(today, parseInt(vote_number)+1);
       vm.vote = parseInt(vm.vote) + 1;
+
+      //Save vote number to database
+      update_vote();
     },
     share_page: function(){
       var current_page = $('#share_page');
@@ -400,6 +473,28 @@ function get_data()
         vm.pic = msg.data[0].PIC;
       }else{
         alert('无法获得参赛作品！');
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      alert('提交失败:'+XMLHttpRequest.responseText);
+    }
+  });
+}
+
+function update_vote()
+{
+  //get tel
+  $.ajax({
+    type:'post',//可选get
+    url:'update_vote.php',
+    dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+    data:{
+      'TEL': vm.tel,
+    },
+    success:function(msg){
+      if(msg.status == '1'){
+      }else{
+        alert('投票失败！');
       }
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
