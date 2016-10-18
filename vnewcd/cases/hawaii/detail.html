@@ -183,6 +183,7 @@ label{
 
 .vote_info{
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .vote_info .left{
@@ -340,7 +341,7 @@ color: rgba(255, 125, 64, 1);
     background-size: 100% 100%;
     background-image: url(images/dialog_bg-min.png);">
     <div style="padding:30px 20px;">
-        <img src="images/head-min.png" width="100%"/>
+        <img src="images/head-min.png" width="100%" id="img"/>
         <div class="vote_info">
           <div class="left"><i class="fa fa-user" aria-hidden="true"></i><span class="name">{{@name}}</span></div>
           <div class="right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="number">{{@vote}}</span></div>
@@ -471,6 +472,7 @@ function get_data()
         vm.vote = msg.data[0].VOTE;
         vm.age = msg.data[0].AGE;
         vm.pic = msg.data[0].PIC;
+        $("#img").attr('src', 'uploads/'+vm.pic);
       }else{
         alert('无法获得参赛作品！');
       }

@@ -278,13 +278,18 @@ label{
 </div>
 </div>
 
-<div style="margin-bottom:100px; margin-top:-20px; z-index:-1"></div>
+<div style="margin-bottom:140px; margin-top:-20px; z-index:-1"></div>
 
 <div class="bottom">
   <div class="item"><a href="index.html"><img src="images/index.png" height="80px"></a></div>
   <div class="item"><a href="rule.html"><img src="images/rule.png" height="80px"></a></div>
   <div class="item"><a href="register.html"><img src="images/register.png" height="80px"></a></div>
   <div class="item"><a href="vote.html"><img src="images/vote.png" height="80px"></a></div>
+</div>
+
+<div id="loading" style="display:; position:fixed; bottom:200px; text-align:center;width:100%">
+  <i class="fa fa-spinner fa-pulse fa-2x fa-fw" style="color:white"></i>
+  <span class="sr-only">Loading...</span>
 </div>
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
@@ -309,8 +314,11 @@ var vm = avalon.define({
     }
 })
 
+var sending = false;
 function get_list()
 {
+  sending = true;
+  $('#loading').show();
   $.ajax({
     type:'post',//可选get
     url:'query_words.php',
@@ -319,14 +327,24 @@ function get_list()
       'START': vm.start,
     },
     success:function(msg){
+      sending = false;
+      $('#loading').hide();
       if(msg.status == '1'){
-        vm.data = msg.data;
-      }else{
+        for (var i = 0; i < msg.data.length; i++) {
+         vm.data.push(msg.data[i]);
+        }
+        vm.start += 10;
+      }else if(msg.status == '2'){
+
+      }
+      else{
         alert('无法获得参赛作品！');
       }
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       alert('提交失败:'+XMLHttpRequest.responseText);
+      sending = false;
+      $('#loading').hide();
     }
   });
 }
@@ -356,6 +374,43 @@ function get_data()
 }
 
 get_list();
+
+//作为一个对象的w和h属性返回视口的尺寸
+function getViewportSize(w){
+  //使用指定的窗口， 如果不带参数则使用当前窗口
+  w = w || window;
+  //除了IE8及更早的版本以外，其他浏览器都能用
+  if(w.innerWidth != null)
+      return {w: w.innerWidth, h: w.innerHeight};
+  //对标准模式下的IE（或任意浏览器）
+  var d = w.document;
+  if(document.compatMode == "CSS1Compat")
+      return {w: d.documentElement.clientWidth, h: d.documentElement.clientHeight};
+  //对怪异模式下的浏览器
+  return {w: d.body.clientWidth, h: d.body.clientHeight};
+}
+
+//检测滚动条是否滚动到页面底部
+function isScrollToPageBottom(){
+  //文档高度
+  var documentHeight = document.documentElement.offsetHeight;
+  var viewPortHeight = getViewportSize().h;
+  var scrollHeight = window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop || 0;
+  return documentHeight - viewPortHeight - scrollHeight < 20;
+}
+
+
+window.onscroll = function () {
+  if (sending) {
+    return;
+  }
+
+  if(isScrollToPageBottom()){
+        get_list();
+    }
+}
 
 </script>
 

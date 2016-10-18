@@ -302,7 +302,7 @@ label{
     height: 50px;
     width: 150px;
     margin: 20px auto;">
-  <input class="submit" type="submit" value="" style="width: 100%;height: 100%; background:transparent">
+  <input class="submit" type="submit" value="" style="width: 100%;height: 100%; background:transparent; border: none;">
 </div>
 
 </form>
@@ -394,10 +394,11 @@ var vm = avalon.define({
                   },
                   success:function(msg){
                     if(msg.status == '1'){
-                      alert(msg.msg);
-
                       //set phone cookie
                       setCookie('tel_cookie', vm.tel);
+                      alert('上传或修改作品成功！我们将跳转到您的投票页面...');
+                      window.location.href= 'detail.html?id='+vm.tel;
+
                     }else{
                       alert(msg.msg);
                     }
@@ -413,7 +414,7 @@ var vm = avalon.define({
 
   $('#upload_img').change(function(e){
     new html5ImgCompress(e.target.files[0], {
-      maxWidth: 640,
+      maxWidth: 320,
       before: function(file) {
         console.log('压缩前...');
         // 这里一般是对file进行filter，例如用file.type.indexOf('image') > -1来检验是否是图片
