@@ -48,6 +48,7 @@
   /* vertical-align: middle; */
   /* padding: 10px; */
   margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 
@@ -379,9 +380,9 @@ var vm = avalon.define({
             } else {
                 // console.log('全部通过')
                 // ajax和服务器通信上传base64图片等操作
-                if (vm.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined') {
-                  alert('请上传或修改作品！');
-                  return;
+                if ( !bUpdate && (m.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined')) {
+                    alert('请上传或修改作品！');
+                    return;
                 }
                 $.ajax({
                   type:'post',//可选get
@@ -392,7 +393,7 @@ var vm = avalon.define({
                     'NAME': vm.name,
                     'AGE': vm.age,
                     'DESCRIPTION': vm.description,
-                    'PIC':vm.base64
+                    'PIC':vm.base64,
                   },
                   success:function(msg){
                     if(msg.status == '1'){
@@ -470,8 +471,10 @@ function get_data()
         vm.description = msg.data[0].DESCRIPTION;
         vm.vote = msg.data[0].VOTE;
         vm.age = msg.data[0].AGE;
-        vm.pic = msg.data[0].PIC;
-        $("#img").attr('src', 'uploads/'+vm.pic);
+        vm.pic = '';
+        $("#img").attr('src', 'uploads/'+msg.data[0].PIC);
+        $(".upload_btn").hide();
+        bUpdate = true;
       }else{
         // alert('无法获得参赛作品！');
       }
@@ -482,6 +485,22 @@ function get_data()
   });
 }
 
+function isWeixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+if(!isWeixin())
+{
+  alert('对不起，只能在微信中投票！请在微信中打开网页！');
+  window.location.href = 'index.html';
+}
+
+var bUpdate = false;
 get_data();
 </script>
 
