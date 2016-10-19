@@ -488,7 +488,7 @@ function get_data()
       }
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-      alert('提交失败:'+XMLHttpRequest.responseText);
+      // alert('提交失败:'+XMLHttpRequest.responseText);
     }
   });
 }
@@ -501,7 +501,7 @@ function update_vote()
     url:'update_vote.php',
     dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
     data:{
-      'TEL': vm.tel,
+      'TEL': tel,
     },
     success:function(msg){
       if(msg.status == '1'){
@@ -510,7 +510,7 @@ function update_vote()
       }
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
-      alert('提交失败:'+XMLHttpRequest.responseText);
+      // alert('提交失败:'+XMLHttpRequest.responseText);
     }
   });
 }
