@@ -7,12 +7,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-touch-fullscreen" content="yes">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
-<title>参赛信息</title>
+<title>我刚参加了「我的小小独木舟」手工创意作品大赛,替我投票助我赢取夏威夷旅行大奖！</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
 <link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+<div style="display:none">
+  <img src="images/logo.jpg"/>
+</div>
 
 <style>
 .upload_img{
@@ -398,6 +402,12 @@ color: rgba(255, 125, 64, 1);
 
 
 <script type="text/javascript">
+if(!isWeixin())
+{
+  alert('对不起，只能在微信中投票！请在微信中打开网页！');
+  window.location.href = 'index.html';
+}
+
 var tel = getQueryString('id');
 if(tel == '' || tel == null || typeof tel == 'undefined')
 {
@@ -505,6 +515,14 @@ function update_vote()
   });
 }
 
+function isWeixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 </script>
 
