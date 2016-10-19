@@ -292,7 +292,7 @@ label{
     </div>
 
     <div class="upload_btn">
-      <a href="javascript:;" class="file">上传/修改作品
+      <a href="javascript:;" class="file">上传作品
       <input type="file" name="" id="upload_img" >
       </a>
     </div>
@@ -381,7 +381,7 @@ var vm = avalon.define({
                 // console.log('全部通过')
                 // ajax和服务器通信上传base64图片等操作
                 if ( !bUpdate && (m.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined')) {
-                    alert('请上传或修改作品！');
+                    alert('请上传作品！');
                     return;
                 }
                 $.ajax({
@@ -399,7 +399,7 @@ var vm = avalon.define({
                     if(msg.status == '1'){
                       //set phone cookie
                       setCookie('tel_cookie', vm.tel);
-                      alert('上传或修改作品成功！我们将跳转到您的投票页面...');
+                      alert('上传作品成功！我们将跳转到您的投票页面...');
                       window.location.href= 'detail.html?id='+vm.tel;
 
                     }else{
@@ -496,7 +496,7 @@ function isWeixin(){
 
 if(!isWeixin())
 {
-  alert('对不起，只能在微信中投票！请在微信中打开网页！');
+  alert('对不起，只能在微信中报名和投票！请在微信中打开网页！');
   window.location.href = 'index.html';
 }
 
