@@ -380,7 +380,7 @@ var vm = avalon.define({
             } else {
                 // console.log('全部通过')
                 // ajax和服务器通信上传base64图片等操作
-                if ( !bUpdate && (m.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined')) {
+                if ( !bUpdate && (vm.base64 == null || vm.base64 == '' || typeof vm.base64 == 'undefined')) {
                     alert('请上传作品！');
                     return;
                 }
