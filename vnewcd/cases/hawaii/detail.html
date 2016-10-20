@@ -13,6 +13,7 @@
 
 <link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
 <div style="display:none">
   <img src="images/logo.jpg"/>
@@ -146,7 +147,7 @@
   float: left;
   height: auto;
   text-align: center;
-  padding: 10px 0 10px 0;
+  padding: 5px 0 5px 0;
 }
 
 .bg{
@@ -372,7 +373,7 @@ color: rgba(255, 125, 64, 1);
     </div>
 
     <div class="buttons" style="margin-top:-10px; margin-bottom:20px">
-      <div class="left" :click="@share()">
+      <div class="left">
         <p style="font-size:14px; color:rgba(255,125,64,1)">分享到朋友圈</p>
       </div>
       <div class="right">
@@ -382,22 +383,35 @@ color: rgba(255, 125, 64, 1);
 </div>
 
 
-<div style="margin-bottom:100px; margin-top:20px; z-index:-1"><img src="images/focus.png" width="100%"> </div>
+<div style="margin-bottom:70px; margin-top:20px; z-index:-1"><img src="images/focus.png" width="100%"> </div>
 
 <div class="bottom">
-  <div class="item"><a href="index.html"><img src="images/index.png" height="80px"></a></div>
-  <div class="item"><a href="rule.html"><img src="images/rule.png" height="80px"></a></div>
-  <div class="item"><a href="register.html"><img src="images/register.png" height="80px"></a></div>
-  <div class="item"><a href="vote.html"><img src="images/vote.png" height="80px"></a></div>
+  <div class="item"><a href="index.html"><img src="images/index.png" height="60px"></a></div>
+  <div class="item"><a href="rule.html"><img src="images/rule.png" height="60px"></a></div>
+  <div class="item"><a href="register.html"><img src="images/register.png" height="60px"></a></div>
+  <div class="item"><a href="vote.html"><img src="images/vote.png" height="60px"></a></div>
 </div>
 
 <div class="share" id="share_page" :click="@close_share()">
-			<div><img src="images/share_text.png" width="100%"></div>
+      <p style="font-size: 16px;
+    color: White;
+    text-align: left;
+    line-height: 24px;
+    padding-left: 20px;
+    padding-top: 30px;">
+        点击这里分享到朋友圈吧！让朋友为你<br>
+        加油打气，赢取夏威夷旅行大奖吧！
+      </p>
+			<div style="margin-left: 20%;margin-top: 30%;width: 60%;text-align: center;"
+      class="animated tada infinite">
+        <img src="images/cheer.png" width="100%" >
+      </div>
+      <div><img src="images/arrow.png" class="animated bounce infinite"
+        style="position:absolute; top:10px; right:10px; width:60px; height:80px"></div>
 </div>
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
-<script src="js/html5ImgCompress.min.js"></script>
 <script src="js/vnewbase.js"></script>
 
 
