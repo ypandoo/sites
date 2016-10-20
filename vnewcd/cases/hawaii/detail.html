@@ -392,7 +392,7 @@ color: rgba(255, 125, 64, 1);
   <div class="item"><a href="vote.html"><img src="images/vote.png" height="60px"></a></div>
 </div>
 
-<div class="share" id="share_page" :click="@close_share()">
+<div class="share" id="share_page">
       <p style="font-size: 16px;
     color: White;
     text-align: left;
@@ -418,11 +418,11 @@ color: rgba(255, 125, 64, 1);
 
 
 <script type="text/javascript">
-/*if(!isWeixin())
+if(!isWeixin())
 {
   alert('对不起，只能在微信中投票！请在微信中打开网页！');
   window.location.href = 'index.html';
-}*/
+}
 
 var tel = getQueryString('id');
 if(tel == '' || tel == null || typeof tel == 'undefined')
@@ -440,6 +440,10 @@ vm.share_page();
 
 $("#right_click").click(function(){
 vm.add_vote();
+});
+
+$("#share_page").click(function(){
+vm.close_share();
 });
 
 var vm = avalon.define({
