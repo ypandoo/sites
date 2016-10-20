@@ -361,14 +361,14 @@ color: rgba(255, 125, 64, 1);
     </div>
 
     <div class="buttons">
-      <div class="left" :click="@share_page()">
+      <div class="left" id="left_click">
         <div class="button" style="background-image:url('images/wechat.png');
         background-size:30px 30px;
         background-position:center; background-repeat:no-repeat">
         </div>
       </div>
-      <div class="right">
-        <div class="button" :click="@add_vote()"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></div>
+      <div class="right"  id="right_click">
+        <div class="button"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></div>
       </div>
     </div>
 
@@ -411,16 +411,18 @@ color: rgba(255, 125, 64, 1);
 </div>
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.js"></script/>
+
+
 <script src="js/vnewbase.js"></script>
 
 
 <script type="text/javascript">
-if(!isWeixin())
+/*if(!isWeixin())
 {
   alert('对不起，只能在微信中投票！请在微信中打开网页！');
   window.location.href = 'index.html';
-}
+}*/
 
 var tel = getQueryString('id');
 if(tel == '' || tel == null || typeof tel == 'undefined')
@@ -431,6 +433,14 @@ if(tel == '' || tel == null || typeof tel == 'undefined')
 else{
   get_data();
 }
+
+$("#left_click").click(function(){
+vm.share_page();
+});
+
+$("#right_click").click(function(){
+vm.add_vote();
+});
 
 var vm = avalon.define({
     $id: "info",
