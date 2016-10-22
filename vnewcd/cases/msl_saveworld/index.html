@@ -32,7 +32,7 @@ html{
 
 <body class="bg" ms-controller="game-control">
 
-<div id="1" :click="@switch_view('2')">
+<div id="1" ms-click="switch_view('2')">
   <img src="images/cover-min.png" style="width:90%; margin-left:5%; margin-top:40px"/>
 
   <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
@@ -45,7 +45,7 @@ html{
 
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.16/avalon.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/1.5.8/avalon.mobile.js"></script>
 <script type="text/javascript">
 var vm = avalon.define({
     $id: "game-control",
