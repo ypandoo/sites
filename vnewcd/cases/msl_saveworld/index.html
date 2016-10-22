@@ -71,11 +71,14 @@ html{
 </div>
 
 
-<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<!-- <script src="http://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script> -->
 <script src="http://cdn.bootcss.com/avalon.js/1.5.8/avalon.mobile.js"></script>
 
 <script type="text/javascript">
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('touchstart', function (e) { e.preventDefault(); }, false);
+
 var vm = avalon.define({
     $id: "game-control",
     tapped: false,
@@ -88,40 +91,33 @@ var vm = avalon.define({
   });
 
   // press
-    var el = document.querySelector("#tap_btn");
-    var mc = new Hammer.Manager(el);
-    mc.add(new Hammer.Press());
-    mc.on("press", btn_press);
-    mc.on("pressup", btn_pressup);
+    // var el = document.querySelector("#tap_btn");
+    // var mc = new Hammer.Manager(el);
+    // mc.add(new Hammer.Press());
+    // mc.on("press", btn_press);
+    // mc.on("pressup", btn_pressup);
+    //
+    // // function btn_press()
+    // // {
+    // //   vm.tapped = true;
+    // // }
+    // //
+    // // function btn_pressup()
+    // // {
+    // //   vm.tapped = false;
+    // // }
 
-    function btn_press()
-    {
-      vm.tapped = true;
-    }
+  $("#tap_btn").bind('touchstart',function(e){
+    e.preventDefault();
+    vm.tapped = true;
+  });
 
-    function btn_pressup()
-    {
-      vm.tapped = false;
-    }
-
-  //$(".tap_btn").bind('touchstart',function(){mc.add(new Hammer.Tap());
-  //   vm.tapped = true;
-  // });
-  //
-  // $(".tap_btn").bind('touchend',function(){
-  //   vm.tapped = false;
-  // });
+  $("#tap_btn").bind('touchend',function(e){
+    vm.tapped = false;
+  });
 
 
 
-  // avalon_framework =  avalon.define("game-control", function (vm) {
-  //     vm.switch_view = function(id){
-  //           $('#1').hide();
-  //           $('#2').hide();
-  //           $('#3').hide();
-  //           $('#'+id).fadeIn();
-  //         }
-  // });
 </script>
 
 </body>
