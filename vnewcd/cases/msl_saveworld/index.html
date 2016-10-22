@@ -35,7 +35,7 @@ html{
 <div id="1" :click="@switch_view('2')">
   <img src="images/cover-min.png" style="width:90%; margin-left:5%; margin-top:40px"/>
 
-  <div style="position: absolute; bottom: 60px; text-align:center; width:100%" class="animated infinite pulse">
+  <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
     <img src="images/start_btn.png" style=" width: 150px;height: 50px;"/>
   </div>
 </div>
@@ -45,7 +45,7 @@ html{
 
 
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.16/avalon.min.js"></script>
 <script type="text/javascript">
 var vm = avalon.define({
     $id: "game-control",
@@ -57,6 +57,14 @@ var vm = avalon.define({
     },
   });
 
+  // avalon_framework =  avalon.define("game-control", function (vm) {
+  //     vm.switch_view = function(id){
+  //           $('#1').hide();
+  //           $('#2').hide();
+  //           $('#3').hide();
+  //           $('#'+id).fadeIn();
+  //         }
+  // });
 </script>
 
 </body>
