@@ -32,6 +32,47 @@ html{
   text-align: center;
   margin-top: 10px;
 }
+
+.buttons{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.left{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.right{
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.text{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+}
+
+.text p{
+  font-size: 12px;
+      color: white;
+      text-align: center;
+      line-height: 18px;
+}
+
+a{
+  color: white;
+}
+
+*:not(input):not(textarea) {
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}   
 </style>
 
 </head>
@@ -39,7 +80,7 @@ html{
 
 <body class="bg" ms-controller="game-control">
 
-<div id="1" ms-click="switch_view('2')" style="display:none">
+<div id="1" ms-click="switch_view('2')" style="display:block">
   <img src="images/cover-min.png" style="width:90%; margin-left:5%; margin-top:40px"/>
 
   <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
@@ -47,41 +88,74 @@ html{
   </div>
 </div>
 
-<div id="2" style="display:block">
+<div id="2" style="display:none">
   <img src="images/light_t1-min.png" style="width:80%; margin-left:10%; margin-top:10px"/>
   <div class="light">
 
     <div style="width:60%; margin-left:20%; background-image:url('images/lightdown-min.png');background-size:100% 100%">
-        <div><img src="images/lightup-min.png" width="100%" style="opacity:0.01"></div>
+        <div><img src="images/lightup-min.png" width="100%" ms-css-opacity="opacity" style="opacity:0.01"></div>
     </div>
 
 
     <div id="tap_btn">
-    <div ms-if="!tapped" style="text-align:center; margin-top:30px">
-      <img src="images/light_btn0-min.png" style=" width: 150px;height: 50px;"/>
+    <div style="text-align:center; margin-top:30px">
+      <img id="tap_btn_img" src="images/light_btn0-min.png" style=" width: 150px;height: 50px;"/>
     </div>
 
-    <div ms-if="tapped" style="text-align:center; margin-top:30px">
+    <!-- <div ms-if="tapped" style="text-align:center; margin-top:30px">
       <img src="images/light_btn1-min.png" style=" width: 150px;height: 50px;"/>
+    </div> -->
     </div>
-    </div>
+  </div>
+</div>
 
+<div id="3" style="display:none">
+  <img src="images/failure.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <div class="buttons">
+      <div class="left">
+        <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
+      <div class="right">
+        <a href="index.html">
+          <img src="images/again.png" width="120px" height="50px"/></div>
   </div>
 
+  <div class="text">
+    <p>更多资讯,尽在10月27至30日香港国际秋季灯饰展.
+      <br>及10月26日至29日国际环保博览 <a href="http://www.hktdc.com">http://www.hktdc.com</a></p>
+  </div>
+</div>
+
+<div id="4" style="display:none">
+  <img src="images/success.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <div class="buttons">
+      <div class="left">
+        <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
+      <div class="right">
+        <a href="index.html">
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
+  </div>
+
+  <div class="text">
+    <p>更多资讯,尽在10月27至30日香港国际秋季灯饰展.
+      <br>及10月26日至29日国际环保博览 <a href="http://www.hktdc.com">http://www.hktdc.com</a></p>
+  </div>
 </div>
 
 
-<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<!-- <script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script> -->
 <!-- <script src="http://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script> -->
 <script src="http://cdn.bootcss.com/avalon.js/1.5.8/avalon.mobile.js"></script>
 
 <script type="text/javascript">
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-document.addEventListener('touchstart', function (e) { e.preventDefault(); }, false);
 
 var vm = avalon.define({
     $id: "game-control",
     tapped: false,
+    opacity: 0.01,
     switch_view: function(id){
       $('#1').hide();
       $('#2').hide();
@@ -90,31 +164,40 @@ var vm = avalon.define({
     },
   });
 
-  // press
-    // var el = document.querySelector("#tap_btn");
-    // var mc = new Hammer.Manager(el);
-    // mc.add(new Hammer.Press());
-    // mc.on("press", btn_press);
-    // mc.on("pressup", btn_pressup);
-    //
-    // // function btn_press()
-    // // {
-    // //   vm.tapped = true;
-    // // }
-    // //
-    // // function btn_pressup()
-    // // {
-    // //   vm.tapped = false;
-    // // }
-
-  $("#tap_btn").bind('touchstart',function(e){
+  var pressInt;
+  $("#tap_btn").on('touchstart',function(e){
     e.preventDefault();
-    vm.tapped = true;
+    e.stopPropagation();
+    $("#tap_btn_img").attr("src","images/light_btn1-min.png");
+
+    pressInt = setInterval(function(){
+      vm.opacity += 0.01;
+      if (vm.opacity >= 1) {
+        vm.opacity = 1;
+        vm.switch_view(4);
+        clearInterval(pressInt);
+      }
+    },100)
+    console.log('touchstart');
   });
 
-  $("#tap_btn").bind('touchend',function(e){
-    vm.tapped = false;
+  $("#tap_btn").on('touchmove',function(e){
+    e.preventDefault();
+    e.stopPropagation();
   });
+
+  $("#tap_btn").on('touchend',function(e){
+    clearInterval(pressInt);
+    vm.opacity = 0.01;
+    $("#tap_btn_img").attr("src","images/light_btn0-min.png");
+    console.log('touchend');
+  });
+
+
+
+
+
+
 
 
 
