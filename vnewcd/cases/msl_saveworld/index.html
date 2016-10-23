@@ -81,7 +81,7 @@ a{
 <body class="bg" ms-controller="game-control">
 
 <div id="1" ms-click="switch_view('2')" style="display:block">
-  <img src="images/cover-min.png" style="width:90%; margin-left:5%; margin-top:40px"/>
+  <img src="images/cover-min.png" style="width:70%; margin-left:15%; margin-top:40px"/>
 
   <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
     <img src="images/start_btn.png" style=" width: 150px;height: 50px;"/>
@@ -89,10 +89,10 @@ a{
 </div>
 
 <div id="2" style="display:none">
-  <img src="images/light_t1-min.png" style="width:80%; margin-left:10%; margin-top:10px"/>
+  <img src="images/light_t1-min.png" style="width:70%; margin-left:15%; margin-top:10px"/>
   <div class="light">
 
-    <div style="width:60%; margin-left:20%; background-image:url('images/lightdown-min.png');background-size:100% 100%">
+    <div style="width:50%; margin-left:25%; background-image:url('images/lightdown-min.png');background-size:100% 100%">
         <div><img src="images/lightup-min.png" width="100%" ms-css-opacity="opacity" style="opacity:0.01"></div>
     </div>
 
@@ -110,7 +110,7 @@ a{
 </div>
 
 <div id="3" style="display:none">
-  <img src="images/failure.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <img src="images/failure.png" style="width:70%; margin-left:15%; margin-top:10px"/>
   <div class="buttons">
       <div class="left">
         <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
@@ -127,9 +127,9 @@ a{
 </div>
 
 <div id="4" style="display:none">
-  <img src="images/success.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <img src="images/success.png" style="width:70%; margin-left:15%; margin-top:10px"/>
   <div class="buttons">
-      <div class="left">
+      <div class="left ">
         <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
           <img src="images/again.png" width="120px" height="50px"/></a></div>
       <div class="right">
@@ -171,7 +171,7 @@ var vm = avalon.define({
     $("#tap_btn_img").attr("src","images/light_btn1-min.png");
 
     pressInt = setInterval(function(){
-      vm.opacity += 0.01;
+      vm.opacity += 0.02;
       if (vm.opacity >= 1) {
         vm.opacity = 1;
         vm.switch_view(4);

@@ -80,7 +80,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'www.vnewcd.com:3306',
+	'hostname' => '114.55.112.244:3306',
 	'username' => 'vnewcd',
 	'password' => 'bK4cJqcVx5cvcXQ5',
 	'database' => 'miaoyuan',

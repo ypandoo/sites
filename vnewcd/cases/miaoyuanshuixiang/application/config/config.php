@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://www.vnewcd.com/';
- $config['base_url'] = 'http://127.0.0.1/';
+ $config['base_url'] = 'http://www.vnewcd.com/cases/miaoyuanshuixiang/';
 /*
 |--------------------------------------------------------------------------
 | Index File

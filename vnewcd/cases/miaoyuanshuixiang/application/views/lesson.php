@@ -2,11 +2,11 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>西藏博物馆</title>
-    <meta name="keywords" content="西藏博物馆"/>
-    <meta name="description" content="西藏博物馆"/>
+    <title>淼源水箱</title>
+    <meta name="keywords" content="淼源水箱"/>
+    <meta name="description" content="淼源水箱"/>
     <meta name="robots" content="all"/>
-    <meta name="copyright" content="西藏博物馆"/>
+    <meta name="copyright" content="淼源水箱"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <meta name="apple-touch-fullscreen" content="yes" />

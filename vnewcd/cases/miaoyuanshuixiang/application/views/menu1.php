@@ -95,7 +95,7 @@ background-size: cover;
 </div>
     <div style="position: absolute;
     text-align: left;
-    height: 300px;
+    height: 280px;
     width: 60%;
     margin-top: 40%;
     margin-left: 20%;
@@ -144,19 +144,19 @@ background-size: cover;
     </div>
     <div style="position:fixed; bottom:0; width:100%; height:80px; background:rgba(0,0,0,0.6)">
       <div style="width:25%; float:left; height:80px; text-align:center">
-          <a href="/pages/view/about"><i class="fa fa-home fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
+          <a href="<?php echo base_url('/pages/view/about') ?>"><i class="fa fa-home fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
           <p style="color:white; font-size:12px">关于我们</p>
           <p style="color:white; font-size:12px">About Us</p></a>
       </div>
 
       <div style="width:25%; float:left; height:80px; text-align:center">
-          <a href="/pages/view/instruction"><i class="fa fa-book fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
+          <a href="<?php echo base_url('/pages/view/instruction') ?>"><i class="fa fa-book fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
           <p style="color:white; font-size:12px">资质证明</p>
           <p style="color:white; font-size:12px">Certification</p></a>
       </div>
 
       <div style="width:25%; float:left; height:80px; text-align:center">
-          <a href="/pages/view/lesson"><i class="fa fa-briefcase fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
+          <a  href="<?php echo base_url('/pages/view/lesson') ?>"> <i class="fa fa-briefcase fa-2x" aria-hidden="true" style="color:white; margin-top:10px; margin-bottom:5px"></i>
           <p style="color:white; font-size:12px">案例与方案</p>
           <p style="color:white; font-size:12px">Solutions</p></a>
       </div>
