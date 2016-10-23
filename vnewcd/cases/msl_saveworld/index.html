@@ -30,7 +30,7 @@ html{
   position: relative;
   width: 100%;
   text-align: center;
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 .buttons{
@@ -69,10 +69,20 @@ a{
   color: white;
 }
 
+.delay1s{
+  animation-delay:1s;
+-webkit-animation-delay:1s; /* Safari 和 Chrome */
+}
+
 *:not(input):not(textarea) {
   -webkit-user-select: none; /* disable selection/Copy of UIWebView */
   -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
-}   
+}
+
+.animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
 </style>
 
 </head>
@@ -81,7 +91,7 @@ a{
 <body class="bg" ms-controller="game-control">
 
 <div id="1" ms-click="switch_view('2')" style="display:block">
-  <img src="images/cover-min.png" style="width:90%; margin-left:5%; margin-top:40px"/>
+  <img src="images/cover-min.png" style="width:80%; margin-left:10%; margin-top:40px"/>
 
   <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
     <img src="images/start_btn.png" style=" width: 150px;height: 50px;"/>
@@ -89,7 +99,7 @@ a{
 </div>
 
 <div id="2" style="display:none">
-  <img src="images/light_t1-min.png" style="width:80%; margin-left:10%; margin-top:10px"/>
+  <img src="images/light_t1-min.png" style="width:80%; margin-left:10%; margin-top:5px"/>
   <div class="light">
 
     <div style="width:60%; margin-left:20%; background-image:url('images/lightdown-min.png');background-size:100% 100%">
@@ -98,26 +108,44 @@ a{
 
 
     <div id="tap_btn">
-    <div style="text-align:center; margin-top:30px">
+    <div style="text-align:center; margin-top:50px">
       <img id="tap_btn_img" src="images/light_btn0-min.png" style=" width: 150px;height: 50px;"/>
     </div>
+    </div>
 
-    <!-- <div ms-if="tapped" style="text-align:center; margin-top:30px">
-      <img src="images/light_btn1-min.png" style=" width: 150px;height: 50px;"/>
-    </div> -->
+    <div style="width:130px; height:80px; position:absolute; right:10px; bottom:20px;
+    background-image:url('images/light_t2-min.png');background-size:100% 100%">
+    </div>
+
+    <div style="width: 70px;
+    height: 120px;
+    position: absolute;
+    left: 70px;
+    bottom: 90px;
+    background-image: url(images/pop1.png);
+    background-size: 100% 100%;" class="animated infinite bounceOut delay1s">
+    </div>
+
+    <div style="width: 70px;
+    height: 120px;
+    position: absolute;
+    right: 70px;
+    bottom: 90px;
+    background-image: url(images/pop2.png);
+    background-size: 100% 100%;"  class="animated infinite bounceOut delay1s">
     </div>
   </div>
 </div>
 
 <div id="3" style="display:none">
-  <img src="images/failure.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <img src="images/failure.png" style="width:80%; margin-left:10%; margin-top:10px"  class="animated flip"/>
   <div class="buttons">
-      <div class="left">
+      <div class="left animated infinite pulse">
         <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
           <img src="images/again.png" width="120px" height="50px"/></a></div>
-      <div class="right">
+      <div class="right animated infinite pulse">
         <a href="index.html">
-          <img src="images/again.png" width="120px" height="50px"/></div>
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
   </div>
 
   <div class="text">
@@ -127,12 +155,12 @@ a{
 </div>
 
 <div id="4" style="display:none">
-  <img src="images/success.png" style="width:84%; margin-left:8%; margin-top:10px"/>
+  <img src="images/success.png" style="width:80%; margin-left:10%; margin-top:10px"  class="animated flip"/>
   <div class="buttons">
-      <div class="left">
+      <div class="left animated infinite pulse">
         <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展,邀您一起拯救冰川,更有精细好礼等着您!&pic=http//www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
           <img src="images/again.png" width="120px" height="50px"/></a></div>
-      <div class="right">
+      <div class="right animated infinite pulse">
         <a href="index.html">
           <img src="images/again.png" width="120px" height="50px"/></a></div>
   </div>
@@ -165,6 +193,7 @@ var vm = avalon.define({
   });
 
   var pressInt;
+  var times = 0;
   $("#tap_btn").on('touchstart',function(e){
     e.preventDefault();
     e.stopPropagation();
@@ -187,6 +216,10 @@ var vm = avalon.define({
   });
 
   $("#tap_btn").on('touchend',function(e){
+    times++;
+    if (times == 2) {
+      vm.switch_view(3);
+    }
     clearInterval(pressInt);
     vm.opacity = 0.01;
     $("#tap_btn_img").attr("src","images/light_btn0-min.png");
