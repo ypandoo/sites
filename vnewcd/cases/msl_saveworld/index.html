@@ -74,11 +74,14 @@ a{
 -webkit-animation-delay:1s; /* Safari 和 Chrome */
 }
 
-*:not(input):not(textarea) {
-  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 .animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
@@ -106,8 +109,14 @@ var _hmt = _hmt || [];
 <div id="1" ms-click="switch_view('2')" style="display:block">
 
   <img src="images/cover-min.png" style="width:70%; margin-left:15%; margin-top:40px"/>
-  <div style="position: absolute; bottom: 40px; text-align:center; width:100%" class="animated infinite pulse">
-    <img src="images/start_btn.png" style=" width: 150px;height: 50px;"/>
+  <div style="    bottom: 40px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    background: url(images/start_btn.png);
+    background-size: 100% 100%;
+    margin: 40px auto;" class="animated infinite pulse">
+    <!-- <img src="" style=" "/> -->
   </div>
 </div>
 
@@ -120,9 +129,15 @@ var _hmt = _hmt || [];
     </div>
 
 
-    <div id="tap_btn">
-    <div style="text-align:center; margin-top:50px">
-      <img id="tap_btn_img" src="images/light_btn0-min.png" style=" width: 150px;height: 50px;"/>
+    <div id="tap_btn" style="width:100%; text-align:center">
+    <div style="    text-align: center;
+    width: 150px;
+    height: 50px;
+    background: url(images/light_btn0-min.png);
+    background-size: 100% 100%;
+    margin: 50px auto;
+}" id='tap_img'>
+      <!-- <img id="tap_btn_img" src="images/light_btn0-min.png" style=" width: 150px;height: 50px; pointer-events:none" alt=""/> -->
     </div>
     </div>
 
@@ -192,6 +207,16 @@ var _hmt = _hmt || [];
 <script src="http://cdn.bootcss.com/avalon.js/1.5.8/avalon.mobile.js"></script>
 
 <script type="text/javascript">
+window.onload = function() {
+    with(document.body) {
+      oncontextmenu=function(){return false}
+      ondragstart=function(){return false}
+      onselectstart=function(){return false}
+      onbeforecopy=function(){return false}
+      onselect=function(){document.selection.empty()}
+      oncopy=function(){document.selection.empty()}
+    }
+}
 
 var vm = avalon.define({
     $id: "game-control",
@@ -207,15 +232,18 @@ var vm = avalon.define({
 
   var pressInt;
   var times = 0;
+  var finish = false;
   $("#tap_btn").on('touchstart',function(e){
     e.preventDefault();
     e.stopPropagation();
-    $("#tap_btn_img").attr("src","images/light_btn1-min.png");
+    $('#tap_img').css('background-image', 'url(images/light_btn1-min.png)');
+    // $("#tap_btn_img").attr("src","images/light_btn1-min.png");
 
     pressInt = setInterval(function(){
       vm.opacity += 0.02;
       if (vm.opacity >= 1) {
         vm.opacity = 1;
+        finish = true;
         vm.switch_view(4);
         clearInterval(pressInt);
       }
@@ -229,15 +257,18 @@ var vm = avalon.define({
   });
 
   $("#tap_btn").on('touchend',function(e){
+
     times++;
-    if (times == 2) {
+    if (times == 2 && finish == false) {
       vm.switch_view(3);
     }
     clearInterval(pressInt);
     vm.opacity = 0.01;
-    $("#tap_btn_img").attr("src","images/light_btn0-min.png");
+    $('#tap_img').css('background-image', 'url(images/light_btn0-min.png)');
+    // document.getElementById('tap_img').style.backgroundImage="images/light_btn0-min.png";
     console.log('touchend');
   });
+
 
 </script>
 
