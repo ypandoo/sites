@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<link rel="stylesheet" href="css/base.css" />
+<title>上传照片</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+ 
+
+<body>
+	<header id="header" class="header-topbar">
+		<a class="go-back" href="info.html"><img src="images/go_back.png"/></a>
+		<h1 class="header-title">上传照片</h1>
+	</header>
+
+	<div id="content" class="content-reg">
+		<div class="reg-row">
+			<div class="reg-row-border"><input type="text" id="msg" placeholder="说句话吧:)" value=""/></div>
+		</div>
+		
+		<div class="reg-row">
+			<div class="reg-row-border"><input class="file" type="file" value="" id="item_pic" placeholder="上传图片"></div>
+		</div>
+		
+		<div class="" id="tip"></div>
+		<div class=""><ul id="report"><!-- 演示报告 --></ul></div>
+		
+		<div class="reg-row">
+		<span id="submit-q" class="submit">
+			<span class="a2">上传</span>
+		</span>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/mobileFix.mini.js"></script>
+	<script src="js/exif.js"></script>
+	<script src="js/lrz.js"></script>
+		
+	<script type="text/javascript">
+	    var b64;
+		var phone;
+		var bRunning = false;
+		
+		//------------------login check-------------------------
+		$(document).ready(function (e) {
+			if(window.localStorage)
+			{
+				if(!localStorage.mobile || !localStorage.jlrlogin || localStorage.jlrlogin == 0)
+				{
+					sessionStorage.preTab = location.href;
+					window.location.href = "login.html";
+				}
+				else
+				{
+					phone = localStorage.mobile;
+				}
+			}else{
+				phone = getCookie("mobile");
+				if(phone == null)
+				{
+					sessionStorage.preTab = location.href;
+					window.location.href = "login.html";
+				}
+			}
+			
+		});	
+		
+		//-------------------Demo report----------------------
+		function demo_report(title, src, size) {
+			var lis = document.querySelectorAll('#report li');
+			for(var i=0; li=lis[i]; i++) {
+				li.parentNode.removeChild(li);
+			}
+			
+			var img = new Image(),
+				li = document.createElement('li'),
+				size = (size / 1024).toFixed(2) + 'KB';
+
+			img.onload = function () {
+				var content = '<ul>' +
+					'<li>'+ title +'（'+ img.width +' X '+ img.height +'）</li>' +
+					'<li class="text-cyan">'+ size +'</li>' +
+					'</ul>';
+
+				li.className = 'item';
+				//li.innerHTML = content;
+				li.appendChild(img);
+				document.querySelector('#report').appendChild(li);
+			};
+
+			img.src = src;
+		}
+		
+		
+		//-------------------upload file change--------------------------
+		$(".file").change(function(){
+            lrz(this.files[0], {width: 280}, function (results) {
+                // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+                console.log("图片压缩成功"+results);
+                b64 = results.base64;
+                //demo_report('图片预览', results.base64, results.base64.length * 0.8);
+                $("#tip").innerHTML = '<p>图片压缩成功..</p>';
+		      });
+        })
+		
+		
+		//------------------submit data---------------------------
+		$('#submit-q').on('click', function(){
+		    if(bRunning)
+			 return;
+			 
+            // 判断是否填写完毕
+            var msg = $('#msg').val();
+
+            if(msg == '' ){ alert('说句话吧:)'); return false; } 
+			if(b64 == null){ alert('请上传照片:)'); return false; } 
+			
+			bRunning = true;
+            var submit_data={'msg' : msg, 'phone': phone, 'pic': b64 }; 
+			
+            // 以下为演示用内容 
+            var tip = document.querySelector( '#tip'); 
+            var report = document.querySelector( '#report'); 
+            tip.innerHTML = '<p>正在上传数据..</p>' ; 
+            setTimeout(function () {
+                // 发送到后端
+                $.ajax({ type: 'POST', 
+                        url: "upload_pic.php", 
+                        data: submit_data, 
+                        success: function(data) 
+						        {
+								    var bonus_data = {'bonus_type': '首次晒照', 'bonus_score':50, 'phone':phone};
+								    $.post('upload_pic_first_time.php', bonus_data,
+									function(data) {
+										
+									},
+									"json")	
+									
+       								alert(data.msg); 
+							
+									//tip.innerHTML='<p>照片上传成功..</p> ';
+									window.location.replace("share_pic.html");
+									bRunning = false;
+								},
+                        complete: function() {}, 
+                        error:function(){}, 
+                        dataType: "json" });
+            }, 100);
+        })
+	</script>
+</body>
+</html>

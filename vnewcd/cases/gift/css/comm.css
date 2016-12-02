@@ -1,0 +1,524 @@
+body{margin: 0; background: #E6DFCD ;}
+@charset "utf-8";
+body,dl,dd,h1,h2,h3,h4,h5,h6,p,span{margin:0;padding:0px;}
+body{font:14px/1.5 tahoma,simsun,Microsoft YaHei,sans-serif;-webkit-tap-highlight-color: rgba(0,0,0,0)}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+img{border: none;padding: 0;margin:0;}
+em,i,b{font-style:normal}
+ul,ol{list-style:none;margin:0;padding:0;}
+a{text-decoration:none}
+a:hover{text-decoration:none}
+table{border-collapse:collapse;border-spacing:0}
+input,select,option{outline:none}
+.hid{text-indent: -999px; height: 0; font-size: 0;}
+.por{position:relative;}
+.poa{position:absolute;}
+.di-none{display:none;}
+.clearfix:after{ content:" " ; clear: both; display: block;}
+/*横屏提示*/
+.mask{width:100%; height:100%; background:#000;position: fixed;left:0;top: 0;z-index:50;display:none;}
+.mask i{width: 128px;height: 194px;background: url(http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/hengping.png) 0 0 no-repeat;background-size: 128px 194px;display: block;margin: 0 auto;-webkit-animation: maskAni 1.5s ease infinite alternate;animation: maskAni 1.5s ease infinite alternate;}
+.mask span{font-size:22px;display:block;color:#ffd40a; text-align:center;width: 100%;height: 25px;padding-top: 10px;}
+@media screen and (min-aspect-ratio: 13/9) {
+    #mask{display: block;}
+}
+.txt{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/txt.png") ; background-size: 320px 2491px ;}
+.sprites{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/sprites.png") ; background-size: 250px 400px ;}
+
+/* 通用 */
+.content{ height: 504px; width: 320px; margin: 0 auto ; -webkit-transform-origin: center top ; z-index: 2 ; position: relative; overflow: hidden;}
+.item-8 .content{overflow: visible;}
+.secBg{ position: absolute; top: 0; left: 0; z-index: 1}
+
+.musicDiv{ position: fixed; top: 20px; right: 35px;}
+.musicOn{ width: 23px; height: 23px; background-image: url(../img/music.png); background-size: 100% 100%}
+.musicStop{ width: 23px; height: 24px; background-image: url(../img/music.png); background-size: 100% 100%}
+
+
+.up{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    margin-left: -20px;
+    bottom: 10px;
+    background-image: url(../img/up.png);
+    background-size: 100% 100%;
+    z-index: 999;
+
+}
+/*item0*/
+.item-0{ background: #FCFCFB ;}
+.item-0 .title{background-image: url(../img/0/title.png);
+    background-size: 100% 100%;
+    width: 115px;
+    height: 190px;
+    margin-left: -60px;
+    left: 50%;
+    position: relative;
+    z-index: 999;
+    top: 70px;
+    margin-top: 0;}
+.bg{ width: 100%; bottom: -5px; left:0 ; position: absolute;}
+.camera{    background-image: url(../img/0/camera.png);
+    background-size: 100% 100%;
+    width: 80px;
+    height: 100px;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -40px;
+    position: absolute;}
+
+/*item 1 */
+.item-1 .title{background-image: url(../img/1/title.png);background-size: 100% 100%;
+    width: 120px;height: 200px;margin-left: 90px;margin-top: 20%;position: relative;}
+.item-1 .gift{background-image: url(../img/1/gift.png);background-size: 100% 100%;
+    width: 130px;height: 120px;margin-left: 95px;bottom: 140px;position: absolute;}
+.item-1 .gift-open{    background-image: url(../img/1/gift-open.png);
+    background-size: 100% 100%;
+    width: 160px;
+    height: 100px;
+    margin-left: 90px;
+    bottom: 140px;
+    position: absolute;}
+.item-1 .paopao-more{    background-image: url(../img/1/paopao-more.png);
+    background-size: 100% 100%;
+    width: 200px;
+    height: 150px;
+    margin-left: 70px;
+    bottom: 230px;
+    position: absolute;}
+.item-1 .transformer{background-image: url(../img/1/tf.png);
+    background-size: 100% 100%;
+    width: 80px;
+    height: 70px;
+    margin-left: 95px;
+    bottom: 220px; 
+    position: absolute;}
+.item-1 .text{ 
+    text-align: center;
+    font-family: 'Microsoft YaHei';
+    font-weight: 600;
+    color: #975C38;
+    position: absolute;
+    bottom: 40px;
+    width: 100%;}
+.item-1{ background: #E6DFCD ; background-image: url(../img/1/frame.png); background-size: 100% 100%}
+.paopao{background-image: url(../img/item1-pic1-paopao.png);background-size: 100% 100%;
+        width: 50px;height: 35px;right: 80px;top: 80px;position: absolute;
+    -webkit-transform-origin: 50px 20px;/* Chrome, Safari, Opera */}
+.item-1 .arrow
+{
+    background-image: url(../img/1/arrow.png);
+    background-size: 100% 100%;
+    width: 40px;
+    height: 55px;
+    right: 150px;
+    bottom: 250px;
+    position: absolute;
+}
+
+
+/*item-2*/
+.item-2{ background: #E6DFCD ;}
+.item-2 .boxup{background-image: url(../img/2/up.png); background-size: 100% 100%;
+       width: 300px; height: 223px;margin-left: 10px; margin-top: 40px;position:relative;}
+.item-2 .boxup .textbg{background-color: rgba(27, 27, 27, 0.67);background-image: url(../img/2/textup.png);background-size: 40px 120px; 
+    width: 60px; height: 140px; position: absolute;top: 10px;left: 40px;background-position: 10px 10px; background-repeat: no-repeat;}
+.item-2 .boxdown{background-image: url(../img/2/down.png); background-size: 100% 100%;
+       width: 300px; height: 213px;margin-left: 10px; margin-top: 20px;position:relative;}
+.item-2 .boxdown .textbg{background-color: rgba(27, 27, 27, 0.67);background-image: url(../img/2/textdown.png);background-size: 40px 120px; 
+    width: 60px; height: 140px; position: absolute;top: 8px;right: 40px;background-position: 10px 10px; background-repeat: no-repeat;}
+.tf{background-image: url(../img/2/tf.png);
+    background-size: 100% 100%;
+    width: 50px;
+    height: 45px;
+    right: 120px;
+    top: 72px;
+    position: absolute;}
+/*item2*/
+.item-3{ background: #E6DFCD ;}
+.item-3 .boxup{background-image: url(../img/3/up.png); background-size: 100% 100%;
+       width: 300px; height: 223px;margin-left: 10px; margin-top: 40px;position:relative;}
+.item-3 .boxdown{background-image: url(../img/3/down.png); background-size: 100% 100%;
+       width: 300px; height: 213px;margin-left: 10px; margin-top: 20px;position:relative;}
+
+.clock{    background-image: url(../img/3/clock.png);
+    background-size: 100% 100%;
+    width: 40px;
+    height: 50px;
+    left: 30px;
+    top: 35px;
+    position: absolute;}
+.bag{background-image: url(../img/3/bag.png);
+    background-size: 100% 100%;
+    width: 50px;
+    height: 70px;
+    right: 55px;
+    bottom: 12px;
+    position: absolute;}
+
+.item-3 .boxup .textbg{background-color: rgba(27, 27, 27, 0.67);background-image: url(../img/3/textup.png);background-size: 40px 120px; 
+    width: 60px; height: 140px; position: absolute;top: 10px;right: 40px;background-position: 10px 10px; background-repeat: no-repeat;}
+
+.item-3 .boxdown .textbg{background-color: rgba(27, 27, 27, 0.67);background-image: url(../img/3/textdown.png);background-size: 40px 120px; 
+    width: 60px; height: 140px; position: absolute;top: 8px;left: 40px;background-position: 10px 10px; background-repeat: no-repeat;}
+
+
+
+/*item 3 */
+.item-4{ background: #E6DFCD ;}
+.item-4 .title{    background-image: url(../img/4/title.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 250px;
+    margin-left: 0px;
+    margin-top: 40px;
+    position: relative;}
+.item-4 .text0{    background-image: url(../img/4/text0.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 30px;
+    margin-left: 0;
+    margin-top: 20px;
+    position: relative;}
+.item-4 .text{    background-image: url(../img/4/text.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 40px;
+    margin-left: 0;
+    margin-top: 20px;
+    position: relative;}
+.item-4 .dot{    background-image: url(../img/4/dot.png);
+    background-size: 100% 100%;
+    width: 50px;
+    height: 10px;
+    margin-left: 130px;
+    margin-top: 20px;
+    position: relative;}
+
+.item-4 .pen{    background-image: url(../img/4/pen.png);
+    background-size: 100% 100%;
+    width: 80px;
+    height: 70px;
+    margin-left: 95px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 100px;}
+
+.item-4 .penbg{    background-image: url(../img/4/penbg.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 10%;
+    /* margin-left: 0px; */
+    /* margin-bottom: 0px; */
+    position: absolute;
+    bottom: 20px;}
+
+/*item 5 */
+.item-5{ background: #E6DFCD ;}
+.item-5 .title{    background-image: url(../img/5/title.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 250px;
+    margin-left: 0px;
+    margin-top: 10%;
+    position: relative;}
+.item-5 .text1{    background-image: url(../img/5/text1.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 50px;
+    margin-left: 0;
+    margin-top: 30px;
+    position: relative;}
+.item-5 .text2{    background-image: url(../img/5/text2.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 30px;
+    margin-left: 0;
+    margin-top: 20px;
+    position: relative;}
+
+.item-5 .share{background-image: url(../img/5/share.png);
+    background-size: 100% 100%;
+    width: 140px;
+    height: 45px;
+    left: 50%;
+    margin-left: -70px;
+    /* margin-left: 0px; */
+    /* margin-bottom: 0px; */
+    position: absolute;
+    bottom: 40px;
+z-index: 999}
+
+video {
+    position: absolute;
+    top: 70px;
+    left: 25px;
+    z-index: 10;
+    height: 200px;
+    background: #000;
+}
+
+
+
+.item-6{ background: #E6DFCD ;}
+.item-6 .logo{    background-image: url(../img/6/logo.png);
+    background-size: 100% 100%;
+    width: 210px;
+    height: 30px;
+    margin-left: -115px;
+    margin-top: 10%;
+    position: relative;
+    left: 50%;}
+.item-6 .showImg{background-image: url(../img/6/imgframe.png);
+    background-size: 100% 100%;
+    width: 280px;
+    height: 200px;
+    margin-left: 20px;
+    margin-top: 30px;
+    position: relative;
+    text-align: center;}
+.item-6 .text{    background-image: url(../img/6/text.png);
+    background-size: 100% 100%;
+    width: 320px;
+    height: 70px;
+    margin-left: -160px;
+    margin-top: 20px;
+    position: relative;
+    left: 50%;}
+.item-6 .share{background-image: url(../img/6/share.png);
+    background-size: 100% 100%;
+    width: 140px;
+    height: 45px;
+    left: 50%;
+    margin-left: -70px;
+    margin-top: 20px;
+    position: relative;
+z-index: 999}
+.custom-file-input {
+    display: inline-block;
+    width: 320px;
+    height: 200px;
+    margin: 0px;
+    background: none;
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -50%;
+    z-index: 999;
+}
+
+.item-6 .cloud1
+{
+    background-image: url(../img/6/cloud.png);
+    background-size: 100% 100%;
+    width: 50px;
+    height: 25px;
+    left: 0px;
+    top: 280px;
+    position: absolute;
+}
+
+
+.item-6 .cloud2
+{
+background-image: url(../img/6/cloud.png);
+    background-size: 100% 100%;
+    width: 40px;
+    height: 20px;
+    right: 50px;
+    top: 420px;
+    position: absolute;
+}
+
+
+/*分享指引*/
+.shareGuide{ width: 100%; height: 100%; background: rgba(0,0,0,.5) ; position: fixed; top: 0; left: 0; display: none;}
+.shareArrow{ background: url("http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareArrow.png") ; width: 234px; height: 143px; background-size: 234px 143px ; position: absolute; top: 0; right: 8%; }
+
+/*loadingBar*/
+.loading{    /* background: #f1bd71; */
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/loading.jpg);
+    z-index: 999;}
+.loadingBar{ position: absolute; top: 40%; left: 0; right: 0; margin: 0 auto; text-align: center; -webkit-animation: loadingBar 2s infinite ; }
+.loadingNum{ position: absolute; top: 55%; left: 0; width: 100%; text-align: center; color: #fff ; font-family: '\5FAE\8F6F\96C5\9ED1'; font-size: 24px;}
+@-webkit-keyframes loadingBar{
+    0%{-webkit-transform: rotate(0deg)}
+    100%{-webkit-transform: rotate(360deg)}
+}
+/*动画*/
+.play .arrow{ -webkit-animation: arrow 1s infinite alternate ;}
+@-webkit-keyframes arrow{
+    0%{ -webkit-transform: translateY(0) ;}
+    100%{ -webkit-transform: translateY(-10px) ;}
+}
+.item-1.play .dialogue{ -webkit-animation: dialogue 0.8s 0.3s ease both;}
+
+
+.item-8 .dialogue{ opacity: 0;}
+
+/*.item-9.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-10.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-11.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+/*.item-12.play .dialogue{ -webkit-animation: dialogue 0.5s 0s ease both;}*/
+
+@-webkit-keyframes dialogue{
+    0%{ -webkit-transform: translateY(50px) ; opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) ; opacity: 1;}
+}
+
+.item-1.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item-1.play .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+@-webkit-keyframes opacity{
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
+/*sec2*/
+.play.item-2 .sec2-dad{ -webkit-animation: sec2-dad 1s steps(6)  infinite ;}
+@-webkit-keyframes sec2-dad{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -801px 0}
+}
+/*.play.item-2 .sec2-dads{ -webkit-animation: sec2-dads 0.8s 0.8s 1  ease both;}*/
+@-webkit-keyframes sec2-dads{
+    0%{-webkit-transform: translateX(200px) }
+    100%{ -webkit-transform: translateX(0px) }
+}
+.item-2.play .dialogue{ -webkit-animation: dialogue2 0.8s 0.3s ease both;}
+@-webkit-keyframes dialogue2{
+    0%{ -webkit-transform: translateY(50px) scale(0.9,0.8); opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) scale(0.9,0.8) ; opacity: 1;}
+}
+.item-2.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item-2.play .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec3*/
+.item-3.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-3 .flower1{ -webkit-animation: flower 2s infinite linear ;}
+.play.item-3 .flower2{ -webkit-animation: flower 1.5s infinite linear ;}
+.play.item-3 .flower3{ -webkit-animation: flower2 1.2s  infinite linear ;}
+@-webkit-keyframes flower{
+    0%{ -webkit-transform: rotate(0deg)}
+    100%{ -webkit-transform: rotate(360deg)}
+}
+@-webkit-keyframes flower2{
+    0%{ -webkit-transform: rotate(360deg)}
+    100%{ -webkit-transform: rotate(0deg)}
+}
+.play.item-3 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.play.item-3 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec4*/
+.item-4.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+@-webkit-keyframes dialogue4{
+    0%{ -webkit-transform: translateY(50px) scale(0.9,0.7); opacity: 0;}
+    100%{ -webkit-transform:translateY(0px) scale(0.9,0.7) ; opacity: 1;}
+}
+.play.item-4 .dialogue-green{ -webkit-animation: opacity 1s .5s ease both ; }
+.play.item-4 .sec4-teacher{ -webkit-animation: sec4-teacher .6s steps(3)  infinite alternate ;}
+@-webkit-keyframes sec4-teacher{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -374px 0}
+}
+.item-4.play .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+/*sec5*/
+.play.item-5 .firTxt{ -webkit-animation: opacity 1.5s 2.5s ease both ; }
+.play.item-5 .secTxt{ -webkit-animation: opacity 1.5s 3s ease both ; }
+.play.item-5 .dialogue-s1{ -webkit-animation: opacity 1s 1s ease both ; }
+.play.item-5 .dialogue-s2{ -webkit-animation: opacity 1s 1.5s ease both ; }
+.play.item-5 .dialogue-s3{ -webkit-animation: opacity 1s 2.0s ease both ; }
+.item-5.play .dialogue-black{ -webkit-animation: dialogue .8s 2s ease both;}
+
+/*sec6*/
+.item-6.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+.play.item-6 .sigh{ -webkit-animation: sigh 1s infinite both ;}
+@-webkit-keyframes sigh{
+   0%{ -webkit-transform: translate(0,0) ; opacity: 0;}
+   20%{ opacity: 1;}
+   50%{ -webkit-transform: translate(10px,10px) ; opacity: 1;}
+   100%{ -webkit-transform: translate(10px,10px) ; opacity: 0;}
+}
+.play.item-6 .sec6-mom{ -webkit-animation: sec6-mom 2s steps(7)  infinite ;}
+@-webkit-keyframes sec6-mom{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -1120px 0}
+}
+.play.item-6 .sec6-dad{ -webkit-animation: sec6-dad 1s steps(2)  infinite ;}
+@-webkit-keyframes sec6-dad{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -116px 0}
+}
+.play.item-6 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+/*7*/
+.item-7.play .dialogue{ -webkit-animation: dialogue .8s 0.5s ease both;}
+.play.item-7 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.play.item-7 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+.play.item-7 .thirTxt{ -webkit-animation: opacity 1.2s 1.5s ease both ; }
+/*sec8*/
+.play.item-8 .sec8-boss{ -webkit-animation: sec8-boss 2s steps(6) infinite ;}
+@-webkit-keyframes sec8-boss{
+    0%{ background-position: 0 0 }
+    100%{ background-position: -939px 0}
+}
+.item-8.play .dialogue{ -webkit-animation: dialogue4  0.8s 0.5s ease both;}
+.play.item-8 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item8-txt1 { -webkit-transform: scale(1.1,1.35);}
+.play.item-8 .fire1{ -webkit-animation: fire .2s infinite ;}
+.play.item-8 .fire2{ -webkit-animation: fire .2s infinite ;}
+@-webkit-keyframes fire{
+    0%{ -webkit-transform: translate(0px,0)}
+    100%{ -webkit-transform: translate(2px,0)}
+}
+
+/*9*/
+.item-9.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-9 .firTxt{ -webkit-animation: opacity 1s 0.8s ease both ; }
+.play.item-9 .secTxt{ -webkit-animation: opacity 1.2s 1.2s ease both ; }
+/*10*/
+.item-10.play .dialogue{ -webkit-animation: dialogue4 0.8s 0.5s ease both;}
+.play.item-10 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both ; }
+.item10-txt1 { -webkit-transform: scale(1.2,1.3);}
+
+/*sec11*/
+.item-11.play .dialogue{ -webkit-animation: dialogue 0.8s 0.5s ease both;}
+.play.item-11 .firTxt{ -webkit-animation: opacity 1.2s 1s ease both}
+.play.item-11 .secTxt{ -webkit-animation: opacity 1.2s 1.5s ease both}
+.play.item-11 .thirTxt{ -webkit-animation: opacity 1.2s 2s ease both}
+
+
+/*sec12*/
+.item12-txt1,.item12-txt2,.item12-txt3,.item12-txt4{ opacity: 0;}
+.play.item-12 .firTxt{ -webkit-animation: opacity 1.5s ease both}
+.play.item-12 .secTxt{ -webkit-animation: opacity 1.5s .8s ease both}
+.play.item-12 .thirTxt{ -webkit-animation: opacity 1.5s 1.5s ease both}
+.play.item-12 .forTxt{ -webkit-animation: opacity 1.5s 2s ease both}
+
+/*sec13*/
+.item13-txt1,.item13-txt2,.item13-txt3,.item13-txt4{ opacity: 0;}
+.play.item-13 .firTxt{ -webkit-animation: opacity 1s ease both}
+.play.item-13 .secTxt{ -webkit-animation: opacity 1s .5s ease both}
+.play.item-13 .thirTxt{ -webkit-animation: opacity 1s 1s ease both}
+.play.item-13 .forTxt{ -webkit-animation: opacity 1s 1.5s ease both}
+.play.item-13 .sec13-person{ -webkit-animation: sec13-person .4s 1.5s ease-out both ;}
+@-webkit-keyframes sec13-person{
+    0%{ -webkit-transform: translateY(162px)}
+    100%{ -webkit-transform: translateY(0)}
+}
+.play.item-13 .nextIdeaLogo{ -webkit-animation: fadeInUp .8s 1.3s ease both ;}
+.play.item-13 .nextHref{ -webkit-animation: fadeInUp .8s 1.7s ease both ;}
+.play.item-13 .tencentLogo{ -webkit-animation: fadeInUp .8s 2.3s ease both ;}
+@-webkit-keyframes fadeInUp{
+    0%{opacity:0;-webkit-transform:translateY(20px)}
+    100%{opacity:1;-webkit-transform:translateY(0)}
+}
+.play.item-13 .item-13-Btn{ -webkit-animation: opacity 1s 2s ease both ;}
+.play.item-13 .footerBtn{ -webkit-animation: opacity 1s 2.3s ease both ;}
+
+
+
+
+/*  |xGv00|ce343736871f3e44a57fc8863b06dafc */

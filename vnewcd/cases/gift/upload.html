@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>感谢一路相伴，我的家人！  -By 爸爸的礼物</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="你的创意还活着么？" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+
+    <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+
+    <div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='test.jpg' />
+    </div>
+
+
+    <style type="text/css">
+        .sharemcover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        z-index: 20000;
+        }
+    </style>
+</head>
+<body>
+<h1 class="hid">爸爸的礼物</h1>
+<div style="height: 0;width: 0; overflow:hidden;text-indent: -999px;">
+    <img src="http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareLogo.jpg" alt=""/>
+</div>
+<div id="loading" class="loading">
+    <div class="loadingBar">
+        <img src="http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/loading_ico.png" alt=""/>
+    </div>
+    <p class="loadingNum" id="loadingNum"></p>
+</div>
+<div class="wrap">
+    <div class="item item-6">
+        <div class="content" >
+                <div class="logo"></div>
+                <div class="showImg">
+                    <img id="mypic" src="img/upload/none.png" height="160px" style="margin-top:20px">   
+                </div>
+                <div class="text"></div>
+                <input class="custom-file-input file" type="file"/>
+                <div class="share" onclick="clickonshare()"></div>
+
+                <div class="cloud1 animated infinite duration5s lightSpeedOut"></div>
+                <div class="cloud2 animated infinite delay1s duration5s lightSpeedIn"></div>
+        </div>
+                
+    </div>
+
+</div>
+
+<div id="uploading" style="    position: absolute;
+    top:300px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Microsoft YaHei';
+    color: #9D6642;font-weight:500; z-index:1;display:none" class="">
+    照片传输中...
+</div>
+
+<!--禁止横屏代码-->
+<div class="mask flexcontainer" id="mask" >
+    <div class="mask-box">
+        <div class="mask-pic"><i></i></div>
+        <span>为了更好的体验，请将手机/平板竖过来</span>
+    </div>
+</div>
+
+<!--音乐-->
+<!--div class="musicDiv" id="musicDiv">
+    <p class="musicOn" ></p>
+    <p class="musicStop" style="display:none;"></p>
+</div>
+<!--音乐-->
+
+<!--分享指引-->
+<!--share-->
+<div id="sharemcover0" class="sharemcover" style=" display:none;">
+    <div class="animated infinite duration3s bounce" 
+         style="position:absolute; top:50px; right:30px">
+        <img src="img/arrow.png" width="100%">
+    </div>
+</div>
+<!--分享指引-->
+
+<!--script src="js/zepto-1.1.3.min.js"></script-->
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/iSlider.js"></script>
+<script type="text/javascript" src="js/vnewbase.js"></script>
+<script src="js/mobileFix.mini.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/lrz.js"></script>
+<script>
+    
+    // 缩放   必须放在 isider 前
+    var content = $(".content");
+    var currentScreenW = $(window).width() / 320;
+    var currentScreenH = $(window).height() / 504;
+    var scaleNum = 1;
+    var moveKey = false;
+    var sec2WifiKey = true;
+    var sec2Fir = true;
+
+    var tapSum = 0 ;
+    if (currentScreenW > currentScreenH) {
+
+        scaleNum = currentScreenH;
+
+    } else {
+
+        scaleNum = currentScreenW;
+
+    }
+
+    content.css({"-webkit-transform": "scale("+ scaleNum +")"});
+//  sec8Boy.css({"-webkit-transform": "scale("+ scaleNum +")"});
+//  sec8Dialogue.css({"-webkit-transform": "scale("+ scaleNum +")" + "translateX(-50%)"});
+</script>
+
+<script type="text/javascript">
+
+    var slider = new iSlider({
+        wrap:'.wrap',
+        noslide: '0',
+        item:'.item',
+        playClass:'play',
+        animateType:'depth',
+        speed:'1000',
+        onslide:function (index) {
+        },
+        loadingImgs:[
+            'http://vnewcd.com/showoutside/gift/img/6/imgframe.png',
+            'http://vnewcd.com/showoutside/gift/img/6/share.png',
+            'http://vnewcd.com/showoutside/gift/img/6/logo.png',
+            'http://vnewcd.com/showoutside/gift/img/6/share.png',
+            'http://vnewcd.com/showoutside/gift/img/6/text.png',
+
+        ],
+        onloading:function (loaded,total) {
+            this.$('#loading div').style.width=loaded/total*100+'%';
+            this.$('#loading #loadingNum').innerHTML = parseInt((loaded/total)*100) + "%";
+
+            if (loaded==total) {
+                this.$('#loading').style.display="none";
+            }
+        }
+    });
+
+
+    //save pic
+    var id = getQueryString('id');
+    if (id == null) {window.location.href = 'index.html'};
+    
+    var b64;
+    var bRunning = false; 
+    var bUploaded = false;
+
+    $(".file").change(function(){
+        lrz(this.files[0], {width: 280}, function (results) {
+            // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+            console.log("图片压缩成功"+results);
+            b64 = results.base64;
+            
+            if(bRunning == true)
+                return;
+            bRunning = true;
+
+
+            var submit_data={'id': id, 'pic': b64 }; 
+            //$('#uploading').update('正在上传照片...');
+            $('#uploading').show();
+            // 发送到后端
+            $.ajax({ type: 'POST', 
+                    url: "upload_pic.php", 
+                    data: submit_data, 
+                    success: function(data) 
+                            {
+                                $('#uploading').hide();
+                                bUploaded = true;
+                                if (data.status == 1) {
+                                    bRunning = false;
+                                    var pic_name = 'img/upload/'+data.pic_name;
+                                    $("#mypic").attr("src",pic_name);
+                                };
+                                
+                            },
+                    complete: function() {}, 
+                    error:function(xhr, ajaxOptions, thrownError){
+                    alert(xhr.responseText); 
+                    bRunning = false;
+                }, 
+                    dataType: "json" });
+          });
+    });   
+
+    function clickonshare()
+    {
+        if (!bUploaded) {
+            alert('您忘记上传照片了：）');
+            return;};
+
+        setCookie('uploaded_pic', true);
+        $('#sharemcover0').show();
+    }
+
+
+  /**
+ * @desc 微信分享接口，前端示例
+ */
+(function ($) {
+    var WX_SIGNATURE_API = 'api.php';
+
+    var bootstrap = function () {
+        $.ajax({
+            url: WX_SIGNATURE_API,
+            data: {
+                url: location.href.split('#')[0],
+                type: "signature"
+            },
+            dataType: "json"
+       })
+        .success(function(result) {
+            if(result.code != 0)
+            {
+                //alert(result.code);
+                 return;
+            }
+            
+            configWeixin(result.data);
+        })
+        .error(function(xhr, status, error) {
+          var err = eval("(" + xhr.responseText + ")");
+          alert(err.Message);
+        })
+    };
+
+    var setupWeixinShare = function (message) {
+            wx.onMenuShareTimeline(message);
+            wx.onMenuShareAppMessage(message);
+            wx.onMenuShareQQ(message);
+            wx.onMenuShareWeibo(message);
+            wx.onMenuShareQZone(message);
+    };
+
+    var configWeixin = function (options) {
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: options.appId, // 必填，公众号的唯一标识
+            timestamp: options.timestamp, // 必填，生成签名的时间戳
+            nonceStr: options.nonceStr, // 必填，生成签名的随机串
+            signature: options.signature,// 必填，签名，见附录1
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone'
+            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+    };
+
+    wx.ready(function () {
+        setupWeixinShare({
+            title: '致我的家人：感谢一路相伴，守护成长。 --By 爸爸的礼物 ', // 分享标题
+            desc: '男人的内心有颗坚硬的水煮蛋', // 分享描述
+            link: 'http://www.vnewcd.com/weixinapi/gift/result.html?id='+id, // 分享链接
+            imgUrl: 'http://www.vnewcd.com/weixinapi/gift/img/test.jpg', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                window.location.href='result.html?id='+id;
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+
+    bootstrap();
+})(jQuery);
+</script>
+</body>
+</html><!--[if !IE]>|xGv00|23edc3cdaa277d2ca0f69be26e57b94a<![endif]-->

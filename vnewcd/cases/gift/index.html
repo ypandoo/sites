@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>爸爸的礼物</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+
+    <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+        <div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='test.jpg' />
+    </div>
+</head>
+<body>
+<h1 class="hid">爸爸的礼物</h1>
+<!--div style="height: 0;width: 0; overflow:hidden;text-indent: -999px;">
+    <img src="http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareLogo.jpg" alt=""/>
+</div-->
+<div id="loading" class="loading" style="z-index:999">
+    <div class="loadingBar">
+        <img src="img/loading_ico.png" alt=""/>
+    </div>
+    <p class="loadingNum" id="loadingNum"></p>
+</div>
+
+<div class="wrap">
+
+    <div class="item item-0" style="z-index :1">
+        <!--div class="title animated duration2s "></div-->
+        <div class="bg"><img src="img/0/bg.png" width="100%">
+            <!--img src="img/0/title.png" style="position: absolute;
+    top: 90px;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;"/-->
+        </div>
+        <div class="camera animated duration3s infinite tada" onclick="start()"></div>
+    </div>
+
+
+    <div class="item item-1">
+        <div class="content" >
+            <div id="gift_frist">
+                <!--div class="title"></div-->
+                <div class="paopao-more" style="display:none"></div>
+                <div class="transformer" style="display:none" onclick="transformer_click()"></div>
+                <div class="arrow" class="animated infinite duration2s bounce"></div>
+                <div class="gift" onclick="gift_open()" class=""></div>
+                <div class="text"  style="display:none" >泡泡糖、变形金刚、闹钟...<br>满满一箱爸爸的礼物<br>看似简单的礼物...<br>却饱含爸爸的用心和深意...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item item-2">
+        <div class="content" >
+            <div class="boxup " style="display:none">
+                <div class="paopao animated infinite duration2s zoom"></div>
+                <div class="textbg animated" style="opacity:0"></div>
+            </div>
+
+            <div class="boxdown animated" style="display:none">
+                <div class="tf animated infinite tada"></div>
+                <div class="textbg animated " style="opacity:0"></div>
+            </div>
+        </div>
+        <div class="up animated infinite bounce2"></div>
+    </div>
+
+    <div class="item item-3">
+        <div class="content" >
+            <div class="boxup" style="display:none">
+                <div class="clock animated infinite wobble"></div>
+                <div class="textbg "></div>
+            </div>
+
+            <div class="boxdown " style="display:none">
+                <div class="bag animated infinite duration3s bounce2"></div>
+                <div class="textbg"></div>
+            </div>
+            
+        </div>
+        <div class="up animated infinite bounce2"></div>
+    </div>
+
+    <div class="item item-4">
+        <div class="content" >
+                <div class="title"></div>
+                <div class="text0"></div>
+                <div class="text animated duration3s infinite pulse"></div>
+                <div class="dot animated duration3s infinite pulse"></div>
+
+        </div>
+        <div class="pen animated infinite duration4s shake"></div>
+        <div class="penbg"></div>
+        <div class="up animated infinite bounce2"></div>
+    </div>
+
+    <div class="item item-5">
+        <div class="content" >
+                <div class="title animated duration2s infinite " onclick="playvedio()">
+                    <video controls="controls"  id="myvedio" style="display: none;">
+                    <source src="http://yuexiu30-vedio.stor.sinaapp.com/zhufu.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="text1"></div>
+                <div class="text2 animated duration3s infinite zoom"></div>
+        </div>
+        <!--div class="share" onclick="shareme()"></div-->
+        <div class="up animated infinite bounce2"></div>
+    </div>
+
+    <div class="item item-6">
+    </div>
+
+</div>
+
+<!--禁止横屏代码-->
+<div class="mask flexcontainer" id="mask" >
+    <div class="mask-box">
+        <div class="mask-pic"><i></i></div>
+        <span>为了更好的体验，请将手机/平板竖过来</span>
+    </div>
+</div>
+
+<!--音乐-->
+<div class="musicDiv animated infinite spin" id="musicDiv" style="z-index:999" >
+    <p class="musicOn" ></p>
+    <p class="musicStop" style="display:none;"></p>
+</div>
+<!--音乐-->
+
+<!--分享指引-->
+<div class="shareGuide" id="shareGuide">
+    <p class="shareArrow"></p>
+</div>
+<!--分享指引-->
+
+<!--script src="js/zepto-1.1.3.min.js"></script-->
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/iSlider.js"></script>
+<script type="text/javascript" src="js/vnewbase.js"></script>
+
+<script>
+    
+    // 缩放   必须放在 isider 前
+    var content = $(".content");
+    var currentScreenW = $(window).width() / 320;
+    var currentScreenH = $(window).height() / 504;
+    var scaleNum = 1;
+    var moveKey = false;
+    var sec2WifiKey = true;
+    var sec2Fir = true;
+
+    var tapSum = 0 ;
+    if (currentScreenW > currentScreenH) {
+
+        scaleNum = currentScreenH;
+
+    } else {
+
+        scaleNum = currentScreenW;
+
+    }
+
+    content.css({"-webkit-transform": "scale("+ scaleNum +")"});
+//  sec8Boy.css({"-webkit-transform": "scale("+ scaleNum +")"});
+//  sec8Dialogue.css({"-webkit-transform": "scale("+ scaleNum +")" + "translateX(-50%)"});
+</script>
+
+<script type="text/javascript">
+    //    插入音乐
+    var url = "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/music.mp3" ;
+    window.audio = document.createElement("audio");
+    var source = document.createElement("source");
+    audio.id = "audio" ;
+    source.type = "audio/mpeg" ;
+    source.src = url ;
+    source.autoplay = "autoplay" ;
+    audio.addEventListener("ended",function(){
+        audio.play();
+    },false);
+    audio.appendChild(source);
+    audio.play();
+    //    关闭音乐
+    var musicBtn = $("#musicDiv");
+    var musicStop = $("#musicDiv .musicStop");
+    var musicOn = $("#musicDiv .musicOn");
+    musicBtn.on("click",function(){
+        if (audio.paused) {
+            //musicOn.show();
+            //musicStop.hide();
+            audio.play();
+            musicBtn.removeClass('spin').addClass('spin');
+        } else {
+            //musicOn.hide();
+            //musicStop.show();
+            audio.pause();
+            musicBtn.removeClass('spin');
+        }
+    });
+
+    function playvedio()
+    {
+            $('#myvedio').css("display","block");
+            //$(this).parent().find("video")[0].play();
+            var elem = document.getElementById("myvedio");
+            /*if (elem.requestFullscreen) {
+              //elem.requestFullscreen();
+              elem.play();
+            } else if (elem.mozRequestFullScreen) {
+              //elem.mozRequestFullScreen(); 
+              elem.play();
+            } else if (elem.webkitRequestFullscreen) {
+              //elem.webkitRequestFullscreen(); */
+              
+            elem.play();
+            audio.pause();
+            musicBtn.removeClass('spin');
+    }
+
+    var slider = new iSlider({
+        wrap:'.wrap',
+        noslide: '0',
+        item:'.item',
+        playClass:'play',
+        animateType:'depth',
+        speed:'1000',
+        lastLocate: false,
+        onslide:function (index) {
+            if (index == 0) { slide0()};
+            if (index == 1) { slide1()};
+            if (index == 2) { slide2()};
+            if (index == 3) { slide3()};
+            if (index == 6) { shareme()};
+        },
+        loadingImgs:[
+            'http://vnewcd.com/showoutside/gift/img/bg.jpg',
+            'http://vnewcd.com/showoutside/gift/img/up.png',
+            'http://vnewcd.com/showoutside/gift/img/music.png',
+            'http://vnewcd.com/showoutside/gift/img/arrow.png',
+
+            'http://vnewcd.com/showoutside/gift/img/0/bg.png',
+            'http://vnewcd.com/showoutside/gift/img/0/camera.png',
+            //'http://vnewcd.com/showoutside/gift/img/0/title.png',
+
+            'http://vnewcd.com/showoutside/gift/img/1/arrow.png',
+            'http://vnewcd.com/showoutside/gift/img/1/frame.png',
+            'http://vnewcd.com/showoutside/gift/img/1/gift.png',
+            'http://vnewcd.com/showoutside/gift/img/1/gift-open.png',
+            'http://vnewcd.com/showoutside/gift/img/1/paopao-more.png',
+            'http://vnewcd.com/showoutside/gift/img/1/tf.png',
+
+            'http://vnewcd.com/showoutside/gift/img/2/up.png',
+            'http://vnewcd.com/showoutside/gift/img/2/down.png',
+            'http://vnewcd.com/showoutside/gift/img/2/textup.png',
+            'http://vnewcd.com/showoutside/gift/img/2/textdown.png',
+            'http://vnewcd.com/showoutside/gift/img/2/tf.png',
+            'http://vnewcd.com/showoutside/gift/img/2/paopao.png',
+            
+            'http://vnewcd.com/showoutside/gift/img/3/up.png',
+            'http://vnewcd.com/showoutside/gift/img/3/down.png',
+            'http://vnewcd.com/showoutside/gift/img/3/textup.png',
+            'http://vnewcd.com/showoutside/gift/img/3/textdown.png',
+            'http://vnewcd.com/showoutside/gift/img/3/clock.png',
+            'http://vnewcd.com/showoutside/gift/img/3/bag.png',
+
+            'http://vnewcd.com/showoutside/gift/img/4/pen.png',
+            'http://vnewcd.com/showoutside/gift/img/4/text.png',
+            'http://vnewcd.com/showoutside/gift/img/4/title.png',
+            'http://vnewcd.com/showoutside/gift/img/4/dot.png',
+            'http://vnewcd.com/showoutside/gift/img/4/penbg.png',
+
+
+            'http://vnewcd.com/showoutside/gift/img/5/text2.png',
+            'http://vnewcd.com/showoutside/gift/img/5/text1.png',
+            'http://vnewcd.com/showoutside/gift/img/5/title.png',
+            'http://vnewcd.com/showoutside/gift/img/5/share.png',
+
+            'http://vnewcd.com/showoutside/gift/img/6/imgframe.png',
+            'http://vnewcd.com/showoutside/gift/img/6/share.png',
+            'http://vnewcd.com/showoutside/gift/img/6/logo.png',
+            'http://vnewcd.com/showoutside/gift/img/6/share.png',
+            'http://vnewcd.com/showoutside/gift/img/6/text.png',
+
+        ],
+        onloading:function (loaded,total) {
+            $('.wrap').hide();
+            this.$('#loading div').style.width=loaded/total*100+'%';
+            this.$('#loading #loadingNum').innerHTML = parseInt((loaded/total)*100) + "%";
+
+            if (loaded==total) {
+                this.$('#loading').style.display="none";
+                $('.wrap').show();
+                slide0();
+            }
+        }
+    });
+
+    function start()
+    {
+        $('.item-0').addClass('animated flash');
+        setTimeout(function(){ 
+            slider.next(); 
+        }, 1000);
+         
+    }
+
+    function gift_open()
+    {
+        $('.paopao-more').show();
+        $('.transformer').show();
+        $('.item-1 .text').show();
+        $('.item-1 .arrow').hide();
+
+        $('.paopao-more').addClass('animated duration5s fadeInUp');
+        $('.transformer').addClass('animated duration2s fadeInUp');
+        $('.item-1 .text').addClass('animated duration2s fadeIn');
+        $('#gift_frist .gift').addClass('gift-open');
+        $('#gift_frist .gift').removeClass('gift');
+        $('#gift_frist .gift-open').css("background-image", "url(img/1/gift-open.png)");
+        $('#gift_frist .gift-open').addClass('animated duration2s fadeIn');
+
+        setTimeout(function(){ 
+            $('.transformer').removeClass('fadeInUp');
+            $('.transformer').addClass('infinite').addClass('tada');;
+        }, 2000);
+
+       // $('#gift_frist .gift-open').fadeIn(3000, function(){
+        //slider.next();
+            
+        //});
+
+    }
+
+    function slide0()
+    {
+        $('.item-0 .bg').addClass('animated').addClass('flip');
+    }
+
+    function slide1()
+    {
+        $('.item-0').removeClass('animated').removeClass('flash');
+    }
+
+    function slide2()
+    {
+        /*           <div class="boxup animated slideInLeft">
+                <div class="paopao animated"></div>
+                <div class="textbg animated delay1s fadeIn "></div>
+            </div>
+
+            <div class="boxdown animated delay1s slideInRight">
+                <div class="tf animated"></div>
+                <div class="textbg animated delay2s fadeIn "></div>*/
+
+        $('.item-2 .boxup').hide();
+        $('.item-2 .boxdown').hide();
+        $('.item-2 .boxup').removeClass('animated').removeClass('slideInLeft');
+        $('.item-2 .boxdown').removeClass('animated').removeClass('delay1s').removeClass('slideInRight');
+        $('.item-2 .boxup .textbg').removeClass('animated').removeClass('fadeIn').removeClass('delay1s');
+        $('.item-2 .boxdown .textbg').removeClass('animated').removeClass('fadeIn').removeClass('delay2s');
+
+
+        
+        setTimeout(function(){
+        $('.item-2 .boxup').show();
+        $('.item-2 .boxdown').show();
+        $('.item-2 .boxup').addClass('animated slideInLeft');
+        $('.item-2 .boxdown').addClass('animated delay1s slideInRight');
+        $('.item-2 .boxup .textbg').addClass('animated delay1s fadeIn');
+        $('.item-2 .boxdown .textbg').addClass('animated delay2s fadeIn');            
+    }, 50)
+    }
+
+    function slide3()
+    {
+        /*           <div class="boxup animated slideInLeft">
+                <div class="paopao animated"></div>
+                <div class="textbg animated delay1s fadeIn "></div>
+            </div>
+
+            <div class="boxdown animated delay1s slideInRight">
+                <div class="tf animated"></div>
+                <div class="textbg animated delay2s fadeIn "></div>*/
+        $('.item-3 .boxup').hide();
+        $('.item-3 .boxdown').hide();
+;
+        $('.item-3 .boxup').removeClass('animated').removeClass('slideInLeft');
+        $('.item-3 .boxdown').removeClass('animated').removeClass('delay1s').removeClass('slideInRight');
+        $('.item-3 .boxup .textbg').removeClass('animated').removeClass('fadeIn').removeClass('delay1s');
+        $('.item-3 .boxdown .textbg').removeClass('animated').removeClass('fadeIn').removeClass('delay2s');
+        
+        setTimeout(function(){
+        $('.item-3 .boxup').show();
+        $('.item-3 .boxdown').show();
+        $('.item-3 .boxup').addClass('animated slideInLeft');
+        $('.item-3 .boxdown').addClass('animated delay1s slideInRight');
+        $('.item-3 .boxup .textbg').addClass('animated delay1s fadeIn');
+        $('.item-3 .boxdown .textbg').addClass('animated delay2s fadeIn');            
+        }, 50);
+    }
+
+    function transformer_click()
+    {
+        slider.next();
+    }
+
+
+/*    var shareGuide = $("#shareGuide");
+    $("body").on("tap","#shareBtn" , function(){
+        shareGuide.show()
+    });
+    $("body").on("tap","#shareGuide", function(){
+        shareGuide.hide()
+    });*/
+
+
+        $("body").on("tap", "#shareBtn" , function(){
+     window.location.reload();
+     });
+
+    function shareme()
+    {
+        var newlink = 'upload.html?id='+uuid();
+        window.location.href = newlink;
+    }
+
+    /*function onBridgeReady() {
+        //转发朋友圈
+        WeixinJSBridge.on("menu:share:timeline", function(e) {
+            var url = "http://nextidea.qq.com/act/a20150610ideas/";
+            var data = {
+                img_url: "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareLogo.jpg",
+                img_width: "300",
+                img_height: "300",
+                link: url,
+                //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+                desc:"或许下一个创意会让所有人为我起立，鼓掌！",
+                title: "你的创意还活着么？"
+            };
+        WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+            WeixinJSBridge.log(res.err_msg)
+        });
+            pgvSendClick({hottag:'act.a20150610ideas.share.timeline'});
+
+        });
+        //同步到微博
+        WeixinJSBridge.on("menu:share:weibo", function() {
+            var url = "http://nextidea.qq.com/act/a20150610ideas/";
+            WeixinJSBridge.invoke("shareWeibo", {
+               "content": "或许下一个创意会让所有人为我起立，鼓掌！",
+               "url": url
+                 }, function(res) {
+                     WeixinJSBridge.log(res.err_msg);
+                });
+            pgvSendClick({hottag:'act.a20150610ideas.share.weibo'});
+        });
+        //分享给朋友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+            var url = "http://nextidea.qq.com/act/a20150610ideas/";
+            WeixinJSBridge.invoke("sendAppMessage", {
+                img_url: "http://ossweb-img.qq.com/images/nextidea/act/a20150610ideas/shareLogo.jpg",
+                img_width: "300",
+                img_height: "300",
+                link: url,
+                desc: "或许下一个创意会让所有人为我起立，鼓掌！",
+                title: "你的创意还活着么？"
+            }, function(res) {
+                WeixinJSBridge.log(res.err_msg)
+            });
+            pgvSendClick({hottag:'act.a20150610ideas.share.appmessage'});
+        });
+    };
+    //执行
+    try{
+    document.addEventListener('WeixinJSBridgeReady', function() {
+        onBridgeReady();
+    });
+    }catch(e){}*/
+</script>
+</body>
+</html><!--[if !IE]>|xGv00|23edc3cdaa277d2ca0f69be26e57b94a<![endif]-->
