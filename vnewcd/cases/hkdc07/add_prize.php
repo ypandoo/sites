@@ -48,7 +48,7 @@
 	$count_level2 = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `LEVEL` = '2'");
 	$count_level3 = $db->get_var("SELECT count(*) FROM `T_MSL_HKDC` WHERE `LEVEL` = '3'");
 
-	if ($level == 1 && $count_level1 >= 3) {
+	if ($level == 1 && $count_level1 >= 10) {
 		$data_result["success"] = 0;
 		$data_result["errorCode"] = 3;
 		$data_result['message'] = "今天的书迷证已经抢光啦！再玩一次说不定会抢到其他礼品哦！";
@@ -57,7 +57,7 @@
 		exit;
 	}
 
-	if ($level == 2 && $count_level2 >= 10) {
+	if ($level == 2 && $count_level2 >= 30) {
 		$data_result["success"] = 0;
 		$data_result["errorCode"] = 3;
 		$data_result['message'] = "今天的书展VIP门票已经抢光啦！再玩一次说不定会抢到其他礼品哦！";
@@ -66,7 +66,7 @@
 		exit;
 	}
 
-	if ($level == 3 && $count_level3 >= 30) {
+	if ($level == 3 && $count_level3 >= 50) {
 		$data_result["success"] = 0;
 		$data_result["errorCode"] = 3;
 		$data_result['message'] = "今天的书展门票已经抢光啦！再玩一次说不定会抢到其他礼品哦！";

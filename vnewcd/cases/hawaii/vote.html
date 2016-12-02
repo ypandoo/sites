@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>环保创意大比拼，Hōkūleʻa 带你去往夏威夷</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<div style="display:none">
+  <img src="images/logo.jpg"/>
+</div>
+<style>
+.upload_img{
+  width: 80%;
+  margin: 0 auto;
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  padding: 10px;
+}
+
+.info{
+  width: 80%;
+  /* margin-left: 10%; */
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.upload_btn{
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.img{
+  /*height: 180px;*/
+  /* width: 100%; */
+  text-align: center;
+  /* vertical-align: middle; */
+  /* padding: 10px; */
+  margin-top: 20px;
+}
+
+
+.file {
+  position: relative;
+  display: inline-block;
+  background: #f9f9dd;
+  border: 1px solid #fe8d2b;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #ff7e10;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+/*.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}*/
+
+.input_underline{
+  border-bottom: 1px solid rgba(255,125,14,0.5);
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 160px;
+  /*margin-left: 10px;*/
+  letter-spacing: 1px;
+  color:rgba(255,125,14,1);
+}
+
+.row{
+  margin: 20px;
+}
+
+.row label{
+      letter-spacing: 1px;
+}
+
+.row textarea{
+  border: 1px solid rgba(255,125,14,0.5);
+  border-radius: 10px;
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(255,125,14,0.5);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:   rgba(255,125,14,0.5);
+}
+
+.bottom{
+  position: fixed;
+      bottom: 0;
+      background-image: url(images/menu_bg.jpg);
+      background-size: 100% 100%;
+      width: 100%;
+  border-top: 2px solid white;
+}
+
+.bottom .item{
+  width: 24.99999%;
+  float: left;
+  height: auto;
+  text-align: center;
+  padding: 5px 0 5px 0;
+}
+
+.bg{
+  background-image: url("images/bg.jpg");
+  background-size: contain;
+}
+
+.title{
+  width: 100%;
+  padding:30px 0 30px 0;
+  text-align: center;
+}
+
+label{
+  color: rgba(255,125,14,1);
+  font-size: 16px;
+}
+
+.vote_item{
+  width: 50%;
+  float: left;
+  /* padding: 10px; */
+  background-size: 100% 100%;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.vote_item_container{
+  width: 90%;
+  margin-left: 5%;
+  /* margin-top: 20px; */
+  text-align: center;
+  /* padding: 10px; */
+  padding-top: 10px;
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  height: 135px;
+}
+
+.vote_info{
+  overflow: hidden;
+}
+
+.vote_info .left{
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+
+.vote_info .right{
+  width: 40%;
+  float: left;
+  text-align: right;
+}
+
+.vote_info .left i{
+  margin-left: 10px;
+}
+
+.vote_info .right .number{
+  margin-right: 10px;
+}
+
+.vote_info .left i,
+.vote_info .left .name,
+.vote_info .right i,
+.vote_info .right .number
+{
+  font-size: 12px;
+  color: rgba(255,125,14,1);
+}
+
+.vote_info .left .name,
+.vote_info .right .number
+{
+  margin-left: 2px;
+}
+
+.vote_item .top{
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  height: 40px;
+  width: 40px;
+  /*background-image: url('images/prize1.png');
+  background-size: 100% 100%;*/
+}
+.vote_item .top2{
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  height: 35px;
+  width: 35px;
+  /*background-image: url('images/prize1.png');
+  background-size: 100% 100%;*/
+}
+
+.search{
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+</style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ea45a23ce589b02bcc0117f9efe3ea7f";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body class="bg"  ms-controller="info" >
+
+<div><img src="images/head-min.png" width="100%"></div>
+
+<div class="title" style="padding-bottom:10px"><img src="images/vote_t1.png" width="75%"></div>
+
+<div class="search">
+  <input class="input_underline" style="width:82%; letter-spacing:0px; float:left; height:30px"
+  placeholder="请输入手机号码查询您的作品"
+  ms-duplex="@tel"/>
+
+  <div style="width:15%; float:right" :click="@query_words()">
+    <i class="fa fa-search" style="font-size:30px; color:rgba(255,125,64,1)" aria-hidden="true"></i>
+  </div>
+</div>
+
+<div style="width:90%; margin-left:5%; overflow:hidden">
+<div class="vote_item" ms-for="($index, el) in @data">
+<div ms-if="$index == 0" class="top"><img src="images/prize1.png" width="100%"></div>
+<div ms-if="$index == 1" class="top2"><img src="images/prize2.png" width="100%"></div>
+<div ms-if="$index == 2" class="top2"><img src="images/prize3.png" width="100%"></div>
+<a ms-attr="{href:'detail.html?id='+el.TEL}">
+  <div class="vote_item_container">
+    <img  ms-attr="{src: 'uploads/'+el.PIC}" width="90%" height="100px"/>
+    <div class="vote_info">
+      <div class="left"><i class="fa fa-user" aria-hidden="true"></i><span class="name">{{el.NAME}}</span></div>
+      <div class="right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="number">{{el.VOTE}}</span></div>
+    </div>
+  </div>
+</a>
+</div>
+</div>
+
+<div style="margin-bottom:110px; margin-top:-20px; z-index:-1"></div>
+
+<div class="bottom">
+  <div class="item"><a href="index.html"><img src="images/index.png" height="60px"></a></div>
+  <div class="item"><a href="rule.html"><img src="images/rule.png" height="60px"></a></div>
+  <div class="item"><a href="register.html"><img src="images/register.png" height="60px"></a></div>
+  <div class="item"><a href="vote.html"><img src="images/vote.png" height="60px"></a></div>
+</div>
+
+<div id="loading" style="display:; position:fixed; bottom:200px; text-align:center;width:100%">
+  <i class="fa fa-spinner fa-pulse fa-2x fa-fw" style="color:white"></i>
+  <span class="sr-only">Loading...</span>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.min.js"></script>
+<script src="js/html5ImgCompress.min.js"></script>
+
+
+<script type="text/javascript">
+var vm = avalon.define({
+    $id: "info",
+    start: 0,
+    tel:'',
+    data: [],
+    query_words: function(){
+      if(vm.tel == '' || vm.tel == null || typeof vm.tel == 'undefined')
+      {
+        alert('请输入正确的手机号码');
+        return;
+      }
+
+      get_data();
+    }
+})
+
+var sending = false;
+function get_list()
+{
+  sending = true;
+  $('#loading').show();
+  $.ajax({
+    type:'post',//可选get
+    url:'query_words.php',
+    dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+    data:{
+      'START': vm.start,
+    },
+    success:function(msg){
+      sending = false;
+      $('#loading').hide();
+      if(msg.status == '1'){
+        for (var i = 0; i < msg.data.length; i++) {
+         vm.data.push(msg.data[i]);
+        }
+        vm.start += 10;
+      }else if(msg.status == '2'){
+
+      }
+      else{
+        alert('无法获得参赛作品！');
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      alert('提交失败:'+XMLHttpRequest.responseText);
+      sending = false;
+      $('#loading').hide();
+    }
+  });
+}
+
+function get_data()
+{
+  //get tel
+  $.ajax({
+    type:'post',//可选get
+    url:'query_detail.php',
+    dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+    data:{
+      'TEL': vm.tel,
+    },
+    success:function(msg){
+      if(msg.status == '1'){
+        //vm.data = msg.data;
+        window.location.href = 'detail.html?id='+ msg.data[0].TEL;
+      }else{
+        alert('无法找到相应参赛作品！请检查后重新输入！');
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      alert('提交失败:'+XMLHttpRequest.responseText);
+    }
+  });
+}
+
+get_list();
+
+//作为一个对象的w和h属性返回视口的尺寸
+function getViewportSize(w){
+  //使用指定的窗口， 如果不带参数则使用当前窗口
+  w = w || window;
+  //除了IE8及更早的版本以外，其他浏览器都能用
+  if(w.innerWidth != null)
+      return {w: w.innerWidth, h: w.innerHeight};
+  //对标准模式下的IE（或任意浏览器）
+  var d = w.document;
+  if(document.compatMode == "CSS1Compat")
+      return {w: d.documentElement.clientWidth, h: d.documentElement.clientHeight};
+  //对怪异模式下的浏览器
+  return {w: d.body.clientWidth, h: d.body.clientHeight};
+}
+
+//检测滚动条是否滚动到页面底部
+function isScrollToPageBottom(){
+  //文档高度
+  var documentHeight = document.documentElement.offsetHeight;
+  var viewPortHeight = getViewportSize().h;
+  var scrollHeight = window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop || 0;
+  return documentHeight - viewPortHeight - scrollHeight < 20;
+}
+
+
+window.onscroll = function () {
+  if (sending) {
+    return;
+  }
+
+  if(isScrollToPageBottom()){
+        get_list();
+    }
+}
+
+</script>
+
+</body>
+</html>

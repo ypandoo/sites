@@ -1,0 +1,567 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>我参加了"我的小小独木舟"环保创意大赛,快来帮我投票赢取全家夏威夷旅行大奖！</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+<div style="display:none">
+  <img src="images/logo.jpg"/>
+</div>
+
+<style>
+.upload_img{
+  width: 80%;
+  margin: 0 auto;
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  padding: 10px;
+}
+
+.info{
+  width: 80%;
+  /* margin-left: 10%; */
+  /* border: 1px solid rgba(0,0,0,0.1); */
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.upload_btn{
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.img{
+  /*height: 180px;*/
+  /* width: 100%; */
+  text-align: center;
+  /* vertical-align: middle; */
+  /* padding: 10px; */
+  margin-top: 20px;
+}
+
+
+.file {
+  position: relative;
+  display: inline-block;
+  background: #f9f9dd;
+  border-bottom: 1px solid #fe8d2b;
+  /* border-radius: 4px; */
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #ff7e10;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+  letter-spacing: 4px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+/*.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}*/
+
+.input_underline{
+  border-bottom: 1px solid rgba(255,125,14,0.5);
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  width: 160px;
+  /*margin-left: 10px;*/
+  letter-spacing: 1px;
+}
+
+.row{
+  margin: 20px;
+}
+
+.row label{
+      letter-spacing: 1px;
+}
+
+.row textarea{
+  border: 1px solid rgba(255,125,14,0.5);
+  border-radius: 10px;
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(255,125,14,0.5);
+    font-size: 14px;
+    text-align:center;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+   font-size: 14px;
+   text-align:center;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgba(255,125,14,0.5);
+   opacity:  1;
+   font-size: 14px;
+   text-align:center;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:   rgba(255,125,14,0.5);
+   font-size: 14px;
+   text-align:center;
+}
+
+.bottom{
+  position: fixed;
+      bottom: 0;
+      background-image: url(images/menu_bg.jpg);
+      background-size: 100% 100%;
+      width: 100%;
+  border-top: 2px solid white;
+}
+
+.bottom .item{
+  width: 24.99999%;
+  float: left;
+  height: auto;
+  text-align: center;
+  padding: 5px 0 5px 0;
+}
+
+.bg{
+  background-image: url("images/bg.jpg");
+  background-size: 100% 100%;
+}
+
+.title{
+  width: 100%;
+  padding:30px 0 30px 0;
+  text-align: center;
+}
+
+label{
+  color: rgba(255,125,14,1);
+  font-size: 16px;
+}
+
+.vote_item{
+  width: 50%;
+  float: left;
+  /* padding: 10px; */
+  background-size: 100% 100%;
+  margin-bottom: 20px;
+}
+
+.vote_item_container{
+  width: 90%;
+  margin-left: 5%;
+  /* margin-top: 20px; */
+  text-align: center;
+  /* padding: 10px; */
+  padding-top: 10px;
+  background-image: url(images/dialog_bg-min.png);
+  background-size: 100% 100%;
+  height: 160px;
+}
+
+.vote_info{
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.vote_info .left{
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+.vote_info .right{
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.vote_info .left i{
+  margin-left: 10px;
+}
+
+.vote_info .right .number{
+  margin-right: 10px;
+}
+
+.vote_info .left i,
+.vote_info .left .name,
+.vote_info .right i,
+.vote_info .right .number
+{
+  font-size: 20px;
+  color: rgba(255,125,14,1);
+}
+
+.vote_info .left .name,
+.vote_info .right .number
+{
+  margin-left: 10px;
+}
+
+.buttons{
+  width: 80%;
+      margin: 10px 10% 0px 10%;
+      overflow: hidden;
+}
+
+.buttons .left, .buttons .right{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.buttons .left .button, .buttons .right .button{
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 125, 64,1);
+  border-radius: 40px;
+  background: rgba(255,255,255,0.5);
+}
+
+.buttons .button i{
+  font-size: 30px;
+margin-top: 15px;
+color: rgba(255, 125, 64, 1);
+}
+
+.share{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 45, 45, 0.9);
+    z-index: 999;
+    display: none;
+    /*transition: all 0.8s;*/
+    /*transform: translate(0px, 0px);*/
+}
+
+.share .pointer{
+    width: 33%;
+    right: 6%;
+    top: 3%;
+    position: absolute;
+}
+
+.input_underline2 {
+    border: 1px solid rgba(255,125,14,0.5);
+    -webkit-appearance: none;
+    background-color: transparent;
+    height: 24px;
+    border-radius: 15px;
+    /* border-top: 0px; */
+    /* border-left: 0px; */
+    /* border-right: 0px; */
+    width: 90%;
+    /* margin-left: 10px; */
+    letter-spacing: 1px;
+}
+
+
+.agree{
+  position: relative;
+    display: inline-block;
+    /* background: #ffffea; */
+    /* border-bottom: 1px solid #fe8d2b; */
+    /* border-radius: 4px; */
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #ff7e10;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-size: 14px;
+}
+
+.modal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: transparent;
+  top:0;
+  left:0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.notice_box{
+  width: 80%;
+  margin-left: 6%;
+  position: fixed;
+  margin-top: 40%;
+  text-align: center;
+  top: 0;
+  padding: 4%;
+  background-image: url('images/dialog_bg-min.png');
+  background-size:100% 100%;
+}
+
+</style>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ea45a23ce589b02bcc0117f9efe3ea7f";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body class="bg"  ms-controller="info" >
+
+<div><img src="images/head-min.png" width="100%"></div>
+
+<div class="title"><img src="images/detail_t1.png" width="75%"></div>
+
+<div style="    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-image: url(images/dialog_bg-min.png);">
+    <div style="padding:30px 20px;">
+        <img src="images/head-min.png" width="100%" id="img"/>
+        <div class="vote_info">
+          <div class="left"><i class="fa fa-user" aria-hidden="true"></i><span class="name">{{@name}}</span></div>
+          <div class="right"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span class="number">{{@vote}}</span></div>
+        </div>
+        <div style="border-bottom:1px dashed rgba(255,125,64,1);margin: 15px 10px;"></div>
+        <div>
+          <p style="font-size:16px; color:rgba(255,125,64,1); margin-left:10px">参赛作品描述：</p>
+          <p style="font-size:14px; color:rgba(255,125,64,1); margin-left:10px">「{{@description}}」</p>
+        </div>
+
+
+    </div>
+
+    <div class="buttons">
+      <div class="left" id="left_click">
+        <div class="button" style="background-image:url('images/wechat.png');
+        background-size:30px 30px;
+        background-position:center; background-repeat:no-repeat">
+        </div>
+      </div>
+      <div class="right"  id="right_click">
+        <div class="button"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+    <div class="buttons" style="margin-top:0px; margin-bottom:20px">
+      <div class="left">
+        <p style="font-size:14px; color:rgba(255,125,64,1)">分享到朋友圈</p>
+      </div>
+      <div class="right">
+        <p style="font-size:14px; color:rgba(255,125,64,1)">为TA点赞</p>
+      </div>
+    </div>
+</div>
+
+
+<div style="margin-bottom:70px; margin-top:20px; z-index:-1"><img src="images/focus.png" width="100%"> </div>
+
+<div class="bottom">
+  <div class="item"><a href="index.html"><img src="images/index.png" height="60px"></a></div>
+  <div class="item"><a href="rule.html"><img src="images/rule.png" height="60px"></a></div>
+  <div class="item"><a href="register.html"><img src="images/register.png" height="60px"></a></div>
+  <div class="item"><a href="vote.html"><img src="images/vote.png" height="60px"></a></div>
+</div>
+
+<div class="share" id="share_page">
+      <p style="font-size: 16px;
+    color: White;
+    text-align: left;
+    line-height: 24px;
+    padding-left: 20px;
+    padding-top: 30px;">
+        点击右上角分享到朋友圈！让朋友为你<br>
+        加油打气，赢取夏威夷旅行大奖吧！
+      </p>
+			<div style="margin-left: 20%;margin-top: 30%;width: 60%;text-align: center;"
+      class="animated tada infinite">
+        <img src="images/cheer.png" width="100%" >
+      </div>
+      <div><img src="images/arrow.png" class="animated bounce infinite"
+        style="position:absolute; top:10px; right:10px; width:60px; height:80px"></div>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/2.1.6/avalon.js"></script>
+
+
+<script src="js/vnewbase.js"></script>
+
+
+<script type="text/javascript">
+if(!isWeixin())
+{
+  alert('对不起，只能在微信中投票！请在微信中打开网页！');
+  window.location.href = 'index.html';
+}
+
+var tel = getQueryString('id');
+if(tel == '' || tel == null || typeof tel == 'undefined')
+{
+  alert('Sorry！我们没能找到该手机号对应的作品！请更换手机号再试一次！');
+  window.location.href = 'vote.html';
+}
+else{
+  get_data();
+}
+
+$("#left_click").click(function(){
+vm.share_page();
+});
+
+$("#right_click").click(function(){
+vm.add_vote();
+});
+
+$("#share_page").click(function(){
+vm.close_share();
+});
+
+var vm = avalon.define({
+    $id: "info",
+    start: 0,
+    name: '',
+    age:'',
+    description:'',
+    vote:'',
+    pic:'',
+    add_vote: function(){
+      var myDate = new Date();
+      var today = myDate.getFullYear().toString();
+      today += (myDate.getMonth()+1);
+      today += myDate.getDate();
+      var vote_number = getCookie(today);
+      if(vote_number == '' || vote_number == null || typeof vote_number == 'undefined')
+      {
+        vote_number = 1;
+        vm.vote = parseInt(vm.vote) + 1;
+        setCookie(today, vote_number);
+        update_vote();
+        return;
+      }
+
+      if(parseInt(vote_number) >= 3)
+      {
+        alert('您今天的投票名额已用完！明天再来吧！');
+        return;
+      }
+
+      setCookie(today, parseInt(vote_number)+1);
+      vm.vote = parseInt(vm.vote) + 1;
+
+      //Save vote number to database
+      update_vote();
+    },
+    share_page: function(){
+      var current_page = $('#share_page');
+      current_page.fadeIn();
+    },
+    close_share:function(){
+      var current_page = $('#share_page');
+      current_page.fadeOut();
+    }
+})
+
+function get_data()
+{
+  //get tel
+  $.ajax({
+    type:'post',//可选get
+    url:'query_detail.php',
+    dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+    data:{
+      'TEL': tel,
+    },
+    success:function(msg){
+      if(msg.status == '1'){
+        //vm.data = msg.data;
+        vm.name = msg.data[0].NAME;
+        vm.tel = msg.data[0].TEL;
+        vm.description = msg.data[0].DESCRIPTION;
+        vm.vote = msg.data[0].VOTE;
+        vm.age = msg.data[0].AGE;
+        vm.pic = msg.data[0].PIC;
+        $("#img").attr('src', 'uploads/'+vm.pic);
+      }else{
+        alert('无法获得参赛作品！');
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      // alert('提交失败:'+XMLHttpRequest.responseText);
+    }
+  });
+}
+
+function update_vote()
+{
+  //get tel
+  $.ajax({
+    type:'post',//可选get
+    url:'update_vote.php',
+    dataType:'Json',//服务器返回的数据类型 可选XML ,Json jsonp script html text等
+    data:{
+      'TEL': tel,
+    },
+    success:function(msg){
+      if(msg.status == '1'){
+      }else{
+        alert('投票失败！');
+      }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      // alert('提交失败:'+XMLHttpRequest.responseText);
+    }
+  });
+}
+
+function isWeixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+</script>
+
+</body>
+</html>

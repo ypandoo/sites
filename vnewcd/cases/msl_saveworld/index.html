@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>换灯行动，拯救冰山</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<style>
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+.bg{
+  background-size: 100% 100%;
+  background: linear-gradient(to bottom, #a3e3f8, #0273bd);
+}
+
+.light{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.buttons{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.left{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.right{
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.text{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+}
+
+.text p{
+  font-size: 12px;
+      color: white;
+      text-align: center;
+      line-height: 18px;
+}
+
+a{
+  color: white;
+}
+
+.delay1s{
+  animation-delay:1s;
+-webkit-animation-delay:1s; /* Safari 和 Chrome */
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+</style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d991e1cc9ee79fd59eb9878372ef492c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<div style="display:none">
+  <img src="images/logo.jpg"/>
+</div>
+</head>
+
+
+<body class="bg" ms-controller="game-control">
+
+<div id="1" ms-click="switch_view('2')" style="display:block">
+
+  <img src="images/cover-min.png" style="width:70%; margin-left:15%; margin-top:40px"/>
+  <div style="    bottom: 40px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    background: url(images/start_btn.png);
+    background-size: 100% 100%;
+    margin: 40px auto;" class="animated infinite pulse">
+    <!-- <img src="" style=" "/> -->
+  </div>
+</div>
+
+<div id="2" style="display:none">
+  <img src="images/light_t1-min.png" style="width:70%; margin-left:15%; margin-top:10px"/>
+  <div class="light">
+
+    <div style="width:50%; margin-left:25%; background-image:url('images/lightdown-min.png');background-size:100% 100%">
+        <div><img src="images/lightup-min.png" width="100%" ms-css-opacity="opacity" style="opacity:0.01"></div>
+    </div>
+
+
+    <div id="tap_btn" style="width:100%; text-align:center">
+    <div style="    text-align: center;
+    width: 150px;
+    height: 50px;
+    background: url(images/light_btn0-min.png);
+    background-size: 100% 100%;
+    margin: 50px auto;
+}" id='tap_img'>
+      <!-- <img id="tap_btn_img" src="images/light_btn0-min.png" style=" width: 150px;height: 50px; pointer-events:none" alt=""/> -->
+    </div>
+    </div>
+
+    <div style="width:130px; height:80px; position:absolute; right:10px; bottom:20px;
+    background-image:url('images/light_t2-min.png');background-size:100% 100%">
+    </div>
+
+    <div style="width: 60px;
+    height: 100px;
+    position: absolute;
+    left: 70px;
+    bottom: 90px;
+    background-image: url(images/pop1.png);
+    background-size: 100% 100%;" class="animated infinite bounceOut delay1s">
+    </div>
+
+    <div style="width: 60px;
+    height: 100px;
+    position: absolute;
+    right: 70px;
+    bottom: 90px;
+    background-image: url(images/pop2.png);
+    background-size: 100% 100%;"  class="animated infinite bounceOut delay1s">
+    </div>
+  </div>
+</div>
+
+<div id="3" style="display:none">
+  <img src="images/failure.png" style="width:70%; margin-left:15%; margin-top:10px"  class="animated flip"/>
+  <div class="buttons">
+      <div class="left animated infinite pulse">
+        <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展及国际环保博览,邀您一起参加换灯行动拯救冰川,更有惊喜好礼等着您!&pic=http://www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
+          <img src="images/share.png" width="120px" height="50px"/></a></div>
+      <div class="right animated infinite pulse">
+        <a href="index.html">
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
+  </div>
+
+  <div class="text">
+    <p>更多资讯,尽在10月27至30日香港国际秋季灯饰展.
+      <br>及10月26日至29日国际环保博览 <a href="http://www.hktdc.com">http://www.hktdc.com</a></p>
+  </div>
+</div>
+
+<div id="4" style="display:none">
+  <img src="images/success.png" style="width:70%; margin-left:15%; margin-top:10px"  class="animated flip"/>
+  <div class="buttons">
+      <div class="left animated infinite pulse">
+        <a href="http://service.weibo.com/share/share.php?url=http://www.vnewcd.com/cases/msl_saveworld&title=香港秋季国际灯展及国际环保博览,邀您一起参加换灯行动拯救冰川,更有惊喜好礼等着您!&pic=http://www.vnewcd.com/cases/msl_saveworld/images/logo.jpg" target="_blank">
+          <img src="images/share.png" width="120px" height="50px"/></a></div>
+      <div class="right animated infinite pulse">
+        <a href="index.html">
+          <img src="images/again.png" width="120px" height="50px"/></a></div>
+  </div>
+
+  <div class="text">
+    <p>更多资讯,尽在10月27至30日香港国际秋季灯饰展.
+      <br>及10月26日至29日国际环保博览 <a href="http://www.hktdc.com/info/trade-events/EX/sc/%E5%B1%95%E8%A7%88%E4%BA%8B%E5%8A%A1.htm">http://t.cn/a0NkEm</a></p>
+  </div>
+</div>
+
+
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<!-- <script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script> -->
+<!-- <script src="http://cdn.bootcss.com/hammer.js/2.0.8/hammer.min.js"></script> -->
+<script src="http://cdn.bootcss.com/avalon.js/1.5.8/avalon.mobile.js"></script>
+
+<script type="text/javascript">
+window.onload = function() {
+    with(document.body) {
+      oncontextmenu=function(){return false}
+      ondragstart=function(){return false}
+      onselectstart=function(){return false}
+      onbeforecopy=function(){return false}
+      onselect=function(){document.selection.empty()}
+      oncopy=function(){document.selection.empty()}
+    }
+}
+
+var vm = avalon.define({
+    $id: "game-control",
+    tapped: false,
+    opacity: 0.01,
+    switch_view: function(id){
+      $('#1').hide();
+      $('#2').hide();
+      $('#3').hide();
+      $('#'+id).fadeIn();
+    },
+  });
+
+  var pressInt;
+  var times = 0;
+  var finish = false;
+  $("#tap_btn").on('touchstart',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    $('#tap_img').css('background-image', 'url(images/light_btn1-min.png)');
+    // $("#tap_btn_img").attr("src","images/light_btn1-min.png");
+
+    pressInt = setInterval(function(){
+      vm.opacity += 0.02;
+      if (vm.opacity >= 1) {
+        vm.opacity = 1;
+        finish = true;
+        vm.switch_view(4);
+        clearInterval(pressInt);
+      }
+    },100)
+    console.log('touchstart');
+  });
+
+  $("#tap_btn").on('touchmove',function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $("#tap_btn").on('touchend',function(e){
+
+    times++;
+    if (times == 2 && finish == false) {
+      vm.switch_view(3);
+    }
+    clearInterval(pressInt);
+    vm.opacity = 0.01;
+    $('#tap_img').css('background-image', 'url(images/light_btn0-min.png)');
+    // document.getElementById('tap_img').style.backgroundImage="images/light_btn0-min.png";
+    console.log('touchend');
+  });
+
+
+</script>
+
+</body>
+</html>
