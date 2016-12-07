@@ -20,16 +20,29 @@ class Admin extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin');
+		$data['tree_item'] = 0;
+		$this->load->view('admin', $data);
+	}
+
+	public function contentlist()
+	{
+		$data['tree_item'] = 2;
+		$this->load->model('Content_Model');
+		$data['contentlist'] = $this->Content_Model->getContentList();
+		$this->load->view('admin_content_list', $data);
 	}
 
 	public function content()
 	{
-		$this->load->view('admin_content');
+		$data['tree_item'] = 2;
+		$this->load->model('Type_Model');
+		$data['typelist'] = $this->Type_Model->getTypeList();
+		$this->load->view('admin_content', $data);
 	}
 
 	public function typelist()
 	{
+		$data['tree_item'] = 1;
 		$this->load->model('Type_Model');
 		$data['typelist'] = $this->Type_Model->getTypeList();
 		$this->load->view('admin_type_list', $data);
