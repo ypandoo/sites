@@ -62,7 +62,7 @@
                     <?php echo $content['create_time']?>
                   </td>
                   <td>
-                     <button type="button" id="<?php echo $content['_id']?>" class="btn btn-primary" onclick="update(this.id)">更新</button>
+                     <a type="button" class="btn btn-primary" href="<?php echo site_url('admin/content/?id='.$content['_id'])?>">更新</a>
                   </td>
                   <td>
                      <button type="button" id="<?php echo $content['_id']?>" class="btn btn-danger" onclick="deleteById(this.id)">删除</button>

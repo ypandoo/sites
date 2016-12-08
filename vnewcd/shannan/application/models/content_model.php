@@ -22,12 +22,13 @@ class Content_Model extends CI_Model
         return  $data;
     }
 
-    public function  updateType($dataArry){
-        $this->db->replace('t_type', $dataArry);
-        $data["success"] = true;
-        $data["message"] = 'succeeded!';
+    public function  update($id, $data){
+      $this->db->where('_id', $id);
+      $this->db->update('t_content', $data);
+      $data["success"] = true;
+      $data["message"] = 'succeeded!';
 
-        return  $data;
+      return  $data;
     }
 
     public function getContentList()
@@ -36,6 +37,16 @@ class Content_Model extends CI_Model
         return $query->result_array();
     }
 
+    public function getById($id)
+    {
+        $query = $this->db->get_where('t_content', array('_id' => $id));
+        if(isset($query) && !empty($query))
+        {
+          return $query->result_array()[0];
+        }
+
+        return "";
+    }
 
     public function deleteById($id)
     {

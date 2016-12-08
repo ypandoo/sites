@@ -125,8 +125,26 @@
     <script src="<?php echo base_url('application/views/Huploadify/jquery.Huploadify.js') ?>"></script>
     <script src="<?php echo base_url('application/views/ue/ueditor.config.js') ?>"></script>
     <script src="<?php echo base_url('application/views/ue/ueditor.all.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/js/jquery.query-object.js') ?>"></script>
 
     <script>
+    function setContentById(id)
+    {
+        $.ajax({
+            type:'POST',
+            dataType: 'JSON',
+            url:'<?php echo site_url('content/getById/')?>'+id,
+        })
+        .done(function (results) {
+            if (results.success == 1){
+                $('#title').val(results.data.title);
+                $('#cover_img').attr('src', '<?php echo base_url('uploads/cover/')?>'+results.data.cover);
+                ue.setContent(results.data.html);
+                $("#type").val(results.data.type);
+            }
+        })
+    }
+
     function check(form)
     {
       if(form.title.value == "" || form.title.value == null || typeof(form.title.value) == 'undefined')
@@ -135,16 +153,49 @@
            return false;
       }
 
-      if(form.cover.value == "" || form.cover.value == null || typeof(form.cover.value) == 'undefined')
-      {
-           alert("请上传文章封面！");
-           return false;
-      }
-
       if(ue.getContentTxt() == "" || ue.getContentTxt() == null || typeof(ue.getContentTxt()) == 'undefined')
       {
         alert("请输入文章正文！");
         return false;
+      }
+
+      //update form
+      if(id != null && typeof(id) != 'undefined' && id != '')
+      {
+        var submitData = {
+          id: id,
+          title: form.title.value,
+          plain_text: ue.getContentTxt(),
+          html:ue.getContent(),
+          type: form.type.value,
+          author:''
+        };
+        if(form.cover.value != "" && form.cover.value != null && typeof(form.cover.value) != 'undefined')
+        {
+          submitData['cover'] = form.cover.value;
+        }
+
+        $.ajax({
+            type:'POST',
+            dataType: 'JSON',
+            url:'<?php echo site_url('content/update/') ?>',
+            data: submitData
+        })
+        .done(function (results) {
+            if (results.success == 1){
+                alert('文章更新成功!');
+                window.location.href = '<?php echo site_url('admin/contentlist') ?>';
+            }
+        })
+
+        return false;
+      }
+
+      //add new content
+      if(form.cover.value == "" || form.cover.value == null || typeof(form.cover.value) == 'undefined')
+      {
+           alert("请上传文章封面！");
+           return false;
       }
 
       var submitData = {
@@ -165,7 +216,8 @@
       })
       .done(function (results) {
           if (results.success == 1){
-              alert('文章发布成功!``');
+              alert('文章发布成功!');
+              window.location.href = '<?php echo site_url('admin/contentlist') ?>'
           }
       })
 
@@ -196,6 +248,15 @@
       });
 
     var ue = UE.getEditor('editor');
+
+    //
+    var id = $.query.get('id');
+    if(id != null && typeof(id) != 'undefined' && id != '')
+    {
+      ue.ready(function(){
+        setContentById(id);
+      });
+    }
 
     </script>
   </body>

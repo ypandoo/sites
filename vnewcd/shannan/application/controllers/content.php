@@ -3,23 +3,49 @@ class Content extends CI_Controller {
 
     public function add()
     {
+       $id = md5(uniqid(rand()));
+       $data['_id'] = $id;
+       $data['plain_text'] = $this->input->post('plain_text');
+       $data['html'] = $this->input->post('html');
+       $data['author'] = $this->input->post('author');
+       $data['type'] = $this->input->post('type');
+       $data['cover'] = $this->input->post('cover');
+       $data['title'] = $this->input->post('title');
+       $this->load->model('Content_Model');
+       $result = $this->Content_Model->add($data);
+
+       echo json_encode($result);
+       die;
+    }
+
+    public function update()
+    {
       //deal with data
       $id = $this->input->post('id');
       if ($id == '' || !isset($id) || empty($id)) {
-         $id = md5(uniqid(rand()));
-         $data['_id'] = $id;
-         $data['plain_text'] = $this->input->post('plain_text');
-         $data['html'] = $this->input->post('html');
-         $data['author'] = $this->input->post('author');
-         $data['type'] = $this->input->post('type');
-         $data['cover'] = $this->input->post('cover');
-         $data['title'] = $this->input->post('title');
-         $data['create_time'] = date("Y-m-d H:i:s");
-         $this->load->model('Content_Model');
-         $result = $this->Content_Model->add($data);
 
-         redirect('/admin/contentlist', 'refresh');
+        $result["success"] = 0;
+        $result['message'] = "Upload failed!";
+        echo json_encode($result);
+        die;
       }
+
+      $data['plain_text'] = $this->input->post('plain_text');
+      $data['html'] = $this->input->post('html');
+      $data['author'] = $this->input->post('author');
+      $data['type'] = $this->input->post('type');
+      $cover = $this->input->post('cover');
+      if(isset($cover) && !empty($cover))
+      {
+        $data['cover'] = $cover;
+      }
+      $data['title'] = $this->input->post('title');
+      $data['update_time'] = date("Y-m-d H:i:s");
+      $this->load->model('Content_Model');
+      $result = $this->Content_Model->update($id, $data);
+      $result["success"] = 1;
+      $result['message'] = "Update success!";
+      echo json_encode($result);
     }
 
     public function add_pic()
@@ -60,6 +86,20 @@ class Content extends CI_Controller {
       $this->load->model('Content_Model');
       $result = $this->Content_Model->deleteById($id);
 
+      echo json_encode($result);
+    }
+
+    public function getById($id)
+    {
+      $this->load->model('Content_Model');
+      $data = $this->Content_Model->getById($id);
+      $result["success"] = 0;
+      if (isset($result) && !empty($result)) {
+        $result["success"] = 1;
+        $result["data"] = $data;
+        $result['message'] = "Upload sucessed!";
+      }
+      $result['message'] = "Upload failed!";
       echo json_encode($result);
     }
 
