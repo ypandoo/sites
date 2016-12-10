@@ -12,10 +12,8 @@
     <title>微山南管理系统</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="<?php echo base_url('application/views/css/dashboard.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('application/views/Huploadify/Huploadify.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('application/views/fileupload/css/jquery.fileupload.css') ?>" rel="stylesheet">
 
     <style>
     #pic_list
@@ -50,16 +48,59 @@
     </style>
   </head>
 
-  <body>
+<body>
 
-    <?php include 'header.php' ?>
+<?php include 'header.php' ?>
+
+<!-- Modal -->
+<div class="modal fade" id="gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ms-controller="gallery">
+  <div class="modal-dialog  modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">素材库<small> &nbsp;选取图片,最多一次上传5张图片</small></h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+              <span class="btn btn-success fileinput-button">
+                  <i class="glyphicon glyphicon-plus"></i>
+                  <span>上传图片</span>
+                  <!-- The file input field used as target for the file upload widget -->
+                  <input id="fileupload" type="file" name="files[]" multiple>
+              </span>
+            </div>
+          </div>
+
+          <div class="row top-buffer">
+            <div class="col-xs-12">
+              <div class="alert alert-success" role="alert">
+                <p ms-for="el in @error" class="text-danger">{{el}}</p>
+                <p ms-for="el in @tips">{{el}}</p>
+              </div>
+            </div>
+          </div>
+
+            <!-- The container for the uploaded files -->
+            <div id="files" class="files"></div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <div class="container-fluid">
       <div class="row">
         <?php include 'sidebar.php' ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h2 class="sub-header">发布&更新文章</h2>
+          <h3 class="sub-header">发布&更新文章<small>&nbsp;修改文章时,改动会在发布后生效,请注意保存修改</small></h3>
           <div class="row">
             <nav aria-label="...">
               <ul class="pager">
@@ -67,189 +108,290 @@
               </ul>
             </nav>
           </div>
+
+
           <form class="" method="POST" onsubmit="return check(this)">
             <div class="form-group">
-              <label for="title">文章标题:</label>
+              <label for="title">*文章标题:</label>
               <input class="form-control" placeholder="请输入文章标题" name="title" id="title"/>
             </div>
 
-            <!-- <div class="form-group">
-              <label for="author" class="form-control">文章作者:</label>
-              <input class="form-control" placeholder="请输入文章作者" name="author" id="author"/>
-            </div> -->
+
+            <label>*封面图片：(单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
+            <div>
+              <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
+            </div>
+            <div class="gap_bottom gap_top_small">
+              <button type="button" id="open_cover" class="btn btn-primary" data-toggle="modal" data-target="#gallery">
+                选择封面图片
+              </button>
+            </div>
+            <input type="hidden" name='cover' id='cover'/>
 
 
-          <!-- <div class="form-group">
-            <label for="cover">封面图片：</label>
-            <input type="file" id="cover" name="cover" class="form-control" accept="image/jpg, image/jpeg" />
-            <p class="help-block">封面图片：(单个文件大小在1M之内，尺寸推荐400*400，支持jpg,jpeg格式)</p>
-          </div> -->
+            <label>图片库(根据板块需求上传)：(可以多选文件，单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
+            <div class="clearfix" style="overflow:hidden">
+              <div class="pull-left gap_right">
+                <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
+              </div>
 
-          <label for="pic_list">封面图片：(单个文件大小在1M之内，尺寸600*400，支持jpg,jpeg格式)</label>
-          <ul id="pic_list" style="margin:20px 0 20px 0">
-              <li>
-                  <div>
-                      <img src="" height="100px" width="100px" id="cover_img"/>
-                  </div>
-              </li>
-          </ul>
-          <div id="pic_upload" style="clear:both"></div>
-          <input type="hidden" name='cover' id='cover'/>
-
-          <div class="form-group">
-              <label for="type">文章发布模块:</label>
-              <select class="form-control" name="type" id="type">
-                <?php foreach ($typelist as $type) { ?>
-                  <option value="<?php echo $type['_id'] ?>"><?php echo $type['type_name'];?></option>
-
-                <?php } ?>
-              </select>
-          </div>
+              <div class="pull-left gap_right">
+                <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
+              </div>
+            </div>
+            <div class="clearfix gap_bottom gap_top_small ">
+              <button type="button" id="open_gallery" class="btn btn-primary" data-toggle="modal" data-target="#gallery">
+                选择封面图片
+              </button>
+            </div>
 
 
-        <div class="form-group">
-          <label for="editor">文章内容</label>
-          <script id="editor" type="text/plain" style="width:100%;height:300px;"></script>
-        </div>
+            <div class="form-group">
+                <label for="type">文章发布模块:</label>
+                <select class="form-control" name="type" id="type">
+                  <?php foreach ($typelist as $type) { ?>
+                    <option value="<?php echo $type['_id'] ?>"><?php echo $type['type_name'];?></option>
 
-          <button type="submit" class="btn btn-primary">发布文章</button>
-      </form>
+                  <?php } ?>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="editor">文章内容</label>
+              <script id="editor" type="text/plain" style="width:100%;height:300px;"></script>
+            </div>
+
+            <button type="submit" class="btn btn-primary">发布文章</button>
+          </form>
 
 
         </div>
       </div>
     </div>
-
+    <script src="<?php echo base_url('application/views/js/base.js') ?>"></script>
     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/vendor/jquery.ui.widget.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/load-image.all.min.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/canvas-to-blob.min.js') ?>"></script>
+        <script src="http://cdn.bootcss.com/avalon.js/2.2.0/avalon.min.js"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/jquery.iframe-transport.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload.js')?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload-process.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload-image.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload-validate.js') ?>"></script>
+
     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url('application/views/Huploadify/jquery.Huploadify.js') ?>"></script>
+    <script src="<?php echo base_url('application/views/js/jquery.query-object.js') ?>"></script>
     <script src="<?php echo base_url('application/views/ue/ueditor.config.js') ?>"></script>
     <script src="<?php echo base_url('application/views/ue/ueditor.all.js') ?>"></script>
-    <script src="<?php echo base_url('application/views/js/jquery.query-object.js') ?>"></script>
+
+
 
     <script>
-    function setContentById(id)
-    {
-        $.ajax({
-            type:'POST',
-            dataType: 'JSON',
-            url:'<?php echo site_url('content/getById/')?>'+id,
-        })
-        .done(function (results) {
-            if (results.success == 1){
-                $('#title').val(results.data.title);
-                $('#cover_img').attr('src', '<?php echo base_url('uploads/cover/')?>'+results.data.cover);
-                ue.setContent(results.data.html);
-                $("#type").val(results.data.type);
-            }
-        })
-    }
 
-    function check(form)
-    {
-      if(form.title.value == "" || form.title.value == null || typeof(form.title.value) == 'undefined')
-      {
-           alert("文章标题不能为空!");
-           return false;
-      }
+//avalon controllers
+(function(){
+   this.gallery = avalon.define({
+      $id: "gallery",
+      tips:['上传或选择图片,一次可上传5张图片,支持jpg,jpeg,图片大小小于2M'],
+      error:[]
+  });
+}).call(define('Controller'));
 
-      if(ue.getContentTxt() == "" || ue.getContentTxt() == null || typeof(ue.getContentTxt()) == 'undefined')
-      {
-        alert("请输入文章正文！");
-        return false;
-      }
 
-      //update form
-      if(id != null && typeof(id) != 'undefined' && id != '')
-      {
-        var submitData = {
-          id: id,
-          title: form.title.value,
-          plain_text: ue.getContentTxt(),
-          html:ue.getContent(),
-          type: form.type.value,
-          author:''
-        };
-        if(form.cover.value != "" && form.cover.value != null && typeof(form.cover.value) != 'undefined')
-        {
-          submitData['cover'] = form.cover.value;
-        }
-
-        $.ajax({
-            type:'POST',
-            dataType: 'JSON',
-            url:'<?php echo site_url('content/update/') ?>',
-            data: submitData
-        })
-        .done(function (results) {
-            if (results.success == 1){
-                alert('文章更新成功!');
-                window.location.href = '<?php echo site_url('admin/contentlist') ?>';
-            }
-        })
-
-        return false;
-      }
-
-      //add new content
-      if(form.cover.value == "" || form.cover.value == null || typeof(form.cover.value) == 'undefined')
-      {
-           alert("请上传文章封面！");
-           return false;
-      }
-
-      var submitData = {
-        id:'',
-        title: form.title.value,
-        cover: form.cover.value,
-        plain_text: ue.getContentTxt(),
-        html:ue.getContent(),
-        type: form.type.value,
-        author:''
-      };
-
-      $.ajax({
-          type:'POST',
-          dataType: 'JSON',
-          url:'<?php echo site_url('content/add/') ?>',
-          data: submitData
-      })
-      .done(function (results) {
-          if (results.success == 1){
-              alert('文章发布成功!');
-              window.location.href = '<?php echo site_url('admin/contentlist') ?>'
-          }
-      })
-
-      return false;
-    }
-
-    var up = $('#pic_upload').Huploadify({
-        auto:false,
-        fileTypeExts:'*.jpg;*.jpeg;',
-        multi:false,
-        formData:{id:'0'},
-        fileSizeLimit:1024,
-        showUploadedPercent:true,
-        showUploadedSize:true,
-        removeTimeout:500,
-        uploader:"<?php echo site_url()?>"+'/content/add_pic',
-        onUploadStart:function(file){
-        },
-        onUploadSuccess: function(file, data, response) {
-          console.log('上传成功:');
-          var obj = JSON.parse(data);
-          if (obj.success==1) {
-              $('#cover').val(obj.data);
-              $('#cover_img').attr('src', "<?php echo base_url()?>"+'/uploads/cover/'+obj.data);
-          }
-
-        }
+//file upload
+(function () {
+'use strict';
+// Change this to the location of your server-side upload handler:
+var url = '<?php echo site_url('file/upload') ?>' ;
+var uploadButton = $('<button/>')
+      .addClass('btn btn-primary')
+      .prop('disabled', true)
+      .text('Processing...')
+      .on('click', function () {
+          var $this = $(this),
+              data = $this.data();
+          $this
+              .off('click')
+              .text('Abort')
+              .on('click', function () {
+                  $this.remove();
+                  data.abort();
+              });
+          data.submit().always(function () {
+              $this.remove();
+          });
       });
 
-    var ue = UE.getEditor('editor');
+var debug = 0;
 
+
+$('#fileupload').fileupload({
+  url: url,
+  dataType: 'json',
+  autoUpload: true,
+  acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+  maxFileSize: 524000,
+  // Enable image resizing, except for Android and Opera,
+  // which actually support image resizing, but fail to
+  // send Blob objects via XHR requests:
+  disableImageResize: /Android(?!.*Chrome)|Opera/
+      .test(window.navigator.userAgent),
+  previewMaxWidth: 100,
+  previewMaxHeight: 100,
+  previewCrop: true
+  }).on('fileuploadadd', function (e, data) {
+    //1. 检查所有上传的文件 这里传入是一个数组
+    if(debug)
+    {console.log('fileuploadadd');}
+
+    Controller.gallery.tips = [];
+  })
+  .on('fileuploadprocessalways', function (e, data) {
+    //2. 单个文件的处理过程开始
+    var index = data.index,
+        file = data.files[index];
+    if (file.preview) {
+       //preview ready
+    }
+    if (file.error) {
+        //
+        Controller.gallery.error.push(file.name+'上传失败：'+file.error);
+    }
+  })
+  .on('fileuploadprogressall', function (e, data) {
+    if(debug)
+      {console.log('fileuploadprogressall');}
+      //3. 单个文件的上传进度，多次调用
+      // var progress = parseInt(data.loaded / data.total * 100, 10);
+      // vm.tips[vm.tips.length-1] += progress+'% ';
+
+  })
+  .on('fileuploaddone', function (e, data) {
+    if(debug)
+      {console.log('fileuploaddone');}
+    //4. 单个文件上传成功
+    $.each(data.result.files, function (index, file) {
+        if (file.url) {
+            Controller.gallery.tips.push(file.name+'上传完成.');
+        } else if (file.error) {
+            Controller.gallery.error.push(file.name+'上传失败：'+file.error);
+        }
+    });
+  })
+  .on('fileuploadfail', function (e, data) {
+      $.each(data.files, function (index, file) {
+        Controller.gallery.error.push(file.name+'上传失败.');
+      });
+  })
+  .on('fileuploadstop', function(){
+    if(debug)
+      {console.log('fileuploadstop');}
+  });
+
+})(define('FileUpload'));
+
+
+//deal with page logic
+    // function setContentById(id)
+    // {
+    //     $.ajax({
+    //         type:'POST',
+    //         dataType: 'JSON',
+    //         url:'<?php echo site_url('content/getById/')?>'+id,
+    //     })
+    //     .done(function (results) {
+    //         if (results.success == 1){
+    //             $('#title').val(results.data.title);
+    //             $('#cover_img').attr('src', '<?php echo base_url('uploads/cover/')?>'+results.data.cover);
+    //             ue.setContent(results.data.html);
+    //             $("#type").val(results.data.type);
+    //         }
+    //     })
+    // }
     //
+    // function check(form)
+    // {
+    //   if(form.title.value == "" || form.title.value == null || typeof(form.title.value) == 'undefined')
+    //   {
+    //        alert("文章标题不能为空!");
+    //        return false;
+    //   }
+    //
+    //   if(ue.getContentTxt() == "" || ue.getContentTxt() == null || typeof(ue.getContentTxt()) == 'undefined')
+    //   {
+    //     alert("请输入文章正文！");
+    //     return false;
+    //   }
+    //
+    //   //update form
+    //   if(id != null && typeof(id) != 'undefined' && id != '')
+    //   {
+    //     var submitData = {
+    //       id: id,
+    //       title: form.title.value,
+    //       plain_text: ue.getContentTxt(),
+    //       html:ue.getContent(),
+    //       type: form.type.value,
+    //       author:''
+    //     };
+    //     if(form.cover.value != "" && form.cover.value != null && typeof(form.cover.value) != 'undefined')
+    //     {
+    //       submitData['cover'] = form.cover.value;
+    //     }
+    //
+    //     $.ajax({
+    //         type:'POST',
+    //         dataType: 'JSON',
+    //         url:'<?php echo site_url('content/update/') ?>',
+    //         data: submitData
+    //     })
+    //     .done(function (results) {
+    //         if (results.success == 1){
+    //             alert('文章更新成功!');
+    //             window.location.href = '<?php echo site_url('admin/contentlist') ?>';
+    //         }
+    //     })
+    //
+    //     return false;
+    //   }
+    //
+    //   //add new content
+    //   if(form.cover.value == "" || form.cover.value == null || typeof(form.cover.value) == 'undefined')
+    //   {
+    //        alert("请上传文章封面！");
+    //        return false;
+    //   }
+    //
+    //   var submitData = {
+    //     id:'',
+    //     title: form.title.value,
+    //     cover: form.cover.value,
+    //     plain_text: ue.getContentTxt(),
+    //     html:ue.getContent(),
+    //     type: form.type.value,
+    //     author:''
+    //   };
+    //
+    //   $.ajax({
+    //       type:'POST',
+    //       dataType: 'JSON',
+    //       url:'<?php echo site_url('content/add/') ?>',
+    //       data: submitData
+    //   })
+    //   .done(function (results) {
+    //       if (results.success == 1){
+    //           alert('文章发布成功!');
+    //           window.location.href = '<?php echo site_url('admin/contentlist') ?>'
+    //       }
+    //   })
+    //
+    //   return false;
+    // }
+    //
+    // //
+    var ue = UE.getEditor('editor');
     var id = $.query.get('id');
     if(id != null && typeof(id) != 'undefined' && id != '')
     {

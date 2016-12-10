@@ -103,3 +103,20 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.gap_bottom
+{
+  margin-bottom: 20px;
+}
+
+.gap_top{
+  margin-top: 20px;
+}
+
+.gap_top_small{
+  margin-top: 10px;
+}
+
+.gap_right{
+  margin-right: 20px;
+}

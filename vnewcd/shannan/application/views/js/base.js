@@ -66,12 +66,12 @@ var prefix = (function () {
           return false;
       }
   }
-}).call(define('Device'))
+}).call(define('Device'));
 
 /**
  * 随机数操作
  * Random.js*/
-(function() {
+(function(){
   // var Random = Random = Random || {};
 
   /**
