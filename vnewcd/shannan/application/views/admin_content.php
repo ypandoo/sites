@@ -86,10 +86,17 @@
 
           <!-- file list -->
           <div class="row">
-            <div ms-for = "el in @files" class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img ms-attr="{src:el.url}" alt="选择图片">
-              </a>
+            <div ms-for = "($index, el) in @files" class="col-xs-6 col-md-3" ms-click="@toggleSelect($index)">
+              <div class="thumbnail">
+                <a href="#" class="mask">
+                  <img ms-attr="{src:el.url}" alt="选择图片">
+                </a>
+              </div>
+
+              <div class="selected_mask" ms-visible="el.selected">
+                  <div class="selected_mask_inner"></div>
+                  <div class="selected_mask_icon"></div>
+              </div>
             </div>
           </div>
 
@@ -101,14 +108,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary">确定</button>
+        <button type="button" class="btn btn-primary" ms-click="@confirmSelect()">确定</button>
       </div>
     </div>
   </div>
 </div>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" ms-controller="content">
       <div class="row">
         <?php include 'sidebar.php' ?>
 
@@ -132,7 +139,7 @@
 
             <label>*封面图片：(单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div>
-              <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
+              <img ms-attr="{src:cover.url}" width="100px" height="100px" class="img-rounded"/>
             </div>
             <div class="gap_bottom gap_top_small">
               <button type="button" id="open_cover" class="btn btn-primary"
@@ -145,12 +152,8 @@
 
             <label>图片库(根据板块需求上传)：(可以多选文件，单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div class="clearfix" style="overflow:hidden">
-              <div class="pull-left gap_right">
-                <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
-              </div>
-
-              <div class="pull-left gap_right">
-                <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
+              <div class="pull-left gap_right" ms-for="el in @pics">
+                <img ms-attr="{src:el.url}" class="img-rounded" width="100px" height="100px"/>
               </div>
             </div>
             <div class="clearfix gap_bottom gap_top_small ">
@@ -189,7 +192,7 @@
     <script src="<?php echo base_url('application/views/fileupload/js/vendor/jquery.ui.widget.js') ?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/load-image.all.min.js') ?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/canvas-to-blob.min.js') ?>"></script>
-        <script src="http://cdn.bootcss.com/avalon.js/2.2.0/avalon.min.js"></script>
+    <script src="http://cdn.bootcss.com/avalon.js/2.2.0/avalon.min.js"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/jquery.iframe-transport.js') ?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload.js')?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/jquery.fileupload-process.js') ?>"></script>
@@ -209,25 +212,76 @@
 (function(){
 
    var self = this;
+   self.content = avalon.define({
+      $id: "content",
+      pics: [],
+      cover: "",
+      singleSelect: true
+    });
+
    self.gallery = avalon.define({
       $id: "gallery",
       tips:[ {message:'上传或选择图片,一次可上传5张图片,支持jpg,jpeg,图片大小小于2M', error:0}],
       files:[],
+      toggleSelect:function(index){
+        if(self.gallery.singleSelect)
+        {
+          for(var i = 0; i < self.gallery.files.length; i++)
+          {
+            self.gallery.files[i].selected = false;
+          }
+          self.gallery.files[index].selected = !self.gallery.files[index].selected;
+        }
+        else
+        {
+          self.gallery.files[index].selected = !self.gallery.files[index].selected;
+        }
+      },
+      confirmSelect:function(index){
+        if(self.gallery.singleSelect)
+        {
+          for(var i = 0; i < self.gallery.files.length; i++)
+          {
+            if(self.gallery.files[i].selected == true)
+            {
+              self.content.cover = self.gallery.files[i];
+              break;
+            }
+          }
+        }
+        else
+        {
+          self.content.pics = [];
+          for(var i = 0; i < self.gallery.files.length; i++)
+          {
+            if(self.gallery.files[i].selected == true)
+            self.content.pics.push(self.gallery.files[i]);
+          }
+        }
+
+        $('#gallery').modal('toggle');
+      },
+      getFiles:function(){
+          $.ajax({
+              type:'POST',
+              dataType: 'JSON',
+              url:'<?php echo site_url('file/getAll/')?>',
+          })
+          .done(function (results) {
+              if (results.success == 1){
+                //self.gallery.files = results.data;
+                self.gallery.files = [];
+                for(var i = 0; i < results.data.length; i++)
+                {
+                  var result=$.extend({},results.data[i],{selected:false})
+                  self.gallery.files.push(result);
+                }
+              }
+          })
+      }
     });
 
-    self.gallery.getFiles = function(){
-        $.ajax({
-            type:'POST',
-            dataType: 'JSON',
-            url:'<?php echo site_url('file/getAll/')?>',
-        })
-        .done(function (results) {
-            if (results.success == 1){
-                self.gallery.files = results.data;
-                //self.gallery.files = results.data;
-            }
-        })
-    };
+
 
 }).call(define('Controller'));
 
@@ -236,27 +290,7 @@
 'use strict';
 // Change this to the location of your server-side upload handler:
 var url = '<?php echo site_url('file/upload') ?>' ;
-var uploadButton = $('<button/>')
-      .addClass('btn btn-primary')
-      .prop('disabled', true)
-      .text('Processing...')
-      .on('click', function () {
-          var $this = $(this),
-              data = $this.data();
-          $this
-              .off('click')
-              .text('Abort')
-              .on('click', function () {
-                  $this.remove();
-                  data.abort();
-              });
-          data.submit().always(function () {
-              $this.remove();
-          });
-      });
-
 var debug = 0;
-
 
 $('#fileupload').fileupload({
   url: url,
@@ -444,7 +478,7 @@ $('#fileupload').fileupload({
     // var modal = $(this)
     // modal.find('.modal-title').text('New message to ' + recipient)
     // modal.find('.modal-body input').val(recipient)
-
+    choose == 'single' ? Controller.gallery.singleSelect = true : Controller.gallery.singleSelect = false;
     Controller.gallery.getFiles();
   })
 })();
