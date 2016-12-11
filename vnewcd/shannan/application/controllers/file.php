@@ -33,6 +33,12 @@ class File extends CI_Controller {
         $this->uploadhandler->generate_response($content);
       }
 
+    }
 
+    public function getAll()
+    {
+      $this->load->model('File_Model');
+      $data = $this->File_Model->getAll();
+      echo json_encode($data);
     }
 }

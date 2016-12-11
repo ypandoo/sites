@@ -76,19 +76,32 @@
           <div class="row top-buffer">
             <div class="col-xs-12">
               <div class="alert alert-success" role="alert">
-                <p ms-for="el in @error" class="text-danger">{{el}}</p>
-                <p ms-for="el in @tips">{{el}}</p>
+                <p ms-for="el in @tips">
+                  <span :if="@el.error == 1" class="text-danger">{{el.message}}</span>
+                  <span :if="@el.error == 0" >{{el.message}}</span>
+                </p>
               </div>
+            </div>
+          </div>
+
+          <!-- file list -->
+          <div class="row">
+            <div ms-for = "el in @files" class="col-xs-6 col-md-3">
+              <a href="#" class="thumbnail">
+                <img ms-attr="{src:el.url}" alt="选择图片">
+              </a>
             </div>
           </div>
 
             <!-- The container for the uploaded files -->
             <div id="files" class="files"></div>
+
+
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确定</button>
       </div>
     </div>
   </div>
@@ -122,7 +135,8 @@
               <img src="<?php echo base_url('Application/views/img/default.png')?>" class="img-rounded"/>
             </div>
             <div class="gap_bottom gap_top_small">
-              <button type="button" id="open_cover" class="btn btn-primary" data-toggle="modal" data-target="#gallery">
+              <button type="button" id="open_cover" class="btn btn-primary"
+              data-toggle="modal" data-target="#gallery" data-choose="single">
                 选择封面图片
               </button>
             </div>
@@ -140,8 +154,9 @@
               </div>
             </div>
             <div class="clearfix gap_bottom gap_top_small ">
-              <button type="button" id="open_gallery" class="btn btn-primary" data-toggle="modal" data-target="#gallery">
-                选择封面图片
+              <button type="button" id="open_gallery" class="btn btn-primary"
+              data-toggle="modal" data-target="#gallery"  data-choose="multi">
+                选择图片
               </button>
             </div>
 
@@ -192,13 +207,29 @@
 
 //avalon controllers
 (function(){
-   this.gallery = avalon.define({
-      $id: "gallery",
-      tips:['上传或选择图片,一次可上传5张图片,支持jpg,jpeg,图片大小小于2M'],
-      error:[]
-  });
-}).call(define('Controller'));
 
+   var self = this;
+   self.gallery = avalon.define({
+      $id: "gallery",
+      tips:[ {message:'上传或选择图片,一次可上传5张图片,支持jpg,jpeg,图片大小小于2M', error:0}],
+      files:[],
+    });
+
+    self.gallery.getFiles = function(){
+        $.ajax({
+            type:'POST',
+            dataType: 'JSON',
+            url:'<?php echo site_url('file/getAll/')?>',
+        })
+        .done(function (results) {
+            if (results.success == 1){
+                self.gallery.files = results.data;
+                //self.gallery.files = results.data;
+            }
+        })
+    };
+
+}).call(define('Controller'));
 
 //file upload
 (function () {
@@ -257,7 +288,7 @@ $('#fileupload').fileupload({
     }
     if (file.error) {
         //
-        Controller.gallery.error.push(file.name+'上传失败：'+file.error);
+        Controller.gallery.tips.push({message:file.name+'上传失败：'+file.error, error:1});
     }
   })
   .on('fileuploadprogressall', function (e, data) {
@@ -274,20 +305,23 @@ $('#fileupload').fileupload({
     //4. 单个文件上传成功
     $.each(data.result.files, function (index, file) {
         if (file.url) {
-            Controller.gallery.tips.push(file.name+'上传完成.');
+            Controller.gallery.tips.push({message:file.name+'上传完成.', error:0});
         } else if (file.error) {
-            Controller.gallery.error.push(file.name+'上传失败：'+file.error);
+            Controller.gallery.tips.push({message:file.name+'上传失败：'+file.error, error:1});
         }
     });
   })
   .on('fileuploadfail', function (e, data) {
       $.each(data.files, function (index, file) {
-        Controller.gallery.error.push(file.name+'上传失败.');
+        Controller.gallery.tips.push({message:file.name+'上传失败.', error:1});
       });
   })
   .on('fileuploadstop', function(){
     if(debug)
       {console.log('fileuploadstop');}
+
+    Controller.gallery.getFiles();
+
   });
 
 })(define('FileUpload'));
@@ -390,16 +424,30 @@ $('#fileupload').fileupload({
     //   return false;
     // }
     //
-    // //
-    var ue = UE.getEditor('editor');
-    var id = $.query.get('id');
-    if(id != null && typeof(id) != 'undefined' && id != '')
-    {
-      ue.ready(function(){
-        setContentById(id);
-      });
-    }
 
+(function(){
+  //Global fuctions
+  var ue = UE.getEditor('editor');
+  // var id = $.query.get('id');
+  // if(id != null && typeof(id) != 'undefined' && id != '')
+  // {
+  //   ue.ready(function(){
+  //     setContentById(id);
+  //   });
+  // }
+
+  $('#gallery').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var choose = button.data('choose') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    // var modal = $(this)
+    // modal.find('.modal-title').text('New message to ' + recipient)
+    // modal.find('.modal-body input').val(recipient)
+
+    Controller.gallery.getFiles();
+  })
+})();
     </script>
   </body>
 </html>

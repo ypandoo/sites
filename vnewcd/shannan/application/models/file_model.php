@@ -21,4 +21,15 @@ class File_Model extends CI_Model
 
         return  $data;
     }
+
+    public function getAll()
+    {
+        $query = $this->db->get('t_file');
+        $data["success"] = true;
+        $data["message"] = 'succeeded!';
+        $data["data"] = $query->result_array();
+        return $data;
+    }
+
+
 }
