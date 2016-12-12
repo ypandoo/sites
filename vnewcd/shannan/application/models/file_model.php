@@ -31,5 +31,20 @@ class File_Model extends CI_Model
         return $data;
     }
 
+    public function getListWithLimit($page = 0)
+    {
+        $interval = $this->config->item('page_interval');
+        //$query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
+        $query = $this->db->get('t_file', $interval, $page*$interval);
+        return $query->result_array();
+    }
+
+    public function getPageCount()
+    {
+      $interval = $this->config->item('page_interval');
+      $page_count =  $this->db->count_all('t_file');
+      return intval($page_count / $interval);
+    }
+
 
 }

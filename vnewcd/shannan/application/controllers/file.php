@@ -41,4 +41,22 @@ class File extends CI_Controller {
       $data = $this->File_Model->getAll();
       echo json_encode($data);
     }
+
+    public function getAPage()
+    {
+      $page = $this->input->post('page');
+      if (!isset($page) || empty($page)) {
+        $page = 0;
+      }
+
+      $this->load->model('File_Model');
+      $data = $this->File_Model->getListWithLimit($page);
+
+      $result["success"] = 1;
+      $result["data"] = $data;
+      $result['message'] = "get page succeeded!";
+      $result['page_count'] = $this->File_Model->getPageCount();
+
+      echo json_encode($result);
+    }
 }

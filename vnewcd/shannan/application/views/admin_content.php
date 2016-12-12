@@ -100,6 +100,14 @@
             </div>
           </div>
 
+          <!-- page nav -->
+          <nav aria-label="...">
+            <ul class="pager">
+              <li class="previous" ms-class="[@prev_disable && @disable_css]"><a ms-click="@prev()"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+              <li class="next" ms-class="[@next_disable && @disable_css]"><a ms-click="@next()">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+            </ul>
+          </nav>
+
             <!-- The container for the uploaded files -->
             <div id="files" class="files"></div>
 
@@ -224,6 +232,30 @@
       $id: "gallery",
       tips:[ {message:'上传或选择图片,一次可上传5张图片,支持jpg,jpeg,图片大小小于2M', error:0}],
       files:[],
+      page: 0,
+      page_count: 0,
+      disable_css:'disabled',
+      prev_disable: false,
+      next_disable: false,
+      prev:function(){
+        if(self.gallery.page > 0)
+        {
+          self.gallery.page--;
+          self.gallery.getAPage();
+        }
+        else{
+          self.gallery.page = 0;
+        }
+
+      },
+      next:function(){
+        if(self.gallery.page >= self.gallery.page_count){
+          self.gallery.page = self.gallery.page_count;
+        }else{
+          self.gallery.page++;
+          self.gallery.getAPage();
+        }
+      },
       toggleSelect:function(index){
         if(self.gallery.singleSelect)
         {
@@ -260,11 +292,12 @@
 
         $('#gallery').modal('toggle');
       },
-      getFiles:function(){
+      getAPage:function(){
           $.ajax({
               type:'POST',
               dataType: 'JSON',
-              url:'<?php echo site_url('file/getAll/')?>',
+              data:{page:self.gallery.page},
+              url:'<?php echo site_url('file/getAPage/')?>',
           })
           .done(function (results) {
               if (results.success == 1){
@@ -275,6 +308,17 @@
                   var result=$.extend({},results.data[i],{selected:false})
                   self.gallery.files.push(result);
                 }
+                self.gallery.page_count =  results.page_count;
+
+                if(self.gallery.page == 0)
+                  self.gallery.prev_disable = true;
+                else
+                  self.gallery.prev_disable = false;
+
+                if(self.gallery.page == self.gallery.page_count)
+                  self.gallery.next_disable = true;
+                else
+                  self.gallery.next_disable = false;
               }
           })
       }
@@ -353,7 +397,7 @@ $('#fileupload').fileupload({
     if(debug)
       {console.log('fileuploadstop');}
 
-    Controller.gallery.getFiles();
+    Controller.gallery.getAPage();
 
   });
 
@@ -467,7 +511,7 @@ $('#gallery').on('show.bs.modal', function (event) {
   // modal.find('.modal-title').text('New message to ' + recipient)
   // modal.find('.modal-body input').val(recipient)
   choose == 'single' ? Controller.gallery.singleSelect = true : Controller.gallery.singleSelect = false;
-  Controller.gallery.getFiles();
+  Controller.gallery.getAPage();
 })
 
     </script>

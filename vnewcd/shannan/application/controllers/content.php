@@ -113,11 +113,12 @@ class Content extends CI_Controller {
       }
 
       $this->load->model('Content_Model');
-      $data = $this->Content_Model->getContentListLimit($page);
+      $data = $this->Content_Model->getListWithLimit($page);
 
       $result["success"] = 1;
       $result["data"] = $data;
-      $result['message'] = "get page sucessed!";
+      $result['message'] = "get page succeeded!";
+      $result['page_count'] = $this->Content_Model->getPageCount();
 
       echo json_encode($result);
     }

@@ -21,7 +21,7 @@
 
     <?php include 'header.php' ?>
 
-    <div class="container-fluid" >
+    <div class="container-fluid"  ms-controller="contents">
       <div class="row">
         <?php include 'sidebar.php' ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -33,7 +33,7 @@
               发布新的文章 <span aria-hidden="true">&rarr;</span></a>
           </div>
 
-          <div class="table-responsive col-sm-12" ms-controller="contents">
+          <div class="table-responsive col-sm-12">
             <table class="table table-hover">
               <thead>
                 <tr class="active">
@@ -68,26 +68,12 @@
             </table>
 
 
-            <nav aria-label="Page navigation ">
-              <ul class="pagination pull-right">
-                <li>
-                  <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                  <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
+            <nav aria-label="...">
+              <ul class="pager">
+                <li class="previous" ms-class="[@prev_disable && @disable_css]"><a ms-click="@prev()"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                <li class="next" ms-class="[@next_disable && @disable_css]"><a ms-click="@next()">下一页 <span aria-hidden="true">&rarr;</span></a></li>
               </ul>
             </nav>
-          </div>
 
 
         </div>
@@ -108,6 +94,10 @@
     $id: "contents",
     data:[],
     page: 0,
+    page_count: 0,
+    disable_css:'disabled',
+    prev_disable: false,
+    next_disable: false,
     getAPage:function(){
         $.ajax({
             type:'POST',
@@ -119,9 +109,40 @@
             if (results.success == 1){
               //self.gallery.files = results.data;
               self.content.data = results.data;
+              self.content.page_count =  results.page_count;
+
+              if(self.content.page == 0)
+                self.content.prev_disable = true;
+              else
+                self.content.prev_disable = false;
+
+              if(self.content.page == self.content.page_count)
+                self.content.next_disable = true;
+              else
+                self.content.next_disable = false;
             }
         })
+    },
+    prev:function(){
+      if(self.content.page > 0)
+      {
+        self.content.page--;
+        self.content.getAPage();
+      }
+      else{
+        self.content.page = 0;
+      }
+
+    },
+    next:function(){
+      if(self.content.page >= self.content.page_count){
+        self.content.page = self.content.page_count;
+      }else{
+        self.content.page++;
+        self.content.getAPage();
+      }
     }
+
   });
 }).call(define('Controller'));
 
@@ -138,11 +159,13 @@ function deleteById(id)
         url:'<?php echo site_url('content/delete/') ?>' + id,
     })
     .done(function (results) {
-        if (results.success == 1){
-            if (tr.length > 0){
-                tr.remove();
-            }
-        }
+        // if (results.success == 1){
+        //     if (tr.length > 0){
+        //         tr.remove();
+        //     }
+        // }
+        Controller.content.page = 0;
+        Controller.content.getAPage();
     })
 }
 
