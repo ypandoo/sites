@@ -21,23 +21,19 @@
 
     <?php include 'header.php' ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row">
         <?php include 'sidebar.php' ?>
-
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-          <h2 class="sub-header">内容管理管理</h2>
-
-          <div class="row">
-            <nav aria-label="...">
-              <ul class="pager">
-                <li class="next"><a href="<?php echo site_url('admin/content')?>">发布新的文章 <span aria-hidden="true">&rarr;</span></a></li>
-              </ul>
-            </nav>
+          <div class="col-sm-12">
+            <h2 class="sub-header">内容管理<small> &nbsp;新闻，产品等文章的发布</small></h2>
+          </div>
+          <div class="col-sm-3 col-sm-offset-9" style="margin-bottom:15px">
+            <a class="btn btn-default pull-right" href="<?php echo site_url('admin/content')?>">
+              发布新的文章 <span aria-hidden="true">&rarr;</span></a>
           </div>
 
-          <div class="table-responsive">
+          <div class="table-responsive col-sm-12" ms-controller="contents">
             <table class="table table-hover">
               <thead>
                 <tr class="active">
@@ -50,57 +46,108 @@
               </thead>
               <tbody>
 
-                <?php foreach ($contentlist as $content): ?>
-                <tr id="<?php echo 'tr'.$content['_id']?>">
+                <tr ms-for="el in @data" ms-attr="{id:'tr'+el._id}">
                   <td>
-                    <img src='<?php echo base_url('uploads/cover/'.$content["cover"])?>' width="40px" height="40px"/>
+                    <img ms-attr="{src: '<?php echo base_url('files/thumbnail/')?>'+el.cover}" width="40px" height="40px"/>
                   </td>
                   <td>
-                    <?php echo $content['title']; ?>
+                    {{el.title}}
                   </td>
                   <td>
-                    <?php echo $content['create_time']?>
+                    {{el.create_time}}
                   </td>
                   <td>
-                     <a type="button" class="btn btn-primary" href="<?php echo site_url('admin/content/?id='.$content['_id'])?>">更新</a>
+                     <a type="button" class="btn btn-primary" ms-attr="{href: '<?php echo site_url('admin/content/?id=')?>'+el._id}">更新</a>
                   </td>
                   <td>
-                     <button type="button" id="<?php echo $content['_id']?>" class="btn btn-danger" onclick="deleteById(this.id)">删除</button>
+                     <button type="button" ms-attr="{id:el._id}" class="btn btn-danger" onclick="deleteById(this.id)">删除</button>
                   </td>
                 </tr>
-                <?php endforeach; ?>
 
               </tbody>
             </table>
+
+
+            <nav aria-label="Page navigation ">
+              <ul class="pagination pull-right">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
+
+
         </div>
       </div>
     </div>
 
     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url('application/views/js/base.js') ?>"></script>
+    <script src="http://cdn.bootcss.com/avalon.js/2.2.0/avalon.min.js"></script>
 
-    <script>
-    function deleteById(id)
-    {
-        if (id == null || id == '' ||  typeof(id) ==  'undefined') {
-          return;
-        }
+<script>
+//avalon controllers
+(function(){
 
-        var tr = $('#tr'+id);
+ var self = this;
+ self.content = avalon.define({
+    $id: "contents",
+    data:[],
+    page: 0,
+    getAPage:function(){
         $.ajax({
             type:'POST',
             dataType: 'JSON',
-            url:'<?php echo site_url('content/delete/') ?>' + id,
+            data:{page:self.content.page},
+            url:'<?php echo site_url('content/getAPage/')?>',
         })
         .done(function (results) {
             if (results.success == 1){
-                if (tr.length > 0){
-                    tr.remove();
-                }
+              //self.gallery.files = results.data;
+              self.content.data = results.data;
             }
         })
     }
+  });
+}).call(define('Controller'));
+
+function deleteById(id)
+{
+    if (id == null || id == '' ||  typeof(id) ==  'undefined') {
+      return;
+    }
+
+    var tr = $('#tr'+id);
+    $.ajax({
+        type:'POST',
+        dataType: 'JSON',
+        url:'<?php echo site_url('content/delete/') ?>' + id,
+    })
+    .done(function (results) {
+        if (results.success == 1){
+            if (tr.length > 0){
+                tr.remove();
+            }
+        }
+    })
+}
+
+//global
+Controller.content.getAPage();
     </script>
   </body>
 </html>

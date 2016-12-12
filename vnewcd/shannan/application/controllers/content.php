@@ -11,6 +11,7 @@ class Content extends CI_Controller {
        $data['type'] = $this->input->post('type');
        $data['cover'] = $this->input->post('cover');
        $data['title'] = $this->input->post('title');
+       $data['pics'] = $this->input->post('pics');
        $this->load->model('Content_Model');
        $result = $this->Content_Model->add($data);
 
@@ -34,6 +35,7 @@ class Content extends CI_Controller {
       $data['html'] = $this->input->post('html');
       $data['author'] = $this->input->post('author');
       $data['type'] = $this->input->post('type');
+      $data['pics'] = $this->input->post('pics');
       $cover = $this->input->post('cover');
       if(isset($cover) && !empty($cover))
       {
@@ -100,6 +102,23 @@ class Content extends CI_Controller {
         $result['message'] = "Upload sucessed!";
       }
       $result['message'] = "Upload failed!";
+      echo json_encode($result);
+    }
+
+    public function getAPage()
+    {
+      $page = $this->input->post('page');
+      if (!isset($page) || empty($page)) {
+        $page = 0;
+      }
+
+      $this->load->model('Content_Model');
+      $data = $this->Content_Model->getContentListLimit($page);
+
+      $result["success"] = 1;
+      $result["data"] = $data;
+      $result['message'] = "get page sucessed!";
+
       echo json_encode($result);
     }
 

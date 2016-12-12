@@ -120,26 +120,25 @@
         <?php include 'sidebar.php' ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h3 class="sub-header">发布&更新文章<small>&nbsp;修改文章时,改动会在发布后生效,请注意保存修改</small></h3>
-          <div class="row">
-            <nav aria-label="...">
-              <ul class="pager">
-                <li class="next"><a href="<?php echo site_url('admin/contentlist')?>">查看文章列表 <span aria-hidden="true">&rarr;</span></a></li>
-              </ul>
-            </nav>
+          <div class="col-sm-12">
+            <h2 class="sub-header">发布&更新文章<small>&nbsp;修改会在发布后生效,请注意保存修改</small></h2>
+          </div>
+          <div class="col-sm-3 col-sm-offset-9" style="margin-bottom:15px">
+            <a class="btn btn-default pull-right" href="<?php echo site_url('admin/contentlist')?>">
+              查看文章列表 <span aria-hidden="true">&rarr;</span></a>
           </div>
 
 
           <form class="" method="POST" onsubmit="return check(this)">
             <div class="form-group">
               <label for="title">*文章标题:</label>
-              <input class="form-control" placeholder="请输入文章标题" name="title" id="title"/>
+              <input class="form-control" placeholder="请输入文章标题" name="title" id="title" ms-duplex="@_title"/>
             </div>
 
 
             <label>*封面图片：(单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div>
-              <img ms-attr="{src:cover.url}" width="100px" height="100px" class="img-rounded"/>
+              <img ms-attr="{src:'<?php echo base_url('files/')?>'+_cover}" width="100px" height="100px" class="img-rounded"/>
             </div>
             <div class="gap_bottom gap_top_small">
               <button type="button" id="open_cover" class="btn btn-primary"
@@ -147,13 +146,13 @@
                 选择封面图片
               </button>
             </div>
-            <input type="hidden" name='cover' id='cover'/>
+            <input type="hidden" name='cover' id='cover' ms-duplex="@_cover"/>
 
 
             <label>图片库(根据板块需求上传)：(可以多选文件，单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div class="clearfix" style="overflow:hidden">
               <div class="pull-left gap_right" ms-for="el in @pics">
-                <img ms-attr="{src:el.url}" class="img-rounded" width="100px" height="100px"/>
+                <img ms-attr="{src:'<?php echo base_url('files/')?>'+el}" class="img-rounded" width="100px" height="100px"/>
               </div>
             </div>
             <div class="clearfix gap_bottom gap_top_small ">
@@ -166,7 +165,7 @@
 
             <div class="form-group">
                 <label for="type">文章发布模块:</label>
-                <select class="form-control" name="type" id="type">
+                <select class="form-control" name="type" id="type" ms-duplex="@_type">
                   <?php foreach ($typelist as $type) { ?>
                     <option value="<?php echo $type['_id'] ?>"><?php echo $type['type_name'];?></option>
 
@@ -214,8 +213,10 @@
    var self = this;
    self.content = avalon.define({
       $id: "content",
-      pics: [],
-      cover: "",
+      pics: ['default.png'],
+      _title: "",
+      _cover: 'default.png',
+      _type: "",
       singleSelect: true
     });
 
@@ -233,9 +234,7 @@
           self.gallery.files[index].selected = !self.gallery.files[index].selected;
         }
         else
-        {
           self.gallery.files[index].selected = !self.gallery.files[index].selected;
-        }
       },
       confirmSelect:function(index){
         if(self.gallery.singleSelect)
@@ -244,7 +243,7 @@
           {
             if(self.gallery.files[i].selected == true)
             {
-              self.content.cover = self.gallery.files[i];
+              self.content._cover = self.gallery.files[i].name;
               break;
             }
           }
@@ -255,7 +254,7 @@
           for(var i = 0; i < self.gallery.files.length; i++)
           {
             if(self.gallery.files[i].selected == true)
-            self.content.pics.push(self.gallery.files[i]);
+            self.content.pics.push(self.gallery.files[i].name);
           }
         }
 
@@ -362,126 +361,115 @@ $('#fileupload').fileupload({
 
 
 //deal with page logic
-    // function setContentById(id)
-    // {
-    //     $.ajax({
-    //         type:'POST',
-    //         dataType: 'JSON',
-    //         url:'<?php echo site_url('content/getById/')?>'+id,
-    //     })
-    //     .done(function (results) {
-    //         if (results.success == 1){
-    //             $('#title').val(results.data.title);
-    //             $('#cover_img').attr('src', '<?php echo base_url('uploads/cover/')?>'+results.data.cover);
-    //             ue.setContent(results.data.html);
-    //             $("#type").val(results.data.type);
-    //         }
-    //     })
-    // }
-    //
-    // function check(form)
-    // {
-    //   if(form.title.value == "" || form.title.value == null || typeof(form.title.value) == 'undefined')
-    //   {
-    //        alert("文章标题不能为空!");
-    //        return false;
-    //   }
-    //
-    //   if(ue.getContentTxt() == "" || ue.getContentTxt() == null || typeof(ue.getContentTxt()) == 'undefined')
-    //   {
-    //     alert("请输入文章正文！");
-    //     return false;
-    //   }
-    //
-    //   //update form
-    //   if(id != null && typeof(id) != 'undefined' && id != '')
-    //   {
-    //     var submitData = {
-    //       id: id,
-    //       title: form.title.value,
-    //       plain_text: ue.getContentTxt(),
-    //       html:ue.getContent(),
-    //       type: form.type.value,
-    //       author:''
-    //     };
-    //     if(form.cover.value != "" && form.cover.value != null && typeof(form.cover.value) != 'undefined')
-    //     {
-    //       submitData['cover'] = form.cover.value;
-    //     }
-    //
-    //     $.ajax({
-    //         type:'POST',
-    //         dataType: 'JSON',
-    //         url:'<?php echo site_url('content/update/') ?>',
-    //         data: submitData
-    //     })
-    //     .done(function (results) {
-    //         if (results.success == 1){
-    //             alert('文章更新成功!');
-    //             window.location.href = '<?php echo site_url('admin/contentlist') ?>';
-    //         }
-    //     })
-    //
-    //     return false;
-    //   }
-    //
-    //   //add new content
-    //   if(form.cover.value == "" || form.cover.value == null || typeof(form.cover.value) == 'undefined')
-    //   {
-    //        alert("请上传文章封面！");
-    //        return false;
-    //   }
-    //
-    //   var submitData = {
-    //     id:'',
-    //     title: form.title.value,
-    //     cover: form.cover.value,
-    //     plain_text: ue.getContentTxt(),
-    //     html:ue.getContent(),
-    //     type: form.type.value,
-    //     author:''
-    //   };
-    //
-    //   $.ajax({
-    //       type:'POST',
-    //       dataType: 'JSON',
-    //       url:'<?php echo site_url('content/add/') ?>',
-    //       data: submitData
-    //   })
-    //   .done(function (results) {
-    //       if (results.success == 1){
-    //           alert('文章发布成功!');
-    //           window.location.href = '<?php echo site_url('admin/contentlist') ?>'
-    //       }
-    //   })
-    //
-    //   return false;
-    // }
-    //
+function setContentById(id)
+{
+    $.ajax({
+        type:'POST',
+        dataType: 'JSON',
+        url:'<?php echo site_url('content/getById/')?>'+id,
+    })
+    .done(function (results) {
+        if (results.success == 1){
+            Controller.content._title = results.data.title;
+            Controller.content._type = results.data.type;
+            Controller.content._cover = results.data.cover;
+            ue.setContent(results.data.html);
+            //pics
+            var pics = new Array;
+            Controller.content.pics = results.data.pics.split(";");
 
-(function(){
-  //Global fuctions
-  var ue = UE.getEditor('editor');
-  // var id = $.query.get('id');
-  // if(id != null && typeof(id) != 'undefined' && id != '')
-  // {
-  //   ue.ready(function(){
-  //     setContentById(id);
-  //   });
-  // }
+        }
+    })
+}
 
-  $('#gallery').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var choose = button.data('choose') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    // var modal = $(this)
-    // modal.find('.modal-title').text('New message to ' + recipient)
-    // modal.find('.modal-body input').val(recipient)
-    choose == 'single' ? Controller.gallery.singleSelect = true : Controller.gallery.singleSelect = false;
-    Controller.gallery.getFiles();
+function check(form)
+{
+  if(Controller.content._title == "" || Controller.content._title == null || typeof(Controller.content._title) == 'undefined')
+  {
+       alert("文章标题不能为空!");
+       return false;
+  }
+
+  if(ue.getContentTxt() == "" || ue.getContentTxt() == null || typeof(ue.getContentTxt()) == 'undefined')
+  {
+    alert("请输入文章正文！");
+    return false;
+  }
+
+  //pics
+  var pics = "";
+  if(Controller.content.pics.length > 0)
+    pics = Controller.content.pics.join(";")
+
+  var submitData = {
+    id: id,
+    title: Controller.content._title,
+    plain_text: ue.getContentTxt(),
+    html:ue.getContent(),
+    type: Controller.content._type,
+    cover: Controller.content._cover,
+    pics: pics,
+    author:''
+  };
+
+  //update content
+  if(id != null && typeof(id) != 'undefined' && id != '')
+  {
+    $.ajax({
+        type:'POST',
+        dataType: 'JSON',
+        url:'<?php echo site_url('content/update/') ?>',
+        data: submitData
+    })
+    .done(function (results) {
+        if (results.success == 1){
+            alert('文章更新成功!');
+            window.location.href = '<?php echo site_url('admin/contentlist') ?>';
+        }
+    })
+    return false;
+  }
+
+  //new content
+  $.ajax({
+      type:'POST',
+      dataType: 'JSON',
+      url:'<?php echo site_url('content/add/') ?>',
+      data: submitData
   })
-})();
+  .done(function (results) {
+      if (results.success == 1){
+          alert('文章发布成功!');
+          window.location.href = '<?php echo site_url('admin/contentlist') ?>'
+      }
+  })
+
+  return false;
+}
+
+
+//Global fuctions
+var ue = UE.getEditor('editor');
+var id = $.query.get('id');
+if(id != null && typeof(id) != 'undefined' && id != '')
+{
+  ue.ready(function(){
+    setContentById(id);
+  });
+}
+
+$('#gallery').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var choose = button.data('choose') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  // var modal = $(this)
+  // modal.find('.modal-title').text('New message to ' + recipient)
+  // modal.find('.modal-body input').val(recipient)
+  choose == 'single' ? Controller.gallery.singleSelect = true : Controller.gallery.singleSelect = false;
+  Controller.gallery.getFiles();
+})
+
     </script>
   </body>
 </html>

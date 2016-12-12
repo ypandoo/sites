@@ -27,8 +27,6 @@ class Admin extends CI_Controller {
 	public function contentlist()
 	{
 		$data['tree_item'] = 2;
-		$this->load->model('Content_Model');
-		$data['contentlist'] = $this->Content_Model->getContentList();
 		$this->load->view('admin_content_list', $data);
 	}
 
