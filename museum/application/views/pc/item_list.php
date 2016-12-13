@@ -147,8 +147,8 @@ margin: 0 auto;
 }
 
 .banner-item img{
-  width: 100%;
-  height: 160px;
+  width: 300px;
+  height: 200px;
 }
 
 .banner-top .slick-center {
@@ -162,7 +162,7 @@ margin: 0 auto;
 }
 
 .banner-top{
-  height: 400px;
+  height: 800px;
 }
 
 .slick-slider .slick-track, .slick-slider .slick-list {
@@ -295,7 +295,7 @@ margin: 0 auto;
 <!-- header -->
 <?php include 'header.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; margin-top:20px">
+<!-- <div style=" background:#333333; width:100%; clear:both; overflow:hidden; margin-top:20px">
   <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
 
     <div class="title_section">
@@ -315,7 +315,7 @@ margin: 0 auto;
     </div>
 
   </div>
-</div>
+</div> -->
 
 
 <!-- footer -->

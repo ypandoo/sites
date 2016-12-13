@@ -127,9 +127,9 @@ margin: 0 auto;
 
 <!-- banner -->
 <div class="banner-top">
-  <div><img src="<?php echo base_url('assets/pc/img/banner3.jpg')?>" width="100%"/></div>
-  <div><img src="<?php echo base_url('assets/pc/img/banner1.jpg')?>" width="100%" style="z-index:-1"/></div>
-  <div><img src="<?php echo base_url('assets/pc/img/banner2.jpg')?>" width="100%"/></div>
+  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner3.jpg')?>" height="800px" width="1600px"/></div>
+  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner1.jpg')?>" height="800px" width="1600px"/></div>
+  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner2.jpg')?>" height="800px" width="1600px"/></div>
 </div>
 
 

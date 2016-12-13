@@ -83,12 +83,12 @@ background-size: cover;
 
       <!-- <div class="menu_item" style="margin-top:8px"></div> -->
 
-      <!-- <a href='<?php echo base_url('pages/view/layout') ?>'><div class="menu_item" ></div></a>
+      <a href='<?php echo base_url('pages/view/layout') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/expo_review') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/dynamic') ?>'><div class="menu_item" ></div></a>
       <a href='<?php echo base_url('pages/view/instruction') ?>'><div class="menu_item"></div></a>
       <a href='<?php echo base_url('pages/view/construction') ?>'><div class="menu_item" ></div></a>
-      <a href='<?php echo base_url('pages/view/protect') ?>'><div class="menu_item"></div></a>  -->
+      <a href='<?php echo base_url('pages/view/protect') ?>'><div class="menu_item"></div></a>
 
     </div>
 </body>
