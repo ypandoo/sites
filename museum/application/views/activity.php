@@ -1,41 +1,96 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>西藏博物馆</title>
-    <meta name="keywords" content="西藏博物馆"/>
-    <meta name="description" content="西藏博物馆"/>
-    <meta name="robots" content="all"/>
-    <meta name="copyright" content="西藏博物馆"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="author" content="" />
-    <meta name="revisit-after"  content="1 days" />
-    <meta name="format-detection" content="email=no" />
-    <meta name="format-detection" content="telephone=yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>西藏博物馆</title>
+<meta name="keywords" content="西藏博物馆,西藏博物馆,">
+<meta name="description" content="">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/new_expo.css') ?>">
+<style>
+.details {
+width: 100%;
+background: transparent;
+}
+
+.content .html p{
+   padding: 0px 25px 0 25px;
+}
+
+.content .html p span{
+      font-family: 微软雅黑, "Microsoft YaHei";
+      font-size: 12px;
+      line-height: 25px;
+}
+
+.content .html p img{
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+.item {
+    background: rgba(97, 0, 0, 0.5);
+    padding: 10px 10px;
+    /* margin-bottom: 10px; */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+h2 {
+    font-size: 14px;
+    color: white;
+}
+
+h3 {
+    font-size: 12px;
+    color: white;
+}
+
+
+.innerheader {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: .8rem;
+z-index: 1000;
+/* background: rgba(79, 247, 90, 0.16); */
+border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.show_more{
+margin-bottom: 50px;
+color: white;
+text-align: center;
+font-size: 12px;
+border: 1px solid white;
+width: 60%;
+margin-left: 20%;
+line-height: 24px;
+margin-top: 20px;
+}
+
+.page-title {
+    margin-top: 66px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    /* border-bottom: 1px solid; */
+}
+</style>
 </head>
-<body>
-<div class="bk"></div>
+
+<body class="bg5 bg">
+<section class="innerheader">
+	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+    <h2>活动邀约</h2>
+    <a class="btn menubtn"></a></section><section class="menuDiv hide">
+</section>
+
 <div id="details" class="details"  ms-controller="expo_list_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
-
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu3') ?>"><div class="logo touch-href" data-href="/"></div></a>
-        </div>
-
-
-        <div class="page-title">
-          <h2>活动邀约</h2>
-          <h4>Activities</h4>
-        </div>
+  <div class="page-title" style="color: white;">
+    <h3 style="font-size:18px">活动邀约 | Activities</h3></div>
 
         <div class="content"  style="margin-top:20px">
             <div class="item"  ms-for='($index, item_info) in @list'  ms-click="@get_detail_link($index)">
@@ -59,6 +114,7 @@
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/activity.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 
 <script>
 

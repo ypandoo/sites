@@ -52,7 +52,7 @@
     $('.banner-top').slick({
       adaptiveHeight: false,
       slidesToShow: 1,
-      dots: false,
+      dots: true,
       arrows: true,
       autoplay: true,
       autoplaySpeed: 2000,

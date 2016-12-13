@@ -64,7 +64,7 @@ menu dd a:after{ right:auto; left:0;}
 .bg3{ background:url(../img/bg3.jpg)  center top #000;}
 .bg4{ background:url(../img/bg4.jpg)  center top #000;}
 .bg5{ background:url(../img/bg5.jpg)  center top #000;}
-.bg{background-size:auto 100%; }
+.bg{background-size:100% 100%; }
 .innerheader{ position:absolute; top:0; left:0; width:100%; height:.8rem; z-index:1000;}
 .backbtn{ position:absolute; left:0; top:0; display:block; width:.8rem; height:.8rem; background:url(../img/backbtn.png) no-repeat center; background-size:auto .25rem;}
 .innerheader h2{ padding-left:.18rem; margin:.23rem 0 .23rem .8rem; border-left:1px solid #FFF; line-height:.34rem; font-size:14px; color:#FFF; font-weight:normal;}

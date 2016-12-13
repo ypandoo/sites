@@ -19,9 +19,8 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
     <link rel="Bookmark" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base2.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/common/css/panorama_viewer.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/expo_review.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
     <style>
@@ -120,7 +119,7 @@
 
 .locations .item{
   float: left;
-  width: 31%;
+  width: 30%;
   margin: 1%;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.1);
@@ -134,9 +133,9 @@
 
 .locations .item2{
   float: left;
-  width: 31%;
+  width: 28%;
   margin: 1%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.8);
   height: 32px;
@@ -144,6 +143,7 @@
   font-size: 12px;
   padding-top: 6px;
   border-radius: 5px;
+  line-height: 24px;
 }
 
 .locations .selected
@@ -160,6 +160,8 @@
   cursor: move;
   z-index: 100;
   position: relative;
+  border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 .pano .controls {
   position: relative;
@@ -186,23 +188,27 @@
   color: #eee;
 }
 
+.page-title {
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    /* border-bottom: 1px solid; */
+}
     </style>
 </head>
 
 <body>
 
-    <div id="header" class="newhead" >
-        <a href="/pages/view/menu2"><div class="logo touch-href"></div></a>
-    </div>
+  <body class="bg bg5" style="margin:0;padding:0">
+  <section class="innerheader">
+  	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+      <h2>360全景</h2>
+  </section>
 
 
     <div  ms-controller="t_ctrl">
-    <!-- <div class="panorama">
-     <img src="<?php echo base_url('assets/front/img/demo_photo.jpg')?>" />
-    </div> -->
 
     <div id="myPano" class="pano">
-      <!-- <img src="<?php echo base_url('assets/front/img/demo_photo.jpg')?>" /> -->
 
       <div style="position: absolute;
     bottom: 0px;
@@ -211,18 +217,16 @@
       </div>
     </div>
 
-    <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>场景全景图</h4>
-    </div>
+    <div class="page-title" style="color: white;">
+      <h3>场景全景图</h3></div>
 
     <div class="locations">
       <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">全景图一</div>
       <div :css="[@item, @qj2 && @selected_css]"  ms-click="@switch_view('2')" ms-visible='@show_pic2'>全景图二</div>
     </div>
 
-    <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>切换展厅</h4>
-    </div>
+    <div class="page-title" style="color: white;">
+      <h3>切换展厅</h3></div>
 
     <div class="locations">
       <div :css="[@item, @zl1 && @selected_css]"  ms-click="@switch_expo('1')">外立面与大厅</div>
@@ -234,9 +238,8 @@
       <div :css="[@item, @zl7 && @selected_css]"  ms-click="@switch_expo('7')">藏族戏剧用品展</div>
     </div>
 
-    <div class="page-title" style="clear:both; overflow:hidden; margin:20px;display: inline-block;">
-      <h4>了解更多展览信息</h4>
-    </div>
+    <div class="page-title" style="color: white;">
+      <h3>了解更多展览信息</h3></div>
 
     <div class="locations" style="margin-bottom:40px">
       <div class="item2"><a href="<?php echo base_url('pages/view/basic')?>">基本陈列</a></div>
@@ -246,18 +249,15 @@
 
 
   </div>
-<!--
-    <div style="margin-top:40px">
-    </div> -->
-
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<!-- <script src="<?php echo base_url('assets/common/js/jquery.panorama_viewer.js') ?>"></script> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
+
 <script>
 // /* jshint jquery: true */
 jQuery(document).ready(function($){

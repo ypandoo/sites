@@ -57,16 +57,17 @@
     $id: "t_ctrl",
     item: {
       'float': 'left',
-      'width': '31%',
+      'width': '28%',
       'margin': '1%',
-      'border': '1px solid rgba(0, 0, 0, 0.2)',
-      'background': 'rgba(0, 0, 0, 0.1)',
-      'color': 'rgba(0, 0, 0, 0.2)',
+      'border': '1px solid rgba(255, 245, 245, 0.2)',
+      'background': 'rgba(0, 0, 0, 0.0980392)',
+      'color': 'rgb(255, 255, 255)',
       'height': '32px',
       'text-align': 'center',
       'font-size': '12px',
       'padding-top': '6px',
-      'border-radius': '5px'
+      'border-radius': '5px',
+      'line-height': '25px'
     },
     selected_css: {
       'border': '1px solid rgba(255, 0, 0, 0.4)',
@@ -150,7 +151,7 @@
 
     clear_sel_expo: function() {
       Self.framework.zl1 = Self.framework.zl2 = Self.framework.zl3 =
-        Self.framework.zl4 = Self.framework.zl5 = Self.framework.zl6 =
+        Self.framework.zl4 = Self.framework.zl5 = Self.framework.zl6 = Self.framework.zl7 =
         false;
     }
 

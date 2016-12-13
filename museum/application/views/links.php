@@ -17,18 +17,17 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/new_expo.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base2.css') ?>">
 
     <style>
       .item_link {
-        height: 70px;
-        width: 100%;
-        background: #f5f5f5;
+        height: 100px;
+            width: 100%;
+            background: rgba(10, 0, 0, 0.46);
       }
 
       .item_link .left{
-        width: 40%;
+        width: 100px;
         float: left;
         line-height: 50px;
         padding: 10px;
@@ -45,24 +44,41 @@
         font-size: 14px;
         font-weight: 600;
       }
+
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+      }
+
+      .innerheader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .8rem;
+    z-index: 1000;
+    border-bottom: 1px solid white;
+}
+
+.page-title {
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: 24px;
+    /* border-bottom: 1px solid; */
+}
     </style>
 </head>
-<body>
-<div class="bk"></div>
+<body class="bg bg5">
 <div id="details" class="details"  ms-controller="expo_list_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
+  <section class="innerheader">
+    <a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+      <h2>相关链接</h2>
+      <a class="btn menubtn"></a></section><section class="menuDiv hide">
+  </section>
 
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu3') ?>"><div class="logo touch-href" data-href="/"></div></a>
-        </div>
-
-
-        <div class="page-title">
-          <h2>相关链接</h2>
-          <h4>Links</h4>
-        </div>
+  <div class="page-title" style="color: white; margin-top:66px">
+    <h3>相关链接 | Links</h3></div>
 
         <div class="item_link" style="margin-top:20px;">
           <a href="http://www.sach.gov.cn/"><div class="left"><img src="<?php echo base_url('assets/front/img/links/gjwwj.jpg') ?>" height="50px"></div>
@@ -93,9 +109,7 @@
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/knowledge.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 
 <script>
 
