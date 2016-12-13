@@ -53,7 +53,7 @@
 }
 
 .menu{
-  width: 160px;
+  width: 145px;
   /* height: 410px; */
   position: absolute;
   top: 10%;
@@ -69,7 +69,7 @@
 .menu_item{
   /* height: 60px; */
   /* width: 145px; */
-  padding: 10px 10px 10px 5px;
+  padding: 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -78,7 +78,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 65px;
+  height: 60px;
   background: url('<?php echo base_url('assets/front/img/menu/m1_bottom.png') ?>');
   background-size: 100% 100%;
 }
@@ -88,6 +88,10 @@
   float: left;
   height: 100%;
 }
+
+.menu .menu_item img{
+  height: 35px;
+}
 </style>
 
 <body id="bg">
@@ -95,41 +99,41 @@
     <div class="menu" id="menu" style="display:none; padding: 10px 0">
       <a href='<?php echo base_url('pages/view/about') ?>'>
         <div class="menu_item" >
-          <img src='<?php echo base_url('assets/front/img/menu/m1_about.png') ?>' style="height:40px;"/>
+          <img src='<?php echo base_url('assets/front/img/menu/m1_about.png') ?>' />
         </div>
       </a>
 
       <a href='<?php echo base_url('pages/view/new_expo') ?>'>
         <div class="menu_item" >
-          <img src='<?php echo base_url('assets/front/img/menu/m1_new.png') ?>' style="height:40px;"/>
+          <img src='<?php echo base_url('assets/front/img/menu/m1_new.png') ?>' />
         </div>
       </a>
       <a href='<?php echo base_url('pages/view/basic') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_basic.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_basic.png') ?>' />
         </div>
       </a>
 
       <a href='<?php echo base_url('pages/view/expo_review') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_review.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_review.png') ?>' />
         </div>
       </a>
       <a href='<?php echo base_url('pages/view/dynamic') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_dynamic.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_dynamic.png') ?>' />
         </div></a>
       <a href='<?php echo base_url('pages/view/instruction') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_instruction.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_instruction.png') ?>' />
         </div></a>
       <a href='<?php echo base_url('pages/view/construction') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_construction.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_construction.png') ?>' />
         </div></a>
       <a href='<?php echo base_url('pages/view/protect') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m1_protect.png') ?>' style="height:40px;"/>
+        <img src='<?php echo base_url('assets/front/img/menu/m1_protect.png') ?>' />
         </div></a>
     </div>
 
