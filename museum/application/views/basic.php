@@ -17,22 +17,82 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/expo_review.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
     <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
+
+    <style>
+    .details {
+    width: 100%;
+    background: transparent;
+    }
+
+    .content .item {
+        position: absolute;
+        width: 100%;
+        height: 38px;
+        background: rgba(97,0, 0, 0.5);
+        /* margin-top: 4px; */
+        /* padding: 5px; */
+        /* float: left; */
+        bottom: 3px;
+    }
+
+    .content .item h2 {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      color: #ffffff;
+      padding: 5px 5px 0 5px;
+    }
+
+    .content {
+        width: 48%;
+        height: 130px;
+        position: relative;
+        /* border-radius: 20px; */
+        /* background-color: #f5f5f5; */
+        /* margin-bottom: 5px; */
+        margin: 10px 1% 10px 1%;
+        float: left;
+        /* border: 1px solid rgb(0, 132, 77); */
+        /* box-shadow: 3px 2px 6px rgba(220, 220, 220, 0); */
+    }
+
+
+    .innerheader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .8rem;
+    z-index: 1000;
+    /* background: rgba(79, 247, 90, 0.16); */
+    border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    .show_more{
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid white;
+    width: 60%;
+    margin-left: 20%;
+    line-height: 24px;
+    margin-top: 20px;
+    }
+    </style>
+
 </head>
-<body>
-<div class="bk"></div>
+<body class="bg bg2">
+<section class="innerheader">
+	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+    <h2>基本陈列</h2>
+</section>
+
 <div id="details" class="details"  ms-controller="expo_list_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
-
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
-        </div>
-
         <!-- banner -->
         <div class="banner-top" style="margin-top:46px">
           <div><img src="<?php echo base_url('assets\front\img\m\routine-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
@@ -42,10 +102,8 @@
           <div><img src="<?php echo base_url('assets\front\img\m\routine-banner5.jpg')?>" width="100%"/></div>
         </div>
 
-
-        <div class="page-title"   style="margin-top:20px">
-          <h2>基本陈列</h2>
-          <h4>Routine Exhibitions</h4>
+        <div class="page-title"   style="margin-top: 20px;margin-left: 20px;color: white;">
+          <h3>基本陈列&nbsp; | &nbsp; Routine Exhibitions</h3>
         </div>
 
         <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
@@ -66,15 +124,13 @@
       <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
         加载更多...
       </div>
-
-      <div style="margin-top:20px"></div>
-
-    </div>
+</div>
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/basic_list.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 

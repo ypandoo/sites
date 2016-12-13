@@ -1,43 +1,101 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>西藏博物馆</title>
-    <meta name="keywords" content="西藏博物馆"/>
-    <meta name="description" content="西藏博物馆"/>
-    <meta name="robots" content="all"/>
-    <meta name="copyright" content="西藏博物馆"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="author" content="" />
-    <meta name="revisit-after"  content="1 days" />
-    <meta name="format-detection" content="email=no" />
-    <meta name="format-detection" content="telephone=yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>西藏博物馆</title>
+<meta name="keywords" content="西藏博物馆,西藏博物馆,">
+<meta name="description" content="">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/expo_review.css') ?>">
+<style>
+.details {
+width: 100%;
+background: transparent;
+}
+
+.content .item {
+    position: absolute;
+    width: 100%;
+    height: 38px;
+    background: rgba(97, 0, 0, 0.5);
+    /* margin-top: 4px; */
+    /* padding: 5px; */
+    /* float: left; */
+    bottom: 3px;
+}
+
+.content .item h2 {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: #ffffff;
+  padding: 5px 5px 0 5px;
+}
+
+.content {
+  width: 48%;
+  /* height: 80px; */
+  position: relative;
+  /* border-radius: 20px; */
+  /* background-color: #f5f5f5; */
+  /* margin-bottom: 5px; */
+  margin: 10px 1% 10px 1%;
+  float: left;
+  /* border: 1px solid rgb(0, 132, 77); */
+  /* box-shadow: 3px 2px 6px rgba(220, 220, 220, 0); */
+}
+
+
+.innerheader {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: .8rem;
+z-index: 1000;
+/* background: rgba(79, 247, 90, 0.16); */
+border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.show_more{
+margin-bottom: 50px;
+color: white;
+text-align: center;
+font-size: 12px;
+border: 1px solid white;
+width: 60%;
+margin-left: 20%;
+line-height: 24px;
+margin-top: 20px;
+}
+</style>
 </head>
-<body>
-<div class="bk"></div>
-<div id="details" class="details"  ms-controller="expo_list_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
 
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
+<body class="bg2 bg">
+<section class="innerheader">
+	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+    <h2>展览回顾</h2>
+    <a class="btn menubtn"></a></section><section class="menuDiv hide">
+</section>
+
+<div class="innerContent">
+	<div class="toppadding"></div>
+    <div class="details-box">
+    	<div class="txtbox">
+			<h2 style="font-size:16px">展览回顾</h2>
+      <p>
+        <br>错过西藏博物馆精彩的展览啦？没关系，线上展览回顾为您回顾最精彩的西博展览！<br>
+      </p>
         </div>
+        <div class="imgbox"><img src="<?php echo base_url('assets/front/img/nav/9.jpg')?>"></div>
+    </div>
 
-
-        <div class="page-title">
-          <h2>展览回顾</h2>
-          <h4>Exhibitions Review</h4>
-        </div>
-
-        <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
+    <div id="details" class="details"  ms-controller="expo_list_ctrl">
+        <div style="padding: 0 10px 0 10px; overflow:hidden">
         <div class="content"  ms-for='($index, item_info) in @list'>
             <div class="news_img"  ms-click="@get_detail_link($index)">
               <img ms-attr="{src:@get_cover($index)}" width="100%" >
@@ -61,9 +119,12 @@
     </div>
 
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/front/js/jquery1.9.1.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/jquery.touchSwipe.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/jquery.bstMobile.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/expo_review.js') ?>"></script>
 
 <script>

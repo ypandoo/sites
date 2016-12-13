@@ -44,7 +44,7 @@
     }*/
 
 #bg {
-  background: url('<?php echo base_url('assets/front/img/menu/yuelan_bg.jpg') ?>') no-repeat  fixed;
+  background: url('<?php echo base_url('assets/front/img/menu/yueyou_bg.jpg') ?>') no-repeat  fixed;
   -webkit-background-size:  cover;
   -moz-background-size:  cover;
   -o-background-size:  cover;
