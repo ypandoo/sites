@@ -86,7 +86,7 @@
     </style>
 
 </head>
-<body class="bg bg2">
+<body class="bg bg2" style="margin:0;padding:0">
 <section class="innerheader">
 	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
     <h2>基本陈列</h2>

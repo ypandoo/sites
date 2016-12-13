@@ -33,7 +33,7 @@
 </style>
 
 </head>
-<body class="bg2 bg">
+<body class="bg5 bg">
 <section class="innerheader">
 	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
     <h2>关于西博</h2>

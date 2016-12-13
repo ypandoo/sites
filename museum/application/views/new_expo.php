@@ -75,7 +75,7 @@ margin-top: 20px;
 </style>
 </head>
 
-<body class="bg2 bg">
+<body class="bg5 bg">
 <section class="innerheader">
 	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
     <h2>新展快讯</h2>

@@ -46,7 +46,7 @@
 </style>
 
 </head>
-<body class="bg2 bg" ms-controller="sd-list">
+<body class="bg5 bg" ms-controller="sd-list">
 <div id="content_id" data-id="<?php echo $content_id?>"></div>
 
 <section class="innerheader">
