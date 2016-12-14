@@ -439,11 +439,11 @@
     transition:left .3s ease
 }
 .section-container .sd-list .list-container .selector div{
-    margin-top: 13px;
-    margin-left: 3px;
-    height: 54px;
-    width: 54px;
-    border: 2px solid #000;
+  margin-top: 13px;
+      margin-left: 3px;
+      height: 54px;
+      width: 54px;
+      border: 2px solid #c00;
 }
 .section-container .sd-list .list-container .selector div:before{
     content: '';
@@ -453,7 +453,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid red;
     top: 8px;
     left: 25px;
 }

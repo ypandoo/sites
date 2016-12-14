@@ -17,6 +17,7 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base2.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/item_detail.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
     <style>
@@ -37,14 +38,15 @@ width: 50%;
     </style>
 </head>
 
-<body>
+<body class="bg bg5">
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
-<div class="bk"></div>
+
+<section class="innerheader" style="border-bottom:1px solid white">
+	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
+    <h2>十大精品</h2>
+</section>
 
 <div class="details" ms-controller="sd-list" style="margin-top:46px">
-        <div id="header" class="newhead">
-            <div class="logo touch-href" ms-click="{@direct_to_list_path()}"></div>
-        </div>
 
         <div class="section-container">
             <section class="sd-list pub-title">
@@ -136,15 +138,13 @@ width: 50%;
 
         <div style="margin-top:40px">
         <div>
-
-        <div style="height:20px; background: #ec422b;">
-        </div>
 </div>
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
 <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/item_detail.js') ?>"></script>
+<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 <script>
 </script>
 </html>

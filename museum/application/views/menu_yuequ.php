@@ -44,7 +44,7 @@
     }*/
 
 #bg {
-  background: url('<?php echo base_url('assets/front/img/menu/yueyou_bg.jpg') ?>') no-repeat  fixed;
+  background: url('<?php echo base_url('assets/front/img/menu/yuequ_bg.jpg') ?>') no-repeat  fixed;
   -webkit-background-size:  cover;
   -moz-background-size:  cover;
   -o-background-size:  cover;
@@ -61,9 +61,8 @@
   /* background-size: 145px 410px; */
   /* background: url(http://127.0.0.1/assets/front/img/main_yuequ_menu.png) 145px 410px; */
   background-size: cover;
-  background: rgba(202, 29, 29, 0.8);
-  box-shadow: 5px 5px rgba(187, 17, 17, 0.4);
-  padding: 20px 0px;
+  background: rgba(158, 123, 50, 0.8);
+  box-shadow: 5px 5px rgba(187, 158, 17, 0.4);
 }
 
 .menu_item{
@@ -79,7 +78,7 @@
   left: 0;
   width: 100%;
   height: 60px;
-  background: url('<?php echo base_url('assets/front/img/menu/m2_bottom.png') ?>');
+  background: url('<?php echo base_url('assets/front/img/menu/m3_bottom.png') ?>');
   background-size: 100% 100%;
 }
 
@@ -97,32 +96,29 @@
 <body id="bg">
 
     <div class="menu" id="menu" style="display:none; padding: 10px ">
-      <a href='<?php echo base_url('pages/view/item_list') ?>'>
+      <a href=''>
         <div class="menu_item" >
-          <img src='<?php echo base_url('assets/front/img/menu/m2_top10.png') ?>' />
+          <img src='<?php echo base_url('assets/front/img/menu/m3_shop.png') ?>' />
         </div>
       </a>
 
-      <a href='<?php echo base_url('pages/view/item_list_normal') ?>'>
+      <a href='<?php echo base_url('pages/view/activity') ?>'>
         <div class="menu_item" >
-          <img src='<?php echo base_url('assets/front/img/menu/m2_item.png') ?>' />
+          <img src='<?php echo base_url('assets/front/img/menu/m3_activity.png') ?>' />
         </div>
       </a>
-      <a href='<?php echo base_url('pages/view/360') ?>'>
+      <a href='<?php echo base_url('pages/view/lesson') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m2_360.png') ?>' />
+        <img src='<?php echo base_url('assets/front/img/menu/m3_lesson.png') ?>' />
         </div>
       </a>
 
-      <a href='<?php echo base_url('pages/view/nav') ?>'>
+      <a href='<?php echo base_url('pages/view/volunteer') ?>'>
         <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m2_nav.png') ?>' />
+        <img src='<?php echo base_url('assets/front/img/menu/m3_volunteer.png') ?>' />
         </div>
       </a>
-      <a href='<?php echo base_url('pages/view/links') ?>'>
-        <div class="menu_item" >
-        <img src='<?php echo base_url('assets/front/img/menu/m2_links.png') ?>' />
-        </div></a>
+
     </div>
 
     <div class="menu_bottom">

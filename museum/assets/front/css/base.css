@@ -242,7 +242,7 @@ input::-webkit-input-placeholder {
   margin-left: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border:1px solid #CCC;
+  /*border:1px solid #CCC;*/
   -webkit-user-select:none;
   user-select:none;
 }
