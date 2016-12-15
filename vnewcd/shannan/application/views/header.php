@@ -1,19 +1,14 @@
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">微山南管理系统</a>
+<header>
+    <a class="menuBtn btn"></a>
+    <h1><a href="/wap"></a></h1>
+    <a class="loginBtn btn"></a>
+</header>
+<div class="headerBlock"></div>
+<menu class="animate">
+    <div>
+        <a href="<?php echo site_url('front/index')?>">山南发布</a>
+        <a href="<?php echo site_url('front/zwbm')?>">政务便民</a>
+        <a href="<?php echo site_url('front/swbm')?>">生活便民</a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">XXX，欢迎您！</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+</menu>

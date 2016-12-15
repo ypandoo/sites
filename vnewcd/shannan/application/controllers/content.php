@@ -105,20 +105,22 @@ class Content extends CI_Controller {
       echo json_encode($result);
     }
 
-    public function getAPage()
+    public function getAPageByCategory()
     {
       $page = $this->input->post('page');
       if (!isset($page) || empty($page)) {
         $page = 0;
       }
 
+      $category = $this->input->post('category');
+
       $this->load->model('Content_Model');
-      $data = $this->Content_Model->getListWithLimit($page);
+      $data = $this->Content_Model->getListByCategoryWithLimit($page, $category);
 
       $result["success"] = 1;
       $result["data"] = $data;
       $result['message'] = "get page succeeded!";
-      $result['page_count'] = $this->Content_Model->getPageCount();
+      $result['page_count'] = $this->Content_Model->getPageCount($category);
 
       echo json_encode($result);
     }

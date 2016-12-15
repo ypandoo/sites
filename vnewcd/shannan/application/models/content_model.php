@@ -37,11 +37,11 @@ class Content_Model extends CI_Model
         return $query->result_array();
     }
 
-    public function getListWithLimit($page = 0)
+    public function getListByCategoryWithLimit($page = 0, $category)
     {
         $interval = $this->config->item('page_interval');
         //$query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
-        $query = $this->db->get('t_content', $interval, $page*$interval);
+        $query = $this->db->get_where('t_content', array('type' => $category), $interval, $page*$interval);
         return $query->result_array();
     }
 
@@ -64,10 +64,13 @@ class Content_Model extends CI_Model
         return $data;
     }
 
-    public function getPageCount()
+    public function getPageCount($category)
     {
       $interval = $this->config->item('page_interval');
-      $page_count =  $this->db->count_all('t_content');
+      $this->db->from('t_content');
+      $this->db->where(array('type' => $category));
+      $page_count = $this->db->count_all_results(); // Produces an integer, like 17
+    //   $page_count =  $this->db->count_all('t_content');
       return intval($page_count / $interval);
     }
 }

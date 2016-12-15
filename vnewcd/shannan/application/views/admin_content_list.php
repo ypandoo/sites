@@ -19,18 +19,33 @@
 
   <body>
 
-    <?php include 'header.php' ?>
+    <?php include 'admin_header.php' ?>
 
     <div class="container-fluid"  ms-controller="contents">
       <div class="row">
-        <?php include 'sidebar.php' ?>
+        <?php include 'admin_sidebar.php' ?>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="col-sm-12">
             <h2 class="sub-header">内容管理<small> &nbsp;新闻，产品等文章的发布</small></h2>
           </div>
-          <div class="col-sm-3 col-sm-offset-9" style="margin-bottom:15px">
-            <a class="btn btn-default pull-right" href="<?php echo site_url('admin/content')?>">
-              发布新的文章 <span aria-hidden="true">&rarr;</span></a>
+          <div class="row" style="margin-bottom:10px">
+              <div class="col-sm-8">
+                  <div class="col-sm-4">
+                      <label for="type"><span style="line-height:30px; font-size:16px">选择文章板块:</span></label>
+                  </div>
+                  <div class="col-sm-4">
+                      <select class="form-control" name="type" id="type" ms-duplex="@type">
+                        <?php foreach ($typelist as $type) { ?>
+                          <option value="<?php echo $type['_id'] ?>"><?php echo $type['type_name'];?></option>
+
+                        <?php } ?>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-sm-4" style="padding-right:30px">
+                <a class="btn btn-default pull-right" href="<?php echo site_url('admin/content')?>">
+                  发布新的文章 <span aria-hidden="true">&rarr;</span></a>
+              </div>
           </div>
 
           <div class="table-responsive col-sm-12">
@@ -95,6 +110,7 @@
     data:[],
     page: 0,
     page_count: 0,
+    type: 1,
     disable_css:'disabled',
     prev_disable: false,
     next_disable: false,
@@ -102,8 +118,8 @@
         $.ajax({
             type:'POST',
             dataType: 'JSON',
-            data:{page:self.content.page},
-            url:'<?php echo site_url('content/getAPage/')?>',
+            data:{page:self.content.page, category:self.content.type},
+            url:'<?php echo site_url('content/getAPageByCategory/')?>',
         })
         .done(function (results) {
             if (results.success == 1){
@@ -141,9 +157,16 @@
         self.content.page++;
         self.content.getAPage();
       }
-    }
+  },
 
   });
+
+  self.content.$watch("type", function (a) {
+      self.content.page = 0;
+      self.content.page_count = 0;
+    self.content.getAPage();
+});
+
 }).call(define('Controller'));
 
 function deleteById(id)

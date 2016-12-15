@@ -19,11 +19,11 @@
 
   <body>
 
-    <?php include 'header.php' ?>
+    <?php include 'admin_header.php' ?>
 
     <div class="container-fluid">
       <div class="row">
-        <?php include 'sidebar.php' ?>
+        <?php include 'admin_sidebar.php' ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
@@ -42,6 +42,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
+                  <th>分类唯一标识</th>
                   <th>分类名称（中文）</th>
                   <th>操作</th>
                 </tr>
@@ -50,6 +51,9 @@
 
                 <?php foreach ($typelist as $type): ?>
                 <tr id="<?php echo 'tr'.$type['_id']?>">
+                <td>
+                  <?php echo $type['_id']; ?>
+                </td>
                   <td>
                     <?php echo $type['type_name']; ?>
                   </td>

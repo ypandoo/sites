@@ -50,7 +50,7 @@
 
 <body>
 
-<?php include 'header.php' ?>
+<?php include 'admin_header.php' ?>
 
 <!-- Modal -->
 <div class="modal fade" id="gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ms-controller="gallery">
@@ -125,7 +125,7 @@
 
     <div class="container-fluid" ms-controller="content">
       <div class="row">
-        <?php include 'sidebar.php' ?>
+        <?php include 'admin_sidebar.php' ?>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="col-sm-12">

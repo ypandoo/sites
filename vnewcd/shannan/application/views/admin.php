@@ -19,11 +19,11 @@
 
   <body>
 
-    <?php include 'header.php' ?>
+    <?php include 'admin_header.php' ?>
 
     <div class="container-fluid">
       <div class="row">
-        <?php include 'sidebar.php' ?>
+        <?php include 'admin_sidebar.php' ?>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">欢迎使用微山南管理系统！</h2>
         </div>
