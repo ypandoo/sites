@@ -1,7 +1,8 @@
 
 <header>
-    <a class="menuBtn btn"></a>
-    <h1><a href="/wap"></a></h1>
+    <a class="menuBtn"><span class="glyphicon glyphicon glyphicon-th-large" aria-hidden="true"
+      style="font-size:24px; line-height: 28px;"></span></a>
+    <h1 style="margin:0 auto"><a href="<?php echo site_url()?>"></a></h1>
     <a class="loginBtn btn"></a>
 </header>
 <div class="headerBlock"></div>

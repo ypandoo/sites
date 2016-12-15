@@ -9,6 +9,8 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper">
@@ -37,10 +39,13 @@
         </a>
         <nav>
         	<a href="<?php echo site_url('front/news?type=1')?>">时政要闻</a>
-            <a href="<?php echo site_url('front/news?type=2')?>">精准扶贫</a>
+            <a href="<?php echo site_url('front/news?type=2')?>"
+              style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">精准扶贫</a>
             <a href="<?php echo site_url('front/news?type=3')?>">两学一做</a>
             <a href="<?php echo site_url('front/news?type=4')?>">两会专题</a>
-            <a href="<?php echo site_url('front/news?type=5')?>">高层访谈</a>
+            <a href="<?php echo site_url('front/news?type=5')?>"
+              style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">高层访谈</a>
+            <!-- <a href="<?php echo site_url('front/news?type=5')?>">高层访谈</a> -->
         </nav>
         <!-- <section class="chunkin">
         	<a href="/wap/about.php?bid=9">

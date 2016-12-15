@@ -47,4 +47,16 @@ class Admin extends CI_Controller {
 		$data['typelist'] = $this->Type_Model->getTypeList();
 		$this->load->view('admin_type_list', $data);
 	}
+
+  public function feedbacklist()
+  {
+    $data['tree_item'] = 3;
+    $this->load->view('admin_feedback_list', $data);
+  }
+
+  public function feedback()
+  {
+    $data['tree_item'] = 3;
+    $this->load->view('admin_feedback', $data);
+  }
 }

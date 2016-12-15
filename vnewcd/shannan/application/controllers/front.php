@@ -39,4 +39,8 @@ class Front extends CI_Controller {
     public function swbm(){
         $this->load->view('shbm');
     }
+
+    public function feedback(){
+        $this->load->view('feedback');
+    }
 }

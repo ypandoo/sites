@@ -3,7 +3,7 @@
     <li <?php if($tree_item == 0) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/index')?>">首页 <span class="sr-only">(current)</span></a></li>
     <li <?php if($tree_item == 1) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/typelist')?>">分类管理</a></li>
     <li <?php if($tree_item == 2) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/contentlist')?>">内容管理</a></li>
-    <li <?php if($tree_item == 3) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/index')?>">投诉管理</a></li>
+    <li <?php if($tree_item == 3) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/feedbacklist')?>">投诉管理</a></li>
     <li <?php if($tree_item == 4) echo 'class="active"'; ?>><a href="<?php echo site_url('/admin/index')?>">用户管理</a></li>
     <!-- <li><a href="#">Export</a></li> -->
   </ul>

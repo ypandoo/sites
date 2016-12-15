@@ -39,7 +39,7 @@
         </div>
 
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-hover ">
               <thead>
                 <tr>
                   <th>分类唯一标识</th>
