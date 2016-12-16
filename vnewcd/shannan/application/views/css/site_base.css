@@ -156,7 +156,7 @@ footer a{ color:#747a85;}
     padding: 10px 0 10px 80px;
 }
 .news h4,.firstNews h4{ font-size:12px; margin-top:0; margin-bottom:0;color:#1e1e1e; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-.news p,.firstNews p,.firstNews span{ font-size:12px; color:#838383; margin: 0; line-height: 16px; margin-top: 3px}
+.news p,.firstNews p,.firstNews span{ font-size:12px; color:#838383; margin: 0; line-height: 16px; margin-top: 10px}
 .news div {
     position: absolute;
     left: 10px;

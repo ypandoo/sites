@@ -36,8 +36,8 @@
         	<li ms-for="($index,el) in data" ms-if="$index > 0">
             		<a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+el._id}">
             			<div>
-            				<p>{{el.update_time | date("MM-dd")}}</p>
-            				<p>{{el.update_time | date("yyyy")}}</p>
+            				<p>{{el.update_time | date("MM-dd")}} <br> {{el.update_time | date("yyyy")}}</p>
+            				<!-- <p>{{el.update_time | date("yyyy")}}</p> -->
             			</div>
             			<h4>{{el.title}}</h4>
             			<p>{{el.plain_text  | truncate(35,'...') }}</p>
@@ -72,7 +72,7 @@
     data:[],
     page: 0,
     type: 1,
-    first: {cover:'default.png', title:'获取数据不正确'},
+    first: {cover:'default.png', title:'数据加载中...'},
     getAPage:function(){
         $.ajax({
             type:'POST',

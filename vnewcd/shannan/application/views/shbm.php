@@ -39,10 +39,10 @@
         </a>
         <nav>
         	<a href="<?php echo site_url('front/news?type=1')?>">旅游景点</a>
-            <a href="<?php echo site_url('front/news?type=2')?>">名优产品</a>
+            <a href="<?php echo site_url('front/news?type=2')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">名优产品</a>
             <a href="<?php echo site_url('front/news?type=3')?>">农牧课堂</a>
-            <a href="<?php echo site_url('front/news?type=4')?>">天气查询</a>
-            <a href="<?php echo site_url('front/news?type=4')?>">名俗文化</a>
+            <a href="http://m.weather.com.cn/mweather/101140301.shtml">天气查询</a>
+            <a href="<?php echo site_url('front/news?type=4')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">名俗文化</a>
             <a href="<?php echo site_url('front/news?type=4')?>">特色美食</a>
         </nav>
         <!-- <section class="chunkin">

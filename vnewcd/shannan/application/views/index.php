@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>成都珍才人力资源服务有限责任公司</title>
-<meta name="keywords" content="关键词" />
-<meta name="description" content="关键词描述" />
+<title>山南发布</title>
+<meta name="keywords" content="山南发布" />
+<meta name="description" content="山南发布" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">
@@ -19,8 +19,8 @@
         <section class="banner">
         	<img src="<?php echo base_url('Application/views/img/banner1.jpg') ?>">
             <hgroup>
-            	<h3>网聚精英人才，找到最有价值的人</h3>
-                <h4>Fabric talents,To find the most valuable people</h4>
+            	<h3>微山南，一站式微信服务平台</h3>
+                <h4>Shannan Information Platform Official</h4>
             </hgroup>
         </section>
                 <a class="box1 box1i">

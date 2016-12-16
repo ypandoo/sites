@@ -66,7 +66,10 @@
     </div>
 
     <div class="form-group gap_top">
-    <button type="button" class="btn btn-primary" ms-click="@check()">提交投诉</button>
+    <button type="button" class="btn btn-primary" ms-click="@check()" style="    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;">
+      提交投诉</button>
     </div>
   </form>
 </div>
@@ -164,7 +167,8 @@
         })
         .done(function (results) {
             if (results.success == 1){
-              alert('投诉提交成功!我们的工作人员会与您联系!');
+              alert('投诉提交成功!稍后我们会有工作人员处理您的投诉!');
+              history.go(-1);
             }
         })
       }
