@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>商学院 - 成都珍才人力资源服务有限责任公司</title>
-<meta name="keywords" content="商学院" />
-<meta name="description" content="商学院" />
+<title>微山南</title>
+<meta name="keywords" content="微山南" />
+<meta name="description" content="微山南" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">

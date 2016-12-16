@@ -23,18 +23,18 @@
                 <h4>Shannan Information Platform Official</h4>
             </hgroup>
         </section>
-                <a class="box1 box1i">
+                <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/img1.jpg') ?>">
             <div>
-            	<h3>Personal login</h3>
-                <abbr>个人登录</abbr>
+            	<h3>Governmental Services</h3>
+                <abbr>政务便民</abbr>
             </div>
         </a>
-                <a class="box1" href="/wap/qiye.php">
+                <a class="box1" href="<?php echo site_url('front/shbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/img2.jpg') ?>">
             <div>
-            	<h3>Business orders</h3>
-                <abbr>企业下单</abbr>
+            	<h3>Life Services</h3>
+                <abbr>生活便民</abbr>
             </div>
         </a>
         <nav>
@@ -65,6 +65,8 @@
                 <p>测试</p>
             </a>
         </section> -->
+        <div class="gap_top gap_bottom">
+        </div>
 
         <?php include 'footer.php' ?>
     </div>

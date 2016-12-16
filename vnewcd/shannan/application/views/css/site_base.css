@@ -56,8 +56,8 @@ h1 a {
 .banner{ position:relative;  overflow:hidden;}
 .banner img{ display:block; width:100%;}
 .banner hgroup{ position:absolute; left:0; top:50%; transform:translateY(-50%); -webkit-transform:translateY(-50%); width:100%; text-align:center; color:#FFF;}
-.banner h3{ font-size:.42rem;}
-.banner h4{ font-size:.14rem; text-transform:uppercase;}
+.banner h3{ font-size:16px;}
+.banner h4{ font-size:.12px; }
 @-webkit-keyframes fromScale105 {
 	from{ -webkit-transform: scale3d(1.05,1.05,1.05);}
 }
@@ -82,8 +82,16 @@ menu.open{ transform:translateX(0); -webkit-transform:translateX(0);}
 .box1{ position:relative; display:block;}
 .box1 img{ display:block; width:100%;}
 .box1 div{ position:absolute; left:.85rem; top:50%; transform:translateY(-50%); -webkit-transform:translateY(-50%); color:#01399e;}
-.box1 h3{ font-size:.24rem; font-family:"Arial Black", sans-serif; text-transform:uppercase;}
-.box1 abbr{ padding-right:.38rem; font-size:.24rem; background:url(../img/icon1.png) no-repeat right center; background-size: auto .24rem;}
+.box1 h3{     font-size: 14px;
+    font-family: "Arial Black", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1px; 
+    /* padding-bottom: 0px; */
+    margin-top: 0;}
+.box1 abbr{     padding-right: 20px;
+    font-size: 14px;
+    background: url(../img/icon1.png) no-repeat right center;
+    background-size: auto 12px;}
 
 nav a {
     display: block;

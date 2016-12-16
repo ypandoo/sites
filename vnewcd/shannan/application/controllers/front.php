@@ -36,7 +36,7 @@ class Front extends CI_Controller {
         $this->load->view('zwbm');
     }
 
-    public function swbm(){
+    public function shbm(){
         $this->load->view('shbm');
     }
 

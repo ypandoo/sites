@@ -19,22 +19,22 @@
         <section class="banner">
         	<img src="<?php echo base_url('Application/views/img/banner1.jpg') ?>">
             <hgroup>
-            	<h3>网聚精英人才，找到最有价值的人</h3>
+            	<h3>微山南，一站式微信信息服务平台</h3>
                 <h4>Fabric talents,To find the most valuable people</h4>
             </hgroup>
         </section>
-                <a class="box1 box1i">
+                <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
         	<img src="<?php echo base_url('Application/views/img/img1.jpg') ?>">
             <div>
-            	<h3>Personal login</h3>
-                <abbr>个人登录</abbr>
+            	<h3>Shanna News</h3>
+                <abbr>山南发布</abbr>
             </div>
         </a>
-                <a class="box1" href="/wap/qiye.php">
+                <a class="box1" href="<?php echo site_url('front/shbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/img2.jpg') ?>">
             <div>
-            	<h3>Business orders</h3>
-                <abbr>企业下单</abbr>
+            	<h3>Life Services</h3>
+                <abbr>生活便民</abbr>
             </div>
         </a>
         <nav>
@@ -62,7 +62,8 @@
                 <p>测试</p>
             </a>
         </section> -->
-
+        <div class="gap_top gap_bottom">
+        </div>
         <?php include 'footer.php' ?>
     </div>
 </body>

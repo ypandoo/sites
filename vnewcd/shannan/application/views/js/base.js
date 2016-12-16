@@ -6,7 +6,7 @@
   };
 
 
-  // this.base_url = 'http://127.0.0.1/';
+   //this.base_url = 'http://www.vnewcd.com/shannan';
   // this.upload_img = 'http://127.0.0.1/uploads/img/';
   // this.upload_video = 'http://127.0.0.1/uploads/video/';
   // this.upload_audio = 'http://127.0.0.1/uploads/audio/';

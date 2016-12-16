@@ -10,6 +10,6 @@
     <div>
         <a href="<?php echo site_url('front/index')?>">山南发布</a>
         <a href="<?php echo site_url('front/zwbm')?>">政务便民</a>
-        <a href="<?php echo site_url('front/swbm')?>">生活便民</a>
+        <a href="<?php echo site_url('front/shbm')?>">生活便民</a>
     </div>
 </menu>
