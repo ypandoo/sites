@@ -3,14 +3,27 @@ class Type extends CI_Controller {
 
     public function add()
     {
-       $type_name = $this->input->post('type_name');
+       $type_name = $this->input->post('name');
+       $id = $this->input->post('_id');
 
        $this->load->model('Type_Model');
+       $result = $this->Type_Model->getById($id);
+       if (isset($result) && !empty($result)) {
+         $result['success'] = 0;
+         $result['message'] = '已经有相同的分类简称了，请更改！';
+         echo json_encode($result);
+         die;
+       }
+
        $data['type_name'] = $type_name;
+       $data['_id'] = $id;
        $result = $this->Type_Model->add($data);
 
        //$this->load->view('admin_type_list');
-       redirect('/admin/typelist', 'refresh');
+       //redirect('/admin/typelist', 'refresh');
+       $result['success'] = 1;
+       $result['message'] = '增加分类成功！';
+       echo json_encode($result);
     }
 
     // public function getById()

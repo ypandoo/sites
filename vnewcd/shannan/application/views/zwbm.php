@@ -11,6 +11,21 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+nav a:nth-child(1){
+  background:url('<?php echo base_url('Application/views/img/icon_website.png')?>') no-repeat center 15px; background-size:30px;}
+nav a:nth-child(2){
+  background:url('<?php echo base_url('Application/views/img/icon_wechat.png')?>') no-repeat center 10px; background-size:40px;}
+nav a:nth-child(3){
+  background:url('<?php echo base_url('Application/views/img/icon_service.png')?>') no-repeat center 15px; background-size:36px;}
+nav a:nth-child(4){
+  background:url('<?php echo base_url('Application/views/img/icon_complain.png')?>') no-repeat center 15px; background-size:30px auto;}
+nav a:nth-child(5){
+  background:url('<?php echo base_url('Application/views/img/icon_microphone.png')?>') no-repeat center 15px; background-size:30px auto;}
+nav a:nth-child(6){
+  background:url('<?php echo base_url('Application/views/img/icon_microphone.png')?>') no-repeat center 15px; background-size:30px auto;}
+</style>
 </head>
 <body>
     <div class="wrapper">
@@ -37,32 +52,14 @@
                 <abbr>生活便民</abbr>
             </div>
         </a>
-        <nav>
+        <nav style="overflow:hidden">
         	<a href="<?php echo site_url('front/news?type=1')?>">官网矩阵</a>
             <a href="<?php echo site_url('front/news?type=2')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">微信矩阵</a>
             <a href="<?php echo site_url('front/news?type=3')?>">一站式服务</a>
             <a href="<?php echo site_url('front/feedback')?>" style="margin-left:1px;border-right: 1px solid #d8d8d8;">违法投诉</a>
         </nav>
-        <!-- <section class="chunkin">
-        	<a href="/wap/about.php?bid=9">
-            	<img src="<?php echo base_url('Application/views/img/img3.jpg') ?>">
-            	<h3>关于我们</h3>
-                <p>成都珍才人力资源服务有限公司，成立于2009年，前身为珍才商务服务有限公司，我们的理念：“打造企业与人才之间的Garden Bridge”，成为求职者与企业间的坚实桥梁；</p>
-            </a>
-            <div>
-            	<img src="<?php echo base_url('Application/views/img/img4.jpg') ?>') ?>">
-            	<h3>职场资讯</h3>
-                <ul>
-                	                </ul>
-            </div>
-            <a href="news.php?bid=2">
-            	<img src="<?php echo base_url('Application/views/img/img5.jpg') ?>">
-            	<h3>商学院</h3>
-                <p>测试</p>
-            </a>
-        </section> -->
-        <div class="gap_top gap_bottom">
+        <div class="gap40">
         </div>
         <?php include 'footer.php' ?>
     </div>

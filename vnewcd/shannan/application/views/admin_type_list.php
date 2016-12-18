@@ -30,11 +30,14 @@
           <h2 class="sub-header">分类管理</h2>
 
           <div class="row">
-          <form class="navbar-form navbar-left" method="POST" action="<?php echo site_url('type/add') ?>" onsubmit="return check(this)">
+          <form class="navbar-form navbar-left" >
             <div class="form-group">
-              <input type="text" name="type_name" class="form-control" placeholder="分类名称(小于12个字符)" maxlength="12" minlength="2">
+              <input type="text" name="name" id="name" class="form-control" placeholder="分类名称(中文)" maxlength="12" minlength="2">
             </div>
-            <button type="submit" class="btn btn-default">增加新的分类</button>
+            <div class="form-group">
+              <input type="text" name="_id" id="_id" class="form-control" placeholder="分类简称(字母)" maxlength="12" minlength="2">
+            </div>
+            <button type="submit" class="btn btn-default" onclick="check()">增加新的分类</button>
           </form>
         </div>
 
@@ -42,8 +45,9 @@
             <table class="table table-hover ">
               <thead>
                 <tr>
-                  <th>分类唯一标识</th>
+
                   <th>分类名称（中文）</th>
+                  <th>分类简称（字母）</th>
                   <th>操作</th>
                 </tr>
               </thead>
@@ -51,12 +55,13 @@
 
                 <?php foreach ($typelist as $type): ?>
                 <tr id="<?php echo 'tr'.$type['_id']?>">
-                <td>
-                  <?php echo $type['_id']; ?>
-                </td>
                   <td>
                     <?php echo $type['type_name']; ?>
                   </td>
+                <td>
+                  <?php echo $type['_id']; ?>
+                </td>
+
                   <td>
                      <button type="button" id="<?php echo $type['_id']?>" class="btn btn-danger" onclick="deleteType(this.id)">删除</button>
                   </td>
@@ -76,12 +81,36 @@
     <script>
     function check(form)
     {
-      if(form.type_name.value == "")
+      var _id = $('#_id').val();
+      var name = $('#name').val();
+      if(name == "")
       {
            alert("分类名不能为空!");
            return false;
       }
-      return true;
+
+      if(_id == "")
+      {
+           alert("分类简称不能为空!");
+           return false;
+      }
+
+      $.ajax({
+          type:'POST',
+          dataType: 'JSON',
+          url:'<?php echo site_url('type/add/') ?>',
+          data:{'name':name, '_id': _id}
+      })
+      .done(function (results) {
+          if (results.success == 1){
+              window.location.reload();
+          }
+          else{
+            alert(results.message);
+          }
+      })
+
+      return false;
     }
 
     function deleteType(id)

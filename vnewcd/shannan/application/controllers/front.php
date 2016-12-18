@@ -28,19 +28,28 @@ class Front extends CI_Controller {
 		$this->load->view('news');
 	}
 
-    public function detail(){
-        $this->load->view('news_detail');
-    }
+  public function detail(){
+      $this->load->view('news_detail');
+  }
 
-    public function zwbm(){
-        $this->load->view('zwbm');
-    }
+  public function news_pics()
+  {
+    $this->load->view('news_pics');
+  }
 
-    public function shbm(){
-        $this->load->view('shbm');
-    }
+  public function detail_pics(){
+      $this->load->view('news_detail_pics');
+  }
 
-    public function feedback(){
-        $this->load->view('feedback');
-    }
+  public function zwbm(){
+      $this->load->view('zwbm');
+  }
+
+  public function shbm(){
+      $this->load->view('shbm');
+  }
+
+  public function feedback(){
+      $this->load->view('feedback');
+  }
 }

@@ -55,8 +55,8 @@ h1 a {
 .headerBlock{ height: 50px}
 .banner{ position:relative;  overflow:hidden;}
 .banner img{ display:block; width:100%;}
-.banner hgroup{ position:absolute; left:0; top:50%; transform:translateY(-50%); -webkit-transform:translateY(-50%); width:100%; text-align:center; color:#FFF;}
-.banner h3{ font-size:16px;}
+.banner hgroup{ position:absolute; left:0; top:30%; transform:translateY(-50%); -webkit-transform:translateY(-50%); width:100%; text-align:center; color:#FFF;}
+.banner h3{ font-size:20px;}
 .banner h4{ font-size:.12px; }
 @-webkit-keyframes fromScale105 {
 	from{ -webkit-transform: scale3d(1.05,1.05,1.05);}
@@ -85,7 +85,7 @@ menu.open{ transform:translateX(0); -webkit-transform:translateX(0);}
 .box1 h3{     font-size: 14px;
     font-family: "Arial Black", sans-serif;
     text-transform: uppercase;
-    margin-bottom: 1px; 
+    margin-bottom: 1px;
     /* padding-bottom: 0px; */
     margin-top: 0;}
 .box1 abbr{     padding-right: 20px;
@@ -106,12 +106,7 @@ nav a {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
-nav a:nth-child(1){ background:url(../img/icon2.png) no-repeat center 15px; background-size:30px;}
-nav a:nth-child(2){ background:url(../img/icon3.png) no-repeat center 15px; background-size:30px;}
-nav a:nth-child(3){ background:url(../img/icon4.png) no-repeat center 15px; background-size:30px;}
-nav a:nth-child(4){ background:url(../img/icon5.png) no-repeat center 15px; background-size:30px auto;}
-nav a:nth-child(5){ background:url(../img/icon6.png) no-repeat center 15px; background-size:30px auto;}
-nav a:nth-child(6){ background:url(../img/icon7.png) no-repeat center 15px; background-size:30px auto;}
+
 footer {
   /* padding-top: .38rem; */
   height: 28px;
@@ -278,3 +273,5 @@ footer a{ color:#747a85;}
 .pages a{ display:block; float:left; margin-right:9px; width:38px; height:31px; line-height:31px; background:#f5f5f5; text-align:center; color:#333; font-size:14px; border:1px solid #DDD;}
 .pages .next{ width:69px;}
 .pages a.hover,.pages a:hover{ color:#FFF; background:#01399e; border-color:#01399e;}
+
+.gap40{height: 40px; overflow: hidden;}

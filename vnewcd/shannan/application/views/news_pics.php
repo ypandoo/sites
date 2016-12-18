@@ -11,36 +11,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-.banner-tilte{
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    color: white;
-    /* margin-top: 0; */
-    /* padding-top: 0; */
-    font-size: 14px;
-    font-weight: bold;
-    /*box-shadow: -2px 2px white;*/
-    padding: 0 10px;
-    line-height: 18px;
-}
-
-.banner-tilte h3{
-  margin: 0;
-}
-
-.banner-tilte p{
-  font-size: 14px;
-}
-
-.banner h3 {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-</style>
 </head>
 <body>
 
@@ -48,34 +18,31 @@
     <?php include 'header.php' ?>
 
     <section class="banner">
-        <!-- <div class="banner-tilte"><h3>时政要闻</h3><p>News</p></div> -->
-        <img ms-attr="{src: '<?php echo base_url('Application/views/img/banner/')?>'+type+'.jpg'}" />
+        <img src="http://www.cdzcrl.com/wap/img/banner2.jpg">
     </section>
 
     <section class="content">
-        <div class="firstNews">
-            <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+first._id}" >
-                <img ms-attr="{src:'<?php echo base_url('files/')?>'+first.cover}" />
-                <h4>{{first.title}}</h4>
-                <p>一{{first.plain_text | truncate(30,'...') }}</p>
-                <span>{{first.update_time}}</span>
+        <div class="firstNews" ms-for="($index,el) in data">
+            <a  ms-attr="{href:'<?php echo site_url('front/detail_pics?id=')?>'+el._id}" >
+                <img ms-attr="{src:'<?php echo base_url('files/')?>'+el.cover}" />
+                <h4>{{el.title}}</h4>
+                <p>一{{el.plain_text | truncate(30,'...') }}</p>
+                <span>{{el.update_time}}</span>
             </a>
         </div>
-
-    <div>            			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
-        <ul class="news">
+         			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
+        <!-- <ul class="news">
         	<li ms-for="($index,el) in data" ms-if="$index > 0">
-            		<a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+el._id}">
+            		<a  ms-attr="{href:'<?php echo site_url('front/detail_pics?id=')?>'+el._id}">
             			<div>
             				<p>{{el.update_time | date("MM-dd")}} <br> {{el.update_time | date("yyyy")}}</p>
-            				<!-- <p>{{el.update_time | date("yyyy")}}</p> -->
+            				<!-- <p>{{el.update_time | date("yyyy")}}</p> ->
             			</div>
             			<h4>{{el.title}}</h4>
             			<p>{{el.plain_text  | truncate(35,'...') }}</p>
             		</a>
         	</li>
-        </ul>
-    </div>
+        </ul> -->
 
     <!-- <div class="pages">
         <a class='next'>上一页</a>

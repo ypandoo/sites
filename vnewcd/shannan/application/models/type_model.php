@@ -36,6 +36,17 @@ class Type_Model extends CI_Model
         return $query->result_array();
     }
 
+    public function getById($id)
+    {
+        $query = $this->db->get_where('t_type', array('_id' => $id));
+        if(isset($query) && !empty($query) && is_array($query->result_array()) && count($query->result_array(),COUNT_NORMAL)>0 )
+        {
+          return $query->result_array()[0];
+        }
+
+        return "";
+    }
+
 
     public function deleteById($id)
     {

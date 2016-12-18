@@ -11,6 +11,22 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<style>
+nav a:nth-child(1){
+  background:url('<?php echo base_url('Application/views/img/icon_bus.png')?>') no-repeat center 18px; background-size:40px;}
+nav a:nth-child(2){
+  background:url('<?php echo base_url('Application/views/img/icon_plane.png')?>') no-repeat center 15px; background-size:30px;}
+nav a:nth-child(3){
+  background:url('<?php echo base_url('Application/views/img/icon_moutain.png')?>') no-repeat center 17px; background-size:38px;}
+nav a:nth-child(4){
+  background:url('<?php echo base_url('Application/views/img/icon_thumb.png')?>') no-repeat center 15px; background-size:36px auto;}
+nav a:nth-child(5){
+  background:url('<?php echo base_url('Application/views/img/icon_goat.png')?>') no-repeat center 15px; background-size:30px auto;}
+nav a:nth-child(6){
+  background:url('<?php echo base_url('Application/views/img/icon_food.png')?>') no-repeat center 15px; background-size:37px auto;}
+  nav a:nth-child(7){
+    background:url('<?php echo base_url('Application/views/img/icon_hospital.png')?>') no-repeat center 15px; background-size:34px auto;}
+</style>
 </head>
 <body>
     <div class="wrapper">
@@ -26,8 +42,8 @@
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
         	<img src="<?php echo base_url('Application/views/img/img1.jpg') ?>">
             <div>
-            	<h3>山南发布</h3>
-                <abbr>ShanNan News</abbr>
+            	<h3>ShanNan News</h3>
+                <abbr>山南发布</abbr>
             </div>
         </a>
                 <a class="box1" href="<?php echo site_url('front/zwbm') ?>">
@@ -37,33 +53,18 @@
                 <abbr>政务便民</abbr>
             </div>
         </a>
-        <nav>
-        	<a href="<?php echo site_url('front/news?type=1')?>">旅游景点</a>
-            <a href="<?php echo site_url('front/news?type=2')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">名优产品</a>
-            <a href="<?php echo site_url('front/news?type=3')?>">农牧课堂</a>
-            <a href="http://m.weather.com.cn/mweather/101140301.shtml">天气查询</a>
-            <a href="<?php echo site_url('front/news?type=4')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">名俗文化</a>
-            <a href="<?php echo site_url('front/news?type=4')?>">特色美食</a>
+        <nav style="overflow:hidden">
+        	<a href="<?php echo site_url('front/news_pics?type=jtcx')?>">交通出行</a>
+            <a href="<?php echo site_url('front/news_pics?type=lyjd')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">旅游景点</a>
+            <a href="<?php echo site_url('front/news_pics?type=mswh')?>">名俗文化</a>
+            <a href="<?php echo site_url('front/news_pics?type=mycp')?>" >名优产品</a>
+            <a href="<?php echo site_url('front/news_pics?type=nmkt')?>"
+              style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">农牧课堂</a>
+            <a href="<?php echo site_url('front/news_pics?type=tsms')?>">特色美食</a>
+            <a href="<?php echo site_url('front/news_pics?type=ylwd')?>"
+              style="margin-left:1px;border-right: 1px solid #d8d8d8;">医疗网点</a>
         </nav>
-        <!-- <section class="chunkin">
-        	<a href="/wap/about.php?bid=9">
-            	<img src="<?php echo base_url('Application/views/img/img3.jpg') ?>">
-            	<h3>关于我们</h3>
-                <p>成都珍才人力资源服务有限公司，成立于2009年，前身为珍才商务服务有限公司，我们的理念：“打造企业与人才之间的Garden Bridge”，成为求职者与企业间的坚实桥梁；</p>
-            </a>
-            <div>
-            	<img src="<?php echo base_url('Application/views/img/img4.jpg') ?>') ?>">
-            	<h3>职场资讯</h3>
-                <ul>
-                	                </ul>
-            </div>
-            <a href="news.php?bid=2">
-            	<img src="<?php echo base_url('Application/views/img/img5.jpg') ?>">
-            	<h3>商学院</h3>
-                <p>测试</p>
-            </a>
-        </section> -->
-        <div class="gap_top gap_bottom">
+        <div class="gap40">
         </div>
         <?php include 'footer.php' ?>
     </div>
