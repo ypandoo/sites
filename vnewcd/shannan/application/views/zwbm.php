@@ -39,14 +39,14 @@ nav a:nth-child(6){
             </hgroup>
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
-        	<img src="<?php echo base_url('Application/views/img/img1.jpg') ?>">
+        	<img src="<?php echo base_url('Application/views/img/banner/11.jpg') ?>">
             <div>
-            	<h3>Shanna News</h3>
+            	<h3>ShanNan News</h3>
                 <abbr>山南发布</abbr>
             </div>
         </a>
                 <a class="box1" href="<?php echo site_url('front/shbm') ?>">
-        	<img src="<?php echo base_url('Application/views/img/img2.jpg') ?>">
+        	<img src="<?php echo base_url('Application/views/img/banner/33.jpg') ?>">
             <div>
             	<h3>Life Services</h3>
                 <abbr>生活便民</abbr>
