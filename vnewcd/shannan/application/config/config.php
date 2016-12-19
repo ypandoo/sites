@@ -512,4 +512,4 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['page_interval'] = 4;
+$config['page_interval'] = 8;

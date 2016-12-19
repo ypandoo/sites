@@ -32,10 +32,10 @@ nav a:nth-child(6){
         <?php include 'header.php' ?>
 
         <section class="banner">
-        	<img src="<?php echo base_url('Application/views/img/banner1.jpg') ?>">
+        	<img src="<?php echo base_url('Application/views/img/banner/zwbm.jpg') ?>">
             <hgroup>
-            	<h3>微山南，一站式微信信息服务平台</h3>
-                <h4>Fabric talents,To find the most valuable people</h4>
+            	<h3>政务便民,老百姓的网上办事大厅</h3>
+                <h4 style="text-transform: uppercase;">Better service for our people.</h4>
             </hgroup>
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">

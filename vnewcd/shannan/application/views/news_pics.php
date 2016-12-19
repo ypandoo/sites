@@ -18,7 +18,8 @@
     <?php include 'header.php' ?>
 
     <section class="banner">
-        <img src="http://www.cdzcrl.com/wap/img/banner2.jpg">
+        <!-- <div class="banner-tilte"><h3>时政要闻</h3><p>News</p></div> -->
+        <img ms-attr="{src: '<?php echo base_url('Application/views/img/banner/')?>'+type+'.jpg'}" />
     </section>
 
     <section class="content">

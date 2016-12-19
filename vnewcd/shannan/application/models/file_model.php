@@ -35,7 +35,9 @@ class File_Model extends CI_Model
     {
         $interval = $this->config->item('page_interval');
         //$query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
+        $this->db->order_by('update_time', 'DESC');
         $query = $this->db->get('t_file', $interval, $page*$interval);
+
         return $query->result_array();
     }
 

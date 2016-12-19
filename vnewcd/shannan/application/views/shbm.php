@@ -33,11 +33,11 @@ nav a:nth-child(6){
         <?php include 'header.php' ?>
 
         <section class="banner">
-        	<img src="<?php echo base_url('Application/views/img/banner1.jpg') ?>">
-            <hgroup>
+        	<img src="<?php echo base_url('Application/views/img/banner/shbm.jpg') ?>">
+            <!-- <hgroup>
               <h3>微山南，一站式微信服务平台</h3>
                 <h4>Shannan Information Platform Official</h4>
-            </hgroup>
+            </hgroup> -->
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
         	<img src="<?php echo base_url('Application/views/img/banner/11.jpg') ?>">

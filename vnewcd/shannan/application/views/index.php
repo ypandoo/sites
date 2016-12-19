@@ -14,15 +14,15 @@
 
 <style>
 nav a:nth-child(1){
-  background:url('<?php echo base_url('Application/views/img/icon2.png')?>') no-repeat center 15px; background-size:30px;}
+  background:url('<?php echo base_url('Application/views/img/szyw.png')?>') no-repeat center 15px; background-size:30px;}
 nav a:nth-child(2){
-  background:url('<?php echo base_url('Application/views/img/icon3.png')?>') no-repeat center 15px; background-size:30px;}
+  background:url('<?php echo base_url('Application/views/img/jzfp.png')?>') no-repeat center 15px; background-size:40px;}
 nav a:nth-child(3){
-  background:url('<?php echo base_url('Application/views/img/icon_book.png')?>') no-repeat center 15px; background-size:30px;}
+  background:url('<?php echo base_url('Application/views/img/lxyz.png')?>') no-repeat center 15px; background-size:30px;}
 nav a:nth-child(4){
-  background:url('<?php echo base_url('Application/views/img/icon5.png')?>') no-repeat center 15px; background-size:30px auto;}
+  background:url('<?php echo base_url('Application/views/img/lhzt.png')?>') no-repeat center 15px; background-size:30px auto;}
 nav a:nth-child(5){
-  background:url('<?php echo base_url('Application/views/img/icon_microphone.png')?>') no-repeat center 15px; background-size:30px auto;}
+  background:url('<?php echo base_url('Application/views/img/gcft.png')?>') no-repeat center 15px; background-size:30px auto;}
 nav a:nth-child(6){
   background:url('<?php echo base_url('Application/views/img/icon_microphone.png')?>') no-repeat center 15px; background-size:30px auto;}
 </style>
@@ -35,13 +35,13 @@ nav a:nth-child(6){
         	<img src="<?php echo base_url('Application/views/img/banner/3.jpg') ?>">
             <hgroup>
             	<h3>微山南，一站式微信服务平台</h3>
-                <h4>ShanNan Official Information Platform </h4>
+                <h4 style="text-transform: uppercase;">ShanNan Official Information Platform </h4>
             </hgroup>
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/banner/22.jpg') ?>">
             <div>
-            	<h3>Governmental Services</h3>
+            	<h3 style="text-transform: uppercase;">Governmental Services</h3>
                 <abbr>政务便民</abbr>
             </div>
         </a>
