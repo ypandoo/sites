@@ -52,4 +52,8 @@ class Front extends CI_Controller {
   public function feedback(){
       $this->load->view('feedback');
   }
+
+  public function links(){
+      $this->load->view('links');
+  }
 }

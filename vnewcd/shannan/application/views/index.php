@@ -32,9 +32,9 @@ nav a:nth-child(6){
         <?php include 'header.php' ?>
 
         <section class="banner">
-        	<img src="<?php echo base_url('Application/views/img/banner/3.jpg') ?>">
+        	<img src="<?php echo base_url('Application/views/img/banner/snfb.jpg') ?>">
             <hgroup>
-            	<h3>微山南，一站式微信服务平台</h3>
+            	<h3>山南发布，官方微信信息发布平台</h3>
                 <h4 style="text-transform: uppercase;">ShanNan Official Information Platform </h4>
             </hgroup>
         </section>

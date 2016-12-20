@@ -53,7 +53,7 @@ nav a:nth-child(6){
             </div>
         </a>
         <nav style="overflow:hidden">
-        	<a href="<?php echo site_url('front/news?type=1')?>">官网矩阵</a>
+        	<a href="<?php echo site_url('front/links')?>">官网矩阵</a>
             <a href="<?php echo site_url('front/news?type=2')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">微信矩阵</a>
             <a href="<?php echo site_url('front/news?type=3')?>">一站式服务</a>

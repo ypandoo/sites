@@ -40,6 +40,7 @@ class Content_Model extends CI_Model
     public function getListByCategoryWithLimit($page = 0, $category)
     {
         $interval = $this->config->item('page_interval');
+        $this->db->order_by('update_time', 'DESC');
         //$query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
         $query = $this->db->get_where('t_content', array('type' => $category), $interval, $page*$interval);
         return $query->result_array();

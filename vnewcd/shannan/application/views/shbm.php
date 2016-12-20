@@ -60,9 +60,8 @@ nav a:nth-child(6){
             <a href="<?php echo site_url('front/news_pics?type=mycp')?>" >名优产品</a>
             <a href="<?php echo site_url('front/news_pics?type=nmkt')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">农牧课堂</a>
-            <a href="<?php echo site_url('front/news_pics?type=tsms')?>">特色美食</a>
             <a href="<?php echo site_url('front/news_pics?type=ylwd')?>"
-              style="margin-left:1px;border-right: 1px solid #d8d8d8;">医疗网点</a>
+              style="">医疗网点</a>
         </nav>
         <div class="gap40">
         </div>

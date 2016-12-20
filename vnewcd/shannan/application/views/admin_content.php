@@ -45,6 +45,20 @@
       right: 0px;
       top: 0px;
     }
+
+    .thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    height: 120px;
+}
     </style>
   </head>
 
@@ -89,7 +103,7 @@
             <div ms-for = "($index, el) in @files" class="col-xs-6 col-md-3" ms-click="@toggleSelect($index)">
               <div class="thumbnail">
                 <a href="#" class="mask">
-                  <img ms-attr="{src:el.url}" alt="选择图片">
+                  <img ms-attr="{src:el.url}" alt="选择图片" height="90px">
                 </a>
               </div>
 
