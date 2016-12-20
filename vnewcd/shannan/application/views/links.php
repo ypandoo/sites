@@ -78,7 +78,7 @@
     <?php include 'header.php' ?>
 
     <section class="banner">
-        <img src="<?php echo base_url('Application/views/img/banner/zwbm.jpg')?>" />
+        <img src="<?php echo base_url('Application/views/img/banner/gwjz.jpg')?>" />
     </section>
       			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
         <ul class="news">

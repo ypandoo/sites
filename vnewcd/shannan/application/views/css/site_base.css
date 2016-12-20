@@ -198,7 +198,7 @@ footer a{ color:#747a85;}
     color: #000;}
 .newsTitel p{ font-size:.24rem; color:#777;}
 .txtEdit{ padding-bottom:.3rem;}
-.txtEdit p,.newsOther a,.txtEdit li{ font-size:14px; color:#919191;}
+.txtEdit p,.newsOther a,.txtEdit li{ font-size:13px; color:#919191;}
 .txtEdit img{ margin:.34rem 0; width:100%; height:auto;}
 .newsOther{ border-top:1px solid #d5d5d5; padding-top:.4rem;}
 .newsOther a{ display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
