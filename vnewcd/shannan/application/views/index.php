@@ -28,7 +28,7 @@ nav a:nth-child(6){
 </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" ms-controller="contents">
         <?php include 'header.php' ?>
 
         <section class="banner">
@@ -38,7 +38,8 @@ nav a:nth-child(6){
                 <h4 style="text-transform: uppercase;">ShanNan Official Information Platform </h4>
             </hgroup>
         </section>
-                <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
+
+                <!-- <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/banner/22.jpg') ?>">
             <div>
             	<h3 style="text-transform: uppercase;">Governmental Services</h3>
@@ -51,7 +52,7 @@ nav a:nth-child(6){
             	<h3>Life Services</h3>
                 <abbr>生活便民</abbr>
             </div>
-        </a>
+        </a> -->
         <nav style="overflow:hidden">
         	<a href="<?php echo site_url('front/news?type=szyw')?>">时政要闻</a>
             <a href="<?php echo site_url('front/news?type=jzfp')?>"
@@ -61,30 +62,88 @@ nav a:nth-child(6){
             <a href="<?php echo site_url('front/news?type=gcft')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">高层访谈</a>
         </nav>
-        <!-- <section class="chunkin">
-        	<a href="/wap/about.php?bid=9">
-            	<img src="<?php echo base_url('Application/views/img/img3.jpg') ?>">
-            	<h3>关于我们</h3>
-                <p>成都珍才人力资源服务有限公司，成立于2009年，前身为珍才商务服务有限公司，我们的理念：“打造企业与人才之间的Garden Bridge”，成为求职者与企业间的坚实桥梁；</p>
-            </a>
-            <div>
-            	<img src="<?php echo base_url('Application/views/img/img4.jpg') ?>') ?>">
-            	<h3>职场资讯</h3>
-                <ul>
-                	                </ul>
+
+        <section class="banner" >
+        	<img src="<?php echo base_url('Application/views/img/banner/szyw.jpg') ?>">
+            <hgroup style="text-align:30px; ">
+            	<h3 style="text-align:left; margin-left:30px; font-size:16px;text-align: left;
+    margin-left: 30px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    margin-top: 40px;">时政要闻</h3>
+              <h4 style="text-align:left; margin-left:30px; font-size:14px;text-transform: uppercase; margin-top:5px">
+                Hot News</h4>
+            </hgroup>
+        </section>
+
+        <section class="content">
+            <div class="firstNews">
+                <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+first._id}" >
+                    <img ms-attr="{src:'<?php echo base_url('files/')?>'+first.cover}" />
+                    <h4>{{first.title}}</h4>
+                    <p>一{{first.plain_text | truncate(30,'...') }}</p>
+                    <span>{{first.update_time}}</span>
+                </a>
             </div>
-            <a href="news.php?bid=2">
-            	<img src="<?php echo base_url('Application/views/img/img5.jpg') ?>">
-            	<h3>商学院</h3>
-                <p>测试</p>
-            </a>
-        </section> -->
-        <div class="gap40">
+
+        <div>            			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
+            <ul class="news">
+              <li ms-for="($index,el) in data" ms-if="$index > 0">
+                    <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+el._id}">
+                      <div>
+                        <p>{{el.update_time | date("MM-dd")}} <br> {{el.update_time | date("yyyy")}}</p>
+                        <!-- <p>{{el.update_time | date("yyyy")}}</p> -->
+                      </div>
+                      <h4>{{el.title}}</h4>
+                      <p>{{el.plain_text  | truncate(35,'...') }}</p>
+                    </a>
+              </li>
+            </ul>
         </div>
+
+        <!-- <div class="pages">
+            <a class='next'>上一页</a>
+          <a class='next' href="/wap/news.php?bid=2&page=2"  title="下一页" style="float:right">下一页</a>
+        </div> -->
+
 
         <?php include 'footer.php' ?>
     </div>
 </body>
 </html>
+<script src="<?php echo base_url('application/views/js/base.js') ?>"></script>
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/avalon.js/2.2.0/avalon.min.js"></script>
+<script src="<?php echo base_url('application/views/js/jquery.query-object.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('Application/views/js/site_base.js')?>"></script>
+<script>
+//avalon controllers
+(function(){
+ var self = this;
+ self.content = avalon.define({
+    $id: "contents",
+    data:[],
+    type: 'szyw',
+    first: {cover:'default.png', title:'数据加载中...'},
+    getAPage:function(){
+        $.ajax({
+            type:'POST',
+            dataType: 'JSON',
+            data:{page:self.content.page, category:self.content.type},
+            url:'<?php echo site_url('content/getAPageByCategory/')?>',
+        })
+        .done(function (results) {
+            if (results.success == 1 && results.data.length > 0){
+              //self.gallery.files = results.data;
+              self.content.data = results.data;
+              self.content.first = results.data[0];
+            }
+        })
+    },
+  });
+}).call(define('Controller'));
+
+Controller.content.getAPage();
+
+
+</script>
