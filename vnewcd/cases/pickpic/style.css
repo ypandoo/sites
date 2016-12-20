@@ -1,0 +1,92 @@
+
+
+html{
+    background:url('img/bodybg.jpg') no-repeat center center;
+    min-height:100%;
+    background-size:cover;
+  }
+
+  body{
+    margin: 0;
+    min-height:100%;
+  }
+
+  .box{
+    width: 300px;
+    height: 415px;
+    border: 3px solid rgba(140, 74, 44, 0.73);
+    background: rgba(140, 74, 44, 0.45);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  .head {
+      height: 40px;
+      background: rgba(140, 74, 44, 0.74);
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 0 10px;
+      text-align: left;
+      line-height: 40px;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: white;
+  }
+
+  .tips {
+      width: 300px;
+      border: 3px solid rgba(140, 74, 44, 0.52);
+      margin: 0 auto;
+      border-radius: 2px;
+      margin-top: 5px;
+      margin-bottom: 40px;
+      background-color: rgba(140, 74, 44, 0.64);
+  }
+  .dialog{
+    /* width: 60%; */
+    /* border: 5px solid #8c4a2c; */
+    /* margin: 0 auto; */
+    border-radius: 2px;
+    /* margin-top: 20px; */
+    background-color: #f9cd82;
+    position: absolute;
+    top: 30%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* margin-left: 20%; */
+    border-radius: 100px;
+    width: 160px;
+    height: 160px;
+    left: 50%;
+    margin-left: -100px;
+    border: 3px solid #8c4a2c;
+  }
+
+  .dialog .text_head{
+    font-size: 16px;
+    color: #8c4a2c;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .dialog .text_body {
+  font-size: 40px;
+  color: #8c4a2c;
+  /* margin: 5px 10px; */
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+  .text_head{
+    font-size: 14px;
+    color: #ffffff;
+    margin: 5px 10px;
+  }
+
+  .text_body{
+    font-size: 12px;
+    color: #ffffff;
+    margin: 5px 10px;
+  }

@@ -17,15 +17,15 @@ function init() {
 
   //setting image
   var image = new Image();
-  image.src = "img/move1_1.jpg";
-  image.onload = handleImageLoad1;
-
-  var image = new Image();
-  image.src = "img/move1_2.jpg";
+  image.src = "img/move2_1.jpg";
   image.onload = handleImageLoad2;
 
   var image = new Image();
-  image.src = "img/move1_3.jpg";
+  image.src = "img/move2_2.jpg";
+  image.onload = handleImageLoad1;
+
+  var image = new Image();
+  image.src = "img/move2_3.jpg";
   image.onload = handleImageLoad3;
 
 
