@@ -103,7 +103,7 @@
             <div ms-for = "($index, el) in @files" class="col-xs-6 col-md-3" ms-click="@toggleSelect($index)">
               <div class="thumbnail">
                 <a href="#" class="mask">
-                  <img ms-attr="{src:el.url}" alt="选择图片" height="90px">
+                  <img ms-attr="{src:'<?php echo base_url('files/')?>'+el.name}" alt="选择图片" height="90px">
                 </a>
               </div>
 
