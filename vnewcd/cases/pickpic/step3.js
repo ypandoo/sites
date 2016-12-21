@@ -191,3 +191,8 @@ function tick(event) {
     stage.update(event);
   }
 }
+
+
+$( document ).ready(function() {
+    update= false;
+});

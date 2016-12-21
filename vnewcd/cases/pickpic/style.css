@@ -90,3 +90,8 @@ html{
     color: #ffffff;
     margin: 5px 10px;
   }
+
+  a:-webkit-any-link {
+  text-decoration: none;
+  cursor: auto;
+}
