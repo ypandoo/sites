@@ -4,11 +4,13 @@ html{
     background:url('img/bodybg.jpg') no-repeat center center;
     min-height:100%;
     background-size:cover;
+    overflow: hidden;
   }
 
   body{
     margin: 0;
     min-height:100%;
+    overflow: hidden;
   }
 
   .box{
