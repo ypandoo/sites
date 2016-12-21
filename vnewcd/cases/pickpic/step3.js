@@ -1,9 +1,10 @@
 var canvas, stage, container = new createjs.Container();;
-
 var mouseTarget;	// the display object currently under the mouse, or being dragged
 var dragStarted;	// indicates whether we are currently in a drag operation
 var offset;
 var update = true;
+var finish = false;
+
 
 function init() {
   //show loading
@@ -17,21 +18,21 @@ function init() {
 
   //setting image
   var image = new Image();
-  image.src = "img/move2_1.jpg";
-  image.onload = handleImageLoad2;
-
-  var image = new Image();
-  image.src = "img/move2_2.jpg";
+  image.src = "img/move3_1.jpg";
   image.onload = handleImageLoad1;
 
   var image = new Image();
-  image.src = "img/move2_3.jpg";
+  image.src = "img/move3_2.jpg";
+  image.onload = handleImageLoad2;
+
+  var image = new Image();
+  image.src = "img/move3_3.jpg";
   image.onload = handleImageLoad3;
 
 
   //bg image
   var imagebg = new Image();
-  imagebg.src = "img/bg1.jpg";
+  imagebg.src = "img/bg3.jpg";
   bitmapBg = new createjs.Bitmap(imagebg);
   container.addChild(bitmapBg);
   bitmapBg.x = 0;
@@ -40,6 +41,35 @@ function init() {
   examples.hideDistractor();
   createjs.Ticker.addEventListener("tick", tick);
   stage.update();
+}
+
+function success(evt, bitmap, pressMove)
+{
+  if(finish)
+    return;
+
+  if(evt.stageX>=0 && evt.stageX <= 300 && evt.stageY > 0 && evt.stageY<300)
+  {
+    bitmap.x =  100;
+    bitmap.y =  200;
+    finish = true;
+
+    $('#dialog').fadeIn();
+    update = true;
+  }
+  else{
+    failed(evt, bitmap);
+  }
+}
+
+function failed(evt, bitmap)
+{
+  if(finish)
+    return;
+
+  $('#dialog2').fadeIn();
+  update = true;
+  finish = true;
 }
 
 function handleImageLoad1(event) {
@@ -55,18 +85,7 @@ function handleImageLoad1(event) {
   //touch event
   function handleMove(evt)
   {
-      if(evt.stageX>=0 && evt.stageX <= 300 && evt.stageY > 0 && evt.stageY<300)
-      {
-        this.x =  100;
-        this.y =  100;
-        // this.moveTo(250, 50);
-        console.log('posiontion:'+this.offset.x+','+this.offset.y);
-        bitmap.off("pressmove",pressMove);
-
-        $('#dialog').fadeIn();
-      }
-
-      update = true;
+      failed(evt, bitmap);
   }
 
   // using "on" binds the listener to the scope of the currentTarget by default
@@ -81,24 +100,16 @@ function handleImageLoad1(event) {
 
   // the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
   var pressMove = bitmap.on("pressmove", function (evt) {
+    if(finish)
+      return;
+
     this.x = evt.stageX + this.offset.x;
     this.y = evt.stageY + this.offset.y;
     // indicate that the stage should be updated on the next tick:
     update = true;
   });
 
-  bitmap.on("rollover", function (evt) {
-    this.scaleX = this.scaleY = this.scale * 1.2;
-    update = true;
-  });
-
-  bitmap.on("rollout", function (evt) {
-    this.scaleX = this.scaleY = this.scale;
-    update = true;
-  });
-
   update = true;
-
 }
 
 function handleImageLoad2(event) {
@@ -114,26 +125,19 @@ function handleImageLoad2(event) {
   //touch event
   function handleMove(evt)
   {
-      bitmap.off("pressmove",pressMove);
-      $('#dialog2').fadeIn();
-      update = true;
+      success(evt, bitmap);
   }
 
-  // using "on" binds the listener to the scope of the currentTarget by default
-  // in this case that means it executes in the scope of the button.
   bitmap.on("mousedown", function (evt) {
     this.parent.addChild(this);
-    // alert('down');
     this.offset = {x: this.x - evt.stageX, y: this.y - evt.stageY};
   });
-
   bitmap.on("pressup", handleMove);
-
-  // the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
   var pressMove = bitmap.on("pressmove", function (evt) {
+    if(finish)
+      return;
     this.x = evt.stageX + this.offset.x;
     this.y = evt.stageY + this.offset.y;
-    // indicate that the stage should be updated on the next tick:
     update = true;
   });
 
@@ -154,9 +158,7 @@ function handleImageLoad3(event) {
   //touch event
   function handleMove(evt)
   {
-      bitmap.off("pressmove",pressMove);
-      $('#dialog2').fadeIn();
-      update = true;
+      failed(evt, bitmap);
   }
 
   // using "on" binds the listener to the scope of the currentTarget by default
@@ -171,6 +173,8 @@ function handleImageLoad3(event) {
 
   // the pressmove event is dispatched when the mouse moves after a mousedown on the target until the mouse is released.
   var pressMove = bitmap.on("pressmove", function (evt) {
+    if(finish)
+      return;
     this.x = evt.stageX + this.offset.x;
     this.y = evt.stageY + this.offset.y;
     // indicate that the stage should be updated on the next tick:

@@ -10,108 +10,43 @@
   <meta name="Description" content="">
   <meta name="Keywords" content="">
 	<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
-  <!-- <link href="_assets/css/shared.css" rel="stylesheet" type="text/css"/>
-  <link href="_assets/css/examples.css" rel="stylesheet" type="text/css"/> -->
+  <link href="style.css" rel="stylesheet" type="text/css"/>
   <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
   <script src="_assets/js/examples.js"></script>
-  <script src="index.js"></script>
+  <script src="step4.js"></script>
   <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<script>
-	</script>
+  <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
   <style>
-  html{
-    	background:url('img/bodybg.jpg') no-repeat center center;
-    	min-height:100%;
-    	background-size:cover;
-    }
 
-    body{
-      margin: 0;
-      min-height:100%;
-    }
-
-    .box{
-      width: 300px;
-      height: 415px;
-      border: 5px solid rgba(140, 74, 44, 0.73);
-      background: rgba(140, 74, 44, 0.45);
-      margin: 0 auto;
-      border-radius: 5px;
-    }
-
-    .head {
-        height: 40px;
-        background: rgba(140, 74, 44, 0.74);
-        width: 100%;
-        margin-bottom: 15px;
-        padding: 0 10px;
-        text-align: left;
-        line-height: 40px;
-        font-size: 16px;
-        letter-spacing: 1px;
-        color: white;
-    }
-
-    .tips {
-        width: 300px;
-        border: 5px solid rgba(140, 74, 44, 0.52);
-        margin: 0 auto;
-        border-radius: 5px;
-        margin-top: 15px;
-        margin-bottom: 40px;
-        background-color: rgba(140, 74, 44, 0.64);
-    }
-    .dialog{
-      /* width: 60%; */
-      /* border: 5px solid #8c4a2c; */
-      /* margin: 0 auto; */
-      border-radius: 5px;
-      /* margin-top: 20px; */
-      background-color: #f9cd82;
-      position: absolute;
-      top: 30%;
-      /* margin-left: auto; */
-      /* margin-right: auto; */
-      /* margin-left: 20%; */
-      border-radius: 100px;
-      width: 160px;
-      height: 160px;
-      left: 50%;
-      margin-left: -100px;
-      border: 5px solid #8c4a2c;
-    }
-
-    .dialog .text_head{
-      font-size: 16px;
-      color: #8c4a2c;
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .dialog .text_body {
-    font-size: 40px;
-    color: #8c4a2c;
-    /* margin: 5px 10px; */
-    text-align: center;
-    margin-top: 10px;
+.dialog {
+    /* width: 60%; */
+    /* border: 5px solid #8c4a2c; */
+    /* margin: 0 auto; */
+    border-radius: 2px;
+    /* margin-top: 20px; */
+    background-color: #f9cd82;
+    position: absolute;
+    top: 30%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* margin-left: 20%; */
+    border-radius: 10px;
+    width: 300px;
+    height: 180px;
+    left: 50%;
+    margin-left: -154px;
+    border: 3px solid #8c4a2c;
 }
 
 
 
-    .text_head{
-      font-size: 14px;
-      color: #ffffff;
-      margin: 5px 10px;
-    }
-
-    .text_body{
-      font-size: 12px;
-      color: #ffffff;
-      margin: 5px 10px;
-    }
-
-
+.dialog .text_head {
+    font-size: 18px;
+    color: #8c4a2c;
+    margin-top: 20px;
+    text-align: center;
+}
   </style>
 </head>
 <body onload="init();" style="overflow:hidden">
@@ -119,7 +54,7 @@
 <div class="head">
   <i class="fa fa-tree" aria-hidden="true" style="    margin-right: 10px;
     /* margin-bottom: 2px; */
-    font-size: 24px;"></i>授权品牌拼拼拼 - 第2关
+    font-size: 24px;"></i>授权品牌拼拼拼 - 第4关
 </div>
 <!-- <div class="tips" style="margin-top:20px; margin-bottom:20px">
   <!-- <p class="text_head">游戏说明:</p>->
@@ -137,23 +72,26 @@
 <div class="tips">
   <!-- <p class="text_head">游戏说明:</p>-->
   <!-- <p class="text_body">请将上面正确的一块拼图放到相应的位置。</p> -->
-  <p class="text_head"><i class="fa fa-gratipay" aria-hidden="true" style="margin-right:10px"></i>华纳兄弟消费品部:</p>
-  <p class="text_body">位于世界前列的授权及零售经营公司，隶属于华纳兄弟娱乐集团。拥有蝙蝠侠、超人以及兔巴哥等著名动画形象。</p>
+  <p class="text_head"><i class="fa fa-gratipay" aria-hidden="true" style="margin-right:10px"></i>Van Gogh Art de Sweets:</p>
+  <p class="text_body">透过梵高的画作为世界呈献落入「梵」间的品味和色彩，让艺术鉴赏融入每天生活。
+</p>
 
 </div>
 
 <div class="dialog" id="dialog" style="display:none">
   <!-- <p class="text_head">游戏说明:</p>-->
   <!-- <p class="text_body">请将上面正确的一块拼图放到相应的位置。</p> -->
-  <p class="text_head"></i>闯关成功！<br>前往下一关.</p>
-  <a href="step2.html"><p class="text_body"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p></a>
+  <p class="text_head"><i class="fa fa-flag-checkered fa-3x animated infinite wobble" aria-hidden="true" style="margin-bottom:10px"></i><br>
+    闯关成功，恭喜你成为<br><b style="font-size:24px">"授权达人"</b></p>
+  <!-- <a href="step4.html"><p class="text_body"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p></a> -->
 </div>
 
 <div class="dialog" id="dialog2" style="display:none">
   <!-- <p class="text_head">游戏说明:</p>-->
   <!-- <p class="text_body">请将上面正确的一块拼图放到相应的位置。</p> -->
-  <p class="text_head"></i>哎哟,闯关失败!<br>快快补满血槽再战!</p>
-  <p class="text_body"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></p>
+  <p class="text_head"></i>哎哟,闯关失败!<br>速速再拼!</p>
+  <p class="text_body"><i class="fa fa-refresh fa-spin fa-fw"></i>
+<span class="sr-only">Loading...</span></p>
 </div>
 
 </body>

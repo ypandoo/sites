@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>授权品牌拼拼拼</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="Description" content="">
+  <meta name="Keywords" content="">
+	<script src="http://code.createjs.com/easeljs-0.8.1.min.js"></script>
+  <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+  <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <style media="screen">
+
+
+  html{
+      background:url('img/bodybg.jpg') no-repeat center center;
+      min-height:100%;
+      background-size:cover;
+    }
+
+    body{
+      margin: 0;
+      min-height:100%;
+    }
+
+    .box{
+      width: 300px;
+      height: 415px;
+      border: 3px solid rgba(140, 74, 44, 0.73);
+      background: rgba(140, 74, 44, 0.45);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .head {
+        height: 40px;
+        background: rgba(255, 0, 0, 0.7);
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 0 10px;
+        text-align: left;
+        line-height: 40px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: white;
+    }
+
+    .tips {
+        width: 300px;
+        border: 3px solid rgba(140, 74, 44, 0.52);
+        margin: 0 auto;
+        border-radius: 2px;
+        margin-top: 5px;
+        margin-bottom: 40px;
+        background-color: rgba(128, 53, 19, 0.93);
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        margin-left: -150px;
+        border-radius: 20px;
+    }
+    .dialog {
+      /* width: 60%; */
+      /* border: 5px solid #8c4a2c; */
+      /* margin: 0 auto; */
+      /* border-radius: 2px; */
+      /* margin-top: 20px; */
+      background-color: rgba(255, 0, 0, 0.73);
+      position: absolute;
+      bottom: 10%;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      /* margin-left: 20%; */
+      border-radius: 20px;
+      width: 180px;
+      height: 60px;
+      left: 50%;
+      margin-left: -90px;
+      /* border: 3px solid #8c4a2c; */
+  }
+
+  .text_head {
+      font-size: 20px;
+      color: #ffffff;
+      margin: 5px 10px;
+      text-align: center;
+      border-radius: 20px;
+  }
+
+    .dialog .text_body {
+    font-size: 40px;
+    color: #8c4a2c;
+    /* margin: 5px 10px; */
+    text-align: center;
+    margin-top: 10px;
+  }
+
+
+
+    .text_body{
+      font-size: 12px;
+      color: #ffffff;
+      margin: 5px 10px;
+    }
+
+  </style>
+</head>
+<body style="overflow:hidden">
+
+<!-- <div class="head">
+  <i class="fa fa-tree" aria-hidden="true" style="    margin-right: 10px;
+    /* margin-bottom: 2px; */
+    font-size: 24px;"></i>授权品牌拼拼拼
+</div> -->
+<!-- <div class="tips" style="margin-top:20px; margin-bottom:20px">
+  <!-- <p class="text_head">游戏说明:</p>->
+  <p class="text_body">请将下面正确的一块拼图拖放到相应的位置,即可通关。</p>
+</div> -->
+<div class="" style="
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    /* margin-top: 100px; */
+    top: 0;
+    /* margin-left: -150px; */
+    /* left: 50%; */
+    font-size: 28px;
+    letter-spacing: 3px;
+    background: rgba(93, 30, 0, 0.83);
+    /* border-radius: 10px; */
+    color: #f3f4ee;
+">
+  <p>  <i class="fa fa-tree" aria-hidden="true" style="    margin-right: 10px;
+      /* margin-bottom: 2px; */
+      font-size: 24px;"></i>授权品牌拼拼拼</p>
+</div>
+
+<div class="" style="    width: 375px;
+    margin: 10px auto;">
+  <img src="img/logo.png" width="100%" style="/* margin-left:10%; */margin-top:20%;" alt="">
+</div>
+
+<div style="    text-align: center;
+    width: 150px;
+    background: rgba(103, 42, 13, 0.66);
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    line-height: 40px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    margin-top: 20px; " onclick="show()">
+  游戏说明
+</div>
+
+<div style="    text-align: center;
+    width: 150px;
+    background: rgba(103, 42, 13, 0.66);
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    line-height: 40px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    margin-top: 10px;">
+  <a href="step1.html">开始游戏</a>
+</div>
+
+<div class="tips" style="display:none">
+  <a href="step1.html">
+  <!-- <p class="text_head">游戏说明:</p>-->
+  <!-- <p class="text_body">请将上面正确的一块拼图放到相应的位置。</p> -->
+  <p class="text_head">游戏说明:</p>
+  <p class="text_body" style="margin-top:10px; text-align:center">授权品牌拼拼拼是一款拼图游戏。共分为4关，每一关玩家只需将正确的一块拼图放回图中即可过关。
+    连续闯过四关将会取得惊喜成就。赶快来试试吧！<br><i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true" style="margin-top:20px"></i></p>
+</a>
+</div>
+<script type="text/javascript">
+  function show(){
+    $('.tips').fadeIn();
+  }
+
+  function hide(){
+    $('.tips').fadeOut();
+  }
+</script>
+</body>
+</html>
