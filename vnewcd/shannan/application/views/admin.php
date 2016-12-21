@@ -26,6 +26,52 @@
         <?php include 'admin_sidebar.php' ?>
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h2 class="sub-header">欢迎使用微山南管理系统！</h2>
+
+          <div class="row">
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h3>分类管理</h3>
+                  <p>增加，删除新的文章板块</p>
+                  <p><a href="<?php echo site_url('admin/typelist')?>" class="btn btn-primary" role="button">立刻前往</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h3>内容管理</h3>
+                  <p>增加，删除，修改文章</p>
+                  <p><a href="<?php echo site_url('admin/contentlist')?>" class="btn btn-primary" role="button">立刻前往</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h3>投诉管理</h3>
+                  <p>处理违法投诉</p>
+                  <p><a href="<?php echo site_url('admin/feedbacklist')?>" class="btn btn-primary" role="button">立刻前往</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h3>人员管理</h3>
+                  <p>增加，删除网站管理员</p>
+                  <p><a href="<?php echo site_url('admin/feedbacklist')?>" class="btn btn-primary" role="button">立刻前往</a>
+                    </p>
+                </div>
+              </div>
+            </div>
+
         </div>
 
       </div>

@@ -43,6 +43,8 @@
 .news li {
     height: 60px;
     border-bottom: 1px solid rgba(0, 5, 43, 0.03);
+    width: 50%;
+    float: left;
 }
 
 .news a {
@@ -80,11 +82,20 @@
     <section class="banner">
         <img src="<?php echo base_url('Application/views/img/banner/gwjz.jpg')?>" />
     </section>
+
+    <div style="margin: 20px 3% 0px 3%;
+        text-align: left;
+        padding: 2% 4%;
+        border-left: 2px solid #23527c;
+        background: rgba(35, 82, 124, 0.06);
+        border-radius: 5px;">
+      友情提示：点击文字跳转到相应的政府网站。
+    </div>
       			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
-        <ul class="news">
-        	<li><a  href="http://www.xzsnw.com/">
+        <ul class="news" style="margin-top:10px;">
+        	<li ><a  href="http://www.xzsnw.com/">
         			<div><p>山</p></div>
-        			<h4>山南网（中国西藏山南网）</h4>
+        			<h4>山南网<br>(中国西藏山南网）</h4>
           </a></li>
 
           <li><a  href="http://www.xznd.gov.cn/">

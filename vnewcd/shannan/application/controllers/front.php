@@ -53,6 +53,10 @@ class Front extends CI_Controller {
       $this->load->view('feedback');
   }
 
+  public function wechat(){
+      $this->load->view('wechat');
+  }
+
   public function links(){
       $this->load->view('links');
   }
