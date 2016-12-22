@@ -36,7 +36,7 @@ nav a:nth-child(6){
         	<img src="<?php echo base_url('Application/views/img/banner/shbm.jpg') ?>">
             <hgroup>
               <h3>生活便民,服务生活的方方面面</h3>
-                <h4>Better Service For Our People</h4>
+                <h4 style="text-transform:uppercase">Better Service For Our People</h4>
             </hgroup>
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
