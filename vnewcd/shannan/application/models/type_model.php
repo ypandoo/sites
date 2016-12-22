@@ -32,6 +32,7 @@ class Type_Model extends CI_Model
 
     public function getTypeList()
     {
+        $this->db->order_by('sort', 'DESC');
         $query = $this->db->get('t_type');
         return $query->result_array();
     }
