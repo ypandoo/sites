@@ -60,4 +60,8 @@ class Front extends CI_Controller {
   public function links(){
       $this->load->view('links');
   }
+
+  public function service(){
+      $this->load->view('service');
+  }
 }

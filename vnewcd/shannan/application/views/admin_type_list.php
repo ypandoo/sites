@@ -27,7 +27,7 @@
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h2 class="sub-header">分类管理</h2>
+          <h2 class="sub-header">分类管理 <small style="margin-left:10px">注意分类简称必须为字母，且不能与已有的重复</small></h2>
 
           <div class="row">
           <form class="navbar-form navbar-left" >
@@ -45,28 +45,30 @@
             <table class="table table-hover ">
               <thead>
                 <tr>
-
-                  <th>分类名称（中文）</th>
-                  <th>分类简称（字母）</th>
-                  <th>操作</th>
+                  <th>分类名称</th>
+                  <th>分类简称</th>
+                  <th>分类名称</th>
+                  <th>分类简称</th>
                 </tr>
               </thead>
               <tbody>
 
-                <?php foreach ($typelist as $type): ?>
-                <tr id="<?php echo 'tr'.$type['_id']?>">
+                <?php for($i=0; $i<sizeof($typelist)-1; $i=$i+2):?>
+                <tr>
                   <td>
-                    <?php echo $type['type_name']; ?>
+                    <?php echo $typelist[$i]['type_name']; ?>
                   </td>
-                <td>
-                  <?php echo $type['_id']; ?>
-                </td>
-
                   <td>
-                     <button type="button" id="<?php echo $type['_id']?>" class="btn btn-danger" onclick="deleteType(this.id)">删除</button>
+                    <?php echo $typelist[$i]['_id']; ?>
+                  </td>
+                  <td>
+                    <?php if($i+1 <= sizeof($typelist)) : echo $typelist[$i+1]['type_name']; endif;?>
+                  </td>
+                  <td>
+                    <?php if($i+1 <= sizeof($typelist)) : echo $typelist[$i+1]['_id']; endif;?>
                   </td>
                 </tr>
-                <?php endforeach; ?>
+              <?php endfor;?>
 
               </tbody>
             </table>
