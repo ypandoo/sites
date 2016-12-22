@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>政务便民</title>
+<title>生活便民</title>
 <meta name="keywords" content="关键词" />
 <meta name="description" content="关键词描述" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,7 +23,7 @@ nav a:nth-child(4){
 nav a:nth-child(5){
   background:url('<?php echo base_url('Application/views/img/icon_goat.png')?>') no-repeat center 15px; background-size:30px auto;}
 nav a:nth-child(6){
-  background:url('<?php echo base_url('Application/views/img/icon_food.png')?>') no-repeat center 15px; background-size:37px auto;}
+  background:url('<?php echo base_url('Application/views/img/icon_hospital.png')?>') no-repeat center 15px; background-size:37px auto;}
   nav a:nth-child(7){
     background:url('<?php echo base_url('Application/views/img/icon_hospital.png')?>') no-repeat center 15px; background-size:34px auto;}
 </style>
@@ -34,10 +34,10 @@ nav a:nth-child(6){
 
         <section class="banner">
         	<img src="<?php echo base_url('Application/views/img/banner/shbm.jpg') ?>">
-            <!-- <hgroup>
-              <h3>微山南，一站式微信服务平台</h3>
-                <h4>Shannan Information Platform Official</h4>
-            </hgroup> -->
+            <hgroup>
+              <h3>生活便民,服务生活的方方面面</h3>
+                <h4>Better Service For Our People</h4>
+            </hgroup>
         </section>
                 <a class="box1 box1i" href="<?php echo site_url('front/index') ?>">
         	<img src="<?php echo base_url('Application/views/img/banner/11.jpg') ?>">
