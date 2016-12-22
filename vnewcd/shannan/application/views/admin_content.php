@@ -160,7 +160,7 @@
 
             <label>*封面图片：(单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div>
-              <img ms-attr="{src:'<?php echo base_url('files/')?>'+_cover}" width="100px" height="100px" class="img-rounded"/>
+              <img ms-attr="{src:'<?php echo base_url('files/thumbnail/')?>'+_cover}" width="100px" height="100px" class="img-rounded"/>
             </div>
             <div class="gap_bottom gap_top_small">
               <button type="button" id="open_cover" class="btn btn-primary"
@@ -174,7 +174,7 @@
             <label>图片库(根据板块需求上传)：(可以多选文件，单个文件大小在2M之内，推荐尺寸为长宽一致的方形图，支持jpg,jpeg格式)</label>
             <div class="clearfix" style="overflow:hidden">
               <div class="pull-left gap_right" ms-for="el in @pics">
-                <img ms-attr="{src:'<?php echo base_url('files/')?>'+el}" class="img-rounded" width="100px" height="100px"/>
+                <img ms-attr="{src:'<?php echo base_url('files/thumbnail/')?>'+el}" class="img-rounded" width="100px" height="100px"/>
               </div>
             </div>
             <div class="clearfix gap_bottom gap_top_small ">
