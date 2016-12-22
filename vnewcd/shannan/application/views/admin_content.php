@@ -59,6 +59,12 @@
     transition: border .2s ease-in-out;
     height: 120px;
 }
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+}
     </style>
   </head>
 
@@ -103,7 +109,7 @@
             <div ms-for = "($index, el) in @files" class="col-xs-6 col-md-3" ms-click="@toggleSelect($index)">
               <div class="thumbnail">
                 <a href="#" class="mask">
-                  <img ms-attr="{src:'<?php echo base_url('files/')?>'+el.name}" alt="选择图片" height="90px">
+                  <img ms-attr="{src:'<?php echo base_url('files/thumbnail/')?>'+el.name}" alt="选择图片" height="90px">
                 </a>
               </div>
 

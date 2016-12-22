@@ -94,7 +94,7 @@
       <a href="<?php echo site_url('front/news_service?type=cfdj')?>"><div class="item">查封登记</div></a>
     </div>
     <div role="tabpanel" class="tab-pane" id="fire">
-      <a href="<?php echo site_url('front/news_service?type=jzgcxfsj')?>"><div class="item" style="width:94%">建筑工程消防设计审核（备案）和竣工消防验收（备案）</div></a>
+      <!-- <a href="<?php echo site_url('front/news_service?type=jzgcxfsj')?>"><div class="item" style="width:94%">建筑工程消防设计审核（备案）和竣工消防验收（备案）</div></a> -->
       <a href="<?php echo site_url('front/news_service?type=gzjjxfaj')?>"><div class="item"  style="width:94%">公众聚集场所投入使用、营业前消防安全检查</div></a>
     </div>
   </div>
