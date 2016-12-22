@@ -56,7 +56,7 @@ nav a:nth-child(6){
         	<a href="<?php echo site_url('front/links')?>">官网矩阵</a>
             <a href="<?php echo site_url('front/wechat')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">微信矩阵</a>
-            <a href="<?php echo site_url('front/news?type=3')?>">一站式服务</a>
+            <a href="<?php echo site_url('front/service')?>">一站式服务</a>
             <a href="<?php echo site_url('front/feedback')?>" style="margin-left:1px;border-right: 1px solid #d8d8d8;">违法投诉</a>
         </nav>
         <div class="gap40">
