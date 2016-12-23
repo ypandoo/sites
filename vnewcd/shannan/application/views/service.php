@@ -56,7 +56,7 @@
   </ul>
 
   <!-- Tab panes -->
-  <div class="tab-content">
+  <div class="tab-content" style="overflow:hidden">
     <div role="tabpanel" class="tab-pane active" id="city">
       <a href="<?php echo site_url('front/news_service?type=sgaj')?>"><div class="item">市公安局</div></a>
       <a href="<?php echo site_url('front/news_service?type=saj')?>"><div class="item">市安监</div></a>
@@ -72,7 +72,7 @@
       <a href="<?php echo site_url('front/news_service?type=szjj')?>"><div class="item">市质监局</div></a>
       <a href="<?php echo site_url('front/news_service?type=szhjj')?>"><div class="item">市主建局</div></a>
       <a href="<?php echo site_url('front/news_service?type=jiaotiju')?>"><div class="item">市教体局</div></a>
-      <a href="<?php echo site_url('front/news_service?type=zlsgj')?>"><div class="item">水利局</div></a>
+      <a href="<?php echo site_url('front/news_service?type=zlsgs')?>"><div class="item">水利局</div></a>
     </div>
     <div role="tabpanel" class="tab-pane" id="district">
       <a href="<?php echo site_url('front/news_service?type=ndgtj')?>"><div class="item">乃东国土局</div></a>
@@ -89,8 +89,8 @@
       <a href="<?php echo site_url('front/news_service?type=dyq')?>"><div class="item">地役权</div></a>      <a href="<?php echo site_url('front/news_service?type=diyaquan')?>"><div class="item">抵押权</div></a>
       <a href="<?php echo site_url('front/news_service?type=ygdj')?>"><div class="item">预告登记</div></a>
       <a href="<?php echo site_url('front/news_service?type=gzdj')?>"><div class="item">更正登记</div></a>
-      <a href="<?php echo site_url('front/news_service?type=yddj')?>"><div class="item">异议登记</div></a>
-      <a href="<?php echo site_url('front/news_service?type=yszbhz')?>"><div class="item">遗失补证换证登记</div></a>
+      <a href="<?php echo site_url('front/news_service?type=yydj')?>"><div class="item">异议登记</div></a>
+      <a href="<?php echo site_url('front/news_service?type=ysbzhz')?>"><div class="item">遗失补证换证登记</div></a>
       <a href="<?php echo site_url('front/news_service?type=cfdj')?>"><div class="item">查封登记</div></a>
     </div>
     <div role="tabpanel" class="tab-pane" id="fire">
