@@ -14,8 +14,8 @@
 <style media="screen">
   .item{
     float: left;
-    width: 44%;
-    margin: 0 3%;
+    width: 42%;
+    margin: 0 4%;
     height: 50px;
     line-height: 50px;
     /* padding-left: 10px; */
@@ -72,7 +72,7 @@
       <a href="<?php echo site_url('front/news_service?type=szjj')?>"><div class="item">市质监局</div></a>
       <a href="<?php echo site_url('front/news_service?type=szhjj')?>"><div class="item">市主建局</div></a>
       <a href="<?php echo site_url('front/news_service?type=jiaotiju')?>"><div class="item">市教体局</div></a>
-      <a href="<?php echo site_url('front/news_service?type=zlsgj')?>"><div class="item">市自来水公司</div></a>
+      <a href="<?php echo site_url('front/news_service?type=zlsgj')?>"><div class="item">水利局</div></a>
     </div>
     <div role="tabpanel" class="tab-pane" id="district">
       <a href="<?php echo site_url('front/news_service?type=ndgtj')?>"><div class="item">乃东国土局</div></a>
@@ -94,9 +94,12 @@
       <a href="<?php echo site_url('front/news_service?type=cfdj')?>"><div class="item">查封登记</div></a>
     </div>
     <div role="tabpanel" class="tab-pane" id="fire">
-      <!-- <a href="<?php echo site_url('front/news_service?type=jzgcxfsj')?>"><div class="item" style="width:94%">建筑工程消防设计审核（备案）和竣工消防验收（备案）</div></a> -->
-      <a href="<?php echo site_url('front/news_service?type=gzjjxfaj')?>"><div class="item"  style="width:94%">公众聚集场所投入使用、营业前消防安全检查</div></a>
+      <a href="<?php echo site_url('front/news_service?type=xfzd')?>"><div class="item">消防支队</div></a>
+      <!-- <a href="<?php echo site_url('front/news_service?type=gzjjxfaj')?>"><div class="item"  style="width:94%">公众聚集场所投入使用、营业前消防安全检查</div></a> -->
     </div>
+  </div>
+
+  <div class="gap40">
   </div>
 
 </div>
