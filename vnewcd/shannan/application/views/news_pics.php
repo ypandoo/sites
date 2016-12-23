@@ -25,7 +25,7 @@
     <section class="content">
         <div class="firstNews" ms-for="($index,el) in data">
             <a  ms-attr="{href:'<?php echo site_url('front/detail_pics?id=')?>'+el._id}" >
-                <img ms-attr="{src:'<?php echo base_url('files/thumbnail/')?>'+el.cover}" />
+                <img ms-attr="{src:'<?php echo base_url('files/')?>'+el.cover}" />
                 <h4>{{el.title}}</h4>
                 <p>一{{el.plain_text | truncate(30,'...') }}</p>
                 <span>{{el.update_time}}</span>
