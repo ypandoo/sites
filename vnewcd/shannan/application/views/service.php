@@ -65,6 +65,7 @@
       <a href="<?php echo site_url('front/news_service?type=shbj')?>"><div class="item">市环保局</div></a>
       <a href="<?php echo site_url('front/news_service?type=sjtj')?>"><div class="item">市交通局</div></a>
       <a href="<?php echo site_url('front/news_service?type=slyj')?>"><div class="item">市林业局</div></a>
+      <a href="<?php echo site_url('front/news_service?type=snmj')?>"><div class="item">市农牧局</div></a>
       <a href="<?php echo site_url('front/news_service?type=smzj')?>"><div class="item">市民政局</div></a>
       <a href="<?php echo site_url('front/news_service?type=sqxj')?>"><div class="item">市气象局</div></a>
       <a href="<?php echo site_url('front/news_service?type=srsj')?>"><div class="item">市人社局</div></a>
