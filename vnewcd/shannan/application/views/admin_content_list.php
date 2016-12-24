@@ -193,6 +193,7 @@ function deleteById(id)
 }
 
 //global
+controller.content.type = $('#type').val();
 Controller.content.getAPage();
     </script>
   </body>
