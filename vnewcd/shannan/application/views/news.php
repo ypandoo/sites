@@ -103,6 +103,7 @@
     data:[],
     page: 0,
     type: 1,
+    sending: false,
     first: {cover:'default.png', title:'数据加载中...'},
     getAPage:function(){
         $.ajax({
@@ -114,8 +115,15 @@
         .done(function (results) {
             if (results.success == 1 && results.data.length > 0){
               //self.gallery.files = results.data;
-              self.content.data = results.data;
-              self.content.first = results.data[0];
+
+              if(self.content.data.length == 0)
+                self.content.first = results.data[0];
+
+              for(i=0; i<results.data.length; i++)
+                self.content.data.push(results.data[i]);
+
+              self.content.page += 1;
+              self.content.sending = false;
             }
         })
     },
@@ -127,11 +135,24 @@ var type = $.query.get('type');
 if(type != null && typeof(type) != 'undefined' && type != '')
 {
   Controller.content.type = type;
+  Controller.content.sending = true;
   Controller.content.getAPage();
 }
 else{
     alert('数据获取不正确');
     window.location.href = '<?php echo site_url() ?>';
+}
+
+
+window.onscroll = function () {
+  if (Controller.content.sending) {
+    return;
+  }
+
+  if(Scroll.isScrollToPageBottom()){
+        Controller.content.sending = true;
+        Controller.content.getAPage();
+    }
 }
 
 </script>
