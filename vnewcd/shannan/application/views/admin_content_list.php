@@ -110,7 +110,7 @@
     data:[],
     page: 0,
     page_count: 0,
-    type: 1,
+    type: $('#type').val(),
     disable_css:'disabled',
     prev_disable: false,
     next_disable: false,
@@ -193,7 +193,7 @@ function deleteById(id)
 }
 
 //global
-controller.content.type = $('#type').val();
+Controller.content.type = $('#type').val();
 Controller.content.getAPage();
     </script>
   </body>
