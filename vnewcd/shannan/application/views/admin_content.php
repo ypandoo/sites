@@ -244,7 +244,7 @@
       pics: ['default.png'],
       _title: "",
       _cover: 'default.png',
-      _type: $('type').val(),
+      _type: $('#type').val(),
       singleSelect: true
     });
 
