@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 <style>
 .banner-tilte{
     position: absolute;
@@ -42,9 +42,9 @@
 
 </style>
 </head>
-<body>
+<body ms-controller="contents">
 
-<div class="wrapper" ms-controller="contents">
+<div class="wrapper" >
     <?php include 'header.php' ?>
 
     <section class="banner">
@@ -82,6 +82,11 @@
     	<a class='next' href="/wap/news.php?bid=2&page=2"  title="下一页" style="float:right">下一页</a>
     </div> -->
     </section>
+
+    <div id="loading" style="display:; position:fixed; bottom:200px; text-align:center;width:100%" ms-visible="@sending">
+      <i class="fa fa-spinner fa-pulse fa-2x fa-fw" style="color:#337ab7"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
 
     <?php include 'footer.php' ?>
 </div>
@@ -123,8 +128,11 @@
                 self.content.data.push(results.data[i]);
 
               self.content.page += 1;
-              self.content.sending = false;
             }
+            self.content.sending = false;
+        })
+        .fail(function(){
+          self.content.sending = false;
         })
     },
   });

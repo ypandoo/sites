@@ -11,10 +11,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('Application/views/css/site_base.css')?>"/>
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body>
+<body  ms-controller="contents">
 
-<div class="wrapper" ms-controller="contents">
+<div class="wrapper">
     <?php include 'header.php' ?>
 
     <section class="banner">
@@ -50,7 +51,10 @@
     	<a class='next' href="/wap/news.php?bid=2&page=2"  title="下一页" style="float:right">下一页</a>
     </div> -->
     </section>
-
+    <div id="loading" style="display:; position:fixed; bottom:200px; text-align:center;width:100%" ms-visible="@sending">
+      <i class="fa fa-spinner fa-pulse fa-2x fa-fw" style="color:#337ab7"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
     <?php include 'footer.php' ?>
 </div>
 
@@ -71,7 +75,7 @@
     data:[],
     page: 0,
     type: 1,
-    first: {cover:'default.png', title:'数据加载中...'},
+    sending: false,
     getAPage:function(){
         $.ajax({
             type:'POST',
@@ -81,10 +85,15 @@
         })
         .done(function (results) {
             if (results.success == 1 && results.data.length > 0){
-              //self.gallery.files = results.data;
-              self.content.data = results.data;
-              self.content.first = results.data[0];
+              for(i=0; i<results.data.length; i++)
+                self.content.data.push(results.data[i]);
+
+              self.content.page += 1;
             }
+            self.content.sending = false;
+        })
+        .fail(function(){
+          self.content.sending = false;
         })
     },
   });
@@ -95,11 +104,24 @@ var type = $.query.get('type');
 if(type != null && typeof(type) != 'undefined' && type != '')
 {
   Controller.content.type = type;
+  Controller.content.sending = true;
   Controller.content.getAPage();
 }
 else{
     alert('数据获取不正确');
     window.location.href = '<?php echo site_url() ?>';
+}
+
+
+window.onscroll = function () {
+  if (Controller.content.sending) {
+    return;
+  }
+
+  if(Scroll.isScrollToPageBottom()){
+        Controller.content.sending = true;
+        Controller.content.getAPage();
+    }
 }
 
 </script>
