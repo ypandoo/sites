@@ -59,4 +59,18 @@ class Admin extends CI_Controller {
     $data['tree_item'] = 3;
     $this->load->view('admin_feedback', $data);
   }
+
+  public function user()
+  {
+    $data['tree_item'] = 4;
+    $this->load->model('User_Model');
+    $data['adminlist'] = $this->User_Model->getList();
+    $this->load->view('admin_user', $data);
+  }
+
+  public function login()
+  {
+    $this->load->view('admin_login');
+  }
+
 }
