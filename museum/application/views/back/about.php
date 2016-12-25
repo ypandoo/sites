@@ -10,78 +10,42 @@
     <meta name="author" content="">
 
     <title>西藏博物馆后台管理系统</title>
-
     <link rel="stylesheet" href="<?php echo base_url('assets/common/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/common/css/ie10-viewport-bug-workaround.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/back/css/dashboard.css') ?>">
-
   </head>
 
-  <body>
+<body>
+<?php include 'header.php' ?>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">西藏博物馆后台管理系统</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">欢迎您,SuperLei(登出)</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<div class="container-fluid">
+  <div class="row">
+    <?php include 'sidebar.php' ?>
 
-    <div class="container-fluid">
-      <div class="row">
+    <!--right-->
+    <div ms-controller="content_ctrl">
+    <div id="page_item_detail">
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-        <!--left-->
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li  class="active"><a href="<?php echo base_url('back/view/about')?>">关于西博</a></li>
-            <!-- <li><a href="<?php echo base_url('back/view/layout')?>">基本陈列</a></li> -->
-            <li><a href="<?php echo base_url('back/view/index') ?>">馆藏珍品</a></li>
-            <li><a href="<?php echo base_url('back/view/content')?>">内容发布</a></li>
-            <li><a href="<?php echo base_url('back/view/instruction')?>">参观指南</a></li>
-            <li><a href="<?php echo base_url('back/view/navi')?>">展厅导航</a></li>
-          </ul>
-
-          <!--ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-          </ul-->
+        <div class="row">
+          <div class="col-md-10 page-header" style="height:60px;line-height:60px; font-size:24px">关于西博</div>
         </div>
 
 
-        <!--right-->
-        <div ms-controller="content_ctrl">
-        <div id="page_item_detail">
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div id="item_detail">
+          <form  ms-validate="@validate" method="post">
+              <script id="editor" type="text/plain" style="width:100%;height:200px;"></script>
 
-            <div class="row">
-              <div class="col-md-10 page-header" style="height:60px;line-height:60px; font-size:24px">关于西博</div>
-            </div>
-
-
-            <div id="item_detail">
-              <form  ms-validate="@validate">
-                  <script id="editor" type="text/plain" style="width:100%;height:200px;"></script>
-
-                  <hr>
-                  <button type="submit" class="btn btn-primary">更新信息</button>
-              </form>
-            </div>
+              <hr>
+              <button type="submit" class="btn btn-primary">更新信息</button>
+          </form>
         </div>
-      </div>
-      </div>
     </div>
+  </div>
+  </div>
+</div>
 
-    <div style="margin:50px"></div>
+<div style="margin:50px"></div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -96,8 +60,81 @@
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url('assets/ue/ueditor.all.min.js') ?>"></script>
 
     <script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-    <script src="<?php echo base_url('assets/back/js/about.js') ?>"></script>
+    <script>
+    var ue = UE.getEditor('editor');
+    (function(){
+      var self = this;
+      self.content_ctrl = avalon.define({
+                       $id: 'content_ctrl',
+                       content_text:'',
+                       validate: {
+                         onValidateAll: function (reasons) {
 
+                          var submit_data = {
+                                  'html':  ue.getContent(),
+                                  'text':  ue.getContentTxt(),
+                          };
+
+                          //Ajax
+                          console.log('Submit:提交数据');
+                          console.log(submit_data);
+
+                          var url = base_url+'About/update_about';
+                          //url call data error_call
+                          base_remote_data.ajaxjson(
+                            url, //url
+                            function(data){
+                              if(data.hasOwnProperty('success')){
+                                    if(data.success == 1){
+                                        console.log(data);
+                                        alert('文章更新成功！');
+                                    }
+                                    else{
+                                        alert(data.message);
+                                    }
+                                }
+                              else {
+                                alert('返回值错误!');
+                              }
+                          },
+                          submit_data,
+                          function()
+                          {
+                            alert('网络错误!');
+                          });
+
+                         }//End onValidateAll
+                       },//End validate
+        get_about:function(){
+            var url = base_url+'About/get_about';
+            //url call data error_call
+            base_remote_data.ajaxjson(
+              url, //url
+              function(data){
+                if(data.hasOwnProperty('success')){
+                      if(data.success == 1){
+                          console.log(data);
+                          ue.setContent(data.data[0].HTML);
+                      }
+                      else{
+                          alert(data.message);
+                      }
+                  }
+                else {
+                  alert('返回值错误!');
+                }
+            },
+            '',
+            function()
+            {
+              alert('网络错误!');
+            });
+        }
+      });
+    }).call(define('space_about'));
+
+        space_about.content_ctrl.get_about();
+</script>
 
 
   </body>

@@ -17,45 +17,107 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/about.css') ?>">
+    <?php include 'header.php' ?>
 </head>
-<body>
+<body  ms-controller="about_ctrl">
+<!-- Carousel -->
+<header id="intro">
+  <!-- Navi-->
+  <?php include 'header_navi.php' ?>
 
-<div id="details" class="details"  ms-controller="about_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
-        </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/1.jpg" alt="First slide"/>
+      </div>
+      <div class="item">
+        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/2.jpg" alt="Second slide"/>
+      </div>
+      <div class="item">
+        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/1.jpg" alt="Third slide">
+      </div>
+  </div>
 
-        <div class="page-title">
-          <h2>西博简介</h2>
-          <h4>About Us</h4>
-        </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+  </div><!-- /carousel -->
+</header>
+<!-- Header -->
 
-        <div class="content" style="margin-top:20px">
-            <p class="html" ms-html="@html">
+<div id="page-content" class="index-page">
+		<section class="box-content box-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 ">
+						<div class="service">
+							<!-- <a href="#"><img src="<?php echo base_url('assets/front/img/logo_sr.png')?>" title="icon-name" width="80px"></a> -->
+							<h3>西博简介</h3>
+							<p class="html" ms-html="@html">
+							<a class="btn btn-2 btn-sm" href="#">Read More</a>
+						</div>
+			 		</div>
 
-            </p>
-        </div>
-    </div>
 
-    <div style="margin-top:40px">
-    <div>
+				</div>
+			</div>
+		</section>
 
-    <!-- <div style="height:20px; background: #ec422b;">
-    </div> -->
+	</div>
 
+<?php include 'footer.php' ?>
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/about.js') ?>"></script>
 
 <script>
+(function(){
+    var self = this;
 
+    this.framework =  avalon.define({
+        $id:"about_ctrl",
+        html: '',
+    });
+
+    //get data via ajax
+    this.get_detail = function(){
+
+        var url = base_url+'About/get_about';
+        base_remote_data.ajaxjson(
+                          url, //url
+                          function(data){
+                            if(data.hasOwnProperty('success')){
+                                  if(data.success == 1){
+                                      console.log(data);
+                                      self.framework.html = data.data[0].HTML;
+                                  }
+                                  else{
+                                      alert(data.message);
+                                  }
+                              }
+                            else {
+                              alert('返回值错误!');
+                            }
+                        },
+                        '',
+                        function()
+                        {
+                          alert('网络错误!');
+                        });
+    };
+
+    this.get_detail();
+
+}).call(define('space_content_detail'));
 </script>
 </html>

@@ -38,7 +38,6 @@
 	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
     <h2>关于西博</h2>
     <a class="btn menubtn"></a></section><section class="menuDiv hide">
-
 </section>
 
 <div class="innerContent" ms-controller = "about_ctrl">

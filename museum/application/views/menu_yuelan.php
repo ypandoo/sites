@@ -97,7 +97,7 @@
 <body id="bg">
 
     <div class="menu" id="menu" style="display:none; padding: 10px 0">
-      <a href='<?php echo base_url('pages/view/about2') ?>'>
+      <a href='<?php echo base_url('pages/view/about') ?>'>
         <div class="menu_item" >
           <img src='<?php echo base_url('assets/front/img/menu/m1_about.png') ?>' />
         </div>
