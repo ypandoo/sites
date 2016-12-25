@@ -1,5 +1,6 @@
 <!-- /////////////////////////////////////////Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+  style="background-color: rgba(34, 34, 34, 0.9);">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"

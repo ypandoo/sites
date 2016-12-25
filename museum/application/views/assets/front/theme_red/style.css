@@ -68,7 +68,7 @@ a:focus {color: #DA251D;text-decoration: none;}
     }
 }
 
-header {margin-top:20px;width: 100%;background: #333;}
+header {margin-top:50px;width: 100%;background: #333;}
 
 /* Carousel Styles */
 .carousel-inner img {width: 100%;max-height: 640px;}
@@ -147,7 +147,9 @@ header {margin-top:20px;width: 100%;background: #333;}
 
 .box-content.box-1 {}
 .box-content.box-1 .service{
-  margin: -80px 0 100px 0;text-align: center;background:rgba(251, 246, 238, 0.91);;
+  margin: -80px 0 100px 0;text-align: center;
+  /*background:rgba(251, 246, 238, 0.91);;*/
+  background: url('repeat.png');
   padding: 20px;border-top:5px solid #DA251D;
   -webkit-box-shadow: 0px 56px 36px -60px #121D12;
   -moz-box-shadow: 0px 56px 36px -60px #121D12;

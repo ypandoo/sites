@@ -36,13 +36,13 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
       <div class="item active">
-        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/1.jpg" alt="First slide"/>
+        <img src="<?php echo base_url('application/views/assets/front/img/banner_about1.jpg') ?>" alt="First slide"/>
       </div>
       <div class="item">
-        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/2.jpg" alt="Second slide"/>
+        <img src="<?php echo base_url('application/views/assets/front/img/banner_about2.jpg') ?>" alt="Second slide"/>
       </div>
       <div class="item">
-        <img src="http://demo.cssmoban.com/cssthemes3/cpts_476_sh/images/1.jpg" alt="Third slide">
+        <img src="<?php echo base_url('application/views/assets/front/img/banner_about3.jpg') ?>" alt="Third slide">
       </div>
   </div>
 
