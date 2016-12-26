@@ -19,7 +19,7 @@
 
     <?php include 'header.php' ?>
 </head>
-<body  ms-controller="about_ctrl">
+<body  ms-controller="about_ctrl" class="bg1">
 <!-- Carousel -->
 <header id="intro">
   <!-- Navi-->
@@ -42,7 +42,7 @@
         <img src="<?php echo base_url('application/views/assets/front/img/banner_about2.jpg') ?>" alt="Second slide"/>
       </div>
       <div class="item">
-        <img src="<?php echo base_url('application/views/assets/front/img/banner_about3.jpg') ?>" alt="Third slide">
+        <img src="<?php echo base_url('application/views/assets/front/img/banner_about1.jpg') ?>" alt="Third slide">
       </div>
   </div>
 
@@ -57,10 +57,10 @@
 </header>
 <!-- Header -->
 
-<div id="page-content" class="index-page">
+<div id="page-content" class="index-page" style="margin-top:10px">
 		<section class="box-content box-1">
 			<div class="container">
-				<div class="row">
+				<div class="row heading">
 					<div class="col-sm-4 ">
 						<div class="service">
 							<!-- <a href="#"><img src="<?php echo base_url('assets/front/img/logo_sr.png')?>" title="icon-name" width="80px"></a> -->

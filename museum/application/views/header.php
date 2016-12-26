@@ -36,3 +36,13 @@
 
 			});
 	</script> -->
+
+  <style media="screen">
+    .navbar-nav li{
+      height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    border-bottom: 1px solid;
+    overflow: hidden;
+    }
+  </style>

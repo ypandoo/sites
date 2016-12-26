@@ -17,9 +17,7 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
+    <?php include 'header.php' ?>
 
     <style>
     .details {
@@ -86,68 +84,153 @@
     </style>
 
 </head>
-<body class="bg bg5" style="margin:0;padding:0">
-<section class="innerheader">
-	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
-    <h2>基本陈列</h2>
-</section>
-
-<div id="details" class="details"  ms-controller="expo_list_ctrl">
-        <!-- banner -->
-        <div class="banner-top" style="margin-top:46px">
-          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner1.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner3.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner4.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\routine-banner5.jpg')?>" width="100%"/></div>
+<body class="bg1" style="margin:0;padding:0" ms-controller="expo_list_ctrl">
+  <!-- Carousel -->
+  <header id="intro">
+    <?php include 'header_navi.php' ?>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="<?php echo base_url('assets/front/img/m/routine-banner2.jpg') ?>" alt="First slide"/>
         </div>
-
-        <div class="page-title"   style="margin-top: 20px;margin-left: 20px;color: white;">
-          <h3>基本陈列&nbsp; | &nbsp; Routine Exhibitions</h3>
+        <div class="item">
+          <img src="<?php echo base_url('assets/front/img/m/routine-banner1.jpg') ?>" alt="Second slide"/>
         </div>
+        <div class="item">
+          <img src="<?php echo base_url('assets/front/img/m/routine-banner3.jpg') ?>" alt="Third slide">
+        </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic"  role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+    </div>
+  </header>
+  <!-- Header -->
 
-        <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
-        <div class="content"  ms-for='($index, item_info) in @list'>
+        <!-- <div class="content"  ms-for='($index, item_info) in @list'>
             <div class="news_img"  ms-click="@get_detail_link($index)">
               <img ms-attr="{src:@get_cover($index)}" width="100%" >
             </div>
             <div class="item"  ms-click="@get_detail_link($index)">
-             <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
+             <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> ->
                 <h2>{{item_info.CONTENT_TITLE}}</h2>
                 <!-- <h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
-                <!-- <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
+                <!-- <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> ->
             </div>
           </a>
+        </div> -->
+
+        <div id="page-content" class="index-page" style="margin-top:20px">
+        		<section class="box-content box-1" ms-for='($index, item_info) in @list'>
+        			<div class="container">
+        				<div class="row">
+        					<div class="col-sm-4 ">
+        						<div class="service">
+                      <img ms-attr="{src:@get_cover($index)}"  alt="">
+        							<p style="font-size:16px"><i class="fa fa-tags" aria-hidden="true"></i>{{item_info.CONTENT_TITLE}}</p>
+        							<a class="btn btn-2 btn-sm" ms-click="@get_detail_link($index)">查看详情</a>
+        						</div>
+        			 		</div>
+        				</div>
+        			</div>
+        		</section>
         </div>
-      </div>
+
 
       <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
         加载更多...
       </div>
-</div>
+
+<?php include 'footer.php'; ?>
 
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/basic_list.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
-
 <script>
+(function(){
+  var self = this;
+  $('#head_text').text('基本陈列');
 
-$(document).ready(function(){
-  $('.banner-top').slick({
-  dots: true,
-  infinite: true,
-  speed:1500,
-  slidesToShow: 1,
-  adaptiveHeight: false,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  arrows: true
-});
+  //avalon control space
+  self.items_ctrl = avalon.define({
+                   $id: 'expo_list_ctrl',
+                   list:[],
+                   sort: 0,
+                   page_start: 0,
+                   show_more: false,
 
-});
+                   get_pic_path: function(path){
+                     return upload_img+path;
+                   },
+                   get_detail_link : function(e){
+                     window.location.href = base_url+'content/view/'+self.items_ctrl.list[e].CONTENT_ID;
+                   },
+
+                   get_detail_link_pc : function(e){
+                     window.location.href = base_url+'content/view_basic/'+self.items_ctrl.list[e].CONTENT_ID;
+                   },
+
+                   get_content_text: function(e){
+                     return e.substr(0, 48)+'...';
+                   },
+
+                   get_cover:function(e){
+                     return self.items_ctrl.get_pic_path(self.items_ctrl.list[e].CONTENT_COVER);
+                   },
+
+                   get_content_by_type:function(){
+                     var url = base_url+'Content/get_list';
+                     base_remote_data.ajaxjson(
+                                       url, //url
+                                       function(data){
+                                         if(data.hasOwnProperty('success')){
+                                               if(data.success == 1 ){
+                                                   for (var i = 0; i < data.data.length; i++) {
+                                                    self.items_ctrl.list.push(data.data[i]);
+                                                   }
+
+                                                   //长度大与interval 就加到起始位置
+                                                   if (data.data.length == page_interval) {
+                                                     self.items_ctrl.page_start += data.data.length;
+                                                     //show more
+                                                     self.items_ctrl.show_more  = true;
+                                                   }
+                                                   else {
+                                                     self.items_ctrl.show_more  = false;
+                                                   }
+                                               }
+                                               else{
+                                                   alert(data.message);
+                                               }
+                                           }
+                                         else {
+                                           alert('返回值错误!');
+                                         }
+                                     },
+                                     {'list_type': '基本陈列',
+                                      'page_start': self.items_ctrl.page_start,
+                                      'page_interval': 4},
+                                     function()
+                                     {
+                                       alert('网络错误!');
+                                     });
+                   }
+  });
+
+
+  //Init codes run once
+  self.items_ctrl.get_content_by_type();
+
+}).call(define('space_basic_list'));
+
 </script>
 </html>
