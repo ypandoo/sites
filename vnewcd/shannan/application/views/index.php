@@ -57,10 +57,10 @@ nav a:nth-child(6){
         	<a href="<?php echo site_url('front/news?type=szyw')?>">时政要闻</a>
             <a href="<?php echo site_url('front/news?type=jzfp')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">精准扶贫</a>
-            <a href="<?php echo site_url('front/news?type=lxyz')?>">两学一做</a>
+            <!-- <a href="<?php echo site_url('front/news?type=lxyz')?>">两学一做</a> -->
             <a href="<?php echo site_url('front/news?type=lhzt')?>">时事专题</a>
-            <a href="<?php echo site_url('front/news?type=gcft')?>"
-              style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">高层访谈</a>
+            <!-- <a href="<?php echo site_url('front/news?type=gcft')?>"
+              style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">高层访谈</a> -->
         </nav>
 
         <section class="banner" >
