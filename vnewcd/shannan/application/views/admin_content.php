@@ -385,7 +385,7 @@ $('#fileupload').fileupload({
     }
     if (file.error) {
         //
-        Controller.gallery.tips.push({message:file.name+'上传失败：'+file.error, error:1});
+        Controller.gallery.tips.push({message:'上传失败：'+file.error, error:1});
     }
   })
   .on('fileuploadprogressall', function (e, data) {
@@ -402,7 +402,7 @@ $('#fileupload').fileupload({
     //4. 单个文件上传成功
     $.each(data.result.files, function (index, file) {
         if (file.url) {
-            Controller.gallery.tips.push({message:file.name+'上传完成.', error:0});
+            // Controller.gallery.tips.push({message:file.name+'上传完成.', error:0});
         } else if (file.error) {
             Controller.gallery.tips.push({message:file.name+'上传失败：'+file.error, error:1});
         }
@@ -418,7 +418,7 @@ $('#fileupload').fileupload({
       {console.log('fileuploadstop');}
 
     Controller.gallery.getAPage();
-
+    Controller.gallery.tips.push({message:'上传全部完成！', error:0});
   });
 
 })(define('FileUpload'));

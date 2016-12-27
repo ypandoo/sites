@@ -1089,7 +1089,14 @@ class UploadHandler
                         FILE_APPEND
                     );
                 } else {
-                    move_uploaded_file($uploaded_file, $file_path);
+                    //Lei Modify
+                    $targetName = rawurlencode($name);
+                    $targetPath = $upload_dir.$targetName;
+                    move_uploaded_file($uploaded_file, $targetPath);
+                    $file_path = $targetPath;
+                    $file->name = $targetName;
+                    // ini_set('display_errors',1);
+                    // error_reporting(E_ALL);
                 }
             } else {
                 // Non-multipart uploads (PUT method support)
