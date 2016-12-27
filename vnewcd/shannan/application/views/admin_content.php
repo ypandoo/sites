@@ -410,7 +410,7 @@ $('#fileupload').fileupload({
   })
   .on('fileuploadfail', function (e, data) {
       $.each(data.files, function (index, file) {
-        Controller.gallery.tips.push({message:file.name+'上传失败.', error:1});
+        Controller.gallery.tips.push({message:file.name+'上传失败:'+file.error, error:1});
       });
   })
   .on('fileuploadstop', function(){
