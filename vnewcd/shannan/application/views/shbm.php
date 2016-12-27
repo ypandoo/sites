@@ -21,7 +21,7 @@ nav a:nth-child(3){
 nav a:nth-child(4){
   background:url('<?php echo base_url('Application/views/img/icon_thumb.png')?>') no-repeat center 15px; background-size:36px auto;}
 nav a:nth-child(5){
-  background:url('<?php echo base_url('Application/views/img/icon_goat.png')?>') no-repeat center 15px; background-size:30px auto;}
+  background:url('<?php echo base_url('Application/views/img/icon_nongye.png')?>') no-repeat center 15px; background-size:30px auto;}
 nav a:nth-child(6){
   background:url('<?php echo base_url('Application/views/img/icon_hospital.png')?>') no-repeat center 15px; background-size:37px auto;}
   nav a:nth-child(7){
@@ -58,7 +58,7 @@ nav a:nth-child(6){
             <a href="<?php echo site_url('front/news_pics?type=lyjd')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">旅游景点</a>
             <a href="<?php echo site_url('front/news_pics?type=mswh')?>">名俗文化</a>
             <a href="<?php echo site_url('front/news_pics?type=mycp')?>" >名优产品</a>
-            <a href="<?php echo site_url('front/news_pics?type=nmkt')?>"
+            <a href="<?php echo site_url('front/news_pics?type=nmke')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">农牧课堂</a>
             <a href="<?php echo site_url('front/news_pics?type=ylwd')?>"
               style="">医疗网点</a>

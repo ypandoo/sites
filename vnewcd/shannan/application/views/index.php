@@ -77,29 +77,14 @@ nav a:nth-child(6){
         </section>
 
         <section class="content">
-            <div class="firstNews">
-                <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+first._id}" >
-                    <img ms-attr="{src:'<?php echo base_url('files/')?>'+first.cover}" />
-                    <h4>{{first.title}}</h4>
-                    <p>一{{first.plain_text | truncate(30,'...') }}</p>
-                    <span>{{first.update_time}}</span>
-                </a>
-            </div>
-
-        <div>            			                    			                    			                    			                    			                    			                    			                    			                    			                    			                </div>
-            <ul class="news">
-              <li ms-for="($index,el) in data" ms-if="$index > 0">
-                    <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+el._id}">
-                      <div>
-                        <p>{{el.update_time | date("MM-dd")}} <br> {{el.update_time | date("yyyy")}}</p>
-                        <!-- <p>{{el.update_time | date("yyyy")}}</p> -->
-                      </div>
-                      <h4>{{el.title}}</h4>
-                      <p>{{el.plain_text  | truncate(35,'...') }}</p>
-                    </a>
-              </li>
-            </ul>
-        </div>
+          <div class="firstNews" ms-for="($index,el) in data">
+              <a  ms-attr="{href:'<?php echo site_url('front/detail?id=')?>'+el._id}" >
+                  <img ms-attr="{src:'<?php echo base_url('files/')?>'+el.cover}" />
+                  <h4>{{el.title}}</h4>
+                  <p>一{{el.plain_text | truncate(30,'...') }}</p>
+                  <span>{{el.update_time}}</span>
+              </a>
+          </div>
 
         <!-- <div class="pages">
             <a class='next'>上一页</a>
@@ -124,7 +109,6 @@ nav a:nth-child(6){
     $id: "contents",
     data:[],
     type: 'szyw',
-    first: {cover:'default.png', title:'数据加载中...'},
     getAPage:function(){
         $.ajax({
             type:'POST',
