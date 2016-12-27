@@ -71,7 +71,7 @@
       <a href="<?php echo site_url('front/news_service?type=srsj')?>"><div class="item">市人社局</div></a>
       <a href="<?php echo site_url('front/news_service?type=ssyj')?>"><div class="item">市食药局</div></a>
       <a href="<?php echo site_url('front/news_service?type=szjj')?>"><div class="item">市质监局</div></a>
-      <a href="<?php echo site_url('front/news_service?type=szhjj')?>"><div class="item">市主建局</div></a>
+      <a href="<?php echo site_url('front/news_service?type=szhjj')?>"><div class="item">市筑建局</div></a>
       <a href="<?php echo site_url('front/news_service?type=jiaotiju')?>"><div class="item">市教体局</div></a>
       <a href="<?php echo site_url('front/news_service?type=zlsgs')?>"><div class="item">水利局</div></a>
     </div>
