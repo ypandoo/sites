@@ -78,7 +78,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">素材库<small> &nbsp;选取图片,最多一次上传5张图片。注意如果图片的名字请不要>50个字符。</small></h4>
+        <h4 class="modal-title" id="myModalLabel">素材库<small> &nbsp;注意：图片最多一次上传5张图片。图片名字请不要>50个字符。</small></h4>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
