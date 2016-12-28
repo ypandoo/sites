@@ -78,7 +78,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">素材库<small> &nbsp;选取图片,最多一次上传5张图片</small></h4>
+        <h4 class="modal-title" id="myModalLabel">素材库<small> &nbsp;选取图片,最多一次上传5张图片。注意如果图片的名字请不要>50个字符。</small></h4>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
@@ -402,15 +402,15 @@ $('#fileupload').fileupload({
     //4. 单个文件上传成功
     $.each(data.result.files, function (index, file) {
         if (file.url) {
-            // Controller.gallery.tips.push({message:file.name+'上传完成.', error:0});
+            Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传完成.', error:0});
         } else if (file.error) {
-            Controller.gallery.tips.push({message:file.name+'上传失败：'+file.error, error:1});
+            Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传失败：'+file.error, error:1});
         }
     });
   })
   .on('fileuploadfail', function (e, data) {
       $.each(data.files, function (index, file) {
-        Controller.gallery.tips.push({message:file.name+'上传失败:'+file.error, error:1});
+        Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传失败:'+file.error, error:1});
       });
   })
   .on('fileuploadstop', function(){
@@ -418,7 +418,7 @@ $('#fileupload').fileupload({
       {console.log('fileuploadstop');}
 
     Controller.gallery.getAPage();
-    Controller.gallery.tips.push({message:'上传全部完成！', error:0});
+    // Controller.gallery.tips.push({message:'上传全部完成！', error:0});
   });
 
 })(define('FileUpload'));
