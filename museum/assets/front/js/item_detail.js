@@ -21,7 +21,7 @@
       'description': '',
       'path': '',
     },
-    video_path: null,
+    video_path: "",
     select: function(index) {
       self.index(index);
     },
@@ -32,8 +32,8 @@
       self.prev();
     },
 
-    audio_cn: null,
-    audio_zw: null,
+    audio_cn: "",
+    audio_zw: "",
     play_cn: false,
     _play_cn: function() {
       if (self.framework.play_cn == true) {

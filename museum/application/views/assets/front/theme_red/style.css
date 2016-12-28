@@ -4,6 +4,20 @@
 /* ---------------------------------------------------------------------------- */
 body {font-family: 'Ek Mukta', sans-serif;color: #666;background-color: #fff;font-size: 16px;line-height: 1.6em;font-weight: 400;}
 html, body {width:100%; padding:0; margin:0;}
+html, body, div, applet, object, iframe,
+ blockquote, pre,
+ abbr, acronym, address, big, cite, code,
+del, dfn, font, ins, kbd, bdi, q, s, samp,
+small, strike, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
 
 /* ---------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------------------- */
@@ -24,6 +38,7 @@ i{margin-right: 10px}
 h1,h2,h3,h4,h5,h6 {font-family: 'PingHei', 'Microsoft YaHei', 'Roboto', sans-serif;font-weight: 600;color: #111;}
 
 .bg1{background:url('bg-body3.png') repeat top center;}
+.bg2{background:url('repeat.png') repeat top center;}
 
 p {
   margin: 0;
