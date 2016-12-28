@@ -18,44 +18,11 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">西藏博物馆后台管理系统</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">欢迎您,SuperLei(登出)</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-
-        <!--left-->
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="<?php echo base_url('back/view/about')?>">关于西博</a></li>
-            <!-- <li><a href="<?php echo base_url('back/view/layout')?>">基本陈列</a></li> -->
-            <li><a href="<?php echo base_url('back/view/index') ?>">馆藏珍品</a></li>
-            <li><a href="<?php echo base_url('back/view/content')?>">内容发布</a></li>
-            <li   class="active"><a href="<?php echo base_url('back/view/instruction')?>">参观指南</a></li>
-            <li><a href="<?php echo base_url('back/view/navi')?>">展厅导航</a></li>
-          </ul>
-
-          <!--ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-          </ul-->
-        </div>
+    <?php include 'header.php'; ?>
+        <div class="container-fluid">
+          <div class="row">
+            <?php include 'sidebar.php' ?>
+            </div>
 
 
         <!--right-->

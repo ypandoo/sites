@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">欢迎您,SuperLei(登出)</a></li>
+        <li><a href="#">欢迎您,管理员</a></li>
       </ul>
     </div>
   </div>
