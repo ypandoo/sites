@@ -17,156 +17,60 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-
-    <style>
-    .details {
-    width: 100%;
-    background: transparent;
-    }
-
-    .content .item {
-        position: absolute;
-        width: 100%;
-        height: 38px;
-        background: rgba(97,0, 0, 0.5);
-        /* margin-top: 4px; */
-        /* padding: 5px; */
-        /* float: left; */
-        bottom: 3px;
-    }
-
-    .content .item h2 {
-      font-size: 12px;
-      line-height: 15px;
-      font-weight: 500;
-      letter-spacing: 0px;
-      color: #ffffff;
-      padding: 5px 5px 0 5px;
-    }
-
-    .content {
-        width: 48%;
-        height: 130px;
-        position: relative;
-        /* border-radius: 20px; */
-        /* background-color: #f5f5f5; */
-        /* margin-bottom: 5px; */
-        margin: 10px 1% 10px 1%;
-        float: left;
-        /* border: 1px solid rgb(0, 132, 77); */
-        /* box-shadow: 3px 2px 6px rgba(220, 220, 220, 0); */
-    }
-
-
-    .innerheader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: .8rem;
-    z-index: 1000;
-    /* background: rgba(79, 247, 90, 0.16); */
-    border-bottom: 1px solid rgb(255, 255, 255);
-    }
-
-    .show_more{
-    margin-bottom: 50px;
-    color: white;
-    text-align: center;
-    font-size: 12px;
-    border: 1px solid white;
-    width: 60%;
-    margin-left: 20%;
-    line-height: 24px;
-    margin-top: 20px;
-    }
-
-    .banner-top{
-      margin-top: 46px;
-    }
-    .banner-item{
-      position: relative;
-    }
-
-    .banner-item img{
-      width: 100%;
-    }
-
-    .item_name_bg {
-      position: absolute;
-      text-align: left;
-      left: 0;
-      bottom: 0;
-      height: 40px;
-      width: 100%;
-      z-index: 6;
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)),color-stop(0.2, rgba(0,0,0,.2)), to(rgba(0,0,0,.8)));
-      -webkit-background-origin: padding;
-      -webkit-background-clip: content;
-    }
-
-    .item_name_bg p{
-      text-align: left;
-      font-size: 16px;
-      margin-left: 15px;
-      line-height: 40px;
-      /* padding-left: 0px; */
-      font-family: 'Microsoft YaHei';
-      /* margin-left: 10px; */
-      -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-      -o-transform: scale(0.5);
-      /* -webkit-transform: scale(0.5); */
-      /* transform: scale(0.5); */
-      color: white;
-      letter-spacing: 2px;
-    }
-
-    .expo_item {
-        width: 48%;
-        float: left;
-        margin: 1%;
-        /* border: 1px solid rgba(0, 0, 0, 0.11); */
-        box-shadow: 3px 2px 6px rgba(0, 15, 58, 0.64);
-    }
-
-    .newhead {
-   -webkit-box-shadow: 0 8px 6px -6px #505050;
-   -moz-box-shadow: 0 8px 6px -6px #505050;
-   box-shadow: 0 8px 6px -6px #505050;
-}
-
-.expo_text h2{
- line-height: 30px;
- font-family: 'Microsoft YaHei';
- letter-spacing: 0px;
- /* background-color: #e2e2e2; */
- margin-left: 5px;
- font-size: 12px;
-}
-
-.expo_text{
-  background: rgba(255, 0, 0, 0.5);
-  color:white;
-  margin-top: -4px;
-}
-    </style>
-
+    <?php include 'header.php' ?>
 </head>
-<body class="bg bg5" style="margin:0;padding:0">
-<section class="innerheader">
-	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
-    <h2>十大精品</h2>
-</section>
 
-<div class="details"  ms-controller="items_ctrl">
+<body class="bg1"  ms-controller="items_ctrl">
+  <?php include 'header_navi_yueyou.php'; ?>
+  <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin-top:50px">
+  <!-- Indicators ->
+  <ol class="carousel-indicators" >
+    <li ms-for="($index,el) in data" data-target="#carousel-example-generic"
+    ms-attr="{'data-slide-to':$index}" ms-class="[$index == 0 ? 'active' : '']" ></li>
+  </ol>
+
+  <!-- Wrapper for slides ->
+  <div class="carousel-inner" role="listbox">
+    <div ms-class="[($index == 0 ? 'active' : ''), 'item']" ms-for="($index,el) in data">
+      <img ms-attr="{src:@get_pic_path(el.PATH)}" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls ->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
+
+
+<div id="page-content" class="index-page" style="margin-top:60px">
+    <section class="box-content box-1" ms-for='($index, item_info) in @data'>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 ">
+            <div class="service" ms-click="@get_detail_link(item_info.ITEM_ID)">
+              <img ms-attr="{src:@get_pic_path(item_info.PATH)}"  alt="">
+              <p style="font-size:16px; text-align:center"><i class="fa fa-bandcamp" aria-hidden="true"></i>{{@item_info.ITEM_NAME}}</p>
+              <!-- <a class="btn btn-2 btn-sm" ms-click="@get_detail_link(item_info.ITEM_ID)">查看详情</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+
+<!-- <div class="details"  ms-controller="items_ctrl">
     <div class="banner-top" >
        <div class="banner-item"  ms-for='($index, item_info) in @data'>
          <img  ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%"/>
-         <!-- <div class="item_name_bg"><p >{{@item_info.ITEM_NAME}}</p></div> -->
+         <!-- <div class="item_name_bg"><p >{{@item_info.ITEM_NAME}}</p></div> ->
        </div>
     </div>
 
@@ -182,21 +86,67 @@
         </div>
         <div class="expo_text" ms-click="@get_detail_link(item_info.ITEM_ID)">
           <h2>{{item_info.ITEM_NAME}}</h2>
-          <!-- <h4>{{@get_content_text(item_info.ITEM_TEXT)}}</h4> -->
+          <!-- <h4>{{@get_content_text(item_info.ITEM_TEXT)}}</h4> ->
         </div>
       </div>
     </div>
-  </div>
-
+  </div> -->
+<?php include 'footer.php'; ?>
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-
-<script src="<?php echo base_url('assets/front/js/item_list.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 <script>
+$('#head_text').text('十大珍品');
+(function() {
+  var self = this;
+
+  //avalon control space
+  var items_ctrl = avalon.define({
+    $id: 'items_ctrl',
+    data: [],
+    sort: 0,
+
+    get_pic_path: function(path) {
+      return upload_img + path;
+    },
+    get_detail_link: function(e) {
+      window.location.href = base_url + 'item/view/' + e;
+    },
+    get_detail_link_pc: function(e) {
+      return base_url + 'item/view_pc/' + e;
+    },
+
+    get_content_text: function(e) {
+      return e.substr(0, 45) + '...';
+    },
+
+    get_items_with_pic: function() {
+      var url = base_url + 'Item/get_items_topten_with_pic';
+      base_remote_data.ajaxjson(
+        url, //url
+        function(data) {
+          if (data.hasOwnProperty('success')) {
+            if (data.success == 1) {
+              //  console.log(data);
+              //  console.log('获取列表及图片成功！');
+              items_ctrl.data = data.data;
+              // items_ctrl.run_slick();
+            } else {
+              alert(data.message);
+            }
+          } else {
+            alert('返回值错误!');
+          }
+        },
+        '',
+        function() {
+          alert('网络错误!');
+        });
+    }
+  });
+
+  //Init codes run once
+  items_ctrl.get_items_with_pic();
+
+}).call(define('space_view_items'));
 
 </script>
 </html>

@@ -17,9 +17,7 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/front/css/base2.css')?>"/>
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
+    <?php include 'header.php'; ?>
 
     <style>
     .details {
@@ -129,6 +127,9 @@
         width: 48%;
         float: left;
         margin: 1%;
+        margin-top: 20px;
+        height: 170px;
+            border-radius: 3px;
         /* border: 1px solid rgba(0, 0, 0, 0.11); */
         box-shadow: 3px 2px 6px rgba(0, 15, 58, 0.64);
     }
@@ -146,44 +147,42 @@
  /* background-color: #e2e2e2; */
  margin-left: 5px;
  font-size: 12px;
+     color: #69410b;
 }
 
 .expo_text{
-  background: rgba(255, 0, 0, 0.5);
+  /*background: rgba(255, 0, 0, 0.5);*/
   color:white;
-  margin-top: -4px;
+  margin-top: -20px;
 }
 
 .show_more{
-margin-bottom: 50px;
-color: white;
-text-align: center;
-font-size: 12px;
-border: 1px solid white;
-width: 60%;
-margin-left: 20%;
-line-height: 24px;
-margin-top: 20px;
+  margin-bottom: 50px;
+  color: #ab936d;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ab936d;
+  width: 60%;
+  margin-left: 20%;
+  line-height: 28px;
+  margin-top: 20px;
 }
 
+img {
+    max-width: 100%;
+    height: 140px;
+}
     </style>
 
 </head>
-<body class="bg bg5" style="margin:0;padding:0">
-<section class="innerheader">
-	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
-    <h2>十大精品</h2>
-</section>
+<body class="bg1" >
+<?php include 'header_navi_yueyou.php'; ?>
 
 <div class="details"   ms-controller="items_ctrl" style="margin-top:66px">
-
-    <div class="page-title" style="margin-left: 20px;color: white;">
-      <h3>馆藏珍品&nbsp; | &nbsp; Antiquities</h3></div>
-
     <div style=" margin-top:20px; padding-left:15px; padding-right:15px; overflow:hidden">
       <div class="expo_item"  ms-for='($index, item_info) in @data' >
         <div class="expo_item_container" ms-click="@get_detail_link(item_info.ITEM_ID)">
-        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%" height="120px"/>
+        <img ms-attr="{src:@get_pic_path(item_info.PATH)}" width="100%" height="140px"/>
 
         </div>
         <div class="expo_text" ms-click="@get_detail_link(item_info.ITEM_ID)">
@@ -197,33 +196,85 @@ margin-top: 20px;
     <div ms-visible='@show_more' ms-click='@get_items_with_pic()' class="show_more">
       加载更多珍品
     </div>
+</div>
 
-
-
-    </div>
-
-    <div style="margin-top:40px">
-    <div>
+<?php include 'footer.php'; ?>
 </div>
 
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/item_list_normal.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
 <script>
-// $(document).ready(function(){
-//   $('.banner-top').slick({
-//   adaptiveHeight: false,
-//   slidesToShow: 1,
-//   dots: true,
-//   arrows: false,
-//   autoplay: true,
-// autoplaySpeed: 2000,
-// });
-//
-// });
+$('#head_text').text('珍品赏析');
+(function(){
+  var self = this;
+
+  //avalon control space
+  var items_ctrl = avalon.define({
+                   $id: 'items_ctrl',
+                   data:[],
+                   sort: 0,
+                   page_start: 0,
+                   show_more: false,
+
+                   get_pic_path: function(path){
+                     return upload_img+path;
+                   },
+                   get_detail_link : function(e){
+                     window.location.href = base_url+'item/view/'+e;
+                   },
+                   get_detail_link_pc : function(e){
+                     return base_url+'item/view_pc/'+e;
+                   },
+
+                   get_content_text: function(e){
+                     return e.substr(0, 45)+'...';
+                   },
+
+                   get_items_with_pic:function(){
+                     var url = base_url+'Item/get_items_normal_with_pic';
+                     base_remote_data.ajaxjson(
+                                       url, //url
+                                       function(data){
+                                         if(data.hasOwnProperty('success')){
+                                               if(data.success == 1){
+                                                  //  console.log(data);
+                                                  //  console.log('获取列表及图片成功！');
+                                                   for (var i = 0; i < data.data.length; i++) {
+                                                    items_ctrl.data.push(data.data[i]);
+                                                   }
+
+                                                   //长度大与interval 就加到起始位置
+                                                   if (data.data.length == page_interval) {
+                                                     items_ctrl.page_start += data.data.length;
+                                                     //show more
+                                                     items_ctrl.show_more  = true;
+                                                   }
+                                                   else {
+                                                     items_ctrl.show_more  = false;
+                                                   }
+                                                  //  console.log('page_start:'+items_ctrl.page_start);
+
+                                               }
+                                               else{
+                                                   alert(data.message);
+                                               }
+                                           }
+                                         else {
+                                           alert('返回值错误!');
+                                         }
+                                     },
+                                     {'page_start': items_ctrl.page_start},
+                                     function()
+                                     {
+                                       alert('网络错误!');
+                                     });
+                   }
+  });
+
+
+  //Init codes run once
+  items_ctrl.get_items_with_pic();
+
+}).call(define('space_view_items'));
+
 </script>
 </html>

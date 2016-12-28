@@ -19,10 +19,8 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
     <link rel="Bookmark" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base2.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/common/css/panorama_viewer.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
+    <?php include 'header.php'; ?>
     <style>
      .banner-top{
        margin-top: 46px;
@@ -114,7 +112,7 @@
   clear: both;
   width: 100%;
   overflow: hidden;
-  padding: 0px 20px 0 20px ;
+  /*padding: 0px 20px 0 20px ;*/
 }
 
 .locations .item{
@@ -133,15 +131,15 @@
 
 .locations .item2{
   float: left;
-  width: 28%;
+  width: 31%;
   margin: 1%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.8);
   height: 32px;
   text-align: center;
-  font-size: 12px;
-  padding-top: 6px;
+  font-size: 13px;
+  padding-top: 5px;
   border-radius: 5px;
   line-height: 24px;
 }
@@ -192,33 +190,33 @@
     margin-top: 40px;
     margin-bottom: 5px;
     margin-left: 24px;
+
     /* border-bottom: 1px solid; */
+}
+
+h3{
+  font-size: 20px;
+letter-spacing: 2px;
+font-weight: 300;
+    color: #7d6a4b;
 }
     </style>
 </head>
 
 <body>
 
-  <body class="bg bg5" style="margin:0;padding:0">
-  <section class="innerheader">
-  	<a class="btn backbtn" href="javascript:window.history.go(-1)"></a>
-      <h2>360全景</h2>
-  </section>
-
-
-    <div  ms-controller="t_ctrl">
+  <body class="bg1"  ms-controller="t_ctrl">
+  <?php include 'header_navi_yueyou.php'; ?>
 
     <div id="myPano" class="pano">
-
-      <div style="position: absolute;
-    bottom: 0px;
-    right: 10px;">
+      <div style="position: absolute;bottom: 0px;right: 10px;">
         <img src="<?php echo base_url('assets/front/img/move.png')?>" width="50px"/>
       </div>
     </div>
 
     <div class="page-title" style="color: white;">
-      <h3>场景全景图</h3></div>
+      <h3><i class="fa fa-eye" aria-hidden="true"></i>切换全景图</h3>
+    </div>
 
     <div class="locations">
       <div :css="[@item, @qj1 && @selected_css]"  ms-click="@switch_view('1')">全景图一</div>
@@ -226,7 +224,8 @@
     </div>
 
     <div class="page-title" style="color: white;">
-      <h3>切换展厅</h3></div>
+      <h3><i class="fa fa-street-view" aria-hidden="true"></i>切换展厅</h3>
+    </div>
 
     <div class="locations">
       <div :css="[@item, @zl1 && @selected_css]"  ms-click="@switch_expo('1')">外立面与大厅</div>
@@ -239,7 +238,8 @@
     </div>
 
     <div class="page-title" style="color: white;">
-      <h3>了解更多展览信息</h3></div>
+      <h3><i class="fa fa-link" aria-hidden="true"></i>更多展览信息</h3>
+    </div>
 
     <div class="locations" style="margin-bottom:40px">
       <div class="item2"><a href="<?php echo base_url('pages/view/basic')?>">基本陈列</a></div>
@@ -247,18 +247,12 @@
       <div class="item2"><a href="<?php echo base_url('pages/view/new_expo')?>">最新展览</a></div>
     </div>
 
-
-  </div>
+<?php include 'footer.php'; ?>
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/avalon.js/2.1.6/avalon.js"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/base2.js') ?>"></script>
-
 <script>
+$('#head_text').text('360全景');
 // /* jshint jquery: true */
 jQuery(document).ready(function($){
   $("#myPano").pano({

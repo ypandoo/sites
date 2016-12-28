@@ -10,17 +10,17 @@
     $id: "t_ctrl",
     item: {
       'float': 'left',
-      'width': '28%',
+      'width': '31.3%',
       'margin': '1%',
       'border': '1px solid rgba(255, 245, 245, 0.2)',
       'background': 'rgba(0, 0, 0, 0.0980392)',
-      'color': 'rgba(255, 255, 255, 1)',
+      'color': 'rgb(155, 155, 155)',
       'height': '32px',
       'text-align': 'center',
-      'font-size': '12px',
-      'padding-top': '6px',
-      'border-radius': '5px',
-      'line-height': '25px'
+      'font-size': '13px',
+      'padding-top': '4px',
+      'border-radius': '3px',
+      'line-height': '26px'
     },
     selected_css: {
       'border': '1px solid rgba(255, 0, 0, 0.4)',

@@ -29,14 +29,15 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <a class="page-scroll" href="<?php echo base_url('pages/view/about') ?>"><li>西博简介</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/new_expo') ?>"><li>新展快讯</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/basic') ?>"><li>基本陈列</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/expo_review') ?>"><li>展览回顾</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/dynamic') ?>"><li>西博动态</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/instruction') ?>"><li>参观指南</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/construction') ?>"><li>新馆建设</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/protect') ?>"><li>藏品保护</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>"><li><i class="fa fa-arrow-up" aria-hidden="true"></i>悦见</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/about') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博简介</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/new_expo') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>新展快讯</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/basic') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>基本陈列</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/expo_review') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>展览回顾</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/dynamic') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博动态</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/instruction') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>参观指南</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/construction') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>新馆建设</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/protect') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>藏品保护</li></a>
 				</ul>
 			</div>
 		</div>

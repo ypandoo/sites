@@ -13,7 +13,7 @@
                      return upload_img+path;
                    },
                    get_detail_link : function(e){
-                     window.location.href = base_url+'content/view/'+items_ctrl.list[e].CONTENT_ID;
+                     window.location.href = base_url+'content/view_yuequ/'+items_ctrl.list[e].CONTENT_ID;
                    },
 
                    get_content_text: function(e){

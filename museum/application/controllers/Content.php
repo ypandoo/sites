@@ -37,6 +37,7 @@ class Content extends CI_Controller {
        $this->load->view('pc/expo_detail', $data);
     }
 
+
     public function view_dynamic($content_id)
     {
       $data['content_id'] = $content_id;
@@ -340,4 +341,16 @@ class Content extends CI_Controller {
       }
     }
 
+
+    public function view_yuequ($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/content_detail_yuequ.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('content_detail_yuequ', $data);
+    }
 }
