@@ -140,7 +140,7 @@ width: 60%;
           <!-- <h4 style="letter-spacing: 1px;">Video</h4> -->
         </div>
 
-        <div  style="margin-top:20px; padding-left:25px; padding-right:25px">
+        <div  style="margin-top:20px; padding-left:0px;">
           <div style="width:100%">
           <video id='video' controls="controls" width="320px" height="240px">
           您的浏览器不支持 video 标签。
