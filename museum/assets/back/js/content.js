@@ -41,7 +41,7 @@
                    validate: {
                      onValidateAll: function (reasons) {
                        if (reasons.length) {
-                           console.log(reasons[0].getMessage());
+                          //  console.log(reasons[0].getMessage());
                            alert(reasons[0].getMessage());
                            return;
                        }
@@ -57,8 +57,8 @@
                       };
 
                       //Ajax
-                      console.log('Submit:提交数据');
-                      console.log(submit_data);
+                      // console.log('Submit:提交数据');
+                      // console.log(submit_data);
 
                       //New item
                       if (content_ctrl.isNew) {
@@ -69,7 +69,7 @@
                               function(data){
                                 if(data.hasOwnProperty('success')){
                                       if(data.success == 1){
-                                          console.log(data);
+                                          // console.log(data);
                                           alert('文章发布成功！您可以继续发布文章！');
                                           content_ctrl.reset_item();
                                       }
@@ -94,7 +94,7 @@
                             function(data){
                               if(data.hasOwnProperty('success')){
                                     if(data.success == 1){
-                                        console.log(data);
+                                        // console.log(data);
                                         alert('更新文章成功！');
                                     }
                                     else{
@@ -251,15 +251,15 @@
       uploader:base_url+'Item/add_pic',
       onUploadStart:function(file){
         up.settings('formData', {id: content_ctrl.content_id});
-        console.log('开始上传:'+content_ctrl.content_id);
+        // console.log('开始上传:'+content_ctrl.content_id);
       },
       onUploadSuccess: function(file, data, response) {
-        console.log('上传成功:');
+        // console.log('上传成功:');
         var obj = JSON.parse(data);
         if (obj.success==1) {
           content_ctrl.content_cover = obj.data.file_path;
           // items_ctrl.pics.push({'ITEM_ID': items_ctrl.item_id,'PIC_ID':obj.data.file_id, 'PATH': obj.data.file_path});
-          console.log(content_ctrl.content_cover);
+          // console.log(content_ctrl.content_cover);
         }
 
       }

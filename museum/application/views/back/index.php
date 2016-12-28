@@ -10,10 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>西藏博物馆后台管理系统</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/common/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/common/css/ie10-viewport-bug-workaround.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/back/css/dashboard.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/common/css/Huploadify.css') ?>">
+<?php include 'include.php'; ?>
   </head>
 
   <body>
@@ -75,8 +72,5 @@
 
       </div>
     </div>
-
-    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
