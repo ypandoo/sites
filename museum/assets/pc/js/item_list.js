@@ -21,6 +21,12 @@
       return e.substr(0, 45) + '...';
     },
 
+    get_pure_text(str)
+    {
+      var words  = str.replace(/<[^>]+>/g,"").replace(/\s+/g,"").replace(/&nbsp;/ig, "");;
+      return words;
+    },
+
     get_items_with_pic: function() {
       var url = base_url + 'Item/get_items_topten_with_pic';
       base_remote_data.ajaxjson(
@@ -32,13 +38,14 @@
               console.log('获取列表及图片成功！');
               items_ctrl.data = data.data;
 
-              $('.banner-top').slick({
-                centerMode: true,
-                centerPadding: '40px',
-                adaptiveHeight: true,
-                slidesToShow: 3,
-                dots: true,
-              });
+              // $('.banner-top').slick({
+              //   centerMode: true,
+              //   centerPadding: '40px',
+              //   adaptiveHeight: true,
+              //   slidesToShow: 3,
+              //   dots: true,
+              // });
+              // Carousel.execFadeIn();
             } else {
               alert(data.message);
             }

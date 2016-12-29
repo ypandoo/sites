@@ -4,10 +4,7 @@
 <meta charset="utf-8">
 <title>西藏博物馆</title>
 
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
+<?php include 'include.php'; ?>
 
 <style>
 .btn_black{
@@ -287,18 +284,18 @@ h2, h4{
 </style>
 </head>
 
-<body style="background:#333333">
+<body class="bg1">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center; margin-bottom:20px">
 <img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
-<?php include 'header.php';?>
+<?php include 'header_navi.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
+<div style="width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">
@@ -335,25 +332,10 @@ h2, h4{
 
 <!-- footer -->
 <?php include 'footer.php';?>
-
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/basic_list.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
+
 </body>
 
 <script>
-
-$(document).ready(function(){
-
-});
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-
 </script>
 </html>

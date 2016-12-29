@@ -4,10 +4,7 @@
 <meta charset="utf-8">
 <title>西藏博物馆</title>
 
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
+<?php include 'include.php'; ?>
 
 <style>
 .btn_black{
@@ -286,18 +283,18 @@ h2, h4{
 </style>
 </head>
 
-<body style="background:#333333">
+<body class="bg1">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center; margin-bottom:20px">
 <img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
-<?php include 'header.php';?>
+<?php include 'header_navi.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px; position:relative">
+<div style=" width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
     <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">新展快讯</p>
       <p class="title_text_en">New Exhibitions </p>

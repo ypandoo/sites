@@ -3,11 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>西藏博物馆</title>
-
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
+<?php include 'include.php'; ?>
 
 <style>
 .btn_black{
@@ -48,24 +44,6 @@
   border-bottom: 2px solid #cc0000;
   width: 80px;
   height: 5px;
-}
-
-/*news*/
-.news_title{
-  font-size: 16px;
-color: #333;
-text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
-}
-.news_title span{
-  font-size: 16px;
-    font-weight: 500;
-    color: #cc0000;
-    padding-right: 10px;
-}
-
-.news_content{
-  line-height: 20px;
-  margin-top: 10px;
 }
 
 /*title*/
@@ -298,18 +276,18 @@ h2, h4{
 </style>
 </head>
 <div id="content_id" data-id="<?php echo $content_id?>"></div>
-<body style="background:#333333">
+<body class="bg1">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;margin-bottom:20px">
 <img src="<?php echo base_url('assets/pc/img/xb.jpg')?>" width="100%"/>
 </div>
 
 <!-- header -->
-<?php include 'header.php';?>
+<?php include 'header_navi.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; "    ms-controller="sd-list">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#f2f2f2;   padding-bottom: 80px; position:relative">
+<div style="width:100%; clear:both; overflow:hidden; "    ms-controller="sd-list">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative" class="bg2">
 
     <div class="title_section">
       <div class="title_block">
@@ -318,7 +296,10 @@ h2, h4{
       </div>
     </div>
 
-    <div class="title_name">{{@content_title}}</div>
+    <div>
+      <p class="title_name">{{@content_title}}</p>
+      <p class="title_author">作者：{{@author}}  |  发表于：{{@content_time}}</p>
+    </div>
 
 
   <div style="  width:90%; margin-left:5%; margin-top:20px">
@@ -336,25 +317,6 @@ h2, h4{
 
 <!-- footer -->
 <?php include 'footer.php';?>
-
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/content_detail.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
-
-<script>
-
-$(document).ready(function(){
-
-});
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-
-</script>
 </html>

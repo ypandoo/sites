@@ -1,419 +1,165 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-<head>
-<meta charset="utf-8">
-<title>西藏博物馆</title>
+	<head>
+		<title>西藏博物馆</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <?php include 'include.php'; ?>
+<style media="screen">
 
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-
-<style>
-.btn_black{
-    background:rgba(0,0,0,0.3) ;
-    /* height: 40px; */
-    /* width: 80px; */
-    /* line-height: 40px; */
-    padding: 5px 10px;
-    color: blanchedalmond;
-    cursor: pointer;
+.row_rapper{
+  width: 100%;
+  margin-left: 0%;
+  overflow: hidden;
 }
 
-.dash
-{
-  border-bottom: 2px solid #cc0000;
-  width: 80px;
-  height: 5px;
-}
-
-.collection
-{
-   width:400px; border:1px solid #636363; height:238px; margin:0 auto;
-   padding: 10px;
-   /*text-align: center;*/
-}
-
-.collection_item{
-  height: 100%;
-}
-.collection_item img{
-     display: block;
-     margin: auto auto;
-
-}
-
-.collection .slick-prev {
-    left: -50px;
-    z-index: 999;
-}
-
-.collection .slick-next {
-    right: -50px;
-    z-index: 999;
-}
-
-
-
-
-.collection .slick-prev:before, .collection .slick-next:before {
-    /* font-family: 'slick'; */
-    font-size: 30px;
-}
-
-/*news*/
-.news_title{
-  font-size: 16px;
-color: #333;
-text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
-}
-.news_title span{
-  font-size: 16px;
-    font-weight: 500;
-    color: #cc0000;
-    padding-right: 10px;
-}
-
-.news_content{
-  line-height: 20px;
-  margin-top: 10px;
-}
-
-
-.news_item{
-    padding-bottom: 20px;
-    padding-top:20px;
-    border-bottom: 1px solid  rgba(255, 0, 0, 0.2);
-}
-
-/*btn*/
-.line_btn
-{
-  height: 40px;
-text-align: center;
-width: 1000px;
-line-height: 40px;
-overflow: hidden;
-margin: 0 auto;
-}
-
-.link-item
-{
-  width: 100px;
+.row_rapper .left{
+  width: 70%;
   float: left;
-  text-align: left;
-}
-.link-item-title
-{
-  font-size: 14px;
-  color:#cc0000;
-  text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;
-      line-height: 24px;
+  overflow: hidden;
+  height: 700px;
 }
 
-.link-item-text
-{
-  font-size: 12px;
-  color:white;
-  text-shadow: rgba(255, 0, 0, 0.2) 0 1px 0;
-      line-height: 24px;
+.row_rapper .right{
+  width: 30%;
+  float: left;
+  overflow: hidden;
+  height: 760px;``
 }
 
-
+.qrcode{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url("<?php echo base_url('assets/pc/img/qrcode.jpg')?>");
+  bottom: 50px;
+  right: 50px;
+  background-size: cover;
+}
 </style>
-</head>
 
-<body style="background:#333333">
-<div id="container">
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header">
+					<!-- Inner -->
+						<div class="inner">
+							<!-- <header>
+								<h1><a href="index.html" id="logo">Helios</a></h1>
+								<hr />
+								<p>Another fine freebie by HTML5 UP</p>
+							</header> -->
+							<footer>
+								<a href="#des" class="button circled scrolly " style="background:transparent;">
+                  <i class="fa fa-angle-double-down fa-2x animated infinite fadeInDown duration3s" aria-hidden="true"></i>
+                </a>
+							</footer>
+						</div>
+            <?php include 'header_navi.php'; ?>
+            <div class="qrcode">
 
-<!-- banner -->
-<div class="banner-top">
-  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner3.jpg')?>" height="800px" width="1600px"/></div>
-  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner1.jpg')?>" height="800px" width="1600px"/></div>
-  <div style="text-align:center"><img src="<?php echo base_url('assets/pc/img/banner2.jpg')?>" height="800px" width="1600px"/></div>
-</div>
-
-
-<!-- header -->
-<?php include 'header.php';?>
-
-
-<div id="#basic_info" style="height:470px; padding: 20px 0 0px 0; background:#333333; text-align:center; ">
-  <div style="width:1000px; margin: 0 auto;">
-      <div style="    width: 680px;
-    float: left;
-    background: #e6e6e6;
-    margin-right: 20px;
-    overflow: hidden;
-    height:470px">
-          <img src="<?php echo base_url('assets/pc/img/basic.jpg')?>" width="100%" height="200px"/>
-          <div class="title_section">
-            <div class="title_block">
-            <p class="title_text">西博简介</p>
-            <p class="title_text_en">About Us</p>
             </div>
-          </div>
-          <div style="padding:0 80px 0 80px; text-align:left; font-size:12px; color:#636363;margin-bottom:20px">
-            <p style=" line-height:20px">
-              西藏博物馆是由国家直接投资兴建的西藏自治区唯一一座国家一级博物馆。1999年10月，中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。
-              博物馆占地面积5万余平方米，展厅面积1万平方米，整体建筑具有鲜明的藏族传统建筑艺术特色，同时兼具现代建筑的实用特点与功能，是传统与现代建筑风格有机结合的典范...
-
-            </p>
-          </div>
-          <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black" href="/Pc/view/about">详细介绍</a></div>
-      </div>
-
-      <div style="width:300px; float:left; height:470px; background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
-        <!-- <div style="padding:60px 0px 20px 40px; text-align:left;height:100px">
-          <p class="title_text">VISITING </p>
-          <p class="title_text">GUIDE</p>
-          <p class="title_text_en">参观指南</p>
-          <div class="dash"></div>
-        </div> -->
-
-        <div class="title_section">
-          <div class="title_block">
-          <p class="title_text">参观指南</p>
-          <p class="title_text_en">Visiting Guide</p>
-          </div>
         </div>
+			<!-- Banner -->
+				<!-- <section id="banner">
+					<header>
+						<h2>Hi. You're looking at <strong>Helios</strong>.</h2>
+						<p>
+							A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
+							Built on <strong>skel</strong> and released under the <a href="http://html5up.net/license">CCA</a> license.
+						</p>
+					</header>
+				</section> -->
 
-        <div style="width:220px; padding:0px 40px 0 40px">
-          <p style="    letter-spacing: 1px; font-size:12px; text-align:left">
-            <b>开馆时间:</b><br>
-            夏秋季(5月1日至10月31日):<br>
-            09:30-17:30 (17:00游客停止入场)<br><br>
+			<!-- Main -->
+				<div class="row_rapper" id="des">
+                <div class="left" >
+                    <img src="<?php echo base_url('assets/pc/img/basic.jpg')?>" width="100%" />
+                    <div class="title_section">
+                      <div class="title_block">
+                      <p class="title_text">西藏博物馆简介 </p>
+                      <p class="title_text_en">Introduction</p>
+                      </div>
+                    </div>
+                    <div style="padding:0 80px 0 80px; text-align:left; font-size:14px; color:#636363;margin-bottom:20px">
+                      <p style=" line-height:20px">
+                        西藏博物馆是由国家直接投资兴建的西藏自治区唯一一座国家一级博物馆。
+                        1999年10月，中华人民共和国成立50周年和西藏民主改革40周年之际落成开馆。
+                        博物馆占地面积5万余平方米，展厅面积1万平方米，整体建筑具有鲜明的藏族传统建筑艺术特色，
+                        同时兼具现代建筑的实用特点与功能，是传统与现代建筑风格有机结合的典范。
 
-            冬春季(11月1日至次年4月30日):<br>
-            10:30-17:00(16:30游客停止入场)<br><br>
+                        <br><br>西藏博物馆馆藏文物丰富，民族特色浓郁，囊括了历代中央政府治藏文物、佛像、唐卡、古籍经典、瓷器、玉器、
+                        民俗文物以及考古发现的史前文物等等。目前，馆内常设展览七个，每年推出10个左右临时展览，
+                        积极参与和组织了众多的国内外文物交流展和其他展览，在为本地观众和国内外游客提供独具特色的西藏历史文化体验的
+                        同时，有效促进了国际国内文化交流与互动。
 
-            周一闭馆（节假日除外）<br><br>
+                        <br><br>近年来，西藏博物馆先后被评为国家一级博物馆、全国三八红旗集体、爱国主义教育基地、国防教育基地和
+                        自治区级青年文明号。如今的西藏博物馆，已成为西藏自治区规模最大的文物收藏、保护、研究、展示、教育中心，
+                        是展示西藏悠久历史与璀璨文化、社会主义建设和改革开放成果的重要窗口，是拉萨市重要的标志性建筑和旅游景点，
+                        是人们了解西藏、认识西藏、映像西藏的重要窗口与平台。
 
-            <b>公交线路：</b><br>
-            公交车2,8,13,24路至西藏博物馆站下车即到<br><br>
+                      </p>
+                    </div>
+                    <!-- <div style="padding: 3px 5px; overflow: hidden;"><a class="btn_black" href="/Pc/view/about">详细介绍</a></div> -->
+                </div>
 
-            <b>地址：</b> 西藏自治区拉萨市城关区罗布林卡路19号<br><br>
-            <b>电话：</b>0891-6835244　6812210<br>
+                <div  class="right" style="background:url('<?php echo base_url('assets/pc/img/basic_bg.png')?>'); background-size:100% 100%">
+                  <div class="title_section">
+                    <div class="title_block">
+                    <p class="title_text">参观指南</p>
+                    <p class="title_text_en">Visiting Guide</p>
+                    </div>
+                  </div>
 
-          </p>
-          <div style="padding: 3px 5px; overflow: hidden; margin-top:30px">
-            <a class="btn_black" href="/Pc/view/instruction">详细了解</a>
+                  <div style="padding:0px 40px 0 40px">
+                    <p style="    letter-spacing: 1px; font-size:14px; text-align:left">
+                      <b>开馆时间:</b><br>
+                      夏秋季(5月1日至10月31日):<br>
+                      09:30-17:30 (17:00游客停止入场)<br>
+                      冬春季(11月1日至次年4月30日):<br>
+                      10:30-17:00(16:30游客停止入场)<br>
+                      周一闭馆（节假日除外）<br><br><br>
+
+                      <b>公交线路：</b><br>
+                      公交车2,8,13,24路至西藏博物馆站下车即到<br><br><br>
+
+                      <b>地址：</b><br> 西藏自治区拉萨市城关区罗布林卡路19号<br><br><br>
+                      <b>电话：</b><br>0891-6835244, 0891-6812210<br><br>
+
+                    </p>
+                    <div style="padding: 3px 5px; overflow: hidden; margin-top:60px; text-align:right">
+                      <a href="/Pc/view/instruction"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解详情</a>
+                    </div>
+                  </div>
           </div>
-        </div>
-      </div>
-  </div>
-</div>
-
-<div style=" padding: 20px 0 0px 0; background:#333333; width:100% ">
-<div style="    height: 240px;
-    width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-    background:rgba(0,0,0,0.3); ;
-    padding: 30px 0 30px 0;">
-  <div style="width:180px; float:left; padding-left:20px">
-    <div style="    border-left: 2px solid #cc0000;
-    padding-left: 15px;">
-    <p style="    font-size: 20px;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 1px;
-    color: #cc0000;
-    text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;">珍品赏析 </p>
-    <p style="font-size: 16px;font-weight:600;line-height:18px;letter-spacing:1px;color:#FFF;font-family:'黑体';margin-top:10px">TREASURE APPRECIATION</p>
-    <!-- <p style="font-size: 16px;font-weight:600;line-height:18px;letter-spacing:1px;color:#FFF; font-family:'黑体'"></p> -->
-    <!-- <div class="dash"></div> -->
-  </div>
-  </div>
-  <div style="width:600px; float:left; height:240px">
-    <div class='collection' style="padding-top:30px">
-        <div class="collection_item"><img src="<?php echo base_url('assets/pc/img/item1.png')?>" height="180px" style="z-index:-1"/></div>
-        <div class="collection_item"><img src="<?php echo base_url('assets/pc/img/item2.png')?>" height="180px"/></div>
-    </div>
-  </div>
-  <div style="width:200px;float:left;" id="desc1">
-    <p style="    font-size: 20px;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 1px;
-    color: #cc0000;
-    font-family: '仿宋';
-    text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;">双体陶罐 </p>
-    <p style="    font-size: 12px;
-    font-weight: 500;
-    line-height: 18px;
-    color: #636363;
-    font-family: 'Microsoft YaHei';
-    margin-top: 20px;
-    padding-right: 20px;
-    letter-spacing: 1px;
-    text-shadow: rgba(232, 0, 0, 0.2) 0 1px 0;">
-      双体陶罐出土于昌都卡若遗址，制作工艺纯熟，代表了卡若文化的制陶水平和卡若先民高超的器物造型能力，是新石器时代西藏陶器的代表和点睛之作，也是西藏博物馆的镇馆之宝。</p>
- </div>
-
- <div style="width:200px;float:left;display:none" id="desc2">
-   <p style="    font-size: 20px;
-   font-weight: 600;
-   line-height: 20px;
-   letter-spacing: 1px;
-   color: #cc0000;
-   font-family: '仿宋';
-   text-shadow: rgba(255, 255, 255, 0.2) 0 1px 0;">双体陶罐 </p>
-   <p style="    font-size: 12px;
-   font-weight: 500;
-   line-height: 18px;
-   color: #636363;
-   font-family: 'Microsoft YaHei';
-   margin-top: 20px;
-   padding-right: 20px;
-   letter-spacing: 1px;
-   text-shadow: rgba(232, 0, 0, 0.2) 0 1px 0;">
-     双体陶罐出土于昌都卡若遗址，制作工艺纯熟，代表了卡若文化的制陶水平和卡若先民高超的器物造型能力，是新石器时代西藏陶器的代表和点睛之作，也是西藏博物馆的镇馆之宝。</p>
-</div>
-</div>
-</div>
-
-<div class="line_btn" style="background: #cc0000;">
-  <a style="color:white;    color: blanchedalmond;cursor: pointer;" href="/Pc/view/item_list">查阅更多珍品 · VIEW MORE</a></div>
-
-<div id="homeContent">
-    	<div id="homeProduct" style="background: #333333;">
-    		<div class="homeProduct">
-            	<ul>
-                	<li style="    background:rgba(0,0,0,0.3); ;"><a href="/navi/view_pc/1">
-                    	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro1.png')?>" width="150" height="150" alt="休闲小菜"></div>
-                        <div class="homeProTitle">
-                        	<div class="homeProLine animate"><span></span></div>
-                            <div class="homeProName animate"><strong class="animate">展厅导航</strong><span class="animate">展厅导航</span></div>
-                        </div>
-                        <div class="homeProPlus">
-                        	<span class="animate">more</span><div class="animate">+</div>
-                        </div></a>
-                    </li>
-                    <li style="    background:rgba(0,0,0,0.3); ;"><a href="/Pc/view/expo_review">
-                    	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro2.png')?>" width="150" height="150" alt="调味料"></div>
-                        <div class="homeProTitle" style="left:200px;">
-                        	<div class="homeProLine animate"><span></span></div>
-                            <div class="homeProName animate" style="width:60px;"><strong class="animate">展览回顾</strong><span class="animate">展览回顾</span></div>
-                        </div>
-                        <div class="homeProPlus">
-                        	<span class="animate">more</span><div class="animate">+</div>
-                        </div></a>
-                    </li>
-                    <li style="margin-right:0px;    background:rgba(0,0,0,0.3); ;"><a href="/Pc/view/360">
-                    	<div class="homeProImg animate"><img src="<?php echo base_url('assets/pc/img/pro3.png')?>" width="150" height="150" alt="什锦泡菜"></div>
-                        <div class="homeProTitle" style="">
-                        	<div class="homeProLine animate"><span></span></div>
-                            <div class="homeProName animate" style="width:60px;"><strong class="animate">360全景</strong><span class="animate">360全景</span></div>
-                        </div>
-                        <div class="homeProPlus">
-                        	<span class="animate">more</span><div class="animate">+</div>
-                        </div></a>
-                    </li>
-                </ul>
+					<!-- <article id="main" class="container special">
+						<!-- <a href="#" class="image featured">简介</a> ->
+            <div style="padding:20px 0">
             </div>
-          </div>
-</div>
+						<header>
+							<h2><a href="#"><i class="fa fa-university gapR10" aria-hidden="true"></i>西藏博物馆简介 </a></h2>
+							<p>
+								The Introduction Of Tibet Museum
+							</p>
+						</header>
+						<p>
+							Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
+							posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
+							sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
+							mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
+							lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
+							consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
+							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
+							natoque aenean scelerisque.
+						</p>
+						<footer>
+							<a href="#" class="button"><i class="fa fa-book gapR10" aria-hidden="true"></i>查阅参观指南</a>
+						</footer>
+					</article> -->
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden " ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6">
-    <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
-      <p class="title_text">西博动态</p>
-      <p class="title_text_en">NEWS</p>
-      <div class="dash"></div>
-    </div>
-
-    <div style="padding:0 80px 20px 80px; text-align:left; font-size:12px; color:#636363; "
-      ms-for='($index, item_info) in @list'>
-      <div class="news_item">
-      <a ms-click='{@direct2detail(item_info.CONTENT_ID)}'><p class="news_title">
-        <span>{{item_info.PUBLISH_TIME}}</span>{{item_info.CONTENT_TITLE}}
-      </p>
-      <p class="news_content">
-        {{@get_content_text_pc(item_info.CONTENT_TEXT)}}
-      </p></a>
-    </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="line_btn" style="background:rgba(0,0,0,0.3); ;">
-  <a style="color:white;    color: blanchedalmond;cursor: pointer;" href="/Pc/view/dynamic">查阅更多新闻 · VIEW MORE</a></div>
-
-<!-- footer -->
-<?php include 'footer.php';?>
-
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/dynamic.js') ?>"></script>
-
-
-</body>
-
-<script>
-
-$(document).ready(function(){
-  $('.banner-top').slick({
-  dots: true,
-  infinite: true,
-  speed:1500,
-  slidesToShow: 1,
-  adaptiveHeight: true,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  arrows: true
-});
-
-$('.collection').slick({
-  dots: true,
-  infinite: true,
-  speed: 1500,
-  fade: true,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  cssEase: 'linear'
-});
-
-});
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-
-
-	// $(".proMenu").click(function(){
-	// 	$("#wra_opacity").fadeIn();
-	// 	$(".xuan_left").stop().css({"margin-left":-2480+"px"}).animate({marginLeft:-1280},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".wj_xuanleft").stop().css({"right":1480+"px"}).delay(400).animate({right:0},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".xuan_right").stop().css({"margin-left":1480+"px"}).animate({marginLeft:-87},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".wj_xuanright").stop().css({"left":1480+"px"}).delay(400).animate({left:0},{duration:1600,easing:'easeInOutExpo'});
-	// 	$(".xuan_left").hover(function(){
-	// 		$(".wj_xuanleft",this).stop().animate({right:-50},600)
-	// 	},function(){
-	// 		$(".wj_xuanleft",this).stop().animate({right:0},600)
-	// 	})
-	// 	$(".xuan_right").hover(function(){
-	// 		$(".wj_xuanright",this).stop().animate({left:-50},600)
-	// 	},function(){
-	// 		$(".wj_xuanright",this).stop().animate({left:0},600)
-	// 	})
-	// })
-	// $(".wra_opacity").click(function(){
-	// 	$("#wra_opacity").fadeOut();
-	// })
-	// var navH = $("#header").offset().top;
-	// $(window).scroll(function(){
-	// 		var scroH = $(this).scrollTop();
-	// 		if(scroH>=navH){
-	// 			$("#header").css({"top":0});
-	// 		}else if(scroH<navH){
-	// 			$("#header").css({"top":25});
-	// 		}
-	// 	})
-</script>
-
+				</div>
+        <?php include 'footer.php'; ?>
+        <script src="<?php echo base_url('application/views/pc/assets/js/main.js') ?>"></script>
+	</body>
 </html>
