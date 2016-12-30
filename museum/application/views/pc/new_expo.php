@@ -319,7 +319,7 @@ h2, h4{
 
       </div>
       <div class="expo_text">
-        <h2>{{item_info.CONTENT_TITLE}}</h2>
+        <h2>{{item_info.CONTENT_TITLE | truncate(13, '...')}}</h2>
         <h4>{{@get_content_text(item_info.CONTENT_TEXT)}}</h4>
       </div>
       <div class="expo_check">
