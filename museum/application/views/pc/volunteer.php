@@ -11,8 +11,9 @@
 <div id="container">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
+<div style="width:100%; text-align:center">
 <img src="<?php echo base_url('assets/pc/img/xb.jpg')?>" width="100%"/>
+<i class="line"> </i>
 </div>
 
 <!-- header -->

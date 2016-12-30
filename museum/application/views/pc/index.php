@@ -73,6 +73,7 @@
 				</section> -->
 
 			<!-- Main -->
+      <i class="line"> </i>
 				<div class="row_rapper" id="des">
                 <div class="left" >
                     <img src="<?php echo base_url('assets/pc/img/basic.jpg')?>" width="100%" />

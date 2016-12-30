@@ -264,8 +264,9 @@ margin: 0 auto;
 
 <!-- <div style="background:rgba(0,0,0,0.3); width:100%; height:120px"></div> -->
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
+<div style="width:100%; text-align:center">
 <img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
+<i class="line"> </i>
 </div>
 <!-- <div id="table">
       <div id="table-cell">

@@ -257,8 +257,9 @@ color:red;
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center">
+<div style="width:100%; text-align:center">
 <img src="<?php echo base_url('assets/pc/img/gczp.jpg')?>" width="100%"/>
+<i class="line"> </i>
 </div>
 
 <!--video -->

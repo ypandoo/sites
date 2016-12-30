@@ -289,8 +289,9 @@ h2, h4{
 <?php include 'header_navi.php';?>
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center; margin-bottom:20px">
-<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
+<div style="width:100%; text-align:center; margin-bottom:20px">
+<img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%" style="margin:0"/>
+<i class="line"> </i>
 </div>
 
 
