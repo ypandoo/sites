@@ -4,11 +4,9 @@
 <meta charset="utf-8">
 <title>西藏博物馆</title>
 
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
+<?php include 'include.php'; ?>
 <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/common/css/font-awesome.min.css') ?>">
-
 <style>
 .btn_black{
     background: black;
@@ -255,9 +253,7 @@ color:red;
 </style>
 </head>
 
-<body style="background:#333333"  ms-controller="sd-list" >
-  <div class="bk"></div>
-<!-- data -->
+<body class="bg1"  ms-controller="sd-list" >
 <div id="item_id" data-id="<?php echo $item_id?>"></div>
 
 <!-- banner -->
@@ -267,16 +263,15 @@ color:red;
 
 <!--video -->
 <div class="popup" style="display:none">
-<div style="position: absolute;top: 0;font-size: 20px;right: 0;padding: 10px; cursor:pointer" ms-click='{@close_video()}'>X</div>
+<div style="position: absolute;top: 0;font-size: 20px;right: 0;padding: 10px; cursor:pointer" ms-click='@close_video()'>X</div>
 <video id='video' controls="controls" width="600px" height="450px">
 your browser does not support the video tag
 </video>
  </div>
 
 <!-- service and pics -->
-<div style=" background:#333333; width:100%; clear:both; margin:20px 0 20px 0; height:540px">
-<div style="width:1000px; margin:0 auto; ">
-
+<div style="width:100%; clear:both; margin:20px 0 20px 0; height:540px">
+<div style="width:1000px; margin:0 auto; "  class="bg2">
   <div style="float:left">
     <div class="shadow" style="width:600px; height:400px;">
     <div class="slider slider-for" style="width:600px; height:400px;">
@@ -305,20 +300,20 @@ your browser does not support the video tag
       </div>
     </div>
 
-    <div style="width:220px; padding:0px 40px 0 40px">
+    <div style="width:360px; padding:0px 40px 0 40px">
       <div ms-visible="@item_is_topten">
-      <div class="service-container" ms-click= '{@_play_cn()}'><a class="service">
+      <div class="service-container" ms-click= '@_play_cn()'><a class="service">
         <span ms-if='!@play_cn'><i class="fa fa-play" aria-hidden="true"></i></i>收听中文语音解说</span>
         <span ms-if='@play_cn' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭中文语音解说</span>
       </a></div>
 
-      <div class="service-container" ms-click= '{@_play_tibet()}'><a class="service">
+      <div class="service-container" ms-click= '@_play_tibet()'><a class="service">
         <span ms-if='!@play_tibet'><i class="fa fa-play" aria-hidden="true"></i></i>收听藏文语音解说</span>
         <span ms-if='@play_tibet' style="color:#cc0000"><i class="fa fa-pause" aria-hidden="true" ></i>关闭藏文语音解说</span>
       </a></div>
 
 
-      <div class="service-container" ms-click='{@play_video()}'><a class="service">
+      <div class="service-container" ms-click='@play_video()'><a class="service">
         <i class="fa fa-video-camera" aria-hidden="true"></i>观看视频解说
       </a></div>
 
@@ -336,10 +331,10 @@ your browser does not support the video tag
 
 
 <!-- HEADER -->
-<?php include 'header.php';?>
+<?php include 'header_navi.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; " ms-controller="sd-list">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
+<div style=" width:100%; clear:both; overflow:hidden; " ms-controller="sd-list">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px;" class="bg2">
 
     <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">珍品简介</p>
@@ -370,23 +365,9 @@ your browser does not support the video tag
 <!-- footer -->
 <?php include 'footer.php';?>
 
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/pc/js/item_detail.js') ?>"></script>
 <script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
+
 </body>
 
-<script>
-
-$(document).ready(function(){
-});
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-
-</script>
 </html>

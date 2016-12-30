@@ -74,6 +74,30 @@ class Content extends CI_Controller {
        $this->load->view('pc/basic_detail', $data);
     }
 
+    public function view_activity($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/activity_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/activity_detail', $data);
+    }
+
+    public function view_volunteer($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/volunteer_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/volunteer_detail', $data);
+    }
+
     public function view_construction($content_id)
     {
       $data['content_id'] = $content_id;

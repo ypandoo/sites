@@ -122,7 +122,7 @@ h3{
 
 <!-- footer -->
 
-<script src="<?php echo base_url('application/views/pc/assets/js/main.js') ?>"></script>
+<!-- <script src="<?php echo base_url('application/views/pc/assets/js/main.js') ?>"></script> -->
 <script src="<?php echo base_url('assets/pc/js/item_list.js') ?>"></script>
 
 </body>

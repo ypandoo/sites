@@ -285,13 +285,15 @@ h2, h4{
 
 <body class="bg1">
 
+<!-- header -->
+<?php include 'header_navi.php';?>
+
 <!-- banner -->
 <div style="background:rgba(0,0,0,0.3); width:100%; text-align:center; margin-bottom:20px">
 <img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
-<!-- header -->
-<?php include 'header_navi.php';?>
+
 
 <div style=" width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
   <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
@@ -337,25 +339,6 @@ h2, h4{
 
 <!-- footer -->
 <?php include 'footer.php';?>
-
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/front/js/new_expo.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
-
-<script>
-
-$(document).ready(function(){
-
-});
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-
-</script>
 </html>

@@ -25,7 +25,7 @@
                    },
 
                    direct2detail:function(e){
-                     window.location.href = base_url+'content/view_acitivity/'+e;
+                     window.location.href = base_url+'content/view_activity/'+e; 
                    },
 
                    get_content_by_type:function(){

@@ -4,10 +4,7 @@
 <meta charset="utf-8">
 <title>西藏博物馆</title>
 
-<link rel="stylesheet" href="<?php echo base_url('assets/pc/css/style.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-<link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
-
+<?php include 'include.php'; ?>
 <style>
 .btn_black{
     background: black;
@@ -263,7 +260,7 @@ margin: 0 auto;
 </style>
 </head>
 
-<body style="background:#333333"  ms-controller="items_ctrl">
+<body class="bg1"  ms-controller="items_ctrl">
 
 <!-- <div style="background:rgba(0,0,0,0.3); width:100%; height:120px"></div> -->
 <!-- banner -->
@@ -293,10 +290,10 @@ margin: 0 auto;
 
 
 <!-- header -->
-<?php include 'header.php';?>
+<?php include 'header_navi.php';?>
 
-<div style=" background:#333333; width:100%; clear:both; overflow:hidden; margin-top:20px">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; background:#d6d6d6;    padding-bottom: 80px;">
+<div style=" width:100%; clear:both; overflow:hidden; margin-top:20px">
+  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px;" class="bg2">
 
     <div class="title_section">
       <div class="title_block">
@@ -320,22 +317,7 @@ margin: 0 auto;
 
 <!-- footer -->
 <?php include 'footer.php';?>
-
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
 <script src="<?php echo base_url('assets/pc/js/item_list_normal.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
 </body>
-
-<script>
-
-$(".nav li").hover(function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideDown();
-},function(){
-	$(".subNav,.subMenu",this).stop(false,true).slideUp(0);
-})
-</script>
-
 
 </html>

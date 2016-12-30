@@ -119,12 +119,12 @@
                       09:30-17:30 (17:00游客停止入场)<br>
                       冬春季(11月1日至次年4月30日):<br>
                       10:30-17:00(16:30游客停止入场)<br>
-                      周一闭馆（节假日除外）<br><br><br>
+                      周一闭馆（节假日除外）<br><br>
 
                       <b>公交线路：</b><br>
-                      公交车2,8,13,24路至西藏博物馆站下车即到<br><br><br>
+                      公交车2,8,13,24路至西藏博物馆站下车即到<br><br>
 
-                      <b>地址：</b><br> 西藏自治区拉萨市城关区罗布林卡路19号<br><br><br>
+                      <b>地址：</b><br> 西藏自治区拉萨市城关区罗布林卡路19号<br><br>
                       <b>电话：</b><br>0891-6835244, 0891-6812210<br><br>
 
                     </p>
@@ -160,6 +160,6 @@
 
 				</div>
         <?php include 'footer.php'; ?>
-        <script src="<?php echo base_url('application/views/pc/assets/js/main.js') ?>"></script>
+        <!-- <script src="<?php echo base_url('application/views/pc/assets/js/main.js') ?>"></script> -->
 	</body>
 </html>

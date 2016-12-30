@@ -22,8 +22,8 @@
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text"><a href="/pc/view/lesson">西博课堂</a></p>
-      <p class="title_text_en">Lessons</p>
+      <p class="title_text"><a href="/pc/view/activity">活动邀约</a></p>
+      <p class="title_text_en">Activities</p>
       </div>
     </div>
 

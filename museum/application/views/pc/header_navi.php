@@ -27,9 +27,9 @@
                 <li>
 									<a href="#" class="nav_text">悦趣</a>
 									<ul>
-										<li><a href="<?php echo site_url('pc/view/')?>" class="nav_text">西博课堂</a></li>
-										<li><a href="<?php echo site_url('pc/view/')?>" class="nav_text">活动邀约</a></li>
-										<li><a href="<?php echo site_url('pc/view/')?>" class="nav_text">志愿者风采</a></li>
+										<li><a href="<?php echo site_url('pc/view/lesson')?>" class="nav_text">西博课堂</a></li>
+										<li><a href="<?php echo site_url('pc/view/activity')?>" class="nav_text">活动邀约</a></li>
+										<li><a href="<?php echo site_url('pc/view/volunteer')?>" class="nav_text">志愿者风采</a></li>
 									</ul>
 								</li>
 							</ul>
