@@ -18,7 +18,7 @@ nav a:nth-child(1){
 nav a:nth-child(2){
   background:url('<?php echo base_url('Application/views/img/jzfp.png')?>') no-repeat center 15px; background-size:40px;}
 nav a:nth-child(3){
-  background:url('<?php echo base_url('Application/views/img/lxyz.png')?>') no-repeat center 15px; background-size:30px;}
+  background:url('<?php echo base_url('Application/views/img/lhzt.png')?>') no-repeat center 15px; background-size:30px;}
 nav a:nth-child(4){
   background:url('<?php echo base_url('Application/views/img/lhzt.png')?>') no-repeat center 15px; background-size:30px auto;}
 nav a:nth-child(5){
