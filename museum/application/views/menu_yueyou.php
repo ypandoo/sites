@@ -20,35 +20,13 @@
 </head>
 
 <style>
-    /*.item_container_left
-    {
-      width: 49%;
-      float: left;
-      margin-left: 0.99%;
-    }
-
-    .item_container_right
-    {
-      width: 49%;
-      float: left;
-      margin-right: 0.99%;
-      margin-top: 20px;
-    }
-
-    .item_container_inside
-    {
-      border: 1px solid #eeeeee;
-      height: 60px;
-      padding: 6px;
-      margin: 7px;
-    }*/
 
 #bg {
   background: url('<?php echo base_url('assets/front/img/menu/yueyou_bg.jpg') ?>') no-repeat  fixed;
-  -webkit-background-size:  cover;
-  -moz-background-size:  cover;
-  -o-background-size:  cover;
-  background-size: cover;
+  -webkit-background-size:  100% 100%;
+  -moz-background-size:  100% 100%;
+  -o-background-size:  100% 100%;
+  background-size: 100% 100%;
   overflow: hidden;
 }
 
