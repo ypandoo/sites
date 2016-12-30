@@ -3090,7 +3090,18 @@ a {
 
 .bg1{background:url('bg-body3.png') repeat top center;}
 .bg2{background:url('repeat.png') repeat top center;}
-.bg3{background:url('../../images/header.jpg'); background-size: cover; background-repeat: no-repeat;}
+.bg3{background:url('bg.jpg'); background-size: cover; background-repeat: no-repeat;}
+.bgGradient{
+  background: -moz-radial-gradient(bottom left, ellipse, #011427, #0a1225, #053b6f);
+  background: -webkit-radial-gradient(bottom left, ellipse, #011427, #0a1225, #053b6f);
+}
+
+i.line {
+    width: 100%;
+    height: 3px;
+    background: url(line.png) 0px 0px;
+    display: block;
+}
 
 .news_title {
     font-size: 16px;

@@ -16,7 +16,7 @@ h3{
 <?php include 'header_navi.php';?>
 
 
-<section class="carousel" style="margin-top:200px; margin-bottom:50px">
+<section class="carousel" style="margin-top:160px;">
   <div class="reel">
     <article class="bg2">
       <a ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[0].PATH)}" alt="" /></a>

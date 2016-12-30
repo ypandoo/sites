@@ -215,7 +215,7 @@ letter-spacing: 2px;
 }
 
 .expo_item{
-  width: 30%;
+  width: 22%;
       float: left;
       background: #FFF;
       border: 1px solid rgba(102, 102, 102, 0.4);
@@ -296,7 +296,7 @@ h2, h4{
 
 
 <div style=" width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
+  <div style="width:100%; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
     <!-- <div style="height:50px; text-align:left; padding:30px 0 20px 20px" >
       <p class="title_text">新展快讯</p>
       <p class="title_text_en">New Exhibitions </p>

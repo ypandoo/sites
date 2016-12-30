@@ -214,7 +214,7 @@ letter-spacing: 2px;
 }
 
 .expo_item{
-  width: 30%;
+  width: 22%;
       float: left;
       background: #FFF;
       border: 1px solid rgba(102, 102, 102, 0.4);
@@ -285,7 +285,7 @@ h2, h4{
 <body class="bg1">
 
 <!-- banner -->
-<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-top: 100px; margin-bottom:20px">
+<div style="background:rgba(0,0,0,0.3); width:100%; text-align:center;  margin-bottom:20px">
 <img src="<?php echo base_url('assets/pc/img/zl.jpg')?>" width="100%"/>
 </div>
 
@@ -293,7 +293,7 @@ h2, h4{
 <?php include 'header_navi.php';?>
 
 <div style="width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden;padding-bottom: 80px; position:relative">
+  <div style="width:100%; margin:0 auto; overflow:hidden;padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">

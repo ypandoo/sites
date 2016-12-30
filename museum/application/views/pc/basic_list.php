@@ -215,7 +215,7 @@ letter-spacing: 2px;
 }
 
 .expo_item{
-  width: 30%;
+  width: 22%;
       float: left;
       background: #FFF;
       border: 1px solid rgba(102, 102, 102, 0.4);
@@ -295,7 +295,7 @@ h2, h4{
 <?php include 'header_navi.php';?>
 
 <div style="width:100%; clear:both; overflow:hidden; "   ms-controller="expo_list_ctrl">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
+  <div style="width:100%; margin:0 auto; overflow:hidden; padding-bottom: 80px; position:relative">
 
     <div class="title_section">
       <div class="title_block">

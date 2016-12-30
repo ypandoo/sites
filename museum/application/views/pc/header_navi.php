@@ -21,7 +21,7 @@
 										<li><a href="<?php echo site_url('pc/view/item_list')?>" class="nav_text">十大珍品</a></li>
 										<li><a href="<?php echo site_url('pc/view/item_list_normal')?>" class="nav_text">珍品赏析</a></li>
 										<li><a href="<?php echo site_url('pc/view/360')?>" class="nav_text">360全景</a></li>
-										<li><a href="<?php echo site_url('pc/view/navi')?>" class="nav_text">展厅导览</a></li>
+										<li><a href="<?php echo site_url('pc/view/nav')?>" class="nav_text">展厅导览</a></li>
 									</ul>
 								</li>
                 <li>

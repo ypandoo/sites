@@ -229,8 +229,8 @@ margin: 0 auto;
 }
 
 .single-item{
-  width: 29.3%;
-  margin: 2%;
+  width: 22%;
+  margin: 1.5%;
   float:left;
   position: relative;
 }
@@ -293,7 +293,7 @@ margin: 0 auto;
 <?php include 'header_navi.php';?>
 
 <div style=" width:100%; clear:both; overflow:hidden; margin-top:20px">
-  <div style="width:1000px; margin:0 auto; overflow:hidden; padding-bottom: 80px;" class="bg2">
+  <div style="width:100%; margin:0 auto; overflow:hidden; padding-bottom: 80px;" >
 
     <div class="title_section">
       <div class="title_block">
