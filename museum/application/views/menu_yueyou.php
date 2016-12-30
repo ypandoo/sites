@@ -54,16 +54,16 @@
 
 .menu{
   width: 145px;
-  /* height: 410px; */
-  position: absolute;
-  top: 7%;
-  right: 20px;
-  /* background-size: 145px 410px; */
-  /* background: url(http://127.0.0.1/assets/front/img/main_yuequ_menu.png) 145px 410px; */
-  background-size: cover;
-  background: rgba(202, 29, 29, 0.8);
-  box-shadow: 5px 5px rgba(187, 17, 17, 0.4);
-  padding: 20px 0px;
+      /* height: 410px; */
+      position: absolute;
+      top: 7%;
+      right: 20px;
+      /* background-size: 145px 410px; */
+      /* background: url(http://127.0.0.1/assets/front/img/main_yuequ_menu.png) 145px 410px; */
+      background-size: cover;
+      background: rgba(0, 14, 31, 0.8);
+      /* box-shadow: 5px 5px rgba(17, 77, 187, 0.4); */
+      /*padding: 20px 0px;*/
 }
 
 .menu_item{
@@ -92,11 +92,20 @@
 .menu .menu_item img{
   height: 35px;
 }
+
+i.line {
+    width: 100%;
+    height: 3px;
+    background: url('<?php echo base_url('application/views/pc/assets/css/line1.png') ?>') 0px 0px;
+    display: block;
+}
 </style>
 
 <body id="bg">
 
-    <div class="menu" id="menu" style="display:none; padding: 10px ">
+  <div class="menu" id="menu">
+    <i class="line"> </i>
+    <div style="">
       <a href='<?php echo base_url('pages/view/item_list') ?>'>
         <div class="menu_item" >
           <img src='<?php echo base_url('assets/front/img/menu/m2_top10.png') ?>' />
@@ -124,8 +133,10 @@
         <img src='<?php echo base_url('assets/front/img/menu/m2_links.png') ?>' />
         </div></a>
     </div>
+    <i class="line"> </i>
+  </div>
 
-    <div class="menu_bottom">
+    <!-- <div class="menu_bottom">
       <a href='<?php echo base_url('pages/view/menu_yuelan') ?>'>
       <div class="menu_item"></div></a>
 
@@ -135,7 +146,7 @@
       <a href='<?php echo base_url('pages/view/menu_yuequ') ?>'>
       <div class="menu_item"></div></a>
 
-    </div>
+    </div> -->
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>

@@ -47,7 +47,7 @@
           <ul class="nav nav-sidebar">
             <li><a href="<?php echo base_url('back/view/about')?>">关于西博</a></li>
             <!-- <li><a href="<?php echo base_url('back/view/layout')?>">基本陈列</a></li> -->
-            <li class="active"><a href="<?php echo base_url('back/view/index') ?>">馆藏珍品</a></li>
+            <li class="active"><a href="<?php echo base_url('back/view/index') ?>">珍品赏析</a></li>
             <li><a href="<?php echo base_url('back/view/content')?>">内容发布</a></li>
             <li><a href="<?php echo base_url('back/view/instruction')?>">参观指南</a></li>
             <li><a href="<?php echo base_url('back/view/navi')?>">展厅导航</a></li>
@@ -65,7 +65,7 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <div class="row">
-              <div class="col-md-10 page-header" style="height:60px;line-height:60px; font-size:24px">馆藏珍品</div>
+              <div class="col-md-10 page-header" style="height:60px;line-height:60px; font-size:24px">珍品赏析</div>
               <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
                 <a style="cursor:pointer" id="item_new" ms-click="@item_detail()">添加新的珍品</a>
               </div>
@@ -112,7 +112,7 @@
             <div class="row">
               <div class="col-md-10 page-header" style="height:60px;line-height:60px; font-size:24px">{{@item_title}}</div>
               <div class="col-md-2 page-header"  style="height:60px;line-height:60px; font-size:16px">
-                <a style="cursor:pointer" id="item_list" ms-click="@view_list()">查看馆藏珍品列表</a>
+                <a style="cursor:pointer" id="item_list" ms-click="@view_list()">查看珍品赏析列表</a>
               </div>
             </div>
 
@@ -178,11 +178,11 @@
 
                   <hr><hr>
                   <div class="row">
-                    <div class="col-md-5"><label><strong>是否为十大珍品:(十大珍品将会要求上传语音和视频信息)</strong></label></div>
+                    <div class="col-md-5"><label><strong>是否为十大精品:(十大精品将会要求上传语音和视频信息)</strong></label></div>
                     <div class="col-md-1">
                       <label>
                        <input class="checkbox" type="checkbox" ms-duplex-checked="@item_is_topten"
-                        ms-rules="{required:true}"  data-required-message='是否十大珍品!'/>
+                        ms-rules="{required:true}"  data-required-message='是否十大精品!'/>
                       </lable>
                     </div>
                   </div>

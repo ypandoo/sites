@@ -131,7 +131,7 @@ width: 60%;
           </a></div> -->
 
           <!-- <div class="service-container"><a class="service" href="/pages/view/item_list">
-            <span><i class="fa fa-arrow-right" aria-hidden="true"></i>返回馆藏珍品列表</span>
+            <span><i class="fa fa-arrow-right" aria-hidden="true"></i>返回珍品赏析列表</span>
           </a></div> -->
         </div>
 

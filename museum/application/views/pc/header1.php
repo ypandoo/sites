@@ -25,8 +25,8 @@ echo  '<div class="nav">
       <li>
         <a href="/Pc/view/item_list" class="animate">藏品</a>
         <div class="subNav" style="display: none;">
-              <a href="/Pc/view/item_list">十大珍品</a>
-              <a href="/Pc/view/item_list_normal">馆藏珍品</a>
+              <a href="/Pc/view/item_list">十大精品</a>
+              <a href="/Pc/view/item_list_normal">珍品赏析</a>
               <a href="/Pc/view/protect">藏品保护</a>
         </div>
       </li>
@@ -36,7 +36,7 @@ echo  '<div class="nav">
         <a href="/Navi/view_pc/1">展厅导览</a>
         <!--a href="/into-the-ai/">基本陈列</a-->
         <a href="/Pc/view/instruction">参观指南</a>
-        <a href="">360全景</a>
+        <a href="">全景趣览</a>
         <!--a href="">移动平台</a-->
         </div>
       </li>

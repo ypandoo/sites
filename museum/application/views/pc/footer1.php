@@ -21,7 +21,7 @@ echo '<div style=" margin: 20px 0 0px 0; background:rgba(0,0,0,0.3); ; width:100
     <p class="link-item-title">服务</p>
     <p class="link-item-text"><a href="/Pc/view/basic_list">基本陈列</a></p>
     <p class="link-item-text"><a href="/Pc/view/instruction">参观指南</a></p>
-    <p class="link-item-text"><a href="">360全景</a></p>
+    <p class="link-item-text"><a href="">全景趣览</a></p>
   </div>
   <div class="link-item">
     <p class="link-item-title">活动</p>

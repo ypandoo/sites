@@ -323,7 +323,7 @@ your browser does not support the video tag
         <i class="fa fa-map" aria-hidden="true"></i>查看场馆平面图
       </a></div> -->
       <div class="service-container"><a class="service" href="/Pc/view/item_list">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i></i>返回馆藏珍品列表
+        <i class="fa fa-arrow-left" aria-hidden="true"></i></i>返回珍品赏析列表
       </a></div>
     </div>
   </div>

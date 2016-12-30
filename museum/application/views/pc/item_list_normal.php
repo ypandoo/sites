@@ -298,7 +298,7 @@ margin: 0 auto;
 
     <div class="title_section">
       <div class="title_block">
-      <p class="title_text">馆藏珍品</p>
+      <p class="title_text">珍品赏析</p>
       <p class="title_text_en">Antiquities</p>
       </div>
     </div>

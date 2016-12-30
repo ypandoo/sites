@@ -252,7 +252,7 @@ font-weight: 300;
 <script src="<?php echo base_url('assets/front/js/360.js') ?>"></script>
 <script src="<?php echo base_url('assets/common/js/jquery.pano.js') ?>"></script>
 <script>
-$('#head_text').text('360全景');
+$('#head_text').text('全景趣览');
 // /* jshint jquery: true */
 jQuery(document).ready(function($){
   $("#myPano").pano({

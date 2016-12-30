@@ -94,7 +94,7 @@
 <?php include 'footer.php'; ?>
 </body>
 <script>
-$('#head_text').text('十大珍品');
+$('#head_text').text('十大精品');
 (function() {
   var self = this;
 
