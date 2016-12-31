@@ -14,12 +14,12 @@
       'description': '',
       'path': ''
     },
-    video_path: null,
+    video_path: '',
     item_is_topten: 0,
-    video_path: null,
+    video_path: '',
 
-    audio_cn: null,
-    audio_zw: null,
+    audio_cn: '',
+    audio_zw: '',
     play_cn: false,
     _play_cn: function() {
       if (self.framework.play_cn == true) {
@@ -28,6 +28,7 @@
       } else {
         self.framework.play_cn = true;
         audio.play();
+        audio2.pause();
       }
     },
     play_tibet: false,
@@ -38,6 +39,7 @@
       } else {
         self.framework.play_tibet = true;
         audio2.play();
+        audio.pause();
       }
     },
 
@@ -55,7 +57,7 @@
         $('.bk').hide();
       }, 400);
       $('.popup').hide();
-      window.audio.pause();
+      window.video.pause();
     },
     get_pic_path: function(e) {
       return self.get_pic_path(e);
@@ -161,11 +163,11 @@
   }
 
   self.add_video_node = function() {
-    var video = document.getElementById('video');
+    window.video = document.getElementById('video');
     var source = document.createElement('source');
     // source.type = "video/mp4";
     source.setAttribute('src', self.framework.video_path);
-    video.appendChild(source);
+    window.video.appendChild(source);
   }
 
 
