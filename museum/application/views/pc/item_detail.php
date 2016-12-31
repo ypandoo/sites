@@ -207,8 +207,8 @@ letter-spacing: 2px;
 /*popup*/
 .popup{
   position: fixed;;
-  width: 600px;
-  height: 450px;
+  width: 700px;
+  height: 550px;
   padding: 50px;
   left: 50%;
   margin-left: -300px;

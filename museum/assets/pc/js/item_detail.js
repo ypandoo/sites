@@ -55,6 +55,7 @@
         $('.bk').hide();
       }, 400);
       $('.popup').hide();
+      window.audio.pause();
     },
     get_pic_path: function(e) {
       return self.get_pic_path(e);
