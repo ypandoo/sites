@@ -100,7 +100,7 @@
     </div>
   </div>
 
-  <div class="gap40">
+  <div class="gap60">
   </div>
 
 </div>
