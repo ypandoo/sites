@@ -33,7 +33,7 @@ nav a:nth-child(6){
         <?php include 'header.php' ?>
 
         <section class="banner">
-        	<img src="<?php echo base_url('Application/views/img/banner/shbm.jpg') ?>">
+        	<img src="<?php echo base_url('Application/views/img/banner/3.jpg') ?>">
             <hgroup>
               <h3>生活便民,服务生活的方方面面</h3>
                 <h4 style="text-transform:uppercase">Better Service For Our People</h4>
