@@ -29,6 +29,7 @@
         self.framework.play_cn = true;
         audio.play();
         audio2.pause();
+        self.framework.play_tibet = false;
       }
     },
     play_tibet: false,
@@ -40,6 +41,7 @@
         self.framework.play_tibet = true;
         audio2.play();
         audio.pause();
+        self.framework.play_cn = false;
       }
     },
 
@@ -49,6 +51,12 @@
       $('.bk').show(0, function() {
         $(this).css('opacity', 0.7)
       });
+
+      audio.pause();
+      self.framework.play_cn = false;
+
+      audi2.pause();
+      self.framework.play_tibet = false;
     },
 
     close_video: function() {
