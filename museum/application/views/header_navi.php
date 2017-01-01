@@ -29,15 +29,28 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦览</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/about') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博简介</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/new_expo') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>新展快讯</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/basic') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>基本陈列</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/expo_review') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>展览回顾</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/dynamic') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博动态</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/instruction') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>参观指南</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/construction') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>新馆建设</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/protect') ?>"><li><i  style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>藏品保护</li></a>
+          <li>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦览</a>
+            </div>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦见</a>
+            </div>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦趣</a>
+            </div>
+          </li>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/about') ?>"><li><i class="fa fa-arrow-right" aria-hidden="true"></i>西博简介</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/new_expo') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>新展快讯</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/basic') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>基本陈列</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/expo_review') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>展览回顾</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/dynamic') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>西博动态</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/instruction') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>参观指南</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/construction') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>新馆建设</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/protect') ?>"><li><i  class="fa fa-arrow-right" aria-hidden="true"></i>藏品保护</li></a>
 				</ul>
 			</div>
 		</div>

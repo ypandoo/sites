@@ -126,17 +126,7 @@ i.line {
     <i class="line"> </i>
   </div>
 
-    <!-- <div class="menu_bottom">
-      <a href='<?php echo base_url('pages/view/menu_yuelan') ?>'>
-      <div class="menu_item"></div></a>
-
-      <a href='<?php echo base_url('pages/view/menu_yueyou') ?>'>
-      <div class="menu_item"></div></a>
-
-      <a href='<?php echo base_url('pages/view/menu_yuequ') ?>'>
-      <div class="menu_item"></div></a>
-
-    </div> -->
+<?php include 'menu_footer.php'; ?>
 
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>

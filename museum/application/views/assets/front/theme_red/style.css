@@ -522,9 +522,17 @@ a.btn:focus{outline: 0;}
   color: #543a11;
   text-align: center;
   font-size: 16px;
-  /* border: 1px solid #543a11; */
+  border: 1px solid #543a11;
   width: 60%;
   margin-left: 20%;
   line-height: 40px;
   margin-top: 20px;
+}
+
+.menu_bottom_item{
+    background: rgba(0, 14, 31, 0.8);
+}
+
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+    max-height: 380px !important;
 }

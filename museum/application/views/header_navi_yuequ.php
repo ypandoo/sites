@@ -29,10 +29,23 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦趣</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/shop') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>文创小店</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/lesson') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博课堂</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/volunteer') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>志愿者风采</li></a>
+          <li>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦览</a>
+            </div>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦见</a>
+            </div>
+            <div style="width:33%;float:left;text-align:left">
+              <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>">
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦趣</a>
+            </div>
+          </li
+          <a class="page-scroll" href="<?php echo base_url('pages/view/shop') ?>"><li><i class="fa fa-arrow-right" aria-hidden="true"></i>文创小店</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/lesson') ?>"><li><i class="fa fa-arrow-right" aria-hidden="true"></i>西博课堂</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/volunteer') ?>"><li><i class="fa fa-arrow-right" aria-hidden="true"></i>志愿者风采</li></a>
 				</ul>
 			</div>
 		</div>
