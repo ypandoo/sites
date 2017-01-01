@@ -29,7 +29,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>"><li><i class="fa fa-arrow-up" aria-hidden="true"></i>悦游</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦览</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦见</li></a>
+          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦趣</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/item_list') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>十大精品</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/item_list_normal') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>珍品赏析</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/360') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>全景趣览</li></a>

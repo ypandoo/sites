@@ -176,7 +176,7 @@ img {
 
 </head>
 <body class="bg1" >
-<?php include 'header_navi_yueyou.php'; ?>
+<?php include 'header_navi_yuequ.php'; ?>
 
 <div class="details"   ms-controller="items_ctrl" style="margin-top:66px">
     <div style=" margin-top:20px; padding-left:15px; padding-right:15px; overflow:hidden">
