@@ -287,7 +287,6 @@ text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
 
 <!-- footer -->
 <?php include 'footer.php';?>
-<script src="<?php echo base_url('assets/pc/js/item_list_normal.js') ?>"></script>
 </body>
 <script>
 (function(){

@@ -28,17 +28,17 @@
                                        function(data){
                                          if(data.hasOwnProperty('success')){
                                                if(data.success == 1){
-                                                   console.log(data);
-                                                   console.log('获取列表及图片成功！');
+                                                  //  console.log(data);
+                                                  //  console.log('获取列表及图片成功！');
                                                    items_ctrl.data = data.data;
 
-                                                   $('.banner-top').slick({
-                                                   centerMode: true,
-                                                   centerPadding: '40px',
-                                                   adaptiveHeight: true,
-                                                   slidesToShow: 3,
-                                                   dots: true,
-                                                 });
+                                                //    $('.banner-top').slick({
+                                                //    centerMode: true,
+                                                //    centerPadding: '40px',
+                                                //    adaptiveHeight: true,
+                                                //    slidesToShow: 3,
+                                                //    dots: true,
+                                                //  });
                                                }
                                                else{
                                                    alert(data.message);
