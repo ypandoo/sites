@@ -25,7 +25,11 @@
                    },
 
                    direct2detail:function(e){
-                     window.location.href = base_url+'content/view_activity/'+e; 
+                     window.location.href = base_url+'content/view_activity/'+e;
+                   },
+
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
                    },
 
                    get_content_by_type:function(){

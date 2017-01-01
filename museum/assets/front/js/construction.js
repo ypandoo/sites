@@ -23,6 +23,10 @@
                      return e.substr(0, 45)+'...';
                    },
 
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
+                   },
+
                    get_content_text_pc: function(e){
                      return e.substr(0, 300)+'...';
                    },

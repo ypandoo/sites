@@ -24,6 +24,10 @@
                      return e.substr(0, 300)+'...';
                    },
 
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
+                   },
+
                    direct2detail:function(e){
                      window.location.href = base_url+'content/view_volunteer/'+e;
                    },

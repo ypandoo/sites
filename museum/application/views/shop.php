@@ -17,81 +17,265 @@
     <meta name="format-detection" content="email=no" />
     <meta name="format-detection" content="telephone=yes" />
 
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/front/css/expo_review.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick-theme.css') ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/slick/slick.css') ?>">
+    <?php include 'header.php'; ?>
+
+    <style>
+    .details {
+    width: 100%;
+    background: transparent;
+    }
+
+    .content .item {
+        position: absolute;
+        width: 100%;
+        height: 38px;
+        background: rgba(97,0, 0, 0.5);
+        /* margin-top: 4px; */
+        /* padding: 5px; */
+        /* float: left; */
+        bottom: 3px;
+    }
+
+    .content .item h2 {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      color: #ffffff;
+      padding: 5px 5px 0 5px;
+    }
+
+    .content {
+        width: 48%;
+        height: 130px;
+        position: relative;
+        /* border-radius: 20px; */
+        /* background-color: #f5f5f5; */
+        /* margin-bottom: 5px; */
+        margin: 10px 1% 10px 1%;
+        float: left;
+        /* border: 1px solid rgb(0, 132, 77); */
+        /* box-shadow: 3px 2px 6px rgba(220, 220, 220, 0); */
+    }
+
+
+    .innerheader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .8rem;
+    z-index: 1000;
+    /* background: rgba(79, 247, 90, 0.16); */
+    border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    .show_more{
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid white;
+    width: 60%;
+    margin-left: 20%;
+    line-height: 24px;
+    margin-top: 20px;
+    }
+
+    .banner-top{
+      margin-top: 46px;
+    }
+    .banner-item{
+      position: relative;
+    }
+
+    .banner-item img{
+      width: 100%;
+    }
+
+    .item_name_bg {
+      position: absolute;
+      text-align: left;
+      left: 0;
+      bottom: 0;
+      height: 40px;
+      width: 100%;
+      z-index: 6;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)),color-stop(0.2, rgba(0,0,0,.2)), to(rgba(0,0,0,.8)));
+      -webkit-background-origin: padding;
+      -webkit-background-clip: content;
+    }
+
+    .item_name_bg p{
+      text-align: left;
+      font-size: 16px;
+      margin-left: 15px;
+      line-height: 40px;
+      /* padding-left: 0px; */
+      font-family: 'Microsoft YaHei';
+      /* margin-left: 10px; */
+      -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+      -o-transform: scale(0.5);
+      /* -webkit-transform: scale(0.5); */
+      /* transform: scale(0.5); */
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .expo_item {
+        width: 48%;
+        float: left;
+        margin: 1%;
+        margin-top: 20px;
+        height: 170px;
+            border-radius: 3px;
+        /* border: 1px solid rgba(0, 0, 0, 0.11); */
+        box-shadow: 3px 2px 6px rgba(0, 15, 58, 0.64);
+    }
+
+    .newhead {
+   -webkit-box-shadow: 0 8px 6px -6px #505050;
+   -moz-box-shadow: 0 8px 6px -6px #505050;
+   box-shadow: 0 8px 6px -6px #505050;
+}
+
+.expo_text h2{
+ line-height: 30px;
+ font-family: 'Microsoft YaHei';
+ letter-spacing: 0px;
+ /* background-color: #e2e2e2; */
+ margin-left: 5px;
+ font-size: 12px;
+     color: #69410b;
+}
+
+.expo_text{
+  /*background: rgba(255, 0, 0, 0.5);*/
+  color:white;
+  margin-top: -20px;
+}
+
+.show_more{
+  margin-bottom: 50px;
+  color: #ab936d;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ab936d;
+  width: 60%;
+  margin-left: 20%;
+  line-height: 28px;
+  margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: 140px;
+}
+    </style>
+
 </head>
-<body>
-<div class="bk"></div>
-<div id="details" class="details"  ms-controller="expo_list_ctrl">
-    <!--首页-->
-    <div id="main-page" class="main-page slide-page">
-        <!--头部-->
+<body class="bg1" >
+<?php include 'header_navi_yueyou.php'; ?>
 
-        <div id="header" class="newhead">
-            <a href="<?php echo base_url('pages/view/menu1') ?>"><div class="logo touch-href" data-href="/"></div></a>
+<div class="details"   ms-controller="items_ctrl" style="margin-top:66px">
+    <div style=" margin-top:20px; padding-left:15px; padding-right:15px; overflow:hidden">
+      <div class="expo_item"  ms-for='($index, item_info) in @list' >
+        <div class="expo_item_container" ms-click="@get_detail_link($index)">
+        <img ms-attr="{src:@get_cover($index)}" width="100%" height="140px"/>
+
         </div>
-
-        <!-- banner -->
-        <div class="banner-top" style="margin-top:46px">
-          <div><img src="<?php echo base_url('assets\front\img\m\shop-banner2.jpg')?>" width="100%" style="z-index:-1"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\shop-banner1.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\shop-banner3.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\shop-banner4.jpg')?>" width="100%"/></div>
-          <div><img src="<?php echo base_url('assets\front\img\m\shop-banner5.jpg')?>" width="100%"/></div>
-        </div>
-
-
-        <div class="page-title"   style="margin-top:20px">
-          <h2>文创小店</h2>
-          <h4>Craft Galleries</h4>
-        </div>
-
-        <div style="margin-top:20px; padding: 0 10px 0 10px; overflow:hidden">
-        <div class="content"  ms-for='($index, item_info) in @list'>
-            <div class="news_img"  ms-click="@get_detail_link($index)">
-              <img ms-attr="{src:@get_cover($index)}" width="100%" >
-            </div>
-            <div class="item"  ms-click="@get_detail_link($index)">
-             <!-- <span class="time"><small> 2016-02-02  20:56:33</small></span> -->
-                <h2>{{item_info.CONTENT_TITLE}}</h2>
-                <!-- <h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
-                <!-- <h3>{{item_info.PUBLISH_TIME}}</h3><h3>{{@get_content_text(item_info.CONTENT_TEXT)}}</h3> -->
-            </div>
-          </a>
+        <div class="expo_text" ms-click="@get_detail_link($index)">
+          <h2>{{item_info.CONTENT_TITLE|truncate(15, '...')}}</h2>
+          <!-- <h4>{{@get_content_text(item_info.ITEM_TEXT)}}</h4> -->
         </div>
       </div>
-
-      <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
-        加载更多...
-      </div>
-
-      <div style="margin-top:20px"></div>
 
     </div>
 
+    <div ms-visible='@show_more' ms-click='@get_content_by_type()' class="show_more">
+      加载更多珍品
+    </div>
+</div>
+
+<?php include 'footer.php'; ?>
+</div>
+
 </body>
-<script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/avalon.js') ?>"></script>
-<script src="<?php echo base_url('assets/common/js/base.js') ?>"></script>
-<script src="<?php echo base_url('assets/front/js/shop.js') ?>"></script>
-<script src="<?php echo base_url('assets/slick/slick.min.js') ?>"></script>
-
 <script>
+$('#head_text').text('文创小店');
+(function(){
+  var self = this;
 
-$(document).ready(function(){
-  $('.banner-top').slick({
-  dots: true,
-  infinite: true,
-  speed:1500,
-  slidesToShow: 1,
-  adaptiveHeight: false,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  arrows: true
-});
+  //avalon control space
+  var items_ctrl = avalon.define({
+                   $id: 'items_ctrl',
+                   list:[],
+                   sort: 0,
+                   page_start: 0,
+                   show_more: false,
 
-});
+                   get_pic_path: function(path){
+                     return upload_img+path;
+                   },
+                   get_detail_link : function(e){
+                     window.location.href = base_url+'content/view_yuequ/'+items_ctrl.list[e].CONTENT_ID;
+                   },
+
+                   get_content_text: function(e){
+                     return e.substr(0, 45)+'...';
+                   },
+
+                   get_content_text_pc: function(e){
+                     return e.substr(0, 300)+'...';
+                   },
+
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
+                   },
+
+                   direct2detail:function(e){
+                     window.location.href = base_url+'content/view_volunteer/'+e;
+                   },
+
+                   get_content_by_type:function(){
+                     var url = base_url+'Content/get_list';
+                     base_remote_data.ajaxjson(
+                                       url, //url
+                                       function(data){
+                                         if(data.success == 1){
+                                             for (var i = 0; i < data.data.length; i++) {
+                                              items_ctrl.list.push(data.data[i]);
+                                             }
+
+                                             //长度大与interval 就加到起始位置
+                                             if (data.data.length == page_interval) {
+                                               items_ctrl.page_start += data.data.length;
+                                               //show more
+                                               items_ctrl.show_more  = true;
+                                             }
+                                             else {
+                                               items_ctrl.show_more  = false;
+                                             }
+                                         }
+                                         else {
+                                           alert('返回值错误!');
+                                         }
+                                     },
+                                     {'list_type': '文创小店',
+                                      'page_start': items_ctrl.page_start},
+                                     function()
+                                     {
+                                       alert('网络错误!');
+                                     });
+                   }
+  });
+
+
+  //Init codes run once
+  items_ctrl.get_content_by_type();
+
+}).call(define('space_shop'));
+
 </script>
 </html>

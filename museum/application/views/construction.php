@@ -22,8 +22,8 @@
 						<div class="service">
               <h3 style="font-size:18px">{{item_info.CONTENT_TITLE}}</h3>
               <h4 style="font-size:12px;">发布日期: &nbsp; {{item_info.PUBLISH_TIME}}</h4>
-              <hr>
-							<p>{{@get_content_text(item_info.CONTENT_TEXT)}}</p>
+              <img ms-attr="{src:@get_cover($index)}"  alt="">
+              <p>{{@get_content_text(item_info.CONTENT_TEXT) | truncate(60, '...')}}</p>
 							<a class="btn btn-2 btn-sm" ms-click="@get_detail_link($index)">查看详情</a>
 						</div>
 			 		</div>

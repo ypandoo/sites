@@ -85,17 +85,17 @@ i.line {
   <div class="menu" id="menu">
     <i class="line"> </i>
     <div style="">
-      <a href=''>
+      <a href='<?php echo base_url('pages/view/shop') ?>'>
         <div class="menu_item" >
           <img src='<?php echo base_url('assets/front/img/menu/m3_shop.png') ?>' />
         </div>
       </a>
 
-      <a href='<?php echo base_url('pages/view/activity') ?>'>
+      <!-- <a href='<?php echo base_url('pages/view/activity') ?>'>
         <div class="menu_item" >
           <img src='<?php echo base_url('assets/front/img/menu/m3_activity.png') ?>' />
         </div>
-      </a>
+      </a> -->
       <a href='<?php echo base_url('pages/view/lesson') ?>'>
         <div class="menu_item" >
         <img src='<?php echo base_url('assets/front/img/menu/m3_lesson.png') ?>' />
