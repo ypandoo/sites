@@ -3212,6 +3212,7 @@ a {
     font-size: 14px;
     /* letter-spacing: 1px; */
     color: #968053;
+    text-indent: 0 !important;
 }
 
 

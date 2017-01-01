@@ -253,6 +253,7 @@ letter-spacing: 2px;
 
 .expo_item_container{
   padding: 10px;
+  height: 160px;
 }
 
 .expo_item:hover {
@@ -316,7 +317,7 @@ h2, h4{
   <div style="  width:90%; margin-left:5%; margin-top:20px">
     <div class="expo_item"  ms-for='($index, item_info) in @list'>
       <div class="expo_item_container">
-      <img ms-attr="{src:@get_pic_path(item_info.CONTENT_COVER)}" width="100%"/>
+      <img ms-attr="{src:@get_pic_path(item_info.CONTENT_COVER)}" width="100%" height="100%"/>
 
       </div>
       <div class="expo_text">

@@ -100,18 +100,6 @@ text-shadow: 1px 0 rgba(158, 0, 0, 0.21);
     padding-top:20px;
     border-bottom: 1px solid  rgba(255, 0, 0, 0.2);
 }
-
-/*btn*/
-.line_btn
-{
-  height: 40px;
-text-align: center;
-width: 1000px;
-line-height: 40px;
-overflow: hidden;
-margin: 0 auto;
-}
-
 .link-item
 {
   width: 100px;
