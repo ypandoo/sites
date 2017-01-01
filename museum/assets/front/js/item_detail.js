@@ -7,13 +7,14 @@
     $btn_left = $touch.find('.left').children('em'),
     $btn_right = $touch.find('.right').children('em');
 
-  this.list = [];
-  this.list_index = 0;
+  self.list = [];
+  self.list_index = 0;
 
-  this.framework = avalon.define({
+  self.framework = avalon.define({
     $id: "sd-list",
     items_list: [],
     item_is_topten: 0,
+    init:false,
     data: {
       'id': '',
       'name': '',
@@ -23,13 +24,13 @@
     },
     video_path: "",
     select: function(index) {
-      self.index(index);
+      self.framework.index(index);
     },
     next: function() {
-      self.next();
+      self.framework.next();
     },
     prev: function() {
-      self.prev();
+      self.framework.prev();
     },
 
     audio_cn: "",
@@ -38,20 +39,20 @@
     _play_cn: function() {
       if (self.framework.play_cn == true) {
         self.framework.play_cn = false;
-        window.audio.pause();
+        self.audio.pause();
       } else {
         self.framework.play_cn = true;
-        window.audio.play();
+        self.audio.play();
       }
     },
     play_tibet: false,
     _play_tibet: function() {
       if (self.framework.play_tibet == true) {
         self.framework.play_tibet = false;
-        window.audio2.pause();
+        self.audio2.pause();
       } else {
         self.framework.play_tibet = true;
-        window.audio2.play();
+        self.audio2.play();
       }
     },
 
@@ -84,45 +85,48 @@
 
 
   //put the data to html
-  this.info = function(index) {
+  self.info = function(index) {
     var c = {},
       f = 1,
       h = 1;
-    if (!!self.list[index]) {
+    if (self.list[index]) {
       c = self.list[index];
       self.framework.data.id = c.ITEM_ID;
       self.framework.data.name = c.ITEM_NAME;
-      self.framework.data.video = c.VIDEO;
+      self.framework.data.video = c.ITEM_VIDEO;
       self.framework.video_path = upload_video + c.ITEM_VIDEO;
       self.framework.audio_cn = upload_audio + c.ITEM_AUDIO_CN;
       self.framework.audio_zw = upload_audio + c.ITEM_AUDIO_TIBET;
       self.framework.data.description = c.ITEM_DESCRIPTION;
       self.framework.item_is_topten = parseInt(c.ITEM_IS_TOPTEN);
       self.framework.data.path = self.get_pic_path(c.PATH);
-
-      add_video_node();
-      add_audio_node();
-      add_audio_node_zw();
+      if(self.framework.init == false)
+      {
+        self.add_video_node();
+        self.add_audio_node();
+        self.add_audio_node_zw();
+        self.framework.init = true;
+      }
     }
   };
 
-  this.get_pic_path = function(path) {
+  self.get_pic_path = function(path) {
     return upload_img + path;
   }
 
-  this.btn_display = function(index) {
+  self.btn_display = function(index) {
     index === 0 ? $btn_left.hide() : $btn_left.show();
     index === self.list.length - 1 ? $btn_right.hide() : $btn_right.show();
   };
 
-  this.next = function() {
+  self.next = function() {
     if (self.list_index + 1 < self.list.length) {
       self.index(self.list_index + 1);
       self.keep_seen(self.list_index);
     }
   };
 
-  this.prev = function() {
+  self.prev = function() {
     if (self.list_index > 0) {
       self.index(self.list_index - 1);
       self.keep_seen(self.list_index);
@@ -130,7 +134,7 @@
   };
 
   //-------------------- data filling --------------------------------------------------
-  this.index = function(index) {
+  self.index = function(index) {
     var i = parseInt(index);
     self.btn_display(i);
     $all_infozone.fadeOut(300, function() {
@@ -154,7 +158,7 @@
 
 
   //get data via ajax
-  this.get_list = function() {
+  self.get_list = function() {
     var item_id = $('#item_id').attr('data-id');
     if (!item_id) {
       alert('数据错误！');
@@ -188,14 +192,14 @@
       });
   };
 
-  this.get_list();
+  self.get_list();
 
-  this.selector = function(index) {
+  self.selector = function(index) {
     var i = index || 0;
     $list_selector.css('left', 60 * parseInt(i) + 'px');
   };
 
-  this.keep_seen = function(index) {
+  self.keep_seen = function(index) {
     var i = index + 1,
       w = $(window).width(),
       n = $list_contaner.scrollLeft(),
@@ -209,7 +213,7 @@
       }
     }
   };
-  this.scroll_left = function() {
+  self.scroll_left = function() {
     var t = 0;
     return function(d) {
       var n = 0,
@@ -233,7 +237,7 @@
     }
   };
 
-  this.touchtap = function(el, fun) {
+  self.touchtap = function(el, fun) {
     var startX,
       startY,
       startT,
@@ -302,35 +306,32 @@
     }
   );
 
-  function add_audio_node() {
+  self.add_audio_node = function() {
     var url = self.framework.audio_cn;
-    window.audio = document.createElement("audio");
-    var source = document.createElement("source");
-    window.audio.id = "audio";
-    source.type = "audio/mpeg";
-    source.src = url;
-    source.autoplay = "autoplay";
-    window.audio.addEventListener("ended", function() {
-      window.audio.play();
-    }, false);
-    window.audio.appendChild(source);
+    self.audio = document.getElementById("audio1");
+    var source1 = document.createElement("source");
+    source1.type = "audio/mpeg";
+    // source2.preload = "auto";
+    source1.src = url;
+    self.audio.appendChild(source1);
   }
 
-  function add_audio_node_zw() {
+  self.add_audio_node_zw = function() {
     var url = self.framework.audio_zw;
-    window.audio2 = document.createElement("audio");
+    self.audio2 = document.getElementById("audio2");
     var source2 = document.createElement("source");
-    window.audio2.id = "audio2";
     source2.type = "audio/mpeg";
+    // source2.preload = "auto";
     source2.src = url;
-    source2.autoplay = "autoplay";
-    window.audio2.addEventListener("ended", function() {
-      window.audio2.play();
-    }, false);
-    window.audio2.appendChild(source2);
+    self.audio2.appendChild(source2);
+    // // source2.autoplay = "autoplay";
+    // // window.audio2.addEventListener("ended", function() {
+    // //   window.audio2.play();
+    // // }, false);
+    // window.audio2.appendChild(source2);
   }
 
-  function add_video_node() {
+  self.add_video_node = function() {
     var video = document.getElementById('video');
     var source = document.createElement('source');
     // source.type = "video/mp4";

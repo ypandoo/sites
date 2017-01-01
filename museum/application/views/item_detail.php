@@ -4,18 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>西藏博物馆</title>
     <meta name="keywords" content="西藏博物馆"/>
-    <meta name="description" content="西藏博物馆"/>
-    <meta name="robots" content="all"/>
-    <meta name="copyright" content="西藏博物馆"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="author" content="" />
-    <meta name="revisit-after"  content="1 days" />
-    <meta name="format-detection" content="email=no" />
-    <meta name="format-detection" content="telephone=yes" />
     <!-- <link rel="stylesheet" href="<?php echo base_url('assets/front/css/base.css') ?>"> -->
     <link rel="stylesheet" href="<?php echo base_url('assets/front/css/item_detail.css') ?>">
         <?php include 'header.php'; ?>
@@ -159,6 +153,18 @@ width: 60%;
               <p class="html" ms-html="@data.description ">
               </p>
         </div>
+
+      <div style="position:absolute; bottom:0; right:0; display:none">
+        <audio controls="controls" autoplay="autoplay" id="audio1" width="1px" height="1px">
+          <source  type="audio/mpeg" />
+        Your browser does not support the audio element.
+        </audio>
+
+        <audio controls="controls" autoplay="autoplay" id="audio2"  width="1px" height="1px">
+          <source  type="audio/mpeg" />
+        Your browser does not support the audio element.
+        </audio>
+      </div>
 
 <?php include 'footer.php'; ?>
 </div>
