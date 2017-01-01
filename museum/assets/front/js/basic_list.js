@@ -21,7 +21,7 @@
                    },
 
                    get_content_text: function(e){
-                     return e.substr(0, 50)+'...';
+                     return e.substr(0, 46)+'...';
                    },
 
                    get_cover:function(e){
