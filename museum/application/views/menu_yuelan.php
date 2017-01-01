@@ -126,8 +126,6 @@ i.line {
     <i class="line"> </i>
   </div>
 
-<?php include 'menu_footer.php'; ?>
-
 </body>
 <script src="<?php echo base_url('assets/common/js/jquery.min.js') ?>"></script>
 <script>

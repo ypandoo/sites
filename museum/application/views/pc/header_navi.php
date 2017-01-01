@@ -5,7 +5,7 @@
 							<ul>
 								<li><a href="<?php echo site_url('pc/view/index')?>"  class="nav_text">首页</a></li>
 								<li>
-									<a href="#"  class="nav_text">悦览</a>
+									<a href="#"  class="nav_text">悦见</a>
 									<ul>
 										<li><a href="<?php echo site_url('pc/view/dynamic')?>" class="nav_text">西博动态</a></li>
 										<li><a href="<?php echo site_url('pc/view/construction')?>" class="nav_text">新馆建设</a></li>

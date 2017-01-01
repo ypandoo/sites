@@ -32,11 +32,11 @@
           <li>
             <div style="width:33%;float:left;text-align:left">
               <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>">
-                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦览</a>
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦见</a>
             </div>
             <div style="width:33%;float:left;text-align:left">
               <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>">
-                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦见</a>
+                <i  class="fa fa-bookmark-o" aria-hidden="true"></i>悦游</a>
             </div>
             <div style="width:33%;float:left;text-align:left">
               <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>">
