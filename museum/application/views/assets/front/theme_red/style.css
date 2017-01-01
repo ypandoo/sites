@@ -41,11 +41,12 @@ h1,h2,h3,h4,h5,h6 {font-family: 'PingHei', 'Microsoft YaHei', 'Roboto', sans-ser
 .bg2{background:url('repeat.png') repeat top center;}
 
 p {
-  margin: 0;
+  margin: 0 !important;
   color: #816943;
-  text-align: left;
-  font-size: 13px;
-  font-family: 'PingHei', 'Microsoft YaHei';
+  text-align: left !important;
+  font-size: 13px !important;
+  text-indent: 0em !important;
+  font-family: 'PingHei', 'Microsoft YaHei' !important;
 }
 a {
    color: #666;
