@@ -29,8 +29,6 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuelan') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦览</li></a>
-          <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yueyou') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦见</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/menu_yuequ') ?>"><li><i  class="fa fa-arrow-up" aria-hidden="true"></i>悦趣</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/shop') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>文创小店</li></a>
           <a class="page-scroll" href="<?php echo base_url('pages/view/lesson') ?>"><li><i style="margin-left:20px" class="fa fa-arrow-right" aria-hidden="true"></i>西博课堂</li></a>
