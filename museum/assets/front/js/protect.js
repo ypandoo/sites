@@ -28,6 +28,10 @@
                      return e.substr(0, 300)+'...';
                    },
 
+                   get_cover:function(e){
+                     return items_ctrl.get_pic_path(items_ctrl.list[e].CONTENT_COVER);
+                   },
+
                    get_content_by_type:function(){
                      var url = base_url+'Content/get_list';
                      base_remote_data.ajaxjson(
