@@ -53,6 +53,7 @@ class Content_model extends CI_Model
     public function getList($list_type, $page_start)
     {
         $interval = $this->config->item('page_interval');
+        $this->db->order_by('PUBLISH_TIME', 'DESC');
         $query = $this->db->get_where('T_CONTENT', array('CONTENT_TYPE' => $list_type), $interval, $page_start);
         $data["success"] = true;
         $data["errorCode"] = 0;
