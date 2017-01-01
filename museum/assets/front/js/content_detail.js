@@ -11,7 +11,7 @@
     '西博课堂': ['Knowledge Share', 'lesson'],
     '活动邀约': ['Activities', 'activity'],
     '志愿者风采': ['Volunteer', 'volunteer'],
-    '文创小店': ['Craft Galleries', 'shop']
+    '文创小店': ['Souvenirs', 'shop']
   };
 
   self.framework = avalon.define({

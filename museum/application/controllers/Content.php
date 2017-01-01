@@ -122,6 +122,18 @@ class Content extends CI_Controller {
        $this->load->view('pc/protect_detail', $data);
     }
 
+    public function view_shop($content_id)
+    {
+      $data['content_id'] = $content_id;
+      if ( ! file_exists(APPPATH.'/views/pc/shop_detail.php') || !  $data['content_id'])
+       {
+           // Whoops, we don't have a page for that!
+           show_404();
+       }
+
+       $this->load->view('pc/shop_detail', $data);
+    }
+
 
     public function add_pic()
     {
