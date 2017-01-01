@@ -25,7 +25,7 @@
                    },
 
                    get_content_text: function(e){
-                     return e.substr(0, 60)+'...';
+                     return e.substr(0, 50)+'...';
                    },
 
                    get_content_by_type:function(){

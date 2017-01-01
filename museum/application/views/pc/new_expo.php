@@ -333,7 +333,7 @@ h2, h4{
   </div>
 
   <div class="line_btn" style="background:rgba(0,0,0,0.3); ;" ms-visible="@show_more" ms-click='@get_content_by_type()'>
-    <a style="color:white;    color: blanchedalmond;cursor: pointer;">查阅更多新闻 · VIEW MORE</a></div>
+    <a style="color:white;    color: blanchedalmond;cursor: pointer;">查阅更多 · VIEW MORE</a></div>
 </div>
 
 
