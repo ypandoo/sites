@@ -56,7 +56,7 @@ nav a:nth-child(6){
         <nav style="overflow:hidden">
         	<a href="<?php echo site_url('front/news_pics?type=jtcx')?>">交通出行</a>
             <a href="<?php echo site_url('front/views')?>" style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">旅游景点</a>
-            <a href="<?php echo site_url('front/news?type=ypkx')?>">影票快讯</a>
+            <a href="<?php echo site_url('front/news?type=ypkx')?>">今日影讯</a>
             <a href="<?php echo site_url('front/news_pics?type=mycp')?>" >名优产品</a>
             <a href="<?php echo site_url('front/news_pics?type=nmke')?>"
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">农牧课堂</a>
