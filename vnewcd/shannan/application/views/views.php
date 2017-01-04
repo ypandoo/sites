@@ -38,9 +38,9 @@
     <li role="presentation"  ms-click="@switch_type('zrjg')">
       <a href="#renwen" aria-controls="renwen" role="tab" data-toggle="tab">自然景观</a>
     </li>
-    <!-- <li role="presentation"  ms-click="@switch_type('smql')">
-      <a href="#renwen" aria-controls="renwen" role="tab" data-toggle="tab">寺庙群落</a>
-    </li> -->
+    <li role="presentation"  ms-click="@switch_type('mswh')">
+      <a href="#renwen" aria-controls="renwen" role="tab" data-toggle="tab">民俗文化</a>
+    </li>
   </ul>
 
   <!-- Tab panes -->

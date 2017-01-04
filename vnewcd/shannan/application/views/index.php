@@ -39,7 +39,7 @@ nav a:nth-child(6){
             </hgroup>
         </section>
 
-                <!-- <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
+       <a class="box1 box1i" href="<?php echo site_url('front/zwbm') ?>">
         	<img src="<?php echo base_url('Application/views/img/banner/22.jpg') ?>">
             <div>
             	<h3 style="text-transform: uppercase;">Governmental Services</h3>
@@ -52,7 +52,7 @@ nav a:nth-child(6){
             	<h3>Life Services</h3>
                 <abbr>生活便民</abbr>
             </div>
-        </a> -->
+        </a>
         <nav style="overflow:hidden">
         	<a href="<?php echo site_url('front/news?type=szyw')?>">时政要闻</a>
             <a href="<?php echo site_url('front/news?type=jzfp')?>"
@@ -63,7 +63,7 @@ nav a:nth-child(6){
               style="border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;">高层访谈</a> -->
         </nav>
 
-        <section class="banner" >
+        <!-- <section class="banner" >
         	<img src="<?php echo base_url('Application/views/img/banner/szyw.jpg') ?>">
             <hgroup style="text-align:30px; ">
             	<h3 style="text-align:left; margin-left:30px; font-size:16px;text-align: left;
@@ -84,7 +84,7 @@ nav a:nth-child(6){
                   <p>一{{el.plain_text | truncate(30,'...') }}</p>
                   <span>{{el.update_time}}</span>
               </a>
-          </div>
+          </div> -->
 
         <!-- <div class="pages">
             <a class='next'>上一页</a>
