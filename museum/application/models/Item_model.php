@@ -66,6 +66,7 @@ class Item_model extends CI_Model
     {
 
         $interval = $this->config->item('page_interval');
+        $this->db->order_by('ITEM_PRIORITY','ASC');
         $query = $this->db->get('T_ITEM', $interval, $start);
         $data["success"] = true;
         $data["errorCode"] = 0;
@@ -83,6 +84,7 @@ class Item_model extends CI_Model
       $this->db->where('T_ITEM.ITEM_IS_TOPTEN', '1');
       $this->db->join('T_PIC', 'T_ITEM.ITEM_ID = T_PIC.ITEM_ID');
       $this->db->group_by('T_ITEM.ITEM_ID');
+      $this->db->order_by('T_ITEM.ITEM_PRIORITY','ASC');
       $query = $this->db->get();
       $data["success"] = true;
       $data["errorCode"] = 0;
@@ -102,6 +104,7 @@ class Item_model extends CI_Model
       $this->db->limit( $interval, $start);
       $this->db->join('T_PIC', 'T_ITEM.ITEM_ID = T_PIC.ITEM_ID');
       $this->db->group_by('T_ITEM.ITEM_ID');
+      $this->db->order_by('T_ITEM.ITEM_PRIORITY','ASC');
       $query = $this->db->get();
       $data["success"] = true;
       $data["errorCode"] = 0;

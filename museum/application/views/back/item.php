@@ -41,6 +41,8 @@
                 <thead>
                   <tr>
                     <th>珍品名称</th>
+                    <th>十大精品</th>
+                    <th>显示优先级(越小越显示越靠前)</th>
                     <th>操作1</th>
                     <th>操作2</th>
                     <!--th>Header</th-->
@@ -49,6 +51,8 @@
                 <tbody>
                   <tr ms-for='($index, item_info) in @data'>
                     <td>{{item_info.ITEM_NAME}}</td>
+                    <td>{{item_info.ITEM_IS_TOPTEN == 1 ? '是' : '否'}}</td>
+                    <td>{{item_info.ITEM_PRIORITY}}</td>
                     <td><a ms-click="@delete_item($index)">删除</a></td>
                     <td><a ms-click="@modify_item($index)">修改信息</a></td>
                  </tr>
@@ -99,7 +103,7 @@
                       <input class="form-control" type='number' ms-duplex='@item_priority'
                         ms-rules="{required:true, min:0, max:100}"
                         data-required-message='显示优先级输入错误!' data-min-message='显示优先级输入错误!' data-max-message='显示优先级输入错误!'/>
-                      <p>说明:输入0-100任意数字，数字越大在前端页面显示的时候该珍品越靠前。若保持为0，珍品将按照录入的时间排序显示。</p>
+                      <p>说明:输入任意数字(>0)，数字越小，在页面显示的时候该珍品越靠前。</p>
                     </div>
                  </div>
 
