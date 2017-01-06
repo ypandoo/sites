@@ -8,6 +8,16 @@
 h3{
   color:#713e23
 }
+
+.item-text{
+  height: 160px;
+overflow: hidden;
+}
+.image img {
+    display: block;
+    width: 100%;
+    max-height: 220px;
+}
 </style>
 </head>
 
@@ -20,83 +30,83 @@ h3{
   <div class="reel">
     <article class="bg2">
       <a ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[0].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[0].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[0].ITEM_DESCRIPTION)| truncate(60,'...')}})</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[1].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[1].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[1].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[1].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[2].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[2].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[2].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[2].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[3].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[3].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[3].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[3].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[4].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[4].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[4].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[4].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[5].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[5].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[5].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[5].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[6].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[6].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[6].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[6].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[7].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[7].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[7].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[7].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[8].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[8].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[8].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[8].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
     <article>
       <a ms-attr="{href:@get_detail_link_pc(data[9].ITEM_ID)}" class="image featured"><img ms-attr="{src:@get_pic_path(data[9].PATH)}" alt="" /></a>
-      <header>
+      <div class="item-text"><header>
         <h3><i class="fa fa-bandcamp" aria-hidden="true"></i>{{data[9].ITEM_NAME}}</h3>
       </header>
       <p>{{@get_pure_text(data[9].ITEM_DESCRIPTION)| truncate(60,'...')}}</p><br>
-      <a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
+      </div><a class="btn" ms-attr="{href:@get_detail_link_pc(data[0].ITEM_ID)}"><i class="fa fa-arrow-right gapR10" aria-hidden="true"></i>了解更多</a>
     </article>
 
   </div>
