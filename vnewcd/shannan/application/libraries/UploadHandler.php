@@ -1090,7 +1090,8 @@ class UploadHandler
                     );
                 } else {
                     //Lei Modify
-                    $targetName = rawurlencode($name);
+                    $ext = end(explode('.', $name));
+                    $targetName = uniqid().'.'.$ext;
                     $targetPath = $upload_dir.$targetName;
                     move_uploaded_file($uploaded_file, $targetPath);
                     $file_path = $targetPath;

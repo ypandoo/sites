@@ -215,7 +215,7 @@
       </div>
     </div>
     <script src="<?php echo base_url('application/views/js/base.js') ?>"></script>
-    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/vendor/jquery.ui.widget.js') ?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/load-image.all.min.js') ?>"></script>
     <script src="<?php echo base_url('application/views/fileupload/js/canvas-to-blob.min.js') ?>"></script>
@@ -402,16 +402,16 @@ $('#fileupload').fileupload({
     //4. 单个文件上传成功
     $.each(data.result.files, function (index, file) {
         if (file.url) {
-            Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传完成.', error:0});
+            Controller.gallery.tips.push({message:(file.name)+'上传完成.', error:0});
         } else if (file.error) {
-            Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传失败：'+file.error, error:1});
+            Controller.gallery.tips.push({message:(file.name)+'上传失败：'+file.error, error:1});
         }
     });
   })
   .on('fileuploadfail', function (e, data) {
-      $.each(data.files, function (index, file) {
-        Controller.gallery.tips.push({message:decodeURIComponent(file.name)+'上传失败:'+file.error, error:1});
-      });
+      // $.each(data.files, function (index, file) {
+      //   Controller.gallery.tips.push({message:(file.name)+'上传失败:'+file.error, error:1});
+      // });
   })
   .on('fileuploadstop', function(){
     if(debug)
